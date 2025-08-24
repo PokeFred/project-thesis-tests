@@ -2,6 +2,6 @@ import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({fetch}) => {
 	return {
-		cutoutData: await (await fetch("/images/cutouts.json")).json()
+		cutoutData: await (await fetch("./images/cutouts.json")).json()
 	};
 };
