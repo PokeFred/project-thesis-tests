@@ -12,8 +12,12 @@
         "test:unit": "vitest run"
     },
     "dependencies": {
+        "@fortawesome/free-brands-svg-icons": "^7.0.0",
+        "@fortawesome/free-regular-svg-icons": "^7.0.0",
+        "@fortawesome/free-solid-svg-icons": "^7.0.0",
         "@tailwindcss/vite": "^4.1.12",
         "dotenv": "^17.2.1",
+        "svelte-awesome": "^3.3.5",
         "tailwindcss": "^4.1.12"
     },
     "devDependencies": {
