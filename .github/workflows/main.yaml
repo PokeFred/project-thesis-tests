@@ -146,7 +146,7 @@ jobs:
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
-                    cp -r ./output/. ../build/
+                    cp -r ./output/htdocs/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
@@ -169,7 +169,7 @@ jobs:
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
-                    cp -r ./output/. ../build/
+                    cp -r ./output/htdocs/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
@@ -192,7 +192,7 @@ jobs:
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
-                    cp -r ./output/. ../build/
+                    cp -r ./output/htdocs/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
