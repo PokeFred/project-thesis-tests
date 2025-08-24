@@ -18,7 +18,7 @@ jobs:
             -   name: Build the application
                 run: |
                     cd ./proof-of-concept-one
-                    npm install 
+                    npm install
                     npm run build
     proof-of-concept-one_check-unit-test:
         runs-on: ubuntu-latest
@@ -32,7 +32,8 @@ jobs:
             - name: Run unit tests
               run: |
                     cd ./proof-of-concept-one
-                    npm install 
+                    npm install
+                    npm run build
                     npm run test
     proof-of-concept-one_docker-test:
         runs-on: ubuntu-latest
@@ -43,7 +44,7 @@ jobs:
                 run: |
                     cd ./proof-of-concept-one
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
     proof-of-concept-two_build-test:
@@ -58,7 +59,7 @@ jobs:
             -   name: Build the application
                 run: |
                     cd ./proof-of-concept-two
-                    npm install 
+                    npm install
                     npm run build
     proof-of-concept-two_check-unit-test:
         runs-on: ubuntu-latest
@@ -72,7 +73,8 @@ jobs:
             - name: Run unit tests
               run: |
                     cd ./proof-of-concept-two
-                    npm install 
+                    npm install
+                    npm run build
                     npm run test
     proof-of-concept-two_docker-test:
         runs-on: ubuntu-latest
@@ -83,7 +85,7 @@ jobs:
                 run: |
                     cd ./proof-of-concept-two
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
     prototype_build-test:
@@ -113,6 +115,7 @@ jobs:
               run: |
                     cd ./prototype
                     npm install
+                    npm run build
                     npm run test
     prototype_docker-test:
         runs-on: ubuntu-latest
@@ -123,7 +126,7 @@ jobs:
                 run: |
                     cd ./prototype
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
     proof-of-concept-one_build:
