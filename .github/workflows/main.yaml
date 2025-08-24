@@ -142,7 +142,7 @@ jobs:
                     cd ./proof-of-concept-one
                     mkdir ./output
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
@@ -165,7 +165,7 @@ jobs:
                     cd ./proof-of-concept-two
                     mkdir ./output
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
@@ -188,7 +188,7 @@ jobs:
                     cd ./prototype
                     mkdir ./output
                     docker build -t app ./
-                    docker run -p 80:80 --name container app -d
+                    docker run -d -p 80:80 --name container app
                     docker cp container:/usr/local/apache2/htdocs/ ./output
                     docker stop container
                     docker rm container
