@@ -135,15 +135,18 @@ jobs:
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Build the application
-              run: |
+            -   name: Create build folder
+                run: mkdir ./build
+            -   name: Build the application
+                run: |
                     cd ./proof-of-concept-one
-                    npm install
-                    npm run build
+                    mkdir ./output
+                    docker build -t app ./
+                    docker run -d -p 80:80 --name container app
+                    docker cp container:/usr/local/apache2/htdocs/ ./output
+                    docker stop container
+                    docker rm container
+                    cp -r ./output/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
@@ -155,15 +158,18 @@ jobs:
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Build the application
-              run: |
+            -   name: Create build folder
+                run: mkdir ./build
+            -   name: Build the application
+                run: |
                     cd ./proof-of-concept-two
-                    npm install
-                    npm run build
+                    mkdir ./output
+                    docker build -t app ./
+                    docker run -d -p 80:80 --name container app
+                    docker cp container:/usr/local/apache2/htdocs/ ./output
+                    docker stop container
+                    docker rm container
+                    cp -r ./output/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
@@ -175,15 +181,18 @@ jobs:
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Build the application
-              run: |
+            -   name: Create build folder
+                run: mkdir ./build
+            -   name: Build the application
+                run: |
                     cd ./prototype
-                    npm install
-                    npm run build
+                    mkdir ./output
+                    docker build -t app ./
+                    docker run -d -p 80:80 --name container app
+                    docker cp container:/usr/local/apache2/htdocs/ ./output
+                    docker stop container
+                    docker rm container
+                    cp -r ./output/. ../build/
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
