@@ -12,6 +12,7 @@
         "test:unit": "vitest run"
     },
     "dependencies": {
+        "@neodrag/svelte": "^2.3.3",
         "dotenv": "^17.2.1"
     },
     "devDependencies": {
@@ -28,6 +29,8 @@
         "vitest": "^3.2.4"
     },
     "pnpm": {
-        "onlyBuiltDependencies": ["esbuild"]
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
     }
 }
