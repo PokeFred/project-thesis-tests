@@ -30,7 +30,7 @@
             
         "
             class="puzzle-blackbox"
-            bind:this={piece.BlackBox()}
+            bind:this={piece.blackBox}
         ></div>
     {/each}
 
@@ -40,7 +40,7 @@
                 src="./images/Auswahl_{i}.png"
                 alt="icon"
                 class="puzzle-piece"
-                bind:this={piece.getPuzzlePiece()}
+                bind:this={piece.puzzlePiece}
                 use:draggable={{
                     position: piece.getCurrentPosition(), // zum binden der koordinaten
                     onDragEnd(data: any) {

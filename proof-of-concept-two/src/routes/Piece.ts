@@ -5,8 +5,8 @@ type Position = {
 
 export default class Piece {
     private cutoutData: any
-    private blackBox: HTMLDivElement | null
-    private puzzlePiece: HTMLImageElement | null
+    public blackBox: HTMLDivElement | null
+    public puzzlePiece: HTMLImageElement | null
     private currentPosition: Position
     private placed: boolean
 
