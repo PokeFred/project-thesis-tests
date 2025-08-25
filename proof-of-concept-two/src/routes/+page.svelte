@@ -1,21 +1,16 @@
 <script lang="ts">
-    import { draggable, type DragOptions } from "@neodrag/svelte";
-    import type { PageProps } from "./$types";
-    import {Piece} from "./Piece"
+    import type { PageProps } from "./$types"
+    import { draggable } from "@neodrag/svelte"
+    import Piece from "./Piece"
 
-    let { data }: PageProps = $props();
-
-    const SNAP = 20;
-
-    let pieces: Piece[] = data.cutoutData.map((e: any) => {
-        return new Piece(e, null, null, { x: 0, y: 0 });
-    });
+    let { data }: PageProps = $props()
+    const SNAP: number = 20
+    let puzzleImage: HTMLDivElement
+    let pieces: Piece[] = data.cutoutData.map((e: any) => new Piece(e, null, null, { x: 0, y: 0 }))
 
     function testWinCon() {
-        return pieces.every((e) => e.isPlaced == true);
+        return pieces.every((e) => e.getPlaced() === true)
     }
-
-    let puzzleImage: HTMLDivElement;
 </script>
 
 <div class="puzzle-image" bind:this={puzzleImage}>
@@ -28,14 +23,14 @@
         <!-- Black box -->
         <div
             style="
-            width: {piece.cutoutData.width}px;
-            height: {piece.cutoutData.height}px;
-            top: {piece.cutoutData.y}px;
-            left: {piece.cutoutData.x}px;
+            width: {piece.getCutoutData().width}px;
+            height: {piece.getCutoutData().height}px;
+            top: {piece.getCutoutData().y}px;
+            left: {piece.getCutoutData().x}px;
             
         "
             class="puzzle-blackbox"
-            bind:this={piece.blackBox}
+            bind:this={piece.BlackBox()}
         ></div>
     {/each}
 
@@ -45,39 +40,38 @@
                 src="./images/Auswahl_{i}.png"
                 alt="icon"
                 class="puzzle-piece"
-                bind:this={piece.puzzlePiece}
+                bind:this={piece.getPuzzlePiece()}
                 use:draggable={{
-                    position: piece.currentPosition, // zum binden der koordinaten
-                    onDragEnd(data) {
+                    position: piece.getCurrentPosition(), // zum binden der koordinaten
+                    onDragEnd(data: any) {
                         // console.log(data.offsetX, puzzleImage.clientHeight + data.offsetY - data.currentNode.clientHeight)
 
-                        if (Math.abs(piece.cutoutData.x - (data.offsetX + data.currentNode.offsetLeft)) < SNAP && Math.abs(piece.cutoutData.y -( puzzleImage.clientHeight + data.offsetY - data.currentNode.clientHeight)) < SNAP) {
-                            piece.currentPosition.x = piece.cutoutData.x - data.currentNode.offsetLeft;
-                            piece.currentPosition.y = piece.cutoutData.y - data.currentNode.offsetTop;
+                        if (Math.abs(piece.getCutoutData().x - (data.offsetX + data.currentNode.offsetLeft)) < SNAP && Math.abs(piece.getCutoutData().y -( puzzleImage.clientHeight + data.offsetY - data.currentNode.clientHeight)) < SNAP) {
+                            piece.getCurrentPosition().x = piece.getCutoutData().x - data.currentNode.offsetLeft
+                            piece.getCurrentPosition().y = piece.getCutoutData().y - data.currentNode.offsetTop
 
-                            // piece.blackBox!.hidden = true;
-                            // piece.puzzlePiece!.hidden = true;
-                            piece.blackBox!.style.opacity = "0";
-                            piece.puzzlePiece!.style.opacity = "0";
-                            piece.isPlaced = true;
+                            // piece.blackBox!.hidden = true
+                            // piece.puzzlePiece!.hidden = true
+                            piece.getBlackBox()!.style.opacity = "0"
+                            piece.getPuzzlePiece()!.style.opacity = "0"
+                            piece.setPlaced(true)
                         } else {
-                            piece.currentPosition.x = data.offsetX;
-                            piece.currentPosition.y = data.offsetY;
-                            piece.isPlaced = false;
+                            piece.setCurrentPosition(data.offsetX, data.offsetY)
+                            piece.setPlaced(false)
                         }
 
                         if (testWinCon()) {
-                            console.log("GEWONNEN");
+                            console.log("GEWONNEN")
                         }
                     },
-                    onDragStart(data) {
-                        if (piece.isPlaced) {
-                            // piece.blackBox!.hidden = false;
-                            // piece.puzzlePiece!.hidden = false;
-                            piece.blackBox!.style.opacity = "1";
-                            piece.puzzlePiece!.style.opacity = "1";
+                    onDragStart(data: any) {
+                        if (piece.getPlaced()) {
+                            // piece.blackBox!.hidden = false
+                            // piece.puzzlePiece!.hidden = false
+                            piece.getBlackBox()!.style.opacity = "1"
+                            piece.getPuzzlePiece()!.style.opacity = "1"
                         }
-                        piece.isPlaced = false;
+                        piece.setPlaced(false)
                     },
                 }}
             />
@@ -90,16 +84,16 @@
         position: absolute;
         background-color: black;
     }
+
     .puzzle-piece-container {
         border: 1px solid black;
     }
-    /* .puzzle-piece {  */
 
-    /* } */
     .puzzle-image {
         display: inline-block;
         position: relative;
     }
+
     figure {
         margin: 0px;
     }
