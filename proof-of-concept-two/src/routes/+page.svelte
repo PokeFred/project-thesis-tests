@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import { type CutoutData } from "./Piece.svelte";
-    import PuzzleGame from "./PuzzleGame.svelte";
+    import { type CutoutData } from "./PuzzleGame/Piece.svelte";
+    import PuzzleGame from "./PuzzleGame/PuzzleGame.svelte";
 
     const { data }: PageProps = $props()
 </script>
