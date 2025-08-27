@@ -3,7 +3,7 @@
     import PuzzleSlot from "./PuzzleSlot.svelte";
     import PuzzlePiece from "./PuzzlePiece.svelte";
 
-    const { path, imgSrc, alt, cutoutData }: { path: string; imgSrc: string; alt: string; cutoutData:CutoutData[] } = $props();
+    const { path, backgroundSrc, alt, cutoutData }: { path: string; backgroundSrc: string; alt: string; cutoutData:CutoutData[] } = $props();
     const pieces: Piece[] = cutoutData.map((cutout: any) => new Piece(path, cutout))
     
     let puzzleGame: HTMLDivElement;
@@ -16,7 +16,7 @@
 <div class="puzzle-game" bind:this={puzzleGame}>
     <figure>
         <!-- <figcaption></figcaption> -->
-        <img src={`${path}/${imgSrc}`} {alt} />
+        <img src={`${path}/${backgroundSrc}`} {alt} />
     </figure>
 
     {#each pieces as piece}

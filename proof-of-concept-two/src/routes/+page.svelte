@@ -6,4 +6,4 @@
     const { data }: PageProps = $props()
 </script>
 
-<PuzzleGame path={data.path} imgSrc={data.backgroundSrc} cutoutData={data.cutoutData as CutoutData[]} alt={"Puzzel Spiel"}  />
+<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} cutoutData={data.cutoutData as CutoutData[]} alt={"Puzzel Spiel"}  />
