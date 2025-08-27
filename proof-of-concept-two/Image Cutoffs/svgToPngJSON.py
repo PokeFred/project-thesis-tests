@@ -32,12 +32,12 @@ for path in root.findall(".//{http://www.w3.org/2000/svg}path"):
         points = list(zip(coords[0::2], coords[1::2]))
         xs, ys = [p[0] for p in points], [p[1] for p in points]
         x, y, w, h = min(xs), min(ys), max(xs)-min(xs), max(ys)-min(ys)
-        fname = f"{pid}_{i}.png"
+        src = f"{pid}_{i}.png"
         cut = img.crop((x, y, x+w, y+h))
-        cut.save(os.path.join(OUTPUT_DIR, fname))
+        cut.save(os.path.join(OUTPUT_DIR, src))
 
         cutouts.append({
-            # "file": fname,
+            "src": src,
             "x": int(x),
             "y": int(y),
             "width": int(w),
