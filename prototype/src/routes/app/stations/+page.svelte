@@ -10,8 +10,8 @@
     let stations: Station[] = [
         { state: "FINISHED", tag: "station_01", text: "Station 01" },
         { state: "FINISHED", tag: "station_02", text: "Station 02" },
-        { state: "OPEN", tag: "station_03", text: "Station 03" },
-        { state: "LOCKED", tag: "station_04", text: "Station 04" },
+        { state: "FINISHED", tag: "station_03", text: "Station 03" },
+        { state: "OPEN", tag: "station_04", text: "Station 04" },
         { state: "LOCKED", tag: "station_05", text: "Station 05" }
     ]
 </script>

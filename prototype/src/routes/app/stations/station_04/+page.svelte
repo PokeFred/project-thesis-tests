@@ -11,7 +11,7 @@
     <button onclick={(): Promise<void> => goto("/app/stations")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
-    <div class="text-lg underline">Station 03</div>
+    <div class="text-lg underline">Station 04</div>
     <div></div>
 </div>
 <div class="mt-3 w-full h-auto text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus labore quo possimus veniam quos iusto ab provident non corporis dolor nemo molestiae perspiciatis natus, quia, maxime corrupti! Eos, voluptas accusamus.</div>
