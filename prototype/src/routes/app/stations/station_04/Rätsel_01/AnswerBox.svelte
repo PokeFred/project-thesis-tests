@@ -16,7 +16,6 @@
     class="appearance-none border rounded text-center"
 >
     {#each options as option}
-        <!-- <option bind:this={optionElement}>{option.answer}</option> -->
         <option>{option.answer}</option>
     {/each}
     <option disabled selected hidden></option>

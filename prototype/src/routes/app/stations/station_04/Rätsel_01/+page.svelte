@@ -2,11 +2,7 @@
 <script lang="ts">
     import AnswerBox from "./AnswerBox.svelte";
     import { type Cloze, type Answer } from "./Cloze.svelte";
-    // const cloze: Cloze = new Cloze(
-    //     "Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.",
-    //     "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext.\nJeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden.",
-    //     "Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus in _____ und wurde von Otto Engler entworfen. Fast _____ Menschen strömten am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am Hansaplatz."
-    // );
+
     const cloze: Cloze = {
         options: [
             [
@@ -59,7 +55,7 @@
 <p>
     Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
     Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
-    in <AnswerBox options={cloze.options[0]} bind:selected={selected[0]}/> und wurde von Otto Engler entworfen. Fast <AnswerBox options={cloze.options[1]} selected={selected[1]}/> Menschen strömten
+    in <AnswerBox options={cloze.options[0]} bind:selected={selected[0]}/> und wurde von Otto Engler entworfen. Fast <AnswerBox options={cloze.options[1]} bind:selected={selected[1]}/> Menschen strömten
     am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am
     Hansaplatz.
 </p>
