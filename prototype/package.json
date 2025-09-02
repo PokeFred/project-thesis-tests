@@ -34,12 +34,7 @@
         "vitest": "^3.2.4"
     },
     "pnpm": {
-        "onlyBuiltDependencies": [
-            "esbuild"
-        ],
-        "ignoredBuiltDependencies": [
-            "@tailwindcss/oxide",
-            "sharp"
-        ]
+        "onlyBuiltDependencies": ["esbuild"],
+        "ignoredBuiltDependencies": ["@tailwindcss/oxide", "sharp"]
     }
 }
