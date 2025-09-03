@@ -1,10 +1,10 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
-    import AnswerBox from "./AnswerBox.svelte";
-    import { type Cloze, type Answer } from "./Cloze.svelte";
+    import AnswerBox from "../../../../../lib/Components/Cloze/AnswerBox.svelte";
+    import Cloze from "../../../../../lib/Components/Cloze/Cloze.svelte";
 
-    const cloze: Cloze = {
-        options: [
+    const cloze: Cloze = new Cloze(
+        [
             [
                 { answer: "London", correct: false },
                 { answer: "Paris", correct: false },
@@ -40,12 +40,11 @@
                 { answer: "Karstadt", correct: true },
                 { answer: "Karwinkel", correct: false },
             ],
-        ],
-    };
+        ]
+    );
 
-    let selected: (Answer | null)[] = Array(cloze.options.length).fill(null);
     function printSelected() {
-        console.log(selected);
+        console.log(cloze.selected);
     }
 </script>
 
@@ -55,32 +54,27 @@
 <p>
     Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
     Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
-    in <AnswerBox options={cloze.options[0]} bind:selected={selected[0]}/> und wurde von Otto Engler entworfen. Fast <AnswerBox options={cloze.options[1]} bind:selected={selected[1]}/> Menschen strömten
+    in <AnswerBox {cloze} index={0}/> und wurde von Otto Engler entworfen. Fast <AnswerBox {cloze} index={1}/> Menschen strömten
     am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am
     Hansaplatz.
 </p>
-<!-- <p>
-    Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
-    Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
-    in <button on:click={test}>_____</button> und wurde von Otto Engler entworfen. Fast _____ Menschen strömten
-    am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am
-    Hansaplatz.
-</p> -->
+
+
 <p>
-    Neben Luxuswaren, wie teuren _____ und einer großen Auswahl an Teppichen
+    Neben Luxuswaren, wie teuren <AnswerBox {cloze} index={2}/> und einer großen Auswahl an Teppichen
     wurden auch Produkte des täglichen Bedarfs verkauft – sehr zum Ärger der
     Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.
 </p>
 
 <figure>
-    <img src="" alt="" />
+    <img src="/Coze/Althoff_Teppichlager_01.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
     </figcaption>
 </figure>
 
 <figure>
-    <img src="" alt="" />
+    <img src="/Coze/Althoff_Teppichlager_02.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
     </figcaption>
@@ -90,11 +84,12 @@
     Eine Besonderheit war die Lebensmittelabteilung, die als erste ihrer Art in
     einem deutschen Warenhaus galt. Hier wurden neben Grundnahrungsmitteln,
     frischem Obst, teurem Champagner und Weinen, als Delikatesse geltende Hummer
-    in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und _____ verkauft.
+    in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und <AnswerBox {cloze} index={3}/> verkauft.
 </p>
+
 <p>
     Die Innenausstattung des Warenhauses war ebenso beeindruckend wie das
-    Warenangebot: Wände aus _____, kunstvolle Verglasungen und elegante Leuchter
+    Warenangebot: Wände aus <AnswerBox {cloze} index={4}/>, kunstvolle Verglasungen und elegante Leuchter
     aus Bronze sorgten für eine luxuriöse Atmosphäre. Im Modell-Salon „für die
     Dame“ konnten die neuesten Modetrends bewundert werden, während der
     sogenannte Erfrischungsraum mit einem neun Meter langen Buffet, einem
@@ -103,30 +98,30 @@
 </p>
 
 <figure>
-    <img src="" alt="" />
+    <img src="/Coze/Althoff_Erfrischungsraum_01.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
     </figcaption>
 </figure>
 
 <figure>
-    <img src="" alt="" />
+    <img src="/Coze/Althoff_Erfrischungsraum_02.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
     </figcaption>
 </figure>
 
 <p>
-    Besonders waren auch die modernen _____ mit ihren Kabinen aus silbergrauem
+    Besonders waren auch die modernen <AnswerBox {cloze} index={5}/> mit ihren Kabinen aus silbergrauem
     Ahorn. Das Treppenhaus hingegen war mit aufwendigen Glasmalereien verziert.
     Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder
     aufgebaut. Im Jahr 1920 schloss sich das Warenhaus Althoff mit einem
     bekannten Warenhausunternehmen zusammen – ab 1936 war es unter dem Namen
-    _____ bekannt.
+    <AnswerBox {cloze} index={6}/> bekannt.
 </p>
 
 <figure>
-    <img src="" alt="" />
+    <img src="/Coze/Althoff.jpg" alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
     </figcaption>

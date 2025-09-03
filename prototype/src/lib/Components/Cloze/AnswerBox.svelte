@@ -1,17 +1,18 @@
 <script lang="ts">
-    import type { Answer } from "./Cloze.svelte";
+    import type Cloze from "./Cloze.svelte";
 
-    let { options, selected = $bindable()}: { options: Answer[]; selected: Answer | null} = $props();
+    const { cloze, index }: { cloze: Cloze, index: number } = $props();
+    const options = cloze.options[index];
     let selectElement: HTMLSelectElement;
 
     function onchange(): void {
-        selected = options[selectElement.selectedIndex];
+        cloze.selected[index] = options[selectElement.selectedIndex];
         console.log(options[selectElement.selectedIndex]);
     }
 </script>
 
 <select
-    {onchange}
+    {onchange}    
     bind:this={selectElement}
     class="appearance-none border rounded text-center"
 >
@@ -20,6 +21,3 @@
     {/each}
     <option disabled selected hidden></option>
 </select>
-
-<style>
-</style>
