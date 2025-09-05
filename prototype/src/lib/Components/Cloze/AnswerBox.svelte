@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type Cloze from "./Cloze.svelte";
+    import type Cloze from "./Cloze";
 
     const { cloze, index }: { cloze: Cloze, index: number } = $props();
     const options = cloze.options[index];

@@ -2,7 +2,6 @@
 <script lang="ts">
     import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
     import Cloze from "../../../../../../lib/Components/Cloze/Cloze";
-    import Modal from "@skeletonlabs/skeleton"
 
     const cloze: Cloze = new Cloze(
         [
@@ -47,10 +46,14 @@
     function printSelected() {
         console.log(cloze.selected);
         console.log(cloze.sumPoints());
+        // modal.show();
     }
+    // let modal: HTMLDialogElement;
 </script>
 
 <button on:click={printSelected}>Test</button>
+
+<!-- <dialog bind:this={modal}>asd</dialog> -->
 
 <h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p>
