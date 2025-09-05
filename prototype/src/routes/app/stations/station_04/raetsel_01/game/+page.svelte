@@ -1,7 +1,8 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
-    import AnswerBox from "../../../../../lib/Components/Cloze/AnswerBox.svelte";
-    import Cloze from "../../../../../lib/Components/Cloze/Cloze.svelte";
+    import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
+    import Cloze from "../../../../../../lib/Components/Cloze/Cloze";
+    import Modal from "@skeletonlabs/skeleton"
 
     const cloze: Cloze = new Cloze(
         [
@@ -45,6 +46,7 @@
 
     function printSelected() {
         console.log(cloze.selected);
+        console.log(cloze.sumPoints());
     }
 </script>
 
@@ -69,14 +71,14 @@
 <figure>
     <img src="/Coze/Althoff_Teppichlager_01.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
-        Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
+        Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
     <img src="/Coze/Althoff_Teppichlager_02.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
-        Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
+        Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
@@ -100,14 +102,14 @@
 <figure>
     <img src="/Coze/Althoff_Erfrischungsraum_01.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
-        Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
+        Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
     <img src="/Coze/Althoff_Erfrischungsraum_02.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
-        Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
+        Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
@@ -123,6 +125,8 @@
 <figure>
     <img src="/Coze/Althoff.jpg" alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
-        Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund).
+        Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
+
+<a href="./end"><button>Rätsel beenden</button></a>
