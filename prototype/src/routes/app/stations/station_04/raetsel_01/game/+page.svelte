@@ -1,7 +1,7 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
     import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
-    import Cloze from "../../../../../../lib/Components/Cloze/Cloze";
+    import Cloze from "../../../../../../lib/Components/Cloze/Cloze.svelte";
 
     const cloze: Cloze = new Cloze(
         [
@@ -40,11 +40,24 @@
                 { answer: "Karstadt", correct: true },
                 { answer: "Karwinkel", correct: false },
             ],
+        ],
+
+        [
+            "Es geht hier um einen Vergleich in Deutschland…",
+            `Zum Vergleich: 
+            Das Michigan Stadium in den USA ist das größte Stadion der USA und hat 107.601 Plätze, dort würde die Menschenmenge also hineinpassen.
+
+            Eng stehend braucht eine Person etwa 0,5 m² Platz, 1.000 Menschen brauchen daher rund 500 m². Zur Erinnerung: Das Warenhaus Althoff bot 5000 m² Platz!`,
+            "Es geht um einen zusammenfassenden Begriff.",
+            "Die Tiere, um die es hier geht, wurden in der Fischhalle angeboten.",
+            "Zwei der drei Materialien sind selten, bis sehr selten in der Erdkruste zu finden. Eines ist ein metamorphes Gestein, das aus Kalkstein entsteht und in klassischem Sinn nicht selten ist.",
+            "Lies den zweiten Satz aufmerksam und überlege noch einmal, worauf sich der erste Satz am ehesten beziehen könnte.",
+            "Welcher Name einer großen Kaufhauskette könnte Dir schon einmal in der Stadt begegnet sein?"
         ]
     );
 
     function printSelected(): void {
-        console.log(cloze.selected);
+        console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
         console.log(cloze.sumPoints());
         // dialog.showModal();
     }
@@ -66,10 +79,21 @@
 
 <button on:click={showHintModal}>Hinweis</button>
 
-<dialog bind:this={dialog}> 
+<dialog class="rounded-2xl" bind:this={dialog}> 
     <!-- anzeigen, dass minus punkte -->
     <ol>
-        <li>Es geht hier um einen Vergleich in Deutschland…</li>
+        {#each cloze.hints as hint, i}
+            <li>
+                {#if hint.isUnlocked()}
+                    {hint.hint}
+                {:else}
+                    Hinweis {i + 1}
+                {/if}
+            </li>
+        {/each}
+        
+    
+        <!-- <li>Es geht hier um einen Vergleich in Deutschland…</li>
         <li>Zum Vergleich: 
             Das Michigan Stadium in den USA ist das größte Stadion der USA und hat 107.601 Plätze, dort würde die Menschenmenge also hineinpassen.
 
@@ -79,13 +103,11 @@
         <li>Die Tiere, um die es hier geht, wurden in der Fischhalle angeboten.</li>
         <li>Zwei der drei Materialien sind selten, bis sehr selten in der Erdkruste zu finden. Eines ist ein metamorphes Gestein, das aus Kalkstein entsteht und in klassischem Sinn nicht selten ist.</li>
         <li>Lies den zweiten Satz aufmerksam und überlege noch einmal, worauf sich der erste Satz am ehesten beziehen könnte.</li>
-        <li>Welcher Name einer großen Kaufhauskette könnte Dir schon einmal in der Stadt begegnet sein?</li>
+        <li>Welcher Name einer großen Kaufhauskette könnte Dir schon einmal in der Stadt begegnet sein?</li> -->
     </ol>
 
     <button on:click={hideHintModal}>Schließen</button>
 </dialog>
-
-<!-- <Modal {show} {close}></Modal> -->
 
 <h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p>
@@ -103,6 +125,7 @@
     Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.
 </p>
 
+<!-- Bild zoom wenn angeklickt? -->
 <figure>
     <img src="/Coze/Althoff_Teppichlager_01.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
