@@ -15,9 +15,7 @@
             else {
                 selectElement.selectedIndex = lastSelected;
             }
-            showHintModal();
-
-            console.log("asdasd")
+            showModalHint();
         }
 
         cloze.selected[index] = options[selectElement.selectedIndex];
@@ -27,17 +25,16 @@
 
     let dialog: HTMLDialogElement;
 
-    function showHintModal(): void {
+    function showModalHint(): void {
         dialog.showModal();
     }
 
-    function hideHintModal(): void {
+    function hideModalHint(): void {
         dialog.close();
     }
 
-    function showHint(): void {
+    function unlockHint(): void {
         cloze.hints[index].markUnlocked();
-        console.log(cloze.hints[index].markUnlocked());
     }
 </script>
 
@@ -46,9 +43,9 @@
         <p>{cloze.hints[index].hint}</p>
     {:else}
         <p>Hinweis anzeigen?</p>
-        <button onclick={showHint}>Anzeigen</button>
+        <button onclick={unlockHint}>Anzeigen</button>
     {/if}
-    <button onclick={hideHintModal}>Schließen</button>
+    <button onclick={hideModalHint}>Schließen</button>
 </dialog>
 
 <select
@@ -60,5 +57,5 @@
         <option>{option.answer}</option>
     {/each}
     <option disabled selected hidden></option>
-    <option class="text-blue-800">Hinweis</option>
+    <option class="text-blue-800 bg-gray-200">Hinweis</option>
 </select>

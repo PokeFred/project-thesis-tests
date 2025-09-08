@@ -59,55 +59,10 @@
     function printSelected(): void {
         console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
         console.log(cloze.sumPoints());
-        // dialog.showModal();
     }
-
-
-    let dialog: HTMLDialogElement;
-
-    function showHintModal(): void {
-        dialog.showModal();
-    }
-
-    function hideHintModal(): void {
-        dialog.close();
-    }
-
 </script>
 
 <button on:click={printSelected}>Test</button>
-
-<button on:click={showHintModal}>Hinweis</button>
-
-<dialog class="rounded-2xl" bind:this={dialog}> 
-    <!-- anzeigen, dass minus punkte -->
-    <ol>
-        {#each cloze.hints as hint, i}
-            <li>
-                {#if hint.isUnlocked()}
-                    {hint.hint}
-                {:else}
-                    Hinweis {i + 1}
-                {/if}
-            </li>
-        {/each}
-        
-    
-        <!-- <li>Es geht hier um einen Vergleich in Deutschland…</li>
-        <li>Zum Vergleich: 
-            Das Michigan Stadium in den USA ist das größte Stadion der USA und hat 107.601 Plätze, dort würde die Menschenmenge also hineinpassen.
-
-            Eng stehend braucht eine Person etwa 0,5 m² Platz, 1.000 Menschen brauchen daher rund 500 m². Zur Erinnerung: Das Warenhaus Althoff bot 5000 m² Platz!
-        </li>
-        <li>Es geht um einen zusammenfassenden Begriff.</li>
-        <li>Die Tiere, um die es hier geht, wurden in der Fischhalle angeboten.</li>
-        <li>Zwei der drei Materialien sind selten, bis sehr selten in der Erdkruste zu finden. Eines ist ein metamorphes Gestein, das aus Kalkstein entsteht und in klassischem Sinn nicht selten ist.</li>
-        <li>Lies den zweiten Satz aufmerksam und überlege noch einmal, worauf sich der erste Satz am ehesten beziehen könnte.</li>
-        <li>Welcher Name einer großen Kaufhauskette könnte Dir schon einmal in der Stadt begegnet sein?</li> -->
-    </ol>
-
-    <button on:click={hideHintModal}>Schließen</button>
-</dialog>
 
 <h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p>
