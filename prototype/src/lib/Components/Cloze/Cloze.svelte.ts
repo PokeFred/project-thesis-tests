@@ -1,4 +1,4 @@
-import { POINTS, score } from "../../../routes/app/stations/station_04/raetsel_01/Score.svelte"
+import { POINTS, score } from "../Score.svelte"
 
 type Answer = {
     readonly answer: string;

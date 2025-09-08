@@ -1,6 +1,3 @@
-<script lang="ts">
-    const { gainedPoints } : { gainedPoints: number } = $props();
-</script>
 
 <p>
     Super, Du hast alle Lücken ausgefüllt! Jetzt kannst Du Dir vielleicht
@@ -18,7 +15,8 @@
 </p>
 
 <p>
-    Verdiente Punkte: {gainedPoints != undefined ? gainedPoints : 0}
+    <!-- Verdiente Punkte: {gainedPoints != undefined ? gainedPoints : 0} -->
+    Verdiente Punkte: 0
 </p>
 
 <button><a href="./game">Zurück</a></button>

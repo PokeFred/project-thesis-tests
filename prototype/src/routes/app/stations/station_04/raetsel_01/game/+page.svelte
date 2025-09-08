@@ -2,7 +2,6 @@
 <script lang="ts">
     import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
     import Cloze from "../../../../../../lib/Components/Cloze/Cloze.svelte";
-    import { score } from "../Score.svelte";
 
     const cloze: Cloze = new Cloze(
         [

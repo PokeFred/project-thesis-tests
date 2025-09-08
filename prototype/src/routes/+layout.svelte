@@ -3,7 +3,7 @@
     import type { LayoutProps } from "./$types"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
-    import { score } from "./app/stations/station_04/raetsel_01/Score.svelte";
+    import { score } from "../lib/Components/Score.svelte";
 
     let { children }: LayoutProps = $props()
 </script>
