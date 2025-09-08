@@ -2,6 +2,7 @@
 <script lang="ts">
     import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
     import Cloze from "../../../../../../lib/Components/Cloze/Cloze.svelte";
+    import { score } from "../Score.svelte";
 
     const cloze: Cloze = new Cloze(
         [
@@ -58,11 +59,23 @@
 
     function printSelected(): void {
         console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
-        console.log(cloze.sumPoints());
+    }
+
+    let dialog: HTMLDialogElement;
+    function showModalDialog(): void {
+        dialog.showModal();
+    }
+
+    function closeModalDialog(): void {
+        dialog.close();
+    }
+
+    function calculateScore(): void {
+        cloze.setScore();
     }
 </script>
 
-<button on:click={printSelected}>Test</button>
+<button onclick={printSelected}>Test</button>
 
 <h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p>
@@ -142,4 +155,10 @@
     </figcaption>
 </figure>
 
-<a href="./end"><button>Rätsel beenden</button></a>
+
+<dialog bind:this={dialog}>
+    <p>Möchtest du das Rätsel wirklich beenden?</p>
+    <button><a href="./end" onclick={calculateScore}>Ja</a></button>
+    <button onclick={closeModalDialog}>Nein</button>
+</dialog>
+<button onclick={showModalDialog}>Rätsel beenden</button>
