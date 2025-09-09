@@ -1,3 +1,6 @@
+<script lang="ts">
+    import { score } from "$lib/Components/Score.svelte";
+</script>
 
 <p>
     Super, Du hast alle Lücken ausgefüllt! Jetzt kannst Du Dir vielleicht
@@ -15,8 +18,8 @@
 </p>
 
 <p>
-    <!-- Verdiente Punkte: {gainedPoints != undefined ? gainedPoints : 0} -->
-    Verdiente Punkte: 0
+    <!-- Ändern, dass nur Punkte angezeigt werden, wenn man das Rätsel neu gelöst hat. -->
+    Verdiente Punkte: {score.getLastGained()} 
 </p>
 
 <a href=".." data-sveltekit-preload-data data-sveltekit-preload-code>Zurück zur Rätselübersicht</a>

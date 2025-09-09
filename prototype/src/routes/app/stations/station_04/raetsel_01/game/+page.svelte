@@ -1,9 +1,9 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
-    import { goto, preloadCode } from "$app/navigation";
+    import { goto, preloadCode, preloadData} from "$app/navigation";
     import Modal from "$lib/Components/Modal.svelte";
-    import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
-    import Cloze from "../../../../../../lib/Components/Cloze/Cloze.svelte";
+    import AnswerBox from "$lib/Components/Cloze/AnswerBox.svelte"
+    import Cloze from "$lib/Components/Cloze/Cloze.svelte"
 
     const cloze: Cloze = new Cloze(
         [
@@ -58,18 +58,18 @@
         ]
     );
 
-    function printSelected(): void {
-        console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
-    }
+    // function printSelected(): void {
+    //     console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
+    // }
 
     let showModal: () => void = $state(()=>{});
 
     function calculateScore(): void {
-        cloze.setScore();
+        cloze.addScore();
     }
 </script>
 
-<button onclick={printSelected}>Test</button>
+<!-- <button onclick={printSelected}>Test</button> -->
 
 <h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p>
@@ -151,7 +151,7 @@
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         calculateScore();
-        goto("./end", {}); 
+        goto("./end"); 
     }}>
      <p>Möchtest du das Rätsel wirklich beenden?</p>
 </Modal>

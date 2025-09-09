@@ -48,7 +48,7 @@ export default class Cloze {
         return sum > 0 ? sum : 0;
     }
 
-    public setScore(): void {
-        score.setScore(score.getScore() + this.getPoints());
+    public addScore(): void {
+        score.addScore(this.getPoints());
     }
 }
