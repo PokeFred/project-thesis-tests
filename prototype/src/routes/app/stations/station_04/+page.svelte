@@ -21,10 +21,12 @@
         <Icon data={faCheck} class="w-6 h-6" />
         <div class="text-left">Aufgabe: ???</div>
     </div>
-    <div class="w-full h-auto border-2 border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">
-        <Icon data={faClock} class="w-6 h-6" />
-        <div class="text-left">Rätsel 01</div>
-    </div>
+    <a href="./station_04/raetsel_01/introduction">
+        <div class="w-full h-auto border-2 border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">
+            <Icon data={faClock} class="w-6 h-6" />
+            <div class="text-left">Rätsel 01</div>
+        </div>
+    </a>
     <div class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default opacity-50 p-4">
         <Icon data={faKey} class="w-6 h-6" />
         <div class="text-left">Rätsel 02</div>

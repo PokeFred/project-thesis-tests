@@ -19,4 +19,4 @@
     Verdiente Punkte: 0
 </p>
 
-<button><a href="./game">Zurück</a></button>
+<a href="..">Zurück zur Rätselübersicht</a>

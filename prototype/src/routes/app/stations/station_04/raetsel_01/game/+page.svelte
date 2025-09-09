@@ -157,7 +157,7 @@
 
 <dialog bind:this={dialog}>
     <p>Möchtest du das Rätsel wirklich beenden?</p>
-    <button><a href="./end" onclick={calculateScore}>Ja</a></button>
+    <a href="./end" onclick={calculateScore}>Ja</a>
     <button onclick={closeModalDialog}>Nein</button>
 </dialog>
 <button onclick={showModalDialog}>Rätsel beenden</button>

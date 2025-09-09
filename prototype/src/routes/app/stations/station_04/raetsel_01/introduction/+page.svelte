@@ -20,4 +20,4 @@
     </ul>
 </section>
 
-<a href="./game"><button>Rätsel Starten</button></a>
+<a href="./game">Rätsel Starten</a>
