@@ -19,4 +19,4 @@
     Verdiente Punkte: 0
 </p>
 
-<a href="..">Zurück zur Rätselübersicht</a>
+<a href=".." data-sveltekit-preload-data data-sveltekit-preload-code>Zurück zur Rätselübersicht</a>

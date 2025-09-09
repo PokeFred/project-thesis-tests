@@ -157,7 +157,7 @@
 
 <dialog bind:this={dialog}>
     <p>Möchtest du das Rätsel wirklich beenden?</p>
-    <a href="./end" onclick={calculateScore}>Ja</a>
+    <a href="./end" onclick={calculateScore} data-sveltekit-preload-data data-sveltekit-preload-code>Ja</a>
     <button onclick={closeModalDialog}>Nein</button>
 </dialog>
 <button onclick={showModalDialog}>Rätsel beenden</button>

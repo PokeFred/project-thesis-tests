@@ -21,7 +21,7 @@
         <Icon data={faCheck} class="w-6 h-6" />
         <div class="text-left">Aufgabe: ???</div>
     </div>
-    <a href="./station_04/raetsel_01/introduction">
+    <a href="./station_04/raetsel_01/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
         <div class="w-full h-auto border-2 border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 01</div>

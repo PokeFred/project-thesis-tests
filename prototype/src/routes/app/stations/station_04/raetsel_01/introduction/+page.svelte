@@ -20,4 +20,4 @@
     </ul>
 </section>
 
-<a href="./game">Rätsel Starten</a>
+<a href="./game" data-sveltekit-preload-data data-sveltekit-preload-code>Rätsel Starten</a>
