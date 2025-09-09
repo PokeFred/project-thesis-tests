@@ -38,7 +38,9 @@ export default class Cloze {
     public getPoints(): number {
         let sum: number = 0;
         this.selected.forEach((answer: Answer) => {
-            sum += answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
+            if(answer != undefined) {
+                sum += answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
+            }
         });
         this.hints.forEach((hint: Hint)=>{
             sum += hint.isUnlocked() ? POINTS.HINT_UNLOCKED : 0;

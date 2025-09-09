@@ -1,5 +1,7 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
+    import { goto, preloadCode } from "$app/navigation";
+    import Modal from "$lib/Components/Modal.svelte";
     import AnswerBox from "../../../../../../lib/Components/Cloze/AnswerBox.svelte";
     import Cloze from "../../../../../../lib/Components/Cloze/Cloze.svelte";
 
@@ -60,14 +62,7 @@
         console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
     }
 
-    let dialog: HTMLDialogElement;
-    function showModalDialog(): void {
-        dialog.showModal();
-    }
-
-    function closeModalDialog(): void {
-        dialog.close();
-    }
+    let showModal: () => void = $state(()=>{});
 
     function calculateScore(): void {
         cloze.setScore();
@@ -154,10 +149,10 @@
     </figcaption>
 </figure>
 
-
-<dialog bind:this={dialog}>
-    <p>Möchtest du das Rätsel wirklich beenden?</p>
-    <a href="./end" onclick={calculateScore} data-sveltekit-preload-data data-sveltekit-preload-code>Ja</a>
-    <button onclick={closeModalDialog}>Nein</button>
-</dialog>
-<button onclick={showModalDialog}>Rätsel beenden</button>
+<Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
+        calculateScore();
+        goto("./end", {}); 
+    }}>
+     <p>Möchtest du das Rätsel wirklich beenden?</p>
+</Modal>
+<button onclick={showModal}>Rätsel beenden</button>

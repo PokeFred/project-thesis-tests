@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Modal from "../Modal.svelte";
     import type Cloze from "./Cloze.svelte";
 
     const { cloze, index }: { cloze: Cloze, index: number } = $props();
@@ -23,30 +24,20 @@
         console.log(options[selectElement.selectedIndex]);
     }
 
-    let dialog: HTMLDialogElement;
-
-    function showModalHint(): void {
-        dialog.showModal();
-    }
-
-    function hideModalHint(): void {
-        dialog.close();
-    }
-
     function unlockHint(): void {
         cloze.hints[index].markUnlocked();
     }
+
+    let showModalHint: Function = $state(()=>{});
 </script>
 
-<dialog bind:this={dialog}>
+<Modal bind:show={showModalHint} onConfirm={unlockHint} confirmButtonText={!cloze.hints[index].isUnlocked() ? "Anzeigen" : undefined} closeButtonText={"Schließen"}>
     {#if cloze.hints[index].isUnlocked()}
         <p>{cloze.hints[index].hint}</p>
     {:else}
         <p>Hinweis anzeigen?</p>
-        <button onclick={unlockHint}>Anzeigen</button>
     {/if}
-    <button onclick={hideModalHint}>Schließen</button>
-</dialog>
+</Modal>
 
 <select
     {onchange}
