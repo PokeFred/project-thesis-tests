@@ -4,7 +4,8 @@
     import PuzzlePiece from "./PuzzlePiece.svelte";
 
     const { path, backgroundSrc, alt, cutoutData }: { path: string; backgroundSrc: string; alt: string; cutoutData:CutoutData[] } = $props();
-    const pieces: Piece[] = cutoutData.map((cutout: any) => new Piece(path, cutout))
+    const pieces: Piece[] = cutoutData.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5);
+
     
     let puzzleGame: HTMLDivElement;
     
