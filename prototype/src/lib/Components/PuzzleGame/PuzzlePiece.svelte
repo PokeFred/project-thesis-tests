@@ -36,7 +36,7 @@
         piece.setPlaced(false);
     }
 </script>
-
+<!-- TODO: Fix dragging bug -->
 <img
     {src}
     {alt}
@@ -46,7 +46,8 @@
         position: piece.getCurrentPosition(), // zum binden der koordinaten, snap
         onDragEnd: onDragEnd,
         onDragStart: onDragStart,
-        bounds: ".puzzle-game"
+        bounds: ".puzzle-game",
+        applyUserSelectHack: false
     }}
     style="
             width: {piece.width * scaleWidth}px;
@@ -54,6 +55,7 @@
             top: {piece.position.y * scaleHeight}px;
             left: {piece.position.x * scaleWidth}px;
         "
+    class="m-1"
 />
 
 <style>
