@@ -31,7 +31,7 @@ export default class Cloze {
 
     constructor(options: Answer[][], hints: string[]) {
         this.options = options;
-        this.selected = Array(options.length);
+        this.selected = $state(Array(options.length));
         this.hints = hints.map((hint: string) => new Hint(hint));
     }
 

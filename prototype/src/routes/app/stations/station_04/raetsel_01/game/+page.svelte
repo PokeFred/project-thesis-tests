@@ -60,6 +60,7 @@
 
     // function printSelected(): void {
     //     console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
+    //     console.log(cloze.selected.filter((e)=> e != undefined).length)
     // }
 
     let showModal: () => void = $state(()=>{});
@@ -154,5 +155,8 @@
         goto("./end"); 
     }}>
      <p>Möchtest du das Rätsel wirklich beenden?</p>
+     {#if cloze.options.length != cloze.selected.filter((e)=> e != undefined).length}
+        <p>Es sind noch nicht alle Felder ausgefüllt.</p>
+     {/if}
 </Modal>
 <button onclick={showModal}>Rätsel beenden</button>
