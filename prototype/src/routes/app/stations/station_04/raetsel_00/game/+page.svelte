@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { PageProps } from "../../../../../$types"
+    import type { PageProps } from "./$types"
     import { type CutoutData } from "$lib/Components/PuzzleGame/Piece.svelte"
     import PuzzleGame from "$lib/Components/PuzzleGame/PuzzleGame.svelte"
 
