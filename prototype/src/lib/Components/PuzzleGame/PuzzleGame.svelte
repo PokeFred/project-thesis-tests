@@ -24,7 +24,7 @@
 <div class="puzzle-game" bind:this={puzzleGame}>
     <figure>
         <!-- <figcaption></figcaption> -->
-        <img src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
+        <img draggable="false" src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
     </figure>
 
     {#each pieces as piece}

@@ -20,7 +20,7 @@
     }
 
     function onDragEnd(data: DragEventData): void {
-        console.log("DRAG END")
+        // console.log("DRAG END")
         if (inRange(data)) {
             snap(data);
             piece.setPlaced(true);
@@ -34,16 +34,17 @@
     }
 
     function onDragStart(data: DragEventData): void {
-        console.log("DRAG START")
+        // console.log("DRAG START")
         piece.setPlaced(false);
     }
 </script>
-<!-- TODO: Fix dragging bug -->
+
 <img
     {src}
     {alt}
     bind:this={piece.puzzlePiece}
     class:puzzle-placed={piece.isPlaced()}
+    draggable="false"
     use:draggable={{
         position: piece.getCurrentPosition(), // zum binden der koordinaten, snap
         onDragEnd: onDragEnd,
