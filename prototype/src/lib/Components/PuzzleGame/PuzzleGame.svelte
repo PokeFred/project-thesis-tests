@@ -7,6 +7,13 @@
     const pieces: Piece[] = cutoutData.map((cutout: any) => new Piece(path, cutout))
     
     let puzzleGame: HTMLDivElement;
+    
+    let naturalWidth: number = $state(0);
+    let naturalHeight: number = $state(0);
+    let clientWidth: number = $state(0);
+    let clientHeight: number = $state(0);
+    let scaleWidth = $derived(clientWidth / naturalWidth);
+    let scaleHeight = $derived(clientHeight / naturalHeight);
 
     function winCondition() {
         return pieces.every((e) => e.isPlaced() === true);
@@ -16,11 +23,11 @@
 <div class="puzzle-game" bind:this={puzzleGame}>
     <figure>
         <!-- <figcaption></figcaption> -->
-        <img src={`${path}/${backgroundSrc}`} {alt} />
+        <img src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
     </figure>
 
     {#each pieces as piece}
-        <PuzzleSlot {piece} />
+        <PuzzleSlot {piece} {scaleWidth} {scaleHeight}/>
     {/each}
 
     <div class="puzzle-piece-container">
@@ -29,7 +36,8 @@
                 src={piece.src}
                 alt="icon"
                 {piece}
-                {puzzleGame}
+                {scaleWidth}
+                {scaleHeight}
                 {winCondition}
             />
         {/each}
