@@ -1,0 +1,65 @@
+[
+  {
+    "src": "Auswahl_0.png",
+    "x": 88,
+    "y": 175,
+    "width": 28,
+    "height": 37
+  },
+  {
+    "src": "Auswahl_1.png",
+    "x": 141,
+    "y": 189,
+    "width": 23,
+    "height": 23
+  },
+  {
+    "src": "Auswahl_2.png",
+    "x": 170,
+    "y": 189,
+    "width": 17,
+    "height": 24
+  },
+  {
+    "src": "Auswahl_3.png",
+    "x": 260,
+    "y": 194,
+    "width": 13,
+    "height": 21
+  },
+  {
+    "src": "Auswahl_4.png",
+    "x": 278,
+    "y": 194,
+    "width": 20,
+    "height": 21
+  },
+  {
+    "src": "Auswahl_5.png",
+    "x": 320,
+    "y": 195,
+    "width": 15,
+    "height": 21
+  },
+  {
+    "src": "Auswahl_6.png",
+    "x": 102,
+    "y": 214,
+    "width": 16,
+    "height": 24
+  },
+  {
+    "src": "Auswahl_7.png",
+    "x": 162,
+    "y": 216,
+    "width": 8,
+    "height": 22
+  },
+  {
+    "src": "Auswahl_8.png",
+    "x": 142,
+    "y": 220,
+    "width": 14,
+    "height": 18
+  }
+]
