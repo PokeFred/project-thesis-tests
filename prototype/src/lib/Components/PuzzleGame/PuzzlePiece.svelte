@@ -20,6 +20,7 @@
     }
 
     function onDragEnd(data: DragEventData): void {
+        console.log("DRAG END")
         if (inRange(data)) {
             snap(data);
             piece.setPlaced(true);
@@ -33,6 +34,7 @@
     }
 
     function onDragStart(data: DragEventData): void {
+        console.log("DRAG START")
         piece.setPlaced(false);
     }
 </script>
@@ -47,7 +49,6 @@
         onDragEnd: onDragEnd,
         onDragStart: onDragStart,
         bounds: ".puzzle-game",
-        applyUserSelectHack: false
     }}
     style="
             width: {piece.width * scaleWidth}px;
@@ -55,7 +56,7 @@
             top: {piece.position.y * scaleHeight}px;
             left: {piece.position.x * scaleWidth}px;
         "
-    class="m-1"
+    class="touch-none m-1"
 />
 
 <style>
