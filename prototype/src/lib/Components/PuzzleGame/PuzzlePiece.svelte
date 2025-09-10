@@ -46,6 +46,7 @@
         position: piece.getCurrentPosition(), // zum binden der koordinaten, snap
         onDragEnd: onDragEnd,
         onDragStart: onDragStart,
+        bounds: ".puzzle-game"
     }}
     style="
             width: {piece.width * scaleWidth}px;
