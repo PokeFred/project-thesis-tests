@@ -21,7 +21,7 @@
     }
 </script>
 
-<div class="puzzle-game" bind:this={puzzleGame}>
+<div class="puzzle-game select-none" bind:this={puzzleGame}>
     <figure>
         <!-- <figcaption></figcaption> -->
         <img draggable="false" src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
