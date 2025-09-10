@@ -8,7 +8,7 @@
     let { children }: LayoutProps = $props()
 </script>
 
-<div class="mx-auto w-full max-w-sm h-auto">
+<div class="mx-auto w-full h-auto">
     <div class="w-full h-14 flex justify-between items-center px-4">
         <span class="text-2xl font-bold">Title</span>
         <span>Score: {score.getScore()}</span>
