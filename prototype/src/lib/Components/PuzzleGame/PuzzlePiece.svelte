@@ -6,9 +6,13 @@
     const SNAP_RANGE = 20;
 
     function inRange(data: DragEventData): boolean {
-        const slotDistanceX = piece.position.x - (data.offsetX + data.currentNode.offsetLeft);
-        const slotDistanceY = piece.position.y - (puzzleGame.clientHeight + data.offsetY - data.currentNode.clientHeight);
-        return Math.abs(slotDistanceX) < SNAP_RANGE && Math.abs(slotDistanceY) < SNAP_RANGE;
+        const OFFSET_LEFT_RELATIVE_TO_GAME: number = data.offsetX + data.currentNode.offsetLeft;
+        const OFFSET_TOP_RELATIVE_TO_GAME: number = data.offsetY + data.currentNode.offsetTop;
+
+        const SLOT_DISTANCE_X = (piece.position.x) - (OFFSET_LEFT_RELATIVE_TO_GAME);
+        const SLOT_DISTANCE_Y = (piece.position.y) - (OFFSET_TOP_RELATIVE_TO_GAME);
+        
+        return Math.abs(SLOT_DISTANCE_X) < SNAP_RANGE && Math.abs(SLOT_DISTANCE_Y) < SNAP_RANGE;
     }
 
     function snap(data: any): void {
