@@ -5,9 +5,6 @@
 
     const { path, backgroundSrc, alt, cutoutData }: { path: string; backgroundSrc: string; alt: string; cutoutData:CutoutData[] } = $props();
     const pieces: Piece[] = cutoutData.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5);
-
-    
-    let puzzleGame: HTMLDivElement;
     
     let naturalWidth: number = $state(0);
     let naturalHeight: number = $state(0);
@@ -16,13 +13,13 @@
     let scaleWidth = $derived(clientWidth / naturalWidth);
     let scaleHeight = $derived(clientHeight / naturalHeight);
 
-    function winCondition() {
+    function winCondition(): boolean {
         return pieces.every((e) => e.isPlaced() === true);
     }
 </script>
 
-<div class="puzzle-game select-none" bind:this={puzzleGame}>
-    <figure>
+<div class="puzzle-game inline-block relative select-none">
+    <figure class="m-0">
         <!-- <figcaption></figcaption> -->
         <img draggable="false" src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
     </figure>
@@ -31,7 +28,7 @@
         <PuzzleSlot {piece} {scaleWidth} {scaleHeight}/>
     {/each}
 
-    <div class="puzzle-piece-container flex justify-between rounded-xs">
+    <div class="puzzle-piece-container flex justify-between rounded-xs border-1">
         {#each pieces as piece}
             <PuzzlePiece
                 src={piece.src}
@@ -44,18 +41,3 @@
         {/each}
     </div>
 </div>
-
-<style>
-    .puzzle-piece-container {
-        border: 1px solid black;
-    }
-
-    .puzzle-game {
-        display: inline-block;
-        position: relative;
-    }
-
-    figure {
-        margin: 0px;
-    }
-</style>

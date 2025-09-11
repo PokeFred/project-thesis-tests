@@ -20,7 +20,6 @@
     }
 
     function onDragEnd(data: DragEventData): void {
-        // console.log("DRAG END")
         if (inRange(data)) {
             snap(data);
             piece.setPlaced(true);
@@ -34,7 +33,6 @@
     }
 
     function onDragStart(data: DragEventData): void {
-        // console.log("DRAG START")
         piece.setPlaced(false);
     }
 </script>
