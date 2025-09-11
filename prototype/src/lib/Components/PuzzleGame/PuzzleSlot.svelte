@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type Piece from "./Piece.svelte";
+    import { type Piece } from "./Puzzle.svelte";
     const { piece, scaleWidth, scaleHeight }: { piece: Piece, scaleWidth: number, scaleHeight: number } = $props();
 </script>
 

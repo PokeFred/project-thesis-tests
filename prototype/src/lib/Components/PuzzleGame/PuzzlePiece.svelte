@@ -1,6 +1,6 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import type Piece from "./Piece.svelte";
+    import { type Piece } from "./Puzzle.svelte";
 
     const { src, alt, piece, scaleWidth, scaleHeight, winCondition}: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
     const SNAP_RANGE = 20;

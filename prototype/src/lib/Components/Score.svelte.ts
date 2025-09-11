@@ -2,6 +2,7 @@ export const enum POINTS {
     ANSWER_CORRECT = 10,
     ANSWER_FALSE = -5,
     HINT_UNLOCKED = -3,
+    NOT_ANSWERED = 0
 }
 
 class Score {
