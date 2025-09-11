@@ -4,6 +4,10 @@
     import Modal from "$lib/Components/Modal.svelte";
     import AnswerBox from "$lib/Components/Cloze/AnswerBox.svelte"
     import Cloze from "$lib/Components/Cloze/Cloze.svelte"
+    import { dev } from "$app/environment";
+    
+    // Github pages
+    const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
     const cloze: Cloze = new Cloze(
         [
@@ -90,14 +94,14 @@
 
 <!-- Bild zoom wenn angeklickt? -->
 <figure>
-    <img src="/Coze/Althoff_Teppichlager_01.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_01.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
-    <img src="/Coze/Althoff_Teppichlager_02.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_02.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
@@ -121,14 +125,14 @@
 </p>
 
 <figure>
-    <img src="/Coze/Althoff_Erfrischungsraum_01.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_01.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
-    <img src="/Coze/Althoff_Erfrischungsraum_02.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_02.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
@@ -144,7 +148,7 @@
 </p>
 
 <figure>
-    <img src="/Coze/Althoff.jpg" alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff.jpg"} alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
