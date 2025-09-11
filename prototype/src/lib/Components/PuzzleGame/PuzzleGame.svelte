@@ -31,7 +31,7 @@
         <PuzzleSlot {piece} {scaleWidth} {scaleHeight}/>
     {/each}
 
-    <div class="puzzle-piece-container flex justify-between">
+    <div class="puzzle-piece-container flex justify-between rounded-xs">
         {#each pieces as piece}
             <PuzzlePiece
                 src={piece.src}
