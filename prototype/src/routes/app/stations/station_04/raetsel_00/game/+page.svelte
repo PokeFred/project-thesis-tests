@@ -5,6 +5,7 @@
     import Modal from "$lib/Components/Modal.svelte";
     import { goto } from "$app/navigation";
 
+    // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
 
     const { data }: PageProps = $props()
@@ -16,9 +17,11 @@
         // calculateScore();
         goto("./end"); 
     }}>
-     <p>Möchtest du das Rätsel wirklich beenden?</p>
-     <!-- {#if }
+    <p>Möchtest du das Rätsel wirklich beenden?</p>
+    <!-- {#if }
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
-     {/if} -->
+    {/if} -->
 </Modal>
-<button onclick={showModal}>Rätsel beenden</button>
+<div>
+    <button onclick={showModal}>Rätsel beenden</button>
+</div>

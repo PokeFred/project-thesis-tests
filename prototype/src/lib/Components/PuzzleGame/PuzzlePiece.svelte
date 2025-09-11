@@ -57,7 +57,7 @@
             top: {piece.position.y * scaleHeight}px;
             left: {piece.position.x * scaleWidth}px;
         "
-    class="touch-none m-1 border-2 border-b-indigo-950"
+    class="touch-none m-1 border-1 border-b-indigo-950"
 />
 
 <style>
