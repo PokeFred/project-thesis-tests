@@ -7,15 +7,15 @@
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
-    let calculateScore: () => void = $state(()=>{});
+    let complete: () => void = $state(()=>{});
 
     const { data }: PageProps = $props()
 </script>
 
-<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} cutoutData={data.cutoutData as CutoutData[]} alt={"Puzzel Spiel"} bind:calculateScore={calculateScore}  />
+<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} cutoutData={data.cutoutData as CutoutData[]} alt={"Puzzel Spiel"} bind:complete={complete}  />
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        calculateScore();
+        complete();
         goto("./end"); 
     }}>
     <p>Möchtest du das Rätsel wirklich beenden?</p>

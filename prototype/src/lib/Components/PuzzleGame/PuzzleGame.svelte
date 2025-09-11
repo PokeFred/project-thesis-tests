@@ -2,10 +2,11 @@
     import Puzzle, { type CutoutData, Piece } from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
     import PuzzlePiece from "./PuzzlePiece.svelte";
+    import { gameState } from "$lib/State.svelte";
 
-    let { path, backgroundSrc, alt, cutoutData, calculateScore = $bindable() }: { path: string; backgroundSrc: string; alt: string; cutoutData: CutoutData[]; calculateScore: () => void } = $props();
-    const puzzle: Puzzle = new Puzzle(cutoutData.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5));
-    calculateScore = puzzle.addScore.bind(puzzle);
+    let { path, backgroundSrc, alt, cutoutData, complete = $bindable() }: { path: string; backgroundSrc: string; alt: string; cutoutData: CutoutData[]; complete: () => void } = $props();
+    const puzzle: Puzzle = new Puzzle(gameState.stationStates[3].quizStates[0], cutoutData.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5));
+    complete = puzzle.complete.bind(puzzle);
     
     let naturalWidth: number = $state(0);
     let naturalHeight: number = $state(0);

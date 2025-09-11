@@ -1,4 +1,5 @@
-import { score, POINTS } from "$lib/Score.svelte"
+import { type QuizState, POINTS } from "$lib/State.svelte"
+import { Quiz } from "../Quiz"
 
 export type CutoutData = {
     src: number,
@@ -52,10 +53,11 @@ export class Piece {
     }
 }
 
-export default class Puzzle {
+export default class Puzzle extends Quiz {
     public readonly pieces: Piece[];
 
-    constructor(pieces: Piece[]) {
+    constructor(quizState: QuizState, pieces: Piece[]) {
+        super(quizState);
         this.pieces = pieces;
     }
 
@@ -63,11 +65,11 @@ export default class Puzzle {
         return this.pieces.every((e) => e.isPlaced() === true);
     }
 
-    public addScore(): void {
+    public complete(): void {
         let sum: number = 0;
         this.pieces.forEach((p: Piece)=> {
             sum += p.isPlaced() ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED;
         });
-        score.addScore(sum);
+        super.complete(sum);
     }
 }

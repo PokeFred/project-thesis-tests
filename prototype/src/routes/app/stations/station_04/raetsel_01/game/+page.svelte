@@ -5,11 +5,13 @@
     import AnswerBox from "$lib/Components/Cloze/AnswerBox.svelte"
     import Cloze from "$lib/Components/Cloze/Cloze.svelte"
     import { dev } from "$app/environment";
+    import { gameState } from "$lib/State.svelte";
     
     // Github pages
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
     const cloze: Cloze = new Cloze(
+        gameState.stationStates[3].quizStates[1],
         [
             [
                 { answer: "London", correct: false },
@@ -62,16 +64,13 @@
         ]
     );
 
-    // function printSelected(): void {
+    function printSelected(): void {
     //     console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
     //     console.log(cloze.selected.filter((e)=> e != undefined).length)
-    // }
+    }
 
     let showModal: () => void = $state(()=>{});
 
-    function calculateScore(): void {
-        cloze.addScore();
-    }
 </script>
 
 <!-- <button onclick={printSelected}>Test</button> -->
@@ -155,7 +154,7 @@
 </figure>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        calculateScore();
+        cloze.complete();
         goto("./end"); 
     }}>
      <p>Möchtest du das Rätsel wirklich beenden?</p>
