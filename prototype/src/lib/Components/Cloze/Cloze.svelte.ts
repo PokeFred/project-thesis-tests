@@ -1,4 +1,4 @@
-import { POINTS, score } from "../Score.svelte"
+import { POINTS, score } from "$lib/Score.svelte"
 
 type Answer = {
     readonly answer: string;

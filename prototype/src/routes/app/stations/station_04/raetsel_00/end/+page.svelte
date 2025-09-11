@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { score } from "$lib/Components/Score.svelte";
+    import { score } from "$lib/Score.svelte";
 </script>
 
 <p>

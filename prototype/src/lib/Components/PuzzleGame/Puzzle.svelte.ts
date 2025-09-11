@@ -1,4 +1,4 @@
-import { score, POINTS } from "$lib/Components/Score.svelte"
+import { score, POINTS } from "$lib/Score.svelte"
 
 export type CutoutData = {
     src: number,
