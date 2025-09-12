@@ -13,7 +13,7 @@
 </script>
 
 <div class="w-full h-auto flex justify-between items-center">
-    <button onclick={(): Promise<void> => goto("/app/stations")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
+    <button onclick={(): Promise<void> => goto(".")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
     <h2 class="text-lg underline">Station 04</h2>
