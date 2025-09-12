@@ -17,7 +17,7 @@
     hatte!
 </p>
 
-<p>
+<p class="mb-4">
     Verdiente Punkte: {gameState.stationStates[3].quizStates[1].getScore()} 
 </p>
 

@@ -157,7 +157,7 @@
         cloze.complete();
         goto("./end"); 
     }}>
-     <p>Möchtest du das Rätsel wirklich beenden?</p>
+     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
      {#if cloze.options.length != cloze.selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
      {/if}

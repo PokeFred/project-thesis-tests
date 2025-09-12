@@ -18,7 +18,7 @@
         complete();
         goto("./end"); 
     }}>
-    <p>Möchtest du das Rätsel wirklich beenden?</p>
+    <p>Möchtest du dieses Rätsel wirklich beenden?</p>
     <!-- {#if }
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
     {/if} -->

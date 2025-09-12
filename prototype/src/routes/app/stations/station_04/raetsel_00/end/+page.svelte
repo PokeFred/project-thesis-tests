@@ -2,8 +2,7 @@
     import { gameState } from "$lib/State.svelte";
 </script>
 
-<p>
-    <!-- Ändern, dass nur Punkte angezeigt werden, wenn man das Rätsel neu gelöst hat, gamestate -->
+<p class="mb-4">
     Verdiente Punkte: {gameState.stationStates[3].quizStates[0].getScore()} 
 </p>
 
