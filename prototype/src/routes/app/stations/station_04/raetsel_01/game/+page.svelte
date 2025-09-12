@@ -4,8 +4,14 @@
     import Modal from "$lib/Components/Modal.svelte";
     import AnswerBox from "$lib/Components/Cloze/AnswerBox.svelte"
     import Cloze from "$lib/Components/Cloze/Cloze.svelte"
+    import { dev } from "$app/environment";
+    import { gameState } from "$lib/State.svelte";
+    
+    // Github pages
+    const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
     const cloze: Cloze = new Cloze(
+        gameState.stationStates[3].quizStates[1],
         [
             [
                 { answer: "London", correct: false },
@@ -58,15 +64,13 @@
         ]
     );
 
-    // function printSelected(): void {
+    function printSelected(): void {
     //     console.log(cloze.selected); // muss testen ob undefined (disabled option könnte umgehen werden)
-    // }
+    //     console.log(cloze.selected.filter((e)=> e != undefined).length)
+    }
 
     let showModal: () => void = $state(()=>{});
 
-    function calculateScore(): void {
-        cloze.addScore();
-    }
 </script>
 
 <!-- <button onclick={printSelected}>Test</button> -->
@@ -89,14 +93,14 @@
 
 <!-- Bild zoom wenn angeklickt? -->
 <figure>
-    <img src="/Coze/Althoff_Teppichlager_01.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_01.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
-    <img src="/Coze/Althoff_Teppichlager_02.jpg" alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_02.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
@@ -120,14 +124,14 @@
 </p>
 
 <figure>
-    <img src="/Coze/Althoff_Erfrischungsraum_01.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_01.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <figure>
-    <img src="/Coze/Althoff_Erfrischungsraum_02.jpg" alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_02.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
@@ -143,16 +147,19 @@
 </p>
 
 <figure>
-    <img src="/Coze/Althoff.jpg" alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+    <img src={GITHUB_PAGES_URL + "/Coze/Althoff.jpg"} alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     <figcaption>
         Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
     </figcaption>
 </figure>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        calculateScore();
+        cloze.complete();
         goto("./end"); 
     }}>
      <p>Möchtest du das Rätsel wirklich beenden?</p>
+     {#if cloze.options.length != cloze.selected.filter((e)=> e != undefined).length}
+        <p>Es sind noch nicht alle Felder ausgefüllt.</p>
+     {/if}
 </Modal>
-<button onclick={showModal}>Rätsel beenden</button>
+<button onclick={showModal} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Rätsel beenden</button>

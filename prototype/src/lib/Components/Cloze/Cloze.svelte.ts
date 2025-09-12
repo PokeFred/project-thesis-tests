@@ -1,4 +1,5 @@
-import { POINTS, score } from "../Score.svelte"
+import { Quiz } from "$lib/Components/Quiz";
+import { type QuizState, POINTS } from "$lib/State.svelte";
 
 type Answer = {
     readonly answer: string;
@@ -24,18 +25,19 @@ class Hint {
 }
 
 
-export default class Cloze {
+export default class Cloze extends Quiz {
     public readonly options: Answer[][];
     public readonly hints: Hint[];
     public selected: Answer[];
 
-    constructor(options: Answer[][], hints: string[]) {
+    constructor(quizState: QuizState, options: Answer[][], hints: string[]) {
+        super(quizState);
         this.options = options;
-        this.selected = Array(options.length);
+        this.selected = $state(Array(options.length));
         this.hints = hints.map((hint: string) => new Hint(hint));
     }
 
-    public getPoints(): number {
+    public complete(): void {
         let sum: number = 0;
         this.selected.forEach((answer: Answer) => {
             if(answer != undefined) {
@@ -45,10 +47,6 @@ export default class Cloze {
         this.hints.forEach((hint: Hint)=>{
             sum += hint.isUnlocked() ? POINTS.HINT_UNLOCKED : 0;
         });
-        return sum > 0 ? sum : 0;
-    }
-
-    public addScore(): void {
-        score.addScore(this.getPoints());
+        super.complete(sum);
     }
 }

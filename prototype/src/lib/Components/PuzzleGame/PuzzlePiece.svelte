@@ -1,6 +1,6 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import type Piece from "./Piece.svelte";
+    import { type Piece } from "./Puzzle.svelte";
 
     const { src, alt, piece, scaleWidth, scaleHeight, winCondition}: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
     const SNAP_RANGE = 20;
@@ -20,7 +20,6 @@
     }
 
     function onDragEnd(data: DragEventData): void {
-        // console.log("DRAG END")
         if (inRange(data)) {
             snap(data);
             piece.setPlaced(true);
@@ -34,7 +33,6 @@
     }
 
     function onDragStart(data: DragEventData): void {
-        // console.log("DRAG START")
         piece.setPlaced(false);
     }
 </script>
@@ -57,7 +55,7 @@
             top: {piece.position.y * scaleHeight}px;
             left: {piece.position.x * scaleWidth}px;
         "
-    class="touch-none m-1"
+    class="touch-none m-1 border-1 border-b-indigo-950"
 />
 
 <style>

@@ -31,7 +31,7 @@
                     <div class="text-left">{station.text}</div>
                 </div>
             {:else if station.state === "OPEN"}
-                <button onclick={(): Promise<void> => goto(`/app/stations/${station.tag}`)} class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
+                <button onclick={(): Promise<void> => goto(`./stations/${station.tag}`)} class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
                     <Icon data={faClock} class="w-6 h-6" />
                     <div class="text-left">{station.text}</div>
                 </button>
