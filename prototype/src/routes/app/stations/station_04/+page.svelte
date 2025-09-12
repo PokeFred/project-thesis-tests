@@ -12,10 +12,40 @@
     <button onclick={(): Promise<void> => goto("/app/stations")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
-    <div class="text-lg underline">Station 04</div>
+    <h2 class="text-lg underline">Station 04</h2>
     <div></div>
 </div>
-<div class="mt-3 w-full h-auto text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus labore quo possimus veniam quos iusto ab provident non corporis dolor nemo molestiae perspiciatis natus, quia, maxime corrupti! Eos, voluptas accusamus.</div>
+
+<h3 class="underline mt-2">Werbung und Kundenbindung – Die Macht der Verführung</h3>
+<p class="mt-3 w-full h-auto text-sm">Stell Dir vor, Du spazierst durch eine belebte Einkaufsstraße – überall leuchten prachtvolle Schaufenster, Plakate locken mit Sonderangeboten, und Litfaßsäulen präsentieren die neuesten Trends. Genau so war es, als die ersten großen Warenhäuser zu Beginn des 20. Jahrhunderts eröffneten!</p>
+
+<p class="mt-3 w-full h-auto text-sm">Diese neuen Einkaufswelten waren mehr als nur Geschäfte – sie waren echte Erlebnisorte. Die Waren wurden nicht nur verkauft, sondern kunstvoll in Szene gesetzt, um Kund*innen in ihren Bann zu ziehen. Doch das war nicht alles: Werbung wurde zum Schlüssel, um die Menschen von bestimmten Marken zu überzeugen.</p>
+
+<p class="mt-3 w-full h-auto text-sm">Im 20. Jahrhundert begannen Hersteller*innen, eigene Marken aufzubauen – mit auffälligen Logos, speziellen Verpackungen und cleveren Werbeslogans. Die Botschaft war klar: „Dieses Produkt ist besonders – und Du brauchst es!“</p>
+
+<h3 class="underline mt-2">Warenhäuser in Dortmund: </h3>
+
+<p class="mt-3 w-full h-auto text-sm">Auch in Dortmund gab es eine Fülle an Warenhäusern, die innerhalb kürzester Zeit am Westenhellweg ihre Türen öffneten. Dazu gehörten das 1905 gegründete Textilhaus Heerbeck, der vierstöckige Neubau des Porzellan- und Glaswaren-Kaufhauses Sternberg & Co, das Textilkaufhaus der Gebrüder Kaufmann, das Warenhaus Hettlage & Co und das Textilkaufhaus Clemens.</p>
+
+<figure>
+    <img src="/station_04/Sternberg.jpg" alt="Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 (Foto: Stadtarchiv Dortmund)">
+    <figcaption class="text-sm">Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
+</figure>
+
+<p class="mt-3 w-full h-auto text-sm">Am beeindruckendsten war jedoch das am 7. Dezember 1904 eingeweihte Warenhaus Althoff.</p>
+
+<figure>
+    <img src="/station_04/Althoff.jpg" alt="Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg (Foto: Stadtarchiv Dortmund).">
+    <figcaption class="text-sm">Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
+</figure>
+
+<div class="mt-3 w-full h-auto flex justify-center items-center">
+    <div class="mr-3 text-sm shrink-0">Geschafft:</div>
+    <div class="w-full h-4 bg-gray-500/25 rounded-xl">
+        <div class="w-[{(gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100}%] h-4 bg-gray-500/60 rounded-xl"></div>
+        <!-- {console.log((gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100)} -->
+    </div>
+</div>
 
 <div class="mt-3 w-full h-auto grid grid-cols-1 gap-2">
     <div class="w-full h-auto bg-green-500/15 border-2 border-green-500 rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">

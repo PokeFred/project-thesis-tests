@@ -8,23 +8,23 @@
     <button onclick={(): Promise<void> => goto("..")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
-    <div class="text-lg underline">Rätsel 01</div>
+    <h2 class="text-lg underline">Rätsel 01</h2>
     <div></div>
 </div>
 
-<p class="my-2">
+<p class="my-4 w-full h-auto text-sm">
     Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500
     Mitarbeitenden das größte Warenhaus außerhalb Berlins.
 </p>
 
-<p class="my-2">
+<p class="my-4 w-full h-auto text-sm">
     Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren
     erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist
     der richtige und muss in die freie Lücke eingesetzt werden.
 </p>
 
-<section class="my-2">
-    <h2>Punkteverteilung:</h2>
+<section class="my-4 w-full h-auto text-sm">
+    <h2 class="underline">Punkteverteilung:</h2>
     <ul>
         <li>+10 Punkte für die richtige Antwort</li>
         <li>-3 Punkte für benutzen Hinweis</li>

@@ -75,8 +75,8 @@
 
 <!-- <button onclick={printSelected}>Test</button> -->
 
-<h2>Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
-<p>
+<h2 class="underline">Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
+<p class="my-4 w-full h-auto text-sm">
     Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
     Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
     in <AnswerBox {cloze} index={0}/> und wurde von Otto Engler entworfen. Fast <AnswerBox {cloze} index={1}/> Menschen strömten
@@ -84,8 +84,7 @@
     Hansaplatz.
 </p>
 
-
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Neben Luxuswaren, wie teuren <AnswerBox {cloze} index={2}/> und einer großen Auswahl an Teppichen
     wurden auch Produkte des täglichen Bedarfs verkauft – sehr zum Ärger der
     Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.
@@ -94,26 +93,22 @@
 <!-- Bild zoom wenn angeklickt? -->
 <figure>
     <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_01.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
-    <figcaption>
-        Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
-    </figcaption>
+    <figcaption class="text-sm">Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
 <figure>
     <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_02.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
-    <figcaption>
-        Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
-    </figcaption>
+    <figcaption class="text-sm">Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Eine Besonderheit war die Lebensmittelabteilung, die als erste ihrer Art in
     einem deutschen Warenhaus galt. Hier wurden neben Grundnahrungsmitteln,
     frischem Obst, teurem Champagner und Weinen, als Delikatesse geltende Hummer
     in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und <AnswerBox {cloze} index={3}/> verkauft.
 </p>
 
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Die Innenausstattung des Warenhauses war ebenso beeindruckend wie das
     Warenangebot: Wände aus <AnswerBox {cloze} index={4}/>, kunstvolle Verglasungen und elegante Leuchter
     aus Bronze sorgten für eine luxuriöse Atmosphäre. Im Modell-Salon „für die
@@ -125,19 +120,15 @@
 
 <figure>
     <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_01.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
-    <figcaption>
-        Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
-    </figcaption>
+    <figcaption class="text-sm">Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
 <figure>
     <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_02.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
-    <figcaption>
-        Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
-    </figcaption>
+    <figcaption class="text-sm">Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Besonders waren auch die modernen <AnswerBox {cloze} index={5}/> mit ihren Kabinen aus silbergrauem
     Ahorn. Das Treppenhaus hingegen war mit aufwendigen Glasmalereien verziert.
     Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder
@@ -148,9 +139,7 @@
 
 <figure>
     <img src={GITHUB_PAGES_URL + "/Coze/Althoff.jpg"} alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
-    <figcaption>
-        Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.
-    </figcaption>
+    <figcaption class="text-sm">Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {

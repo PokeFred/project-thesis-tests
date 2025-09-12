@@ -2,13 +2,13 @@
     import { gameState } from "$lib/State.svelte"
 </script>
 
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Super, Du hast alle Lücken ausgefüllt! Jetzt kannst Du Dir vielleicht
     vorstellen, wie das Warenhaus Althoff früher ausgesehen hat und wie
     beeindruckend es auf die Menschen der damaligen Zeit gewirkt haben muss.
 </p>
 
-<p>
+<p class="my-4 w-full h-auto text-sm">
     Die Bilder zeigen das sich über zwei Etagen erstreckende, prachtvoll
     ausgestattete Teppichlager – dort wurden übrigens regelmäßig Märchen für
     Kinder aufgeführt –, den beeindruckenden Erfrischungsraum sowie das Gebäude
@@ -17,7 +17,7 @@
     hatte!
 </p>
 
-<p class="mb-4">
+<p class="my-4 w-full h-auto text-sm">
     Verdiente Punkte: {gameState.stationStates[3].quizStates[1].getScore()} 
 </p>
 
