@@ -6,6 +6,10 @@
     import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
     import { faKey } from "@fortawesome/free-solid-svg-icons/faKey"
     import { gameState } from "$lib/State.svelte"
+    import { dev } from "$app/environment";
+
+    // Github pages
+    const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 </script>
 
 <div class="w-full h-auto flex justify-between items-center">
@@ -28,14 +32,14 @@
 <p class="mt-3 w-full h-auto text-sm">Auch in Dortmund gab es eine Fülle an Warenhäusern, die innerhalb kürzester Zeit am Westenhellweg ihre Türen öffneten. Dazu gehörten das 1905 gegründete Textilhaus Heerbeck, der vierstöckige Neubau des Porzellan- und Glaswaren-Kaufhauses Sternberg & Co, das Textilkaufhaus der Gebrüder Kaufmann, das Warenhaus Hettlage & Co und das Textilkaufhaus Clemens.</p>
 
 <figure>
-    <img src="/station_04/Sternberg.jpg" alt="Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 (Foto: Stadtarchiv Dortmund)">
+    <img src={GITHUB_PAGES_URL + "/station_04/Sternberg.jpg"} alt="Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 (Foto: Stadtarchiv Dortmund)">
     <figcaption class="text-sm">Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
 </figure>
 
 <p class="mt-3 w-full h-auto text-sm">Am beeindruckendsten war jedoch das am 7. Dezember 1904 eingeweihte Warenhaus Althoff.</p>
 
 <figure>
-    <img src="/station_04/Althoff.jpg" alt="Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg (Foto: Stadtarchiv Dortmund).">
+    <img src={GITHUB_PAGES_URL + "/station_04/Althoff.jpg"} alt="Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg (Foto: Stadtarchiv Dortmund).">
     <figcaption class="text-sm">Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
 </figure>
 
@@ -43,7 +47,6 @@
     <div class="mr-3 text-sm shrink-0">Geschafft:</div>
     <div class="w-full h-4 bg-gray-500/25 rounded-xl">
         <div class="w-[{(gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100}%] h-4 bg-gray-500/60 rounded-xl"></div>
-        <!-- {console.log((gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100)} -->
     </div>
 </div>
 
