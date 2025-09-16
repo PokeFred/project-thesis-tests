@@ -4,13 +4,13 @@ export class UserLocation {
     private lat: number
     private lon: number
     private acc: number
-    private date: Date
+    private timestamp: Date
 
     private constructor(lat: number, lon: number, acc: number, timestamp: number) {
         this.lat = lat
         this.lon = lon
         this.acc = acc
-        this.date = new Date(timestamp)
+        this.timestamp = new Date(timestamp)
     }
 
     public getLat(): number {
@@ -25,8 +25,8 @@ export class UserLocation {
         return this.acc
     }
 
-    public getDate(): Date {
-        return this.date
+    public getTimestamp(): Date {
+        return this.timestamp
     }
 
     public static async fetchLocation(): Promise<UserLocation> {
