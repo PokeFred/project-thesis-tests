@@ -1,9 +1,9 @@
 <!-- Lückentext Rätsel -->
 <script lang="ts">
     import { goto, preloadCode, preloadData} from "$app/navigation";
-    import Modal from "$lib/Components/Modal.svelte";
-    import AnswerBox from "$lib/Components/Cloze/AnswerBox.svelte"
-    import Cloze from "$lib/Components/Cloze/Cloze.svelte"
+    import Modal from "$components/Modal.svelte";
+    import AnswerBox from "$components/Cloze/AnswerBox.svelte"
+    import Cloze from "$components/Cloze/Cloze.svelte"
     import { dev } from "$app/environment";
     import { gameState } from "$lib/State.svelte";
     

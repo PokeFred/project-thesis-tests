@@ -1,9 +1,9 @@
 <script lang="ts">
     import "../app.css"
     import type { LayoutProps } from "./$types"
+    import { gameState } from "$lib/State.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
-    import { gameState } from "$lib/State.svelte";
 
     let { children }: LayoutProps = $props()
 </script>
@@ -12,7 +12,7 @@
     <div class="w-full h-14 flex justify-between items-center px-4">
         <span class="text-2xl font-bold">Title</span>
         <span>Score: {gameState.getScore()}</span>
-        <Icon data={faBars} class="w-8 h-8" />
+        <Icon data={faBars} class="w-8 h-8 cursor-pointer" />
     </div>
     <div class="w-full h-auto border-t border-black p-4">
         {@render children()}
