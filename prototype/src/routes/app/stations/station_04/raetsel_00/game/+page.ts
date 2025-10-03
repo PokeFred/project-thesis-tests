@@ -7,6 +7,6 @@ export const load: PageLoad = async ({ fetch }) => {
 	return {
 		path: path,
 		backgroundSrc: backgroundSrc,
-		cutoutData: await (await fetch(`${path}/cutouts.json`)).json(),
+		puzzleData: await (await fetch(`${path}/cutouts.json`)).json(),
 	}
 }

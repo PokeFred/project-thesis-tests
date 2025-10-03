@@ -1,24 +1,6 @@
 <script lang="ts">
     import { type Piece } from "./Puzzle.svelte";
-    const { piece, scaleWidth, scaleHeight }: { piece: Piece, scaleWidth: number, scaleHeight: number } = $props();
+    const { piece }: { piece: Piece } = $props();
 </script>
 
-<div
-    bind:this={piece.puzzleSlot}
-    class:puzzle-not-placed={!piece.isPlaced()}
-    style="
-            width: {piece.width * scaleWidth}px;
-            height: {piece.height * scaleHeight}px;
-            top: {piece.position.y * scaleHeight}px;
-            left: {piece.position.x * scaleWidth}px;
-        "
-></div>
-
-<style>
-    div {
-        position: absolute;
-    }
-    .puzzle-not-placed {
-        background-color: black;
-    }
-</style>
+<path fill={piece.isPlaced() ? "none" : "black"} d={piece.d} bind:this={piece.puzzleSlot}/>

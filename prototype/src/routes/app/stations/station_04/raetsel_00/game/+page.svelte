@@ -3,7 +3,7 @@
     import PuzzleGame from "$lib/Components/PuzzleGame/PuzzleGame.svelte"
     import Modal from "$lib/Components/Modal.svelte";
     import { goto } from "$app/navigation";
-    import { type CutoutData } from "$lib/Components/PuzzleGame/Puzzle.svelte";
+    import { type PuzzleData } from "$lib/Components/PuzzleGame/Puzzle.svelte";
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
@@ -12,7 +12,7 @@
     const { data }: PageProps = $props()
 </script>
 
-<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} cutoutData={data.cutoutData as CutoutData[]} alt={"Puzzel Spiel"} bind:complete={complete}  />
+<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} puzzleData={data.puzzleData} alt={"Puzzel Spiel"} bind:complete={complete}  />
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         complete();

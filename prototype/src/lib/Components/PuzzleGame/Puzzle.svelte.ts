@@ -1,12 +1,14 @@
 import { type QuizState, POINTS } from "$lib/State.svelte"
 import { Quiz } from "../Quiz"
 
+export type PuzzleData = {
+    viewBox: string
+    cutouts: CutoutData[]
+}
+
 export type CutoutData = {
-    src: number,
-    x: number,
-    y: number,
-    width: number,
-    height: number
+    src: string,
+    d: string
 }
 
 export type Position = {
@@ -16,20 +18,16 @@ export type Position = {
 
 export class Piece {
     public readonly src: string
-    public readonly position: Position
-    public readonly width: number
-    public readonly height: number
+    public readonly d: string
 
-    public puzzleSlot: HTMLDivElement | null
+    public puzzleSlot: SVGPathElement | null
     public puzzlePiece: HTMLImageElement | null
     private currentPosition: Position
     private placed: boolean
 
     constructor(path: string, cutoutData: CutoutData) {
         this.src = `${path}/${cutoutData.src}`;
-        this.position = {x: cutoutData.x, y: cutoutData.y}
-        this.width = cutoutData.width;
-        this.height = cutoutData.height;
+        this.d = cutoutData.d;
         this.puzzleSlot = null;
         this.puzzlePiece = null;
         this.currentPosition = $state({x: 0, y: 0});
