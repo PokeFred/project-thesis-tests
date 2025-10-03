@@ -3,7 +3,6 @@
     import PuzzleGame from "$lib/Components/PuzzleGame/PuzzleGame.svelte"
     import Modal from "$lib/Components/Modal.svelte";
     import { goto } from "$app/navigation";
-    import { type PuzzleData } from "$lib/Components/PuzzleGame/Puzzle.svelte";
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
