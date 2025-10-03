@@ -60,4 +60,4 @@ export const gameState: GameState = new GameState(
         new StationState(4),
         new StationState(0)
     ]
-);
+)

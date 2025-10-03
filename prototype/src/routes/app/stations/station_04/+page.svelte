@@ -1,15 +1,14 @@
 <script lang="ts">
+    import { dev } from "$app/environment"
     import { goto } from "$app/navigation"
+    import { gameState } from "$lib/State.svelte"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
     import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
     import { faKey } from "@fortawesome/free-solid-svg-icons/faKey"
-    import { gameState } from "$lib/State.svelte"
-    import { dev } from "$app/environment";
 
-    // Github pages
-    const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
+    const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype"
 </script>
 
 <div class="w-full h-auto flex justify-between items-center">
@@ -56,13 +55,13 @@
         <div class="text-left">Aufgabe: ???</div>
     </div>
     <a href="./station_04/raetsel_00/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
-        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[0].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">
+        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[0].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 00</div>
         </div>
     </a>
     <a href="./station_04/raetsel_01/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
-        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[1].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default p-4">
+        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[1].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 01</div>
         </div>

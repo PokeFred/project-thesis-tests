@@ -11,8 +11,6 @@
     }
 </script>
 
-
-
 <dialog bind:this={dialog} class="max-w-sm m-4 p-4 place-self-center border-2 rounded-2xl">
     {@render children()}
     <div class="flex flex-nowrap justify-end mt-4">
