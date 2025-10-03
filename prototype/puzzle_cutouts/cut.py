@@ -25,22 +25,22 @@ def createPuzzlePiece(svg):
     result = result.crop(bBoxFixed)
     return result
 
-def createPath(description):
-    return ElementTree.Element("path", {
-        "fill": "black",
-        # "stroke": "black",
-        # "stroke-width": "1",
-        "d": description
-    })
+# def createPath(description):
+#     return ElementTree.Element("path", {
+#         "fill": "black",
+#         # "stroke": "black",
+#         # "stroke-width": "1",
+#         "d": description
+#     })
 
-def createPaths(path):
-    pathDescriptions = re.split(r'(?=M)',path.get("d"))
-    pathDescriptions.pop(0)
-    paths = []
-    for description in pathDescriptions:
-        newPath = createPath(description)
-        paths.append(newPath)
-    return paths
+# def createPaths(path):
+#     pathDescriptions = re.split(r'(?=M)',path.get("d"))
+#     pathDescriptions.pop(0)
+#     paths = []
+#     for description in pathDescriptions:
+#         newPath = createPath(description)
+#         paths.append(newPath)
+#     return paths
 
 
 
@@ -59,10 +59,15 @@ svg = tree.getroot()
 svg.attrib.pop("width")
 svg.attrib.pop("height")
 
-path = svg.find(".//svg:path", NAMESPACE)
+# FALLS ALLE PATHS IN EINEM PATH SIND GETRENNT. IN "d" GETRENNT MIT "M"
+# path = svg.find(".//svg:path", NAMESPACE)
+# paths = createPaths(path)
+# svg.remove(path)
 
-paths = createPaths(path)
-svg.remove(path)
+paths = svg.findall(".//svg:path", NAMESPACE)
+for path in paths:
+    path.set("fill", "black")
+    svg.remove(path)
 
 cutouts = {
     "viewBox": svg.attrib["viewBox"],
@@ -80,6 +85,7 @@ for i, path in enumerate(paths):
         "src": f"Auswahl_{i}.png",
         "d": path.get("d")
     })
+    print(path.get("d"))
 
     svg.remove(path)
 
