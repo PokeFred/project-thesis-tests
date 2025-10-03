@@ -17,17 +17,20 @@
 </script>
 
 <div class="puzzle-game inline-block relative select-none">
-    <figure class="m-0">
+    <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
         <img draggable="false" src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
+    
+        <svg viewBox={puzzleData.viewBox} class="absolute top-0 left-0">
+            {#each puzzle.pieces as piece}
+                <PuzzleSlot {piece} />
+            {/each}
+        </svg>
     </figure>
 
-    <svg viewBox={puzzleData.viewBox} class="absolute top-0 left-0">
-        {#each puzzle.pieces as piece}
-            <PuzzleSlot {piece} />
-        {/each}
-    </svg>
+    
 
+    
     <div class="puzzle-piece-container flex justify-between rounded-xs border-1">
         {#each puzzle.pieces as piece}
             <PuzzlePiece
@@ -40,4 +43,5 @@
             />
         {/each}
     </div>
+
 </div>
