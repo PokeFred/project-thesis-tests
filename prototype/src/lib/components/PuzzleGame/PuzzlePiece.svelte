@@ -61,7 +61,7 @@
             width: {slotBbox.width * scaleWidth}px;
             height: {slotBbox.height * scaleHeight}px;
         "
-    class="touch-none m-1 border-1 border-b-indigo-950"
+    class="touch-none m-1"
 />
 
 <style>
