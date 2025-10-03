@@ -1,8 +1,8 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import PuzzleGame from "$lib/Components/PuzzleGame/PuzzleGame.svelte"
-    import Modal from "$lib/Components/Modal.svelte";
-    import { goto } from "$app/navigation";
+    import PuzzleGame from "$components/PuzzleGame/PuzzleGame.svelte"
+    import Modal from "$components/Modal.svelte"
+    import { goto } from "$app/navigation"
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
