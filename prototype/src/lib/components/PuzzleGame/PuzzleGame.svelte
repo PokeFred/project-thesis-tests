@@ -31,7 +31,7 @@
     
 
     
-    <div class="puzzle-piece-container flex justify-between rounded-xs border-1">
+    <div class="puzzle-piece-container flex flex-wrap justify-between rounded-xs border-1">
         {#each puzzle.pieces as piece}
             <PuzzlePiece
                 src={piece.src}
