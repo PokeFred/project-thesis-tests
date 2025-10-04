@@ -1,18 +1,19 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
+    import Modal from "$components/Modal.svelte";
+    import PuzzleGame from "$components/PuzzleGame/PuzzleGame.svelte";
     import type { PageProps } from "./$types"
-    import PuzzleGame from "$components/PuzzleGame/PuzzleGame.svelte"
-    import Modal from "$components/Modal.svelte"
-    import { goto } from "$app/navigation"
     import { gameState } from "$lib/State.svelte";
+
+    const { data }: PageProps = $props()
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
     let complete: () => void = $state(()=>{});
 
-    const { data }: PageProps = $props()
 </script>
 
-<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} puzzleData={data.puzzleData} alt={"Puzzel Spiel"} bind:complete={complete} quizState={gameState.stationStates[3].quizStates[0]} />
+<PuzzleGame path={data.path} backgroundSrc={data.backgroundSrc} puzzleData={data.puzzleData} alt={"Puzzel Spiel"} bind:complete={complete} quizState={gameState.stationStates[3].quizStates[1]} />
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         complete();

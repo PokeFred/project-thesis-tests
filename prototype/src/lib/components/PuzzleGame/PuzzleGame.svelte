@@ -2,10 +2,10 @@
     import Puzzle, { type PuzzleData, Piece } from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
     import PuzzlePiece from "./PuzzlePiece.svelte";
-    import { gameState } from "$lib/State.svelte";
+    import { gameState, QuizState } from "$lib/State.svelte";
 
-    let { path, backgroundSrc, alt, puzzleData, complete = $bindable() }: { path: string; backgroundSrc: string; alt: string; puzzleData: PuzzleData; complete: () => void } = $props();
-    const puzzle: Puzzle = new Puzzle(gameState.stationStates[3].quizStates[0], puzzleData.cutouts.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5));
+    let { path, backgroundSrc, alt, puzzleData, complete = $bindable(), quizState }: { path: string; backgroundSrc: string; alt: string; puzzleData: PuzzleData; complete: () => void; quizState: QuizState } = $props();
+    const puzzle: Puzzle = new Puzzle(quizState, puzzleData.cutouts.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5));
     complete = puzzle.complete.bind(puzzle);
     
     let naturalWidth: number = $state(0);

@@ -11,7 +11,7 @@
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
     const cloze: Cloze = new Cloze(
-        gameState.stationStates[3].quizStates[1],
+        gameState.stationStates[3].quizStates[2],
         [
             [
                 { answer: "London", correct: false },

@@ -60,8 +60,14 @@
             <div class="text-left">Rätsel 00</div>
         </div>
     </a>
-    <a href="./station_04/raetsel_01/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
+    <a href="./station_04/raetsel_000/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
         <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[1].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
+            <Icon data={faClock} class="w-6 h-6" />
+            <div class="text-left">Rätsel 000</div>
+        </div>
+    </a>
+    <a href="./station_04/raetsel_01/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
+        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[2].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 01</div>
         </div>
