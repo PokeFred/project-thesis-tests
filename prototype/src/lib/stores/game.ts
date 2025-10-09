@@ -6,9 +6,14 @@ type GameState = {
     score: number
 }
 
+// TODO load from localstorage
 const state: Writable<GameState> = writable<GameState>({
     isRunning: false,
     score: 0
+})
+
+state.subscribe((value: GameState) => {
+    // TODO write in localstorage
 })
 
 function startGame() {}

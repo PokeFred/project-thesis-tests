@@ -10,7 +10,7 @@
 
     let { children }: LayoutProps = $props()
 
-    let open: boolean = $state(true)
+    let open: boolean = $state(false)
     function toggle(): void {
         open = !open
     }
