@@ -2,6 +2,7 @@
     import { goto } from "$app/navigation"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
+    import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
 </script>
 
 <div class="w-full h-auto flex justify-between items-center">
@@ -26,10 +27,9 @@
 <section class="my-4 w-full h-auto text-sm">
     <h2 class="underline">Punkteverteilung:</h2>
     <ul>
-        <li>+10 Punkte für die richtige Antwort</li>
+        <li><Icon data={faSquareCheck} class="text-green-500 mr-2"/>+10 Punkte für die richtige Antwort</li>
         <li>-3 Punkte für benutzen Hinweis</li>
         <li>-5 Punkte für falsche Antwort</li>
-        <li>-3 Punkte für benutzen Hinweis</li>
         <li>0 Punkte, wenn Lücke freigelassen wird</li>
     </ul>
 </section>
