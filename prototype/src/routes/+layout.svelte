@@ -30,6 +30,10 @@
         </div>
         <div class="w-full {open ? "h-auto" : "h-0"} overflow-hidden">
             <div class="w-full h-auto border-t border-black grid grid-cols-1 gap-2 p-4">
+                {#if $game.isRunning}
+                    <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
+                    <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
+                {/if}
                 <button onclick={() => goto("/faq")} class="text-left cursor-pointer">FAQ</button>
                 <button onclick={() => goto("/legal")} class="text-left cursor-pointer">Rechtliches</button>
                 <button onclick={() => goto("/imprint")} class="text-left cursor-pointer">Impressum</button>
@@ -44,6 +48,7 @@
                     <div class="w-full h-auto grid grid-cols-1 gap-0">
                         <div class="font-bold underline text-left">Links</div>
                         <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
+                        <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
                     </div>
                 {/if}
                 <div class="w-full h-auto grid grid-cols-1 gap-0">
