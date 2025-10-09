@@ -3,13 +3,28 @@ import type { Writable } from "svelte/store"
 
 type GameState = {
     isRunning: boolean,
-    score: number
+    score: {
+        current: number,
+        max: number
+    },
+    stations: Station[]
 }
+
+type State = "LOCKED" | "OPEN" | "FINISHED"
+type Station = { state: State, tag: string, text: string, points: { current: number, max: number } }
 
 // TODO load from localstorage
 const state: Writable<GameState> = writable<GameState>({
-    isRunning: false,
-    score: 0
+    isRunning: true,
+    score: {
+        current: 1,
+        max: 3
+    },
+    stations: [
+        { state: "FINISHED", tag: "station_01", text: "Station 01", points: { current: 1, max: 1 } },
+        { state: "OPEN", tag: "station_02", text: "Station 02", points: { current: 0, max: 1 } },
+        { state: "LOCKED", tag: "station_03", text: "Station 03", points: { current: 0, max: 1 } }
+    ]
 })
 
 state.subscribe((value: GameState) => {

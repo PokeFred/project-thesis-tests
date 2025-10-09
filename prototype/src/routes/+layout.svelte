@@ -22,7 +22,7 @@
         <div class="w-full h-14 flex justify-between items-center px-4">
             <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Title</button>
             {#if $game.isRunning}
-                <span class="text-xl">{$game.score} <Icon data={faBitcoin} class="w-5 h-5" /></span>
+                <span class="text-xl">{$game.score.current} <Icon data={faBitcoin} class="w-5 h-5" /></span>
             {/if}
             <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                 <Icon data={faBars} class="w-8 h-8" />
@@ -38,10 +38,14 @@
     </div>
     <PageTransition>
         <div class="w-full h-auto p-4">
-            <div class="w-full h-auto text-black border border-black rounded-xl p-4">
-                {@render children()}
-            </div>
+            {@render children()}
             <div class="mt-3 w-full h-auto grid grid-cols-4 px-4">
+                {#if $game.isRunning}
+                    <div class="w-full h-auto grid grid-cols-1 gap-0">
+                        <div class="font-bold underline text-left">Links</div>
+                        <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
+                    </div>
+                {/if}
                 <div class="w-full h-auto grid grid-cols-1 gap-0">
                     <div class="font-bold underline text-left">Links</div>
                     <button onclick={() => goto("/faq")} class="text-left cursor-pointer">FAQ</button>
