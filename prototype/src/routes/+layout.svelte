@@ -1,5 +1,6 @@
 <script lang="ts">
     import "../app.css"
+    import "@fontsource-variable/nunito"
     import type { LayoutProps } from "./$types"
     import { goto } from "$app/navigation"
     import game from "$stores/game"
