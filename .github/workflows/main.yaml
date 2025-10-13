@@ -183,6 +183,7 @@ jobs:
                     port: 22
                     uploads: |
                         ./proof-of-concept-one => /root/projects/automatic/proof-of-concept-one
+                    delete: "true"
     proof-of-concept-two_deploy:
         needs: [proof-of-concept-two_check-test, proof-of-concept-two_unit-test, proof-of-concept-two_build-test, proof-of-concept-two_docker-test]
         runs-on: ubuntu-latest
@@ -198,6 +199,7 @@ jobs:
                     port: 22
                     uploads: |
                         ./proof-of-concept-two => /root/projects/automatic/proof-of-concept-two
+                    delete: "true"
     prototype_deploy:
         needs: [prototype_check-test, prototype_unit-test, prototype_build-test, prototype_docker-test]
         runs-on: ubuntu-latest
@@ -212,6 +214,7 @@ jobs:
                     password: ${{ secrets.SFTP_PASSWORD }}
                     uploads: |
                         ./prototype => /root/projects/automatic/prototype
+                    delete: "true"
     app_deploy:
         needs: [proof-of-concept-one_deploy, proof-of-concept-two_deploy, prototype_deploy]
         runs-on: ubuntu-latest
