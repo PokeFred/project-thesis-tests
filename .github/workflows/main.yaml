@@ -220,7 +220,7 @@ jobs:
             -   name: Checkout repository
                 uses: actions/checkout@v4
             -   name: _?_
-                uses: appleboy/ssh-action@latest
+                uses: appleboy/ssh-action@v1
                 with:
                     host: ${{ secrets.SFTP_HOST }}
                     username: ${{ secrets.SFTP_USER }}
