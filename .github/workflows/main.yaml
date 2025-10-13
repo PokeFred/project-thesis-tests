@@ -6,6 +6,34 @@ on:
             - main
 
 jobs:
+    proof-of-concept-one_check-unit-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run check-tests
+              run: |
+                    cd ./proof-of-concept-one
+                    npm install
+                    npm run test:check
+    proof-of-concept-one_check-unit-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run unit-tests
+              run: |
+                    cd ./proof-of-concept-one
+                    npm install
+                    npm run test:unit
     proof-of-concept-one_build-test:
         runs-on: ubuntu-latest
         steps:
@@ -20,21 +48,6 @@ jobs:
                     cd ./proof-of-concept-one
                     npm install
                     npm run build
-    proof-of-concept-one_check-unit-test:
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Run unit tests
-              run: |
-                    cd ./proof-of-concept-one
-                    npm install
-                    npm run build
-                    npm run test
     proof-of-concept-one_docker-test:
         runs-on: ubuntu-latest
         steps:
