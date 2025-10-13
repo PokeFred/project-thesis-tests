@@ -169,7 +169,7 @@ jobs:
                     docker stop container
                     docker rm container
     proof-of-concept-one_deploy:
-        needs: [prototype_build]
+        needs: [proof-of-concept-one_check-test, proof-of-concept-one_unit-test, proof-of-concept-one_build-test, proof-of-concept-one_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -184,7 +184,7 @@ jobs:
                     uploads: |
                         ./proof-of-concept-one => /root/projects/automatic
     proof-of-concept-two_deploy:
-        needs: [prototype_build]
+        needs: [proof-of-concept-two_check-test, proof-of-concept-two_unit-test, proof-of-concept-two_build-test, proof-of-concept-two_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -199,7 +199,7 @@ jobs:
                     uploads: |
                         ./proof-of-concept-two => /root/projects/automatic
     prototype_deploy:
-        needs: [prototype_build]
+        needs: [prototype_check-test, prototype_unit-test, prototype_build-test, prototype_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
