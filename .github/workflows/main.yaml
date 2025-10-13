@@ -226,9 +226,14 @@ jobs:
                     node-version: 20.x
             -   name: Build the application
                 run: |
-                    cd ./prototype
-                    npm install
-                    npm run build
+                    cd ./proof-of-concept-two
+                    mkdir ./output
+                    docker build -t app ./
+                    docker run -d -p 80:80 --name container app
+                    docker cp container:/usr/local/apache2/htdocs/ ./output
+                    docker stop container
+                    docker rm container
+                    cp -r ./output/htdocs/. ../build/
                     zip -r prototype.zip ./build
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
@@ -247,7 +252,7 @@ jobs:
                     name: prototype_build
                     path: ./
             -   name: _?_
-                uses: Dylan700/sftp-upload-action@1.2.3
+                uses: Dylan700/sftp-upload-action@latest
                 with:
                     server: ${{ secrets.SFTP_HOST }}
                     username: ${{ secrets.SFTP_USER }}
@@ -256,7 +261,7 @@ jobs:
                     uploads: |
                         ./prototype.zip => /root
     app_build:
-        needs: [proof-of-concept-one_build, proof-of-concept-two_build, prototype_build]
+        needs: [proof-of-concept-one_build, proof-of-concept-two_build]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
