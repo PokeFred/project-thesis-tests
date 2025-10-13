@@ -182,7 +182,7 @@ jobs:
                     password: ${{ secrets.SFTP_PASSWORD }}
                     port: 22
                     uploads: |
-                        ./proof-of-concept-one => /root/projects/automatic
+                        ./proof-of-concept-one => /root/projects/automatic/proof-of-concept-one
     proof-of-concept-two_deploy:
         needs: [proof-of-concept-two_check-test, proof-of-concept-two_unit-test, proof-of-concept-two_build-test, proof-of-concept-two_docker-test]
         runs-on: ubuntu-latest
@@ -197,7 +197,7 @@ jobs:
                     password: ${{ secrets.SFTP_PASSWORD }}
                     port: 22
                     uploads: |
-                        ./proof-of-concept-two => /root/projects/automatic
+                        ./proof-of-concept-two => /root/projects/automatic/proof-of-concept-two
     prototype_deploy:
         needs: [prototype_check-test, prototype_unit-test, prototype_build-test, prototype_docker-test]
         runs-on: ubuntu-latest
@@ -212,4 +212,26 @@ jobs:
                     password: ${{ secrets.SFTP_PASSWORD }}
                     port: 22
                     uploads: |
-                        ./prototype => /root/projects/automatic
+                        ./prototype => /root/projects/automatic/prototype
+    app_deploy:
+        needs: [proof-of-concept-one_deploy, proof-of-concept-two_deploy, prototype_deploy]
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            -   name: _?_
+                uses: appleboy/ssh-action@latest
+                with:
+                    host: ${{ secrets.SFTP_HOST }}
+                    username: ${{ secrets.SFTP_USER }}
+                    key: ${{ secrets.SFTP_PASSWORD }}
+                    script: |
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-one -f ./compose.yaml build project-thesis_proof-of-concept-one --no-cache
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-two -f ./compose.yaml build project-thesis_proof-of-concept-two --no-cache
+                        docker compose --project-directory /root/projects/automatic/prototype -f ./compose.yaml build project-thesis_prototype --no-cache
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-one -f ./compose.yaml down project-thesis_proof-of-concept-one
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-two -f ./compose.yaml down project-thesis_proof-of-concept-two
+                        docker compose --project-directory /root/projects/automatic/prototype -f ./compose.yaml down project-thesis_prototype
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-one -f ./compose.yaml up project-thesis_proof-of-concept-one -d --build
+                        docker compose --project-directory /root/projects/automatic/proof-of-concept-two -f ./compose.yaml up project-thesis_proof-of-concept-two -d --build
+                        docker compose --project-directory /root/projects/automatic/prototype -f ./compose.yaml up project-thesis_prototype -d --build
