@@ -225,4 +225,4 @@ jobs:
                     username: ${{ secrets.SFTP_USER }}
                     password: ${{ secrets.SFTP_PASSWORD }}
                     script: |
-                        ./root/projects/automatic/refresh.sh
+                        ./projects/automatic/refresh.sh
