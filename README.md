@@ -2,12 +2,12 @@
 
 ## proof-of-concept-one
 
-https://pokefred.github.io/project-thesis-tests/proof-concept-one/
+https://proof-of-concept-one.cedric-paelmke.de/
 
 ## proof-of-concept-two
 
-https://pokefred.github.io/project-thesis-tests/proof-concept-two/
+https://proof-of-concept-two.cedric-paelmke.de/
 
 ## prototype
 
-https://pokefred.github.io/project-thesis-tests/prototype/
+https://projektarbeit.cedric-paelmke.de/
