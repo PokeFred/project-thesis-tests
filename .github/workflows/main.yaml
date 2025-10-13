@@ -210,7 +210,6 @@ jobs:
                     server: ${{ secrets.SFTP_HOST }}
                     username: ${{ secrets.SFTP_USER }}
                     password: ${{ secrets.SFTP_PASSWORD }}
-                    port: 22
                     uploads: |
                         ./prototype => /root/projects/automatic/prototype
     app_deploy:
@@ -224,7 +223,7 @@ jobs:
                 with:
                     host: ${{ secrets.SFTP_HOST }}
                     username: ${{ secrets.SFTP_USER }}
-                    key: ${{ secrets.SFTP_PASSWORD }}
+                    password: ${{ secrets.SFTP_PASSWORD }}
                     script: |
                         docker compose --project-directory /root/projects/automatic/proof-of-concept-one -f ./compose.yaml build project-thesis_proof-of-concept-one --no-cache
                         docker compose --project-directory /root/projects/automatic/proof-of-concept-two -f ./compose.yaml build project-thesis_proof-of-concept-two --no-cache
