@@ -168,90 +168,12 @@ jobs:
                     docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
-    proof-of-concept-one_build:
-        needs: [proof-of-concept-one_check-test, proof-of-concept-one_unit-test, proof-of-concept-one_build-test, proof-of-concept-one_docker-test]
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            -   name: Create build folder
-                run: mkdir ./build
-            -   name: Build the application
-                run: |
-                    cd ./proof-of-concept-one
-                    mkdir ./output
-                    docker build -t app ./
-                    docker run -d -p 80:80 --name container app
-                    docker cp container:/usr/local/apache2/htdocs/ ./output
-                    docker stop container
-                    docker rm container
-                    cp -r ./output/htdocs/. ../build/
-            -   name: Upload build artifact
-                uses: actions/upload-artifact@v4
-                with:
-                    name: proof-of-concept-one_build
-                    path: ./build
-    proof-of-concept-two_build:
-        needs: [proof-of-concept-two_check-test, proof-of-concept-two_unit-test, proof-of-concept-two_build-test, proof-of-concept-two_docker-test]
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            -   name: Create build folder
-                run: mkdir ./build
-            -   name: Build the application
-                run: |
-                    cd ./proof-of-concept-two
-                    mkdir ./output
-                    docker build -t app ./
-                    docker run -d -p 80:80 --name container app
-                    docker cp container:/usr/local/apache2/htdocs/ ./output
-                    docker stop container
-                    docker rm container
-                    cp -r ./output/htdocs/. ../build/
-            -   name: Upload build artifact
-                uses: actions/upload-artifact@v4
-                with:
-                    name: proof-of-concept-two_build
-                    path: ./build
-    prototype_build:
-        needs: [prototype_check-test, prototype_unit-test, prototype_build-test, prototype_docker-test]
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            -   name: Setup NodeJS
-                uses: actions/setup-node@v4
-                with:
-                    node-version: 20.x
-            -   name: Build the application
-                run: |
-                    cd ./prototype
-                    mkdir ./output
-                    docker build -t app ./
-                    docker run -d -p 80:80 --name container app
-                    docker cp container:/usr/local/apache2/htdocs/ ./output
-                    docker stop container
-                    docker rm container
-                    cp -r ./output/htdocs/. ../build/
-                    cd ..
-                    zip -r prototype.zip ./build
-            -   name: Upload build artifact
-                uses: actions/upload-artifact@v4
-                with:
-                    name: prototype_build
-                    path: ./prototype.zip
-    prototype_deploy:
+    proof-of-concept-one_deploy:
         needs: [prototype_build]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            -   name: Download prototype_build into build folder
-                uses: actions/download-artifact@v4
-                with:
-                    name: prototype_build
-                    path: ./
             -   name: _?_
                 uses: Dylan700/sftp-upload-action@latest
                 with:
@@ -260,59 +182,34 @@ jobs:
                     password: ${{ secrets.SFTP_PASSWORD }}
                     port: 22
                     uploads: |
-                        ./prototype.zip => /root
-    app_build:
-        needs: [proof-of-concept-one_build, proof-of-concept-two_build]
+                        ./proof-of-concept-one => /root/projects/automatic
+    proof-of-concept-two_deploy:
+        needs: [prototype_build]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            -   name: Create build folder
-                run: mkdir ./build
-            -   name: Download proof-of-concept-one_build into build folder
-                uses: actions/download-artifact@v4
+            -   name: _?_
+                uses: Dylan700/sftp-upload-action@latest
                 with:
-                    name: proof-of-concept-one_build
-                    path: ./build/proof-concept-one
-            -   name: Download proof-of-concept-two_build into build folder
-                uses: actions/download-artifact@v4
-                with:
-                    name: proof-of-concept-two_build
-                    path: ./build/proof-concept-two
-            -   name: Upload build artifact
-                uses: actions/upload-artifact@v4
-                with:
-                    name: app_build
-                    path: ./build
-    app_deploy:
-        needs: [app_build]
-        environment:
-            name: github-pages
-            url: ${{ steps.deployment.outputs.page_url }}
-        permissions:
-            contents: "read"
-            id-token: "write"
-            pages: "write"
-            actions: "write"
-            checks: "write"
-            deployments: "write"
+                    server: ${{ secrets.SFTP_HOST }}
+                    username: ${{ secrets.SFTP_USER }}
+                    password: ${{ secrets.SFTP_PASSWORD }}
+                    port: 22
+                    uploads: |
+                        ./proof-of-concept-two => /root/projects/automatic
+    prototype_deploy:
+        needs: [prototype_build]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            -   name: Download build artifact
-                uses: actions/download-artifact@v4
+            -   name: _?_
+                uses: Dylan700/sftp-upload-action@latest
                 with:
-                    name: app_build
-                    path: ./build
-            -   name: Setup pages
-                uses: actions/configure-pages@v5
-            -   name: Upload artifacts
-                uses: actions/upload-pages-artifact@v3
-                with:
-                    path: "./build"
-            -   name: Deploy to GitHub-Pages
-                uses: actions/deploy-pages@v4
-                id: deployment
-                env:
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                    server: ${{ secrets.SFTP_HOST }}
+                    username: ${{ secrets.SFTP_USER }}
+                    password: ${{ secrets.SFTP_PASSWORD }}
+                    port: 22
+                    uploads: |
+                        ./prototype => /root/projects/automatic
