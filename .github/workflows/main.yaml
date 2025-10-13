@@ -225,12 +225,4 @@ jobs:
                     username: ${{ secrets.SFTP_USER }}
                     password: ${{ secrets.SFTP_PASSWORD }}
                     script: |
-                        docker compose --project-directory /root/projects -f ./compose.yaml build project-thesis_proof-of-concept-one --no-cache
-                        docker compose --project-directory /root/projects -f ./compose.yaml build project-thesis_proof-of-concept-two --no-cache
-                        docker compose --project-directory /root/projects -f ./compose.yaml build project-thesis_prototype --no-cache
-                        docker compose --project-directory /root/projects -f ./compose.yaml down project-thesis_proof-of-concept-one
-                        docker compose --project-directory /root/projects -f ./compose.yaml down project-thesis_proof-of-concept-two
-                        docker compose --project-directory /root/projects -f ./compose.yaml down project-thesis_prototype
-                        docker compose --project-directory /root/projects -f ./compose.yaml up project-thesis_proof-of-concept-one -d --build
-                        docker compose --project-directory /root/projects -f ./compose.yaml up project-thesis_proof-of-concept-two -d --build
-                        docker compose --project-directory /root/projects -f ./compose.yaml up project-thesis_prototype -d --build
+                        ./root/projects/automatic/refresh.sh
