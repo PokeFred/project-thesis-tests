@@ -226,7 +226,7 @@ jobs:
                     node-version: 20.x
             -   name: Build the application
                 run: |
-                    cd ./proof-of-concept-two
+                    cd ./prototype
                     mkdir ./output
                     docker build -t app ./
                     docker run -d -p 80:80 --name container app
@@ -234,6 +234,7 @@ jobs:
                     docker stop container
                     docker rm container
                     cp -r ./output/htdocs/. ../build/
+                    cd ..
                     zip -r prototype.zip ./build
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
@@ -278,11 +279,6 @@ jobs:
                 with:
                     name: proof-of-concept-two_build
                     path: ./build/proof-concept-two
-            -   name: Download prototype_build into build folder
-                uses: actions/download-artifact@v4
-                with:
-                    name: prototype_build
-                    path: ./build/prototype
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
