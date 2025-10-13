@@ -6,7 +6,7 @@ on:
             - main
 
 jobs:
-    proof-of-concept-one_check-unit-test:
+    proof-of-concept-one_check-test:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -20,7 +20,7 @@ jobs:
                     cd ./proof-of-concept-one
                     npm install
                     npm run test:check
-    proof-of-concept-one_check-unit-test:
+    proof-of-concept-one_unit-test:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -60,6 +60,34 @@ jobs:
                     docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
+    proof-of-concept-two_check-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run check-tests
+              run: |
+                    cd ./proof-of-concept-two
+                    npm install
+                    npm run test:check
+    proof-of-concept-two_unit-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run unit-tests
+              run: |
+                    cd ./proof-of-concept-two
+                    npm install
+                    npm run test:unit
     proof-of-concept-two_build-test:
         runs-on: ubuntu-latest
         steps:
@@ -74,21 +102,6 @@ jobs:
                     cd ./proof-of-concept-two
                     npm install
                     npm run build
-    proof-of-concept-two_check-unit-test:
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Run unit tests
-              run: |
-                    cd ./proof-of-concept-two
-                    npm install
-                    npm run build
-                    npm run test
     proof-of-concept-two_docker-test:
         runs-on: ubuntu-latest
         steps:
@@ -101,6 +114,34 @@ jobs:
                     docker run -d -p 80:80 --name container app
                     docker stop container
                     docker rm container
+    prototype_check-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run check-tests
+              run: |
+                    cd ./prototype
+                    npm install
+                    npm run test:check
+    prototype_unit-test:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout repository
+                uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 20.x
+            - name: Run unit-tests
+              run: |
+                    cd ./prototype
+                    npm install
+                    npm run test:unit
     prototype_build-test:
         runs-on: ubuntu-latest
         steps:
@@ -115,21 +156,6 @@ jobs:
                     cd ./prototype
                     npm install
                     npm run build
-    prototype_check-unit-test:
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout repository
-                uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Run unit tests
-              run: |
-                    cd ./prototype
-                    npm install
-                    npm run build
-                    npm run test
     prototype_docker-test:
         runs-on: ubuntu-latest
         steps:
@@ -143,7 +169,7 @@ jobs:
                     docker stop container
                     docker rm container
     proof-of-concept-one_build:
-        needs: [proof-of-concept-one_build-test, proof-of-concept-one_check-unit-test, proof-of-concept-one_docker-test]
+        needs: [proof-of-concept-one_check-test, proof-of-concept-one_unit-test, proof-of-concept-one_build-test, proof-of-concept-one_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -166,7 +192,7 @@ jobs:
                     name: proof-of-concept-one_build
                     path: ./build
     proof-of-concept-two_build:
-        needs: [proof-of-concept-two_build-test, proof-of-concept-two_check-unit-test, proof-of-concept-two_docker-test]
+        needs: [proof-of-concept-two_check-test, proof-of-concept-two_unit-test, proof-of-concept-two_build-test, proof-of-concept-two_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
@@ -189,7 +215,7 @@ jobs:
                     name: proof-of-concept-two_build
                     path: ./build
     prototype_build:
-        needs: [prototype_build-test, prototype_check-unit-test, prototype_docker-test]
+        needs: [prototype_check-test, prototype_unit-test, prototype_build-test, prototype_docker-test]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
