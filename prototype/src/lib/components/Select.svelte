@@ -2,22 +2,26 @@
 
     let { options }: { options: string[]} = $props();
 
-    let selected: HTMLButtonElement | undefined = undefined;
-    let optionButtons: HTMLButtonElement[];
-
     let show: boolean = $state(false);
+    let selected: HTMLButtonElement = $state(document.createElement("button"));
+    let optionMenu: HTMLDivElement = $state(document.createElement("div"));
+    let width: number = $derived(Math.max(optionMenu.clientWidth, selected.clientWidth));
 
-    function onclick(): void {
+    function showMenu(): void {
         show = !show;
+    }
+
+    function selectOption(option: string): any{
+        selected.textContent = option;
     }
 </script>
 
-<!-- größe des anzeige buttons so groß wie breite content selbst/optionen -->
-<div class="relative inline-block">
-    <button {onclick} class="cursor-pointer px-1 border-1 border-black rounded">Dropdown</button>
-    <div class="absolute {show ? "block" : "hidden"} w-full bg-white rounded shadow-xl z-10">
+<!-- w-[{width}px] -->
+<div class="relative inline-block" style:width={`${width}px`}>
+    <button bind:this={selected} onclick={showMenu} class="cursor-pointer w-full min-h-5 px-1 border-1 border-black rounded" style:width={`${width}px`}></button>
+    <div bind:this={optionMenu} class="absolute block {show ? "visible" : "invisible"} bg-white rounded shadow-xl z-10" >
         {#each options as option }
-            <button class="block w-full cursor-pointer hover:bg-blue-500 hover:text-white">{option}</button>
+            <button onclick={()=>selectOption(option)} class="block w-full cursor-pointer hover:bg-blue-500 hover:text-white" >{option}</button>
         {/each}
     </div>
 </div>
