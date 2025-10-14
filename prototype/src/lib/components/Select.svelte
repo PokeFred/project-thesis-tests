@@ -1,6 +1,5 @@
 <script lang="ts">
-
-    let { options }: { options: string[]} = $props();
+    let { options, onchange = $bindable() }: { options: string[], onchange: (option: string)=>void } = $props();
 
     let show: boolean = $state(false);
     let selected: HTMLButtonElement = $state(document.createElement("button"));
@@ -13,10 +12,10 @@
 
     function selectOption(option: string): any{
         selected.textContent = option;
+        onchange(option);
     }
 </script>
 
-<!-- w-[{width}px] -->
 <div class="relative inline-block" style:width={`${width}px`}>
     <button bind:this={selected} onclick={showMenu} class="cursor-pointer w-full min-h-5 border-1 border-black rounded" style:width={`${width}px`}><span class="invisible">A</span></button>
     <div bind:this={optionMenu} class="absolute block {show ? "visible" : "invisible"} bg-white rounded shadow-xl z-10" >
