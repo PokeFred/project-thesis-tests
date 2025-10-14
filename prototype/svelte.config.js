@@ -16,7 +16,7 @@ const config = {
             privatePrefix: "PRIVATE_"
         },
         alias: {
-            $server: "./src/lib/server",
+            $config: "./src/lib/config",
             $components: "./src/lib/components",
             $utils: "./src/lib/utils",
             $images: "./src/lib/images",

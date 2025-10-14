@@ -2,10 +2,10 @@
     import { goto } from "$app/navigation"
     import game from "$stores/game"
     import Icon from "svelte-awesome"
+    import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
     import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
     import { faKey } from "@fortawesome/free-solid-svg-icons/faKey"
-    import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
 
     import { config, getPuzzleState, getPuzzleScore } from "../game"
 </script>
