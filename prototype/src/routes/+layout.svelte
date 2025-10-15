@@ -23,6 +23,8 @@
 
     function resetGame() {
         $game.isRunning = false
+        $game.score = 0
+        $game.puzzles = []
     }
 </script>
 

@@ -12,10 +12,14 @@
 
     function startGame(): void {
         $game.isRunning = true
+        $game.score = 0
+        $game.puzzles = []
     }
 </script>
 
-<Modal bind:this={modal} onConfirm={confirmModal}>Hey</Modal>
+<Modal bind:this={modal} onConfirm={confirmModal}>
+    <div class="text-center">Akzeptieren und starten...</div>
+</Modal>
 
 <div class="w-full h-auto text-black border border-black rounded-xl p-4">
     <img src="https://placehold.co/600x400.png" alt="" class="w-full h-auto rounded-xl" />
