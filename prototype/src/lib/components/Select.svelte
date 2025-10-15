@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onDestroy } from "svelte";
+
     let { options, onchange = $bindable() }: { options: string[], onchange: (option: string, index: number)=>boolean } = $props();
 
     let show: boolean = $state(false);
@@ -16,12 +18,16 @@
         }
     }
 
-    window.onclick=(event: PointerEvent): void => {
+    function closeOptionsOnWindowClick(event: PointerEvent): void {
         const target = (event.target as HTMLElement);
+        console.log(target.tagName)
         if(!target.matches(".SelectComponent")) {
-            show=false
+            show = false;
         }
-    };
+    }
+
+    window.addEventListener("click",closeOptionsOnWindowClick);
+    onDestroy(()=>window.removeEventListener("click", closeOptionsOnWindowClick));
 </script>
 
 <div class="relative inline-block" style:width={`${width}px`}>
