@@ -20,7 +20,7 @@
 
     function closeOptionsOnWindowClick(event: PointerEvent): void {
         const target = (event.target as HTMLElement);
-        if(!target.matches(".SelectComponent")) {
+        if(!target.matches(".SelectComponent") || target !== selected) {
             show = false;
         }
     }
