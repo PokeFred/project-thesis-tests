@@ -2,15 +2,15 @@
 <script lang="ts">
     import { goto, preloadCode, preloadData} from "$app/navigation";
     import Modal from "$components/Modal.svelte";
-    import AnswerBox from "$components/Cloze/AnswerBox.svelte"
-    import Cloze from "$components/Cloze/Cloze.svelte"
+    import AnswerBox from "$components/MatchingGame/AnswerBox.svelte";
+    import MatchingGame from "$components/MatchingGame/MatchingGame.svelte";
     import { dev } from "$app/environment";
     import { gameState } from "$lib/State.svelte";
     
     // Github pages
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
-    const cloze: Cloze = new Cloze(
+    const matchingGame: MatchingGame = new MatchingGame(
         gameState.stationStates[3].quizStates[2],
         [
             [
@@ -79,13 +79,13 @@
 <p class="my-4 w-full h-auto text-sm">
     Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
     Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
-    in <AnswerBox {cloze} index={0}/> und wurde von Otto Engler entworfen. Fast <AnswerBox {cloze} index={1}/> Menschen strömten
+    in <AnswerBox {matchingGame} index={0} hasHint={true}/> und wurde von Otto Engler entworfen. Fast <AnswerBox {matchingGame} index={1} hasHint={true}/> Menschen strömten
     am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am
     Hansaplatz.
 </p>
 
 <p class="my-4 w-full h-auto text-sm">
-    Neben Luxuswaren, wie teuren <AnswerBox {cloze} index={2}/> und einer großen Auswahl an Teppichen
+    Neben Luxuswaren, wie teuren <AnswerBox {matchingGame} index={2} hasHint={true}/> und einer großen Auswahl an Teppichen
     wurden auch Produkte des täglichen Bedarfs verkauft – sehr zum Ärger der
     Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.
 </p>
@@ -105,12 +105,12 @@
     Eine Besonderheit war die Lebensmittelabteilung, die als erste ihrer Art in
     einem deutschen Warenhaus galt. Hier wurden neben Grundnahrungsmitteln,
     frischem Obst, teurem Champagner und Weinen, als Delikatesse geltende Hummer
-    in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und <AnswerBox {cloze} index={3}/> verkauft.
+    in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und <AnswerBox {matchingGame} index={3} hasHint={true}/> verkauft.
 </p>
 
 <p class="my-4 w-full h-auto text-sm">
     Die Innenausstattung des Warenhauses war ebenso beeindruckend wie das
-    Warenangebot: Wände aus <AnswerBox {cloze} index={4}/>, kunstvolle Verglasungen und elegante Leuchter
+    Warenangebot: Wände aus <AnswerBox {matchingGame} index={4} hasHint={true}/>, kunstvolle Verglasungen und elegante Leuchter
     aus Bronze sorgten für eine luxuriöse Atmosphäre. Im Modell-Salon „für die
     Dame“ konnten die neuesten Modetrends bewundert werden, während der
     sogenannte Erfrischungsraum mit einem neun Meter langen Buffet, einem
@@ -129,12 +129,12 @@
 </figure>
 
 <p class="my-4 w-full h-auto text-sm">
-    Besonders waren auch die modernen <AnswerBox {cloze} index={5}/> mit ihren Kabinen aus silbergrauem
+    Besonders waren auch die modernen <AnswerBox {matchingGame} index={5} hasHint={true}/> mit ihren Kabinen aus silbergrauem
     Ahorn. Das Treppenhaus hingegen war mit aufwendigen Glasmalereien verziert.
     Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder
     aufgebaut. Im Jahr 1920 schloss sich das Warenhaus Althoff mit einem
     bekannten Warenhausunternehmen zusammen – ab 1936 war es unter dem Namen
-    <AnswerBox {cloze} index={6}/> bekannt.
+    <AnswerBox {matchingGame} index={6} hasHint={true}/> bekannt.
 </p>
 
 <figure>
@@ -143,11 +143,11 @@
 </figure>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        cloze.complete();
+        matchingGame.complete();
         goto("./end"); 
     }}>
      <p>Möchtest du dieses Rätsel wirklich beenden?</p>
-     {#if cloze.options.length != cloze.selected.filter((e)=> e != undefined).length}
+     {#if matchingGame.options.length != matchingGame.selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
      {/if}
 </Modal>

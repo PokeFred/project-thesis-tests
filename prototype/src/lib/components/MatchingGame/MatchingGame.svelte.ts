@@ -1,7 +1,8 @@
+// Das gleiche wie Cloze.svelte.ts
 import { Quiz } from "$components/Quiz";
 import { type QuizState, POINTS } from "$lib/State.svelte";
 
-type Answer = {
+export type Answer = {
     readonly answer: string;
     readonly correct: boolean;
 }
@@ -25,7 +26,7 @@ class Hint {
 }
 
 
-export default class Cloze extends Quiz {
+export default class MatchingGame extends Quiz {
     public readonly options: Answer[][];
     public readonly hints: Hint[];
     public selected: Answer[];
