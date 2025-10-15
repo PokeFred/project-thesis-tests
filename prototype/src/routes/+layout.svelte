@@ -3,7 +3,7 @@
     import "@fontsource-variable/nunito"
     import type { LayoutProps } from "./$types"
     import { goto } from "$app/navigation"
-    import game from "$stores/game"
+    import game from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
@@ -15,6 +15,15 @@
     function toggle(): void {
         open = !open
     }
+
+    function leave(): void {
+        resetGame()
+        goto("/")
+    }
+
+    function resetGame() {
+        $game.isRunning = false
+    }
 </script>
 
 <div class="mx-auto w-full max-w-xl h-auto border border-black overflow-hidden">
@@ -22,7 +31,7 @@
         <div class="w-full h-14 flex justify-between items-center px-4">
             <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Title</button>
             {#if $game.isRunning}
-                <span class="text-xl">{$game.score.current} <Icon data={faBitcoin} class="w-5 h-5" /></span>
+                <span class="text-xl">{$game.score} <Icon data={faBitcoin} class="w-5 h-5" /></span>
             {/if}
             <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                 <Icon data={faBars} class="w-8 h-8" />
@@ -33,6 +42,7 @@
                 {#if $game.isRunning}
                     <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
                     <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
+                        <button onclick={leave} class="text-left cursor-pointer">Verlassen</button>
                 {/if}
                 <button onclick={() => goto("/faq")} class="text-left cursor-pointer">FAQ</button>
                 <button onclick={() => goto("/legal")} class="text-left cursor-pointer">Rechtliches</button>
@@ -49,6 +59,7 @@
                         <div class="font-bold underline text-left">Links</div>
                         <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
                         <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
+                        <button onclick={leave} class="text-left cursor-pointer">Verlassen</button>
                     </div>
                 {/if}
                 <div class="w-full h-auto grid grid-cols-1 gap-0">
