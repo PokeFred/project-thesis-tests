@@ -9,47 +9,105 @@
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
-    let complete: () => void = $state(()=>{});
 
     const { data }: PageProps = $props()
 
+    const handwerk: string[] = [
+        "Metallverarbeitung",
+        "Getreideverarbeitung",
+        "Fleischverarbeitung",
+        "Lederverarbeitung",
+        "Feinlederverarbeitung",
+        "Gemischtwarenhandel",
+        "Handel mit Butter, Öl, Speck etc."
+    ];
+
     const matchingGame: MatchingGame = new MatchingGame(
-        gameState.stationStates[3].quizStates[2],
+        gameState.stationStates[3].quizStates[3],
         [
             [
-                { answer: "London", correct: false },
-                { answer: "Paris", correct: false },
-                { answer: "Berlin", correct: true },
+                { answer: "Schmied",        correct: true  },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "10.000", correct: true },
-                { answer: "100.000", correct: false },
-                { answer: "1.000", correct: false },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: true  },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "Autos", correct: false },
-                { answer: "Edelsteinen", correct: false },
-                { answer: "Schmuckstücken", correct: true },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: true },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "Aale", correct: true },
-                { answer: "Schweine", correct: false },
-                { answer: "Frösche", correct: false },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: true  },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "Gold", correct: false },
-                { answer: "Silber", correct: false },
-                { answer: "Marmor", correct: true },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: true  },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "Toiletten", correct: false },
-                { answer: "Fahrstühle", correct: true },
-                { answer: "Umkleiden", correct: false },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: true  },
+                { answer: "Fettkrämer",     correct: false },
+                { answer: "Abdecker",       correct: false },
             ],
             [
-                { answer: "Kardorf", correct: false },
-                { answer: "Karstadt", correct: true },
-                { answer: "Karwinkel", correct: false },
+                { answer: "Schmied",        correct: false },
+                { answer: "Fleischer",      correct: false },
+                { answer: "Bäcker",         correct: false },
+                { answer: "Bader",          correct: false },
+                { answer: "Tuchmacher",     correct: false },
+                { answer: "Gerber",         correct: false },
+                { answer: "Schuhmacher",    correct: false },
+                { answer: "Krämer",         correct: false },
+                { answer: "Fettkrämer",     correct: true  },
+                { answer: "Abdecker",       correct: false },
             ],
         ],
 
@@ -69,16 +127,27 @@
 
 </script>
 
-<AnswerBox {matchingGame} index={1} hasHint={false}/>
+
+<div class="grid grid-cols-2 gap-2 px-1">
+    <h4>Handwerk</h4>
+    <h4 class="justify-self-end">Zünfte</h4>
+
+    {#each handwerk as bezeichnung, i}
+        <p class="border-1 rounded">{bezeichnung}</p>
+        <div class="justify-self-end">
+            <AnswerBox {matchingGame} index={i} hasHint={false}/>
+        </div>
+    {/each}
+</div>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        complete();
+        matchingGame.complete();
         goto("./end"); 
     }}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
-    <!-- {#if }
+    {#if matchingGame.options.length != matchingGame.selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
-    {/if} -->
+     {/if}
 </Modal>
 <div class="mt-2">
     <button onclick={showModal} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Rätsel beenden</button>
