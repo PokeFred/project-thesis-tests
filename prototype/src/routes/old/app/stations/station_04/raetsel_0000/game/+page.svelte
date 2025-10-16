@@ -110,19 +110,6 @@
                 { answer: "Abdecker",       correct: false },
             ],
         ],
-
-        [
-            "Es geht hier um einen Vergleich in Deutschland…",
-            `Zum Vergleich: 
-            Das Michigan Stadium in den USA ist das größte Stadion der USA und hat 107.601 Plätze, dort würde die Menschenmenge also hineinpassen.
-
-            Eng stehend braucht eine Person etwa 0,5 m² Platz, 1.000 Menschen brauchen daher rund 500 m². Zur Erinnerung: Das Warenhaus Althoff bot 5000 m² Platz!`,
-            "Es geht um einen zusammenfassenden Begriff.",
-            "Die Tiere, um die es hier geht, wurden in der Fischhalle angeboten.",
-            "Zwei der drei Materialien sind selten, bis sehr selten in der Erdkruste zu finden. Eines ist ein metamorphes Gestein, das aus Kalkstein entsteht und in klassischem Sinn nicht selten ist.",
-            "Lies den zweiten Satz aufmerksam und überlege noch einmal, worauf sich der erste Satz am ehesten beziehen könnte.",
-            "Welcher Name einer großen Kaufhauskette könnte Dir schon einmal in der Stadt begegnet sein?"
-        ]
     );
 
 </script>
@@ -135,7 +122,7 @@
     {#each handwerk as bezeichnung, i}
         <p class="border-1 rounded">{bezeichnung}</p>
         <div class="justify-self-end">
-            <AnswerBox {matchingGame} index={i} hasHint={false}/>
+            <AnswerBox {matchingGame} index={i}/>
         </div>
     {/each}
 </div>

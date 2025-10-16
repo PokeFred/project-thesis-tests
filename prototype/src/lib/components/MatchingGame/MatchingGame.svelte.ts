@@ -28,14 +28,16 @@ class Hint {
 
 export default class MatchingGame extends Quiz {
     public readonly options: Answer[][];
-    public readonly hints: Hint[];
+    public readonly hints?: Hint[];
     public selected: Answer[];
 
-    constructor(quizState: QuizState, options: Answer[][], hints: string[]) {
+    constructor(quizState: QuizState, options: Answer[][], hints?: string[]) {
         super(quizState);
         this.options = options;
         this.selected = $state(Array(options.length));
-        this.hints = hints.map((hint: string) => new Hint(hint));
+        if(hints) {
+            this.hints = hints.map((hint: string) => new Hint(hint));
+        }
     }
 
     public complete(): void {
@@ -45,9 +47,11 @@ export default class MatchingGame extends Quiz {
                 sum += answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
             }
         });
-        this.hints.forEach((hint: Hint)=>{
-            sum += hint.isUnlocked() ? POINTS.HINT_UNLOCKED : 0;
-        });
+        if(this.hints) {
+            this.hints.forEach((hint: Hint)=>{
+                sum += hint.isUnlocked() ? POINTS.HINT_UNLOCKED : 0;
+            });
+        }
         super.complete(sum);
     }
 }

@@ -4,10 +4,10 @@
     import type MatchingGame from "./MatchingGame.svelte"
     import { type Answer } from "./MatchingGame.svelte";
 
-    const { matchingGame, index, hasHint }: { matchingGame: MatchingGame, index: number, hasHint: boolean } = $props();
+    const { matchingGame, index }: { matchingGame: MatchingGame, index: number } = $props();
     const options = matchingGame.options[index];
     let answers: string[] = options.map((answer: Answer) => answer.answer);
-    if(hasHint) {
+    if(matchingGame.hints && matchingGame.hints[index]) {
         answers.push("Hinweis");
     }
 
@@ -24,18 +24,22 @@
     }
 
     function unlockHint(): void {
-        matchingGame.hints[index].markUnlocked();
+        if(matchingGame.hints) {
+            matchingGame.hints[index].markUnlocked();
+        }
     }
 
     let showModalHint: Function = $state(()=>{});
 </script>
 
-<Modal bind:show={showModalHint} onConfirm={unlockHint} confirmButtonText={!matchingGame.hints[index].isUnlocked() ? "Anzeigen" : undefined} closeButtonText={"Schließen"}>
-    {#if matchingGame.hints[index].isUnlocked()}
-        <p>{matchingGame.hints[index].hint}</p>
-    {:else}
-        <p>Hinweis anzeigen?</p>
-    {/if}
-</Modal>
+{#if matchingGame.hints && matchingGame.hints[index]}
+    <Modal bind:show={showModalHint} onConfirm={unlockHint} confirmButtonText={!matchingGame.hints[index].isUnlocked() ? "Anzeigen" : undefined} closeButtonText={"Schließen"}>
+        {#if matchingGame.hints[index].isUnlocked()}
+            <p>{matchingGame.hints[index].hint}</p>
+        {:else}
+            <p>Hinweis anzeigen?</p>
+        {/if}
+    </Modal>
+{/if}
 
 <Select options={answers} {onchange}/>
