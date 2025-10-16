@@ -12,7 +12,6 @@
     }
 
     function onchange(option: string, i: number): boolean {
-        console.log(option, i)
         // Hint selected
         if(i == options.length) {
             showModalHint();
