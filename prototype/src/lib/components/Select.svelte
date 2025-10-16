@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
 
-    let { options, onchange = $bindable() }: { options: string[], onchange: (option: string, index: number)=>boolean } = $props();
+    let { options, onchange }: { options: string[]; onchange: (option: string, index: number) => boolean } = $props();
 
     let show: boolean = $state(false);
     let selected: HTMLButtonElement = $state(document.createElement("button"));
