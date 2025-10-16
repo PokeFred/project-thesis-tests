@@ -2,7 +2,7 @@
     import { goto } from "$app/navigation";
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft";
     import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
-    import { faSquareXmark } from "@fortawesome/free-solid-svg-icons"; 
+    import { faSquareXmark, faXmark } from "@fortawesome/free-solid-svg-icons"; 
     import { Icon } from "svelte-awesome";
 
 </script>
@@ -28,7 +28,7 @@
     <h2 class="underline">Punkteverteilung:</h2>
     <ul>
         <li><Icon data={faSquareCheck} class="text-green-500 mr-2"/>Richtige Antwort: +10 Münzen</li>
-        <li>Falsche Antwort: -3 Münzen</li>
+        <li><Icon data={faXmark} class="text-red-500 mr-2"/>Falsche Antwort: -3 Münzen</li>
     </ul>
 </section>
 

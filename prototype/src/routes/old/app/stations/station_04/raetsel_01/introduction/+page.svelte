@@ -3,6 +3,7 @@
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
+    import { faXmark } from "@fortawesome/free-solid-svg-icons";
 </script>
 
 <div class="w-full h-auto flex justify-between items-center">
@@ -28,8 +29,8 @@
     <h2 class="underline">Punkteverteilung:</h2>
     <ul>
         <li><Icon data={faSquareCheck} class="text-green-500 mr-2"/>+10 Punkte für die richtige Antwort</li>
-        <li>-3 Punkte für benutzen Hinweis</li>
-        <li>-5 Punkte für falsche Antwort</li>
+        <li><Icon data={faXmark} class="text-red-500 mr-2"/>-3 Punkte für benutzen Hinweis</li>
+        <li><Icon data={faXmark} class="text-red-500 mr-2"/>-5 Punkte für falsche Antwort</li>
         <li>0 Punkte, wenn Lücke freigelassen wird</li>
     </ul>
 </section>
