@@ -11,9 +11,11 @@
     }
 
     function startGame(): void {
-        $game.isRunning = true
-        $game.score = 0
-        $game.puzzles = []
+        $game = {
+            isRunning: true,
+            score: 0,
+            puzzles: []
+        }
     }
 </script>
 

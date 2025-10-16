@@ -22,9 +22,11 @@
     }
 
     function resetGame() {
-        $game.isRunning = false
-        $game.score = 0
-        $game.puzzles = []
+        $game = {
+            isRunning: false,
+            score: 0,
+            puzzles: []
+        }
     }
 </script>
 
@@ -40,15 +42,18 @@
             </button>
         </div>
         <div class="w-full {open ? "h-auto" : "h-0"} overflow-hidden">
-            <div class="w-full h-auto border-t border-black grid grid-cols-1 gap-2 p-4">
+            <div class="w-full h-auto border-t border-black grid grid-cols-1 gap-0 px-4 py-2">
+                <div class="text-sm font-bold underline">Links</div>
+                <button onclick={(): Promise<void> => goto("/")} class="text-base text-left cursor-pointer">Willkommens-Seite</button>
+                <button onclick={(): Promise<void> => goto("/faq")} class="text-base text-left cursor-pointer">FAQ</button>
+                <button onclick={(): Promise<void> => goto("/legal")} class="text-base text-left cursor-pointer">Rechtliches</button>
+                <button onclick={(): Promise<void> => goto("/imprint")} class="text-base text-left cursor-pointer">Impressum</button>
                 {#if $game.isRunning}
-                    <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
-                    <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
-                        <button onclick={leave} class="text-left cursor-pointer">Verlassen</button>
+                    <div class="mt-2 text-sm font-bold underline">Spiel</div>
+                    <button onclick={(): Promise<void> => goto("/app")} class="text-base text-left cursor-pointer">Startbildschirm</button>
+                    <button onclick={(): Promise<void> => goto("/app/stations")} class="text-base text-left cursor-pointer">Stationen</button>
+                    <button onclick={leave} class="text-base text-left cursor-pointer">Spiel beenden</button>
                 {/if}
-                <button onclick={() => goto("/faq")} class="text-left cursor-pointer">FAQ</button>
-                <button onclick={() => goto("/legal")} class="text-left cursor-pointer">Rechtliches</button>
-                <button onclick={() => goto("/imprint")} class="text-left cursor-pointer">Impressum</button>
             </div>
         </div>
     </div>
