@@ -6,7 +6,8 @@
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
-    let img: HTMLImageElement = $state(document.createElement("img"));
+    let naturalWidth: number = $state(0);
+    let naturalHeight: number = $state(0);
 
     $effect(() => {
         if(piece instanceof PuzzlePiece) {
@@ -56,7 +57,8 @@
     {src}
     {alt}
     bind:this={piece.puzzlePiece}
-    bind:this={img}
+    bind:naturalWidth={naturalWidth}
+    bind:naturalHeight={naturalHeight}
     class:puzzle-placed={piece instanceof PuzzlePiece ? piece.isPlaced() : false}
     draggable="false"
     use:draggable={{
@@ -65,8 +67,8 @@
         onDragStart: onDragStart,
         bounds: ".puzzle-game",
     }}
-    style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${img.naturalWidth * scaleWidth}px`}
-    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${img.naturalHeight * scaleWidth}px`}
+    style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${naturalWidth * scaleWidth}px`}
+    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${naturalHeight * scaleWidth}px`}
     class="touch-none m-1"
 />
 
