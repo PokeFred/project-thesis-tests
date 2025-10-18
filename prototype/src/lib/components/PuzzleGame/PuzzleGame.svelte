@@ -1,11 +1,11 @@
 <script lang="ts">
-    import Puzzle, { type PuzzleData, Piece } from "./Puzzle.svelte";
+    import Puzzle, { type CutoutData, type PuzzleData, Piece, PuzzlePiece } from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
-    import PuzzlePiece from "./PuzzlePiece.svelte";
+    import PuzzlePieceComponent from "./PuzzlePiece.svelte";
     import { gameState, QuizState } from "$lib/State.svelte";
 
     let { path, backgroundSrc, alt, puzzleData, complete = $bindable(), quizState }: { path: string; backgroundSrc: string; alt: string; puzzleData: PuzzleData; complete: () => void; quizState: QuizState } = $props();
-    const puzzle: Puzzle = new Puzzle(quizState, puzzleData.cutouts.map((cutout: any) => new Piece(path, cutout)).sort(() => Math.random() - 0.5));
+    const puzzle: Puzzle = new Puzzle(quizState, puzzleData.cutouts.map((cutout: CutoutData) => new PuzzlePiece(path, cutout)), puzzleData.noise?.map((noiseSrc: string) => new Piece(path, noiseSrc)));
     complete = puzzle.complete.bind(puzzle);
     
     let naturalWidth: number = $state(0);
@@ -29,11 +29,9 @@
     </figure>
 
     
-
-    
     <div class="puzzle-piece-container flex flex-wrap justify-between rounded-xs border-1">
-        {#each puzzle.pieces as piece}
-            <PuzzlePiece
+        {#each puzzle.piecesMixed as piece: Piece}
+            <PuzzlePieceComponent
                 src={piece.src}
                 alt="icon"
                 {piece}
@@ -43,5 +41,4 @@
             />
         {/each}
     </div>
-
 </div>

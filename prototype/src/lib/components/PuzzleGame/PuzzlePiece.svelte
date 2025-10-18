@@ -1,15 +1,18 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import { type Piece } from "./Puzzle.svelte";
+    import { type Piece, PuzzlePiece } from "./Puzzle.svelte";
 
-    const { src, alt, piece, scaleWidth, scaleHeight, winCondition}: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
+    const { src, alt, piece, scaleWidth, scaleHeight, winCondition }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
+    let img: HTMLImageElement = $state(document.createElement("img"));
 
     $effect(() => {
-        if (piece?.puzzleSlot) {
-            slotBbox = piece.puzzleSlot.getBBox();
+        if(piece instanceof PuzzlePiece) {
+            if (piece?.puzzleSlot) {
+                slotBbox = piece.puzzleSlot.getBBox();
+            }
         }
     });
 
@@ -28,20 +31,24 @@
     }
 
     function onDragEnd(data: DragEventData): void {
-        if (inRange(data)) {
-            snap(data);
-            piece.setPlaced(true);
-        } else {
-            piece.setPlaced(false);
-        }
+        if(piece instanceof PuzzlePiece) {
+            if (inRange(data)) {
+                snap(data);
+                piece.setPlaced(true);
+            } else {
+                piece.setPlaced(false);
+            }
 
-        if (winCondition()) {
-            console.log("GEWONNEN");
-        }
+            if (winCondition()) {
+                console.log("GEWONNEN");
+            }
+        }        
     }
 
     function onDragStart(data: DragEventData): void {
-        piece.setPlaced(false);
+        if(piece instanceof PuzzlePiece) {
+            piece.setPlaced(false);
+        }
     }
 </script>
 
@@ -49,7 +56,8 @@
     {src}
     {alt}
     bind:this={piece.puzzlePiece}
-    class:puzzle-placed={piece.isPlaced()}
+    bind:this={img}
+    class:puzzle-placed={piece instanceof PuzzlePiece ? piece.isPlaced() : false}
     draggable="false"
     use:draggable={{
         position: piece.getCurrentPosition(), // zum binden der koordinaten, snap
@@ -57,10 +65,8 @@
         onDragStart: onDragStart,
         bounds: ".puzzle-game",
     }}
-    style="
-            width: {slotBbox.width * scaleWidth}px;
-            height: {slotBbox.height * scaleHeight}px;
-        "
+    style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${img.naturalWidth * scaleWidth}px`}
+    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${img.naturalHeight * scaleWidth}px`}
     class="touch-none m-1"
 />
 

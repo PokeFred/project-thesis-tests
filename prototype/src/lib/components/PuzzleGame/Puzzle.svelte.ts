@@ -4,6 +4,7 @@ import { Quiz } from "../Quiz"
 export type PuzzleData = {
     viewBox: string
     cutouts: CutoutData[]
+    noise?: string[]
 }
 
 export type CutoutData = {
@@ -18,20 +19,13 @@ export type Position = {
 
 export class Piece {
     public readonly src: string
-    public readonly d: string
-
-    public puzzleSlot: SVGPathElement | null
-    public puzzlePiece: HTMLImageElement | null
+    public puzzlePiece?: HTMLImageElement
     private currentPosition: Position
-    private placed: boolean
 
-    constructor(path: string, cutoutData: CutoutData) {
-        this.src = `${path}/${cutoutData.src}`;
-        this.d = cutoutData.d;
-        this.puzzleSlot = null;
-        this.puzzlePiece = null;
+    constructor(path: string, src: string) {
+        this.src = `${path}/${src}`;
+        this.puzzlePiece = $state(undefined);
         this.currentPosition = $state({x: 0, y: 0});
-        this.placed = $state(false)
     }
 
     public getCurrentPosition(): Position {
@@ -40,6 +34,19 @@ export class Piece {
 
     public setCurrentPosition(x: number, y: number): void {
         this.currentPosition = { x: x, y: y }
+    }
+}
+
+export class PuzzlePiece extends Piece {
+    public readonly d: string
+    public puzzleSlot?: SVGPathElement
+    private placed: boolean
+
+    constructor(path: string, cutoutData: CutoutData) {
+        super(path, cutoutData.src);
+        this.d = cutoutData.d;
+        this.puzzleSlot = undefined;
+        this.placed = $state(false);
     }
 
     public isPlaced(): boolean {
@@ -52,11 +59,15 @@ export class Piece {
 }
 
 export default class Puzzle extends Quiz {
-    public readonly pieces: Piece[];
+    public readonly pieces: PuzzlePiece[];
+    public readonly noise?: Piece[];
+    public readonly piecesMixed: Piece[];
 
-    constructor(quizState: QuizState, pieces: Piece[]) {
+    constructor(quizState: QuizState, pieces: PuzzlePiece[], noise?: Piece[]) {
         super(quizState);
         this.pieces = pieces;
+        this.noise = noise;
+        this.piecesMixed = (noise ? noise.concat(pieces) : pieces).sort(() => Math.random() - 0.5);
     }
 
     public winCondition(): boolean {
@@ -65,7 +76,7 @@ export default class Puzzle extends Quiz {
 
     public complete(): void {
         let sum: number = 0;
-        this.pieces.forEach((p: Piece)=> {
+        this.pieces.forEach((p: PuzzlePiece)=> {
             sum += p.isPlaced() ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED;
         });
         super.complete(sum);
