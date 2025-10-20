@@ -7,16 +7,13 @@ type State = {
     puzzles: {}[]
 }
 
-// TODO load from localstorage
 const state: Writable<State> = writable<State>({
     isRunning: false,
     score: 0,
     puzzles: []
 })
 
-state.subscribe((value: State) => {
-    // TODO write in localstorage
-})
+state.subscribe((value: State): void => {})
 
 function startGame() {}
 
