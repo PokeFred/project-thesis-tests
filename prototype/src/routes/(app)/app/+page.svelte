@@ -6,5 +6,10 @@
     <div class="mx-auto w-fit h-auto">
         <button onclick={() => goto("/app/stations")} class="w-full h-auto text-xl text-white bg-blue-500 rounded-xl cursor-pointer px-8">Zu den Stationen</button>
     </div>
-    <div>Anleitung...</div>
+    <div>- Anleitung...</div>
+    <div>- Storyline/</div>
+    <div>- Erklärung der App</div>
+    <div>- Wegbeschreibung</div>
+    <div>- Mehrsprachigkeit</div>
+    <div>- Barrierefreiheit-Icon</div>
 </div>
