@@ -60,22 +60,6 @@
     <PageTransition>
         <div class="w-full h-auto p-4">
             {@render children()}
-            <div class="mt-3 w-full h-auto grid grid-cols-4 px-4">
-                {#if $game.isRunning}
-                    <div class="w-full h-auto grid grid-cols-1 gap-0">
-                        <div class="font-bold underline text-left">Links</div>
-                        <button onclick={() => goto("/app")} class="text-left cursor-pointer">Home</button>
-                        <button onclick={() => goto("/app/stations")} class="text-left cursor-pointer">Stationen</button>
-                        <button onclick={leave} class="text-left cursor-pointer">Verlassen</button>
-                    </div>
-                {/if}
-                <div class="w-full h-auto grid grid-cols-1 gap-0">
-                    <div class="font-bold underline text-left">Links</div>
-                    <button onclick={() => goto("/faq")} class="text-left cursor-pointer">FAQ</button>
-                    <button onclick={() => goto("/legal")} class="text-left cursor-pointer">Rechtliches</button>
-                    <button onclick={() => goto("/imprint")} class="text-left cursor-pointer">Impressum</button>
-                </div>
-            </div>
             <div class="mt-3 w-full h-auto text-sm text-right">Copyright &copy; 2025 ???. All rights reserved.</div>
         </div>
     </PageTransition>
