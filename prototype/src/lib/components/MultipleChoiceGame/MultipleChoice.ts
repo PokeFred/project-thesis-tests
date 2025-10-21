@@ -6,6 +6,7 @@ export type Answer = {
     readonly correct: boolean;
 }
 
+// TODO: MatchingGame == Multiple Choice ??
 export default class MultipleChoice extends Quiz {
     public readonly options: Answer[];
     public selected: boolean[];
