@@ -1,6 +1,6 @@
 export const enum POINTS {
     ANSWER_CORRECT = 10,
-    ANSWER_FALSE = -5,
+    ANSWER_FALSE = -3,
     HINT_UNLOCKED = -3,
     NOT_ANSWERED = 0
 }
@@ -57,7 +57,7 @@ export const gameState: GameState = new GameState(
         new StationState(0),
         new StationState(0),
         new StationState(0),
-        new StationState(4),
+        new StationState(5),
         new StationState(0)
     ]
 )
