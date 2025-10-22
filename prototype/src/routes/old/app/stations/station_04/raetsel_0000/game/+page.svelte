@@ -120,7 +120,7 @@
     <h4 class="justify-self-end">Zünfte</h4>
 
     {#each handwerk as bezeichnung, i}
-        <p class="border-1 rounded">{bezeichnung}</p>
+        <span class="border-1 rounded">{bezeichnung}</span>
         <div class="justify-self-end">
             <AnswerBox {matchingGame} index={i}/>
         </div>
