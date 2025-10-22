@@ -1,7 +1,7 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
     import Modal from "$components/Modal.svelte";
-    import PuzzleGame from "$components/PuzzleGame/PuzzleGame.svelte";
+    import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
     import { quiz } from "../Quiz"
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden

@@ -1,5 +1,5 @@
 import { gameState } from "$lib/State.svelte";
-import MultipleChoice from "$components/MultipleChoiceGame/MultipleChoice";
+import MultipleChoice from "$components/Games/MultipleChoiceGame/MultipleChoice";
 
 // TODO: die ganzen Quiz, Quizstate, Gamestate etc klassen refractoren
 export const quiz: MultipleChoice = new MultipleChoice(

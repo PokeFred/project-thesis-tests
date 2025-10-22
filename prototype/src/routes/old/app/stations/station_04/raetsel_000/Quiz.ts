@@ -1,5 +1,5 @@
 import { gameState } from "$lib/State.svelte";
-import Puzzle, { Piece, PuzzlePiece, type Background, type CutoutData, type PuzzleData } from "$components/PuzzleGame/Puzzle.svelte";
+import Puzzle, { Piece, PuzzlePiece, type Background, type CutoutData, type PuzzleData } from "$components/Games/PuzzleGame/Puzzle.svelte";
 
 const path = "/custom_shape_test";
 // const path = "https://pokefred.github.io/project-thesis-tests/prototype/custom_shape_test";

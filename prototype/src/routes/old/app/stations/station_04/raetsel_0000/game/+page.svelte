@@ -1,7 +1,7 @@
 <script lang="ts">
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
-    import AnswerBox from "$components/MatchingGame/AnswerBox.svelte"
+    import AnswerBox from "$components/Games/MatchingGame/AnswerBox.svelte"
     import { quiz, handwerk } from "../Quiz";
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden

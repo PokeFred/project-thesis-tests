@@ -1,7 +1,7 @@
 <script lang="ts">
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
-    import MultipleChoice from "$components/MultipleChoiceGame/MultipleChoice.svelte";
+    import MultipleChoice from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte";
     import { quiz } from "../Quiz";
     
     let showModal: () => void = $state(()=>{});

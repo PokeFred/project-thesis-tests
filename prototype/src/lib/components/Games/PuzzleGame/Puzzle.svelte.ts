@@ -1,5 +1,5 @@
 import { type QuizState, POINTS } from "$lib/State.svelte"
-import { Quiz } from "../Quiz"
+import { Quiz } from "../../Quiz"
 
 export type PuzzleData = {
     viewBox: string

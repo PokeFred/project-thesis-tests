@@ -1,5 +1,5 @@
 import { gameState } from "$lib/State.svelte";
-import MatchingGame from "$components/MatchingGame/MatchingGame.svelte";
+import MatchingGame from "$components/Games/MatchingGame/MatchingGame.svelte";
 
 export const quiz: MatchingGame = new MatchingGame(
     gameState.stationStates[3].quizStates[3],

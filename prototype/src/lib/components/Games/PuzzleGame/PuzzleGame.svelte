@@ -1,8 +1,7 @@
 <script lang="ts">
-    import Puzzle, { type CutoutData, type PuzzleData, Piece, PuzzlePiece } from "./Puzzle.svelte";
+    import Puzzle from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
     import PuzzlePieceComponent from "./PuzzlePiece.svelte";
-    import { gameState, QuizState } from "$lib/State.svelte";
 
     let { quiz }: { quiz: Puzzle } = $props();
     
