@@ -4,61 +4,20 @@
     // in den klassen die public attribute zu private umformen. dafür dann für bindings function binding nutzen (?)
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
-    import { gameState } from "$lib/State.svelte";
-    import MultipleChoiceComponent from "$components/MultipleChoiceGame/MultipleChoice.svelte";
-    import MultipleChoice from "$components/MultipleChoiceGame/MultipleChoice";
-    import type { Quiz } from "$components/Quiz";
+    import MultipleChoice from "$components/MultipleChoiceGame/MultipleChoice.svelte";
+    import { quiz } from "../Quiz";
     
     let showModal: () => void = $state(()=>{});
-
-    const multipleChoice: MultipleChoice = new MultipleChoice(
-        gameState.stationStates[3].quizStates[4],
-        [
-            { 
-                answer: "Es gab einen Brunnen am Markt.",
-                correct: true
-            },
-            {
-                answer: "Die Hauptpfarrkirche lag am Marktplatz.",
-                correct: true
-            },
-            {
-                answer: "Der Markt war das Zentrum der Stadt.",
-                correct: true
-            },
-            {
-                answer: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.",
-                correct: false
-            },
-            {
-                answer: "Der Markt lag an einem wichtigen Handelsweg.",
-                correct: true
-            },
-            {
-                answer: "Zutritt hatten nur Angehörige des Adels.",
-                correct: false
-            },
-            {
-                answer: "Das Rathaus lag direkt am Marktplatz.",
-                correct: true
-            },
-            {
-                answer: "Eine zweite Stadtmauer umgab den Markt.",
-                correct: false
-            }
-        ]
-    );
-
 </script>
 
-<MultipleChoiceComponent {multipleChoice}>
+<MultipleChoice multipleChoice={quiz}>
     <p class="mb-4 w-full h-auto text-sm">Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur <strong>fünf</strong> von acht Antwortmöglichkeiten sind <strong>richtig</strong> – überlege genau!</p>
-</MultipleChoiceComponent>
+</MultipleChoice>
 
 
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        multipleChoice.complete();
+        quiz.complete();
         goto("./end"); 
     }}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>

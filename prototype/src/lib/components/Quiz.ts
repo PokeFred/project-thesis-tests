@@ -7,6 +7,10 @@ export abstract class Quiz {
         this.quizState = quizState;
     }
 
+    public getQuizState(): QuizState {
+        return this.quizState;
+    }
+
     protected complete(score: number): void {
         this.quizState.complete(score);
     }
