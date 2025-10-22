@@ -1,14 +1,11 @@
 <script lang="ts">
-    import type { PageProps } from "./$types"
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
     import AnswerBox from "$components/MatchingGame/AnswerBox.svelte"
     import { quiz, handwerk } from "../Quiz";
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
-    let showModal: () => void = $state(()=>{});
-
-    
+    let showModal: () => void = $state(()=>{});    
 </script>
 
 

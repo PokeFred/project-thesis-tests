@@ -17,6 +17,11 @@ export type Position = {
     y: number
 }
 
+export type Background = {
+    readonly src: string,
+    readonly viewbox: string
+}
+
 export class Piece {
     public readonly src: string
     public puzzlePiece?: HTMLImageElement
@@ -59,12 +64,14 @@ export class PuzzlePiece extends Piece {
 }
 
 export default class Puzzle extends Quiz {
+    public readonly background: Background;
     public readonly pieces: PuzzlePiece[];
     public readonly noise?: Piece[];
     public readonly piecesMixed: Piece[];
 
-    constructor(quizState: QuizState, pieces: PuzzlePiece[], noise?: Piece[]) {
+    constructor(quizState: QuizState, background: Background, pieces: PuzzlePiece[], noise?: Piece[]) {
         super(quizState);
+        this.background = background;
         this.pieces = pieces;
         this.noise = noise;
         this.piecesMixed = (noise ? noise.concat(pieces) : pieces).sort(() => Math.random() - 0.5);

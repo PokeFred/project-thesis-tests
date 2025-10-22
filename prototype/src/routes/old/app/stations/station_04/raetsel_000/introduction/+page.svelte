@@ -2,16 +2,15 @@
     import { goto } from "$app/navigation";
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft";
     import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
-    import { faSquareXmark, faXmark } from "@fortawesome/free-solid-svg-icons"; 
+    import { faXmark } from "@fortawesome/free-solid-svg-icons"; 
     import { Icon } from "svelte-awesome";
 
 </script>
-<div class="w-full h-auto flex justify-between items-center">
-    <button onclick={(): Promise<void> => goto("..")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
+<div class="relative w-full h-auto">
+    <button onclick={(): Promise<void> => goto("..")} class="absolute w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
-    <div class="text-lg underline">Rätsel 000</div>
-    <div></div>
+    <h3 class="text-lg underline place-self-center">Rätsel 000</h3>
 </div>
 
 <p class="my-4 w-full h-auto text-sm">

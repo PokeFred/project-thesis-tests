@@ -6,12 +6,11 @@
     import { faXmark } from "@fortawesome/free-solid-svg-icons";
 </script>
 
-<div class="w-full h-auto flex justify-between items-center">
-    <button onclick={(): Promise<void> => goto("..")} class="w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
+<div class="relative w-full h-auto">
+    <button onclick={(): Promise<void> => goto("..")} class="absolute w-8 h-8 border border-black rounded-lg flex justify-center items-center cursor-pointer">
         <Icon data={faAngleLeft} />
     </button>
-    <h2 class="text-lg underline">Rätsel 01</h2>
-    <div></div>
+    <h3 class="text-lg underline place-self-center">Rätsel 01</h3>
 </div>
 
 <p class="my-4 w-full h-auto text-sm">

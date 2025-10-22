@@ -4,9 +4,7 @@
     import PuzzlePieceComponent from "./PuzzlePiece.svelte";
     import { gameState, QuizState } from "$lib/State.svelte";
 
-    let { path, backgroundSrc, alt, puzzleData, complete = $bindable(), quizState }: { path: string; backgroundSrc: string; alt: string; puzzleData: PuzzleData; complete: () => void; quizState: QuizState } = $props();
-    const puzzle: Puzzle = new Puzzle(quizState, puzzleData.cutouts.map((cutout: CutoutData) => new PuzzlePiece(path, cutout)), puzzleData.noise?.map((noiseSrc: string) => new Piece(path, noiseSrc)));
-    complete = puzzle.complete.bind(puzzle);
+    let { quiz }: { quiz: Puzzle } = $props();
     
     let naturalWidth: number = $state(0);
     let naturalHeight: number = $state(0);
@@ -19,10 +17,10 @@
 <div class="puzzle-game inline-block relative select-none">
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
-        <img draggable="false" src={`${path}/${backgroundSrc}`} {alt} bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
+        <img draggable="false" src={quiz.background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
     
-        <svg viewBox={puzzleData.viewBox} class="absolute top-0 left-0">
-            {#each puzzle.pieces as piece}
+        <svg viewBox={quiz.background.viewbox} class="absolute top-0 left-0">
+            {#each quiz.pieces as piece}
                 <PuzzleSlot {piece} />
             {/each}
         </svg>
@@ -30,14 +28,14 @@
 
     
     <div class="puzzle-piece-container flex flex-wrap justify-between rounded-xs border-1">
-        {#each puzzle.piecesMixed as piece: Piece}
+        {#each quiz.piecesMixed as piece: Piece}
             <PuzzlePieceComponent
                 src={piece.src}
                 alt="icon"
                 {piece}
                 {scaleWidth}
                 {scaleHeight}
-                winCondition={puzzle.winCondition.bind(puzzle)}
+                winCondition={quiz.winCondition.bind(quiz)}
             />
         {/each}
     </div>

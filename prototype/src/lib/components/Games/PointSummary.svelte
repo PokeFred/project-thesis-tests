@@ -1,5 +1,6 @@
 <script lang="ts">
     let { descriptions, points }: { descriptions: string[]; points: number[] } = $props();
+    const totalPoints: number = points.length > 0 ? points.reduce((previous, current)=> previous + current) : 0;
 </script>
 
 <!-- TODO: div zu ul -->
@@ -13,6 +14,6 @@
     </div>
 
     <p class="my-4 w-full h-auto text-sm">
-        Insgesammt Verdiente Punkte: {points.reduce((previous, current)=> previous + current)} 
+        Insgesammt Verdiente Punkte: {totalPoints} 
     </p>
 </section>
