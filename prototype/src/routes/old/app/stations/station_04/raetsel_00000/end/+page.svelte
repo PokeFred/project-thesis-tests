@@ -1,6 +1,10 @@
 <script lang="ts">
+    import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz"
+    const selected = quiz.options.filter((answer, i) => quiz.selected[i]);
+    const answers: string[] = selected.map((answer)=>answer.answer);
+    const points: number[] = selected.map((answer)=>answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
 </script>
 
 <p class="mb-4 w-full h-auto text-sm">
@@ -10,19 +14,7 @@
     Markt.
 </p>
 
-<!-- TODO: zu semantisch korrekten ul machen -->
-<section>
-    <h4>Punkteübersicht</h4>
-    <div class="grid gap-1 grid-cols-[auto_auto]">
-        {#each quiz.options as option, i}
-            {#if quiz.selected[i]}
-                <span class="w-full h-auto text-sm">{option.answer}</span>
-                <span class="place-self-center text-center w-full h-auto text-sm">{quiz.selected[i] ? (option.correct ? `+${POINTS.ANSWER_CORRECT}` : POINTS.ANSWER_FALSE) : 0}</span>
-            {/if}
-        {/each}
-    </div>
-    <p class="mb-4 w-full h-auto text-sm">Insgesammt Verdiente Punkte: {quiz.getQuizState().getScore()}</p>
-</section>
+<PointSummary descriptions={answers} {points} />
 
 <!-- Accordion -->
 
