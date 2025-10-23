@@ -3,12 +3,12 @@
     import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz";
 
-    const selected = quiz.selected.filter((answer)=> answer ? true : false);
-    const descriptions: string[] = selected.map((answer, i)=> answer.answer);
+    const selected = quiz.Selected.filter((answer)=> answer ? true : false);
+    const descriptions: string[] = selected.map((answer)=> answer.answer);
     const points: number[] = selected.map((answer)=> answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
 
     descriptions.push("Genutze Hinweise");
-    points.push((quiz.hints?.reduce((sum, hint)=> sum + (hint.isUnlocked() ? POINTS.HINT_UNLOCKED : 0), 0) ?? 0));
+    points.push((quiz.Hints?.reduce((sum, hint)=> sum + (hint.Unlocked ? POINTS.HINT_UNLOCKED : 0), 0) ?? 0));
 </script>
 
 <p class="my-4 w-full h-auto text-sm">

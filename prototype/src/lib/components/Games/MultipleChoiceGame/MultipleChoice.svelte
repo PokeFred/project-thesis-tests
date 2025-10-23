@@ -7,8 +7,8 @@
 <div>
     {@render children()}
     <div class="flex flex-col">
-        {#each multipleChoice.options as option, i }
-            <label><input bind:checked={multipleChoice.selected[i]} type="checkbox" class="mr-1">{option.answer}</label>
+        {#each multipleChoice.Options as option, i }
+            <label><input bind:checked={multipleChoice.Selected[i]} type="checkbox" class="mr-1">{option.answer}</label>
         {/each}
     </div>
 </div>

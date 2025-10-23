@@ -11,8 +11,8 @@
 
     $effect(() => {
         if(piece instanceof PuzzlePiece) {
-            if (piece?.puzzleSlot) {
-                slotBbox = piece.puzzleSlot.getBBox();
+            if (piece?.PuzzleSlot) {
+                slotBbox = piece.PuzzleSlot.getBBox();
             }
         }
     });
@@ -28,16 +28,16 @@
     }
 
     function snap(data: any): void {
-        piece.setCurrentPosition((slotBbox.x * scaleWidth) - data.currentNode.offsetLeft, (slotBbox.y * scaleHeight) - data.currentNode.offsetTop);
+        piece.CurrentPosition = {x: (slotBbox.x * scaleWidth) - data.currentNode.offsetLeft, y: (slotBbox.y * scaleHeight) - data.currentNode.offsetTop}
     }
 
     function onDragEnd(data: DragEventData): void {
         if(piece instanceof PuzzlePiece) {
             if (inRange(data)) {
                 snap(data);
-                piece.setPlaced(true);
+                piece.Placed = true;
             } else {
-                piece.setPlaced(false);
+                piece.Placed = false;
             }
 
             if (winCondition()) {
@@ -48,7 +48,7 @@
 
     function onDragStart(data: DragEventData): void {
         if(piece instanceof PuzzlePiece) {
-            piece.setPlaced(false);
+            piece.Placed = false;
         }
     }
 </script>
@@ -56,13 +56,13 @@
 <img
     {src}
     {alt}
-    bind:this={piece.puzzlePiece}
+    bind:this={piece.PuzzlePiece}
     bind:naturalWidth={naturalWidth}
     bind:naturalHeight={naturalHeight}
-    class:puzzle-placed={piece instanceof PuzzlePiece ? piece.isPlaced() : false}
+    class:puzzle-placed={piece instanceof PuzzlePiece ? piece.Placed : false}
     draggable="false"
     use:draggable={{
-        position: piece.getCurrentPosition(), // zum binden der koordinaten, snap
+        position: piece.CurrentPosition, // zum binden der koordinaten, snap
         onDragEnd: onDragEnd,
         onDragStart: onDragStart,
         bounds: ".puzzle-game",

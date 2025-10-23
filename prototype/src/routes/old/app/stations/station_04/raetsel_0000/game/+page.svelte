@@ -26,7 +26,7 @@
         goto("./end"); 
     }}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
-    {#if quiz.options.length != quiz.selected.filter((e)=> e != undefined).length}
+    {#if quiz.Options.length != quiz.Selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
      {/if}
 </Modal>

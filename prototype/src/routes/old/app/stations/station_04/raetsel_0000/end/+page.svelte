@@ -3,7 +3,7 @@
     import { POINTS } from "$lib/State.svelte";
     import { quiz, handwerk } from "../Quiz";
 
-    const selected = quiz.selected.filter((answer)=> answer ? true : false);
+    const selected = quiz.Selected.filter((answer)=> answer ? true : false);
     const descriptions: string[] = selected.map((answer, i)=> `${handwerk[i]}:  ${answer.answer}`);
     const points: number[] = selected.map((answer)=> answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
 </script>

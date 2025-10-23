@@ -16,10 +16,10 @@
 <div class="puzzle-game inline-block relative select-none">
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
-        <img draggable="false" src={quiz.background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
+        <img draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
     
-        <svg viewBox={quiz.background.viewbox} class="absolute top-0 left-0">
-            {#each quiz.pieces as piece}
+        <svg viewBox={quiz.Background.viewbox} class="absolute top-0 left-0">
+            {#each quiz.Pieces as piece}
                 <PuzzleSlot {piece} />
             {/each}
         </svg>
@@ -27,9 +27,9 @@
 
     
     <div class="puzzle-piece-container flex flex-wrap justify-between rounded-xs border-1">
-        {#each quiz.piecesMixed as piece: Piece}
+        {#each quiz.PiecesMixed as piece: Piece}
             <PuzzlePieceComponent
-                src={piece.src}
+                src={piece.Src}
                 alt="icon"
                 {piece}
                 {scaleWidth}

@@ -2,14 +2,14 @@ import { type QuizState, POINTS } from "$lib/State.svelte"
 import { Quiz } from "../../Quiz"
 
 export type PuzzleData = {
-    viewBox: string
-    cutouts: CutoutData[]
-    noise?: string[]
+    readonly viewBox: string
+    readonly cutouts: CutoutData[]
+    readonly noise?: string[]
 }
 
 export type CutoutData = {
-    src: string,
-    d: string
+    readonly src: string,
+    readonly d: string
 }
 
 export type Position = {
@@ -23,8 +23,8 @@ export type Background = {
 }
 
 export class Piece {
-    public readonly src: string
-    public puzzlePiece?: HTMLImageElement
+    private readonly src: string
+    private puzzlePiece?: HTMLImageElement
     private currentPosition: Position
 
     constructor(path: string, src: string) {
@@ -33,18 +33,17 @@ export class Piece {
         this.currentPosition = $state({x: 0, y: 0});
     }
 
-    public getCurrentPosition(): Position {
-        return this.currentPosition
-    }
-
-    public setCurrentPosition(x: number, y: number): void {
-        this.currentPosition = { x: x, y: y }
-    }
+    public get Src() { return this.src; }
+    public get PuzzlePiece() { return this.puzzlePiece; }
+    public get CurrentPosition() { return this.currentPosition; }
+    
+    public set PuzzlePiece(piece: HTMLImageElement | undefined) { this.puzzlePiece = piece; }
+    public set CurrentPosition(position: Position) { this.currentPosition = position }
 }
 
 export class PuzzlePiece extends Piece {
-    public readonly d: string
-    public puzzleSlot?: SVGPathElement
+    private readonly d: string
+    private puzzleSlot?: SVGPathElement
     private placed: boolean
 
     constructor(path: string, cutoutData: CutoutData) {
@@ -54,20 +53,19 @@ export class PuzzlePiece extends Piece {
         this.placed = $state(false);
     }
 
-    public isPlaced(): boolean {
-        return this.placed
-    }
+    public get D() { return this.d; }
+    public get PuzzleSlot() { return this.puzzleSlot; }
+    public get Placed() { return this.placed; }
 
-    public setPlaced(placed: boolean): void {
-        this.placed = placed
-    }
+    public set PuzzleSlot(slot: SVGPathElement | undefined) { this.puzzleSlot = slot; }
+    public set Placed(placed: boolean) { this.placed = placed; }
 }
 
 export default class Puzzle extends Quiz {
-    public readonly background: Background;
-    public readonly pieces: PuzzlePiece[];
-    public readonly noise?: Piece[];
-    public readonly piecesMixed: Piece[];
+    private readonly background: Background;
+    private readonly pieces: PuzzlePiece[];
+    private readonly noise?: Piece[];
+    private readonly piecesMixed: Piece[];
 
     constructor(quizState: QuizState, background: Background, pieces: PuzzlePiece[], noise?: Piece[]) {
         super(quizState);
@@ -77,14 +75,23 @@ export default class Puzzle extends Quiz {
         this.piecesMixed = (noise ? noise.concat(pieces) : pieces).sort(() => Math.random() - 0.5);
     }
 
+    public get Background() { return this.background; }
+    public get Pieces() { return this.pieces; }
+    public get Noise() { return this.noise; }
+    public get PiecesMixed() { return this.piecesMixed; }
+
+    public reset(): void {
+        throw new Error("Method not implemented.")
+    }
+
     public winCondition(): boolean {
-        return this.pieces.every((e) => e.isPlaced() === true);
+        return this.pieces.every((e) => e.Placed === true);
     }
 
     public complete(): void {
         let sum: number = 0;
         this.pieces.forEach((p: PuzzlePiece)=> {
-            sum += p.isPlaced() ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED;
+            sum += p.Placed ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED;
         });
         super.complete(sum);
     }

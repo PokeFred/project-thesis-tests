@@ -3,4 +3,4 @@
     const { piece }: { piece: PuzzlePiece } = $props();
 </script>
 
-<path fill={piece.isPlaced() ? "none" : "black"} d={piece.d} bind:this={piece.puzzleSlot}/>
+<path fill={piece.Placed ? "none" : "black"} d={piece.D} bind:this={piece.PuzzleSlot}/>

@@ -7,6 +7,8 @@ export abstract class Quiz {
         this.quizState = quizState;
     }
 
+    abstract reset(): void;
+
     public getQuizState(): QuizState {
         return this.quizState;
     }

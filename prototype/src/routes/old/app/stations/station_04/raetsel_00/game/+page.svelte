@@ -4,6 +4,8 @@
     import { goto } from "$app/navigation"
     import { quiz } from "../Quiz"
 
+    // quiz.reset();
+
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
 </script>
@@ -15,7 +17,7 @@
         goto("./end"); 
     }}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
-    {#if !quiz.pieces.every((piece) => piece.isPlaced())}
+    {#if !quiz.Pieces.every((piece) => piece.Placed)}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
     {/if}
 </Modal>

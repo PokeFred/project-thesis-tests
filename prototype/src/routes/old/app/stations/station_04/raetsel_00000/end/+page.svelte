@@ -2,7 +2,7 @@
     import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz"
-    const selected = quiz.options.filter((answer, i) => quiz.selected[i]);
+    const selected = quiz.Options.filter((answer, i) => quiz.Selected[i]);
     const answers: string[] = selected.map((answer)=>answer.answer);
     const points: number[] = selected.map((answer)=>answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
 </script>

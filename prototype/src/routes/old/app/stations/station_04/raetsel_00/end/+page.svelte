@@ -4,7 +4,7 @@
     import { quiz } from "../Quiz";
 
     const descriptions: string[] = ["Richtig platzierte Puzzleteile"]
-    const points: number[] = [quiz.pieces.reduce((sum, piece) => sum + (piece.isPlaced() ? POINTS.ANSWER_CORRECT : 0), 0)]
+    const points: number[] = [quiz.Pieces.reduce((sum, piece) => sum + (piece.Placed ? POINTS.ANSWER_CORRECT : 0), 0)]
 </script>
 
 <PointSummary {descriptions} {points}/>

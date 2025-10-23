@@ -8,13 +8,20 @@ export type Answer = {
 
 // TODO: MatchingGame == Multiple Choice ??
 export default class MultipleChoice extends Quiz {
-    public readonly options: Answer[];
-    public selected: boolean[];
+    private readonly options: Answer[];
+    private selected: boolean[];
 
     constructor(quizState: QuizState, options: Answer[]) {
         super(quizState);
         this.options = options;
         this.selected = Array<boolean>(options.length).fill(false);
+    }
+
+    public get Options() { return this.options; }
+    public get Selected() { return this.selected; }
+
+    public reset(): void {
+        this.selected = Array<boolean>(this.options.length).fill(false);
     }
 
     public complete(): void {
