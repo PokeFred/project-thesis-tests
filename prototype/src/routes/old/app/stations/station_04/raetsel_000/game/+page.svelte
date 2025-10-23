@@ -4,6 +4,8 @@
     import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
     import { quiz } from "../Quiz"
 
+    quiz.reset();
+
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
 </script>

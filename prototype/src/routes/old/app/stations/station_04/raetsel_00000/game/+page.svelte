@@ -3,6 +3,8 @@
     import { goto } from "$app/navigation"
     import MultipleChoice from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte";
     import { quiz } from "../Quiz";
+
+    quiz.reset();
     
     let showModal: () => void = $state(()=>{});
 </script>

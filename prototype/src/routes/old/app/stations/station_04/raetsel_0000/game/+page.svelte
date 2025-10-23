@@ -4,6 +4,8 @@
     import AnswerBox from "$components/Games/MatchingGame/AnswerBox.svelte"
     import { quiz, handwerk } from "../Quiz";
 
+    quiz.reset();
+
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});    
 </script>

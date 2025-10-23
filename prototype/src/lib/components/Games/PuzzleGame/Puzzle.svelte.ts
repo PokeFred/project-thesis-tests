@@ -27,8 +27,8 @@ export class Piece {
     private puzzlePiece?: HTMLImageElement
     private currentPosition: Position
 
-    constructor(path: string, src: string) {
-        this.src = `${path}/${src}`;
+    constructor(src: string) {
+        this.src = src;
         this.puzzlePiece = $state(undefined);
         this.currentPosition = $state({x: 0, y: 0});
     }
@@ -46,9 +46,9 @@ export class PuzzlePiece extends Piece {
     private puzzleSlot?: SVGPathElement
     private placed: boolean
 
-    constructor(path: string, cutoutData: CutoutData) {
-        super(path, cutoutData.src);
-        this.d = cutoutData.d;
+    constructor(src: string, d: string) {
+        super(src);
+        this.d = d;
         this.puzzleSlot = undefined;
         this.placed = $state(false);
     }
@@ -63,9 +63,9 @@ export class PuzzlePiece extends Piece {
 
 export default class Puzzle extends Quiz {
     private readonly background: Background;
-    private readonly pieces: PuzzlePiece[];
-    private readonly noise?: Piece[];
-    private readonly piecesMixed: Piece[];
+    private pieces: PuzzlePiece[];
+    private noise?: Piece[];
+    private piecesMixed: Piece[];
 
     constructor(quizState: QuizState, background: Background, pieces: PuzzlePiece[], noise?: Piece[]) {
         super(quizState);
@@ -81,11 +81,11 @@ export default class Puzzle extends Quiz {
     public get PiecesMixed() { return this.piecesMixed; }
 
     public reset(): void {
-        throw new Error("Method not implemented.")
-    }
-
-    public winCondition(): boolean {
-        return this.pieces.every((e) => e.Placed === true);
+        this.pieces = this.pieces.map((piece: PuzzlePiece) => new PuzzlePiece(piece.Src, piece.D));
+        if(this.noise) {
+            this.noise.map((piece: Piece) => new Piece(piece.Src));
+        }
+        this.piecesMixed = (this.noise ? this.noise.concat(this.pieces) : this.pieces).sort(() => Math.random() - 0.5);
     }
 
     public complete(): void {
@@ -94,5 +94,9 @@ export default class Puzzle extends Quiz {
             sum += p.Placed ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED;
         });
         super.complete(sum);
+    }
+
+    public winCondition(): boolean {
+        return this.pieces.every((e) => e.Placed === true);
     }
 }

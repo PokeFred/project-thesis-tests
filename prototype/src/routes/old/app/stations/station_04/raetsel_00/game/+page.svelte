@@ -4,7 +4,7 @@
     import { goto } from "$app/navigation"
     import { quiz } from "../Quiz"
 
-    // quiz.reset();
+    quiz.reset();
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
