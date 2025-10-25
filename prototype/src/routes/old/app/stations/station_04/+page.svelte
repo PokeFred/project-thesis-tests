@@ -7,6 +7,7 @@
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
     import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
     import { faKey } from "@fortawesome/free-solid-svg-icons/faKey"
+    import Fullscreen from "$components/Fullscreen.svelte";
 
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype"
 </script>
@@ -31,7 +32,9 @@
 <p class="mt-3 w-full h-auto text-sm">Auch in Dortmund gab es eine Fülle an Warenhäusern, die innerhalb kürzester Zeit am Westenhellweg ihre Türen öffneten. Dazu gehörten das 1905 gegründete Textilhaus Heerbeck, der vierstöckige Neubau des Porzellan- und Glaswaren-Kaufhauses Sternberg & Co, das Textilkaufhaus der Gebrüder Kaufmann, das Warenhaus Hettlage & Co und das Textilkaufhaus Clemens.</p>
 
 <figure>
-    <img src={GITHUB_PAGES_URL + "/station_04/Sternberg.jpg"} alt="Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 (Foto: Stadtarchiv Dortmund)">
+    <Fullscreen>
+        <img src={GITHUB_PAGES_URL + "/station_04/Sternberg.jpg"} alt="Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 (Foto: Stadtarchiv Dortmund)">
+    </Fullscreen>
     <figcaption class="text-sm">Geschäftshaus Sternberg & Co., Modernes Einkaufen um 1908 <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
 </figure>
 
