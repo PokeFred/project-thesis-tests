@@ -33,7 +33,6 @@
             disableScrolling();
             pushState("", {isFullscreen: true, statePushed: true});
         }
-        console.log(page.state)
     }
 </script>
 
