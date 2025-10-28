@@ -9,12 +9,11 @@
     let button: HTMLButtonElement;
     let div: HTMLDivElement = $state(document.createElement("div"));
 
-    if(page.state.isFullscreen) {
-        disableScrolling();
-    }
-    else {
-        enableScrolling();
-    }
+    window.addEventListener("popstate", () => {
+        if (page.state.isFullscreen) {
+            enableScrolling();
+        }
+    });
 
     function enableScrolling(): void {
         document.body.style.overflow = "";
