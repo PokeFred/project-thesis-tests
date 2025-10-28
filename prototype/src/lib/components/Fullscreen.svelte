@@ -8,10 +8,12 @@
 
     let button: HTMLButtonElement;
     let div: HTMLDivElement = $state(document.createElement("div"));
+    let isFullscreen: boolean = $state(false);
 
     window.addEventListener("popstate", () => {
         if (page.state.isFullscreen) {
             enableScrolling();
+            isFullscreen = false;
         }
     });
 
@@ -31,12 +33,13 @@
         }
         else {
             disableScrolling();
-            pushState("", {isFullscreen: true, statePushed: true});
+            pushState("", {isFullscreen: true});
         }
+        isFullscreen = page.state.isFullscreen;
     }
 </script>
 
-{#if page.state.isFullscreen}
+{#if isFullscreen}
     <div bind:this={div} class="fullscreenDiv fixed w-screen h-screen top-0 left-0 bg-black z-10000">
         <button onclick={toggleFullscreen} class="w-full h-full object-contain">
             {@render children()}
