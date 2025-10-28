@@ -41,7 +41,9 @@
 <p class="mt-3 w-full h-auto text-sm">Am beeindruckendsten war jedoch das am 7. Dezember 1904 eingeweihte Warenhaus Althoff.</p>
 
 <figure>
-    <img src={GITHUB_PAGES_URL + "/station_04/Althoff.jpg"} alt="Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg (Foto: Stadtarchiv Dortmund).">
+    <Fullscreen>
+        <img src={GITHUB_PAGES_URL + "/station_04/Althoff.jpg"} alt="Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg (Foto: Stadtarchiv Dortmund).">
+    </Fullscreen>
     <figcaption class="text-sm">Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg <cite>(Foto: Stadtarchiv Dortmund).</cite></figcaption>
 </figure>
 
