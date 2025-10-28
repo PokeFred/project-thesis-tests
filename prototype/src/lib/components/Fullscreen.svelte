@@ -1,12 +1,20 @@
 <!-- Fullscreen mithilfe der Fullscreen API mit pinch to zoom ist nicht gleichzeitig möglich. Dialog hat einen margin welches man nicht wegbekommt. Deswegen ein selbstgebautes Fullscreen mithilfe von div.  -->
 <script lang="ts">
     import { type Snippet } from "svelte";
+    import { pushState } from "$app/navigation";
+    import { page } from "$app/state"; 
 
-    let { children }: { children: Snippet} = $props();
+    let { children }: { children: Snippet } = $props();
 
-    let isFullscreen: boolean = $state(false);
     let button: HTMLButtonElement;
-    let div: HTMLDivElement;
+    let div: HTMLDivElement = $state(document.createElement("div"));
+
+    if(page.state.isFullscreen) {
+        disableScrolling();
+    }
+    else {
+        enableScrolling();
+    }
 
     function enableScrolling(): void {
         document.body.style.overflow = "";
@@ -16,26 +24,26 @@
         document.body.style.overflow = "hidden";
     }
 
-    function fullscreen(): void {
-        if(isFullscreen) {
-            div.style.visibility = "visible"
-            disableScrolling();
-        }
-        else {
-            div.style.visibility = "hidden"
+    function toggleFullscreen(): void {
+        if(page.state.isFullscreen) {
             enableScrolling();
         }
-        isFullscreen = !isFullscreen;
+        else {
+            disableScrolling();
+        }
+        pushState("", {isFullscreen: !page.state.isFullscreen});
     }
 </script>
 
-<div bind:this={div} class="fullscreenDiv fixed w-screen h-screen top-0 left-0 bg-black z-10000 invisible">
-    <button onclick={fullscreen} class="w-full h-full object-contain">
-        {@render children()}
-    </button>
-</div>
+{#if page.state.isFullscreen}
+    <div bind:this={div} class="fullscreenDiv fixed w-screen h-screen top-0 left-0 bg-black z-10000">
+        <button onclick={toggleFullscreen} class="w-full h-full object-contain">
+            {@render children()}
+        </button>
+    </div>
+{/if}
 
-<button bind:this={button} onclick={fullscreen}  class="block appearance-none touch-none">
+<button bind:this={button} onclick={toggleFullscreen}  class="block appearance-none touch-none">
     {@render children()}
 </button>
 
