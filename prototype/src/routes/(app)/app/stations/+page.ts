@@ -12,7 +12,7 @@ export const load: PageLoad = async (): Promise<{ completion: number, stations: 
                     name: element.stitle,
                     score: {
                         current: 0,
-                        max: 1
+                        max: 0
                     },
                     state: "OPEN"
                 }
