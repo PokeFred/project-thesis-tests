@@ -1,15 +1,6 @@
 import type { PageLoad } from "./$types"
 import config from "$config"
-
-type _Station = {
-    identifier: string,
-    name: string,
-    score: {
-        current: number,
-        max: number
-    },
-    state: string
-}
+import type { _Station } from "./Station"
 
 export const load: PageLoad = async (): Promise<{ completion: number, stations: _Station[] }> => {
     return {

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { Icon } from "svelte-awesome"
-    import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
     import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus"
+    import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
 
     let { question, answer }: { question: string, answer: string } = $props()
     let open: boolean = $state<boolean>(false)
