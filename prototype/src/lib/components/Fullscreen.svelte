@@ -44,7 +44,7 @@
     </div>
 {/if}
 
-<button bind:this={button} onclick={toggleFullscreen}  class="block appearance-none touch-none">
+<button bind:this={button} onclick={toggleFullscreen}  class="block appearance-none">
     {@render children()}
 </button>
 
