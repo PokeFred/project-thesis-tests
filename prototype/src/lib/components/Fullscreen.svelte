@@ -1,6 +1,6 @@
 <!-- Fullscreen mithilfe der Fullscreen API mit pinch to zoom ist nicht gleichzeitig möglich. Dialog hat einen margin welches man nicht wegbekommt. Deswegen ein selbstgebautes Fullscreen mithilfe von div.  -->
 <script lang="ts">
-    import { type Snippet } from "svelte";
+    import { onDestroy, onMount, type Snippet } from "svelte";
     import { pushState } from "$app/navigation";
     import { page } from "$app/state"; 
 
@@ -10,12 +10,12 @@
     let div: HTMLDivElement = $state(document.createElement("div"));
     let isFullscreen: boolean = $state(false);
 
-    window.addEventListener("popstate", () => {
+    function backButtonNavigationListener(): void {
         if (page.state.isFullscreen) {
             enableScrolling();
             isFullscreen = false;
         }
-    });
+    }    
 
     function enableScrolling(): void {
         document.body.style.overflow = "";
@@ -37,6 +37,9 @@
         }
         isFullscreen = page.state.isFullscreen;
     }
+
+    onMount(()=>window.addEventListener("popstate", backButtonNavigationListener));
+    onDestroy(()=>window.removeEventListener("popstate", backButtonNavigationListener));
 </script>
 
 {#if isFullscreen}
