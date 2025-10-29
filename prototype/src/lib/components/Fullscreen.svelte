@@ -1,9 +1,8 @@
 <!-- Fullscreen mithilfe der Fullscreen API mit pinch to zoom ist nicht gleichzeitig möglich. Dialog hat einen margin welches man nicht wegbekommt. Deswegen ein selbstgebautes Fullscreen mithilfe von div.  -->
 <!-- TODO: Mikroruckler beim reinzoomen im fullscreen beseitigen -->
-<!-- TODO: Fix anklicken, dann mit backbutton rausgehen -->
 <script lang="ts">
     import { onDestroy, onMount, type Snippet } from "svelte";
-    import { pushState } from "$app/navigation";
+    import { pushState, replaceState } from "$app/navigation";
     import { page } from "$app/state"; 
 
     let { children }: { children: Snippet } = $props();
@@ -12,11 +11,9 @@
     let div: HTMLDivElement = $state(document.createElement("div"));
     let isFullscreen: boolean = $state(false);
 
-    function backButtonNavigationListener(): void {
-        if (page.state.isFullscreen) {
-            enableScrolling();
-            isFullscreen = false;
-        }
+    function backButtonNavigationListener(event: PopStateEvent): void {
+        enableScrolling();
+        isFullscreen = false;
     }    
 
     function enableScrolling(): void {
@@ -28,6 +25,7 @@
     }
 
     function toggleFullscreen(): void {
+        console.log(page.state)
         if(page.state.isFullscreen) {
             enableScrolling();
             history.back();
