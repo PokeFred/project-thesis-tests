@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { GameResultAccordion } from "./GameResultAccordion"
-    import Accordion from "./GameResultAccordion.svelte"
+    import Accordion from "$components/accordions/GameResultAccordion.svelte"
+    import type { GameResultAccordion } from "$components/accordions/GameResultAccordion"
 
     const accordion: GameResultAccordion = [
         { type: "question", success: true, question: "(a) Hey...", answers: [
