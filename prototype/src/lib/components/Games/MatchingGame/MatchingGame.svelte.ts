@@ -43,6 +43,18 @@ export default class MatchingGame extends Quiz {
     public get Hints() { return this.hints; }
     public get Selected() { return this.selected; }
 
+    public get AnswersCorrect() {
+        if(this.selected.length <= 0) {
+            return 0
+        }
+        return this.selected.reduce((sum, sel: Answer) => {
+            if(sel.correct) {
+               return ++sum;
+            }
+            return sum;
+        }, 0);
+    }
+
     public reset(): void {
         this.selected = Array(this.selected.length);
         if(this.hints) {

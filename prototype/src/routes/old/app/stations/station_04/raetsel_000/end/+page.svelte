@@ -3,8 +3,8 @@
     import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz";
 
-    const descriptions: string[] = ["Richtig platzierte Puzzleteile"]
-    const points: number[] = [quiz.Pieces.reduce((sum, piece) => sum + (piece.Placed ? POINTS.ANSWER_CORRECT : 0), 0)]
+    const descriptions: string[] = [`Richtig platzierte Puzzleteile (${quiz.AnswersCorrect})`]
+    const points: number[] = [quiz.AnswersCorrect * POINTS.ANSWER_CORRECT]
 </script>
 
 <p class="mb-4 w-full h-auto text-sm">

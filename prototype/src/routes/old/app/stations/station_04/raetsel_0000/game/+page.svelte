@@ -10,7 +10,6 @@
     let showModal: () => void = $state(()=>{});    
 </script>
 
-
 <div class="grid grid-cols-2 gap-2 px-1">
     <h4>Handwerk</h4>
     <h4 class="justify-self-end">Zünfte</h4>

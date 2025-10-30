@@ -79,6 +79,10 @@ export default class Puzzle extends Quiz {
     public get Pieces() { return this.pieces; }
     public get Noise() { return this.noise; }
     public get PiecesMixed() { return this.piecesMixed; }
+    
+    public get AnswersCorrect() { 
+        return this.pieces.length > 0 ? this.pieces.reduce((sum, p: PuzzlePiece) => (p.Placed ? ++sum : sum), 0) : 0;
+    }
 
     public reset(): void {
         this.pieces = this.pieces.map((piece: PuzzlePiece) => new PuzzlePiece(piece.Src, piece.D));

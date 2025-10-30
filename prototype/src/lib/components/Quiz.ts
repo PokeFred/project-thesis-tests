@@ -7,11 +7,10 @@ export abstract class Quiz {
         this.quizState = quizState;
     }
 
-    abstract reset(): void;
+    public get QuizState(): QuizState { return this.quizState; }
+    public abstract get AnswersCorrect(): number;
 
-    public getQuizState(): QuizState {
-        return this.quizState;
-    }
+    abstract reset(): void;
 
     protected complete(score: number): void {
         this.quizState.complete(score);

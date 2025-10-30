@@ -25,7 +25,6 @@
     }
 
     function toggleFullscreen(): void {
-        console.log(page.state)
         if(page.state.isFullscreen) {
             enableScrolling();
             history.back();
