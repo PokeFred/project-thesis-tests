@@ -6,8 +6,7 @@ export type FaqAccordionQuestion = {
     type: "question",
     identifier: string,
     question: string,
-    answer: string,
-    open: boolean
+    answer: string
 }
 
 export type FaqAccordionSeperator = {
