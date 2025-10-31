@@ -9,12 +9,12 @@
 
     let { question }: { question: GameResultAccordionQuestion } = $props()
     let open: boolean = $state<boolean>(false)
-    let color: string = question.success ? "text-green-500" : "text-red-500"
+    let color: string = question.success !== undefined ? question.success ? "text-green-500" : "text-red-500" : ""
 </script>
 
 <details bind:open={open} class="w-full h-auto">
     <summary class="w-full h-auto flex justify-between items-center cursor-pointer">
-        <span class="font-bold {color}"><Icon data={question.success ? faSquareCheck : faSquareXmark} /> {question.question}</span>
+        <span class="font-bold {color}">{#if question.success !== undefined}<Icon data={question.success ? faSquareCheck : faSquareXmark} />{/if}{question.question}</span>
         <Icon data={open ? faMinus : faPlus} class="{color}" />
     </summary>
     <AccordionQuestionAnswer answers={question.answers} color={color} />

@@ -7,11 +7,11 @@
 <div class="{color} px-4 pt-1">
     {#each answers as answer}
         {#if answer.type === "paragraph"}
-            <div><i>{answer.content}</i></div>
+            <div class="mb-4 w-full h-auto text-sm"><i>{answer.content}</i></div>
         {/if}
         {#if answer.type === "image"}
             <img src={answer.src} alt={answer.alt} class="rounded-lg" />
-            <div class="text-black">{answer.caption}</div>
+            <div class="mb-4 w-full h-auto text-sm text-black">{answer.caption}</div>
         {/if}
         {#if answer.type === "spacing"}
             <br />
