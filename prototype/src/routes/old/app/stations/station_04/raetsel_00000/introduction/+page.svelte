@@ -13,6 +13,8 @@
     <h3 class="text-lg underline place-self-center">Rätsel 00000</h3>
 </div>
 
+<p class="mb-4 mt-4 w-full h-auto text-sm">Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur <strong>fünf</strong> von acht Antwortmöglichkeiten sind <strong>richtig</strong> – überlege genau!</p>
+
 <section class="my-4 w-full h-auto text-sm">
     <h2 class="underline">Punkteverteilung:</h2>
     <ul>

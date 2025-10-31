@@ -9,9 +9,7 @@
     let showModal: () => void = $state(()=>{});
 </script>
 
-<MultipleChoice multipleChoice={quiz}>
-    <p class="mb-4 w-full h-auto text-sm">Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur <strong>fünf</strong> von acht Antwortmöglichkeiten sind <strong>richtig</strong> – überlege genau!</p>
-</MultipleChoice>
+<MultipleChoice multipleChoice={quiz}></MultipleChoice>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         quiz.complete();
