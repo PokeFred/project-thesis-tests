@@ -1,21 +1,14 @@
 <script lang="ts">
     import { goto } from "$app/navigation"
-    import game from "$stores"
+    import { startGame } from "$stores/game"
     import Modal from "./ConfirmModal.svelte"
+    import { tick } from "svelte"
 
     let modal: Modal
 
-    function confirmModal(): void {
+    async function confirmModal(): Promise<void> {
         startGame()
-        goto("/app")
-    }
-
-    function startGame(): void {
-        $game = {
-            isRunning: true,
-            score: 0,
-            puzzles: []
-        }
+        window.location.href = "/app"
     }
 </script>
 

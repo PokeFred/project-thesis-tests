@@ -1,15 +1,20 @@
 import type { PageLoad } from "./$types"
-import type { FaqAccordion } from "./FaqAccordion"
+import Faq from "$config/faq"
+import type { FaqQuestion } from "$config/faq"
+import type { FaqAccordion } from "$components/accordions/FaqAccordion"
+
+function addSeperator(element: FaqAccordion): FaqAccordion {
+    element.push({ type: "seperator" })
+    return element
+}
 
 export const load: PageLoad = async (): Promise<{ list: FaqAccordion }> => {
-    // TODO read from config
+    const list: FaqAccordion = Faq
+        .map((element: FaqQuestion): FaqAccordion => [{ type: "question", question: element.question, answer: element.answer }])
+        .map(addSeperator)
+        .flat(1)
+
     return {
-        list: [
-            { type: "question", identifier: "question_01", question: "Frage 1 ?", answer: "Antwort 1." },
-            { type: "seperator" },
-            { type: "question", identifier: "question_01", question: "Frage 2 ?", answer: "Antwort 2." },
-            { type: "seperator" },
-            { type: "question", identifier: "question_01", question: "Frage 3 ?", answer: "Antwort 3." }
-        ]
+        list: list.slice(0, list.length - 1)
     }
 }

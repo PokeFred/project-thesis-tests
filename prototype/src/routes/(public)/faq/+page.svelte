@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import Accordion from "./FaqAccordion.svelte"
+    import Accordion from "$components/accordions/FaqAccordion.svelte"
 
     let { data }: PageProps = $props()
 </script>

@@ -16,7 +16,7 @@
     <div class="mt-3 w-full h-auto flex justify-center items-center">
         <div class="mr-3 text-sm shrink-0">Geschafft:</div>
         <div class="w-full h-auto bg-gray-500/25 rounded-xl">
-            <div class="w-[{data.completion}%] h-4 bg-blue-500 rounded-xl"></div>
+            <div class="h-4 bg-blue-500 rounded-xl" style="width: {data.completion}%;"></div>
         </div>
     </div>
     <div class="mt-3 w-full h-auto grid grid-cols-1 gap-2">
@@ -24,5 +24,5 @@
             <Station station={station} />
         {/each}
     </div>
-    <div>Storyline</div>
+    <div class="mt-4 w-full h-auto text-lg underline text-center">Storyline</div>
 </div>

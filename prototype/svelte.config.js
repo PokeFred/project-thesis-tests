@@ -21,6 +21,7 @@ const config = {
             $utils: "./src/lib/utils",
             $images: "./src/lib/images",
             $stores: "./src/lib/stores",
+            $manager: "./src/lib/manager",
             $styles: "./src/lib/styles",
             $types: "./src/lib/types"
         }

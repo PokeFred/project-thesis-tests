@@ -14,8 +14,8 @@
 
 <details bind:open={open} class="w-full h-auto">
     <summary class="w-full h-auto flex justify-between items-center cursor-pointer">
-        <span class="font-bold {color}">{#if question.success !== undefined}<Icon data={question.success ? faSquareCheck : faSquareXmark} />{/if}{question.question}</span>
-        <Icon data={open ? faMinus : faPlus} class="{color}" />
+        <span class="font-bold {color}">{#if question.success !== undefined}<Icon data={question.success ? faSquareCheck : faSquareXmark} />{/if}<span class="ml-1">{question.question}</span></span>
+        <Icon data={open ? faMinus : faPlus} class={color} />
     </summary>
     <AccordionQuestionAnswer answers={question.answers} color={color} />
 </details>

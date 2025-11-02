@@ -11,7 +11,7 @@
         {/if}
         {#if answer.type === "image"}
             <img src={answer.src} alt={answer.alt} class="rounded-lg" />
-            <div class="mb-4 w-full h-auto text-sm text-black">{answer.caption}</div>
+            <div class="mb-4 w-full h-auto text-sm {color}">{answer.caption}</div>
         {/if}
         {#if answer.type === "spacing"}
             <br />
