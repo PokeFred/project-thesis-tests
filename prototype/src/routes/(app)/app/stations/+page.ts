@@ -16,7 +16,7 @@ function getPuzzleScores(puzzles: any[]): number {
     return puzzles
         .map((element: any): PuzzleState | null => getPuzzle(element.identifier))
         .map((element: PuzzleState | null): number => (element !== null) ? element.score : 0 )
-        .reduce((pre: number, cur: number): number => pre += cur)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
 }
 
 function getPuzzleStates(puzzles: any[]): string[] {
@@ -30,14 +30,13 @@ export const load: PageLoad = async (): Promise<{ score: { current: number, max:
         score: {
             current: get(Game).puzzles
                 .map((element: any): number => element.score)
-                .reduce((pre: number, cur: number): number => pre += cur),
+                .reduce((pre: number, cur: number): number => pre += cur, 0),
             max: Config.stations
                 .map((element: any): number => element.score)
-                .reduce((pre: number, cur: number): number => pre += cur)
+                .reduce((pre: number, cur: number): number => pre += cur, 0)
         },
         stations: Config.stations
             .map((element: any): _Station => {
-                const score: number = getPuzzleScores(element.puzzles)
                 const states: string[] = getPuzzleStates(element.puzzles)
                     .filter((element: string): boolean => element !== "DONE")
 
@@ -45,7 +44,7 @@ export const load: PageLoad = async (): Promise<{ score: { current: number, max:
                     identifier: element.identifier,
                     name: element.stitle,
                     score: {
-                        current: score,
+                        current: getPuzzleScores(element.puzzles),
                         max: element.score
                     },
                     state: (states.length > 0) ? "OPEN" : "DONE"
