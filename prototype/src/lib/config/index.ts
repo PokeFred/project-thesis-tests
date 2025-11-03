@@ -4,7 +4,7 @@ export default {
             identifier: "station_01",
             stitle: "Station 01: Alter Markt",
             title: "Station 01: Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-            score: 1,
+            score: 2,
             chapters: [
                 // {
                 //     title: "",
@@ -78,7 +78,7 @@ export default {
                 }
             ],
             puzzles: [
-                { identifier: "station_01_puzzle_01", requirements: [], type: "GPS", name: "Rätsel 00: Station freischalten", score: 1, coordinates: { latitude: 0, longitude: 0 } }
+                { identifier: "station_01_puzzle_01", requirements: [], type: "GPS", name: "Rätsel 00: Station freischalten", score: 2, coordinates: { latitude: 0, longitude: 0 } }
             ]
         },
         {

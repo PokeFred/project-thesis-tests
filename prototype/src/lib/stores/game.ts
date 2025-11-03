@@ -35,8 +35,10 @@ state.subscribe((value: GameState): void => {
 function startGame() {
     state.update((value: GameState): GameState => ({
         isRunning: true,
-        score: 0,
-        puzzles: []
+        score: 2,
+        puzzles: [
+            { identifier: "station_01_puzzle_01", score: 2, state: "DONE" }
+        ]
     }))
 }
 
