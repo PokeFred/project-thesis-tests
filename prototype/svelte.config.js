@@ -9,7 +9,8 @@ const config = {
             fallback: "200.html",
             pages: "./build",
             assets: "./build",
-            precompress: true
+            precompress: true,
+            strict: true
         }),
         env: {
             publicPrefix: "PUBLIC_",
