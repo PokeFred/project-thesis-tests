@@ -32,6 +32,7 @@
     function onDragStart(data: DragEventData): void {
         piece.removeFromSlot();
         onDragStartProp(piece);
+        piece.PuzzlePiece!.style.zIndex = "10";
     }
 
     function onDragEnd(data: DragEventData): void {
@@ -40,8 +41,9 @@
             piece.placeInSlot();
         } else {
             piece.removeFromSlot();
-            onDragEndProp(piece); // TODO: für non PuzzlePiece teile machen. (Piece)
+            onDragEndProp(piece);
         }
+        piece.PuzzlePiece!.style.zIndex = "0";
     }
 </script>
 
@@ -62,15 +64,3 @@
     style:height={`${slotBbox.height * scaleHeight}px`}
     class="touch-none m-1"
 />
-
-<!-- style:width={`${slotBbox.width * scaleWidth}px`}
-    style:height={`${slotBbox.height * scaleHeight}px`} -->
-
-<!-- style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${naturalWidth * scaleWidth}px`}
-    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${naturalHeight * scaleWidth}px`} -->
-
-<style>
-    .puzzle-placed {
-        opacity: 0;
-    }
-</style>

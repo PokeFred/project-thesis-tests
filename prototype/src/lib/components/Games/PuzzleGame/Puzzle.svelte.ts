@@ -5,6 +5,7 @@ import { Quiz } from "../../Quiz"
 // TODO: wenn man dragged, es über alle bilder packen (z-index)
 // TODO: wenn in dem bild drin, dann immer über dem bild, aber 1 unter allen anderen icons die rumschwirren oder gedragged werden
 // TODO: erst wenn über container/bild gehovered wird mit icon, dann szene wechseln
+// TODO: puzzle items haben bestimmte slots in den containern. kommen immer an die selbe stelle zurück
 
 // TODO: container runterskalieren + bilder runterskalieren
 // TODO: icons beim rausdraggen vom container auf normale größe skalieren lassen
