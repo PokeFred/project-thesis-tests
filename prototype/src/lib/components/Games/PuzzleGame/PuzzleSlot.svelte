@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { type PuzzlePiece } from "./Puzzle.svelte";
-    const { piece }: { piece: PuzzlePiece } = $props();
+    import { type Piece } from "./Puzzle.svelte";
+    const { piece }: { piece: Piece } = $props();
 </script>
 
-<path fill={piece.Placed ? "none" : "black"} d={piece.D} bind:this={piece.PuzzleSlot}/>
+<path fill={piece.Slot.Selected ? "none" : "black"} d={piece.Slot.D} bind:this={piece.Slot.Slot}/>

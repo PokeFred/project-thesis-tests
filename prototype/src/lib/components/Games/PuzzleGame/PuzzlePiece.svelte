@@ -1,6 +1,6 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import { type Piece, PuzzlePiece } from "./Puzzle.svelte";
+    import { type Piece } from "./Puzzle.svelte";
 
     const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (piece: Piece)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
     const SNAP_RANGE = 20;
@@ -10,10 +10,8 @@
     let naturalHeight: number = $state(0);
 
     $effect(() => {
-        if(piece instanceof PuzzlePiece) {
-            if (piece?.PuzzleSlot) {
-                slotBbox = piece.PuzzleSlot.getBBox();
-            }
+        if(piece.Slot.Slot) {
+            slotBbox = piece.Slot.Slot?.getBBox();
         }
     });
 
@@ -32,22 +30,18 @@
     }
 
     function onDragStart(data: DragEventData): void {
-        if(piece instanceof PuzzlePiece) {
-            piece.Placed = false;
-        }
+        piece.removeFromSlot();
         onDragStartProp(piece);
     }
 
     function onDragEnd(data: DragEventData): void {
-        if(piece instanceof PuzzlePiece) {
-            if (inRange(data)) {
-                snap(data);
-                piece.Placed = true;
-            } else {
-                piece.Placed = false;
-                onDragEndProp(piece); // TODO: für non PuzzlePiece teile machen. (Piece)
-            }
-        }    
+        if (inRange(data)) {
+            snap(data);
+            piece.placeInSlot();
+        } else {
+            piece.removeFromSlot();
+            onDragEndProp(piece); // TODO: für non PuzzlePiece teile machen. (Piece)
+        }
     }
 </script>
 
@@ -57,7 +51,6 @@
     bind:this={piece.PuzzlePiece}
     bind:naturalWidth={naturalWidth}
     bind:naturalHeight={naturalHeight}
-    class:puzzle-placed={piece instanceof PuzzlePiece ? piece.Placed : false}
     draggable="false"
     use:draggable={{
         position: piece.CurrentPosition, // zum binden der koordinaten, snap
@@ -65,10 +58,16 @@
         onDragEnd: onDragEnd,
         bounds: ".puzzle-game",
     }}
-    style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${naturalWidth * scaleWidth}px`}
-    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${naturalHeight * scaleWidth}px`}
+    style:width={`${slotBbox.width * scaleWidth}px`}
+    style:height={`${slotBbox.height * scaleHeight}px`}
     class="touch-none m-1"
 />
+
+<!-- style:width={`${slotBbox.width * scaleWidth}px`}
+    style:height={`${slotBbox.height * scaleHeight}px`} -->
+
+<!-- style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${naturalWidth * scaleWidth}px`}
+    style:height={piece instanceof PuzzlePiece ? `${slotBbox.height * scaleHeight}px` : `${naturalHeight * scaleWidth}px`} -->
 
 <style>
     .puzzle-placed {
