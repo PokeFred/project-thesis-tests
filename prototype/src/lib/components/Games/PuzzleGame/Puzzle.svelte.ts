@@ -1,11 +1,9 @@
 import { type QuizState, POINTS } from "$lib/State.svelte"
 import { Quiz } from "../../Quiz"
 // TODO: cutout python script anpassen an neue json struktur
-// TODO: nicht mehrere gleichzeitig auf ein spot snappen lassen dürfen
+// TODO-DONE: nicht mehrere gleichzeitig auf ein spot snappen lassen dürfen
 // TODO: wenn man dragged, es über alle bilder packen (z-index)
 // TODO: wenn in dem bild drin, dann immer über dem bild, aber 1 unter allen anderen icons die rumschwirren oder gedragged werden
-// TODO: email schicken mit result
-// TODO: in email zeigen, dass mit kaputze schlecht ist
 // TODO: erst wenn über container/bild gehovered wird mit icon, dann szene wechseln
 
 // TODO: container runterskalieren + bilder runterskalieren

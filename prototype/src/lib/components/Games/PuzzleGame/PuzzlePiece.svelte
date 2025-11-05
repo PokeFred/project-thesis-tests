@@ -35,7 +35,7 @@
     }
 
     function onDragEnd(data: DragEventData): void {
-        if (inRange(data)) {
+        if (inRange(data) && !piece.Slot.Selected) {
             snap(data);
             piece.placeInSlot();
         } else {
