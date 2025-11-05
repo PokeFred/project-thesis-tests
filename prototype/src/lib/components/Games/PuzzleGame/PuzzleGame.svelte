@@ -2,6 +2,7 @@
     import Puzzle from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
     import PuzzlePieceComponent from "./PuzzlePiece.svelte";
+    import PuzzlePieceContainer from "./PuzzlePieceContainer.svelte";
 
     let { quiz }: { quiz: Puzzle } = $props();
     
@@ -25,17 +26,5 @@
         </svg>
     </figure>
 
-    
-    <div class="puzzle-piece-container flex flex-wrap justify-between rounded-xs border-1">
-        {#each quiz.PiecesMixed as piece: Piece}
-            <PuzzlePieceComponent
-                src={piece.Src}
-                alt="icon"
-                {piece}
-                {scaleWidth}
-                {scaleHeight}
-                winCondition={quiz.winCondition.bind(quiz)}
-            />
-        {/each}
-    </div>
+    <PuzzlePieceContainer {quiz} {scaleWidth} {scaleHeight}/>
 </div>

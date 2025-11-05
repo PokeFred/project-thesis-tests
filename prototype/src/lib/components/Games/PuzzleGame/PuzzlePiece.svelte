@@ -1,6 +1,6 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import { type Piece, PuzzlePiece } from "./Puzzle.svelte";
+    import { type Piece, PuzzlePiece, type Position } from "./Puzzle.svelte";
 
     const { src, alt, piece, scaleWidth, scaleHeight, winCondition }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
     const SNAP_RANGE = 20;
@@ -38,18 +38,48 @@
                 piece.Placed = true;
             } else {
                 piece.Placed = false;
+                putInContainer(data); // TODO: für non PuzzlePiece teile machen. (Piece)
             }
 
             if (winCondition()) {
                 console.log("GEWONNEN");
             }
-        }        
+        }    
     }
 
     function onDragStart(data: DragEventData): void {
         if(piece instanceof PuzzlePiece) {
             piece.Placed = false;
         }
+        getOutOfContainer(data); // anders benennen
+    }
+
+    // TODO: beides Auslagern in container component
+    function putInContainer(data: DragEventData): void {
+        const container: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container");
+        const scrollableContainer: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container-scrollable");
+        const node: HTMLElement = data.currentNode;
+        if(container?.contains(node)) {
+            node.style.position = "static";
+            scrollableContainer?.prepend(node);
+            piece.CurrentPosition = {x: 0, y: 0};
+        }
+    }
+    // TODO: beim start drag ist es noch bisschen verschoben
+    function getOutOfContainer(data: DragEventData): void {
+        const container: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container");
+        const scrollableContainer: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container-scrollable");
+        const node: HTMLElement = data.currentNode;
+        const boundingBoxIcon: DOMRect = node.getBoundingClientRect();
+        const boundingBoxContainer: DOMRect = container!.getBoundingClientRect();
+        const mitte: Position = {x: boundingBoxIcon.left - boundingBoxContainer.left, y: boundingBoxIcon.top + boundingBoxContainer.top};
+
+        if(scrollableContainer?.contains(node)) {
+            node.style.left = mitte.x + "px";   
+            // node.style.top = mitte.y + "px"; // fixen, wenn gebraucht
+            node.style.position = "absolute";
+            container?.prepend(node);
+        }        
     }
 </script>
 
