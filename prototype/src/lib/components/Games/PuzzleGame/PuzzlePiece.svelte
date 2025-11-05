@@ -2,7 +2,7 @@
     import { draggable, type DragEventData } from "@neodrag/svelte";
     import { type Piece, PuzzlePiece } from "./Puzzle.svelte";
 
-    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (node: HTMLElement)=>void; onDragEndProp: (node: HTMLElement)=>void } = $props();
+    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (piece: Piece)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
@@ -35,7 +35,7 @@
         if(piece instanceof PuzzlePiece) {
             piece.Placed = false;
         }
-        onDragStartProp(data.currentNode); // anders benennen
+        onDragStartProp(piece);
     }
 
     function onDragEnd(data: DragEventData): void {
@@ -45,7 +45,7 @@
                 piece.Placed = true;
             } else {
                 piece.Placed = false;
-                onDragEndProp(data.currentNode); // TODO: für non PuzzlePiece teile machen. (Piece)
+                onDragEndProp(piece); // TODO: für non PuzzlePiece teile machen. (Piece)
             }
         }    
     }
