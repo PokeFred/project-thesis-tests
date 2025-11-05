@@ -1,8 +1,8 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import { type Piece, PuzzlePiece, type Position } from "./Puzzle.svelte";
+    import { type Piece, PuzzlePiece } from "./Puzzle.svelte";
 
-    const { src, alt, piece, scaleWidth, scaleHeight, winCondition }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; winCondition: Function; } = $props();
+    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (node: HTMLElement)=>void; onDragEndProp: (node: HTMLElement)=>void } = $props();
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
@@ -31,6 +31,13 @@
         piece.CurrentPosition = {x: (slotBbox.x * scaleWidth) - data.currentNode.offsetLeft, y: (slotBbox.y * scaleHeight) - data.currentNode.offsetTop}
     }
 
+    function onDragStart(data: DragEventData): void {
+        if(piece instanceof PuzzlePiece) {
+            piece.Placed = false;
+        }
+        onDragStartProp(data.currentNode); // anders benennen
+    }
+
     function onDragEnd(data: DragEventData): void {
         if(piece instanceof PuzzlePiece) {
             if (inRange(data)) {
@@ -38,48 +45,9 @@
                 piece.Placed = true;
             } else {
                 piece.Placed = false;
-                putInContainer(data); // TODO: für non PuzzlePiece teile machen. (Piece)
-            }
-
-            if (winCondition()) {
-                console.log("GEWONNEN");
+                onDragEndProp(data.currentNode); // TODO: für non PuzzlePiece teile machen. (Piece)
             }
         }    
-    }
-
-    function onDragStart(data: DragEventData): void {
-        if(piece instanceof PuzzlePiece) {
-            piece.Placed = false;
-        }
-        getOutOfContainer(data); // anders benennen
-    }
-
-    // TODO: beides Auslagern in container component
-    function putInContainer(data: DragEventData): void {
-        const container: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container");
-        const scrollableContainer: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container-scrollable");
-        const node: HTMLElement = data.currentNode;
-        if(container?.contains(node)) {
-            node.style.position = "static";
-            scrollableContainer?.prepend(node);
-            piece.CurrentPosition = {x: 0, y: 0};
-        }
-    }
-    // TODO: beim start drag ist es noch bisschen verschoben
-    function getOutOfContainer(data: DragEventData): void {
-        const container: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container");
-        const scrollableContainer: HTMLDivElement | null =  document.querySelector(".puzzle-piece-container-scrollable");
-        const node: HTMLElement = data.currentNode;
-        const boundingBoxIcon: DOMRect = node.getBoundingClientRect();
-        const boundingBoxContainer: DOMRect = container!.getBoundingClientRect();
-        const mitte: Position = {x: boundingBoxIcon.left - boundingBoxContainer.left, y: boundingBoxIcon.top + boundingBoxContainer.top};
-
-        if(scrollableContainer?.contains(node)) {
-            node.style.left = mitte.x + "px";   
-            // node.style.top = mitte.y + "px"; // fixen, wenn gebraucht
-            node.style.position = "absolute";
-            container?.prepend(node);
-        }        
     }
 </script>
 
@@ -93,8 +61,8 @@
     draggable="false"
     use:draggable={{
         position: piece.CurrentPosition, // zum binden der koordinaten, snap
-        onDragEnd: onDragEnd,
         onDragStart: onDragStart,
+        onDragEnd: onDragEnd,
         bounds: ".puzzle-game",
     }}
     style:width={piece instanceof PuzzlePiece ? `${slotBbox.width * scaleWidth}px` : `${naturalWidth * scaleWidth}px`}
