@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { DragEventData } from "@neodrag/svelte";
     import type { Piece, Position } from "./Puzzle.svelte";
     import type Puzzle from "./Puzzle.svelte";
     import PuzzlePieceComponent from "./PuzzlePiece.svelte"
@@ -20,8 +21,7 @@
 
     containerLayout.forEach((container: PieceContainer, i: number) => container.piece = quiz.PiecesMixed[i]);
 
-    // TODO: beides Auslagern in container component
-    function prependContainerScrollable(piece: Piece): void {
+    function insertContainerScrollable(piece: Piece): void {
         const node: HTMLImageElement = piece.PuzzlePiece!;
         if(container.contains(node)) {
             node.style.position = "static";
@@ -30,16 +30,23 @@
         }
     }
     // TODO: beim start drag ist es noch bisschen verschoben
-    function prependContainer(piece: Piece): void {
-        const node: HTMLImageElement = piece.PuzzlePiece!;
-        const boundingBoxIcon: DOMRect = node.getBoundingClientRect();
-        const boundingBoxContainer: DOMRect = container.getBoundingClientRect();
-        const mitte: Position = {x: boundingBoxIcon.left - boundingBoxContainer.left, y: boundingBoxIcon.top - boundingBoxContainer.top};
+    function prependContainer(piece: Piece, event: DragEventData): void {
+        const NODE: HTMLImageElement = piece.PuzzlePiece!;
+        const WINDOW: HTMLDivElement = quiz.Window!;
 
-        if(containerScrollable.contains(node)) {
-            node.style.left = mitte.x + "px";   
-            node.style.position = "absolute";
-            container.prepend(node);
+        const BOUNDING_BOX_SLOT: DOMRect = piece.Slot.Slot!.getBoundingClientRect(); // Slot bounding box nehmen, da Icon bounding box buggy mit verschieben.
+        const WINDOW_BOUNDING_BOX = WINDOW!.getBoundingClientRect();
+        
+        const LEFT_RELATIVE_TO_WINDOW = event.event.clientX - WINDOW_BOUNDING_BOX.left;
+        const TOP_RELATIVE_TO_WINDOW = event.event.clientY - WINDOW_BOUNDING_BOX.top;
+        
+        const mitte: Position = {x: LEFT_RELATIVE_TO_WINDOW  -  (BOUNDING_BOX_SLOT.width / 2), y:  TOP_RELATIVE_TO_WINDOW - (BOUNDING_BOX_SLOT.height / 2)};
+        
+        if(containerScrollable.contains(NODE)) {
+            NODE.style.position = "absolute";    
+            container.prepend(NODE);
+            NODE.style.left = mitte.x + "px";   
+            NODE.style.top = mitte.y + "px";
         }        
     }
 </script>
@@ -55,7 +62,7 @@
                     {scaleWidth}
                     {scaleHeight}
                     onDragStartProp={prependContainer}
-                    onDragEndProp={prependContainerScrollable}
+                    onDragEndProp={insertContainerScrollable}
                 />
             </div>
         {/each}

@@ -98,6 +98,7 @@ export class Piece {
 
 export default class Puzzle extends Quiz {
     private readonly background: Background;
+    private window?: HTMLDivElement;
     private slots: Slot[];
     private pieces: Piece[];
     private noise?: Piece[];
@@ -113,9 +114,12 @@ export default class Puzzle extends Quiz {
     }
 
     public get Background() { return this.background; }
+    public get Window() { return this.window; }
     public get Pieces() { return this.pieces; }
     public get Noise() { return this.noise; }
     public get PiecesMixed() { return this.piecesMixed; }
+
+    public set Window(window: HTMLDivElement | undefined) { this.window = window; }
     
     public get AnswersCorrect() { 
         if(this.slots.length <= 0) {

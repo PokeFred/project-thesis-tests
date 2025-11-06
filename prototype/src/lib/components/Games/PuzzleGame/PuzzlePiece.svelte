@@ -2,7 +2,7 @@
     import { draggable, type DragEventData } from "@neodrag/svelte";
     import { type Piece } from "./Puzzle.svelte";
 
-    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (piece: Piece)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
+    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (piece: Piece, event: DragEventData)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
@@ -30,7 +30,7 @@
     function onDragStart(data: DragEventData): void {
         piece.Dragging = true;
         piece.removeFromSlot();
-        onDragStartProp(piece);
+        onDragStartProp(piece, data);
         piece.PuzzlePiece!.style.zIndex = "10";
     }
 
@@ -56,10 +56,10 @@
         position: piece.CurrentPosition, // zum binden der koordinaten, snap
         onDragStart: onDragStart,
         onDragEnd: onDragEnd,
-        bounds: ".puzzle-game",
+        // bounds: ".puzzle-game", // TODO: evtl wieder einbinden
     }}
-    style:width={piece.Dragging || piece.Placed ? `${slotBbox.width * scaleWidth}px` : ""}
-    style:height={piece.Dragging || piece.Placed ? `${slotBbox.height * scaleHeight}px` : ""}
-    class="touch-none object-contain w-full h-full"
+    style:width={piece.Dragging || piece.Placed ? `${slotBbox.width * scaleWidth}px` : "100%" }
+    style:height={piece.Dragging || piece.Placed ? `${slotBbox.height * scaleHeight}px` : "100%"}
+    class="touch-none object-contain"
 />
 

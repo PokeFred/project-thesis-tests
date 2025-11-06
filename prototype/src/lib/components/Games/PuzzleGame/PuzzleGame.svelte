@@ -13,7 +13,7 @@
     let scaleHeight = $derived(clientHeight / naturalHeight);
 </script>
 
-<div class="puzzle-game inline-block relative select-none" style:width={`${naturalWidth}px`}>
+<div bind:this={quiz.Window} class="puzzle-game inline-block relative select-none" style:width={`${naturalWidth}px`}>
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
         <img draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
