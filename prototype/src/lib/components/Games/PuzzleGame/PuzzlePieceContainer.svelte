@@ -8,12 +8,24 @@
     let container: HTMLDivElement;
     let containerScrollable: HTMLDivElement;
 
+    type PieceContainer = {
+        piece: Piece,
+        container: HTMLDivElement
+    }
+
+
+    let containerLayout: PieceContainer[] = $state(
+         quiz.PiecesMixed.map((piece) => ({ piece, container: undefined! }))
+    );
+
+    containerLayout.forEach((container: PieceContainer, i: number) => container.piece = quiz.PiecesMixed[i]);
+
     // TODO: beides Auslagern in container component
     function prependContainerScrollable(piece: Piece): void {
         const node: HTMLImageElement = piece.PuzzlePiece!;
         if(container.contains(node)) {
             node.style.position = "static";
-            containerScrollable.prepend(node);
+            containerLayout.find((container: PieceContainer)=> container.piece === piece)?.container.appendChild((piece.PuzzlePiece as Node));
             piece.CurrentPosition = {x: 0, y: 0};
         }
     }
@@ -34,16 +46,18 @@
 
 <div bind:this={container}>
     <div bind:this={containerScrollable} class="flex flex-row justify-between rounded-xs border-1 overflow-x-scroll">
-        {#each quiz.PiecesMixed as piece: Piece}
-            <PuzzlePieceComponent
-                src={piece.Src}
-                alt="icon"
-                {piece}
-                {scaleWidth}
-                {scaleHeight}
-                onDragStartProp={prependContainer}
-                onDragEndProp={prependContainerScrollable}
-            />
+        {#each quiz.PiecesMixed as piece: Piece, i}
+            <div bind:this={containerLayout[i].container} class="w-fit h-fit">
+                <PuzzlePieceComponent
+                    src={piece.Src}
+                    alt="icon"
+                    {piece}
+                    {scaleWidth}
+                    {scaleHeight}
+                    onDragStartProp={prependContainer}
+                    onDragEndProp={prependContainerScrollable}
+                />
+            </div>
         {/each}
     </div>
 </div>

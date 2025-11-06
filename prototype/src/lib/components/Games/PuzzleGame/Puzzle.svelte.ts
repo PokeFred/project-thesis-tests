@@ -2,10 +2,9 @@ import { type QuizState, POINTS } from "$lib/State.svelte"
 import { Quiz } from "../../Quiz"
 // TODO: cutout python script anpassen an neue json struktur
 // TODO-DONE: nicht mehrere gleichzeitig auf ein spot snappen lassen dürfen
-// TODO: wenn man dragged, es über alle bilder packen (z-index)
-// TODO: wenn in dem bild drin, dann immer über dem bild, aber 1 unter allen anderen icons die rumschwirren oder gedragged werden
+// TODO-DONE: wenn man dragged, es über alle bilder packen (z-index)
 // TODO: erst wenn über container/bild gehovered wird mit icon, dann szene wechseln
-// TODO: puzzle items haben bestimmte slots in den containern. kommen immer an die selbe stelle zurück
+// TODO-DONE: puzzle items haben bestimmte slots in den containern. kommen immer an die selbe stelle zurück
 
 // TODO: container runterskalieren + bilder runterskalieren
 // TODO: icons beim rausdraggen vom container auf normale größe skalieren lassen
