@@ -32,8 +32,47 @@ export type Background = {
     readonly viewbox: string
 }
 
+export class Window {
+    private window?: HTMLDivElement;
+    private image?: HTMLImageElement;
+    private naturalWidth: number;
+    private naturalHeight: number;
+    private clientWidth: number;
+    private clientHeight: number;
+    private scaleWidth: number;
+    private scaleHeight: number; 
+
+    constructor() {
+        this.window = $state(undefined);
+        this.image = $state(undefined);
+        this.naturalWidth = $derived(0);
+        this.naturalHeight = $derived(0);
+        this.clientWidth = $derived(0);
+        this.clientHeight = $derived(0);
+
+        this.scaleWidth = $derived(this.clientWidth / this.naturalWidth);
+        this.scaleHeight = $derived(this.clientHeight / this.naturalHeight);
+    }
+
+    public get Window() { return this.window; }
+    public get Image() { return this.image; }
+    public get NaturalWidth() { return this.naturalWidth; }
+    public get NaturalHeight() { return this.naturalHeight; }
+    public get ClientWidth() { return this.clientWidth; }
+    public get ClientHeight() { return this.clientHeight; }
+    public get ScaleWidth() { return this.scaleWidth; }
+    public get ScaleHeight() { return this.scaleHeight; }
+
+    public set Window(window: HTMLDivElement | undefined) { this.window = window; }
+    public set Image(image: HTMLImageElement | undefined) { this.image = image; }     
+    public set NaturalWidth(naturalWidth: number) { this.naturalWidth = naturalWidth }
+    public set NaturalHeight(naturalHeight: number) { this.naturalHeight = naturalHeight }
+    public set ClientWidth(clientWidth: number) { this.clientWidth = clientWidth; }
+    public set ClientHeight(clientHeight: number) { this.clientHeight = clientHeight; }
+}
+
 export class Slot {
-    private readonly d: string
+    private readonly d: string;
     private slot?: SVGPathElement;
     private selected?: Piece;
 
@@ -98,7 +137,7 @@ export class Piece {
 
 export default class Puzzle extends Quiz {
     private readonly background: Background;
-    private window?: HTMLDivElement;
+    private window: Window;
     private slots: Slot[];
     private pieces: Piece[];
     private noise?: Piece[];
@@ -107,6 +146,7 @@ export default class Puzzle extends Quiz {
     constructor(quizState: QuizState, background: Background, slots: Slot[], pieces: Piece[], noise?: Piece[]) {
         super(quizState);
         this.background = background;
+        this.window = new Window();
         this.slots = slots;
         this.pieces = pieces;
         this.noise = noise;
@@ -119,7 +159,7 @@ export default class Puzzle extends Quiz {
     public get Noise() { return this.noise; }
     public get PiecesMixed() { return this.piecesMixed; }
 
-    public set Window(window: HTMLDivElement | undefined) { this.window = window; }
+    public set Window(window: Window) { this.window = window; }
     
     public get AnswersCorrect() { 
         if(this.slots.length <= 0) {

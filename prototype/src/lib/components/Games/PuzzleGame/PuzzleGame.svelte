@@ -4,19 +4,12 @@
     import PuzzlePieceContainer from "./PuzzlePieceContainer.svelte";
 
     let { quiz }: { quiz: Puzzle } = $props();
-    
-    let naturalWidth: number = $state(0);
-    let naturalHeight: number = $state(0);
-    let clientWidth: number = $state(0);
-    let clientHeight: number = $state(0);
-    let scaleWidth = $derived(clientWidth / naturalWidth);
-    let scaleHeight = $derived(clientHeight / naturalHeight);
 </script>
 
-<div bind:this={quiz.Window} class="puzzle-game inline-block relative select-none" style:width={`${naturalWidth}px`}>
+<div bind:this={quiz.Window.Window} class="puzzle-game inline-block relative select-none" style:width={`${quiz.Window.NaturalWidth}px`}>
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
-        <img draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
+        <img bind:this={quiz.Window.Image} draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={quiz.Window.NaturalWidth} bind:naturalHeight={quiz.Window.NaturalHeight} bind:clientWidth={quiz.Window.ClientWidth} bind:clientHeight={quiz.Window.ClientHeight} />
     
         <svg viewBox={quiz.Background.viewbox} class="absolute top-0 left-0">
             {#each quiz.Pieces as piece}
@@ -25,5 +18,5 @@
         </svg>
     </figure>
 
-    <PuzzlePieceContainer {quiz} {scaleWidth} {scaleHeight}/>
+    <PuzzlePieceContainer {quiz}/>
 </div>

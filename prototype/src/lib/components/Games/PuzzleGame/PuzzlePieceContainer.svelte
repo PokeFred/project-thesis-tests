@@ -4,7 +4,7 @@
     import type Puzzle from "./Puzzle.svelte";
     import PuzzlePieceComponent from "./PuzzlePiece.svelte"
 
-    let { quiz, scaleWidth, scaleHeight }: { quiz: Puzzle, scaleWidth: number, scaleHeight: number } = $props();
+    let { quiz }: { quiz: Puzzle } = $props();
 
     let container: HTMLDivElement;
     let containerScrollable: HTMLDivElement;
@@ -32,7 +32,7 @@
     // TODO: beim start drag ist es noch bisschen verschoben
     function prependContainer(piece: Piece, event: DragEventData): void {
         const NODE: HTMLImageElement = piece.PuzzlePiece!;
-        const WINDOW: HTMLDivElement = quiz.Window!;
+        const WINDOW: HTMLDivElement = quiz.Window.Window!;
 
         const BOUNDING_BOX_SLOT: DOMRect = piece.Slot.Slot!.getBoundingClientRect(); // Slot bounding box nehmen, da Icon bounding box buggy mit verschieben.
         const WINDOW_BOUNDING_BOX = WINDOW!.getBoundingClientRect();
@@ -59,8 +59,7 @@
                     src={piece.Src}
                     alt="icon"
                     {piece}
-                    {scaleWidth}
-                    {scaleHeight}
+                    {quiz}
                     onDragStartProp={prependContainer}
                     onDragEndProp={insertContainerScrollable}
                 />

@@ -1,8 +1,8 @@
 <script lang="ts">
     import { draggable, type DragEventData } from "@neodrag/svelte";
-    import { type Piece } from "./Puzzle.svelte";
+    import Puzzle, { type Piece } from "./Puzzle.svelte";
 
-    const { src, alt, piece, scaleWidth, scaleHeight, onDragStartProp, onDragEndProp }: { src: string; alt: string; piece: Piece; scaleWidth: number; scaleHeight: number; onDragStartProp: (piece: Piece, event: DragEventData)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
+    const { src, alt, piece, quiz, onDragStartProp, onDragEndProp }: { src: string; alt: string; quiz: Puzzle; piece: Piece; onDragStartProp: (piece: Piece, event: DragEventData)=>void; onDragEndProp: (piece: Piece)=>void } = $props();
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
@@ -14,17 +14,17 @@
     });
 
     function inRange(data: DragEventData): boolean {
-        const OFFSET_LEFT_RELATIVE_TO_GAME: number = data.offsetX + data.currentNode.offsetLeft;
-        const OFFSET_TOP_RELATIVE_TO_GAME: number = data.offsetY + data.currentNode.offsetTop;
+        const LEFT_RELATIVE_TO_GAME: number = data.offsetX + data.currentNode.offsetLeft;
+        const TOP_RELATIVE_TO_GAME: number = data.offsetY + data.currentNode.offsetTop;
 
-        const SLOT_DISTANCE_X = ((slotBbox.x * scaleWidth) - (OFFSET_LEFT_RELATIVE_TO_GAME));
-        const SLOT_DISTANCE_Y = ((slotBbox.y * scaleHeight) - (OFFSET_TOP_RELATIVE_TO_GAME));        
+        const SLOT_DISTANCE_X = ((slotBbox.x * quiz.Window.ScaleWidth) - (LEFT_RELATIVE_TO_GAME));
+        const SLOT_DISTANCE_Y = ((slotBbox.y * quiz.Window.ScaleHeight) - (TOP_RELATIVE_TO_GAME));              
         
         return Math.abs(SLOT_DISTANCE_X) < SNAP_RANGE && Math.abs(SLOT_DISTANCE_Y) < SNAP_RANGE;
     }
 
     function snap(data: any): void {
-        piece.CurrentPosition = {x: (slotBbox.x * scaleWidth) - data.currentNode.offsetLeft, y: (slotBbox.y * scaleHeight) - data.currentNode.offsetTop}
+        piece.CurrentPosition = {x: (slotBbox.x * quiz.Window.ScaleWidth) - data.currentNode.offsetLeft, y: (slotBbox.y *  quiz.Window.ScaleHeight) - data.currentNode.offsetTop}
     }
 
     function onDragStart(data: DragEventData): void {
@@ -58,8 +58,8 @@
         onDragEnd: onDragEnd,
         // bounds: ".puzzle-game", // TODO: evtl wieder einbinden
     }}
-    style:width={piece.Dragging || piece.Placed ? `${slotBbox.width * scaleWidth}px` : "100%" }
-    style:height={piece.Dragging || piece.Placed ? `${slotBbox.height * scaleHeight}px` : "100%"}
+    style:width={piece.Dragging || piece.Placed ? `${slotBbox.width *  quiz.Window.ScaleWidth}px` : "100%" }
+    style:height={piece.Dragging || piece.Placed ? `${slotBbox.height *  quiz.Window.ScaleHeight}px` : "100%"}
     class="touch-none object-contain"
 />
 
