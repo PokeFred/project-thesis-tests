@@ -45,9 +45,9 @@
 </script>
 
 <div bind:this={container}>
-    <div bind:this={containerScrollable} class="flex flex-row justify-between rounded-xs border-1 overflow-x-scroll">
+    <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll">
         {#each quiz.PiecesMixed as piece: Piece, i}
-            <div bind:this={containerLayout[i].container} class="w-fit h-fit">
+            <div bind:this={containerLayout[i].container} class="shrink-0 w-20 h-20 m-1">
                 <PuzzlePieceComponent
                     src={piece.Src}
                     alt="icon"

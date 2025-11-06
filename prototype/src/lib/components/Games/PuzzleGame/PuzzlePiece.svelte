@@ -60,7 +60,9 @@
         onDragEnd: onDragEnd,
         bounds: ".puzzle-game",
     }}
-    style:width={`${slotBbox.width * scaleWidth}px`}
-    style:height={`${slotBbox.height * scaleHeight}px`}
-    class="touch-none m-1"
+    
+    class="touch-none object-contain w-full h-full"
 />
+
+<!-- style:width={`${slotBbox.width * scaleWidth}px`}
+    style:height={`${slotBbox.height * scaleHeight}px`} -->

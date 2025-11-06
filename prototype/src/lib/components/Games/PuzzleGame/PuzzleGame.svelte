@@ -1,7 +1,6 @@
 <script lang="ts">
     import Puzzle from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
-    import PuzzlePieceComponent from "./PuzzlePiece.svelte";
     import PuzzlePieceContainer from "./PuzzlePieceContainer.svelte";
 
     let { quiz }: { quiz: Puzzle } = $props();
@@ -14,7 +13,7 @@
     let scaleHeight = $derived(clientHeight / naturalHeight);
 </script>
 
-<div class="puzzle-game inline-block relative select-none">
+<div class="puzzle-game inline-block relative select-none" style:width={`${naturalWidth}px`}>
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
         <img draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={naturalWidth} bind:naturalHeight={naturalHeight} bind:clientWidth={clientWidth} bind:clientHeight={clientHeight} />
