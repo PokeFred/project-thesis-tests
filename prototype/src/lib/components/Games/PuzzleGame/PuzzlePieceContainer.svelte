@@ -3,17 +3,32 @@
     import type { Piece, Position } from "./Puzzle.svelte";
     import type Puzzle from "./Puzzle.svelte";
     import PuzzlePieceComponent from "./PuzzlePiece.svelte"
-
-    let { quiz }: { quiz: Puzzle } = $props();
-
-    let container: HTMLDivElement;
-    let containerScrollable: HTMLDivElement;
+    import { Icon } from "svelte-awesome";
+    import { faArrowDown } from "@fortawesome/free-solid-svg-icons/faArrowDown"
+    import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
     type PieceContainer = {
         piece: Piece,
         container: HTMLDivElement
     }
 
+    let { quiz }: { quiz: Puzzle } = $props();
+
+    let container: HTMLDivElement;
+    let containerScrollable: HTMLDivElement;
+
+    let toggleButton: HTMLButtonElement;
+    let visible: boolean = $state(true);
+
+    function toggleContainer(): void {
+        if(visible){
+            containerScrollable.style.display = "none";
+        }
+        else{
+            containerScrollable.style.display = "flex";
+        }
+        visible = !visible;
+    }
 
     let containerLayout: PieceContainer[] = $state(
          quiz.PiecesMixed.map((piece) => ({ piece, container: undefined! }))
@@ -52,18 +67,23 @@
 </script>
 
 <div bind:this={container}>
-    <div bind:this={containerScrollable} class="absolute flex flex-row w-full justify-between bottom-1 rounded-xs border-1 overflow-x-scroll bg-white/25">
-        {#each quiz.PiecesMixed as piece: Piece, i}
-            <div bind:this={containerLayout[i].container} class="shrink-0 w-20 h-20 mx-3 my-1">
-                <PuzzlePieceComponent
-                    src={piece.Src}
-                    alt="icon"
-                    {piece}
-                    {quiz}
-                    onDragStartProp={prependContainer}
-                    onDragEndProp={insertContainerScrollable}
-                />
+    <div class="absolute w-full bottom-1">
+        <div class="relative">
+            <button bind:this={toggleButton} onclick={toggleContainer} class="rounded-xs bg-white/25"><Icon data={visible ? faArrowDown : faArrowUp}/></button>
+            <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll overflow-y-clip bg-white/25">
+                {#each quiz.PiecesMixed as piece: Piece, i}
+                    <div bind:this={containerLayout[i].container} class="shrink-0 w-20 h-20 mx-3 my-1">
+                        <PuzzlePieceComponent
+                            src={piece.Src}
+                            alt="icon"
+                            {piece}
+                            {quiz}
+                            onDragStartProp={prependContainer}
+                            onDragEndProp={insertContainerScrollable}
+                        />
+                    </div>
+                {/each}
             </div>
-        {/each}
+        </div>
     </div>
 </div>
