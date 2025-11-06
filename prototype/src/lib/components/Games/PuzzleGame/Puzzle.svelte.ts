@@ -8,7 +8,7 @@ import { Quiz } from "../../Quiz"
 
 // TODO-DONE: container runterskalieren + bilder runterskalieren
 // TODO-DONE: icons beim rausdraggen vom container auf normale größe skalieren lassen
-// TODO: container über dem bild plazieren
+// TODO-DONE: container über dem bild plazieren
 // TODO: button, um container anzuzeigen/zu verstecken
 export type PuzzleData = {
     readonly viewBox: string;
