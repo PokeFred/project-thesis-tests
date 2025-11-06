@@ -6,8 +6,6 @@
     const SNAP_RANGE = 20;
 
     let slotBbox: DOMRect = $state({height: 0, width: 0, x: 0, y: 0, bottom: 0, left: 0, right: 0, top: 0, toJSON: ()=>{}});
-    let naturalWidth: number = $state(0);
-    let naturalHeight: number = $state(0);
 
     $effect(() => {
         if(piece.Slot.Slot) {
@@ -30,12 +28,14 @@
     }
 
     function onDragStart(data: DragEventData): void {
+        piece.Dragging = true;
         piece.removeFromSlot();
         onDragStartProp(piece);
         piece.PuzzlePiece!.style.zIndex = "10";
     }
 
     function onDragEnd(data: DragEventData): void {
+        piece.Dragging = false;
         if (inRange(data) && !piece.Slot.Selected) {
             snap(data);
             piece.placeInSlot();
@@ -51,8 +51,6 @@
     {src}
     {alt}
     bind:this={piece.PuzzlePiece}
-    bind:naturalWidth={naturalWidth}
-    bind:naturalHeight={naturalHeight}
     draggable="false"
     use:draggable={{
         position: piece.CurrentPosition, // zum binden der koordinaten, snap
@@ -60,9 +58,8 @@
         onDragEnd: onDragEnd,
         bounds: ".puzzle-game",
     }}
-    
+    style:width={piece.Dragging || piece.Placed ? `${slotBbox.width * scaleWidth}px` : ""}
+    style:height={piece.Dragging || piece.Placed ? `${slotBbox.height * scaleHeight}px` : ""}
     class="touch-none object-contain w-full h-full"
 />
 
-<!-- style:width={`${slotBbox.width * scaleWidth}px`}
-    style:height={`${slotBbox.height * scaleHeight}px`} -->

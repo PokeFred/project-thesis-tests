@@ -6,8 +6,8 @@ import { Quiz } from "../../Quiz"
 // TODO: erst wenn über container/bild gehovered wird mit icon, dann szene wechseln
 // TODO-DONE: puzzle items haben bestimmte slots in den containern. kommen immer an die selbe stelle zurück
 
-// TODO: container runterskalieren + bilder runterskalieren
-// TODO: icons beim rausdraggen vom container auf normale größe skalieren lassen
+// TODO-DONE: container runterskalieren + bilder runterskalieren
+// TODO-DONE: icons beim rausdraggen vom container auf normale größe skalieren lassen
 // TODO: container über dem bild plazieren
 // TODO: button, um container anzuzeigen/zu verstecken
 export type PuzzleData = {
@@ -56,6 +56,7 @@ export class Piece {
     private readonly correct: boolean
     private puzzlePiece?: HTMLImageElement
     private currentPosition: Position
+    private dragging: boolean
 
     private readonly slot: Slot;
 
@@ -64,6 +65,7 @@ export class Piece {
         this.correct = correct;
         this.puzzlePiece = $state(undefined);
         this.currentPosition = $state({x: 0, y: 0});
+        this.dragging = $state(false);
 
         this.slot = slot;
     }
@@ -73,11 +75,13 @@ export class Piece {
     public get PuzzlePiece() { return this.puzzlePiece; }
     public get CurrentPosition() { return this.currentPosition; }
     public get Slot() { return this.slot; }
+    public get Dragging() { return this.dragging; }
 
     public get Placed() { return this.slot.Selected === this }
     
     public set PuzzlePiece(piece: HTMLImageElement | undefined) { this.puzzlePiece = piece; }
     public set CurrentPosition(position: Position) { this.currentPosition = position }
+    public set Dragging(dragging: boolean) { this.dragging = dragging; }
 
     public placeInSlot(): void {
         if(!this.slot.Selected) {
