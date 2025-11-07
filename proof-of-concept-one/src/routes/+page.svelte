@@ -18,7 +18,7 @@
             {#await location}
                 <SearchBanner />
             {:then data: UserLocationData}
-                <div class="mx-auto w-full max-w-xs h-auto grid grid-cols-[auto_160px] gap-x-4">
+                <div class="mx-auto w-full max-w-3xs h-auto grid grid-cols-[auto_160px] gap-x-4">
                     <span class="text-left">Latitude:</span>
                     <span class="text-left">{data.lat}</span>
                     <span class="text-left">Longitude:</span>
