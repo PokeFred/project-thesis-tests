@@ -14,13 +14,12 @@ import { Quiz } from "../Quiz"
 export type PuzzleData = {
     readonly viewBox: string;
     readonly cutouts: CutoutData[];
-    readonly noise?: string[];
 }
 
 export type CutoutData = {
     readonly src: string;
     readonly d: string;
-    readonly noise: string[];
+    readonly noise?: string[];
 }
 
 export type Position = {
