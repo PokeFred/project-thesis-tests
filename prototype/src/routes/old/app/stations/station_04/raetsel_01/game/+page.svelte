@@ -32,14 +32,14 @@
 <!-- Bild zoom wenn angeklickt? -->
 <figure>
     <Fullscreen>
-        <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_01.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+        <img src={GITHUB_PAGES_URL + "/station_04/raetsel_01/game/Althoff_Teppichlager_01.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     </Fullscreen>
     <figcaption class="text-sm">Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
 <figure>
     <Fullscreen>
-        <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Teppichlager_02.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+        <img src={GITHUB_PAGES_URL + "/station_04/raetsel_01/game/Althoff_Teppichlager_02.jpg"} alt="Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     </Fullscreen>
     <figcaption class="text-sm">Teppichlager im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
@@ -63,14 +63,14 @@
 
 <figure>
     <Fullscreen>
-        <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_01.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+        <img src={GITHUB_PAGES_URL + "/station_04/raetsel_01/game/Althoff_Erfrischungsraum_01.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     </Fullscreen>
     <figcaption class="text-sm">Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
 <figure>
     <Fullscreen>
-        <img src={GITHUB_PAGES_URL + "/Coze/Althoff_Erfrischungsraum_02.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+        <img src={GITHUB_PAGES_URL + "/station_04/raetsel_01/game/Althoff_Erfrischungsraum_02.jpg"} alt="Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     </Fullscreen>
     <figcaption class="text-sm">Erfrischungsraum im Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
@@ -86,7 +86,7 @@
 
 <figure>
     <Fullscreen>
-        <img src={GITHUB_PAGES_URL + "/Coze/Althoff.jpg"} alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
+        <img src={GITHUB_PAGES_URL + "/station_04/raetsel_01/game/Althoff.jpg"} alt="Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." />
     </Fullscreen>
     <figcaption class="text-sm">Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
