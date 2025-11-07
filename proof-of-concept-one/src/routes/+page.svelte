@@ -11,7 +11,7 @@
 <div class="w-full h-auto text-[#30114F] bg-[#FFA099] rounded-xl p-4">
     <div class="w-full h-auto text-lg font-bold underline text-center">GPS Koordinaten</div>
     <div class="mt-2 mx-auto w-fit h-auto">
-        <button onclick={() => location = fetchLocation()} class="w-full h-auto text-lg text-[#FFA099] font-semibold bg-[#30114F] rounded-xl cursor-pointer px-8 active:scale-95">Fetch Location</button>
+        <button onclick={() => location = fetchLocation()} class="w-full h-auto text-lg text-[#FFA099] font-semibold bg-[#30114F] rounded-xl cursor-pointer px-8 active:scale-95">Standort aktualisieren</button>
     </div>
     <div class="mt-4 mx-auto w-full h-auto">
         {#if location !== null}
