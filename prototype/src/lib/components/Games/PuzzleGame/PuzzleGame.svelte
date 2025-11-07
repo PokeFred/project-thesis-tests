@@ -6,7 +6,7 @@
     let { quiz }: { quiz: Puzzle } = $props();
 </script>
 
-<div bind:this={quiz.Window.Window} class="puzzle-game inline-block relative select-none" style:width={`${quiz.Window.NaturalWidth}px`}>
+<div bind:this={quiz.Window.Window} class="puzzle-game inline-block relative select-none">
     <figure class="m-0 relative max-w-fit">
         <!-- <figcaption></figcaption> -->
         <img bind:this={quiz.Window.Image} draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={quiz.Window.NaturalWidth} bind:naturalHeight={quiz.Window.NaturalHeight} bind:clientWidth={quiz.Window.ClientWidth} bind:clientHeight={quiz.Window.ClientHeight} />
