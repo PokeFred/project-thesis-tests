@@ -16,15 +16,15 @@
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.10",
         "@sveltejs/enhanced-img": "^0.8.4",
-        "@sveltejs/kit": "^2.46.5",
+        "@sveltejs/kit": "^2.48.4",
         "@sveltejs/vite-plugin-svelte": "^6.2.1",
         "@testing-library/svelte": "^5.2.8",
-        "jsdom": "^27.0.0",
-        "svelte": "^5.39.11",
+        "jsdom": "^27.1.0",
+        "svelte": "^5.43.4",
         "svelte-check": "^4.3.3",
         "typescript": "^5.9.3",
-        "vite": "^7.1.9",
-        "vitest": "^3.2.4"
+        "vite": "^7.2.2",
+        "vitest": "^4.0.7"
     },
     "pnpm": {
         "onlyBuiltDependencies": ["esbuild"]

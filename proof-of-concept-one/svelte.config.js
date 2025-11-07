@@ -10,10 +10,6 @@ const config = {
             assets: "./build",
             precompress: true
         }),
-        paths: {
-            // @ts-ignore
-            base: process.argv.includes("dev") ? "" : "/project-thesis-tests/proof-concept-one"
-        },
         env: {
             publicPrefix: "PUBLIC_",
             privatePrefix: "PRIVATE_"

@@ -1,5 +1,5 @@
 import { expect, test } from "vitest"
 
-test("sample test", async (): Promise<void> => {
+test("sample test", (): void => {
     expect(true).toBe(true)
 })
