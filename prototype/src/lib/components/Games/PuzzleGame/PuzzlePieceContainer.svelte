@@ -70,7 +70,7 @@
     <div class="absolute w-full bottom-1">
         <div class="relative">
             <button bind:this={toggleButton} onclick={toggleContainer} class="rounded-xs bg-white/25"><Icon data={visible ? faArrowDown : faArrowUp}/></button>
-            <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll overflow-y-clip bg-white/25">
+            <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll overflow-y-clip bg-white/25 backdrop-blur-sm">
                 {#each quiz.PiecesMixed as piece: Piece, i}
                     <div bind:this={containerLayout[i].container} class="shrink-0 w-20 h-20 mx-3 my-1">
                         <PuzzlePieceComponent
