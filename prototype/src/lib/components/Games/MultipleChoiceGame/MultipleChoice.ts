@@ -1,4 +1,4 @@
-import { Quiz } from "$components/Quiz";
+import { Quiz } from "$components/Games/Quiz";
 import { type QuizState, POINTS } from "$lib/State.svelte";
 
 export type Answer = {

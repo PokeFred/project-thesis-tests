@@ -1,4 +1,4 @@
-import { QuizState } from "../State.svelte"
+import { QuizState } from "$lib/State.svelte"
 
 export abstract class Quiz {
     private quizState: QuizState;

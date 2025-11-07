@@ -1,6 +1,7 @@
 import { type QuizState, POINTS } from "$lib/State.svelte"
-import { Quiz } from "../../Quiz"
+import { Quiz } from "../Quiz"
 // TODO: cutout python script anpassen an neue json struktur
+// TODO: rätsel 00 anpassen
 // TODO-DONE: nicht mehrere gleichzeitig auf ein spot snappen lassen dürfen
 // TODO-DONE: wenn man dragged, es über alle bilder packen (z-index)
 // TODO: erst wenn über container/bild gehovered wird mit icon, dann szene wechseln
