@@ -7,11 +7,13 @@
 
     let { children }: { children: Snippet } = $props();
 
-    let button: HTMLButtonElement;
-    let div: HTMLDivElement = $state(document.createElement("div"));
+    let childrenButton: HTMLButtonElement = $state(document.createElement("button"));
+    let fullscreenDiv: HTMLDivElement = $state(document.createElement("div"));
+    let normalDiv: HTMLDivElement = $state(document.createElement("div"));
     let isFullscreen: boolean = $state(false);
 
     function backButtonNavigationListener(event: PopStateEvent): void {
+        normalDiv.appendChild(childrenButton);
         enableScrolling();
         isFullscreen = false;
     }    
@@ -26,11 +28,13 @@
 
     function toggleFullscreen(): void {
         if(page.state.isFullscreen) {
+            normalDiv.appendChild(childrenButton);
             enableScrolling();
             history.back();
             pushState("", {isFullscreen: false});
         }
         else {
+            fullscreenDiv.appendChild(childrenButton);
             disableScrolling();
             pushState("", {isFullscreen: true});
         }
@@ -41,17 +45,13 @@
     onDestroy(()=>window.removeEventListener("popstate", backButtonNavigationListener));
 </script>
 
-{#if isFullscreen}
-    <div bind:this={div} class="fullscreenDiv fixed w-screen h-screen top-0 left-0 bg-black z-10000">
-        <button onclick={toggleFullscreen} class="w-full h-full object-contain">
-            {@render children()}
-        </button>
-    </div>
-{/if}
+<div bind:this={fullscreenDiv} class="fullscreenDiv {isFullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-black z-10000"></div>
 
-<button bind:this={button} onclick={toggleFullscreen}  class="block appearance-none">
-    {@render children()}
-</button>
+<div bind:this={normalDiv}>
+    <button bind:this={childrenButton} onclick={toggleFullscreen} class="w-full h-full object-contain">
+        {@render children()}
+    </button>
+</div>
 
 <style>
     .fullscreenDiv :global(img)  {
