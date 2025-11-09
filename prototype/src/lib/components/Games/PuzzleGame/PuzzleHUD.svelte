@@ -21,9 +21,9 @@
             height = visualViewport.height;
             scale = visualViewport.scale;
 
-            // const container: HTMLDivElement | null = document.querySelector(".test-container")
-            // container!.style.transform = `scale(${1 / scale})`;
-            // test.style.transform = `scale(${1 / scale})`;
+            const container: HTMLDivElement | null = document.querySelector(".test-container")
+            container!.style.transformOrigin = "bottom left";
+            container!.style.transform = `scale(${1 / scale})`;
         }
         requestAnimationFrame(updateVisualViewport);
     }

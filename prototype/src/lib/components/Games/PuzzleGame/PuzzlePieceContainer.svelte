@@ -67,7 +67,7 @@
 </script>
 
 <div bind:this={container}>
-    <div class="test-container absolute w-full bottom-0">
+    <div class="test-container absolute bottom-0">
         <div class="relative">
             <button bind:this={toggleButton} onclick={toggleContainer} class="rounded-xs bg-white/25"><Icon data={visible ? faArrowDown : faArrowUp}/></button>
             <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll overflow-y-clip bg-white/25 backdrop-blur-sm">
