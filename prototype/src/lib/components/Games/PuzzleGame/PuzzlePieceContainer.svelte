@@ -34,7 +34,7 @@
          quiz.PiecesMixed.map((piece) => ({ piece, container: undefined! }))
     );
 
-    containerLayout.forEach((container: PieceContainer, i: number) => container.piece = quiz.PiecesMixed[i]);
+    containerLayout.forEach((container: PieceContainer, i: number) => container.piece = quiz.PiecesMixed[i]);    
 
     function insertContainerScrollable(piece: Piece): void {
         const node: HTMLImageElement = piece.PuzzlePiece!;
@@ -47,7 +47,7 @@
     // TODO: beim start drag ist es noch bisschen verschoben
     function prependContainer(piece: Piece, event: DragEventData): void {
         const NODE: HTMLImageElement = piece.PuzzlePiece!;
-        const WINDOW: HTMLDivElement = quiz.Window.Window!;
+        const WINDOW: HTMLDivElement = quiz.ImageWindow.Window!;
 
         const BOUNDING_BOX_SLOT: DOMRect = piece.Slot.Slot!.getBoundingClientRect(); // Slot bounding box nehmen, da Icon bounding box buggy mit verschieben.
         const WINDOW_BOUNDING_BOX = WINDOW!.getBoundingClientRect();
@@ -67,7 +67,7 @@
 </script>
 
 <div bind:this={container}>
-    <div class="absolute w-full bottom-1">
+    <div class="test-container absolute w-full bottom-0">
         <div class="relative">
             <button bind:this={toggleButton} onclick={toggleContainer} class="rounded-xs bg-white/25"><Icon data={visible ? faArrowDown : faArrowUp}/></button>
             <div bind:this={containerScrollable} class="flex flex-row w-full justify-between rounded-xs border-1 overflow-x-scroll overflow-y-clip bg-white/25 backdrop-blur-sm">

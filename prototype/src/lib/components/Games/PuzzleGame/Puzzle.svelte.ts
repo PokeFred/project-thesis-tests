@@ -32,8 +32,8 @@ export type Background = {
     readonly viewbox: string
 }
 
-export class Window {
-    private window?: HTMLDivElement;
+export class ImageWindow {
+    private window?: HTMLDivElement; // TODO: window weg, image behalten
     private image?: HTMLImageElement;
     private naturalWidth: number;
     private naturalHeight: number;
@@ -70,6 +70,12 @@ export class Window {
     public set ClientWidth(clientWidth: number) { this.clientWidth = clientWidth; }
     public set ClientHeight(clientHeight: number) { this.clientHeight = clientHeight; }
 }
+
+// TODO: div, welches immer die größe des visualViewports hat
+// Für: Puzzle Piece Container, evtl. exit button für fullscreen und oder beenden button
+// export class HUD {
+//     private hudDiv: HTMLDivElement;
+// }
 
 export class Slot {
     private readonly d: string;
@@ -136,8 +142,8 @@ export class Piece {
 }
 
 export default class Puzzle extends Quiz {
-    private readonly background: Background;
-    private window: Window;
+    private readonly background: Background; //TODO: zusammenführen
+    private imageWindow: ImageWindow; //TODO: zusammenführen
     private slots: Slot[];
     private pieces: Piece[];
     private noise?: Piece[];
@@ -146,7 +152,7 @@ export default class Puzzle extends Quiz {
     constructor(quizState: QuizState, background: Background, slots: Slot[], pieces: Piece[], noise?: Piece[]) {
         super(quizState);
         this.background = background;
-        this.window = new Window();
+        this.imageWindow = new ImageWindow();
         this.slots = slots;
         this.pieces = pieces;
         this.noise = noise;
@@ -154,12 +160,12 @@ export default class Puzzle extends Quiz {
     }
 
     public get Background() { return this.background; }
-    public get Window() { return this.window; }
+    public get ImageWindow() { return this.imageWindow; }
     public get Pieces() { return this.pieces; }
     public get Noise() { return this.noise; }
     public get PiecesMixed() { return this.piecesMixed; }
 
-    public set Window(window: Window) { this.window = window; }
+    public set ImageWindow(imageWindow: ImageWindow) { this.imageWindow = imageWindow; }
     
     public get AnswersCorrect() { 
         if(this.slots.length <= 0) {
