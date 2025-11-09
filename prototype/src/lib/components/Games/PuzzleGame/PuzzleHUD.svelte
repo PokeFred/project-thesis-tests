@@ -12,6 +12,7 @@
     let scale: number = $state(1);
 
     let test: HTMLDivElement;
+    let test2: HTMLDivElement;
 
     function updateVisualViewport(): void {
         if(visualViewport) {
@@ -21,9 +22,17 @@
             height = visualViewport.height;
             scale = visualViewport.scale;
 
-            const container: HTMLDivElement | null = document.querySelector(".test-container")
-            container!.style.transformOrigin = "bottom left";
-            container!.style.transform = `scale(${1 / scale})`;
+            test.style.transformOrigin = "top left";
+            // test.style.transform = `translate(${left}px, ${top}px) scale(${1 / scale})`
+            // test.style.transform = `scale(${1 / scale})`
+            test.style.transform = `scale(${1 / scale})`
+            // test2.style.transformOrigin = "bottom left"
+            // test2.style.transform = `scale(${scale})`
+
+
+            // const container: HTMLDivElement | null = document.querySelector(".test-container")
+            // container!.style.transformOrigin = "bottom left";
+            // container!.style.transform = `scale(${1 / scale})`;
         }
         requestAnimationFrame(updateVisualViewport);
     }
@@ -41,8 +50,9 @@
     });
 </script>
 
-<div bind:this={test} class="fixed will-change-auto" style:left={`${left}px`} style:top={`${top}px`} style:width={`${width}px`} style:height={`${height}px`}>
-    <div class="relative w-full h-full">
+<!-- <div bind:this={test} class="fixed will-change-auto" style:left={`${left}px`} style:top={`${top}px`} style:width={`${width}px`} style:height={`${height}px`}> -->
+<div bind:this={test} class="fixed will-change-auto" style:left={`${left}px`} style:top={`${top}px`} style:width={`${window.innerWidth}px`} style:height={`${window.innerHeight}px`}>
+    <div bind:this={test2} class="relative w-full h-full">
         {@render children?.()}
     </div>
 </div>
