@@ -9,12 +9,14 @@ function addSeperator(element: FaqAccordion): FaqAccordion {
 }
 
 export const load: PageLoad = async (): Promise<{ list: FaqAccordion }> => {
-    const list: FaqAccordion = Faq
+    let list: FaqAccordion = Faq
         .map((element: FaqQuestion): FaqAccordion => [{ type: "question", question: element.question, answer: element.answer }])
         .map(addSeperator)
         .flat(1)
+    
+    list = [{ type: "seperator" }, ...list]
 
     return {
-        list: list.slice(0, list.length - 1)
+        list: list
     }
 }

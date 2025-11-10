@@ -6,6 +6,8 @@
 </script>
 
 <div class="w-full h-auto text-secondary">
-    <div class="mb-2 text-xl font-bold underline text-center">FAQ</div>
-    <Accordion list={data.list} />
+    <div class="text-xl font-bold underline text-center">Impressum</div>
+    <div class="mt-2">
+        <Accordion list={data.list} />
+    </div>
 </div>

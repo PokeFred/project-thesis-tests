@@ -6,5 +6,5 @@ body {
 
 @theme {
     --color-primary: #FFA099;
-    --color-secondary: rgb(0, 255, 0); /* #30114F; */
+    --color-secondary: #30114F; /* rgb(0, 255, 0); */
 }
