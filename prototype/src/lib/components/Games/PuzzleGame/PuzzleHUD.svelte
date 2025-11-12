@@ -8,8 +8,9 @@
 
     let visualViewport : VisualViewport | null;
 
+    // matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
     function updateVisualViewport(): void {
-        quiz.Hud.Container!.style.transform = `translate(${visualViewport!.offsetLeft}px, ${visualViewport!.offsetTop}px)  scale(${1 / visualViewport!.scale})`
+        quiz.Hud.Container!.style.transform = `matrix(${1 / visualViewport!.scale}, 0, 0, ${1 / visualViewport!.scale}, ${visualViewport!.offsetLeft},  ${visualViewport!.offsetTop})`
     }
 
     onMount(()=>{
@@ -22,7 +23,5 @@
 </script>
 
 <div bind:this={quiz.Hud.Container} class="fixed top-0 left-0 origin-top-left will-change-transform" style:width={`${visualViewport ? visualViewport.width : window.innerWidth}px`} style:height={`${visualViewport ? visualViewport.height : window.innerHeight}px`} style:visibility={quiz.Fullscreen ? `visible ` :`hidden`}>
-    <div class="relative w-full h-full">
-        {@render children?.()}
-    </div>
+    {@render children?.()}
 </div>
