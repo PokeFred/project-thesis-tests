@@ -9,18 +9,14 @@
     let visualViewport : VisualViewport | null;
 
     function updateVisualViewport(): void {
-        if(visualViewport) {
-            quiz.Hud.Container!.style.transform = `translate(${visualViewport.offsetLeft}px, ${visualViewport.offsetTop}px)  scale(${1 / visualViewport.scale})`
-        }
+        quiz.Hud.Container!.style.transform = `translate(${visualViewport!.offsetLeft}px, ${visualViewport!.offsetTop}px)  scale(${1 / visualViewport!.scale})`
     }
 
     onMount(()=>{
         visualViewport = window.visualViewport;
-        visualViewport!.addEventListener("resize", updateVisualViewport);
         visualViewport!.addEventListener("scroll", updateVisualViewport);
     });
     onDestroy(()=>{
-        visualViewport!.removeEventListener("resize", updateVisualViewport);
         visualViewport!.removeEventListener("scroll", updateVisualViewport);
     });
 </script>
