@@ -11,17 +11,15 @@
     // matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())
     function updateVisualViewport(): void {
         quiz.Hud.Container!.style.transform = `matrix(${1 / visualViewport!.scale}, 0, 0, ${1 / visualViewport!.scale}, ${visualViewport!.offsetLeft},  ${visualViewport!.offsetTop})`
+        requestAnimationFrame(updateVisualViewport);
     }
 
     onMount(()=>{
         visualViewport = window.visualViewport;
-        visualViewport!.addEventListener("scroll", updateVisualViewport);
-    });
-    onDestroy(()=>{
-        visualViewport!.removeEventListener("scroll", updateVisualViewport);
+        requestAnimationFrame(updateVisualViewport);
     });
 </script>
 
-<div bind:this={quiz.Hud.Container} class="fixed top-0 left-0 origin-top-left will-change-transform" style:width={`${visualViewport ? visualViewport.width : window.innerWidth}px`} style:height={`${visualViewport ? visualViewport.height : window.innerHeight}px`} style:visibility={quiz.Fullscreen ? `visible ` :`hidden`}>
+<div bind:this={quiz.Hud.Container} class="fixed top-0 left-0 w-dvw h-dvh origin-top-left will-change-transform" style:visibility={quiz.Fullscreen ? `visible ` :`hidden`}>
     {@render children?.()}
 </div>
