@@ -5,17 +5,16 @@
     import { pushState, replaceState } from "$app/navigation";
     import { page } from "$app/state"; 
 
-    let { children }: { children: Snippet } = $props();
+    let { children, fullscreen = $bindable() }: { children: Snippet; fullscreen?: boolean } = $props();
 
     let childrenButton: HTMLButtonElement = $state(document.createElement("button"));
     let fullscreenDiv: HTMLDivElement = $state(document.createElement("div"));
     let normalDiv: HTMLDivElement = $state(document.createElement("div"));
-    let isFullscreen: boolean = $state(false);
 
     function backButtonNavigationListener(event: PopStateEvent): void {
         normalDiv.appendChild(childrenButton);
         enableScrolling();
-        isFullscreen = false;
+        fullscreen = false;
     }    
 
     function enableScrolling(): void {
@@ -38,14 +37,14 @@
             disableScrolling();
             pushState("", {isFullscreen: true});
         }
-        isFullscreen = page.state.isFullscreen;
+        fullscreen = page.state.isFullscreen;
     }
 
     onMount(()=>window.addEventListener("popstate", backButtonNavigationListener));
     onDestroy(()=>window.removeEventListener("popstate", backButtonNavigationListener));
 </script>
 
-<div bind:this={fullscreenDiv} class="fullscreenDiv {isFullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-black z-10000"></div>
+<div bind:this={fullscreenDiv} class="fullscreenDiv {fullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-black z-10000"></div>
 
 <div bind:this={normalDiv}>
     <button bind:this={childrenButton} onclick={toggleFullscreen} class="w-full h-full object-contain">

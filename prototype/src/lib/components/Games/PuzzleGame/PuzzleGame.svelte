@@ -7,7 +7,7 @@
 
     let { quiz }: { quiz: Puzzle } = $props();
 </script>
-<Fullscreen>
+<Fullscreen bind:fullscreen={quiz.Fullscreen}>
     <div bind:this={quiz.ImageWindow.Window} class="puzzle-game inline-block relative select-none">
         <figure class="m-0 relative max-w-fit">
             <!-- <figcaption></figcaption> -->
@@ -19,9 +19,8 @@
                 {/each}
             </svg>
         </figure>
-        <PuzzleHUD>
+        <PuzzleHUD {quiz}>
             <PuzzlePieceContainer {quiz}/>
         </PuzzleHUD>
-
     </div>
 </Fullscreen>
