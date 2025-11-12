@@ -71,11 +71,18 @@ export class ImageWindow {
     public set ClientHeight(clientHeight: number) { this.clientHeight = clientHeight; }
 }
 
-// TODO: div, welches immer die größe des visualViewports hat
 // Für: Puzzle Piece Container, evtl. exit button für fullscreen und oder beenden button
-// export class HUD {
-//     private hudDiv: HTMLDivElement;
-// }
+export class HUD {
+    private container?: HTMLDivElement;
+    
+    constructor() {
+        this.container = undefined;
+    }
+
+    public get Container() { return this.container; }
+
+    public set Container(container: HTMLDivElement | undefined) { this.container = container; } 
+}
 
 export class Slot {
     private readonly d: string;
@@ -144,6 +151,8 @@ export class Piece {
 export default class Puzzle extends Quiz {
     private readonly background: Background; //TODO: zusammenführen
     private imageWindow: ImageWindow; //TODO: zusammenführen
+    private hud: HUD;
+    private fullscreen: boolean;
     private slots: Slot[];
     private pieces: Piece[];
     private noise?: Piece[];
@@ -153,6 +162,8 @@ export default class Puzzle extends Quiz {
         super(quizState);
         this.background = background;
         this.imageWindow = new ImageWindow();
+        this.hud = new HUD();
+        this.fullscreen = $state(false);
         this.slots = slots;
         this.pieces = pieces;
         this.noise = noise;
@@ -161,11 +172,14 @@ export default class Puzzle extends Quiz {
 
     public get Background() { return this.background; }
     public get ImageWindow() { return this.imageWindow; }
+    public get Hud() { return this.hud }
+    public get Fullscreen() { return this.fullscreen; }
     public get Pieces() { return this.pieces; }
     public get Noise() { return this.noise; }
     public get PiecesMixed() { return this.piecesMixed; }
 
     public set ImageWindow(imageWindow: ImageWindow) { this.imageWindow = imageWindow; }
+    public set Fullscreen(fullscreen: boolean) { this.fullscreen = fullscreen; }
     
     public get AnswersCorrect() { 
         if(this.slots.length <= 0) {
