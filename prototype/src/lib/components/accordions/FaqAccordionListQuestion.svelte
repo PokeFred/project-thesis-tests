@@ -9,7 +9,7 @@
 </script>
 
 <details bind:open={open} class="w-full h-auto">
-    <summary class="w-full h-auto flex justify-between items-center cursor-pointer">
+    <summary class="w-full h-auto flex justify-between items-center cursor-pointer px-3">
         <span class="font-bold">{question.question}</span>
         <Icon data={open ? faPlus : faMinus} />
     </summary>
