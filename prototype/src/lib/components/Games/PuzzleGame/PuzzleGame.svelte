@@ -1,3 +1,4 @@
+<!-- TODO: Spiel in Canvas für performance? -->
 <script lang="ts">
     import Puzzle from "./Puzzle.svelte";
     import PuzzleSlot from "./PuzzleSlot.svelte";
