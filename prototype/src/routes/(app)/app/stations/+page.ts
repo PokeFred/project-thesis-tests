@@ -2,7 +2,6 @@ import type { PageLoad } from "./$types"
 import Game from "$stores/game"
 import type { GameState, PuzzleState } from "$stores/game"
 import Config from "$config"
-import type { _Station } from "./Station"
 import { get } from "svelte/store"
 
 function getPuzzle(identifier: string): PuzzleState | null {
@@ -25,16 +24,21 @@ function getPuzzleStates(puzzles: any[]): string[] {
         .map((element: PuzzleState | null): string => (element !== null) ? element.state : "OPEN" )
 }
 
-export const load: PageLoad = async (): Promise<{ score: { current: number, max: number }, stations: _Station[] }> => {
+type _Station = {
+    identifier: string,
+    name: string,
+    completion: number
+}
+
+export const load: PageLoad = async (): Promise<{ completion: number, stations: _Station[] }> => {
+    const current: number = get(Game).puzzles
+        .map((element: any): number => element.score)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
+    const max: number = Config.stations
+        .map((element: any): number => element.score)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
     return {
-        score: {
-            current: get(Game).puzzles
-                .map((element: any): number => element.score)
-                .reduce((pre: number, cur: number): number => pre += cur, 0),
-            max: Config.stations
-                .map((element: any): number => element.score)
-                .reduce((pre: number, cur: number): number => pre += cur, 0)
-        },
+        completion: current * 100 / max,
         stations: Config.stations
             .map((element: any): _Station => {
                 const states: string[] = getPuzzleStates(element.puzzles)
@@ -43,11 +47,7 @@ export const load: PageLoad = async (): Promise<{ score: { current: number, max:
                 return {
                     identifier: element.identifier,
                     name: element.stitle,
-                    score: {
-                        current: getPuzzleScores(element.puzzles),
-                        max: element.score
-                    },
-                    state: (states.length > 0) ? "OPEN" : "DONE"
+                    completion: getPuzzleScores(element.puzzles) * 100 / element.score
                 }
             })
     }

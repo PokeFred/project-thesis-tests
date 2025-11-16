@@ -11,7 +11,7 @@
 
     let { children }: LayoutProps = $props()
 
-    let open: boolean = $state<boolean>(true)
+    let open: boolean = $state<boolean>(false)
     function toggle(): void {
         open = !open
     }

@@ -3,70 +3,45 @@
     import { goto } from "$app/navigation"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons/faAngleUp"
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
     import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
     import { faLock } from "@fortawesome/free-solid-svg-icons/faLock"
+    import Accordion from "$components/accordions/Accordion.svelte"
 
     let { data }: PageProps = $props()
 </script>
 
-<button onclick={() => goto("/app/stations")} class="mb-3 w-8 h-8 text-black border border-black rounded-lg flex justify-center items-center cursor-pointer">
-    <Icon data={faAngleLeft} class="w-6 h-6" />
-</button>
-<div class="w-full h-auto text-black border border-black rounded-xl p-4">
-    <div class="w-full h-auto text-lg underline text-center">{data.title}</div>
-    <div class="w-full h-auto text-lg font-semibold underline text-center">Rätsel</div>
-    <div class="mt-3 w-full h-auto flex justify-center items-center">
-        <div class="text-sm shrink-0">Geschafft:</div>
-        <div class="mx-3 w-full h-auto bg-gray-500/25 rounded-xl">
-            <div class="h-4 bg-blue-500 rounded-xl" style="width: {data.score.current * 100 / data.score.max}%;"></div>
-        </div>
-        <div class="text-sm shrink-0">{data.score.current}/{data.score.max}</div>
+<div class="w-full h-auto text-secondary">
+    <div class="w-full h-auto flex justify-between items-center px-6">
+        <span class="text-lg font-semibold">{data.stitle}</span>
+        <button onclick={() => goto("/app/stations")} class="w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer active:scale-95">
+            <Icon data={faAngleLeft} class="w-6 h-6" />
+        </button>
     </div>
-    <div class="mt-4 w-full h-auto grid grid-cols-1 gap-2">
+    <div class="mt-3 w-full h-6 grid grid-cols-[65px_auto_40px] gap-2 px-4">
+        <div class="my-auto text-sm text-left"><span>Geschafft:</span></div>
+        <div class="my-auto w-full h-fit bg-secondary rounded-xl p-1">
+            <div class="w-[{data.completion}%] h-4 bg-primary rounded-xl"></div>
+        </div>
+        <div class="my-auto text-sm text-right">{data.completion}%</div>
+    </div>
+    <div class="mt-2 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.puzzles as puzzle}
-            {#if puzzle.state === "DONE"}
-                <div class="w-full h-auto bg-green-500/15 border-2 border-green-500 rounded-xl grid grid-cols-[24px_auto_48px] gap-4 cursor-default p-4">
-                    <Icon data={faCheck} class="w-6 h-6" />
-                    <span class="text-left">{puzzle.name}</span>
-                    <span class="text-right">{puzzle.score.current}<span class="mx-0.5">/</span>{puzzle.score.max}</span>
+            <button onclick={() => goto(`/app/stations/${data.identifier}/${puzzle.identifier}/introduction`)} class="w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_50px_80px] gap-4 cursor-pointer px-6 py-2 active:scale-95">
+                <span class="text-lg font-bold text-left">{puzzle.name}</span>
+                <span class="text-lg font-bold text-right">{puzzle.completion}%</span>
+                <div class="w-full h-7 flex justify-center items-center">
+                    <div class="w-full h-fit bg-primary border rounded-full p-[1px]">
+                        <div class="w-[{puzzle.completion}%] h-4 bg-secondary border rounded-full"></div>
+                    </div>
                 </div>
-            {/if}
-            {#if puzzle.state === "OPEN"}
-                <button onclick={(): Promise<void> => goto(`/app/stations/${data.identifier}/${puzzle.identifier}`)} class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto_48px] gap-4 cursor-pointer p-4">
-                    <Icon data={faClock} class="w-6 h-6" />
-                    <span class="text-left">{puzzle.name}</span>
-                    <span class="text-right">{puzzle.score.current}<span class="mx-0.5">/</span>{puzzle.score.max}</span>
-                </button>
-            {/if}
-            {#if puzzle.state === "LOCKED"}
-                <div class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto_48px] gap-4 cursor-default opacity-50 p-4">
-                    <Icon data={faLock} class="w-6 h-6" />
-                    <span class="text-left">{puzzle.name}</span>
-                    <span class="text-right">{puzzle.score.current}<span class="mx-0.5">/</span>{puzzle.score.max}</span>
-                </div>
-            {/if}
+            </button>
         {/each}
     </div>
-    <br />
-    <div class="w-full h-auto text-lg font-semibold underline text-center">Literatur</div>
-    {#each data.chapters as chapter}
-        <details>
-            <summary class="cursor-pointer">{chapter.title}</summary>
-            {#each chapter.content as element}
-                {#if element.type === "title"}
-                    <div class="font-bold p-2">{element.content}</div>
-                {/if}
-                {#if element.type === "paragraph"}
-                    <p class="p-2">{element.content}</p>
-                {/if}
-                {#if element.type === "image"}
-                    <div class="p-2">
-                        <img src="{element.src}" alt="{element.alt}" />
-                        <small>{element.caption}</small>
-                    </div>
-                {/if}
-            {/each}
-        </details>
-    {/each}
+    <div class="mt-8"></div>
+    <Accordion title={data.title} data={data.chapters} />
+    <button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="mt-2 ml-auto w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer active:scale-95">
+        <Icon data={faAngleUp} class="w-6 h-6" />
+    </button>
 </div>
