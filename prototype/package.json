@@ -16,8 +16,10 @@
         "@fortawesome/free-regular-svg-icons": "^7.1.0",
         "@fortawesome/free-solid-svg-icons": "^7.1.0",
         "@neodrag/svelte": "^2.3.3",
+        "@svgdotjs/svg.js": "^3.2.5",
         "@tailwindcss/vite": "^4.1.14",
         "dotenv": "^17.2.3",
+        "konva": "^10.0.9",
         "svelte-awesome": "^3.3.5",
         "tailwindcss": "^4.1.14"
     },
@@ -35,7 +37,12 @@
         "vitest": "^3.2.4"
     },
     "pnpm": {
-        "onlyBuiltDependencies": ["esbuild"],
-        "ignoredBuiltDependencies": ["@tailwindcss/oxide", "sharp"]
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ],
+        "ignoredBuiltDependencies": [
+            "@tailwindcss/oxide",
+            "sharp"
+        ]
     }
 }
