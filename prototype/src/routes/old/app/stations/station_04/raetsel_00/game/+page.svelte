@@ -3,6 +3,7 @@
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
     import { quiz } from "../Quiz"
+    import PuzzleGameCanvas from "$components/Games/PuzzleGame/PuzzleGameCanvas.svelte";
 
     quiz.reset();
 
@@ -10,7 +11,9 @@
     let showModal: () => void = $state(()=>{});
 </script>
 
-<PuzzleGame {quiz} />
+<PuzzleGameCanvas {quiz}/>
+<!-- <PuzzleGame {quiz} /> -->
+<!-- <button onclick={()=>console.log(quiz.Pieces[0].Slot.Slot?.getBBox())}>asdf</button> -->
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         quiz.complete();
