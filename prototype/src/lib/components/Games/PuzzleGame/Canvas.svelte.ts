@@ -193,17 +193,41 @@ class Zoom {
                 y: touch1.clientY - rect.top,
             };
 
-            if(this.lastCenter) {
-                const dx = p1.x - this.lastCenter.x;
-                const dy = p1.y - this.lastCenter.y;
+                if(this.lastCenter) {
+                    const dx = p1.x - this.lastCenter.x;
+                    const dy = p1.y - this.lastCenter.y;
 
-                // if(this.layer.x() + dx < 0) {
-                //   #  return;
-                // }''
+                    const newX = this.layer.x() + dx;
+                    const newY = this.layer.y() + dy;
 
-                this.layer.x(this.layer.x() + dx);
-                this.layer.y(this.layer.y() + dy);
-            }
+                    const leftBound = 0;
+                    // const rightBound = this.stage.width();
+                    const rightBound = this.stage.width();
+                    // const topBound = this.layer.y();
+                    const topBound = 0;
+                    const bottomBound = this.stage.height();
+
+                    const layerWidthScaled = this.layer.width() * this.layer.scaleX();
+                    const layerHeightScaled = this.layer.height() * this.layer.scaleY();
+
+                    this.layer.x(Math.max(Math.min(newX, rightBound), leftBound));
+                    this.layer.y(Math.max(Math.min(newY, bottomBound), topBound));
+                    
+                    // if(newX > leftBound || newX + layerWidthScaled < rightBound) {
+                    //     this.layer.y(newY);
+                    // }
+
+                    // // bottombound...
+                    // else if(newY < topBound ) {
+                    //     this.layer.x(newX);
+                    // }
+                    // else {
+                    //     this.layer.x(newX);
+                    //     this.layer.y(newY);
+                    // }
+
+                    // 
+                }
             this.lastCenter = p1;
         }
 
