@@ -74,6 +74,6 @@ export default class MatchingGame extends Quiz {
                 sum += hint.Unlocked ? POINTS.HINT_UNLOCKED : 0;
             });
         }
-        super.complete(sum);
+        super.QuizState.complete(sum);
     }
 }

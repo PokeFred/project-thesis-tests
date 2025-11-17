@@ -214,6 +214,6 @@ export default class Puzzle extends Quiz {
                 sum += slot.Selected.Correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
             }
         });
-        super.complete(sum);
+        super.QuizState.complete(sum);
     }
 }

@@ -43,7 +43,6 @@ export default class MultipleChoice extends Quiz {
                 sum += this.options[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
             }
         }
-
-        super.complete(sum);
+        super.QuizState.complete(sum);
     }
 }
