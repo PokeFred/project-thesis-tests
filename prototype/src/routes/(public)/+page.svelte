@@ -14,6 +14,7 @@
     <div class="text-center">Akzeptieren und starten...</div>
 </Modal>
 
+{@debug modal}
 <div class="w-full h-auto text-secondary">
     <img src="https://placehold.co/600x400.png" alt="" class="w-full h-auto rounded-xl" />
     <div class="mt-3 mx-auto w-fit h-auto">
