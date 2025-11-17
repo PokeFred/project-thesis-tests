@@ -11,14 +11,16 @@
     }
 </script>
 
-<dialog bind:this={dialog} class="max-w-sm m-4 p-4 place-self-center border-2 rounded-2xl">
+<dialog bind:this={dialog} class="max-w-sm m-4 p-4 place-self-center border-2 rounded-2xl bg-primary">
     {@render children()}
     <div class="flex flex-nowrap justify-end mt-4">
         {#if confirmButtonText && onConfirm}
-            <button onclick={onConfirm} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">{confirmButtonText}</button>
+            <button onclick={onConfirm} class="min-w-20 h-[46px] mr-2 text-primary bg-secondary rounded-full">{confirmButtonText}</button>
         {/if}
         {#if closeButtonText}
-            <button onclick={hide} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">{closeButtonText}</button>
+            <button onclick={hide} class="min-w-20 h-[46px] text-primary bg-secondary rounded-full">{closeButtonText}</button>
         {/if}
     </div>
 </dialog>
+
+<!-- <div class="w-full h-[46px] text-primary bg-secondary rounded-full flex justify-between px-6 py-2"></div> -->
