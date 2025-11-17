@@ -11,6 +11,15 @@
     let open_1: boolean = $state<boolean>(false)
     let open_2: boolean = $state<boolean>(false)
     let open_3: boolean = $state<boolean>(false)
+
+    function openMaps(): void {
+        const coords = data.informations.coordinates
+        const parts = coords.replace("N", "").replaceAll(" ", "").split("E")
+        const latitude = parts[0]
+        const longitude = parts[1]
+        const geoUri = `geo:${latitude},${longitude}`
+        //window.open(geoUri, '_blank')
+    }
 </script>
 
 <div class="mt-3 w-full h-auto text-lg font-bold text-left px-3">{data.text}</div>
@@ -45,7 +54,7 @@
         </summary>
         <div class="px-6 pt-1">
             <div>{data.informations.coordinates}</div>
-            <button class="mt-1 w-fit h-auto font-semibold text-primary bg-secondary rounded-xl cursor-pointer px-6 active:scale-95">Öffnen</button>
+            <button onclick={openMaps} class="mt-1 w-fit h-auto font-semibold text-primary bg-secondary rounded-xl cursor-pointer px-6 active:scale-95">Öffnen</button>
         </div>
     </details>
     <hr class="border-2">

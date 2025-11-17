@@ -1,4 +1,4 @@
-import { writable } from "svelte/store"
+import { get, writable } from "svelte/store"
 import type { Writable } from "svelte/store"
 
 type GameState = {
@@ -13,17 +13,40 @@ type PuzzleState = {
     state: string
 }
 
-const state: Writable<GameState> = writable<GameState>({
+const DEFAULT: GameState = {
     isRunning: false,
     score: 0,
     puzzles: []
+}
+
+function load(): GameState {
+    const a = localStorage.getItem("game")
+
+    if (a === null) return DEFAULT
+    return JSON.parse(a) as GameState
+}
+
+const state: Writable<GameState> = writable<GameState>(load())
+
+state.subscribe((value: GameState): void => {
+    localStorage.setItem("game", JSON.stringify(value))
 })
 
-state.subscribe((value: GameState): void => {})
+function startGame() {
+    state.update((value: GameState): GameState => ({
+        isRunning: true,
+        score: 0,
+        puzzles: []
+    }))
+}
 
-function startGame() {}
-
-function resetGame() {}
+function resetGame() {
+    state.update((value: GameState): GameState => ({
+        isRunning: false,
+        score: 0,
+        puzzles: []
+    }))
+}
 
 export default state
 export { startGame, resetGame }
