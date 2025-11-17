@@ -1,16 +1,28 @@
 <script lang="ts">
     import { goto } from "$app/navigation"
+    import Icon from "svelte-awesome"
+    import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons/faRightFromBracket"
 </script>
 
 <div class="w-full h-auto text-secondary">
-    <div class="mx-auto w-fit h-auto">
-        <button onclick={() => goto("/app/stations")} class="w-full h-auto text-xl text-white bg-blue-500 rounded-xl cursor-pointer px-8">Zu den Stationen</button>
+    <div class="w-full h-auto flex justify-between items-center px-6">
+        <span class="text-lg font-semibold">APP</span>
+        <button onclick={() => goto("/app")} class="w-8 h-8 text-primary bg-secondary rounded-lg flex justify-center items-center cursor-pointer active:scale-95">
+            <Icon data={faRightFromBracket} class="w-5 h-5" />
+        </button>
     </div>
-    <br />
-    <div style="font-style: italic;">"Ideen für die Seite"</div>
-    <div>Erklärung der App</div>
-    <div>- Anleitung...</div>
-    <div>- Wegbeschreibungen</div>
-    <div>- Mehrsprachigkeit</div>
-    <div>- Barrierefreiheit-Icon</div>
+</div>
+<div class="w-full h-auto text-secondary">
+    <div class="italic px-4">"Ideen für die Seite"</div>
+    <ul class="list-disc px-8">
+        <li>Erklärung der App</li>
+        <li>Anleitung...</li>
+        <li>Wegbeschreibungen</li>
+        <li>Mehrsprachigkeit</li>
+        <li>Barrierefreiheit-Icon</li>
+        <li>Storyline</li>
+    </ul>
+    <div class="mt-2 mx-auto w-fit h-auto">
+        <button onclick={() => goto("/app/stations")} class="w-full h-auto text-xl text-white bg-blue-500 rounded-xl cursor-pointer px-8 active:scale-95">Zu den Stationen</button>
+    </div>
 </div>

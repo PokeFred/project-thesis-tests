@@ -2,8 +2,9 @@ export default {
     stations: [
         {
             identifier: "station_01",
-            stitle: "Station 01: Alter Markt",
-            title: "Station 01: Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
+            tag: "Station 01",
+            stitle: "Alter Markt",
+            title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
             score: 2,
             chapters: [
                 // {
@@ -15,7 +16,7 @@ export default {
                 //     ]
                 // }
                 {
-                    title: "Kapitel 1: Märkte und Verkauf vom Mittelalter bis zur frühen Neuzeit",
+                    title: "Märkte und Verkauf vom Mittelalter bis zur frühen Neuzeit",
                     content: [
                         { type: "paragraph", content: "Im Mittelalter waren städtische Wochenmärkte die Zentren der Lebensmittelversorgung. Dort gab es alles fürs tägliche Leben, ergänzt durch spezialisierte Märkte für Gebrauchsgegenstände oder bestimmte Lebensmittel, sowie Jahrmärkte und Messen. Entscheidend war die sichere Versorgung mit Lebensmitteln und Brennstoff - während Reiche Vorräte anlegen konnten, lebten viele ärmere Stadtbewohner:innen sprichwörtlich „von der Hand in den Mund“." },
                         { type: "paragraph", content: "Neben dem Wochenmarkt gab es spezialisierte Märkte. Außerdem fanden Jahrmärkte und Messen statt, die nicht nur der Versorgung dienten, sondern auch Unterhaltung boten." },
@@ -25,7 +26,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Kapitel 2: Der Dortmunder Markt",
+                    title: "Der Dortmunder Markt",
                     content: [
                         { type: "paragraph", content: "Dortmund besitzt eines der ältesten Marktrechte Westfalens: Bereits 990 ist ein Wochenmarkt urkundlich belegt. Im Jahr 1232 verlieh König Heinrich VII. der Stadt Dortmund das Recht, einen zweiten jährlichen Markt abzuhalten. Hier verkauften Menschen aus Landwirtschaft, Handwerk und Handel Lebensmittel, Wolle, Lederwaren oder Tuch. Die Stadtbevölkerung konnte so ihre Versorgung sichern." },
                         { type: "paragraph", content: "Der erste Dortmunder Marktplatz lag vermutlich an der Reinoldikirche, nahe dem damals ersten gebauten Rathaus. Durch den großen Stadtbrand von 1232 wurden jedoch sowohl ein Vorgängerbau der Reinoldikirche als auch dieses erste Rathaus zerstört. Einige Jahrzehnte später entstand die heutige Reinoldikirche und der Markt erhielt einen neuen Standort. Dafür legte man einen rechteckigen Platz mit rund 100 mal 60 Metern Fläche an. Von hier aus führten wichtige Straßenachsen in alle Teile Dortmunds und in die umliegende Region. Mit der Verlegung des Marktes und dem Bau des zweiten Rathauses im Jahr 1240 gewann Dortmund deutlich an Bedeutung als Handelsstadt. Immer mehr Kaufleute und eine wachsende Käuferschaft kamen in die Stadt." },
@@ -38,7 +39,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Kapitel 3: Das Dortmunder Rathaus",
+                    title: "Das Dortmunder Rathaus",
                     content: [
                         { type: "paragraph", content: "Das Rathaus, um 1240 errichtet und damit das älteste steinerne in Deutschland, war ursprünglich Sitz des gräflichen Stadtherrn. Es wurde jedoch bald vom städtischen Rat übernommen. Dieser war 1241 bereits so einflussreich geworden, dass er das Haus des Grafen am Marktplatz kaufen konnte." },
                         { type: "paragraph", content: "Das Rathaus erfüllte viele Funktionen: Im Untergeschoss lagerte Wein, außerdem befanden sich dort ein Gefangenen- und Folterkeller. Die Vorhalle diente als Ort des Markgerichts, in der Erdgeschosshalle befanden sich die Verkaufsräume der Tuchhändler, das sogenannte Gewandhaus. Dort boten die Dortmunder Tuchhändler ihre wertvollen Waren feil - eine Tätigkeit, die sie nicht nur ökonomisch, sondern auch politisch zu einer der einflussreichsten Gruppen der Stadt machte. Das Obergeschoss war Versammlungsraum des Rates, zugleich Ort für Sitzungen und Gerichtsverhandlungen, Empfänge und Feiern." },
@@ -49,7 +50,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Kapitel 4: Der Hellweg in Dortmund",
+                    title: "Der Hellweg in Dortmund",
                     content: [
                         { type: "paragraph", content: "Der Hellweg war eine der wichtigsten Fernstraßen des Mittelalters. Sein Name stammt vom niederdeutschen „helwech“ oder „heelwiäch“ und bedeutet „heiler, lichter, breiter Weg“. Schon früh bezeichnete man damit große Königs- und Heerstraßen." },
                         { type: "paragraph", content: "Er führte von den rheinischen Städten über Dortmund bis an die Weser und weiter nach Nordosteuropa. Hier kreuzte er zudem eine Route von Köln über Münster zu den Häfen an Nord- und Ostsee. An dieser Kreuzung, am heutigen Westen- und Ostenhellweg und der Brückstraße, entstand im 10. Jahrhundert eine Königspfalz. Auf Grund der besonderen Lage ließen sich dort viele Kaufleute und Handwerkstreibende nieder." },
@@ -57,7 +58,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Kapitel 5: Handel und Handwerk in Dortmund",
+                    title: "Handel und Handwerk in Dortmund",
                     content: [
                         { type: "paragraph", content: "Handel und Handwerk waren im Mittelalter in Zünften und Gilden organisiert. Zünfte waren ein Zusammenschluss von Handwerkern, die das gleiche Gewerbe ausübten. Durch den Zusammenschluss konnten Ausbildung, Qualität, Preise und die Zahl der Meisterbetriebe einheitlich geregelt werden." },
                         { type: "paragraph", content: "In Dortmund existierten sechs übergeordnete Zünfte - Gerber und Schuhmacher, Bäcker, Fleischer, Schmiede, Fettkrämer und Krämer - jeweils mit zahlreichen Spezialberufen wie Goldschmied, Nadelschmied oder Harnischmacher. 1260 schlossen sie sich zur „Sechsgilde“ zusammen.. Zünfte hatten neben der wirtschaftlichen auch eine soziale Funktion: Wenn ein Handwerker starb, kümmerte sich die Zunft um die Hinterbliebenen. Witwen konnten in manchen Fällen den Platz ihres Mannes übernehmen, ansonsten blieb die Mitgliedschaft Männern vorbehalten." },
@@ -67,7 +68,7 @@ export default {
                     ]
                 },
                 {
-                    title: "Kapitel 6: Die Reinoldigilde",
+                    title: "Die Reinoldigilde",
                     content: [
                         { type: "paragraph", content: "In der sogenannten Reinoldigilde vereinigten sich Dortmunder Fernkaufleute, um ihre wirtschaftlichen Interessen zu vertreten und ihren Handel gemeinsam zu organisieren. Sie unterhielten im 13.-14. Jh. Handelsbeziehungen u. a. nach London, Brügge, Novgorod (heute Weliki Nowgorod), Tallinn, Riga, Danzig/Thorn, Krakau und Venedig. Mitglieder der Reinoldigilde stellten einen wesentlichen Teil der städtischen Elite - zeitweise konnten nur Reinoldigildner in den Rat gewählt werden." },
                         { type: "paragraph", content: "Das änderte sich erst im Jahre 1400, als die Zünfte nach einem Aufstand gegen den Stadtrat wegen Misswirtschaft ebenfalls die ersten Ratssitze erhielten." },
@@ -78,13 +79,29 @@ export default {
                 }
             ],
             puzzles: [
-                { identifier: "station_01_puzzle_01", requirements: [], type: "GPS", name: "Rätsel 00: Station freischalten", score: 2, coordinates: { latitude: 0, longitude: 0 } }
+                {
+                    type: "GPS",
+                    identifier: "station_01_puzzle_01",
+                    name: "Station freischalten",
+                    requirements: [],
+                    score: 2,
+                    data: {
+                        introduction: [
+                            // Wegbeschreibung ?
+                            //  U-Bahn ???
+                            //  Koordinaten ???
+                            //  Adresse ???
+                        ],
+                        coordinates: { latitude: 0, longitude: 0 }
+                    }
+                }
             ]
         },
         {
             identifier: "station_02",
-            stitle: "Station 02: Westen- und Ostenhellweg",
-            title: "Station 02: Der Westen- und Ostenhellweg",
+            tag: "Station 02",
+            stitle: "Westen- und Ostenhellweg",
+            title: "Der Westen- und Ostenhellweg",
             score: 1,
             chapters: [
                 {
@@ -108,7 +125,7 @@ export default {
                 {
                     title: "Kapitel 2: Einzelhandel auf dem Westenhellweg - schon seit über 100 Jahren!",
                     content: [
-                        { type: "title", content: "Tewes: Tradition seit 1824" },
+                        { type: "subtitle", content: "Tewes: Tradition seit 1824" },
                         { type: "paragraph", content: "Es war das Jahr 1824, als Goldschmied Carl Wilhelm Tewes in Dortmund sein Geschäft eröffnete. Laut Handelskammer ist es heute das älteste Familienunternehmen der Stadt. Damals lebte sogar noch Johann Wolfgang von Goethe. Wer weiß, vielleicht hätte er sich hier eine Taschenuhr ausgesucht." },
                         { type: "paragraph", content: "Bei der Gründung von Tewes zählte Dortmund nur etwa 6.000 Einwohner:innen, es war also ein überschaubares Städtchen. Mit der Industrialisierung und dem Abbau der Kohle kam der Reichtum. Bald wurde Tewes zur ersten Adresse des Dortmunder Großbürgertums und schaffte es, viertgrößtes Geschäft im ganzen Deutschen Kaiserreich (1871-1918) zu werden." },
                         { type: "paragraph", content: "1899 besuchte Kaiser Wilhelm II. Dortmund. Zu Ehren des Gastes stifteten die Dortmunder ein neues Ratssilber, darunter Carl Tewes, der zweikunstvoll gearbeitete Silberpokale, sogenannte Buckelbecher, beitrug. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und Ururur-Enkel des Gründers, der das Geschäft in sechster Generation führt. Im Zweiten Weltkrieg wurde das Geschäft durch Bomben zerstört. Carl Georg Tewes wagte den Neuanfang am heutigen Standort, Westenhellweg 6. Später modernisierte sein Enkel Rudolf Tewes das Geschäft, verband alte Handwerkskunst mit neuen Ideen und machte Tewes zu einem der Top 100 Juwelier-Geschäfte Deutschlands." }

@@ -13,5 +13,5 @@
         <span class="font-bold">{question.question}</span>
         <Icon data={open ? faPlus : faMinus} />
     </summary>
-    <div class="px-2 pt-1">{question.answer}</div>
+    <div class="px-4 pt-1">{question.answer}</div>
 </details>
