@@ -15,5 +15,7 @@ RUN npm run build
 #EXPOSE 80
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
-FROM httpd:latest
+FROM httpd:2-alpine
 COPY --from=builder /app/build /usr/local/apache2/htdocs/
+COPY ./apache-config.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+EXPOSE 80
