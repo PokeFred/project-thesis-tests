@@ -16,4 +16,4 @@ RUN npm run build
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 FROM httpd:latest
-COPY --from=builder /app/build /var/www/html
+COPY --from=builder /app/build /usr/local/apache2/htdocs/
