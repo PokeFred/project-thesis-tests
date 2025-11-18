@@ -15,7 +15,6 @@ RUN npm run build
 #EXPOSE 80
 #CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
-FROM httpd:2-alpine
-COPY --from=builder /app/build /usr/local/apache2/htdocs/
-COPY ./apache-config.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
-EXPOSE 80
+FROM nginx:stable
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/build /usr/share/nginx/html
