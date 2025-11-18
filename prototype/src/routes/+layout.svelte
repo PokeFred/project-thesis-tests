@@ -8,6 +8,7 @@
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
     import { faBitcoin } from "@fortawesome/free-brands-svg-icons/faBitcoin"
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
     let { children }: LayoutProps = $props()
 
@@ -53,6 +54,9 @@
         <PageTransition>
             <div class="w-full h-auto text-secondary bg-primary p-4">
                 {@render children()}
+                <button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-[32px] ml-auto mr-[14px] w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
+                    <Icon data={faAngleUp} class="w-6 h-6" />
+                </button>
                 <hr class="mt-3 my-1" />
                 <div class="w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 ???. All rights reserved.</div>
             </div>
