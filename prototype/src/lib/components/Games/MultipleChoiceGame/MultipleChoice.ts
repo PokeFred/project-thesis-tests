@@ -1,6 +1,16 @@
 import { Quiz } from "$components/Games/Quiz";
 import { type QuizState, POINTS } from "$lib/State.svelte";
 
+export type Description = {
+    readonly tag: "p",
+    readonly text: string,
+} | {
+    readonly tag: "img",
+    readonly src: string,
+    readonly alt: string,
+    readonly caption: string
+}
+
 export type Answer = {
     readonly answer: string;
     readonly correct: boolean;

@@ -1,32 +1,18 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
 
-    const { base, extension } : {base: Snippet, extension: Snippet} = $props();
+    let { children, toggle = $bindable() } : { children?: Snippet; toggle?: ()=>void } = $props();
     let shown: boolean = $state(false);
 
     function onclick(): void {
         shown = !shown;
     }
-
+    toggle = onclick;
 </script>
 
 <div>
-    {@render base?.()}
+    <button {onclick} class="w-full text-left {shown ? "mb-8" : "mb-4"} cursor-pointer">{shown ? "FÜR WENIGER INFOS HIER TIPPEN" : "FÜR MEHR INFOS HIER TIPPEN"}</button>
     {#if shown}
-        {@render extension?.()}
+        {@render children?.()}
     {/if}
-    <button {onclick}>{shown ? "Weniger Anzeigen" : "Mehr Anzeigen"}</button>
 </div>
-
-<!-- Beispiel: -->
-
-<!-- 
-<ShowMore>
-    {#snippet base()}
-        <p>Basistext</p>
-    {/snippet}
-    {#snippet extension()}
-        <p>Zusatztext</p>
-    {/snippet}
-</ShowMore> 
--->

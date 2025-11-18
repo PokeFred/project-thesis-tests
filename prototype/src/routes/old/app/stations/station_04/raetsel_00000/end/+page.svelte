@@ -5,6 +5,7 @@
     import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz"
     import GameHeader from "$components/Games/GameHeader.svelte";
+    import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
 
     const selected = quiz.Options.filter((answer, i) => quiz.Selected[i]);
     const answers: string[] = selected.map((answer)=>answer.answer);
@@ -139,7 +140,8 @@
 
 <PointSummary descriptions={answers} {points} />
 
-<GameResultAccordionComponent accordion={gameResultAccordion}/>
+<!-- <GameResultAccordionComponent accordion={gameResultAccordion}/> -->
+<MultipleChoiceResult {quiz} />
 
 <p class="mb-4 mt-4 w-full h-auto text-sm">
     Super, Du hast alle Fragen beantwortet. Jetzt weißt Du, was für Anforderungen der Markt im
