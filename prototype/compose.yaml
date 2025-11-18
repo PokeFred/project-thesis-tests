@@ -1,9 +1,0 @@
-services:
-    tt:
-        container_name: tt
-        build:
-            context: ./
-            dockerfile: ./Dockerfile
-        ports:
-            - "8005:80"
-        restart: unless-stopped
