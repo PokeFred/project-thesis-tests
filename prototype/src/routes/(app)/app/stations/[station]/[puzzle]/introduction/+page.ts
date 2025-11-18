@@ -14,3 +14,6 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
         title: puzzle.name
     }
 }
+
+export const prerender: "auto" | boolean = false
+export const ssr: boolean = false
