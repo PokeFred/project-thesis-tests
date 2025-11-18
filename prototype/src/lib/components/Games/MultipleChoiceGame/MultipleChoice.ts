@@ -8,7 +8,7 @@ export type Description = {
     readonly tag: "img",
     readonly src: string,
     readonly alt: string,
-    readonly caption: string
+    readonly caption?: string
 }
 
 export type Answer = {
@@ -19,16 +19,19 @@ export type Answer = {
 // TODO: MatchingGame == Multiple Choice ??
 export default class MultipleChoice extends Quiz {
     private readonly options: Answer[];
+    private readonly descriptions: Description[][];
     private selected: boolean[];
 
-    constructor(quizState: QuizState, options: Answer[]) {
+    constructor(quizState: QuizState, options: Answer[], descriptions: Description[][]) {
         super(quizState);
         this.options = options;
+        this.descriptions = descriptions;
         this.selected = Array<boolean>(options.length).fill(false);
     }
 
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
+    public get Descriptions() { return this.descriptions; }
 
     public get AnswersCorrect() {
         if(this.selected.length <= 0) {
