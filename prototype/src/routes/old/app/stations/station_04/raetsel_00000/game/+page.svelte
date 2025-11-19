@@ -18,8 +18,10 @@
     }
 </script>
 
-<GameHeader stitle={data.stitle} identifier={station.identifier} completion = {station.completion} question={question} />
+<GameHeader stitle={data.stitle} identifier={station.identifier} completion = {station.completion} text={question} />
 
 <MultipleChoice multipleChoice={quiz}></MultipleChoice>
 
-<GameFooter {quiz} />
+<GameFooter {quiz}>
+    <p>Möchtest du dieses Rätsel wirklich beenden?</p>
+</GameFooter>

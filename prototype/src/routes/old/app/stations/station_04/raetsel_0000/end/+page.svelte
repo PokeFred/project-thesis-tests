@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { GameResultAccordion } from "$components/accordions/GameResultAccordion";
     import GameResultAccordionComponent from "$components/accordions/GameResultAccordion.svelte";
+    import GameHeader from "$components/Games/GameHeader.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
     import { quiz, handwerk } from "../Quiz";
@@ -8,6 +9,17 @@
     const selected = quiz.Selected.filter((answer)=> answer ? true : false);
     const descriptions: string[] = selected.map((answer, i)=> `${handwerk[i]}:  ${answer.answer}`);
     const points: number[] = selected.map((answer)=> answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
+
+    const text: string[] = [
+        `Ordne den Zünften das richtige Handwerk zu. Aber Achtung: es gibt nur sieben richtige
+         Paare! Es wurden drei Zünfte dazu gemischt. Schaffst Du es, die richtigen Paare zu
+         finden?`,
+        `Zünfte: Schmied, Fleischer, Bäcker, Bader, Tuchmacher, Gerber, Schuhmacher, Krämer,
+         Fettkrämer, Abdecker`,
+        `Handwerk: Metallverarbeitung, Getreideverarbeitung, Fleischverarbeitung,
+         Lederverarbeitung, Feinlederverarbeitung, Gemischtwarenhandel, Handel mit Butter, Öl,
+         Speck etc.`
+    ]
 
     const gameResultAccordion: GameResultAccordion = [
             {
@@ -65,7 +77,14 @@
                 ]
             },
         ];
+
+    const data={
+        stitle: "ALTER MARKT",
+        identifier: "Rätsel 2"
+    }
 </script>
+
+<GameHeader stitle={data.stitle} identifier={data.identifier} completion={0} text={text} />
 
 <PointSummary {descriptions} {points} />
 
@@ -87,12 +106,10 @@
     <h4>Dazu gemischt:</h4>
     <p>Bader, Tuchmacher, Abdecker</p>
 </section>
-
+<!-- 
 <p class="mb-4 w-full h-auto text-sm">
     Super Leistung! Jetzt weißt Du, wer im mittelalterlichen Dortmund wofür zuständig war. Die
     Texte verraten Dir noch mehr über das mittelalterliche Handwerk.
-</p>
+</p> -->
 
 <GameResultAccordionComponent accordion={gameResultAccordion} />
-
-<a href=".." data-sveltekit-preload-data data-sveltekit-preload-code class="inline-block mt-4 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Zurück zur Rätselübersicht</a>

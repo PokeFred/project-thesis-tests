@@ -4,7 +4,7 @@
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
     import { Icon } from "svelte-awesome";
 
-    let { stitle, identifier, completion, question }: { stitle: string; identifier: string; completion: number; question: string } = $props();
+    let { stitle, identifier, completion, text }: { stitle: string; identifier: string; completion: number; text: string[] | string } = $props();
 </script>
 
 <div class="w-full h-auto flex justify-between items-center px-6 mb-[23px] mt-[6px]">
@@ -24,4 +24,14 @@
     </div>
 </div>
 
-<p class="font-bold mx-[9px] mb-[58px] mt-[61px]">{question}</p>
+{#if typeof text === "string"}
+    <p class="font-bold mx-[9px] mb-[58px] mt-[61px]">{text}</p>
+{:else}
+    {#each text as t, i }
+        {#if i == 0}
+            <p class="font-bold mx-[9px] mb-[58px] mt-[61px]">{t}</p>
+        {:else}
+            <p class="font-bold mx-[9px] my-[58px]">{t}</p>
+        {/if}
+    {/each}
+{/if}
