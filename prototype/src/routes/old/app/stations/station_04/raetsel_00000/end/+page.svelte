@@ -11,7 +11,7 @@
     const answers: string[] = selected.map((answer)=>answer.answer);
     const points: number[] = selected.map((answer)=>answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
 
-    const question: string = "Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig – überlege genau!";
+    const text: string = "Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig – überlege genau!";
 
     const data = {
         stitle: "ALTER MARKT"
@@ -23,7 +23,7 @@
     }
 </script>
 
-<GameHeader stitle={data.stitle} identifier={station.identifier} completion = {station.completion} question={question} />
+<GameHeader stitle={data.stitle} identifier={station.identifier} completion = {station.completion} text={text} />
 
 <!-- <PointSummary descriptions={answers} {points} /> -->
 

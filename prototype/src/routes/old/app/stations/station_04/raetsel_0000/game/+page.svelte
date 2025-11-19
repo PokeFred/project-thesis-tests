@@ -1,14 +1,31 @@
 <script lang="ts">
-    import Modal from "$components/Modal.svelte"
-    import { goto } from "$app/navigation"
     import AnswerBox from "$components/Games/MatchingGame/AnswerBox.svelte"
     import { quiz, handwerk } from "../Quiz";
+    import GameHeader from "$components/Games/GameHeader.svelte";
+    import GameFooter from "$components/Games/GameFooter.svelte";
 
     quiz.reset();
 
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
-    let showModal: () => void = $state(()=>{});    
+    
+    const text: string[] = [
+        `Ordne den Zünften das richtige Handwerk zu. Aber Achtung: es gibt nur sieben richtige
+         Paare! Es wurden drei Zünfte dazu gemischt. Schaffst Du es, die richtigen Paare zu
+         finden?`,
+        `Zünfte: Schmied, Fleischer, Bäcker, Bader, Tuchmacher, Gerber, Schuhmacher, Krämer,
+         Fettkrämer, Abdecker`,
+        `Handwerk: Metallverarbeitung, Getreideverarbeitung, Fleischverarbeitung,
+         Lederverarbeitung, Feinlederverarbeitung, Gemischtwarenhandel, Handel mit Butter, Öl,
+         Speck etc.`
+    ]
+    
+    const data={
+        stitle: "ALTER MARKT",
+        identifier: "Rätsel 2"
+    }
 </script>
+
+<GameHeader stitle={data.stitle} identifier={data.identifier} completion={0} text={text} />
 
 <div class="grid grid-cols-2 gap-2 px-1">
     <h4>Handwerk</h4>
@@ -22,15 +39,9 @@
     {/each}
 </div>
 
-<Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        quiz.complete();
-        goto("./end"); 
-    }}>
+<GameFooter {quiz}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
     {#if quiz.Options.length != quiz.Selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
      {/if}
-</Modal>
-<div class="mt-2">
-    <button onclick={showModal} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Rätsel beenden</button>
-</div>
+</GameFooter>
