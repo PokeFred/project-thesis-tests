@@ -1,0 +1,4 @@
+<div class="w-full h-auto text-secondary">
+    <div class="text-xl font-bold underline text-center">Datenschutz</div>
+    <div class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, ex cupiditate. Delectus ratione, optio, sit dolorum aliquid nobis ea minus iusto enim odit magnam. Ea, vel. Voluptatem placeat dolorem sequi.</div>
+</div>
