@@ -7,7 +7,6 @@
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
-    import { faBitcoin } from "@fortawesome/free-brands-svg-icons/faBitcoin"
     import { faStar } from "@fortawesome/free-solid-svg-icons/faStar"
 
     let { children }: LayoutProps = $props()
@@ -27,7 +26,7 @@
     <div class="mx-auto w-full max-w-md h-auto min-h-dvh bg-primary">
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary">
             <div class="w-full h-14 flex justify-between items-center px-4">
-                <button onclick={() => goto("/")} class="text-3xl font-bold text-left cursor-pointer">Title</button>
+                <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if $Game.isRunning}
                     <div class="w-auto h-auto flex justify-center items-center">
                         <span class="text-xl font-bold">{$Game.score}</span>
@@ -64,10 +63,10 @@
             <div class="w-full h-auto text-secondary bg-primary p-4">
                 {@render children()}
                 <hr class="mt-3" />
-                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 ???. All rights reserved.</div>
+                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
                 <div class="mt-3 w-full h-auto grid grid-cols-2 gap-2 items-start">
                     <div class="mx-auto w-fit h-auto grid grid-cols-1">
-                        <div class="text-base font-bold underline text-center">???</div>
+                        <div class="text-base font-bold underline text-center">Hilfe</div>
                         <button onclick={(): Promise<void> => goto("/faq")} class="w-full h-auto text-sm text-center cursor-pointer">FAQ</button>
                         <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-sm text-center cursor-pointer">Anleitung</button>
                     </div>
