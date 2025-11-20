@@ -201,22 +201,41 @@ class Zoom {
                     const dy = p1.y - this.lastCenter.y;
 
                     const rect = this.layer.findOne("#playfield")!.getClientRect();
-                    const newLeft = rect.x + dx;
-                    const newTop = rect.y + dy;
-                    const newRight = newLeft + rect.width;
-                    const newBottom = newTop + rect.height;
+                    const left = rect.x;
+                    const top = rect.y;
+                    const right = left + rect.width;
+                    const bottom = top + rect.height;
 
                     const leftBound = 0;
                     const rightBound = this.stage.width();
                     const topBound = 0;
                     const bottomBound = this.stage.height();
 
-                    if(newLeft < leftBound && newRight > rightBound) {
-                        this.layer.x(newLeft);
+                    // bildbreite < viewportBreite
+                    if(rect.width < this.stage.width()) {
+                        if(!(dx < 0 && left < leftBound) && !(dx > 1 && right > rightBound)) {
+                            this.layer.x(left + dx);
+                        }
                     }
-                    if(newTop < topBound && newBottom > bottomBound) {
-                        this.layer.y(newTop);
-                    } 
+                    // bildbreite > viewportBreite
+                    else {
+                        if(!(dx < 0 && right < rightBound) && !(dx > 0 && left > leftBound)) {
+                            this.layer.x(left + dx);
+                        }
+                    }
+
+                    // bildhöhe < viewporthöhe
+                    if(rect.height < this.stage.height()) {
+                        if(!(dy < 0 && top < topBound) && !(dy > 0 && bottom > bottomBound)) {
+                            this.layer.y(top + dy);
+                        }
+                    }
+                    // bild > viewport
+                    else {
+                        if(!(dy < 0 && bottom < bottomBound) && !(dy > 0 && top > topBound)) {
+                            this.layer.y(top + dy);
+                        }
+                    }
                 }
             this.lastCenter = p1;
         }
@@ -272,12 +291,58 @@ class Zoom {
             const dx = newCenter.x - this.lastCenter.x;
             const dy = newCenter.y - this.lastCenter.y;
 
+            const rectPlayfield = this.layer.findOne("#playfield")!.getClientRect();
+            const leftBound = 0;
+            const rightBound = this.stage.width();
+            const topBound = 0;
+            const bottomBound = this.stage.height();
+
+            
+
             const newPos = {
                 x: newCenter.x - pointTo.x * scale + dx,
                 y: newCenter.y - pointTo.y * scale + dy,
             };
 
-            this.layer.position(newPos);
+            if(newPos.x > leftBound) {
+                this.layer.x(leftBound)
+            }
+            else if(newPos.x + rectPlayfield.width < rightBound) {
+                this.layer.x(rightBound - rectPlayfield.width)
+            }
+            else {
+                this.layer.x(newPos.x)
+            }
+
+            if(newPos.y > topBound) {
+                this.layer.y(topBound)
+            }
+            else if(newPos.y + rectPlayfield.height  < bottomBound) {
+                this.layer.y(bottomBound - rectPlayfield.height)
+            }
+            else{
+                this.layer.y(newPos.y)
+            }
+
+            // if(newPos.x < leftBound) {
+            //     this.layer.x(newPos.x);
+            // }
+            
+            // else if(newPos.x + rectPlayfield.width < rightBound) {
+            //     this.layer.x(newPos.x)
+            // }
+            
+
+            // if(newLeft < leftBound && newRight > rightBound) {
+            //     this.layer.x(newLeft);
+            // }
+            // if(newTop < topBound && newBottom > bottomBound) {
+            //     this.layer.y(newTop);
+            // } 
+
+            // this.layer.position(newPos);
+            // this.layer.x(newPos.x);
+            this.layer.y(newPos.y);
 
             this.lastDist = dist;
             this.lastCenter = newCenter;
