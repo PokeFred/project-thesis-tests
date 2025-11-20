@@ -68,6 +68,7 @@ export default class Canvas {
 
         this.gameLayer.add(
             new Konva.Image({
+                id: "playfield",
                 image: background,
                 scale: {x: this.scale, y: this.scale},
             })
@@ -88,8 +89,10 @@ export default class Canvas {
 
 
     private drawGame(background: HTMLImageElement, paths: string[]): void {
+        this.gameLayer.add(new Konva.Rect({stroke: "green", width: this.gameLayer.width(), height: this.gameLayer.height()}));
         this.drawPlayfield(background);
         this.drawPaths(paths);
+
         this.gameLayer.x(this.offsetX);
         this.gameLayer.y(this.offsetY);
     }
@@ -197,36 +200,23 @@ class Zoom {
                     const dx = p1.x - this.lastCenter.x;
                     const dy = p1.y - this.lastCenter.y;
 
-                    const newX = this.layer.x() + dx;
-                    const newY = this.layer.y() + dy;
+                    const rect = this.layer.findOne("#playfield")!.getClientRect();
+                    const newLeft = rect.x + dx;
+                    const newTop = rect.y + dy;
+                    const newRight = newLeft + rect.width;
+                    const newBottom = newTop + rect.height;
 
                     const leftBound = 0;
-                    // const rightBound = this.stage.width();
                     const rightBound = this.stage.width();
-                    // const topBound = this.layer.y();
                     const topBound = 0;
                     const bottomBound = this.stage.height();
 
-                    const layerWidthScaled = this.layer.width() * this.layer.scaleX();
-                    const layerHeightScaled = this.layer.height() * this.layer.scaleY();
-
-                    this.layer.x(Math.max(Math.min(newX, rightBound), leftBound));
-                    this.layer.y(Math.max(Math.min(newY, bottomBound), topBound));
-                    
-                    // if(newX > leftBound || newX + layerWidthScaled < rightBound) {
-                    //     this.layer.y(newY);
-                    // }
-
-                    // // bottombound...
-                    // else if(newY < topBound ) {
-                    //     this.layer.x(newX);
-                    // }
-                    // else {
-                    //     this.layer.x(newX);
-                    //     this.layer.y(newY);
-                    // }
-
-                    // 
+                    if(newLeft < leftBound && newRight > rightBound) {
+                        this.layer.x(newLeft);
+                    }
+                    if(newTop < topBound && newBottom > bottomBound) {
+                        this.layer.y(newTop);
+                    } 
                 }
             this.lastCenter = p1;
         }
