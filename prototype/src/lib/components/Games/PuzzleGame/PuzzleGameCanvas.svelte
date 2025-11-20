@@ -9,22 +9,22 @@
     import { SVG } from '@svgdotjs/svg.js';
     import Canvas from "./Canvas.svelte";
     import Konva from "konva";
+    import { resolve } from "$app/paths";
 
-    let { quiz }: { quiz: Puzzle } = $props();
+    let { quiz }: { quiz: Puzzle } = $props();    
+
+    async function loadImage(src: string): Promise<HTMLImageElement> {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+        });
+    }
+
+    const paths: string[] = quiz.Pieces.map((piece: Piece) => piece.Slot.D);
+
     
-    const background = $state(new Image());
-    background.src = quiz.Background.src;
-
-
-    const paths: string[] = quiz.Pieces.map((piece: Piece)=>{
-        return piece.Slot.D;
-    });
-
-    const images: HTMLImageElement[] = quiz.Pieces.map((piece: Piece) => {
-        const img = new Image();
-        img.src = piece.Src;
-        return img;
-    });
 
 
     // function animationLoop(): void {
@@ -54,7 +54,12 @@
     let container: HTMLDivElement;
     
     let canvas: Canvas;
-    onMount(()=>{
+    onMount(async ()=>{
+        const background: HTMLImageElement = await loadImage(quiz.Background.src);
+        const images: HTMLImageElement[] = await Promise.all( 
+            quiz.Pieces.map((piece: Piece) => loadImage(piece.Src))
+        );
+        
         canvas = new Canvas(container, window.innerWidth, window.innerHeight);
         canvas.drawAll(background, paths, images);
     });
