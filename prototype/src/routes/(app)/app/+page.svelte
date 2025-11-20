@@ -23,6 +23,6 @@
         <li>Storyline</li>
     </ul>
     <div class="mt-2 mx-auto w-fit h-auto">
-        <button onclick={() => goto("/app/stations")} class="w-full h-auto text-xl text-white bg-blue-500 rounded-xl cursor-pointer px-8 active:scale-95">Zu den Stationen</button>
+        <button onclick={() => goto("/app/stations")} class="w-full h-auto text-xl text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Zu den Stationen</button>
     </div>
 </div>
