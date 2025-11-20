@@ -15,7 +15,7 @@ export default class Canvas {
     private offsetX: number;
     private offsetY: number;
 
-    private zoomGameLayer: Zoom;
+    private panAndZoomGameLayer: PanAndZoom;
 
     constructor(container: HTMLDivElement, stageWidth: number, stageHeight: number) {
         this.stage = new Konva.Stage({
@@ -31,9 +31,9 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
 
-        this.zoomGameLayer = new Zoom(this.gameLayer);
-        this.gameLayer.on("touchend", this.zoomGameLayer.touchend.bind(this.zoomGameLayer));
-        this.gameLayer.on("touchmove", this.zoomGameLayer.touchmove.bind(this.zoomGameLayer));
+        this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
+        this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
+        this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
 
         this.puzzlePieceContainer = new Konva.Group({
             draggable: true,
@@ -144,7 +144,7 @@ export default class Canvas {
 }
 
 // https://konvajs.org/docs/sandbox/Multi-touch_Scale_Stage.html
-class Zoom {
+class PanAndZoom {
     private layer: Konva.Layer;
     private stage: Konva.Stage;
     private lastCenter: Vector2d | null;
@@ -200,6 +200,7 @@ class Zoom {
                     const dx = p1.x - this.lastCenter.x;
                     const dy = p1.y - this.lastCenter.y;
 
+                    // Bounds berechnen
                     const rect = this.layer.findOne("#playfield")!.getClientRect();
                     const left = rect.x;
                     const top = rect.y;
@@ -291,58 +292,67 @@ class Zoom {
             const dx = newCenter.x - this.lastCenter.x;
             const dy = newCenter.y - this.lastCenter.y;
 
+            const newPos = {
+                x: newCenter.x - pointTo.x * scale + dx,
+                y: newCenter.y - pointTo.y * scale + dy,
+            };
+
+            // Bounds berechnen
             const rectPlayfield = this.layer.findOne("#playfield")!.getClientRect();
             const leftBound = 0;
             const rightBound = this.stage.width();
             const topBound = 0;
             const bottomBound = this.stage.height();
 
-            
-
-            const newPos = {
-                x: newCenter.x - pointTo.x * scale + dx,
-                y: newCenter.y - pointTo.y * scale + dy,
-            };
-
-            if(newPos.x > leftBound) {
-                this.layer.x(leftBound)
+            // bildbreite < viewportBreite
+            if(rectPlayfield.width < this.stage.width()) {
+                if(newPos.x < leftBound) {
+                    this.layer.x(leftBound);
+                }
+                else if(newPos.x + rectPlayfield.width > rightBound) {
+                    this.layer.x(rightBound - rectPlayfield.width);
+                }
+                else {
+                    this.layer.x(newPos.x);
+                }
             }
-            else if(newPos.x + rectPlayfield.width < rightBound) {
-                this.layer.x(rightBound - rectPlayfield.width)
-            }
+            // bildbreite > viewportBreite
             else {
-                this.layer.x(newPos.x)
+                if(newPos.x > leftBound) {
+                    this.layer.x(leftBound);
+                }
+                else if(newPos.x + rectPlayfield.width < rightBound) {
+                    this.layer.x(rightBound - rectPlayfield.width);
+                }
+                else {
+                    this.layer.x(newPos.x);
+                }
             }
 
-            if(newPos.y > topBound) {
-                this.layer.y(topBound)
+            // bildhöhe < viewporthöhe
+            if(rectPlayfield.height < this.stage.height()) {
+                if(newPos.y < topBound) {
+                    this.layer.y(topBound);
+                }
+                else if(newPos.y + rectPlayfield.height > bottomBound) {
+                    this.layer.y(bottomBound - rectPlayfield.height);
+                }
+                else {
+                    this.layer.y(newPos.y);
+                }
             }
-            else if(newPos.y + rectPlayfield.height  < bottomBound) {
-                this.layer.y(bottomBound - rectPlayfield.height)
+            // bild > viewport
+            else {
+                if(newPos.y > topBound) {
+                    this.layer.y(topBound);
+                }
+                else if(newPos.y + rectPlayfield.height < bottomBound) {
+                    this.layer.y(bottomBound - rectPlayfield.height);
+                }
+                else {
+                    this.layer.y(newPos.y);
+                }
             }
-            else{
-                this.layer.y(newPos.y)
-            }
-
-            // if(newPos.x < leftBound) {
-            //     this.layer.x(newPos.x);
-            // }
-            
-            // else if(newPos.x + rectPlayfield.width < rightBound) {
-            //     this.layer.x(newPos.x)
-            // }
-            
-
-            // if(newLeft < leftBound && newRight > rightBound) {
-            //     this.layer.x(newLeft);
-            // }
-            // if(newTop < topBound && newBottom > bottomBound) {
-            //     this.layer.y(newTop);
-            // } 
-
-            // this.layer.position(newPos);
-            // this.layer.x(newPos.x);
-            this.layer.y(newPos.y);
 
             this.lastDist = dist;
             this.lastCenter = newCenter;
