@@ -24,10 +24,28 @@ function getPuzzleStates(puzzles: any[]): string[] {
         .map((element: PuzzleState | null): string => (element !== null) ? element.state : "OPEN" )
 }
 
+function _getPuzzleScore(): number {
+    return 0
+}
+
+function _getPuzzlesScore() {}
+
+function _getStationScore() {}
+
+function _getStations_Score() {}
+
 type _Station = {
     identifier: string,
     name: string,
     completion: number
+}
+
+function getGameCompletion(): number {
+    return 0
+}
+
+function getStationCompletionData(): _Station[] {
+    return []
 }
 
 export const load: PageLoad = async (): Promise<{ completion: number, stations: _Station[] }> => {
@@ -41,9 +59,6 @@ export const load: PageLoad = async (): Promise<{ completion: number, stations: 
         completion: current * 100 / max,
         stations: Config.stations
             .map((element: any): _Station => {
-                const states: string[] = getPuzzleStates(element.puzzles)
-                    .filter((element: string): boolean => element !== "DONE")
-
                 return {
                     identifier: element.identifier,
                     name: element.stitle,
