@@ -7,8 +7,7 @@
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
-    import { faBitcoin } from "@fortawesome/free-brands-svg-icons/faBitcoin"
-    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+    import { faStar } from "@fortawesome/free-solid-svg-icons/faStar"
 
     let { children }: LayoutProps = $props()
 
@@ -27,9 +26,18 @@
     <div class="mx-auto w-full max-w-md h-auto min-h-dvh bg-primary">
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary">
             <div class="w-full h-14 flex justify-between items-center px-4">
-                <button onclick={() => goto("/")} class="text-3xl font-bold text-left cursor-pointer">Title</button>
+                <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if $Game.isRunning}
-                    <span class="text-xl">{$Game.score} <Icon data={faBitcoin} class="w-5 h-5" /></span>
+                    <div class="w-auto h-auto flex justify-center items-center">
+                        <span class="text-xl font-bold">{$Game.score}</span>
+                        <div class="ml-2 w-auto h-auto border-2 border-secondary rounded-lg  p-1">
+                            <div class="mx-auto w-14 h-auto grid grid-cols-3 gap-1">
+                                <Icon data={faStar} class="w-4 h-4" />
+                                <Icon data={faStar} class="w-4 h-4" />
+                                <Icon data={faStar} class="w-4 h-4" />
+                            </div>
+                        </div>
+                    </div>
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                     <Icon data={faBars} class="w-8 h-8" />
@@ -54,11 +62,21 @@
         <PageTransition>
             <div class="w-full h-auto text-secondary bg-primary p-4">
                 {@render children()}
-                <button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-[32px] ml-auto mr-[14px] w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
-                    <Icon data={faAngleUp} class="w-6 h-6" />
-                </button>
-                <hr class="mt-3 my-1" />
-                <div class="w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 ???. All rights reserved.</div>
+                <hr class="mt-3" />
+                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
+                <div class="mt-3 w-full h-auto grid grid-cols-2 gap-2 items-start">
+                    <div class="mx-auto w-fit h-auto grid grid-cols-1">
+                        <div class="text-base font-bold underline text-center">Hilfe</div>
+                        <button onclick={(): Promise<void> => goto("/faq")} class="w-full h-auto text-sm text-center cursor-pointer">FAQ</button>
+                        <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-sm text-center cursor-pointer">Anleitung</button>
+                    </div>
+                    <div class="mx-auto w-fit h-auto grid grid-cols-1">
+                        <div class="text-base font-bold underline text-center">Informationen</div>
+                        <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-sm text-center cursor-pointer">Datenschutz</button>
+                        <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-sm text-center cursor-pointer">Impressum</button>
+                        <button onclick={(): Promise<void> => goto("/legal")} class="w-full h-auto text-sm text-center cursor-pointer">Rechtliches</button>
+                    </div>
+                </div>
             </div>
         </PageTransition>
     </div>
