@@ -2,6 +2,8 @@ import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 
+// TODO: fix window resize / browser zoom
+// TODO: fix landscape / portrait swap
 export default class Canvas {
     private stage: Konva.Stage;
 
@@ -11,17 +13,21 @@ export default class Canvas {
 
     private puzzlePieceContainer: Konva.Group;
 
+    private panAndZoomGameLayer: PanAndZoom;
+
     private scale: number;
     private offsetX: number;
     private offsetY: number;
 
-    private zoomGameLayer: Zoom;
+    private backgroundImage?: Konva.Image;
+    private slots?: Konva.Path[];
+    private pieces?: Konva.Image[];
 
-    constructor(container: HTMLDivElement, stageWidth: number, stageHeight: number) {
+    constructor(container: HTMLDivElement) {
         this.stage = new Konva.Stage({
             container: container,
-            width: stageWidth,
-            height: stageHeight,
+            width: window.innerWidth,
+            height: window.innerHeight
         });
 
         this.backgroundLayer = new Konva.Layer();
@@ -31,13 +37,13 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
 
-        this.zoomGameLayer = new Zoom(this.gameLayer);
-        this.gameLayer.on("touchend", this.zoomGameLayer.touchend.bind(this.zoomGameLayer));
-        this.gameLayer.on("touchmove", this.zoomGameLayer.touchmove.bind(this.zoomGameLayer));
+        this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
+        this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
+        this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
 
         this.puzzlePieceContainer = new Konva.Group({
             draggable: true,
-            dragBoundFunc(pos) {
+            dragBoundFunc(pos: Vector2d) {
                 // const MIN = 0
                 return {x: pos.x, y: this.y()}
             },
@@ -49,15 +55,19 @@ export default class Canvas {
         this.offsetY = 0;
     }
 
+    public get BackgroundImage() { return this.backgroundImage; }
+    public get Slots() { return this.slots; }
+    public get Pieces() { return this.pieces; }
+
     private drawPaths(paths: string[]): void {
-        paths.forEach((path: string)=>{
-            this.gameLayer.add(
-                new Konva.Path({
-                    data: path,
-                    fill: "black",
-                    scale: {x: this.scale, y: this.scale}
-                })
-            );
+        this.slots = paths.map((path: string) => {
+            const kpath = new Konva.Path({
+                data: path,
+                fill: "black",
+                scale: {x: this.scale, y: this.scale}
+            });
+            this.gameLayer.add(kpath);
+            return kpath;
         });
     }
 
@@ -66,13 +76,12 @@ export default class Canvas {
         this.offsetX = (this.stage.width() - (background.naturalWidth * this.scale)) / 2;
         this.offsetY = (this.stage.height() - (background.naturalHeight * this.scale)) / 2;
 
-        this.gameLayer.add(
-            new Konva.Image({
+        this.backgroundImage = new Konva.Image({
                 id: "playfield",
                 image: background,
                 scale: {x: this.scale, y: this.scale},
             })
-        );
+        this.gameLayer.add(this.backgroundImage);
     }
 
     private drawBackground(): void {
@@ -85,16 +94,6 @@ export default class Canvas {
                 fill: "black"
             })
         );
-    }
-
-
-    private drawGame(background: HTMLImageElement, paths: string[]): void {
-        this.gameLayer.add(new Konva.Rect({stroke: "green", width: this.gameLayer.width(), height: this.gameLayer.height()}));
-        this.drawPlayfield(background);
-        this.drawPaths(paths);
-
-        this.gameLayer.x(this.offsetX);
-        this.gameLayer.y(this.offsetY);
     }
 
     private drawPuzzlePieceContainer(): void {
@@ -116,19 +115,27 @@ export default class Canvas {
     private drawPieces(images: HTMLImageElement[]): void {
         const GAP = 20;
         let currentX = GAP;
-        images.forEach((image: HTMLImageElement, i: number) => {
+        this.pieces = images.map((image: HTMLImageElement, i: number) => {
             const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / image.naturalWidth, this.puzzlePieceContainer.height() / image.naturalHeight);
-            this.puzzlePieceContainer.add(
-                new Konva.Image({
-                    x: currentX,
-                    image: image,
-                    draggable: true,
-                    // scale: {x: this.scale, y: this.scale}
-                    scale: {x: PIECE_SCALE, y: PIECE_SCALE}
-                })
-            );
+            const piece: Konva.Image = new Konva.Image({
+                x: currentX,
+                image: image,
+                draggable: true,
+                // scale: {x: this.scale, y: this.scale}
+                scale: {x: PIECE_SCALE, y: PIECE_SCALE}
+            });
+            this.puzzlePieceContainer.add(piece);
             currentX += GAP + image.naturalWidth * PIECE_SCALE;
+            return piece;
         });
+    }
+
+    private drawGame(background: HTMLImageElement, paths: string[]): void {
+        this.drawPlayfield(background);
+        this.drawPaths(paths);
+
+        this.gameLayer.x(this.offsetX);
+        this.gameLayer.y(this.offsetY);
     }
 
     private drawHUD(images: HTMLImageElement[]): void {
@@ -144,7 +151,7 @@ export default class Canvas {
 }
 
 // https://konvajs.org/docs/sandbox/Multi-touch_Scale_Stage.html
-class Zoom {
+class PanAndZoom {
     private layer: Konva.Layer;
     private stage: Konva.Stage;
     private lastCenter: Vector2d | null;
@@ -200,23 +207,43 @@ class Zoom {
                     const dx = p1.x - this.lastCenter.x;
                     const dy = p1.y - this.lastCenter.y;
 
+                    // Bounds berechnen
                     const rect = this.layer.findOne("#playfield")!.getClientRect();
-                    const newLeft = rect.x + dx;
-                    const newTop = rect.y + dy;
-                    const newRight = newLeft + rect.width;
-                    const newBottom = newTop + rect.height;
+                    const left = rect.x;
+                    const top = rect.y;
+                    const right = left + rect.width;
+                    const bottom = top + rect.height;
 
                     const leftBound = 0;
                     const rightBound = this.stage.width();
                     const topBound = 0;
                     const bottomBound = this.stage.height();
 
-                    if(newLeft < leftBound && newRight > rightBound) {
-                        this.layer.x(newLeft);
+                    // bildbreite < viewportBreite
+                    if(rect.width < this.stage.width()) {
+                        if(!(dx < 0 && left < leftBound) && !(dx > 1 && right > rightBound)) {
+                            this.layer.x(left + dx);
+                        }
                     }
-                    if(newTop < topBound && newBottom > bottomBound) {
-                        this.layer.y(newTop);
-                    } 
+                    // bildbreite > viewportBreite
+                    else {
+                        if(!(dx < 0 && right < rightBound) && !(dx > 0 && left > leftBound)) {
+                            this.layer.x(left + dx);
+                        }
+                    }
+
+                    // bildhöhe < viewporthöhe
+                    if(rect.height < this.stage.height()) {
+                        if(!(dy < 0 && top < topBound) && !(dy > 0 && bottom > bottomBound)) {
+                            this.layer.y(top + dy);
+                        }
+                    }
+                    // bild > viewport
+                    else {
+                        if(!(dy < 0 && bottom < bottomBound) && !(dy > 0 && top > topBound)) {
+                            this.layer.y(top + dy);
+                        }
+                    }
                 }
             this.lastCenter = p1;
         }
@@ -277,7 +304,62 @@ class Zoom {
                 y: newCenter.y - pointTo.y * scale + dy,
             };
 
-            this.layer.position(newPos);
+            // Bounds berechnen
+            const rectPlayfield = this.layer.findOne("#playfield")!.getClientRect();
+            const leftBound = 0;
+            const rightBound = this.stage.width();
+            const topBound = 0;
+            const bottomBound = this.stage.height();
+
+            // bildbreite < viewportBreite
+            if(rectPlayfield.width < this.stage.width()) {
+                if(newPos.x < leftBound) {
+                    this.layer.x(leftBound);
+                }
+                else if(newPos.x + rectPlayfield.width > rightBound) {
+                    this.layer.x(rightBound - rectPlayfield.width);
+                }
+                else {
+                    this.layer.x(newPos.x);
+                }
+            }
+            // bildbreite > viewportBreite
+            else {
+                if(newPos.x > leftBound) {
+                    this.layer.x(leftBound);
+                }
+                else if(newPos.x + rectPlayfield.width < rightBound) {
+                    this.layer.x(rightBound - rectPlayfield.width);
+                }
+                else {
+                    this.layer.x(newPos.x);
+                }
+            }
+
+            // bildhöhe < viewporthöhe
+            if(rectPlayfield.height < this.stage.height()) {
+                if(newPos.y < topBound) {
+                    this.layer.y(topBound);
+                }
+                else if(newPos.y + rectPlayfield.height > bottomBound) {
+                    this.layer.y(bottomBound - rectPlayfield.height);
+                }
+                else {
+                    this.layer.y(newPos.y);
+                }
+            }
+            // bild > viewport
+            else {
+                if(newPos.y > topBound) {
+                    this.layer.y(topBound);
+                }
+                else if(newPos.y + rectPlayfield.height < bottomBound) {
+                    this.layer.y(bottomBound - rectPlayfield.height);
+                }
+                else {
+                    this.layer.y(newPos.y);
+                }
+            }
 
             this.lastDist = dist;
             this.lastCenter = newCenter;
