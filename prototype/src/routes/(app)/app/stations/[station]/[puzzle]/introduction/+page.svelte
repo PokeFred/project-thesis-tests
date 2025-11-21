@@ -4,6 +4,9 @@
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
+    import SelectIntroduction from "$components/puzzle/select/introduction.svelte"
+    import DoubleSelectIntroduction from "$components/puzzle/doubleSelect/introduction.svelte"
+    import MultiSelectIntroduction from "$components/puzzle/multiSelect/introduction.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -15,14 +18,18 @@
             <Icon data={faAngleLeft} class="w-6 h-6" />
         </button>
     </div>
-    <GpsIntroduction data={{
-        text: "Begebe dich zum Alten Markt, um diese Station freizuschalten",
-        informations: {
-            adress: "Hansastraße 3, 44137 Dortmund",
-            transit: ["400/453/460 (Dortmund Hbf S U)", "U41/U43/U44/U45/U47/U49 (Kampstraße)"],
-            coordinates: "N 51° 31.008' E 007° 27.774'"
-        }
-    }} />
+    {#if data.puzzle.type === "gps-puzzle"}
+        <GpsIntroduction data={data.puzzle.data.introduction} />
+    {/if}
+    {#if data.puzzle.type === "select-puzzle"}
+        <SelectIntroduction data={data.puzzle.data.introduction} />
+    {/if}
+    {#if data.puzzle.type === "double-select-puzzle"}
+        <DoubleSelectIntroduction data={data.puzzle.data.introduction} />
+    {/if}
+    {#if data.puzzle.type === "multi-select-puzzle"}
+        <MultiSelectIntroduction data={data.puzzle.data.introduction} />
+    {/if}
     <div class="mx-auto w-fit h-auto">
         <button onclick={() => goto(`/app/stations/${data.station}/${data.identifier}/game`)} class="w-full h-auto text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Rätsel starten</button>
     </div>

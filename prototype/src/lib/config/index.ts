@@ -148,19 +148,82 @@ export default {
             ],
             puzzles: [
                 {
-                    type: "GPS",
-                    identifier: "station_01_puzzle_01",
+                    type: "gps-puzzle",
+                    identifier: "station_01_puzzle_00",
                     name: "Station freischalten",
                     requirements: [],
                     score: 2,
                     data: {
-                        introduction: [
-                            // Wegbeschreibung ?
-                            //  U-Bahn ???
-                            //  Koordinaten ???
-                            //  Adresse ???
-                        ],
-                        coordinates: { latitude: 0, longitude: 0 }
+                        introduction: {
+                            text: "Begebe dich zum Alten Markt, um diese Station freizuschalten",
+                            informations: {
+                                adress: "Hansastraße 3, 44137 Dortmund",
+                                transit: ["400/453/460 (Dortmund Hbf S U)", "U41/U43/U44/U45/U47/U49 (Kampstraße)"],
+                                coordinates: {
+                                    lan: 51.516807552719946,
+                                    lon: 7.46296542458445,
+                                    text: "N 51° 31.008' E 007° 27.774'"
+                                }
+                            }
+                        },
+                        game: {},
+                        result: {}
+                    }
+                },
+                {
+                    type: "multi-select-puzzle",
+                    identifier: "station_01_puzzle_01",
+                    name: "Rätsel 1",
+                    requirements: ["station_01_puzzle_00"],
+                    score: 2,
+                    data: {
+                        introduction: {
+                            text: "Hello World"
+                        },
+                        game: {},
+                        result: {}
+                    }
+                },
+                {
+                    type: "double-select-puzzle",
+                    identifier: "station_01_puzzle_02",
+                    name: "Rätsel 2",
+                    requirements: ["station_01_puzzle_00"],
+                    score: 2,
+                    data: {
+                        introduction: {
+                            text: "Hello World"
+                        },
+                        game: {
+                            data: {
+                                left: ["Metallverarbeitung", "Getreideverarbeitung", "Fleischverarbeitung", "Lederverarbeitung", "Feinlederverarbeitung", "Gemischtwarenhandel", "Handel mit Butter, Öl, Speck etc."],
+                                right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
+                                pairs: [
+                                    { left: "Metallverarbeitung", right: "Schmied" },
+                                    { left: "Getreideverarbeitung", right: "Bäcker" },
+                                    { left: "Fleischverarbeitung", right: "Fleischer" },
+                                    { left: "Lederverarbeitung", right: "Gerber" },
+                                    { left: "Feinlederverarbeitung", right: "Schuhmacher" },
+                                    { left: "Gemischtwarenhandel", right: "Krämer" },
+                                    { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+                                ]
+                            }
+                        },
+                        result: {}
+                    }
+                },
+                {
+                    type: "double-select-puzzle",
+                    identifier: "station_01_puzzle_09",
+                    name: "Rätsel 9",
+                    requirements: ["station_01_puzzle_00"],
+                    score: 2,
+                    data: {
+                        introduction: {
+                            text: "Hello World"
+                        },
+                        game: {},
+                        result: {}
                     }
                 }
             ]

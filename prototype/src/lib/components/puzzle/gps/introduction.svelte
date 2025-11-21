@@ -13,12 +13,7 @@
     let open_3: boolean = $state<boolean>(false)
 
     function openMaps(): void {
-        const coords = data.informations.coordinates
-        const parts = coords.replace("N", "").replaceAll(" ", "").split("E")
-        const latitude = parts[0]
-        const longitude = parts[1]
-        const geoUri = `geo:${latitude},${longitude}`
-        //window.open(geoUri, '_blank')
+        window.open(`geo:${data.informations.coordinates.lat},${data.informations.coordinates.lon}`, "_blank")
     }
 </script>
 
@@ -53,7 +48,7 @@
             <Icon data={open_3 ? faMinus : faPlus} />
         </summary>
         <div class="px-6 pt-1">
-            <div>{data.informations.coordinates}</div>
+            <div>{data.informations.coordinates.text}</div>
             <button onclick={openMaps} class="mt-1 w-fit h-auto font-semibold text-primary bg-secondary rounded-xl cursor-pointer px-6 active:scale-95">Öffnen</button>
         </div>
     </details>

@@ -3,6 +3,10 @@ export type Introduction = {
     informations: {
         adress: string
         transit: string[]
-        coordinates: string
+        coordinates: {
+            lat: number,
+            lon: number,
+            text: string
+        }
     }
 }

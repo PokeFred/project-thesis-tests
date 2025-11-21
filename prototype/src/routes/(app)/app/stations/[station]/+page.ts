@@ -29,7 +29,8 @@ type Puzzle = any
 type _Puzzle = {
     identifier: string,
     name: string,
-    completion: number
+    completion: number,
+    unlocked: boolean
 }
 
 export const load: PageLoad = async ({ params }): Promise<{ identifier: string, stitle: string, title: string, completion: number, chapters: AccordionData, puzzles: _Puzzle[] }> => {
@@ -67,7 +68,8 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
                 return {
                     identifier: element.identifier,
                     name: element.name,
-                    completion: 0
+                    completion: 0,
+                    unlocked: true
                 }
             })
     }
