@@ -1,13 +1,19 @@
 <script lang="ts">
     import { goto } from "$app/navigation"
+    import { resetGame } from "$stores/game"
     import Icon from "svelte-awesome"
     import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons/faRightFromBracket"
+
+    function leave(): void {
+        resetGame()
+        goto("/")
+    }
 </script>
 
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center px-6">
         <span class="text-lg font-semibold">APP</span>
-        <button onclick={() => goto("/app")} class="w-8 h-8 text-primary bg-secondary rounded-lg flex justify-center items-center cursor-pointer active:scale-95">
+        <button onclick={leave} class="w-8 h-8 text-primary bg-secondary rounded-lg flex justify-center items-center cursor-pointer active:scale-95">
             <Icon data={faRightFromBracket} class="w-5 h-5" />
         </button>
     </div>

@@ -32,7 +32,7 @@ function _getPuzzlesScore() {}
 
 function _getStationScore() {}
 
-function _getStations_Score() {}
+function _getStationsScore() {}
 
 type _Station = {
     identifier: string,
@@ -56,7 +56,7 @@ export const load: PageLoad = async (): Promise<{ completion: number, stations: 
         .map((element: any): number => element.score)
         .reduce((pre: number, cur: number): number => pre += cur, 0)
     return {
-        completion: current * 100 / max,
+        completion: 0, // current * 100 / max,
         stations: Config.stations
             .map((element: any): _Station => {
                 return {

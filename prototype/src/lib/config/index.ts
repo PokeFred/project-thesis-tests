@@ -1,3 +1,71 @@
+/*
+    GpsPuzzle
+    SelectPuzzle
+    DoubleSelectPuzzle
+    MultiSelectPuzzle
+
+    {
+                    type: "GPS",
+                    identifier: "station_01_puzzle_01",
+                    name: "Station freischalten",
+                    requirements: [],
+                    score: 2,
+                    data: {
+                        introduction: [
+                            // Wegbeschreibung ?
+                            //  U-Bahn ???
+                            //  Koordinaten ???
+                            //  Adresse ???
+                        ],
+                        coordinates: { latitude: 0, longitude: 0 }
+                    }
+                }
+
+    { type: "", identifier: "station_01_puzzle_00", name: "", requirements: [], score: 0, data: {} }
+    { type: "multi-select-puzzle", identifier: "station_01_puzzle_01", name: "Rätsel 01", requirements: [], score: 0, data: {} }
+    // S01R02 DoubleSelect
+    // S01R03 Drag & Drop Reinoldi
+
+
+
+    { type: "gps-puzzle", identifier: "station_01_puzzle_00", name: "Station freischalten", requirements: [], score: 0, data: {
+        introduction: {
+            title: "Begebe dich zum Alten Markt, um diese Station freizuschalten",
+            adress: "Hansastraße 3, 44137 Dortmund",
+            transit: ["400/453/460 (Dortmund Hbf S U)", "U41/U43/U44/U45/U47/U49 (Kampstraße)"],
+            coordinates: {
+                lan: 0,
+                lon: 0,
+                ?: "N 51° 31.008' E 007° 27.774'"
+            }
+        },
+        game: {},
+        result: {}
+    } }
+    { type: "gps-puzzle", identifier: "station_02_puzzle_00", name: "Station freischalten", requirements: [], score: 0, data: {} }
+*/
+
+type Puzzle = GpsPuzzle | SelectPuzzle | DoubleSelectPuzzle | MultiSelectPuzzle | PlaceholderPuzzle
+
+type GpsPuzzle = { type: "gps-puzzle", identifier: string, name: string, requirements: string, score: number, data: GpsPuzzleData }
+type GpsPuzzleData = {
+    introduction: any,
+    game: any,
+    end: any
+}
+
+type SelectPuzzle = { type: "select-puzzle", identifier: string, name: string, requirements: string, score: number, data: SelectPuzzleData }
+type SelectPuzzleData = {}
+
+type DoubleSelectPuzzle = { type: "double-select-puzzle", identifier: string, name: string, requirements: string, score: number, data: DoubleSelectPuzzleData }
+type DoubleSelectPuzzleData = {}
+
+type MultiSelectPuzzle = { type: "multi-select-puzzle", identifier: string, name: string, requirements: string, score: number, data: MultiSelectPuzzleData }
+type MultiSelectPuzzleData = {}
+
+type PlaceholderPuzzle = { type: "placeholder-puzzle", identifier: string, name: string, requirements: string, score: number, data: PlaceholderPuzzleData }
+type PlaceholderPuzzleData = {}
+
 export default {
     stations: [
         {

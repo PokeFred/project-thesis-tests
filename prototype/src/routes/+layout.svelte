@@ -2,7 +2,8 @@
     import "../app.css"
     import "@fontsource-variable/nunito"
     import type { LayoutProps } from "./$types"
-    import { goto } from "$app/navigation"
+    import { goto, afterNavigate } from "$app/navigation"
+    import type { AfterNavigate } from "@sveltejs/kit"
     import Game, { resetGame } from "$stores/game"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
@@ -15,6 +16,10 @@
     function toggle(): void {
         open = !open
     }
+
+    afterNavigate((navigator: AfterNavigate): void => {
+        open = false
+    })
 
     function leave(): void {
         resetGame()
@@ -63,7 +68,6 @@
             <div class="w-full h-auto text-secondary bg-primary p-4">
                 {@render children()}
                 <hr class="mt-3" />
-                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
                 <div class="mt-3 w-full h-auto grid grid-cols-2 gap-2 items-start">
                     <div class="mx-auto w-fit h-auto grid grid-cols-1">
                         <div class="text-base font-bold underline text-center">Hilfe</div>
@@ -77,6 +81,8 @@
                         <button onclick={(): Promise<void> => goto("/legal")} class="w-full h-auto text-sm text-center cursor-pointer">Rechtliches</button>
                     </div>
                 </div>
+                <hr class="mt-3" />
+                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
             </div>
         </PageTransition>
     </div>

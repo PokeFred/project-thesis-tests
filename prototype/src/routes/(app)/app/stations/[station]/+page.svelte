@@ -22,7 +22,7 @@
     <div class="mt-3 w-full h-6 grid grid-cols-[65px_auto_40px] gap-2 px-4">
         <div class="my-auto text-sm text-left"><span>Geschafft:</span></div>
         <div class="my-auto w-full h-fit bg-secondary rounded-xl p-1">
-            <div class="w-[{data.completion}%] h-4 bg-primary rounded-xl"></div>
+            <div class="h-4 bg-primary rounded-xl" style="width: {data.completion}%"></div>
         </div>
         <div class="my-auto text-sm text-right">{data.completion}%</div>
     </div>
@@ -33,7 +33,7 @@
                 <span class="text-lg font-bold text-right">{puzzle.completion}%</span>
                 <div class="w-full h-7 flex justify-center items-center">
                     <div class="w-full h-fit bg-primary border rounded-full p-[1px]">
-                        <div class="w-[{puzzle.completion}%] h-4 bg-secondary border rounded-full"></div>
+                        <div class="h-4 bg-secondary border rounded-full" style="width: {puzzle.completion}%"></div>
                     </div>
                 </div>
             </button>
