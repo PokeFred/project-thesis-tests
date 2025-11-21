@@ -2,6 +2,8 @@ import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 
+// TODO: fix window resize / browser zoom
+// TODO: fix landscape / portrait swap
 export default class Canvas {
     private stage: Konva.Stage;
 
@@ -11,17 +13,21 @@ export default class Canvas {
 
     private puzzlePieceContainer: Konva.Group;
 
+    private panAndZoomGameLayer: PanAndZoom;
+
     private scale: number;
     private offsetX: number;
     private offsetY: number;
 
-    private panAndZoomGameLayer: PanAndZoom;
+    private backgroundImage?: Konva.Image;
+    private slots?: Konva.Path[];
+    private pieces?: Konva.Image[];
 
-    constructor(container: HTMLDivElement, stageWidth: number, stageHeight: number) {
+    constructor(container: HTMLDivElement) {
         this.stage = new Konva.Stage({
             container: container,
-            width: stageWidth,
-            height: stageHeight,
+            width: window.innerWidth,
+            height: window.innerHeight
         });
 
         this.backgroundLayer = new Konva.Layer();
@@ -37,7 +43,7 @@ export default class Canvas {
 
         this.puzzlePieceContainer = new Konva.Group({
             draggable: true,
-            dragBoundFunc(pos) {
+            dragBoundFunc(pos: Vector2d) {
                 // const MIN = 0
                 return {x: pos.x, y: this.y()}
             },
@@ -49,15 +55,19 @@ export default class Canvas {
         this.offsetY = 0;
     }
 
+    public get BackgroundImage() { return this.backgroundImage; }
+    public get Slots() { return this.slots; }
+    public get Pieces() { return this.pieces; }
+
     private drawPaths(paths: string[]): void {
-        paths.forEach((path: string)=>{
-            this.gameLayer.add(
-                new Konva.Path({
-                    data: path,
-                    fill: "black",
-                    scale: {x: this.scale, y: this.scale}
-                })
-            );
+        this.slots = paths.map((path: string) => {
+            const kpath = new Konva.Path({
+                data: path,
+                fill: "black",
+                scale: {x: this.scale, y: this.scale}
+            });
+            this.gameLayer.add(kpath);
+            return kpath;
         });
     }
 
@@ -66,13 +76,12 @@ export default class Canvas {
         this.offsetX = (this.stage.width() - (background.naturalWidth * this.scale)) / 2;
         this.offsetY = (this.stage.height() - (background.naturalHeight * this.scale)) / 2;
 
-        this.gameLayer.add(
-            new Konva.Image({
+        this.backgroundImage = new Konva.Image({
                 id: "playfield",
                 image: background,
                 scale: {x: this.scale, y: this.scale},
             })
-        );
+        this.gameLayer.add(this.backgroundImage);
     }
 
     private drawBackground(): void {
@@ -85,16 +94,6 @@ export default class Canvas {
                 fill: "black"
             })
         );
-    }
-
-
-    private drawGame(background: HTMLImageElement, paths: string[]): void {
-        this.gameLayer.add(new Konva.Rect({stroke: "green", width: this.gameLayer.width(), height: this.gameLayer.height()}));
-        this.drawPlayfield(background);
-        this.drawPaths(paths);
-
-        this.gameLayer.x(this.offsetX);
-        this.gameLayer.y(this.offsetY);
     }
 
     private drawPuzzlePieceContainer(): void {
@@ -116,19 +115,27 @@ export default class Canvas {
     private drawPieces(images: HTMLImageElement[]): void {
         const GAP = 20;
         let currentX = GAP;
-        images.forEach((image: HTMLImageElement, i: number) => {
+        this.pieces = images.map((image: HTMLImageElement, i: number) => {
             const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / image.naturalWidth, this.puzzlePieceContainer.height() / image.naturalHeight);
-            this.puzzlePieceContainer.add(
-                new Konva.Image({
-                    x: currentX,
-                    image: image,
-                    draggable: true,
-                    // scale: {x: this.scale, y: this.scale}
-                    scale: {x: PIECE_SCALE, y: PIECE_SCALE}
-                })
-            );
+            const piece: Konva.Image = new Konva.Image({
+                x: currentX,
+                image: image,
+                draggable: true,
+                // scale: {x: this.scale, y: this.scale}
+                scale: {x: PIECE_SCALE, y: PIECE_SCALE}
+            });
+            this.puzzlePieceContainer.add(piece);
             currentX += GAP + image.naturalWidth * PIECE_SCALE;
+            return piece;
         });
+    }
+
+    private drawGame(background: HTMLImageElement, paths: string[]): void {
+        this.drawPlayfield(background);
+        this.drawPaths(paths);
+
+        this.gameLayer.x(this.offsetX);
+        this.gameLayer.y(this.offsetY);
     }
 
     private drawHUD(images: HTMLImageElement[]): void {
