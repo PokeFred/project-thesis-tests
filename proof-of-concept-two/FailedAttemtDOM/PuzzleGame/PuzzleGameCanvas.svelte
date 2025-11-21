@@ -6,7 +6,6 @@
     import { onMount } from "svelte";
     import type Puzzle from "./Puzzle.svelte";
     import type { Piece } from "./Puzzle.svelte";
-    import { SVG } from '@svgdotjs/svg.js';
     import Canvas from "./Canvas.svelte";
     import PuzzleController from "./PuzzleController.svelte";
 
