@@ -3,9 +3,12 @@ export type Introduction = {
 }
 
 export type Game = {
-    left: string[],
-    right: string[],
-    pairs: { left: string, right: string }[]
+    informations: string[],
+    data: {
+        left: string[],
+        right: string[],
+        pairs: { left: string, right: string }[]
+    }
 }
 
 export type Result = {}
