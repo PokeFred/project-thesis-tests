@@ -8,7 +8,7 @@
     import type { Piece } from "./Puzzle.svelte";
     import { SVG } from '@svgdotjs/svg.js';
     import Canvas from "./Canvas.svelte";
-    import PuzzleController from "./PuzzleController.svelte";
+    import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
 
     let { quiz }: { quiz: Puzzle } = $props();    
 
@@ -21,22 +21,33 @@
         });
     }
 
-    const paths: string[] = quiz.Pieces.map((piece: Piece) => piece.Slot.D);
-
     let container: HTMLDivElement;
     
     let canvas: Canvas;
     let puzzleController: PuzzleController;
     onMount(async ()=>{
-        const background: HTMLImageElement = await loadImage(quiz.Background.src);
-        const images: HTMLImageElement[] = await Promise.all( 
-            quiz.Pieces.map((piece: Piece) => loadImage(piece.Src))
-        );
-        
-        canvas = new Canvas(container);
-        puzzleController = new PuzzleController(canvas, quiz);
+        // TODO: Auslagern in Quiz.ts
+        const path = "/station_04/raetsel_00/game";
+        const backgroundSrc = "Hintergrund.png";
+        const puzzleData: PuzzleData = await (await fetch(`${path}/cutouts.json`)).json();
 
-        puzzleController.init(background, paths, images);
+        const background: HTMLImageElement = await loadImage(path + "/" + backgroundSrc);
+        const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
+            const piece = await loadImage(path + "/" + cutout.src);
+            const noise = cutout.noise ? await Promise.all( 
+                cutout.noise.map((src: string) => loadImage(path + "/" + src))
+            ) : undefined;
+            
+            return {
+                path: cutout.d,
+                piece: piece,
+                noise: noise
+            } satisfies SlotGroup;
+        }));
+        // TODO
+        
+        // canvas = new Canvas(container);
+        puzzleController = new PuzzleController(container, background, slotGroups);
     });
 </script>
 
