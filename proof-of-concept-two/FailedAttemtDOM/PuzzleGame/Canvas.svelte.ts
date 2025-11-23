@@ -1,13 +1,10 @@
 import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
-import type { SlotGroup } from "./PuzzleController.svelte";
-import type PuzzleController from "./PuzzleController.svelte";
 
 // TODO: fix window resize / browser zoom
 // TODO: fix landscape / portrait swap
 export default class Canvas {
-    private puzzleController: PuzzleController;
     private stage: Konva.Stage;
 
     private backgroundLayer: Konva.Layer;
@@ -22,12 +19,7 @@ export default class Canvas {
     private offsetX: number;
     private offsetY: number;
 
-    private playfield!: Konva.Image;
-    private slots: Konva.Path[];
-    private pieces: Konva.Image[];
-
-    constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
-        this.puzzleController = puzzleController;
+    constructor(container: HTMLDivElement) {
         this.stage = new Konva.Stage({
             container: container,
             width: window.innerWidth,
@@ -37,11 +29,9 @@ export default class Canvas {
         this.backgroundLayer = new Konva.Layer();
         this.gameLayer = new Konva.Layer();
         this.hudLayer = new Konva.Layer();
-
         this.stage.add(this.backgroundLayer);
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
-
 
         this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
         this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
@@ -59,57 +49,35 @@ export default class Canvas {
         this.scale = 1;
         this.offsetX = 0;
         this.offsetY = 0;
-
-        this.slots = new Array<Konva.Path>();
-        this.pieces = new Array<Konva.Image>();
-
-        this.init(background, slotGroups);
-        this.drawAll();
     }
 
-    public get Slots() { return this.slots; }
-    public get Pieces() { return this.pieces; }
-
-    private init(background: HTMLImageElement, slotGroups: SlotGroup[]): void {
-        this.playfield = this.createPlayfield(background);
-        slotGroups.forEach((slotGroup: SlotGroup) => {
-            this.slots.push(this.createSlot(slotGroup.path));
-            this.pieces.push(this.createPiece(slotGroup.piece));
-            slotGroup.noise?.forEach((piece: HTMLImageElement) => {
-                this.pieces.push(this.createPiece(piece));
-            });
+    private drawPaths(paths: string[]): void {
+        paths.forEach((path: string) => {
+            this.gameLayer.add(
+                new Konva.Path({
+                    data: path,
+                    fill: "black",
+                    scale: {x: this.scale, y: this.scale}
+                })
+            );
         });
     }
 
-    private createSlot(path: string): Konva.Path {
-        return new Konva.Path({
-            data: path,
-            fill: "black",
-            scale: {x: this.scale, y: this.scale}
-        })
-    }
-
-    private drawSlots(): void {
-        this.slots.forEach((slot: Konva.Path) => this.gameLayer.add(slot));
-    }
-
-    private createPlayfield(background: HTMLImageElement): Konva.Image {
+    private drawPlayfield(background: HTMLImageElement): void {
         this.scale =  Math.min(this.stage.width() / background.naturalWidth, this.stage.height() / background.naturalHeight);
         this.offsetX = (this.stage.width() - (background.naturalWidth * this.scale)) / 2;
         this.offsetY = (this.stage.height() - (background.naturalHeight * this.scale)) / 2;
 
-        return new Konva.Image({
-            id: "playfield",
-            image: background,
-            scale: {x: this.scale, y: this.scale},
-        });
+        this.gameLayer.add(
+            new Konva.Image({
+                id: "playfield",
+                image: background,
+                scale: {x: this.scale, y: this.scale},
+            })
+        );
     }
 
-    private drawPlayfield(): void {
-        this.gameLayer.add(this.playfield);
-    }
-
-    private createAndDrawBackground(): void {
+    private drawBackground(): void {
         this.backgroundLayer.add(
             new Konva.Rect({
                 x: 0,
@@ -137,46 +105,50 @@ export default class Canvas {
         );
     }
 
-    private createPiece(img: HTMLImageElement): Konva.Image {
-        const piece: Konva.Image = new Konva.Image({
-            image: img,
-            draggable: true,
-        });
-        piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
-        piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));
-        return piece;
-    }
-
-    private drawPieces(): void {
+    private drawPieces(images: HTMLImageElement[]): void {
         const GAP = 20;
         let currentX = GAP;
-
-        this.pieces.forEach((piece: Konva.Image, i: number) => {
-            const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / piece.width(), this.puzzlePieceContainer.height() / piece.height());
-            piece.x(currentX);
-            piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
+        images.forEach((image: HTMLImageElement, i: number) => {
+            const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / image.naturalWidth, this.puzzlePieceContainer.height() / image.naturalHeight);
+            const piece: Konva.Image = new Konva.Image({
+                x: currentX,
+                image: image,
+                draggable: true,
+                // scale: {x: this.scale, y: this.scale}
+                scale: {x: PIECE_SCALE, y: PIECE_SCALE},
+            });
+            piece.on("dragstart", this.dragStartPiece);
+            piece.on("dragend", this.dragStopPiece);
             this.puzzlePieceContainer.add(piece);
-            currentX += GAP + piece.width() * PIECE_SCALE;
+            currentX += GAP + image.naturalWidth * PIECE_SCALE;
         });
     }
 
-    private drawGame(): void {
-        this.drawPlayfield();
-        this.drawSlots();
+    private drawGame(background: HTMLImageElement, paths: string[]): void {
+        this.drawPlayfield(background);
+        this.drawPaths(paths);
 
         this.gameLayer.x(this.offsetX);
         this.gameLayer.y(this.offsetY);
     }
 
-    private drawHUD(): void {
+    private drawHUD(images: HTMLImageElement[]): void {
         this.drawPuzzlePieceContainer();
-        this.drawPieces();
+        this.drawPieces(images);
     }
 
-    public drawAll(): void {
-        this.createAndDrawBackground();
-        this.drawGame();
-        this.drawHUD();
+    public drawAll(background: HTMLImageElement, paths: string[], images: HTMLImageElement[]): void {
+        this.drawBackground();
+        this.drawGame(background, paths);
+        this.drawHUD(images);
+    }
+
+    private dragStartPiece(event: KonvaEventObject<DragEvent>): void {
+        
+    }
+
+    private dragStopPiece(event: KonvaEventObject<DragEvent>): void {
+
     }
 }
 
