@@ -62,7 +62,7 @@ export const load: PageLoad = async (): Promise<{ completion: number, stations: 
                 return {
                     identifier: element.identifier,
                     name: element.stitle,
-                    completion: getPuzzleScores(element.puzzles) * 100 / element.score
+                    completion: 0 // getPuzzleScores(element.puzzles) * 100 / element.score
                 }
             })
     }

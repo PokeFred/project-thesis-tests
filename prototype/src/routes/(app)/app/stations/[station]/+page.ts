@@ -56,7 +56,7 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
         identifier: params.station,
         stitle: station.stitle.toUpperCase(),
         title: station.title,
-        completion: completion,
+        completion: 0, // completion,
         chapters: chapters,
         puzzles: station.puzzles
             .map((element: any): _Puzzle => {
