@@ -2,9 +2,12 @@ import type Konva from "konva";
 import Canvas from "./Canvas.svelte";
 import Puzzle from "./Puzzle.svelte";
 import type { Piece, Slot } from "./Puzzle.svelte";
-import type { KonvaEventObject } from "konva/lib/Node";
+import type { ImageConfig, KonvaEventObject } from "konva/lib/Node";
+import type { Shape } from "konva/lib/Shape";
 // TODO: cutout python script anpassen an neue json struktur
 // TODO: rätsel 00 anpassen
+
+const SNAP_RANGE = 20;
 
 export type PuzzleData = {
     readonly viewBox: string;
@@ -32,17 +35,17 @@ export default class PuzzleController {
     private readonly canvas: Canvas;
     private readonly puzzle: Puzzle;
 
-    private slotMap: Map<Konva.Path, Slot>;
+    private slotMap: Map<Slot, Konva.Path>;
     private pieceMap: Map<Konva.Image, Piece>;
 
     constructor(container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.canvas = new Canvas(this, container, background, slotGroups);
         this.puzzle = new Puzzle(slotGroups);
-        this.slotMap = new Map<Konva.Path, Slot>();
+        this.slotMap = new Map<Slot, Konva.Path>();
         this.pieceMap = new Map<Konva.Image, Piece>();
 
-        this.canvas.Slots.forEach((slot: Konva.Path, i: number) => {
-            this.slotMap.set(slot, this.puzzle.Slots[i]);
+        this.puzzle.Slots.forEach((slot: Slot, i: number) => {
+            this.slotMap.set(slot, this.canvas.Slots[i]);
         });
 
         this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
@@ -53,11 +56,71 @@ export default class PuzzleController {
     public get Puzzle() { return this.puzzle; }
 
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {
-        console.log(event.currentTarget)
-        console.log(this.pieceMap.get((event.target as Konva.Image)))
+        const PIECE: Konva.Image | undefined = (event.target as Konva.Image);
+
+        PIECE.moveTo(this.canvas.GameLayer);
+        PIECE.x(PIECE.x() + this.canvas.HudLayer.x())
+        PIECE.y(PIECE.y() + this.canvas.HudLayer.y())
+
+        this.pickupPiece(PIECE);
     }
 
     public dragStopPiece(event: KonvaEventObject<DragEvent>): void {
+        const PIECE: Konva.Image | undefined = (event.target as Konva.Image);
+        
+        PIECE.moveTo(this.canvas.HudLayer);
+        PIECE.x(PIECE.x() + this.canvas.GameLayer.x() * this.canvas.GameLayer.scaleX())
+        PIECE.y(PIECE.y() + this.canvas.GameLayer.y() * this.canvas.GameLayer.scaleY())
 
+        this.dropPiece(PIECE);
+    }
+
+    private pickupPiece(piece: Konva.Image): void {
+        const PIECE: Piece | undefined = this.pieceMap.get(piece);
+        const SLOT: Slot | undefined = PIECE?.Slot;
+
+        const KONVA_SLOT = this.slotMap.get(SLOT!);
+
+        PIECE?.removeFromSlot();
+
+        piece.scale(KONVA_SLOT?.scale());
+        KONVA_SLOT?.show();
+    }
+
+    private dropPiece(piece: Konva.Image): void {
+        const KONVA_SLOT = this.getConvaSlot(piece)!;
+        const PIECE_BOX = piece.getClientRect()
+        const SLOT_BOX = KONVA_SLOT.getClientRect()
+        const PIECE_CENTER = {x: (PIECE_BOX.x + PIECE_BOX.width) / 2, y: (PIECE_BOX.y + PIECE_BOX.height) / 2}
+        const SLOT_CENTER = {x: (SLOT_BOX.x + SLOT_BOX.width) / 2, y: (SLOT_BOX.y + SLOT_BOX.height) / 2}
+
+        const PIECE: Piece | undefined = this.pieceMap.get(piece);
+        const SLOT: Slot | undefined = PIECE?.Slot;
+
+        if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {
+            this.placePieceInSlot(piece);
+        }
+        else {
+
+        }
+    }
+
+    private placePieceInSlot(piece: Konva.Image): void {
+        const SLOT = this.getConvaSlot(piece)!;
+        const SLOT_BOX = SLOT.getClientRect()
+
+        const PIECE: Piece | undefined = this.pieceMap.get(piece);
+
+        PIECE?.placeInSlot();
+
+        piece.setAbsolutePosition({x: SLOT_BOX.x, y: SLOT_BOX.y});
+        piece.scale(SLOT.scale());
+        SLOT?.hide();
+    }
+
+    
+
+    private getConvaSlot(piece: Konva.Image): Konva.Path | undefined {
+        return this.slotMap.get((this.pieceMap.get((piece as Konva.Image))?.Slot as Slot));
     }
 }
