@@ -56,7 +56,7 @@ export default class PuzzleController {
     public get Puzzle() { return this.puzzle; }
 
     public exitFullscreen(): void {
-        this.canvas.Container.hidden = true;
+        this.canvas.Fullscreen.disable();
     }
 
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {

@@ -12,8 +12,6 @@
 </script>
 
 <PuzzleGameCanvas {quiz}/>
-<!-- <PuzzleGame {quiz} /> -->
-<!-- <button onclick={()=>console.log(quiz.Pieces[0].Slot.Slot?.getBBox())}>asdf</button> -->
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         quiz.complete();

@@ -17,6 +17,7 @@ export default class Canvas {
     private gameLayer: Konva.Layer;
     private hudLayer: Konva.Layer;
 
+    private fullscreen: Fullscreen;
     private panAndZoomGameLayer: PanAndZoom;
 
     private scale: number;
@@ -34,9 +35,11 @@ export default class Canvas {
         this.container = container;
         this.stage = new Konva.Stage({
             container: container,
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: container.clientWidth,
+            height: container.clientHeight
         });
+
+        console.log(this.container.clientHeight)
 
         this.backgroundLayer = new Konva.Layer();
         this.gameLayer = new Konva.Layer();
@@ -46,7 +49,7 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
 
-
+        this.fullscreen = new Fullscreen(this);
         this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
         this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
         this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
@@ -60,11 +63,14 @@ export default class Canvas {
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
         this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
 
+        this.stage.on("click", this.fullscreen.enable.bind(this.fullscreen));
+
         this.init(background, slotGroups);        
         this.drawAll();
     }
 
     public get Container() { return this.container; }
+    public get Fullscreen() { return this.fullscreen; }
     public get GameLayer() { return this.gameLayer; }
     public get HudLayer() { return this.hudLayer; }
     public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
@@ -203,7 +209,7 @@ class PuzzlePieceContainer {
             height: this.container.height() - this.margin,
             width: this.container.height() - this.margin,
         });
-        slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
+        // slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
         return slot;
     }
 
@@ -230,7 +236,9 @@ class PuzzlePieceContainer {
     private drawPieces(): void {
         let currentX = this.gap;
 
-        this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
+        const mixedPieces: Konva.Image[] = this.canvas.Pieces.sort(() => Math.random() - 0.5);
+
+        mixedPieces.forEach((piece: Konva.Image, i: number) => {
             const CONTAINER = this.createPuzzlePieceContainerSlot();
             this.slotMapping.set(piece, CONTAINER);
             CONTAINER.x(currentX);
@@ -313,6 +321,40 @@ class ExitButton {
 
     public draw(): void {
         this.layer.add(this.button);
+    }
+}
+
+class Fullscreen {
+    private readonly canvas;
+
+    constructor(canvas: Canvas) {
+        this.canvas = canvas;
+        this.canvas.HudLayer.hide();
+
+        this.canvas.Container.addEventListener("fullscreenchange", () => this.Enabled ?  undefined : this.canvas.HudLayer.hide());
+    }
+
+    public get Enabled() { return document.fullscreenElement ? true : false; }
+
+    public async enable(): Promise<void> {
+        if(!this.Enabled) {
+            await this.canvas.Container.requestFullscreen({navigationUI: "hide"})
+            if(this.Enabled) {
+                this.canvas.HudLayer.show();
+                // this.canvas.GameLayer.getStage().width(this.canvas.Container.clientWidth);
+                // this.canvas.GameLayer.getStage().height(this.canvas.Container.clientHeight);
+                // console.log(this.canvas.GameLayer.scale())
+                // console.log(this.canvas.HudLayer.scale())
+                // this.canvas.GameLayer.getStage().scale({x:2, y:2})
+            }
+        }
+    }
+
+    public disable(): void {
+        if(this.Enabled) {
+            document.exitFullscreen();
+            this.canvas.HudLayer.hide();
+        }
     }
 }
 
