@@ -3,7 +3,6 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
-import { SVG } from "@svgdotjs/svg.js";
 
 // TODO: fix window resize / browser zoom
 // TODO: fix landscape / portrait swap
@@ -15,8 +14,6 @@ export default class Canvas {
     private gameLayer: Konva.Layer;
     private hudLayer: Konva.Layer;
 
-    private puzzlePieceContainer: Konva.Group;
-
     private panAndZoomGameLayer: PanAndZoom;
 
     private scale: number;
@@ -26,7 +23,8 @@ export default class Canvas {
     private playfield!: Konva.Image;
     private slots: Konva.Path[];
     private pieces: Konva.Image[];
-
+    private puzzlePieceContainer: PuzzlePieceContainer;
+    
     constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.puzzleController = puzzleController;
         this.stage = new Konva.Stage({
@@ -48,23 +46,16 @@ export default class Canvas {
         this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
         this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
 
-        this.puzzlePieceContainer = new Konva.Group({
-            draggable: true,
-            dragBoundFunc(pos: Vector2d) {
-                // const MIN = 0
-                return {x: pos.x, y: this.y()}
-            },
-        });
-        this.hudLayer.add(this.puzzlePieceContainer);
-
         this.scale = 1;
         this.offsetX = 0;
         this.offsetY = 0;
 
         this.slots = new Array<Konva.Path>();
         this.pieces = new Array<Konva.Image>();
+        this.puzzlePieceContainer = new PuzzlePieceContainer(this);
 
-        this.init(background, slotGroups);
+
+        this.init(background, slotGroups);        
         this.drawAll();
     }
 
@@ -128,22 +119,6 @@ export default class Canvas {
         );
     }
 
-    private drawPuzzlePieceContainer(): void {
-        this.puzzlePieceContainer.width(this.stage.width());
-        this.puzzlePieceContainer.height(60);
-        this.puzzlePieceContainer.x(0);
-        this.puzzlePieceContainer.y(this.stage.height() - this.puzzlePieceContainer.height());
-        this.puzzlePieceContainer.add(
-            new Konva.Rect({
-                x: 0,
-                y: 0,
-                width: this.puzzlePieceContainer.width(),
-                height: this.puzzlePieceContainer.height(),
-                stroke: "white",
-            })
-        );
-    }
-
     private createPiece(img: HTMLImageElement): Konva.Image {
         const piece: Konva.Image = new Konva.Image({
             image: img,
@@ -157,19 +132,6 @@ export default class Canvas {
         return piece;
     }
 
-    private drawPieces(): void {
-        const GAP = 20;
-        let currentX = GAP;
-
-        this.pieces.forEach((piece: Konva.Image, i: number) => {
-            const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / piece.width(), this.puzzlePieceContainer.height() / piece.height());
-            piece.x(currentX);
-            piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
-            this.puzzlePieceContainer.add(piece);
-            currentX += GAP + piece.width() * PIECE_SCALE;
-        });
-    }
-
     private drawGame(): void {
         this.drawPlayfield();
         this.drawSlots();
@@ -179,14 +141,112 @@ export default class Canvas {
     }
 
     private drawHUD(): void {
-        this.drawPuzzlePieceContainer();
-        this.drawPieces();
+        this.puzzlePieceContainer.draw();
     }
 
     public drawAll(): void {
         this.createAndDrawBackground();
         this.drawGame();
         this.drawHUD();
+    }
+}
+
+class PuzzlePieceContainer {
+    private readonly canvas: Canvas;
+    private readonly stage: Konva.Stage;
+    private readonly layer: Konva.Layer;
+    private readonly container: Konva.Group;
+    private readonly slotMapping: Map<Konva.Image, Konva.Group>;
+
+    private width: number;
+    private readonly height: number;
+    private readonly gap: number;
+    private readonly margin: number;
+
+    constructor(canvas: Canvas) {
+        this.canvas = canvas;
+        this.stage = canvas.HudLayer.getStage();
+        this.layer = canvas.HudLayer;
+        this.container = new Konva.Group({
+            draggable: true,
+            dragBoundFunc(pos: Vector2d) {
+                const LEFT_BOUND = 0
+                const RIGHT_BOUND = this.getStage()!.width();
+                if(pos.x <= LEFT_BOUND && pos.x + this.width() >= RIGHT_BOUND) {
+                    return {x: pos.x, y: this.y()}
+                }
+                return {x: this.x(), y: this.y()}
+            },
+        });
+        this.slotMapping = new Map<Konva.Image, Konva.Group>();
+
+        this.width = 0;
+        this.height = 60;
+        this.gap = 10;
+        this.margin = 10;
+
+        this.layer.add(this.container);
+    }
+
+    private createPuzzlePieceContainerSlot(): Konva.Group {
+        const slot = new Konva.Group({
+            x: this.margin / 2,
+            y: this.margin / 2,
+            height: this.container.height() - this.margin,
+            width: this.container.height() - this.margin,
+        });
+        slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
+        return slot;
+    }
+
+    private drawPuzzlePieceContainer(): void {
+        const w: number = this.canvas.Pieces.length * (this.height - this.margin + this.gap) + this.gap;
+        this.width = w < this.stage.width() ? this.stage.width() : w;
+
+        this.container.width(this.width);
+        this.container.height(this.height);
+        this.container.x(0);
+        this.container.y(this.stage.height() - this.container.height());
+        this.container.add(
+            new Konva.Rect({
+                x: 0,
+                y: 0,
+                width: this.container.width(),
+                height: this.container.height(),
+                stroke: "white",
+            })
+        );
+    }
+
+    private drawPieces(): void {
+        let currentX = this.gap;
+
+        this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
+            const CONTAINER = this.createPuzzlePieceContainerSlot();
+            this.slotMapping.set(piece, CONTAINER);
+            CONTAINER.x(currentX);
+            this.container.add(CONTAINER);
+            currentX += this.gap + CONTAINER.width();
+
+            this.placePieceIntoContainer(piece);
+        });
+    }
+
+    public draw(): void {
+        this.drawPuzzlePieceContainer();
+        this.drawPieces();
+    }
+
+    public placePieceIntoContainer(piece: Konva.Image): void {
+        const CONTAINER = this.slotMapping.get(piece)!;
+        
+        CONTAINER?.add(piece);
+
+        const PIECE_SCALE = Math.min(CONTAINER.width() / piece.width(), CONTAINER.height() / piece.height());
+        piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
+        const RECT_PIECE = piece.getClientRect();
+        piece.x((CONTAINER.width() - RECT_PIECE.width) / 2);
+        piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
     }
 }
 
