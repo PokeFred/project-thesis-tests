@@ -70,6 +70,7 @@ export default class Canvas {
 
     public get GameLayer() { return this.gameLayer; }
     public get HudLayer() { return this.hudLayer; }
+    public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
     public get Scale() { return this.scale; }
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }

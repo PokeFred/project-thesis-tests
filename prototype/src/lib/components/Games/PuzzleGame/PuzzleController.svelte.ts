@@ -56,23 +56,19 @@ export default class PuzzleController {
     public get Puzzle() { return this.puzzle; }
 
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {
-        const PIECE: Konva.Image | undefined = (event.target as Konva.Image);
-
-        PIECE.moveTo(this.canvas.GameLayer);
-        PIECE.x(PIECE.x() + this.canvas.HudLayer.x())
-        PIECE.y(PIECE.y() + this.canvas.HudLayer.y())
-
-        this.pickupPiece(PIECE);
+        const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);
+        this.switchLayer(KONVA_PIECE, this.canvas.GameLayer);
+        this.pickupPiece(KONVA_PIECE);
     }
 
     public dragStopPiece(event: KonvaEventObject<DragEvent>): void {
-        const PIECE: Konva.Image | undefined = (event.target as Konva.Image);
-        
-        PIECE.moveTo(this.canvas.HudLayer);
-        PIECE.x(PIECE.x() + this.canvas.GameLayer.x() * this.canvas.GameLayer.scaleX())
-        PIECE.y(PIECE.y() + this.canvas.GameLayer.y() * this.canvas.GameLayer.scaleY())
+        const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);
+        const PIECE: Piece = this.pieceMap.get(KONVA_PIECE)!; 
+        this.dropPiece(KONVA_PIECE);
 
-        this.dropPiece(PIECE);
+        if(!PIECE.Placed) {
+            this.switchLayer(KONVA_PIECE, this.canvas.HudLayer)
+        }
     }
 
     private pickupPiece(piece: Konva.Image): void {
@@ -118,7 +114,11 @@ export default class PuzzleController {
         SLOT?.hide();
     }
 
-    
+    private switchLayer(piece: Konva.Image, layer: Konva.Layer): void {
+        const POS = piece.getAbsolutePosition(piece.getStage()!)
+        piece.moveTo(layer);
+        piece.setAbsolutePosition(POS);
+    }
 
     private getConvaSlot(piece: Konva.Image): Konva.Path | undefined {
         return this.slotMap.get((this.pieceMap.get((piece as Konva.Image))?.Slot as Slot));
