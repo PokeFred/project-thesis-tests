@@ -24,6 +24,7 @@ export class Piece {
     }
 
     public get Correct() { return this.correct; }
+    public get Slot() { return this.slot; }
     public get Placed() { return this.slot.Selected === this }
     
     public placeInSlot(): void {

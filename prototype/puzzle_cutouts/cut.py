@@ -21,8 +21,9 @@ def createPuzzlePiece(svg):
     result = Image.new("RGBA",originalPngImage.size,(0,0,0,0))
     result.paste(originalPngImage, mask)
     bBox = result.getbbox()
-    bBoxFixed = (bBox[0] + 1, bBox[1] + 1, bBox[2] - 1, bBox[3] - 1) # Ohne 1px automatisch hinzugefügten transparenten Rand
-    result = result.crop(bBoxFixed)
+    # bBoxFixed = (bBox[0] + 1, bBox[1] + 1, bBox[2] - 1, bBox[3] - 1) # Ohne 1px automatisch hinzugefügten transparenten Rand
+    # result = result.crop(bBoxFixed)
+    result = result.crop(bBox)
     return result
 
 # def createPath(description):

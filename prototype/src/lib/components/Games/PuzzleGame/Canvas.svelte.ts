@@ -3,6 +3,7 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
+import { SVG } from "@svgdotjs/svg.js";
 
 // TODO: fix window resize / browser zoom
 // TODO: fix landscape / portrait swap
@@ -67,6 +68,10 @@ export default class Canvas {
         this.drawAll();
     }
 
+    public get GameLayer() { return this.gameLayer; }
+    public get HudLayer() { return this.hudLayer; }
+    public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
+    public get Scale() { return this.scale; }
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }
 
@@ -85,6 +90,8 @@ export default class Canvas {
         return new Konva.Path({
             data: path,
             fill: "black",
+            strokeEnabled: false,
+            hitStrokeWidth: 0,
             scale: {x: this.scale, y: this.scale}
         })
     }
@@ -140,6 +147,9 @@ export default class Canvas {
     private createPiece(img: HTMLImageElement): Konva.Image {
         const piece: Konva.Image = new Konva.Image({
             image: img,
+            shadowEnabled: false,
+            strokeEnabled: false,
+            shadowBlur: 0,
             draggable: true,
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
