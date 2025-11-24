@@ -4,7 +4,7 @@
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import type { AfterNavigate } from "@sveltejs/kit"
-    import Game, { resetGame } from "$stores/game"
+    import Game, { resetGame } from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"

@@ -1,6 +1,6 @@
 import type { PageLoad } from "./$types"
 import Config from "$config"
-import Game from "$stores/game"
+import Game from "$stores"
 import { get } from "svelte/store"
 import type { GameState, PuzzleState } from "$stores/game"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"

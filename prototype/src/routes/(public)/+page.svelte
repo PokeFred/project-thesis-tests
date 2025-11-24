@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { startGame } from "$stores/game"
+    import { startGame } from "$stores"
     import Modal from "./ConfirmModal.svelte"
 
     let modal: Modal
