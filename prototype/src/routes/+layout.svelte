@@ -28,7 +28,7 @@
 </script>
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
-    <div class="mx-auto w-full max-w-md h-auto min-h-dvh bg-primary">
+    <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary">
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
