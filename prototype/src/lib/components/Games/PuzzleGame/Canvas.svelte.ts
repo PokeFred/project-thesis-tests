@@ -3,20 +3,21 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
-import { SVG } from "@svgdotjs/svg.js";
 
 // TODO: fix window resize / browser zoom
 // TODO: fix landscape / portrait swap
+// TODO: fix website scale. always 100% when playing.
+// TODO: scrollbar puzzle container
 export default class Canvas {
     private puzzleController: PuzzleController;
+    private container: HTMLDivElement;
     private stage: Konva.Stage;
 
     private backgroundLayer: Konva.Layer;
     private gameLayer: Konva.Layer;
     private hudLayer: Konva.Layer;
 
-    private puzzlePieceContainer: Konva.Group;
-
+    private fullscreen: Fullscreen;
     private panAndZoomGameLayer: PanAndZoom;
 
     private scale: number;
@@ -26,14 +27,19 @@ export default class Canvas {
     private playfield!: Konva.Image;
     private slots: Konva.Path[];
     private pieces: Konva.Image[];
-
+    private puzzlePieceContainer: PuzzlePieceContainer;
+    private exitButton: ExitButton;
+    
     constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.puzzleController = puzzleController;
+        this.container = container;
         this.stage = new Konva.Stage({
             container: container,
-            width: window.innerWidth,
-            height: window.innerHeight
+            width: container.clientWidth,
+            height: container.clientHeight
         });
+
+        console.log(this.container.clientHeight)
 
         this.backgroundLayer = new Konva.Layer();
         this.gameLayer = new Konva.Layer();
@@ -43,19 +49,10 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
 
-
+        this.fullscreen = new Fullscreen(this);
         this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
         this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
         this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
-
-        this.puzzlePieceContainer = new Konva.Group({
-            draggable: true,
-            dragBoundFunc(pos: Vector2d) {
-                // const MIN = 0
-                return {x: pos.x, y: this.y()}
-            },
-        });
-        this.hudLayer.add(this.puzzlePieceContainer);
 
         this.scale = 1;
         this.offsetX = 0;
@@ -63,11 +60,17 @@ export default class Canvas {
 
         this.slots = new Array<Konva.Path>();
         this.pieces = new Array<Konva.Image>();
+        this.puzzlePieceContainer = new PuzzlePieceContainer(this);
+        this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
 
-        this.init(background, slotGroups);
+        this.stage.on("click", this.fullscreen.enable.bind(this.fullscreen));
+
+        this.init(background, slotGroups);        
         this.drawAll();
     }
 
+    public get Container() { return this.container; }
+    public get Fullscreen() { return this.fullscreen; }
     public get GameLayer() { return this.gameLayer; }
     public get HudLayer() { return this.hudLayer; }
     public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
@@ -117,29 +120,14 @@ export default class Canvas {
     }
 
     private createAndDrawBackground(): void {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
         this.backgroundLayer.add(
             new Konva.Rect({
                 x: 0,
                 y: 0,
                 width: this.stage.width(),
                 height: this.stage.height(),
-                fill: "black"
-            })
-        );
-    }
-
-    private drawPuzzlePieceContainer(): void {
-        this.puzzlePieceContainer.width(this.stage.width());
-        this.puzzlePieceContainer.height(60);
-        this.puzzlePieceContainer.x(0);
-        this.puzzlePieceContainer.y(this.stage.height() - this.puzzlePieceContainer.height());
-        this.puzzlePieceContainer.add(
-            new Konva.Rect({
-                x: 0,
-                y: 0,
-                width: this.puzzlePieceContainer.width(),
-                height: this.puzzlePieceContainer.height(),
-                stroke: "white",
+                fill: COLOR
             })
         );
     }
@@ -157,19 +145,6 @@ export default class Canvas {
         return piece;
     }
 
-    private drawPieces(): void {
-        const GAP = 20;
-        let currentX = GAP;
-
-        this.pieces.forEach((piece: Konva.Image, i: number) => {
-            const PIECE_SCALE = Math.min(this.puzzlePieceContainer.width() / piece.width(), this.puzzlePieceContainer.height() / piece.height());
-            piece.x(currentX);
-            piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
-            this.puzzlePieceContainer.add(piece);
-            currentX += GAP + piece.width() * PIECE_SCALE;
-        });
-    }
-
     private drawGame(): void {
         this.drawPlayfield();
         this.drawSlots();
@@ -179,14 +154,207 @@ export default class Canvas {
     }
 
     private drawHUD(): void {
-        this.drawPuzzlePieceContainer();
-        this.drawPieces();
+        this.puzzlePieceContainer.draw();
+        this.exitButton.draw();
     }
 
     public drawAll(): void {
         this.createAndDrawBackground();
         this.drawGame();
         this.drawHUD();
+    }
+}
+
+class PuzzlePieceContainer {
+    private readonly canvas: Canvas;
+    private readonly stage: Konva.Stage;
+    private readonly layer: Konva.Layer;
+    private readonly container: Konva.Group;
+    private readonly slotMapping: Map<Konva.Image, Konva.Group>;
+
+    private width: number;
+    private readonly height: number;
+    private readonly gap: number;
+    private readonly margin: number;
+
+    constructor(canvas: Canvas) {
+        this.canvas = canvas;
+        this.stage = canvas.HudLayer.getStage();
+        this.layer = canvas.HudLayer;
+        this.container = new Konva.Group({
+            draggable: true,
+            dragBoundFunc(pos: Vector2d) {
+                const LEFT_BOUND = 0
+                const RIGHT_BOUND = this.getStage()!.width();
+                if(pos.x <= LEFT_BOUND && pos.x + this.width() >= RIGHT_BOUND) {
+                    return {x: pos.x, y: this.y()}
+                }
+                return {x: this.x(), y: this.y()}
+            },
+        });
+        this.slotMapping = new Map<Konva.Image, Konva.Group>();
+
+        this.width = 0;
+        this.height = 60;
+        this.gap = 40;
+        this.margin = 10;
+
+        this.layer.add(this.container);
+    }
+
+    private createPuzzlePieceContainerSlot(): Konva.Group {
+        const slot = new Konva.Group({
+            x: this.margin / 2,
+            y: this.margin / 2,
+            height: this.container.height() - this.margin,
+            width: this.container.height() - this.margin,
+        });
+        // slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
+        return slot;
+    }
+
+    private drawPuzzlePieceContainer(): void {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+        const w: number = this.canvas.Pieces.length * (this.height - this.margin + this.gap) + this.gap;
+        this.width = w < this.stage.width() ? this.stage.width() : w;
+
+        this.container.width(this.width);
+        this.container.height(this.height);
+        this.container.x(0);
+        this.container.y(this.stage.height() - this.container.height());
+        this.container.add(
+            new Konva.Rect({
+                x: 0,
+                y: 0,
+                width: this.container.width(),
+                height: this.container.height(),
+                stroke: COLOR,
+            })
+        );
+    }
+
+    private drawPieces(): void {
+        let currentX = this.gap;
+
+        const mixedPieces: Konva.Image[] = this.canvas.Pieces.sort(() => Math.random() - 0.5);
+
+        mixedPieces.forEach((piece: Konva.Image, i: number) => {
+            const CONTAINER = this.createPuzzlePieceContainerSlot();
+            this.slotMapping.set(piece, CONTAINER);
+            CONTAINER.x(currentX);
+            this.container.add(CONTAINER);
+            currentX += this.gap + CONTAINER.width();
+
+            this.placePieceIntoContainer(piece);
+        });
+    }
+
+    public draw(): void {
+        this.drawPuzzlePieceContainer();
+        this.drawPieces();
+    }
+
+    public placePieceIntoContainer(piece: Konva.Image): void {
+        const CONTAINER = this.slotMapping.get(piece)!;
+        
+        CONTAINER?.add(piece);
+
+        const PIECE_SCALE = Math.min(CONTAINER.width() / piece.width(), CONTAINER.height() / piece.height());
+        piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
+        const RECT_PIECE = piece.getClientRect();
+        piece.x((CONTAINER.width() - RECT_PIECE.width) / 2);
+        piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
+    }
+}
+
+class ExitButton {
+    private layer: Konva.Layer;
+    private button: Konva.Group;
+
+    private readonly width: number;
+    private readonly height: number;
+    private readonly margin: number;
+
+    constructor(layer: Konva.Layer, pointerclick: () => void) {
+        this.layer = layer;
+        this.button = new Konva.Group();
+        this.button.on("pointerclick", pointerclick);
+
+        this.width = 40;
+        this.height = 40;
+        this.margin = 20;
+
+        this.button.x(this.layer.getStage().width() - this.width / 2 - this.margin)
+        this.button.y(this.height / 2 + this.margin)
+        this.button.width(this.width);
+        this.button.height(this.height);
+        
+        this.create();
+    }
+
+    private create(): void {
+        const COLOR_PRIMARY = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
+        const COLOR_SECONDARY = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+        this.button.add(
+            new Konva.Circle({
+                width: this.width,
+                height: this.height,
+                fill: COLOR_SECONDARY,
+            })
+        );
+        this.button.add(
+            new Konva.Line({
+                points: [-10,-10, 10,10],
+                stroke: COLOR_PRIMARY,
+                strokeWidth: 3,
+            })
+        );  
+
+        this.button.add(
+            new Konva.Line({
+                points: [10,-10, -10,10],
+                stroke: COLOR_PRIMARY,
+                strokeWidth: 3,
+            })
+        );
+    }
+
+    public draw(): void {
+        this.layer.add(this.button);
+    }
+}
+
+class Fullscreen {
+    private readonly canvas;
+
+    constructor(canvas: Canvas) {
+        this.canvas = canvas;
+        this.canvas.HudLayer.hide();
+
+        this.canvas.Container.addEventListener("fullscreenchange", () => this.Enabled ?  undefined : this.canvas.HudLayer.hide());
+    }
+
+    public get Enabled() { return document.fullscreenElement ? true : false; }
+
+    public async enable(): Promise<void> {
+        if(!this.Enabled) {
+            await this.canvas.Container.requestFullscreen({navigationUI: "hide"})
+            if(this.Enabled) {
+                this.canvas.HudLayer.show();
+                // this.canvas.GameLayer.getStage().width(this.canvas.Container.clientWidth);
+                // this.canvas.GameLayer.getStage().height(this.canvas.Container.clientHeight);
+                // console.log(this.canvas.GameLayer.scale())
+                // console.log(this.canvas.HudLayer.scale())
+                // this.canvas.GameLayer.getStage().scale({x:2, y:2})
+            }
+        }
+    }
+
+    public disable(): void {
+        if(this.Enabled) {
+            document.exitFullscreen();
+            this.canvas.HudLayer.hide();
+        }
     }
 }
 

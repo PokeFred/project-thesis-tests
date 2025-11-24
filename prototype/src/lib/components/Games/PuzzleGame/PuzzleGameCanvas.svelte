@@ -23,7 +23,6 @@
 
     let container: HTMLDivElement;
     
-    let canvas: Canvas;
     let puzzleController: PuzzleController;
     onMount(async ()=>{
         // TODO: Auslagern in Quiz.ts
@@ -51,4 +50,5 @@
     });
 </script>
 
-<div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div>
+<!-- <div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div> -->
+<div bind:this={container} class="w-full h-50"></div>
