@@ -49,7 +49,7 @@
         </summary>
         <div class="px-6 pt-1">
             <div>{data.informations.coordinates.text}</div>
-            <button onclick={openMaps} class="mt-1 w-fit h-auto font-semibold text-primary bg-secondary rounded-xl cursor-pointer px-6 active:scale-95">Öffnen</button>
+            <button onclick={openMaps} class="mt-1 w-fit h-auto font-semibold text-primary bg-secondary rounded-xl cursor-default px-6 opacity-50" disabled>Öffnen</button>
         </div>
     </details>
     <hr class="border-2">

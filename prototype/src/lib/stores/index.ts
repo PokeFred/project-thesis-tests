@@ -10,7 +10,8 @@ type GameState = {
 type PuzzleState = {
     identifier: string,
     score: number,
-    state: string
+    state: string,
+    data: any
 }
 
 const DEFAULT: GameState = {
@@ -47,6 +48,12 @@ function resetGame() {
         puzzles: []
     }))
 }
+
+// function isRunning(): boolean {}
+
+// function getScore(): number {}
+
+// function getCompletion(): number {}
 
 export default state
 export { startGame, resetGame }

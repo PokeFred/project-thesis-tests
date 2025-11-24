@@ -10,3 +10,9 @@ export type Introduction = {
         }
     }
 }
+
+export type GameInput = {}
+
+export type GameOutput = {}
+
+export type Result = {}

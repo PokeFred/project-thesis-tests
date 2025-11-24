@@ -9,6 +9,7 @@
     import MultiSelectIntroduction from "$components/puzzle/multiSelect/introduction.svelte"
 
     let { data }: PageProps = $props()
+    console.log(data)
 </script>
 
 <div class="w-full h-auto text-secondary">
@@ -18,17 +19,17 @@
             <Icon data={faAngleLeft} class="w-6 h-6" />
         </button>
     </div>
-    {#if data.puzzle.type === "gps-puzzle"}
-        <GpsIntroduction data={data.puzzle.data.introduction} />
+    {#if data.type === "gps-puzzle"}
+        <GpsIntroduction data={data.data} />
     {/if}
-    {#if data.puzzle.type === "select-puzzle"}
-        <SelectIntroduction data={data.puzzle.data.introduction} />
+    {#if data.type === "select-puzzle"}
+        <SelectIntroduction data={data.data} />
     {/if}
-    {#if data.puzzle.type === "double-select-puzzle"}
-        <DoubleSelectIntroduction data={data.puzzle.data.introduction} />
+    {#if data.type === "double-select-puzzle"}
+        <DoubleSelectIntroduction data={data.data} />
     {/if}
-    {#if data.puzzle.type === "multi-select-puzzle"}
-        <MultiSelectIntroduction data={data.puzzle.data.introduction} />
+    {#if data.type === "multi-select-puzzle"}
+        <MultiSelectIntroduction data={data.data} />
     {/if}
     <div class="mx-auto w-fit h-auto">
         <button onclick={() => goto(`/app/stations/${data.station}/${data.identifier}/game`)} class="w-full h-auto text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Rätsel starten</button>
