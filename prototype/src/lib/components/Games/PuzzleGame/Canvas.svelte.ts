@@ -6,8 +6,11 @@ import type PuzzleController from "./PuzzleController.svelte";
 
 // TODO: fix window resize / browser zoom
 // TODO: fix landscape / portrait swap
+// TODO: fix website scale. always 100% when playing.
+// TODO: scrollbar puzzle container
 export default class Canvas {
     private puzzleController: PuzzleController;
+    private container: HTMLDivElement;
     private stage: Konva.Stage;
 
     private backgroundLayer: Konva.Layer;
@@ -24,9 +27,11 @@ export default class Canvas {
     private slots: Konva.Path[];
     private pieces: Konva.Image[];
     private puzzlePieceContainer: PuzzlePieceContainer;
+    private exitButton: ExitButton;
     
     constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.puzzleController = puzzleController;
+        this.container = container;
         this.stage = new Konva.Stage({
             container: container,
             width: window.innerWidth,
@@ -53,12 +58,13 @@ export default class Canvas {
         this.slots = new Array<Konva.Path>();
         this.pieces = new Array<Konva.Image>();
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
-
+        this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
 
         this.init(background, slotGroups);        
         this.drawAll();
     }
 
+    public get Container() { return this.container; }
     public get GameLayer() { return this.gameLayer; }
     public get HudLayer() { return this.hudLayer; }
     public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
@@ -108,13 +114,14 @@ export default class Canvas {
     }
 
     private createAndDrawBackground(): void {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
         this.backgroundLayer.add(
             new Konva.Rect({
                 x: 0,
                 y: 0,
                 width: this.stage.width(),
                 height: this.stage.height(),
-                fill: "black"
+                fill: COLOR
             })
         );
     }
@@ -142,6 +149,7 @@ export default class Canvas {
 
     private drawHUD(): void {
         this.puzzlePieceContainer.draw();
+        this.exitButton.draw();
     }
 
     public drawAll(): void {
@@ -182,7 +190,7 @@ class PuzzlePieceContainer {
 
         this.width = 0;
         this.height = 60;
-        this.gap = 10;
+        this.gap = 40;
         this.margin = 10;
 
         this.layer.add(this.container);
@@ -200,6 +208,7 @@ class PuzzlePieceContainer {
     }
 
     private drawPuzzlePieceContainer(): void {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
         const w: number = this.canvas.Pieces.length * (this.height - this.margin + this.gap) + this.gap;
         this.width = w < this.stage.width() ? this.stage.width() : w;
 
@@ -213,7 +222,7 @@ class PuzzlePieceContainer {
                 y: 0,
                 width: this.container.width(),
                 height: this.container.height(),
-                stroke: "white",
+                stroke: COLOR,
             })
         );
     }
@@ -247,6 +256,63 @@ class PuzzlePieceContainer {
         const RECT_PIECE = piece.getClientRect();
         piece.x((CONTAINER.width() - RECT_PIECE.width) / 2);
         piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
+    }
+}
+
+class ExitButton {
+    private layer: Konva.Layer;
+    private button: Konva.Group;
+
+    private readonly width: number;
+    private readonly height: number;
+    private readonly margin: number;
+
+    constructor(layer: Konva.Layer, pointerclick: () => void) {
+        this.layer = layer;
+        this.button = new Konva.Group();
+        this.button.on("pointerclick", pointerclick);
+
+        this.width = 40;
+        this.height = 40;
+        this.margin = 20;
+
+        this.button.x(this.layer.getStage().width() - this.width / 2 - this.margin)
+        this.button.y(this.height / 2 + this.margin)
+        this.button.width(this.width);
+        this.button.height(this.height);
+        
+        this.create();
+    }
+
+    private create(): void {
+        const COLOR_PRIMARY = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
+        const COLOR_SECONDARY = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+        this.button.add(
+            new Konva.Circle({
+                width: this.width,
+                height: this.height,
+                fill: COLOR_SECONDARY,
+            })
+        );
+        this.button.add(
+            new Konva.Line({
+                points: [-10,-10, 10,10],
+                stroke: COLOR_PRIMARY,
+                strokeWidth: 3,
+            })
+        );  
+
+        this.button.add(
+            new Konva.Line({
+                points: [10,-10, -10,10],
+                stroke: COLOR_PRIMARY,
+                strokeWidth: 3,
+            })
+        );
+    }
+
+    public draw(): void {
+        this.layer.add(this.button);
     }
 }
 

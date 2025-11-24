@@ -55,6 +55,10 @@ export default class PuzzleController {
 
     public get Puzzle() { return this.puzzle; }
 
+    public exitFullscreen(): void {
+        this.canvas.Container.hidden = true;
+    }
+
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {
         const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);
         this.switchContainer(KONVA_PIECE, this.canvas.GameLayer);
