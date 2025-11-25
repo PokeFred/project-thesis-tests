@@ -1,6 +1,6 @@
 import type { PageLoad } from "./$types"
 import Config from "$config"
-import Game from "$stores/game"
+import Game from "$stores"
 import { get } from "svelte/store"
 import type { GameState, PuzzleState } from "$stores/game"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"
@@ -65,11 +65,14 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
                     .map((e) => { return { score: e.score, state: e.state } })
                     [0]
 
+                console.log(element.requirements)
+
+                const isUnlocked: boolean = (element.requirements.length > 0) ? false : true
                 return {
                     identifier: element.identifier,
                     name: element.name,
                     completion: 0,
-                    unlocked: true
+                    unlocked: isUnlocked
                 }
             })
     }

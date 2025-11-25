@@ -10,7 +10,8 @@ type GameState = {
 type PuzzleState = {
     identifier: string,
     score: number,
-    state: string
+    state: string,
+    data: any
 }
 
 const DEFAULT: GameState = {
@@ -29,6 +30,7 @@ function load(): GameState {
 const state: Writable<GameState> = writable<GameState>(load())
 
 state.subscribe((value: GameState): void => {
+    console.log(value)
     localStorage.setItem("game", JSON.stringify(value))
 })
 
@@ -47,6 +49,30 @@ function resetGame() {
         puzzles: []
     }))
 }
+
+const newState: GameState = {
+    isRunning: false,
+    score: 0,
+    puzzles: []
+}
+
+function getGame(): GameState {
+    return newState
+}
+
+// function startGame(): void {}
+
+// function resetGame(): void {}
+
+function isRunning(): boolean {
+    return newState.isRunning
+}
+
+function getScore(): number {
+    return newState.score
+}
+
+//function getCompletion(): number {}
 
 export default state
 export { startGame, resetGame }

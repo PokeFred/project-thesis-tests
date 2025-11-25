@@ -1,6 +1,6 @@
 <script lang="ts">
     import { goto } from "$app/navigation"
-    import { resetGame } from "$stores/game"
+    import { resetGame } from "$stores"
     import Icon from "svelte-awesome"
     import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons/faRightFromBracket"
 
