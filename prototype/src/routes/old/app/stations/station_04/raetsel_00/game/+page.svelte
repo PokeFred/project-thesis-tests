@@ -1,9 +1,8 @@
 <script lang="ts">
-    import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte"
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
     import { quiz } from "../Quiz"
-    import PuzzleGameCanvas from "$components/Games/PuzzleGame/PuzzleGameCanvas.svelte";
+    import PuzzleGameCanvas from "$components/Games/PuzzleGame/PuzzleGame.svelte";
 
     quiz.reset();
 
