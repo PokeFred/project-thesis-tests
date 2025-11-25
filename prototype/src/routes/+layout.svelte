@@ -1,6 +1,6 @@
 <script lang="ts">
     import "../app.css"
-    import "@fontsource-variable/nunito"
+    import "@fontsource-variable/space-grotesk"
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import type { AfterNavigate } from "@sveltejs/kit"
