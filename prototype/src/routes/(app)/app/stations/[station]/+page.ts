@@ -1,8 +1,8 @@
 import type { PageLoad } from "./$types"
 import Config from "$config"
-import Game from "$stores"
+import { getGame } from "$stores"
 import { get } from "svelte/store"
-import type { GameState, PuzzleState } from "$stores/game"
+import type { GameState, PuzzleState } from "$stores"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"
 import type AccordionSeperator from "$components/accordions/AccordionSeperator.svelte"
 
@@ -38,7 +38,7 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
     const station: Station = Config.stations.filter((e): boolean => e.identifier === params.station)[0]
 
     const current: number = station.puzzles
-        .map((element: any): any => get(Game).puzzles.filter((e: PuzzleState): boolean => element.identifier === e.identifier))
+        .map((element: any): any => getGame().puzzles.filter((e: PuzzleState): boolean => element.identifier === e.identifier))
         .map((element: any) => element[0]?.score ?? 0)
         .reduce((pre: number, cur: number): number => pre += cur, 0)
     const max: number = station.puzzles
@@ -56,22 +56,30 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
         identifier: params.station,
         stitle: station.stitle.toUpperCase(),
         title: station.title,
-        completion: 0, // completion,
+        completion: Number((completion).toFixed(1)), // completion,
         chapters: chapters,
         puzzles: station.puzzles
             .map((element: any): _Puzzle => {
-                const a = get(Game).puzzles
+                const a: number = getGame().puzzles
                     .filter((e) => e.identifier === element.identifier)
-                    .map((e) => { return { score: e.score, state: e.state } })
-                    [0]
+                    .map((e) => { return e.score })
+                    [0] ?? 0
 
-                console.log(element.requirements)
+                const requirementsDone: any[] = element.requirements
+                    .map((e) => {
+                        return getGame().puzzles
+                            .filter((ee) => ee.identifier === e)
+                            .map((ee) => ee.state)
+                            [0]
+                    })
+                    .filter((e) => e !== "DONE")
+                console.log(requirementsDone)
 
-                const isUnlocked: boolean = (element.requirements.length > 0) ? false : true
+                const isUnlocked: boolean = !(requirementsDone.length > 0)
                 return {
                     identifier: element.identifier,
                     name: element.name,
-                    completion: 0,
+                    completion: Number((a * 100 / element.score).toFixed(1)),
                     unlocked: isUnlocked
                 }
             })

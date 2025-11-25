@@ -4,7 +4,7 @@
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import type { AfterNavigate } from "@sveltejs/kit"
-    import Game, { resetGame } from "$stores"
+    import { getScore, isRunning, resetGame } from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
@@ -32,9 +32,9 @@
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={() => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
-                {#if $Game.isRunning}
+                {#if isRunning()}
                     <div class="w-auto h-auto flex justify-center items-center">
-                        <span class="text-xl font-bold">{$Game.score}</span>
+                        <span class="text-xl font-bold">{getScore()}</span>
                         <div class="ml-2 w-auto h-auto border-2 border-secondary rounded-lg  p-1">
                             <div class="mx-auto w-14 h-auto grid grid-cols-3 gap-1">
                                 <Icon data={faStar} class="w-4 h-4" />
@@ -55,7 +55,7 @@
                     <button onclick={(): Promise<void> => goto("/faq")} class="text-base text-left text-secondary cursor-pointer">FAQ</button>
                     <button onclick={(): Promise<void> => goto("/legal")} class="text-base text-left text-secondary cursor-pointer">Rechtliches</button>
                     <button onclick={(): Promise<void> => goto("/imprint")} class="text-base text-left text-secondary cursor-pointer">Impressum</button>
-                    {#if $Game.isRunning}
+                    {#if isRunning()}
                         <div class="mt-2 text-base font-bold underline text-secondary">Spiel</div>
                         <button onclick={(): Promise<void> => goto("/app")} class="text-base text-left text-secondary cursor-pointer">Startbildschirm</button>
                         <button onclick={(): Promise<void> => goto("/app/stations")} class="text-base text-left text-secondary cursor-pointer">Stationen</button>

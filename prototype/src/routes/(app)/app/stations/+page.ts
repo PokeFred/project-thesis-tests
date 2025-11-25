@@ -1,11 +1,11 @@
 import type { PageLoad } from "./$types"
-import Game from "$stores"
+import { getGame } from "$stores"
 import type { GameState, PuzzleState } from "$stores"
 import Config from "$config"
 import { get } from "svelte/store"
 
 function getPuzzle(identifier: string): PuzzleState | null {
-    const game: GameState = get(Game)
+    const game: GameState = getGame()
     const puzzles = game.puzzles.filter((element: PuzzleState): boolean => element.identifier === identifier)
 
     return (puzzles.length > 0) ? puzzles[0] : null
@@ -49,20 +49,20 @@ function getStationCompletionData(): _Station[] {
 }
 
 export const load: PageLoad = async (): Promise<{ completion: number, stations: _Station[] }> => {
-    const current: number = get(Game).puzzles
+    const current: number = getGame().puzzles
         .map((element: any): number => element.score)
         .reduce((pre: number, cur: number): number => pre += cur, 0)
     const max: number = Config.stations
         .map((element: any): number => element.score)
         .reduce((pre: number, cur: number): number => pre += cur, 0)
     return {
-        completion: 0, // current * 100 / max,
+        completion: Number((current * 100 / max).toFixed(1)), // current * 100 / max,
         stations: Config.stations
             .map((element: any): _Station => {
                 return {
                     identifier: element.identifier,
                     name: element.stitle,
-                    completion: 0 // getPuzzleScores(element.puzzles) * 100 / element.score
+                    completion: Number((getPuzzleScores(element.puzzles) * 100 / element.score).toFixed(1))
                 }
             })
     }

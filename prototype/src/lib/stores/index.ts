@@ -14,6 +14,7 @@ type PuzzleState = {
     data: any
 }
 
+/*
 const DEFAULT: GameState = {
     isRunning: false,
     score: 0,
@@ -49,31 +50,51 @@ function resetGame() {
         puzzles: []
     }))
 }
+*/
 
-const newState: GameState = {
+const DEFAULT: GameState = {
     isRunning: false,
     score: 0,
     puzzles: []
 }
 
-function getGame(): GameState {
+function load(): GameState {
+    const a = localStorage.getItem("game")
+
+    if (a === null) return DEFAULT
+    return JSON.parse(a) as GameState
+}
+
+let newState: GameState = load()
+
+export function getGame(): GameState {
     return newState
 }
 
-// function startGame(): void {}
+export function startGame(): void {
+    newState = { isRunning: true, score: 0, puzzles: [] }
+    localStorage.setItem("game", JSON.stringify(newState))
+}
 
-// function resetGame(): void {}
+export function resetGame(): void {
+    newState = { isRunning: false, score: 0, puzzles: [] }
+    localStorage.setItem("game", JSON.stringify(newState))
+}
 
-function isRunning(): boolean {
+export function isRunning(): boolean {
+    console.log(newState)
     return newState.isRunning
 }
 
-function getScore(): number {
+export function getScore(): number {
     return newState.score
 }
 
 //function getCompletion(): number {}
 
-export default state
-export { startGame, resetGame }
+export function add(puzzle: PuzzleState): void {
+    newState.puzzles.push(puzzle)
+    localStorage.setItem("game", JSON.stringify(newState))
+}
+
 export type { GameState, PuzzleState }

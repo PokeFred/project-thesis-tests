@@ -73,7 +73,7 @@ export default {
             tag: "Station 01",
             stitle: "Alter Markt",
             title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-            score: 2,
+            score: 8,
             chapters: [
                 // {
                 //     title: "",

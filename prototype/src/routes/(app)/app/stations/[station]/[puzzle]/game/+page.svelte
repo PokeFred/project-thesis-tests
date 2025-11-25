@@ -3,7 +3,7 @@
     import { goto } from "$app/navigation"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
-    import Game from "$stores"
+    import { add } from "$stores"
     import GpsGame from "$components/puzzle/gps/game.svelte"
     import DoubleGame from "$components/puzzle/doubleSelect/game.svelte"
     import Modal from "./ConfirmModal.svelte"
@@ -24,7 +24,7 @@
             rdata = gps.getSubmitData()
         }
 
-        $Game.puzzles.push({ identifier: data.identifier, score: data.score, state: "DONE", data: rdata })
+        add({ identifier: data.identifier, score: data.score, state: "DONE", data: rdata })
         goto(`/app/stations/${data.station}/${data.identifier}/result`)
     }
 </script>
