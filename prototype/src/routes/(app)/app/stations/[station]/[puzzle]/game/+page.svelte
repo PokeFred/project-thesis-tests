@@ -5,12 +5,15 @@
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { add } from "$stores"
     import GpsGame from "$components/puzzle/gps/game.svelte"
-    import DoubleGame from "$components/puzzle/doubleSelect/game.svelte"
+    import DoubleSelectGame from "$components/puzzle/doubleSelect/game.svelte"
+    import MultiSelectGame from "$components/puzzle/multiSelect/game.svelte"
     import Modal from "./ConfirmModal.svelte"
 
     let { data }: PageProps = $props()
 
     let gps: GpsGame
+    let doubleSelect: DoubleSelectGame
+    let multiSelect: MultiSelectGame
 
     let submitable: boolean = $state<boolean>(false)
     function setSubmitable(): void {
@@ -22,6 +25,12 @@
         let rdata: any
         if (data.type === "gps-puzzle") {
             rdata = gps.getSubmitData()
+        }
+        if (data.type === "double-select-puzzle") {
+            rdata = doubleSelect.getSubmitData()
+        }
+        if (data.type === "multi-select-puzzle") {
+            rdata = multiSelect.getSubmitData()
         }
 
         add({ identifier: data.identifier, score: data.score, state: "DONE", data: rdata })
@@ -42,16 +51,10 @@
         <GpsGame bind:this={gps} data={{}} setSubmitable={setSubmitable} />
     {/if}
     {#if data.type === "double-select-puzzle"}
-        <!--
-        <DoubleGame data={{
-            informations: ["Ordne den Zünften das richtige Handwerk zu. Aber Achtung: es gibt nur sieben richtige Paare! Es wurden drei Zünfte dazu gemischt. Schaffst Du es, die richtigen Paare zu finden?", "Zünfte: Schmied, Fleischer, Bäcker, Bader, Tuchmacher, Gerber, Schuhmacher, Krämer, Fettkrämer, Abdecker", "Handwerk: Metallverarbeitung, Getreideverarbeitung, Fleischverarbeitung, Lederverarbeitung, Feinlederverarbeitung, Gemischtwarenhandel, Handel mit Butter, Öl, Speck etc."],
-            data: {
-                left: [],
-                right: [],
-                pairs: []
-            }
-        }} />
-        -->
+        <DoubleSelectGame bind:this={doubleSelect} data={{ informations: [], data: { left: [], right: [], pairs: [] } }} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.type === "multi-select-puzzle"}
+        <MultiSelectGame bind:this={multiSelect} data={{}} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-8 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>

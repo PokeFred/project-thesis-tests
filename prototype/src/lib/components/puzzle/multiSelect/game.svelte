@@ -13,7 +13,3 @@
         setSubmitable()
     })
 </script>
-
-{#each data.informations as element}
-    <div class="p-2">{element}</div>
-{/each}

@@ -22,9 +22,6 @@
     {#if data.type === "gps-puzzle"}
         <GpsIntroduction data={data.data} />
     {/if}
-    {#if data.type === "select-puzzle"}
-        <SelectIntroduction data={data.data} />
-    {/if}
     {#if data.type === "double-select-puzzle"}
         <DoubleSelectIntroduction data={data.data} />
     {/if}

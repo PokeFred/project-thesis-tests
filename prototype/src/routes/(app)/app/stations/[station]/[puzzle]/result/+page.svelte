@@ -3,6 +3,9 @@
     import { goto } from "$app/navigation"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
+    import GpsResult from "$components/puzzle/gps/result.svelte"
+    import DoubleSelectResult from "$components/puzzle/doubleSelect/result.svelte"
+    import MultiSelectResult from "$components/puzzle/multiSelect/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -14,7 +17,15 @@
             <Icon data={faAngleLeft} class="w-6 h-6" />
         </button>
     </div>
-    <div>GESCHAFFT!!!</div>
+    {#if data.type === "gps-puzzle"}
+        <GpsResult data={{}} />
+    {/if}
+    {#if data.type === "double-select-puzzle"}
+        <DoubleSelectResult data={{}} />
+    {/if}
+    {#if data.type === "multi-select-puzzle"}
+        <MultiSelectResult data={{}} />
+    {/if}
     <div class="mx-auto w-fit h-auto">
         <button onclick={() => goto(`/app/stations/${data.station}`)} class="w-full h-auto text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Zurück zur Station</button>
     </div>

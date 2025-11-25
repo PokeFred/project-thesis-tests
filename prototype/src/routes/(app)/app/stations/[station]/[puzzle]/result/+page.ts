@@ -1,7 +1,7 @@
 import type { PageLoad } from "./$types"
 import Config from "$config"
 
-export const load: PageLoad = async ({ params }): Promise<{ identifier: string, station: string, title: string, data: any }> => {
+export const load: PageLoad = async ({ params }): Promise<{ identifier: string, station: string, title: string, type: string, data: any }> => {
     const puzzle = Config.stations
         .filter((element): boolean => element.identifier === params.station)
         .map((e) => e.puzzles)
@@ -12,6 +12,7 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
         identifier: puzzle.identifier,
         station: params.station,
         title: puzzle.name,
+        type: puzzle.type,
         data: {}
     }
 }

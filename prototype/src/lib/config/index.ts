@@ -73,7 +73,7 @@ export default {
             tag: "Station 01",
             stitle: "Alter Markt",
             title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-            score: 8,
+            score: 6,
             chapters: [
                 // {
                 //     title: "",
@@ -178,7 +178,7 @@ export default {
                     score: 2,
                     data: {
                         introduction: {
-                            text: "Hello World"
+                            text: "MultiSelectPuzzle"
                         },
                         game: {},
                         result: {}
@@ -192,7 +192,7 @@ export default {
                     score: 2,
                     data: {
                         introduction: {
-                            text: "Hello World"
+                            text: "DoubleSelectPuzzle"
                         },
                         game: {
                             data: {
@@ -212,6 +212,7 @@ export default {
                         result: {}
                     }
                 },
+                /*
                 {
                     type: "double-select-puzzle",
                     identifier: "station_01_puzzle_09",
@@ -226,6 +227,7 @@ export default {
                         result: {}
                     }
                 }
+                */
             ]
         },
         {

@@ -2,7 +2,7 @@ export type Introduction = {
     text: string
 }
 
-export type Game = {
+export type GameInput = {
     informations: string[],
     data: {
         left: string[],
@@ -10,5 +10,7 @@ export type Game = {
         pairs: { left: string, right: string }[]
     }
 }
+
+export type GameOutput = {}
 
 export type Result = {}
