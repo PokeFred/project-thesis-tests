@@ -1,27 +1,48 @@
-<!-- TODO: Spiel in Canvas für performance? -->
 <script lang="ts">
-    import Puzzle from "./Puzzle.svelte";
-    import PuzzleSlot from "./PuzzleSlot.svelte";
-    import PuzzlePieceContainer from "./PuzzlePieceContainer.svelte";
-    import Fullscreen from "$components/Fullscreen.svelte";
-    import PuzzleHUD from "./PuzzleHUD.svelte";
+    import { onMount } from "svelte";
+    import type Puzzle from "./Puzzle.svelte";
+    import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
 
-    let { quiz }: { quiz: Puzzle } = $props();
-</script>
-<Fullscreen bind:fullscreen={quiz.Fullscreen}>
-    <div bind:this={quiz.ImageWindow.Window} class="puzzle-game inline-block relative select-none">
-        <figure class="m-0 relative max-w-fit">
-            <!-- <figcaption></figcaption> -->
-            <img bind:this={quiz.ImageWindow.Image} draggable="false" src={quiz.Background.src} alt="Puzzelspiel" bind:naturalWidth={quiz.ImageWindow.NaturalWidth} bind:naturalHeight={quiz.ImageWindow.NaturalHeight} bind:clientWidth={quiz.ImageWindow.ClientWidth} bind:clientHeight={quiz.ImageWindow.ClientHeight} />
+    let { quiz }: { quiz: Puzzle } = $props();    
+
+    async function loadImage(src: string): Promise<HTMLImageElement> {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = src;
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+        });
+    }
+
+    let container: HTMLDivElement;
+    
+    let puzzleController: PuzzleController;
+    onMount(async ()=>{
+        // TODO: Auslagern in Quiz.ts
+        const path = "/station_01/raetsel_02/game";
+        const backgroundSrc = "Anziehbild.png";
+        // const path = "/station_04/raetsel_00/game";
+        // const backgroundSrc = "Hintergrund.png";
+        const puzzleData: PuzzleData = await (await fetch(`${path}/cutouts.json`)).json();
+
+        const background: HTMLImageElement = await loadImage(path + "/" + backgroundSrc);
+        const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
+            const piece = await loadImage(path + "/" + cutout.src);
+            const noise = cutout.noise ? await Promise.all( 
+                cutout.noise.map((src: string) => loadImage(path + "/" + src))
+            ) : undefined;
+            
+            return {
+                path: cutout.d,
+                piece: piece,
+                noise: noise
+            } satisfies SlotGroup;
+        }));
+        // TODO
         
-            <svg viewBox={quiz.Background.viewbox} class="absolute top-0 left-0">
-                {#each quiz.Pieces as piece}
-                    <PuzzleSlot {piece} />
-                {/each}
-            </svg>
-        </figure>
-        <PuzzleHUD {quiz}>
-            <PuzzlePieceContainer {quiz}/>
-        </PuzzleHUD>
-    </div>
-</Fullscreen>
+        puzzleController = new PuzzleController(container, background, slotGroups);
+    });
+</script>
+
+<!-- <div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div> -->
+<div bind:this={container} class="w-full h-[80dvh]"></div>
