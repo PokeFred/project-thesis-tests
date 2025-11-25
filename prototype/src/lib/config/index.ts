@@ -233,7 +233,7 @@ export default {
             tag: "Station 02",
             stitle: "Westen- und Ostenhellweg",
             title: "Der Westen- und Ostenhellweg",
-            score: 1,
+            score: 2,
             chapters: [
                 {
                     title: "Kapitel 1: Der Hellweg - vom Handelsweg zur Einkaufsmeile",
@@ -264,7 +264,29 @@ export default {
                 }
             ],
             puzzles: [
-                { identifier: "station_02_puzzle_01", requirements: [], type: "GPS", name: "Rätsel 00: Station freischalten", score: 1, coordinates: { latitude: 0, longitude: 0 } }
+                {
+                    type: "gps-puzzle",
+                    identifier: "station_02_puzzle_00",
+                    name: "Station freischalten",
+                    requirements: [],
+                    score: 2,
+                    data: {
+                        introduction: {
+                            text: "Begebe dich zum Westen- und Ostenhellweg, um diese Station freizuschalten",
+                            informations: {
+                                adress: "",
+                                transit: [],
+                                coordinates: {
+                                    lan: 51.51459971856508,
+                                    lon: 7.467027005021994,
+                                    text: "N 51° 31.008' E 007° 27.774'"
+                                }
+                            }
+                        },
+                        game: {},
+                        result: {}
+                    }
+                }
             ]
         }
     ]
