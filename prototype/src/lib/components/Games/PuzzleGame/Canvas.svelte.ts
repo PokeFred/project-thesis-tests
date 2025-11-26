@@ -92,9 +92,10 @@ export default class Canvas {
     }
 
     private createSlot(path: string): Konva.Path {
+        const COLOR = getComputedStyle(this.container).getPropertyValue("--color-primary").trim();
         return new Konva.Path({
             data: path,
-            fill: "black",
+            fill: COLOR,
             strokeEnabled: false,
             hitStrokeWidth: 0,
             scale: {x: this.scale, y: this.scale}
@@ -248,22 +249,24 @@ class PuzzlePieceContainer {
         );
     }
 
-    // TODO: FIX
     private drawPieces(): void {
         let currentX = this.gap;
 
-        // const mixedPieces: Konva.Image[] = this.canvas.Pieces.sort(() => Math.random() - 0.5);
-
-        // mixedPieces.forEach((piece: Konva.Image, i: number) => {
+        const CONTAINERS: Konva.Group[] = new Array<Konva.Group>();
         this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
             const CONTAINER = this.createPuzzlePieceContainerSlot();
+            CONTAINERS.push(CONTAINER);
             this.slotMapping.set(piece, CONTAINER);
-            CONTAINER.x(currentX);
-            this.container.add(CONTAINER);
-            currentX += this.gap + CONTAINER.width();
 
             this.placePieceIntoContainer(piece);
         });
+
+        const CONTAINERS_MIXED: Konva.Group[] = CONTAINERS.sort(() => Math.random() - 0.5);
+        CONTAINERS_MIXED.forEach((container: Konva.Group) => {
+            this.container.add(container);
+            container.x(currentX);
+            currentX += this.gap + container.width();
+        })
     }
 
     public draw(): void {

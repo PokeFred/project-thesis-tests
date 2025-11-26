@@ -77,9 +77,15 @@ export default class PuzzleController {
 
         const KONVA_SLOT = this.slotMap.get(SLOT!);
 
+        const RECT_PIECE = piece.getSelfRect();
+        const RECT_SLOT = KONVA_SLOT?.getClientRect();
+        
+        const scaleX: number =  RECT_SLOT!.width / RECT_PIECE!.width;
+        const scaleY: number =  RECT_SLOT!.height / RECT_PIECE!.height;
+
         PIECE?.removeFromSlot();
 
-        piece.scale(KONVA_SLOT?.scale());
+        piece.scale({ x: scaleX, y: scaleY });
         KONVA_SLOT?.show();
     }
 
@@ -110,7 +116,6 @@ export default class PuzzleController {
         PIECE?.placeInSlot();
 
         piece.setAbsolutePosition({x: SLOT_BOX.x, y: SLOT_BOX.y});
-        piece.scale(SLOT.scale());
         SLOT?.hide();
     }
 
