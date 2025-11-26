@@ -82,7 +82,6 @@ export function resetGame(): void {
 }
 
 export function isRunning(): boolean {
-    console.log(newState)
     return newState.isRunning
 }
 

@@ -1,5 +1,5 @@
 export type Introduction = {
-    text: string
+    text: string[]
 }
 
 export type GameInput = {

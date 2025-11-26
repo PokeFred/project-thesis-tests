@@ -171,14 +171,14 @@ export default {
                     }
                 },
                 {
-                    type: "multi-select-puzzle",
+                    type: "multiple-choice-puzzle",
                     identifier: "station_01_puzzle_01",
                     name: "Rätsel 1",
                     requirements: ["station_01_puzzle_00"],
                     score: 2,
                     data: {
                         introduction: {
-                            text: "MultiSelectPuzzle"
+                            text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
                         },
                         game: {},
                         result: {}
@@ -192,7 +192,7 @@ export default {
                     score: 2,
                     data: {
                         introduction: {
-                            text: "DoubleSelectPuzzle"
+                            text: ["Ordne den Zünften das richtige Handwerk zu. Aber Achtung: es gibt nur sieben richtige Paare! Es wurden drei Zünfte dazu gemischt. Schaffst Du es, die richtigen Paare zu finden?", "Zünfte: Schmied, Fleischer, Bäcker, Bader, Tuchmacher, Gerber, Schuhmacher, Krämer, Fettkrämer, Abdecker", "Handwerk: Metallverarbeitung, Getreideverarbeitung, Fleischverarbeitung, Lederverarbeitung, Feinlederverarbeitung, Gemischtwarenhandel, Handel mit Butter, Öl, Speck etc."]
                         },
                         game: {
                             data: {
@@ -212,22 +212,20 @@ export default {
                         result: {}
                     }
                 },
-                /*
                 {
-                    type: "double-select-puzzle",
+                    type: "text-select-puzzle",
                     identifier: "station_01_puzzle_09",
                     name: "Rätsel 9",
                     requirements: ["station_01_puzzle_00"],
                     score: 2,
                     data: {
                         introduction: {
-                            text: "Hello World"
+                            text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
                         },
                         game: {},
                         result: {}
                     }
                 }
-                */
             ]
         },
         {
