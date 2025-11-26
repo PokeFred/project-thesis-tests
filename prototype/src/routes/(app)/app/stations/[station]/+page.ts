@@ -73,7 +73,6 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
                             [0]
                     })
                     .filter((e) => e !== "DONE")
-                console.log(requirementsDone)
 
                 const isUnlocked: boolean = !(requirementsDone.length > 0)
                 return {

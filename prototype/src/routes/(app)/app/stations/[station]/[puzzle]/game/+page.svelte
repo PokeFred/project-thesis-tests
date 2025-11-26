@@ -4,22 +4,22 @@
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { add } from "$stores"
-    import GpsGame from "$components/puzzle/gps/game.svelte"
-    import SelectGame from "$components/puzzle/select/game.svelte"
-    import DoubleSelectGame from "$components/puzzle/doubleSelect/game.svelte"
-    import MultiSelectGame from "$components/puzzle/multiSelect/game.svelte"
-    import Modal from "./ConfirmModal.svelte"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
-    import SelectIntroduction from "$components/puzzle/select/introduction.svelte"
+    import GpsGame from "$components/puzzle/gps/game.svelte"
+    import TextSelectIntroduction from "$components/puzzle/textSelect/introduction.svelte"
+    import TextSelectGame from "$components/puzzle/textSelect/game.svelte"
     import DoubleSelectIntroduction from "$components/puzzle/doubleSelect/introduction.svelte"
-    import MultiSelectIntroduction from "$components/puzzle/multiSelect/introduction.svelte"
+    import DoubleSelectGame from "$components/puzzle/doubleSelect/game.svelte"
+    import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
+    import MultipleChoiceGame from "$components/puzzle/multipleChoice/game.svelte"
+    import Modal from "./ConfirmModal.svelte"
 
     let { data }: PageProps = $props()
 
     let gps: GpsGame
-    let select: SelectGame
+    let textSelect: TextSelectGame
     let doubleSelect: DoubleSelectGame
-    let multiSelect: MultiSelectGame
+    let multipleChoice: MultipleChoiceGame
 
     let submitable: boolean = $state<boolean>(false)
     function setSubmitable(): void {
@@ -32,14 +32,14 @@
         if (data.puzzle.type === "gps-puzzle") {
             rdata = gps.getSubmitData()
         }
-        if (data.puzzle.type === "select-puzzle") {
-            rdata = select.getSubmitData()
+        if (data.puzzle.type === "text-select-puzzle") {
+            rdata = textSelect.getSubmitData()
         }
         if (data.puzzle.type === "double-select-puzzle") {
             rdata = doubleSelect.getSubmitData()
         }
-        if (data.puzzle.type === "multi-select-puzzle") {
-            rdata = multiSelect.getSubmitData()
+        if (data.puzzle.type === "multiple-choice-puzzle") {
+            rdata = multipleChoice.getSubmitData()
         }
 
         //add({ identifier: data.introduction.identifier, score: data.introduction.score, state: "DONE", data: rdata })
@@ -56,7 +56,7 @@
             <Icon data={faAngleLeft} class="w-6 h-6" />
         </button>
     </div>
-    <div class="mt-3 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_80px_16px] gap-4 px-6 py-2">
+    <div class="my-4 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_80px_16px] gap-4 px-6 py-2">
         <span class="text-lg font-bold text-left">{data.puzzle.title}</span>
         <div class="w-full h-7 flex justify-center items-center">
             <div class="w-full h-fit bg-primary border rounded-full p-[1px]">
@@ -69,17 +69,17 @@
         <GpsIntroduction data={data.introduction} />
         <GpsGame bind:this={gps} data={data.game} setSubmitable={setSubmitable} />
     {/if}
-    {#if data.puzzle.type === "select-puzzle"}
-        <SelectIntroduction data={data.introduction} />
-        <SelectGame bind:this={select} data={data.game} setSubmitable={setSubmitable} />
+    {#if data.puzzle.type === "text-select-puzzle"}
+        <TextSelectIntroduction data={data.introduction} />
+        <TextSelectGame bind:this={textSelect} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "double-select-puzzle"}
         <DoubleSelectIntroduction data={data.introduction} />
         <DoubleSelectGame bind:this={doubleSelect} data={{ informations: [], data: { left: [], right: [], pairs: [] } }} setSubmitable={setSubmitable} />
     {/if}
-    {#if data.puzzle.type === "multi-select-puzzle"}
-        <MultiSelectIntroduction data={data.introduction} />
-        <MultiSelectGame bind:this={multiSelect} data={{}} setSubmitable={setSubmitable} />
+    {#if data.puzzle.type === "multiple-choice-puzzle"}
+        <MultipleChoiceIntroduction data={data.introduction} />
+        <MultipleChoiceGame bind:this={multipleChoice} data={{}} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-8 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>

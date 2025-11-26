@@ -171,7 +171,7 @@ export default {
                     }
                 },
                 {
-                    type: "multi-select-puzzle",
+                    type: "multiple-choice-puzzle",
                     identifier: "station_01_puzzle_01",
                     name: "Rätsel 1",
                     requirements: ["station_01_puzzle_00"],
@@ -213,14 +213,14 @@ export default {
                     }
                 },
                 {
-                    type: "select-puzzle",
+                    type: "text-select-puzzle",
                     identifier: "station_01_puzzle_09",
                     name: "Rätsel 9",
                     requirements: ["station_01_puzzle_00"],
                     score: 2,
                     data: {
                         introduction: {
-                            text: []
+                            text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
                         },
                         game: {},
                         result: {}

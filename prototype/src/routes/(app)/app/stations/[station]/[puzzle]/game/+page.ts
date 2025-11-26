@@ -11,13 +11,6 @@ export const load: PageLoad = async ({ params }): Promise<{ puzzle: { identifier
     const station = Config.stations
         .filter((element): boolean => element.identifier === params.station)[0]
 
-    console.log(station)
-    console.log({
-            identifier: puzzle.identifier,
-            type: puzzle.type,
-            title: puzzle.name,
-            score: puzzle.score
-        })
     return {
         puzzle: {
             identifier: puzzle.identifier,
