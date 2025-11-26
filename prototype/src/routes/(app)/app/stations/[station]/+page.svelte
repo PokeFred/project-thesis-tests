@@ -24,7 +24,7 @@
     </div>
     <div class="mt-2 mb-8 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.puzzles as puzzle}
-            <button onclick={() => goto(`/app/stations/${data.identifier}/${puzzle.identifier}/introduction`)} class="w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_50px_80px] gap-4 px-6 py-2 {puzzle.unlocked ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!puzzle.unlocked}>
+            <button onclick={() => goto(`/app/stations/${data.identifier}/${puzzle.identifier}/game`)} class="w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_50px_80px] gap-4 px-6 py-2 {puzzle.unlocked ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!puzzle.unlocked}>
                 <span class="text-lg font-bold text-left">{puzzle.name}</span>
                 <span class="text-lg font-bold text-right">{puzzle.completion}%</span>
                 <div class="w-full h-7 flex justify-center items-center">

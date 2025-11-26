@@ -178,7 +178,7 @@ export default {
                     score: 2,
                     data: {
                         introduction: {
-                            text: "MultiSelectPuzzle"
+                            text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
                         },
                         game: {},
                         result: {}
@@ -192,7 +192,7 @@ export default {
                     score: 2,
                     data: {
                         introduction: {
-                            text: "DoubleSelectPuzzle"
+                            text: ["Ordne den Zünften das richtige Handwerk zu. Aber Achtung: es gibt nur sieben richtige Paare! Es wurden drei Zünfte dazu gemischt. Schaffst Du es, die richtigen Paare zu finden?", "Zünfte: Schmied, Fleischer, Bäcker, Bader, Tuchmacher, Gerber, Schuhmacher, Krämer, Fettkrämer, Abdecker", "Handwerk: Metallverarbeitung, Getreideverarbeitung, Fleischverarbeitung, Lederverarbeitung, Feinlederverarbeitung, Gemischtwarenhandel, Handel mit Butter, Öl, Speck etc."]
                         },
                         game: {
                             data: {
@@ -212,22 +212,20 @@ export default {
                         result: {}
                     }
                 },
-                /*
                 {
-                    type: "double-select-puzzle",
+                    type: "select-puzzle",
                     identifier: "station_01_puzzle_09",
                     name: "Rätsel 9",
                     requirements: ["station_01_puzzle_00"],
                     score: 2,
                     data: {
                         introduction: {
-                            text: "Hello World"
+                            text: []
                         },
                         game: {},
                         result: {}
                     }
                 }
-                */
             ]
         },
         {
