@@ -2,7 +2,9 @@
     import GameHeader from "$components/Games/GameHeader.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
+    import { Icon } from "svelte-awesome";
     import { quiz } from "../Quiz";
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
     const descriptions: string[] = [`Richtig platzierte Puzzleteile (${quiz.AnswersCorrect})`]
     const points: number[] = [quiz.AnswersCorrect * POINTS.ANSWER_CORRECT]
@@ -48,3 +50,7 @@
     wären sehr zufrieden mit Dir! In den Texten kannst Du etwas über die Reinoldi-Gilde und den
     Handel in Dortmund lernen.
 </p> -->
+
+<button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-8 ml-auto mr-3.5 w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
+    <Icon data={faAngleUp} class="w-6 h-6" />
+</button>

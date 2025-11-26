@@ -4,7 +4,9 @@
     import GameHeader from "$components/Games/GameHeader.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
+    import { Icon } from "svelte-awesome";
     import { quiz, handwerk } from "../Quiz";
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
     const selected = quiz.Selected.filter((answer)=> answer ? true : false);
     const descriptions: string[] = selected.map((answer, i)=> `${handwerk[i]}:  ${answer.answer}`);
@@ -113,3 +115,7 @@
 </p> -->
 
 <GameResultAccordionComponent accordion={gameResultAccordion} />
+
+<button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-8 ml-auto mr-3.5 w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
+    <Icon data={faAngleUp} class="w-6 h-6" />
+</button>

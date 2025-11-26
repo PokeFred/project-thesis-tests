@@ -6,6 +6,8 @@
     import { quiz } from "../Quiz"
     import GameHeader from "$components/Games/GameHeader.svelte";
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
+    import { Icon } from "svelte-awesome";
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
     const selected = quiz.Options.filter((answer, i) => quiz.Selected[i]);
     const answers: string[] = selected.map((answer)=>answer.answer);
@@ -36,3 +38,7 @@
     Station erfährst Du noch mehr über die Geschichte von Märkten und das Einkaufen auf dem
     Markt.
 </p> -->
+
+<button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-8 ml-auto mr-3.5 w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
+    <Icon data={faAngleUp} class="w-6 h-6" />
+</button>
