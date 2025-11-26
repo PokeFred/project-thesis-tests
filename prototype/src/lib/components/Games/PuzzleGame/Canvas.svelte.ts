@@ -158,7 +158,7 @@ export default class Canvas {
 
     private drawHUD(): void {
         this.puzzlePieceContainer.draw();
-        this.exitButton.draw();
+        // this.exitButton.draw();
     }
 
     public drawAll(): void {
@@ -202,10 +202,15 @@ class PuzzlePieceContainer {
             dragBoundFunc(pos: Vector2d) {
                 const LEFT_BOUND = 0
                 const RIGHT_BOUND = this.getStage()!.width();
-                if(pos.x <= LEFT_BOUND && pos.x + this.width() >= RIGHT_BOUND) {
-                    return {x: pos.x, y: this.y()}
+                if(pos.x > LEFT_BOUND) {
+                    return { x: LEFT_BOUND, y: this.y() }
                 }
-                return {x: this.x(), y: this.y()}
+                else if(pos.x + this.width() < RIGHT_BOUND) {
+                    return { x: RIGHT_BOUND - this.width(), y: this.y() }
+                }
+                else {
+                    return { x: pos.x, y: this.y() }
+                }
             },
         });
         this.slotMapping = new Map<Konva.Image, Konva.Group>();
