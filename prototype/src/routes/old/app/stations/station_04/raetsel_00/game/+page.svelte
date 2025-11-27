@@ -1,7 +1,7 @@
 <script lang="ts">
     import Modal from "$components/Modal.svelte"
     import { goto } from "$app/navigation"
-    import { quiz } from "../Quiz"
+    import { background, slotGroups, quiz } from "../Quiz"
     import PuzzleGameCanvas from "$components/Games/PuzzleGame/PuzzleGame.svelte";
 
     quiz.reset();
@@ -10,7 +10,7 @@
     let showModal: () => void = $state(()=>{});
 </script>
 
-<PuzzleGameCanvas {quiz}/>
+<PuzzleGameCanvas {background} {slotGroups} {quiz}/>
 
 <Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
         quiz.complete();
