@@ -1,12 +1,26 @@
 <script lang="ts">
     import PointSummary from "$components/Games/PointSummary.svelte";
     import { POINTS } from "$lib/State.svelte";
+    import { Icon } from "svelte-awesome";
     import { quiz } from "../Quiz";
+    import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+    import GameHeader from "$components/Games/GameHeader.svelte";
 
     const descriptions: string[] = [`Richtig platzierte Puzzleteile (${quiz.AnswersCorrect})`]
     const points: number[] = [quiz.AnswersCorrect * POINTS.ANSWER_CORRECT]
+
+    const data = {
+        stitle: "ASD",
+        completion: 0,
+        identifier: "asd",
+        text: "Text..."
+    }
 </script>
+
+<GameHeader stitle={data.stitle} completion={data.completion} identifier={data.identifier} text={data.text} />
 
 <PointSummary {descriptions} {points}/>
 
-<a href=".." data-sveltekit-preload-data data-sveltekit-preload-code class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Zurück zur Rätselübersicht</a>
+<button onclick={() => window.scrollTo({ top: 0, behavior: "smooth" })} class="my-8 ml-auto mr-3.5 w-8 h-8 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer touch-manipulation active:scale-95">
+    <Icon data={faAngleUp} class="w-6 h-6" />
+</button>

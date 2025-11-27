@@ -5,6 +5,8 @@
     import { dev } from "$app/environment";
     import { quiz } from "../Quiz"
     import Fullscreen from "$components/Fullscreen.svelte";
+    import GameHeader from "$components/Games/GameHeader.svelte";
+    import GameFooter from "$components/Games/GameFooter.svelte";
     
     quiz.reset();
 
@@ -12,7 +14,16 @@
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
 
     let showModal: () => void = $state(()=>{});
+
+    const data = {
+        stitle: "ASD",
+        completion: 0,
+        identifier: "asd",
+        text: "Text..."
+    }
 </script>
+
+<GameHeader stitle={data.stitle} completion={data.completion} identifier={data.identifier} text={data.text} />
 
 <h2 class="underline">Das Warenhaus Althoff – Ein Konsumtempel in Dortmund:</h2>
 <p class="my-4 w-full h-auto text-sm">
@@ -91,13 +102,9 @@
     <figcaption class="text-sm">Gesamtansicht Warenhaus Althoff <cite>(Foto: Stadtarchiv Dortmund)</cite>.</figcaption>
 </figure>
 
-<Modal bind:show={showModal} confirmButtonText={"ja"} closeButtonText={"Nein"} onConfirm={()=> {
-        quiz.complete();
-        goto("./end"); 
-    }}>
-     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
+<GameFooter quiz={quiz}>
+    <p>Möchtest du dieses Rätsel wirklich beenden?</p>
      {#if quiz.Options.length != quiz.Selected.filter((e)=> e != undefined).length}
         <p>Es sind noch nicht alle Felder ausgefüllt.</p>
      {/if}
-</Modal>
-<button onclick={showModal} class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Rätsel beenden</button>
+</GameFooter>
