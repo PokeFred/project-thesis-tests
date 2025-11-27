@@ -1,6 +1,6 @@
 <script lang="ts">
     import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
-    import { quiz } from "../Quiz"
+    import { background, slotGroups, quiz } from "../Quiz";
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";
 
@@ -25,7 +25,7 @@
 
 <GameHeader stitle={data.stitle} identifier={data.identifier} completion={data.completion} {text}/>
 
-<PuzzleGame {quiz} />
+<PuzzleGame {background} {slotGroups} {quiz}  />
 
 <GameFooter {quiz}>
     <p>Möchtest du dieses Rätsel wirklich beenden?</p>
