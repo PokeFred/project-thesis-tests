@@ -1,8 +1,8 @@
 // TODO: diese States durch cedrics ersetzen
 export const enum POINTS {
-    ANSWER_CORRECT = 10,
-    ANSWER_FALSE = -3,
-    HINT_UNLOCKED = -3,
+    ANSWER_CORRECT = 3,
+    ANSWER_FALSE = 0,
+    HINT_UNLOCKED = 0,
     NOT_ANSWERED = 0
 }
 
