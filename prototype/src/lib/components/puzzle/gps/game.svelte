@@ -8,10 +8,8 @@
 
     let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
 
-    const output: GameOutput = {}
-    export function getSubmitData(): GameOutput {
-        return output
-    }
+    export function getSubmitData(): GameOutput { return {} }
+    export function getSubmitScore(): number { return 1 }
 
     let a: boolean = $state<boolean>(false)
     function fetchLocation(): void {

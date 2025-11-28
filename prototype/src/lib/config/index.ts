@@ -152,7 +152,7 @@ export default {
                     identifier: "station_01_puzzle_00",
                     name: "Station freischalten",
                     requirements: [],
-                    score: 2,
+                    score: 1,
                     data: {
                         introduction: {
                             text: "Begebe dich zum Alten Markt, um diese Station freizuschalten",
@@ -180,7 +180,18 @@ export default {
                         introduction: {
                             text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
                         },
-                        game: {},
+                        game: {
+                            answers: [
+                                { text: "Es gab einen Brunnen am Markt.", isCorrect: true },
+                                { text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
+                                { text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
+                                { text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
+                                { text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
+                                { text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
+                                { text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
+                                { text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
+                            ]
+                        },
                         result: {}
                     }
                 },

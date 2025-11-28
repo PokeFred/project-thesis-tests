@@ -28,21 +28,27 @@
 
     let modal: Modal
     function submit(): void {
-        let rdata: any
+        let rScore: number = 0
+        let rdata: any = {}
+
         if (data.puzzle.type === "gps-puzzle") {
+            rScore = gps.getSubmitScore()
             rdata = gps.getSubmitData()
         }
         if (data.puzzle.type === "text-select-puzzle") {
+            //rScore = textSelect.getSubmitScore()
             rdata = textSelect.getSubmitData()
         }
         if (data.puzzle.type === "double-select-puzzle") {
+            //rScore = doubleSelect.getSubmitScore()
             rdata = doubleSelect.getSubmitData()
         }
         if (data.puzzle.type === "multiple-choice-puzzle") {
+            rScore = multipleChoice.getSubmitScore()
             rdata = multipleChoice.getSubmitData()
         }
 
-        //add({ identifier: data.introduction.identifier, score: data.introduction.score, state: "DONE", data: rdata })
+        add({ identifier: data.puzzle.identifier, score: rScore, state: "DONE", data: rdata })
         goto(`/app/stations/${data.station.identifier}/${data.puzzle.identifier}/result`)
     }
 </script>
@@ -59,7 +65,7 @@
     <div class="my-4 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_80px_16px] gap-4 px-6 py-2">
         <span class="text-lg font-bold text-left">{data.puzzle.title}</span>
         <div class="w-full h-7 flex justify-center items-center">
-            <div class="w-full h-fit bg-primary border rounded-full p-[1px]">
+            <div class="w-full h-fit bg-primary border rounded-full p-0.5">
                 <div class="w-full h-4 bg-secondary border rounded-full"></div>
             </div>
         </div>
@@ -75,11 +81,12 @@
     {/if}
     {#if data.puzzle.type === "double-select-puzzle"}
         <DoubleSelectIntroduction data={data.introduction} />
-        <DoubleSelectGame bind:this={doubleSelect} data={{ informations: [], data: { left: [], right: [], pairs: [] } }} setSubmitable={setSubmitable} />
+        <!-- <DoubleSelectGame bind:this={doubleSelect} data={{ informations: [], data: { left: [], right: [], pairs: [] } }} setSubmitable={setSubmitable} /> -->
+        <DoubleSelectGame bind:this={doubleSelect} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
-        <MultipleChoiceGame bind:this={multipleChoice} data={{}} setSubmitable={setSubmitable} />
+        <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-8 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>

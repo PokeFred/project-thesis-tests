@@ -29,11 +29,14 @@ type Puzzle = any
 type _Puzzle = {
     identifier: string,
     name: string,
-    completion: number,
+    score: {
+        current: number,
+        max: number
+    },
     unlocked: boolean
 }
 
-export const load: PageLoad = async ({ params }): Promise<{ identifier: string, stitle: string, title: string, completion: number, chapters: AccordionData, puzzles: _Puzzle[] }> => {
+export const load: PageLoad = async ({ params }): Promise<{ identifier: string, stitle: string, title: string, score: { current: number, max: number, completion: number }, chapters: AccordionData, puzzles: _Puzzle[] }> => {
     // @ts-ignore
     const station: Station = Config.stations.filter((e): boolean => e.identifier === params.station)[0]
 
@@ -56,7 +59,11 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
         identifier: params.station,
         stitle: station.stitle.toUpperCase(),
         title: station.title,
-        completion: Number((completion).toFixed(1)), // completion,
+        score: {
+            current: current,
+            max: max,
+            completion: Number((completion).toFixed(1))
+        },
         chapters: chapters,
         puzzles: station.puzzles
             .map((element: any): _Puzzle => {
@@ -78,7 +85,11 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
                 return {
                     identifier: element.identifier,
                     name: element.name,
-                    completion: Number((a * 100 / element.score).toFixed(1)),
+                    //completion: Number((a * 100 / element.score).toFixed(1)),
+                    score: {
+                        current: a,
+                        max: element.score
+                    },
                     unlocked: isUnlocked
                 }
             })
