@@ -4,4 +4,4 @@
     let { data }: { data: Result } = $props()
 </script>
 
-<div>GESCHAFFT!!!</div>
+<div>{JSON.stringify(data)}</div>
