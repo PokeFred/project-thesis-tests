@@ -3,8 +3,6 @@
     import { quiz } from "../Quiz";
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";
-
-    quiz.reset();
     
     const question: string = "Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig – überlege genau!";
 

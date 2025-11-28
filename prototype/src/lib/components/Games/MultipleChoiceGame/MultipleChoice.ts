@@ -1,4 +1,5 @@
 import { type Quiz, POINTS } from "$components/Games/Quiz";
+import type { GameOutput } from "$components/puzzle/multipleChoice";
 
 export type Description = {
     readonly tag: "p",
@@ -43,13 +44,14 @@ export default class MultipleChoice implements Quiz {
         }, 0);
     }
 
-    public complete(): void {
-        let sum: number = 0;
-        for(let i = 0; i < this.options.length; i++) {
-            if(this.selected[i]) {
-                sum += this.options[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
-            }
-        }
+    public complete(): GameOutput {
+        // let sum: number = 0;
+        // for(let i = 0; i < this.options.length; i++) {
+        //     if(this.selected[i]) {
+        //         sum += this.options[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
+        //     }
+        // }
         // ins local storage
+        return {answers: [{text: "test", isCorrect: true, description: []}]} as GameOutput;
     }
 }
