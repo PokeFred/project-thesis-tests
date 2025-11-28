@@ -89,6 +89,6 @@
         <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-3 mx-auto w-fit h-auto">
-        <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-8 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>
+        <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-16 py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>
     </div>
 </div>

@@ -3,7 +3,9 @@
     import { goto } from "$app/navigation"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
+    import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsResult from "$components/puzzle/gps/result.svelte"
+    import DoubleSelectIntroduction from "$components/puzzle/doubleSelect/introduction.svelte"
     import DoubleSelectResult from "$components/puzzle/doubleSelect/result.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
     import MultipleChoiceResult from "$components/puzzle/multipleChoice/result.svelte"
@@ -19,10 +21,12 @@
         </button>
     </div>
     {#if data.type === "gps-puzzle"}
-        <GpsResult data={{}} />
+        <GpsIntroduction data={data.introduction} />
+        <GpsResult data={data.result} />
     {/if}
     {#if data.type === "double-select-puzzle"}
-        <DoubleSelectResult data={{}} />
+        <DoubleSelectIntroduction data={data.introduction} />
+        <DoubleSelectResult data={data.result} />
     {/if}
     {#if data.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
