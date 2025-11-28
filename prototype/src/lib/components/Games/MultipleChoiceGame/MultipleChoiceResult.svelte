@@ -14,7 +14,7 @@
             answer: answer.answer,
             correct: answer.correct,
             selected: quiz.Selected[i],
-            description: quiz.Descriptions[i]
+            // description: quiz.Descriptions[i]
         }
     });;    
 </script>

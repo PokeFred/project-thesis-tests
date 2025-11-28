@@ -8,12 +8,8 @@
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";
     
-    quiz.reset();
-
     // Github pages
     const GITHUB_PAGES_URL: string = dev ? "" : "/project-thesis-tests/prototype";
-
-    let showModal: () => void = $state(()=>{});
 
     const data = {
         stitle: "ASD",

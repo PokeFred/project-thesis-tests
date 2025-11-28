@@ -1,15 +1,11 @@
-import { QuizState } from "$lib/State.svelte"
+export const enum POINTS {
+    ANSWER_CORRECT = 3,
+    ANSWER_FALSE = 0,
+    NOT_ANSWERED = 0
+}
 
-export abstract class Quiz {
-    protected quizState: QuizState;
+export interface Quiz {
+    get AnswersCorrect(): number;
 
-    constructor(quizState: QuizState) {
-        this.quizState = quizState;
-    }
-
-    public get QuizState(): QuizState { return this.quizState; }
-    public abstract get AnswersCorrect(): number;
-
-    public abstract reset(): void;
-    public abstract complete(): void;
+    complete(): void;
 }

@@ -1,17 +1,14 @@
 <script lang="ts">
     import PointSummary from "$components/Games/PointSummary.svelte";
-    import { POINTS } from "$lib/State.svelte";
     import { Icon } from "svelte-awesome";
     import { quiz } from "../Quiz";
+    import { POINTS } from "$components/Games/Quiz"
     import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
     import GameHeader from "$components/Games/GameHeader.svelte";
 
     const selected = quiz.Selected.filter((answer)=> answer ? true : false);
     const descriptions: string[] = selected.map((answer)=> answer.answer);
     const points: number[] = selected.map((answer)=> answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
-
-    descriptions.push("Genutze Hinweise");
-    points.push((quiz.Hints?.reduce((sum, hint)=> sum + (hint.Unlocked ? POINTS.HINT_UNLOCKED : 0), 0) ?? 0));
 
     const data = {
         stitle: "ASD",

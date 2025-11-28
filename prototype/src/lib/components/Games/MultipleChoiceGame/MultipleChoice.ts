@@ -1,5 +1,4 @@
-import { Quiz } from "$components/Games/Quiz";
-import { type QuizState, POINTS } from "$lib/State.svelte";
+import { type Quiz, POINTS } from "$components/Games/Quiz";
 
 export type Description = {
     readonly tag: "p",
@@ -17,21 +16,20 @@ export type Answer = {
 }
 
 // TODO: MatchingGame == Multiple Choice ??
-export default class MultipleChoice extends Quiz {
+export default class MultipleChoice implements Quiz {
     private readonly options: Answer[];
-    private readonly descriptions: Description[][];
+    // private readonly descriptions: Description[][]; // von der config aus laden in page end
     private selected: boolean[];
 
-    constructor(quizState: QuizState, options: Answer[], descriptions: Description[][]) {
-        super(quizState);
+    constructor(options: Answer[], descriptions: Description[][]) {
         this.options = options;
-        this.descriptions = descriptions;
+        // this.descriptions = descriptions;
         this.selected = Array<boolean>(options.length).fill(false);
     }
 
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
-    public get Descriptions() { return this.descriptions; }
+    // public get Descriptions() { return this.descriptions; }
 
     public get AnswersCorrect() {
         if(this.selected.length <= 0) {
@@ -45,10 +43,6 @@ export default class MultipleChoice extends Quiz {
         }, 0);
     }
 
-    public reset(): void {
-        this.selected = Array<boolean>(this.options.length).fill(false);
-    }
-
     public complete(): void {
         let sum: number = 0;
         for(let i = 0; i < this.options.length; i++) {
@@ -56,6 +50,6 @@ export default class MultipleChoice extends Quiz {
                 sum += this.options[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
             }
         }
-        super.QuizState.complete(sum);
+        // ins local storage
     }
 }

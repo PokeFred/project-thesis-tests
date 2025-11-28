@@ -1,5 +1,4 @@
-import { POINTS, QuizState } from "$lib/State.svelte"
-import { Quiz } from "../Quiz"
+import { type Quiz, POINTS } from "../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
 
 export class Slot {
@@ -40,14 +39,11 @@ export class Piece {
     }
 }
 
-export default class Puzzle extends Quiz {
+export default class Puzzle implements Quiz {
     private slots: Slot[];
     private pieces: Piece[];
 
-    // constructor(quizState: QuizState, slotGroups: SlotGroup[]) {
     constructor(slotGroups: SlotGroup[]) {
-        // TODO: QuizState?
-        super(new QuizState());
         this.slots = new Array<Slot>();
         this.pieces = new Array<Piece>();
         slotGroups.forEach((slotGroup: SlotGroup) => {
@@ -78,12 +74,6 @@ export default class Puzzle extends Quiz {
         }, 0)
     }
 
-    public reset(): void {
-        this.slots.forEach((slot: Slot) => {
-            slot.Selected = undefined;
-        });
-    }
-
     public complete(): void {
         let sum: number = 0;
         this.slots.forEach((slot: Slot)=>{
@@ -91,6 +81,6 @@ export default class Puzzle extends Quiz {
                 sum += slot.Selected.Correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
             }
         });
-        super.QuizState.complete(sum);
+        //
     }
 }
