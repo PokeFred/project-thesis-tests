@@ -30,6 +30,16 @@ export default class MultipleChoice implements Quiz {
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
 
+    public score(): number {
+        return this.options.reduce((sum: number, answer: Answer, i: number) => {
+            if(!this.selected[i]) {
+                return sum + POINTS.NOT_ANSWERED;
+            }
+            console.log(sum)
+            return sum + (answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
+        }, 0)
+    }
+
     public complete(): GameOutput {
         return {
             answers: this.options.map((answer: Answer, i: number) => {

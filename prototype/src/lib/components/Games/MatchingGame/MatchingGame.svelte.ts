@@ -19,6 +19,10 @@ export default class MatchingGame implements Quiz {
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
 
+    public score(): number {
+        throw new Error("Not implemented");
+    }
+
     public complete(): GameOutput {
         return {
             answers: this.selected

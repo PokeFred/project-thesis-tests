@@ -64,6 +64,10 @@ export default class Puzzle implements Quiz {
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }
 
+    public score(): number {
+        throw new Error("Not implemented");
+    }
+
     public complete(): GameOutput {
         return { placed: this.slots.map((slot: Slot) => {
             return slot.Selected

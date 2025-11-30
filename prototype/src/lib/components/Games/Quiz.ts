@@ -10,4 +10,5 @@ export const enum POINTS {
 
 export interface Quiz {
     complete(): GameOutputMC | GameOutputDS | GameOutputP;
+    score(): number;
 }
