@@ -1,4 +1,5 @@
 // import type { GameOutput } from "$components/puzzle/multipleChoice";
+import type { GameOutput } from ".";
 import { type Quiz, POINTS } from "../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
 
@@ -76,6 +77,8 @@ export default class Puzzle implements Quiz {
     }
 
     public complete(): GameOutput {
-        return {answers: [{text: "test", isCorrect: true, description: []}]} satisfies GameOutput;
+        return { placed: this.slots.map((slot: Slot) => {
+            return slot.Selected
+        })} satisfies GameOutput;
     }
 }

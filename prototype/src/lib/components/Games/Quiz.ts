@@ -1,5 +1,6 @@
-import type { GameOutput as GameOutputMC } from "$components/puzzle/multipleChoice";
-import type { GameOutput as GameOutputDS } from "$components/puzzle/doubleSelect"
+import type { GameOutput as GameOutputMC } from "$components/Games/MultipleChoiceGame";
+import type { GameOutput as GameOutputDS } from "$components/Games/MatchingGame"
+import type { GameOutput as GameOutputP } from "$components/Games/PuzzleGame"
 
 export const enum POINTS {
     ANSWER_CORRECT = 3,
@@ -8,7 +9,5 @@ export const enum POINTS {
 }
 
 export interface Quiz {
-    get AnswersCorrect(): number;
-
-    complete(): GameOutputMC | GameOutputDS;
+    complete(): GameOutputMC | GameOutputDS | GameOutputP;
 }
