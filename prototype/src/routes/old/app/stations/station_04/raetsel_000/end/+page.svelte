@@ -1,13 +1,13 @@
 <script lang="ts">
     import GameHeader from "$components/Games/GameHeader.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
-    import { POINTS } from "$lib/State.svelte";
+    import { POINTS } from "$components/Games/Quiz";
     import { Icon } from "svelte-awesome";
     import { quiz } from "../Quiz";
     import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
-    const descriptions: string[] = [`Richtig platzierte Puzzleteile (${quiz.AnswersCorrect})`]
-    const points: number[] = [quiz.AnswersCorrect * POINTS.ANSWER_CORRECT]
+    // const descriptions: string[] = [`Richtig platzierte Puzzleteile (${quiz.AnswersCorrect})`]
+    // const points: number[] = [quiz.AnswersCorrect * POINTS.ANSWER_CORRECT]
 
     const text: string[] = [
         `Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde.`,

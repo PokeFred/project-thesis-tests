@@ -3,7 +3,7 @@
     import GameResultAccordionComponent from "$components/accordions/GameResultAccordion.svelte";
     import GameHeader from "$components/Games/GameHeader.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
-    import { POINTS } from "$lib/State.svelte";
+    import { POINTS } from "$components/Games/Quiz";
     import { Icon } from "svelte-awesome";
     import { quiz, handwerk } from "../Quiz";
     import { faAngleUp } from "@fortawesome/free-solid-svg-icons";

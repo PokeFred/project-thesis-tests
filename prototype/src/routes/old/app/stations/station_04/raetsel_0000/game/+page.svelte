@@ -4,8 +4,6 @@
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";
 
-    quiz.reset();
-
     // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     
     const text: string[] = [

@@ -30,7 +30,7 @@
 <!-- <PointSummary descriptions={answers} {points} /> -->
 
 <!-- <GameResultAccordionComponent accordion={gameResultAccordion}/> -->
-<MultipleChoiceResult {quiz} />
+<!-- <MultipleChoiceResult {quiz} /> -->
 
 <!-- <p class="mb-4 mt-4 w-full h-auto text-sm">
     Super, Du hast alle Fragen beantwortet. Jetzt weißt Du, was für Anforderungen der Markt im
