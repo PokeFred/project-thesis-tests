@@ -5,11 +5,15 @@
     import type { GameInput, GameOutput } from "$components/Games/MultipleChoiceGame"
     import { onMount } from "svelte"
 
-    let { data, getSubmitData = $bindable(), setSubmitable = $bindable() }: { data: GameInput, getSubmitData: () => GameOutput; setSubmitable: () => void } = $props()
+    let { data, setSubmitable = $bindable() }: { data: GameInput, setSubmitable: () => void } = $props()
+
+    let multipleChoiceComponent: MultipleChoiceComponent;
 
     onMount((): void => {
         setSubmitable()
     })
+    export const getSubmitData = () => { multipleChoiceComponent?.getSubmitData };
+    export const getSubmitScore = () => { return 0; }
 </script>
 
-<MultipleChoiceComponent gameInput={data} bind:getSubmitData={getSubmitData}/>
+<MultipleChoiceComponent gameInput={data} bind:this={multipleChoiceComponent}/>
