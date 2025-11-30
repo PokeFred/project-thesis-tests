@@ -1,4 +1,3 @@
-import { gameState } from "$lib/State.svelte";
 import Puzzle from "$components/Games/PuzzleGame/Puzzle.svelte";
 import type { CutoutData, PuzzleData, SlotGroup } from "$components/Games/PuzzleGame/PuzzleController.svelte";
 

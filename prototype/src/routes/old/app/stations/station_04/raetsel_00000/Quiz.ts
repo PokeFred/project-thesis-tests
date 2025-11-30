@@ -109,5 +109,5 @@ export const quiz: MultipleChoice = new MultipleChoice(
             correct: false
         }
     ],
-    descriptions
+    // descriptions
 );
