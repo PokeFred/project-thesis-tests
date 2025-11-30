@@ -1,7 +1,7 @@
 <script lang="ts">
     import { dev } from "$app/environment"
     import { goto } from "$app/navigation"
-    import { gameState } from "$lib/State.svelte"
+    // import { gameState } from "$lib/State.svelte"
     import Icon from "svelte-awesome"
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck"
@@ -50,7 +50,7 @@
 <div class="mt-3 w-full h-auto flex justify-center items-center">
     <div class="mr-3 text-sm shrink-0">Geschafft:</div>
     <div class="w-full h-4 bg-gray-500/25 rounded-xl">
-        <div class="w-[{(gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100}%] h-4 bg-gray-500/60 rounded-xl"></div>
+        <!-- <div class="w-[{(gameState.stationStates[3].quizStates.reduce((sum, q) => sum + (q.isCompleted() ? 1 : 0) ,0) / gameState.stationStates[3].quizStates.length) * 100}%] h-4 bg-gray-500/60 rounded-xl"></div> -->
     </div>
 </div>
 
@@ -60,22 +60,22 @@
         <div class="text-left">Aufgabe: ???</div>
     </div>
     <a href="./station_04/raetsel_00/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
-        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[0].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
+        <!-- <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[0].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4"> -->
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 00</div>
-        </div>
+        <!-- </div> -->
     </a>
     <a href="./station_04/raetsel_000/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
-        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[1].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
+        <!-- <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[1].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4"> -->
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 000</div>
-        </div>
+        <!-- </div> -->
     </a>
     <a href="./station_04/raetsel_01/introduction" data-sveltekit-preload-data data-sveltekit-preload-code>
-        <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[2].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4">
+        <!-- <div class="w-full h-auto border-2 {gameState.stationStates[3].quizStates[2].isCompleted() ? "border-green-500 bg-green-500/15" : "border-black"} rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-pointer p-4"> -->
             <Icon data={faClock} class="w-6 h-6" />
             <div class="text-left">Rätsel 01</div>
-        </div>
+        <!-- </div> -->
     </a>
     <div class="w-full h-auto border border-black rounded-xl grid grid-cols-[24px_auto] gap-4 cursor-default opacity-50 p-4">
         <Icon data={faKey} class="w-6 h-6" />
