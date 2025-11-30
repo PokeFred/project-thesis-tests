@@ -64,18 +64,6 @@ export default class Puzzle implements Quiz {
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }
 
-    public get AnswersCorrect() { 
-        if(this.slots.length <= 0) {
-            return 0;
-        }
-        return this.slots.reduce((sum, slot: Slot) => {
-            if(slot.Selected && slot.Selected.Correct) {
-                return ++sum;
-            }
-            return sum;
-        }, 0)
-    }
-
     public complete(): GameOutput {
         return { placed: this.slots.map((slot: Slot) => {
             return slot.Selected

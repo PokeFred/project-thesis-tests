@@ -19,18 +19,6 @@ export default class MatchingGame implements Quiz {
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
 
-    public get AnswersCorrect() {
-        if(this.selected.length <= 0) {
-            return 0
-        }
-        return this.selected.reduce((sum, sel: Answer) => {
-            if(sel.correct) {
-               return ++sum;
-            }
-            return sum;
-        }, 0);
-    }
-
     public complete(): GameOutput {
         return {
             answers: this.selected
