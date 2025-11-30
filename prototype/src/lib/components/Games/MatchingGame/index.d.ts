@@ -11,5 +11,5 @@ export type GameOutput = {
 }
 
 export type Result = {
-    answers: {}
+    answers: Answer[]
 }
