@@ -4,17 +4,21 @@
     import ShowMore from "$components/ShowMore.svelte";
     import MultipleChoice, { type Answer, type Description } from "./MultipleChoice";
     import Fullscreen from "$components/Fullscreen.svelte";
+    import type { GameOutput, Result } from ".";
 
-    let { quiz }: { quiz: MultipleChoice } = $props();
+    let { result }: { result: Result } = $props();
 
-    const toggles: (()=>{})[] = new Array(quiz.Options.length);
+    const toggles: (()=>{})[] = new Array(result.answers.length);
 
-    const multipleChoiceResult = quiz.Options.map((answer: Answer, i: number) => {
+    const multipleChoiceResult = result.answers.map((obj, i: number) => {
         return {
-            answer: answer.answer,
-            correct: answer.correct,
-            selected: quiz.Selected[i],
-            // description: quiz.Descriptions[i]
+            answer: obj.answer.answer,
+            correct: obj.answer.correct,
+            selected: obj.selected,
+            description: [{
+                tag: "p",
+                text: "Aus config laden."
+            } as Description]
         }
     });;    
 </script>

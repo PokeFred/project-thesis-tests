@@ -1,5 +1,5 @@
 import { type Quiz, POINTS } from "$components/Games/Quiz";
-import type { GameOutput } from "$components/puzzle/multipleChoice";
+import type { GameOutput } from "./";
 
 export type Description = {
     readonly tag: "p",
@@ -22,15 +22,13 @@ export default class MultipleChoice implements Quiz {
     // private readonly descriptions: Description[][]; // von der config aus laden in page end
     private selected: boolean[];
 
-    constructor(options: Answer[], descriptions: Description[][]) {
+    constructor(options: Answer[]) {
         this.options = options;
-        // this.descriptions = descriptions;
         this.selected = Array<boolean>(options.length).fill(false);
     }
 
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
-    // public get Descriptions() { return this.descriptions; }
 
     public get AnswersCorrect() {
         if(this.selected.length <= 0) {
@@ -45,13 +43,13 @@ export default class MultipleChoice implements Quiz {
     }
 
     public complete(): GameOutput {
-        // let sum: number = 0;
-        // for(let i = 0; i < this.options.length; i++) {
-        //     if(this.selected[i]) {
-        //         sum += this.options[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
-        //     }
-        // }
-        // ins local storage
-        return {answers: [{text: "test", isCorrect: true, description: []}]} as GameOutput;
+        return {
+            answers: this.options.map((answer: Answer, i: number) => {
+                return {
+                    selected: this.selected[i],
+                    answer: answer
+                }
+            })
+        } satisfies GameOutput;
     }
 }

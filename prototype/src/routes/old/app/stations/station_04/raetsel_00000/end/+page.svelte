@@ -2,12 +2,12 @@
     import type { GameResultAccordion } from "$components/accordions/GameResultAccordion";
     import GameResultAccordionComponent from "$components/accordions/GameResultAccordion.svelte";
     import PointSummary from "$components/Games/PointSummary.svelte";
-    import { POINTS } from "$lib/State.svelte";
     import { quiz } from "../Quiz"
     import GameHeader from "$components/Games/GameHeader.svelte";
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
     import { Icon } from "svelte-awesome";
     import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+    import { POINTS } from "$components/Games/Quiz";
 
     const selected = quiz.Options.filter((answer, i) => quiz.Selected[i]);
     const answers: string[] = selected.map((answer)=>answer.answer);

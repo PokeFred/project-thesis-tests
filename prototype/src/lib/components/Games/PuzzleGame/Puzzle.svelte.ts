@@ -1,3 +1,4 @@
+// import type { GameOutput } from "$components/puzzle/multipleChoice";
 import { type Quiz, POINTS } from "../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
 
@@ -74,13 +75,7 @@ export default class Puzzle implements Quiz {
         }, 0)
     }
 
-    public complete(): void {
-        let sum: number = 0;
-        this.slots.forEach((slot: Slot)=>{
-            if(slot.Selected) {
-                sum += slot.Selected.Correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
-            }
-        });
-        //
+    public complete(): GameOutput {
+        return {answers: [{text: "test", isCorrect: true, description: []}]} satisfies GameOutput;
     }
 }

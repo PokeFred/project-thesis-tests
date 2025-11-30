@@ -1,5 +1,6 @@
 // Das gleiche wie Cloze.svelte.ts
 import { type Quiz, POINTS } from "$components/Games/Quiz";
+import type { GameOutput } from ".";
 
 export type Answer = {
     readonly answer: string;
@@ -30,13 +31,9 @@ export default class MatchingGame implements Quiz {
         }, 0);
     }
 
-    public complete(): void {
-        let sum: number = 0;
-        this.selected.forEach((answer: Answer) => {
-            if(answer != undefined) {
-                sum += answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE;
-            }
-        });
-        // data speichern im local storage
+    public complete(): GameOutput {
+        return {
+            answers: this.selected
+        } satisfies GameOutput;
     }
 }

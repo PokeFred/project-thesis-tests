@@ -1,4 +1,3 @@
-import { gameState } from "$lib/State.svelte";
 import MultipleChoice, { type Description } from "$components/Games/MultipleChoiceGame/MultipleChoice";
 
 // TODO: die ganzen Quiz, Quizstate, Gamestate etc klassen refractoren
@@ -76,7 +75,6 @@ const descriptions: Description[][] = [
 ] 
 
 export const quiz: MultipleChoice = new MultipleChoice(
-    gameState.stationStates[3].quizStates[4],
     [
         { 
             answer: "Es gab einen Brunnen am Markt.",
