@@ -1,7 +1,14 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    import type MultipleChoice from "./MultipleChoice"
-    let { multipleChoice, children } : { multipleChoice: MultipleChoice, children?: Snippet } = $props();
+    import MultipleChoice from "./MultipleChoice"
+    import type { GameInput } from ".";
+    let { gameInput, children } : { gameInput: GameInput, children?: Snippet } = $props();
+
+    const multipleChoice: MultipleChoice = new MultipleChoice(gameInput.answers.map((answer) => {
+        return {answer: answer.text, correct: answer.isCorrect}
+    }));
+
+    export const getSubmitData = multipleChoice.complete.bind(multipleChoice);
 </script>
 
 <div>
