@@ -30,7 +30,7 @@ export default class Canvas {
     private slots: Konva.Path[];
     private pieces: Konva.Image[];
     private puzzlePieceContainer: PuzzlePieceContainer;
-    private exitButton: ExitButton;
+    // private exitButton: ExitButton;
     
     constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.puzzleController = puzzleController;
@@ -63,7 +63,7 @@ export default class Canvas {
         this.slots = new Array<Konva.Path>();
         this.pieces = new Array<Konva.Image>();
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
-        this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
+        // this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
 
         this.fitStageIntoContainer();
         this.init(background, slotGroups);        
