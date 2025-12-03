@@ -35,7 +35,6 @@ export default class MultipleChoice implements Quiz {
             if(!this.selected[i]) {
                 return sum + POINTS.NOT_ANSWERED;
             }
-            console.log(sum)
             return sum + (answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
         }, 0)
     }

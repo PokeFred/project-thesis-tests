@@ -7,8 +7,10 @@
     import type { GameOutput, Result } from ".";
 
     let { result }: { result: Result } = $props();
+    console.log(result)
 
-    const toggles: (()=>{})[] = new Array(result.answers.length);
+
+    const toggles: (()=>void)[] = new Array(result.answers.length);
 
     const multipleChoiceResult = result.answers.map((obj, i: number) => {
         return {

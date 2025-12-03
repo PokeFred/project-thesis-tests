@@ -8,7 +8,8 @@
     import DoubleSelectIntroduction from "$components/puzzle/doubleSelect/introduction.svelte"
     import DoubleSelectResult from "$components/puzzle/doubleSelect/result.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
-    import MultipleChoiceResult from "$components/puzzle/multipleChoice/result.svelte"
+    import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
+    
 
     let { data }: PageProps = $props()
 </script>
@@ -30,7 +31,7 @@
     {/if}
     {#if data.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
-        <MultipleChoiceResult data={data.result} />
+        <MultipleChoiceResult result={data.result} />
     {/if}
     <div class="mt-4 mx-auto w-fit h-auto">
         <button onclick={() => goto(`/app/stations/${data.station}`)} class="w-full h-auto text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Zurück zur Station</button>

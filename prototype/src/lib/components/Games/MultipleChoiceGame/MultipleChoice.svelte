@@ -1,16 +1,20 @@
 <script lang="ts">
-    import type { Snippet } from "svelte";
+    import { onMount, type Snippet } from "svelte";
     import MultipleChoice from "./MultipleChoice"
     // import type { GameInput } from ".";
     import type { GameInput } from "$components/puzzle/multipleChoice"; // TODO: ändern    
-    let { gameInput, children } : { gameInput: GameInput, children?: Snippet; } = $props();
+    let { gameInput, setSubmitable = $bindable(), children } : { gameInput: GameInput, setSubmitable: () => void, children?: Snippet; } = $props();
 
     const multipleChoice: MultipleChoice = new MultipleChoice(gameInput.answers.map((answer) => {
         return {answer: answer.text, correct: answer.isCorrect}
     }));
 
+    onMount((): void => {
+        setSubmitable();
+    })    
+
     export const getSubmitData = multipleChoice.complete.bind(multipleChoice);
-    export const getsubmitScore = multipleChoice.score.bind(multipleChoice);
+    export const getSubmitScore = multipleChoice.score.bind(multipleChoice);
 </script>
 
 <div>
