@@ -13,6 +13,7 @@
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
     import Modal from "./ConfirmModal.svelte"
     import MultipleChoiceGame from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte";
+    import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
 
     let { data }: PageProps = $props()
 
@@ -20,6 +21,7 @@
     let textSelect: TextSelectGame
     let doubleSelect: DoubleSelectGame
     let multipleChoice: MultipleChoiceGame
+    let puzzleGame: PuzzleGame
 
     let submitable: boolean = $state<boolean>(false)
     function setSubmitable(): void {
@@ -47,6 +49,8 @@
             rScore = multipleChoice.getSubmitScore()
             rdata = multipleChoice.getSubmitData()
         }
+
+        puzzleGame.getSubmitData()
 
         add({ identifier: data.puzzle.identifier, score: rScore, state: "DONE", data: rdata })
         goto(`/app/stations/${data.station.identifier}/${data.puzzle.identifier}/result`)
@@ -88,6 +92,8 @@
         <MultipleChoiceIntroduction data={data.introduction} />
         <MultipleChoiceGame bind:this={multipleChoice} gameInput={data.game} setSubmitable={setSubmitable} />
     {/if}
+    <!-- <PuzzleGame bind:this={puzzleGame} {setSubmitable} gameInput={{path: "/station_04/raetsel_00/game"}}/> -->
+    <PuzzleGame bind:this={puzzleGame} {setSubmitable} gameInput={{path: "/station_01/raetsel_02/game"}}/>
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-16 py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>
     </div>

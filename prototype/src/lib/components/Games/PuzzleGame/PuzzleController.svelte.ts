@@ -38,10 +38,9 @@ export default class PuzzleController {
     private slotMap: Map<Slot, Konva.Path>;
     private pieceMap: Map<Konva.Image, Piece>;
 
-    constructor(container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[], puzzle: Puzzle) {
+    constructor(container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.canvas = new Canvas(this, container, background, slotGroups);
-        // this.puzzle = new Puzzle(slotGroups);
-        this.puzzle = puzzle;
+        this.puzzle = new Puzzle(slotGroups);
         this.slotMap = new Map<Slot, Konva.Path>();
         this.pieceMap = new Map<Konva.Image, Piece>();
 

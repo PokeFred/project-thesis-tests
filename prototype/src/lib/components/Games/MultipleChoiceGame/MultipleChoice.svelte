@@ -3,7 +3,7 @@
     import MultipleChoice from "./MultipleChoice"
     // import type { GameInput } from ".";
     import type { GameInput } from "$components/puzzle/multipleChoice"; // TODO: ändern    
-    let { gameInput, setSubmitable = $bindable(), children } : { gameInput: GameInput, setSubmitable: () => void, children?: Snippet; } = $props();
+    let { gameInput, setSubmitable = $bindable() } : { gameInput: GameInput, setSubmitable: () => void } = $props();
 
     const multipleChoice: MultipleChoice = new MultipleChoice(gameInput.answers.map((answer) => {
         return {answer: answer.text, correct: answer.isCorrect}
@@ -18,7 +18,6 @@
 </script>
 
 <div>
-    {@render children?.()}
     <div class="flex flex-col border-y-2 border-secondary divide-y-2 divide-secondary">
         {#each multipleChoice.Options as option, i }
             <label class="flex h-[80px] text-[18px] py-2 items-center font-medium"><input bind:checked={multipleChoice.Selected[i]} type="checkbox" class="appearance-none touch-manipulation shrink-0 grow-0 w-[32px] h-[32px] ml-[9px] mr-[25px] border-2 border-secondary rounded-full">{option.answer}</label>
