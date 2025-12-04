@@ -1,7 +1,7 @@
 <script lang="ts">
     import { goto, preloadCode, preloadData} from "$app/navigation";
     import Modal from "$components/Modal.svelte";
-    import AnswerBox from "$components/Games/MatchingGame/AnswerBox.svelte";
+    import AnswerBox from "$components/Games/Cloze/AnswerBox.svelte";
     import { dev } from "$app/environment";
     import { quiz } from "../Quiz"
     import Fullscreen from "$components/Fullscreen.svelte";

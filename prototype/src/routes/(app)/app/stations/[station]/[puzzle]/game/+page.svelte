@@ -14,7 +14,7 @@
     import Modal from "./ConfirmModal.svelte"
     import MultipleChoiceGame from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte";
     import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
-    import MatchingGame from "$components/Games/MatchingGame_/MatchingGameComponent.svelte";
+    import MatchingGame from "$components/Games/MatchingGame/MatchingGameComponent.svelte";
 
     let { data }: PageProps = $props()
 

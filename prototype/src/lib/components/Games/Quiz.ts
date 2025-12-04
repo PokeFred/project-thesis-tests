@@ -1,5 +1,5 @@
 import type { GameOutput as GameOutputMC } from "$components/Games/MultipleChoiceGame";
-import type { GameOutput as GameOutputDS } from "$components/Games/MatchingGame_"
+import type { GameOutput as GameOutputDS } from "$components/Games/MatchingGame"
 import type { GameOutput as GameOutputP } from "$components/Games/PuzzleGame"
 
 export const enum POINTS {

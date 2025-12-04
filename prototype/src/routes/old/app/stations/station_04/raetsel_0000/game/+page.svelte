@@ -1,5 +1,5 @@
 <script lang="ts">
-    import AnswerBox from "$components/Games/MatchingGame/AnswerBox.svelte"
+    import AnswerBox from "$components/Games/Cloze/AnswerBox.svelte"
     import { quiz, handwerk } from "../Quiz";
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";

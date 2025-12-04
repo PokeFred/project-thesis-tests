@@ -1,26 +1,27 @@
-// Das gleiche wie Cloze.svelte.ts
 import { type Quiz, POINTS } from "$components/Games/Quiz";
-import type { GameOutput } from "../MatchingGame_";
+import type { GameOutput } from ".";
 
-export type Answer = {
-    readonly answer: string;
-    readonly correct: boolean;
+export type Pair = {
+    left: string;
+    right: string;
 }
 
 export default class MatchingGame implements Quiz {
-    private readonly options: Answer[][];
-    private selected: Answer[];
+    private readonly pairs: Pair[];
+    private selected: string[];
 
-    constructor(options: Answer[][]) {
-        this.options = options;
-        this.selected = $state(Array(options.length));
+    constructor(pairs: Pair[]) {
+        this.pairs = pairs;
+        this.selected = $state(Array(pairs.length));
     }
 
-    public get Options() { return this.options; }
+    public get Pairs() { return this.pairs; }
     public get Selected() { return this.selected; }
 
     public score(): number {
-        throw new Error("Not implemented");
+        return this.selected.reduce((sum: number, sel: string, i: number) => {
+            return sum + (sel === this.pairs[i].right ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE)
+        }, 0);
     }
 
     public complete(): GameOutput {
