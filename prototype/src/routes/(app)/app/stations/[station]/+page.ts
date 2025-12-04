@@ -31,7 +31,8 @@ type _Puzzle = {
     name: string,
     score: {
         current: number,
-        max: number
+        max: number,
+        completion: number
     },
     unlocked: boolean
 }
@@ -88,7 +89,8 @@ export const load: PageLoad = async ({ params }): Promise<{ identifier: string, 
                     //completion: Number((a * 100 / element.score).toFixed(1)),
                     score: {
                         current: a,
-                        max: element.score
+                        max: element.score,
+                        completion: Number((a * 100 / element.score).toFixed(1))
                     },
                     unlocked: isUnlocked
                 }

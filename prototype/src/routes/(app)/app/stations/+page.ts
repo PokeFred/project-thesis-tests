@@ -37,7 +37,11 @@ function _getStationsScore() {}
 type _Station = {
     identifier: string,
     name: string,
-    completion: number
+    score: {
+        current: number,
+        max: number,
+        completion: number
+    }
 }
 
 function getGameCompletion(): number {
@@ -62,7 +66,11 @@ export const load: PageLoad = async (): Promise<{ completion: number, stations: 
                 return {
                     identifier: element.identifier,
                     name: element.stitle,
-                    completion: Number((getPuzzleScores(element.puzzles) * 100 / element.score).toFixed(1))
+                    score: {
+                        current: getPuzzleScores(element.puzzles),
+                        max: element.score,
+                        completion: Number((getPuzzleScores(element.puzzles) * 100 / element.score).toFixed(1))
+                    }
                 }
             })
     }

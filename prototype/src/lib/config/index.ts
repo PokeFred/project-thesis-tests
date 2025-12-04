@@ -244,7 +244,7 @@ export default {
             tag: "Station 02",
             stitle: "Westen- und Ostenhellweg",
             title: "Der Westen- und Ostenhellweg",
-            score: 2,
+            score: 1,
             chapters: [
                 {
                     title: "Kapitel 1: Der Hellweg - vom Handelsweg zur Einkaufsmeile",
@@ -280,7 +280,7 @@ export default {
                     identifier: "station_02_puzzle_00",
                     name: "Station freischalten",
                     requirements: [],
-                    score: 2,
+                    score: 1,
                     data: {
                         introduction: {
                             text: "Begebe dich zum Westen- und Ostenhellweg, um diese Station freizuschalten",

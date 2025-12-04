@@ -23,14 +23,9 @@
     </div>
     <div class="mt-2 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.stations as station}
-            <button onclick={(): Promise<void> => goto(`/app/stations/${station.identifier}`)} class="w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_50px_80px] gap-4 cursor-pointer px-6 py-2 active:scale-95">
+            <button onclick={(): Promise<void> => goto(`/app/stations/${station.identifier}`)} class="w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_60px] gap-4 cursor-pointer px-6 py-2 active:scale-95">
                 <span class="text-lg font-bold text-left">{station.name}</span>
-                <span class="text-lg font-bold text-right">{station.completion}%</span>
-                <div class="w-full h-7 flex justify-center items-center">
-                    <div class="w-full h-fit bg-primary border rounded-full p-[1px]">
-                        <div class="h-4 bg-secondary border rounded-full" style="width: {station.completion}%"></div>
-                    </div>
-                </div>
+                <span class="text-right">{station.score.current}/{station.score.max}</span>
             </button>
         {/each}
     </div>

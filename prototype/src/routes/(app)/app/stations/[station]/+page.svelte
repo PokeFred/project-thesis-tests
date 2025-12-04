@@ -20,7 +20,7 @@
         <div class="my-auto w-full h-fit bg-secondary rounded-xl p-1">
             <div class="h-4 bg-primary rounded-xl" style="width: {data.score.completion}%"></div>
         </div>
-        <div class="my-auto text-sm text-right">{data.score.current}%</div>
+        <div class="my-auto text-sm text-right">{data.score.completion}%</div>
     </div>
     <div class="mt-2 mb-8 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.puzzles as puzzle}
