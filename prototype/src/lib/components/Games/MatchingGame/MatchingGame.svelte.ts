@@ -1,6 +1,6 @@
 // Das gleiche wie Cloze.svelte.ts
 import { type Quiz, POINTS } from "$components/Games/Quiz";
-import type { GameOutput } from ".";
+import type { GameOutput } from "../MatchingGame_";
 
 export type Answer = {
     readonly answer: string;

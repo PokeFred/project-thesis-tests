@@ -14,12 +14,13 @@
     import Modal from "./ConfirmModal.svelte"
     import MultipleChoiceGame from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte";
     import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
+    import MatchingGame from "$components/Games/MatchingGame_/MatchingGameComponent.svelte";
 
     let { data }: PageProps = $props()
 
     let gps: GpsGame
     let textSelect: TextSelectGame
-    let doubleSelect: DoubleSelectGame
+    let matchingGame: MatchingGame
     let multipleChoice: MultipleChoiceGame
     let puzzleGame: PuzzleGame
 
@@ -42,8 +43,8 @@
             rdata = textSelect.getSubmitData()
         }
         if (data.puzzle.type === "double-select-puzzle") {
-            //rScore = doubleSelect.getSubmitScore()
-            rdata = doubleSelect.getSubmitData()
+            rScore = matchingGame.getSubmitScore()
+            rdata = matchingGame.getSubmitData()
         }
         if (data.puzzle.type === "multiple-choice-puzzle") {
             rScore = multipleChoice.getSubmitScore()
@@ -83,7 +84,11 @@
     {/if}
     {#if data.puzzle.type === "double-select-puzzle"}
         <DoubleSelectIntroduction data={data.introduction} />
-        <DoubleSelectGame bind:this={doubleSelect} data={data.game} setSubmitable={setSubmitable} />
+        <MatchingGame bind:this={matchingGame} gameInput={{
+            leftHeader: "Handwerk",
+            rightHeader: "Zünfte",
+            pairs: data.game.data.pairs
+            }} {setSubmitable}/>
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
