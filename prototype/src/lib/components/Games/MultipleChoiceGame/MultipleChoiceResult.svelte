@@ -2,9 +2,10 @@
     import { Icon } from "svelte-awesome";
     import { faXmark } from "@fortawesome/free-solid-svg-icons";
     import ShowMore from "$components/ShowMore.svelte";
-    import MultipleChoice, { type Answer, type Description } from "./MultipleChoice";
+    import MultipleChoice, { type Answer } from "./MultipleChoice";
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { GameOutput, Result } from ".";
+    import type { Content, Inline } from "../Content";
 
     let { result }: { result: Result } = $props();
     console.log(result)
@@ -19,8 +20,8 @@
             selected: obj.selected,
             description: [{
                 tag: "p",
-                text: "Aus config laden."
-            } as Description]
+                children: [{tag: "text", text: "Aus config laden."} as Inline]
+            } as Content]
         }
     });;    
 </script>
@@ -38,7 +39,11 @@
                     <ShowMore bind:toggle={toggles[i]}>
                             {#each result.description as description}
                                 {#if description.tag === "p"}
-                                    <p>{description.text}</p>
+                                    {#each description.children as child}
+                                        {#if child.tag === "text"}
+                                            <p>{child.text}</p>
+                                        {/if}
+                                    {/each}
                                 {:else if description.tag === "img"}
                                     <figure>
                                         <Fullscreen>

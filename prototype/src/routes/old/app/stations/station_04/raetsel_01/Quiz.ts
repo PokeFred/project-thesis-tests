@@ -1,4 +1,4 @@
-import MatchingGame from "$components/Games/Cloze/MatchingGame.svelte";
+import MatchingGame from "$components/Games/Cloze/Cloze";
 
 export const quiz: MatchingGame = new MatchingGame(
     [
