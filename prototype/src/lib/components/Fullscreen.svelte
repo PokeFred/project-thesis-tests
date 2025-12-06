@@ -44,7 +44,7 @@
     onDestroy(()=>window.removeEventListener("popstate", backButtonNavigationListener));
 </script>
 
-<div bind:this={fullscreenDiv} class="fullscreenDiv {fullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-black z-10000"></div>
+<div bind:this={fullscreenDiv} class="fullscreenDiv {fullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-primary z-10000"></div>
 
 <div bind:this={normalDiv}>
     <button bind:this={childrenButton} onclick={toggleFullscreen} class="w-full h-full object-contain">
