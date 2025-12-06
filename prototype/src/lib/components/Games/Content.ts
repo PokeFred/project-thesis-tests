@@ -1,4 +1,4 @@
-import type { Answer } from "./Cloze/Cloze"
+import type { Answer } from "./Cloze/Cloze.svelte"
 
 export type Content =  {
     readonly tag: "h2",

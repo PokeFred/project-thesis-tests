@@ -1,13 +1,27 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Cloze from "./Cloze";
+    import Cloze, { type Answer } from "./Cloze.svelte"
     import type { GameInput } from ".";
     import Fullscreen from "$components/Fullscreen.svelte";
     import Select from "$components/Select.svelte";
+    import type { Content, Inline } from "../Content";
 
     const { gameInput, setSubmitable = $bindable() }: { gameInput: GameInput, setSubmitable: () => void } = $props();
 
-    const cloze: Cloze = new Cloze(gameInput.options);
+    const options: Answer[][] = new Array<Answer[]>();
+
+    gameInput.content.forEach((content: Content) => {
+        if(content.tag === "p") {
+            content.children.forEach((inline: Inline) => {
+                if(inline.tag === "Select") {
+                    options.push(inline.options);
+                }
+            });
+        }
+    });
+
+    const cloze: Cloze = new Cloze(options);
+    let selectElementCounter: number = 0;
 
     onMount((): void => {
         setSubmitable();
@@ -32,7 +46,11 @@
                 {#if child.tag === "text"}
                     {child.text}
                 {:else if child.tag === "Select"}
-                    <p><Select options={child.options[0]}></p>
+                    {@const i: number = selectElementCounter++}
+                    <Select options={options[i].map((answer: Answer) => answer.answer)} onclick={(option: string, index: number) => {
+                            cloze.Selected[i] = options[i][index]; 
+                            console.log(cloze.Selected)
+                        }}/>
                 {/if}
             {/each}
         </p>

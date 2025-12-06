@@ -19,7 +19,9 @@ export default class Cloze implements Quiz {
     public get Selected() { return this.selected; }
 
     public score(): number {
-        throw new Error("Not implemented");
+        return this.selected.reduce((sum: number, answer: Answer, i: number) => {
+            return sum + (answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
+        }, 0);
     }
 
     public complete(): GameOutput {

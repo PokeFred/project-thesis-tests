@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
 
-    let { options, selected = $bindable() }: { options: string[]; selected: string } = $props();
+    let { options, onclick, selected = $bindable(), selectedIndex = $bindable() }: { options: string[]; onclick?: (option: string, index: number) => void; selected?: string; selectedIndex?: number } = $props();
 
     let show: boolean = $state(false);
     let selectedButton: HTMLButtonElement = $state(document.createElement("button"));
@@ -15,6 +15,8 @@
     function selectOptionOnclick(option: string, index: number): void {
         selectedButton.textContent = option;
         selected = option;
+        selectedIndex = index;
+        onclick?.(option, index);
     }
 
     function closeOptionsOnWindowClick(event: PointerEvent): void {
