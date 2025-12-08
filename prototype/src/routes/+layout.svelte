@@ -57,8 +57,8 @@
                     <button onclick={(): Promise<void> => goto("/imprint")} class="text-base text-left text-secondary cursor-pointer">Impressum</button>
                     {#if isRunning()}
                         <div class="mt-2 text-base font-bold underline text-secondary">Spiel</div>
-                        <button onclick={(): Promise<void> => goto("/app")} class="text-base text-left text-secondary cursor-pointer">Startbildschirm</button>
-                        <button onclick={(): Promise<void> => goto("/app/stations")} class="text-base text-left text-secondary cursor-pointer">Stationen</button>
+                        <button onclick={(): Promise<void> => goto("/s")} class="text-base text-left text-secondary cursor-pointer">Stationen</button>
+                        <button onclick={(): Promise<void> => goto("/p")} class="text-base text-left text-secondary cursor-pointer">Rätsel</button>
                         <button onclick={leave} class="text-base text-left text-secondary cursor-pointer">Spiel beenden</button>
                     {/if}
                 </div>
