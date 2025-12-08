@@ -14,7 +14,7 @@
         <span class="text-lg font-semibold">{data.stitle}</span>
         <BackButton url={"/s"} />
     </div>
-    <!-- TODO component ? -->
+    <!-- TODO component ? (start) -->
     <div class="mt-3 w-full h-6 grid grid-cols-[65px_auto_40px] gap-2 px-4">
         <div class="my-auto text-sm text-left"><span>Geschafft:</span></div>
         <div class="my-auto w-full h-fit bg-secondary rounded-xl p-1">
@@ -22,6 +22,7 @@
         </div>
         <div class="my-auto text-sm text-right">{data.score.completion}%</div>
     </div>
+    <!-- TODO component ? (end) -->
     <div class="mt-2 mb-8 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.puzzles as puzzle}
             <PuzzleButton puzzle={puzzle} />
