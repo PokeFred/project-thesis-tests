@@ -6,7 +6,7 @@
 
     async function confirmModal(): Promise<void> {
         startGame()
-        window.location.href = "/app"
+        window.location.href = "/s"
     }
 </script>
 
