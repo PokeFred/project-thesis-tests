@@ -47,9 +47,8 @@
                     {child.text}
                 {:else if child.tag === "Select"}
                     {@const i: number = selectElementCounter++}
-                    <Select options={options[i].map((answer: Answer) => answer.answer)} onclick={(option: string, index: number) => {
-                            cloze.Selected[i] = options[i][index]; 
-                            console.log(cloze.Selected)
+                    <Select options={cloze.Options[i].map((answer: Answer) => answer.answer)} onclick={(option: string, index: number) => {
+                            cloze.Selected[i] = cloze.Options[i][index]; 
                         }}/>
                 {/if}
             {/each}
