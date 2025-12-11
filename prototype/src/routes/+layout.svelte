@@ -8,6 +8,7 @@
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
+    import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
     import { faStar } from "@fortawesome/free-solid-svg-icons/faStar"
 
     let { children }: LayoutProps = $props()
@@ -45,10 +46,25 @@
                     </div>
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
-                    <Icon data={faBars} class="w-8 h-8" />
+                    <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                 </button>
             </div>
-            <div class="w-full {open ? "h-auto" : "h-0"} border-t border-secondary overflow-hidden">
+            <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
+                <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL ERNEUT STARTEN</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
+                </div>
+            </div>
+            <!-- <div class="w-full {open ? "h-auto" : "h-0"} border-t border-secondary overflow-hidden">
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-0 px-4 py-2">
                     <div class="text-base font-bold text-secondary underline">Links</div>
                     <button onclick={(): Promise<void> => goto("/")} class="text-base text-left text-secondary cursor-pointer">Willkommens-Seite</button>
@@ -62,7 +78,7 @@
                         <button onclick={leave} class="text-base text-left text-secondary cursor-pointer">Spiel beenden</button>
                     {/if}
                 </div>
-            </div>
+            </div> -->
         </div>
         <PageTransition>
             <div class="w-full h-auto text-secondary bg-primary p-4">
