@@ -1,7 +1,9 @@
 <script lang="ts">
     import { onDestroy } from "svelte";
+    import { Icon } from "svelte-awesome";
+    import angleDown from 'svelte-awesome/icons/angleDown';
 
-    let { options, onclick, selected = $bindable(), selectedIndex = $bindable() }: { options: string[]; onclick?: (option: string, index: number) => void; selected?: string; selectedIndex?: number } = $props();
+    let { options, onclick, selected = $bindable(), selectedIndex = $bindable(), placeholder }: { options: string[]; onclick?: (option: string, index: number) => void; selected?: string; selectedIndex?: number; placeholder?: string } = $props();
 
     let show: boolean = $state(false);
     let selectedButton: HTMLButtonElement = $state(document.createElement("button"));
@@ -13,7 +15,7 @@
     }
 
     function selectOptionOnclick(option: string, index: number): void {
-        selectedButton.textContent = option;
+        placeholder = option;
         selected = option;
         selectedIndex = index;
         onclick?.(option, index);
@@ -21,7 +23,7 @@
 
     function closeOptionsOnWindowClick(event: PointerEvent): void {
         const target = (event.target as HTMLElement);
-        if(!target.matches(".SelectComponent") || target !== selectedButton) {
+        if(!selectedButton.contains(target)) {
             show = false;
         }
     }
@@ -30,11 +32,11 @@
     onDestroy(()=>window.removeEventListener("click", closeOptionsOnWindowClick));
 </script>
 
-<div class="relative inline-block" style:width={`${width}px`}>
-    <button bind:this={selectedButton} onclick={showMenu} class="SelectComponent cursor-pointer w-full min-h-5 border-1 border-secondary rounded" style:width={`${width}px`}><span class="invisible">A</span></button>
-    <div bind:this={optionMenu} class="absolute block max-h-30 overflow-y-scroll  {show ? "visible" : "invisible"} bg-white rounded shadow-xl z-10" >
+<div class="relative inline-block w-full h-full">
+    <button bind:this={selectedButton} onclick={showMenu} class="SelectComponent flex justify-between items-center w-full h-full pl-3 pr-5 cursor-pointer"><span class="{selectedIndex !== undefined ? "" :"text-secondary/50"}">{placeholder}</span><Icon data={angleDown} scale={2}/></button>
+    <div bind:this={optionMenu} class="absolute block w-full {show ? "visible" : "invisible"} bg-secondary z-10" >
         {#each options as option, i }
-            <button onclick={()=>selectOptionOnclick(option, i)} class="block w-full cursor-pointer hover:bg-blue-500 hover:text-white" >{option}</button>
+            <button onclick={()=>selectOptionOnclick(option, i)} class="block w-full cursor-pointer text-primary font-medium" ><div class="mx-4 py-2.5 pl-1 text-left border-t-primary {i > 0 ? "border-t-2" : ""}">{option}</div></button>
         {/each}
     </div>
 </div>

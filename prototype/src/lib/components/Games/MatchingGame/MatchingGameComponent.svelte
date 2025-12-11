@@ -17,14 +17,19 @@
     export const getSubmitScore = matchingGame.score.bind(matchingGame);
 </script>
 
-<div class="grid grid-cols-2 gap-2 px-1">
-    <h4>{gameInput.leftHeader}</h4>
-    <h4 class="justify-self-end">{gameInput.rightHeader}</h4>
-
-    {#each matchingGame.Pairs as pair, i}
-        <span class="border-1 rounded">{pair.left}</span>
-        <div class="justify-self-end">
-            <Select {options} bind:selected={matchingGame.Selected[i]}/>
-        </div>
-    {/each}
-</div>
+<table class="w-full table-fixed border-collapse border-secondary text-left">
+    <thead class="font-bold">
+        <tr>
+            <th class="border-r pl-3 py-2.5">{gameInput.leftHeader}</th>
+            <th class="border-l pl-3 py-2.5">{gameInput.rightHeader}</th>
+        </tr>
+    </thead>
+    <tbody class="font-medium">
+        {#each matchingGame.Pairs as pair, i}
+            <tr class="border-t-2 border-b-2 h-20">
+                <td class="border-r h-20 pl-3">{pair.left}</td>
+                <td class="border-l h-20"><Select {options} bind:selected={matchingGame.Selected[i]} placeholder="Wähle eine Zunft"/></td>
+            </tr>
+        {/each}
+    </tbody>
+</table>
