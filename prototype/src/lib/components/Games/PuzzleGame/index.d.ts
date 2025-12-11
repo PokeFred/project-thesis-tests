@@ -13,5 +13,7 @@ export type GameOutput = {
 }
 
 export type Result = {
+    path: string,
+    alt: string,
     placed: Piece[]
 }

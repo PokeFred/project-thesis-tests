@@ -21,7 +21,7 @@
             </tr>   
             <tr class="w-200px">
                 <td colspan="2">
-                    <div class="relative flex justify-between bg-secondary text-primary font-bold h-7.5 mb-3.5 -mx-4 px-8">
+                    <div class="relative flex justify-between items-center bg-secondary text-primary font-bold h-7.5 mb-3.5 -mx-4 px-8">
                         <div>Du hast {correct ? "RICHTIG" : "FALSCH"} getippt</div>
                         <div>{correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE}/{POINTS.ANSWER_CORRECT}</div>
                     </div>

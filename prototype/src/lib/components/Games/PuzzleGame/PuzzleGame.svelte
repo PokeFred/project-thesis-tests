@@ -45,6 +45,6 @@
 </script>
 
 <!-- <div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div> -->
-<div class="border-2">
+<div class="-m-4">
     <div bind:this={container} class="w-full h-[80vh]"></div>
 </div>
