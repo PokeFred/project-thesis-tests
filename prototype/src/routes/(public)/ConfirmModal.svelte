@@ -1,5 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte"
+    import Icon from "svelte-awesome"
+    import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
 
     let { children, onConfirm }: { children: Snippet, onConfirm: () => void } = $props()
 
@@ -21,14 +23,17 @@
     }
 </script>
 
-<dialog bind:this={dialog} class="mt-4 mx-auto w-full max-w-md h-fit border border-black rounded-xl backdrop:bg-slate-900/50 backdrop:backdrop-blur-sm">
+<dialog bind:this={dialog} class="mt-4 mx-auto w-full max-w-md h-fit bg-primary border-2 border-secondary rounded-xl backdrop:secondary/50 backdrop:backdrop-blur-sm">
     <div class="w-full h-auto grid grid-cols-1 gap-4 p-4">
-        <div class="mt-2 w-full h-auto text-left px-4">
+        <button onclick={closeModal} class="ml-auto w-10 h-10 text-primary bg-secondary rounded-full flex justify-center items-center cursor-pointer active:scale-95">
+            <Icon data={faXmark} class="w-6 h-6" />
+        </button>
+        <div class="mt-2 w-full h-auto text-left text-secondary grid grid-cols-1 gap-2 px-4">
             {@render children?.()}
         </div>
-        <div class="mx-auto w-full max-w-xs h-auto text-center grid grid-cols-2 gap-4">
-            <button onclick={closeModal} class="w-full h-auto text-xl text-white text-center bg-red-600 rounded-xl cursor-pointer">Abbrechen</button>
-            <button onclick={handleConfirm} class="w-full h-auto text-xl text-white bg-green-600 rounded-xl cursor-pointer">Starten</button>
+        <div class="w-full h-auto grid grid-cols-1 gap-4">
+            <button onclick={handleConfirm} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Speichern erlauben</button>
+            <button class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Datenschutz</button>
         </div>
     </div>
 </dialog>
