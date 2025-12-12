@@ -29,8 +29,8 @@
 </script>
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
-    <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary">
-        <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary">
+    <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
+        <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if isRunning()}
@@ -85,32 +85,22 @@
             </div> -->
         </div>
         <PageTransition>
-            <div class="w-full h-auto text-secondary bg-primary p-4">
-                {@render children()}
-                <hr class="mt-3" />
-                <div class="mt-3 w-full h-auto grid grid-cols-2 gap-2 items-start">
-                    <div class="mx-auto w-fit h-auto grid grid-cols-1">
-                        <div class="text-base font-bold underline text-center">Hilfe</div>
-                        <button onclick={(): Promise<void> => goto("/faq")} class="w-full h-auto text-sm text-center cursor-pointer">FAQ</button>
-                        <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-sm text-center cursor-pointer">Anleitung</button>
-                    </div>
-                    <div class="mx-auto w-fit h-auto grid grid-cols-1">
-                        <div class="text-base font-bold underline text-center">Informationen</div>
-                        <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-sm text-center cursor-pointer">Datenschutz</button>
-                        <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-sm text-center cursor-pointer">Impressum</button>
-                        <button onclick={(): Promise<void> => goto("/legal")} class="w-full h-auto text-sm text-center cursor-pointer">Rechtliches</button>
-                    </div>
+            <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
+                <div class="w-full h-full text-primary bg-secondary p-4 {open ? "hidden" : ""}">
+                    {@render children()}
                 </div>
-            </div>
-            <div class="w-full h-auto text-secondary bg-primary p-4">
-                <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
-                    <div class="w-full h-auto text-sm font-semibold text-left">Impressum</div>
-                    <div class="w-full h-auto text-sm font-semibold text-right">Datenschutz</div>
-                </div>
-                <hr />
-                <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
-                    <div class="w-full h-auto text-sm font-semibold text-left">Version: v0.0.1</div>
-                    <div class="w-full h-auto text-sm font-semibold text-right">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
+                <div class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-4 py-2">
+                    <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
+                        <div class="w-full h-auto text-base font-semibold text-left">Impressum</div>
+                        <div class="w-full h-auto text-base font-semibold text-right">Datenschutz</div>
+                    </div>
+                    <!--
+                    <hr />
+                    <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
+                        <div class="w-full h-auto text-sm font-semibold text-left">Version: v0.0.1</div>
+                        <div class="w-full h-auto text-sm font-semibold text-right">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
+                    </div>
+                    -->
                 </div>
             </div>
         </PageTransition>

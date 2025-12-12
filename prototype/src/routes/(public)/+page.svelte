@@ -14,7 +14,7 @@
     <div class="text-center">Akzeptieren und starten...</div>
 </Modal>
 
-<div class="w-full h-auto text-secondary">
+<div class="w-full h-auto text-primary">
     <img src="https://placehold.co/600x400.png" alt="" class="w-full h-auto rounded-xl" />
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-xl text-primary bg-secondary rounded-xl cursor-pointer px-8 active:scale-95">Spiel starten</button>
