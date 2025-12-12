@@ -51,6 +51,10 @@
             </div>
             <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
+                    <hr class="border-1">
+                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">"Rätsel"</button>
+                    <hr class="border-1">
                     <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
                     <hr class="border-1">
                     <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
@@ -97,8 +101,17 @@
                         <button onclick={(): Promise<void> => goto("/legal")} class="w-full h-auto text-sm text-center cursor-pointer">Rechtliches</button>
                     </div>
                 </div>
-                <hr class="mt-3" />
-                <div class="mt-1 w-full h-auto text-sm font-semibold text-right text-secondary">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
+            </div>
+            <div class="w-full h-auto text-secondary bg-primary p-4">
+                <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
+                    <div class="w-full h-auto text-sm font-semibold text-left">Impressum</div>
+                    <div class="w-full h-auto text-sm font-semibold text-right">Datenschutz</div>
+                </div>
+                <hr />
+                <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
+                    <div class="w-full h-auto text-sm font-semibold text-left">Version: v0.0.1</div>
+                    <div class="w-full h-auto text-sm font-semibold text-right">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
+                </div>
             </div>
         </PageTransition>
     </div>
