@@ -65,7 +65,9 @@ export default class Puzzle implements Quiz {
     public get Pieces() { return this.pieces; }
 
     public score(): number {
-        throw new Error("Not implemented");
+        return this.slots.reduce((sum: number, slot: Slot) => {
+            return sum + (slot.Selected?.Correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
+        }, 0);
     }
 
     public complete(): GameOutput {
