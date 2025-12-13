@@ -32,7 +32,7 @@ function getPuzzles(station: Station): _Puzzle[] {
                 id: element.id,
                 title: element.title,
                 score: toScore(current, element.score),
-                locked: true
+                locked: false
             }
         })
 }
