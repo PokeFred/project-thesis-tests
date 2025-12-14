@@ -93,6 +93,13 @@ export function getScore(): number {
     return newState.score
 }
 
+export function getPuzzleScore(id: number): number {
+    const arr: PuzzleState[] = newState.puzzles
+        .filter((element: PuzzleState): boolean => element.id === id)
+
+    return (arr.length > 0) ? arr[0].score : 0
+}
+
 //function getCompletion(): number {}
 
 export function add(puzzle: PuzzleState): void {

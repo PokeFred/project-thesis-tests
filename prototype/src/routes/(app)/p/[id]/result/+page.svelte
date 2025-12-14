@@ -4,6 +4,8 @@
     import ScrollButton from "../../../s/ScrollButton.svelte"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsResult from "$components/puzzle/gps/result.svelte"
+    import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
+    import MultipleChoiceResult from "$components/puzzle/multipleChoice/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -20,6 +22,10 @@
     {#if data.puzzle.type === "gps-puzzle"}
         <GpsIntroduction data={data.introduction} />
         <GpsResult data={data.result} />
+    {/if}
+    {#if data.puzzle.type === "multiple-choice-puzzle"}
+        <MultipleChoiceIntroduction data={data.introduction} />
+        <MultipleChoiceResult data={data.result} />
     {/if}
     <ScrollButton />
 </div>

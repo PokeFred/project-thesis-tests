@@ -3,13 +3,25 @@
     import BackButton from "../../s/BackButton.svelte"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsGame from "$components/puzzle/gps/game.svelte"
+    import TextSelectIntroduction from "$components/puzzle/textSelect/introduction.svelte"
+    import TextSelectGame from "$components/puzzle/textSelect/game.svelte"
+    import MatchingGameIntroduction from "$components/puzzle/matchingGame/introduction.svelte"
+    import MatchingGameGame from "$components/puzzle/matchingGame/game.svelte"
+    import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
+    import MultipleChoiceGame from "$components/puzzle/multipleChoice/game.svelte"
     import Modal from "./ConfirmModal.svelte"
     import { add } from "$stores"
     import { goto } from "$app/navigation"
+    import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
+    import DragDropGame from "$components/puzzle/dragDrop/game.svelte"
 
     let { data }: PageProps = $props()
 
     let gps: GpsGame
+    let textSelect: TextSelectGame
+    let matchingGame: MatchingGameGame
+    let multipleChoice: MultipleChoiceGame
+    let dragDrop: DragDropGame
 
     let submitable: boolean = $state<boolean>(false)
     function setSubmitable(): void {
@@ -25,9 +37,25 @@
             rScore = gps.getSubmitScore()
             rdata = gps.getSubmitData()
         }
+        if (data.puzzle.type === "text-select-puzzle") {
+            rScore = textSelect.getSubmitScore()
+            rdata = textSelect.getSubmitData()
+        }
+        if (data.puzzle.type === "matching-game-puzzle") {
+            // rScore = matchingGame.getSubmitScore()
+            // rdata = matchingGame.getSubmitData()
+        }
+        if (data.puzzle.type === "multiple-choice-puzzle") {
+            rScore = multipleChoice.getSubmitScore()
+            rdata = multipleChoice.getSubmitData()
+        }
+        if (data.puzzle.type === "drag-drop-puzzle") {
+            rScore = dragDrop.getSubmitScore()
+            rdata = dragDrop.getSubmitData()
+        }
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
-        goto(`/p/${data.station.id}/result`)
+        goto(`/p/${data.puzzle.id}/result`)
     }
 </script>
 
@@ -45,6 +73,22 @@
     {#if data.puzzle.type === "gps-puzzle"}
         <GpsIntroduction data={data.introduction} />
         <GpsGame bind:this={gps} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "text-select-puzzle"}
+        <TextSelectIntroduction data={data.introduction} />
+        <TextSelectGame bind:this={textSelect} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "matching-game-puzzle"}
+        <MatchingGameIntroduction data={data.introduction} />
+        <!-- <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} /> -->
+    {/if}
+    {#if data.puzzle.type === "multiple-choice-puzzle"}
+        <MultipleChoiceIntroduction data={data.introduction} />
+        <MultipleChoiceGame bind:this={multipleChoice} gameInput={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "drag-drop-puzzle"}
+        <DragDropIntroduction data={data.introduction} />
+        <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-3 mx-auto w-fit h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto text-primary bg-secondary rounded-xl px-16 py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnisse anzeigen</button>

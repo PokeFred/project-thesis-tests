@@ -4,6 +4,7 @@ import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
 import type { _Puzzle } from "."
+import { getPuzzleScore } from "$stores"
 
 type Score = {
     current: number,
@@ -25,20 +26,19 @@ function getPuzzles(station: Station): _Puzzle[] {
     return Puzzles
         .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
         .map((element: Puzzle): _Puzzle => {
-            // TODO fetch current score (puzzle)
-            const current: number = 0
-            const isLocked: boolean = element.requirements.length > 0
+            const current: number = getPuzzleScore(element.id)
+            const isLocked: boolean = element.requirements
+                .map((element: number): number => {
+                    const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
+                    console.log(element)
+                    console.log(puzzle)
 
-            console.log(
-                element.requirements
-                    .map((element: number): number => {
-                        const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
-                        console.log(element)
-                        console.log(puzzle)
-
-                        return element
-                    })
-            )
+                    return element
+                })
+                .map((element: number): number => getPuzzleScore(element))
+                .map((element: number): boolean => element > 0)
+                .filter((element: boolean): boolean => !element)
+                .length > 0
 
             return {
                 id: element.id,
