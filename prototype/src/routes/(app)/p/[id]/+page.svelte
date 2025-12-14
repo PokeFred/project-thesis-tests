@@ -14,6 +14,7 @@
     import { goto } from "$app/navigation"
     import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
     import DragDropGame from "$components/puzzle/dragDrop/game.svelte"
+    import ScrollButton from "../../s/ScrollButton.svelte";
 
     let { data }: PageProps = $props()
 
@@ -98,4 +99,5 @@
     <div class="mt-8 mx-auto w-full h-auto">
         <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnis anzeigen</button>
     </div>
+    <ScrollButton />
 </div>
