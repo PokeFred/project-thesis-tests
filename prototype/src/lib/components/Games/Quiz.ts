@@ -5,7 +5,7 @@ import type { GameOutput as GameOutputC } from "$components/Games/Cloze"
 import type { GameOutput as GameOutputWG } from "$components/Games/WordGuessingGame"
 
 export const enum POINTS {
-    ANSWER_CORRECT = 3,
+    ANSWER_CORRECT = 1,
     ANSWER_FALSE = 0,
     NOT_ANSWERED = 0
 }
