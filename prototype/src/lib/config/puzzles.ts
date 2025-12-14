@@ -129,37 +129,6 @@ const puzzles: Puzzle[] = [
         }
     },
     {
-        id: 18,
-        type: "drag-drop-puzzle",
-        title: "Rätsel 8",
-        requirements: [10],
-        score: 2,
-        data: {
-            introduction: {
-                title: "",
-                description: []
-            },
-            game: {
-                path: "/station_04/raetsel_00/game"
-            },
-            result: {}
-        }
-    },
-    {
-        id: 19,
-        type: "text-select-puzzle",
-        title: "Rätsel 9",
-        requirements: [10],
-        score: 2,
-        data: {
-            introduction: {
-                text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
-            },
-            game: {},
-            result: {}
-        }
-    },
-    {
         id: 20,
         type: "gps-puzzle",
         title: "Station freischalten",
@@ -187,6 +156,37 @@ const puzzles: Puzzle[] = [
             result: {
                 text: "Neue Message ?"
             }
+        }
+    },
+    {
+        id: 28,
+        type: "drag-drop-puzzle",
+        title: "Rätsel 8",
+        requirements: [20],
+        score: 2,
+        data: {
+            introduction: {
+                title: "",
+                description: []
+            },
+            game: {
+                path: "/station_04/raetsel_00/game"
+            },
+            result: {}
+        }
+    },
+    {
+        id: 29,
+        type: "text-select-puzzle",
+        title: "Rätsel 9",
+        requirements: [20],
+        score: 2,
+        data: {
+            introduction: {
+                text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+            },
+            game: {},
+            result: {}
         }
     }
 ]

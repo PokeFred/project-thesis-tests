@@ -96,7 +96,7 @@ const stations: Station[] = [
                     ]
                 }
             ],
-        puzzles: [10, 11, 12, 13] // 18, 19
+        puzzles: [10, 11, 12, 13]
     },
     {
         id: 2,
@@ -133,7 +133,7 @@ const stations: Station[] = [
                     ]
                 }
             ],
-        puzzles: [20]
+        puzzles: [20, 28, 29]
     }
 ]
 
