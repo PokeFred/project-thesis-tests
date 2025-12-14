@@ -74,7 +74,7 @@
         <span class="text-lg font-semibold">{data.station.title}</span>
         <BackButton url={`/s/${data.station.id}`} />
     </div>
-    <div class="my-4 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_52px] gap-4 px-6 py-2">
+    <div class="mt-7 mb-10 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_52px] gap-4 px-6 py-2">
         <span class="text-lg font-bold text-left">{data.puzzle.title}</span>
         <span class="text-lg font-bold text-right"><span>{data.puzzle.score.current}/{data.puzzle.score.max}</span></span>
     </div>
