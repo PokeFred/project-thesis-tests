@@ -4,6 +4,7 @@ import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"
+import { getGame, getPuzzleScore } from "$stores"
 
 type Score = {
     current: number,
@@ -22,10 +23,12 @@ function toScore(current: number, max: number): Score {
 }
 
 function getStationScore(station: Station): Score {
-    // TODO fetch current score (game)
-    const current: number = 0
-    // TODO fetch max score (game)
-    const max: number = 0
+    const current: number = station.puzzles
+        .map((element: number): number => getPuzzleScore(element))
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
+    const max: number = station.puzzles
+        .map((element: number): number => Puzzles.filter((e): boolean => e.id === element)[0].score)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
 
     return toScore(current, max)
 }
@@ -53,8 +56,7 @@ function getStationPuzzles(station: Station): _Puzzle[] {
     return Puzzles
         .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
         .map((element: Puzzle): _Puzzle => {
-            // TODO fetch current score (puzzle)
-            const current: number = 0
+            const current: number = getPuzzleScore(element.id)
 
             return {
                 id: element.id,
