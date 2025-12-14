@@ -33,8 +33,7 @@
             {@render children?.()}
         </div>
         <div class="w-full h-auto grid grid-cols-1 gap-4">
-            <button onclick={handleConfirm} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Speichern erlauben</button>
-            <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Datenschutz</button>
+            <button onclick={handleConfirm} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Spiel erneut starten</button>
         </div>
     </div>
 </dialog>

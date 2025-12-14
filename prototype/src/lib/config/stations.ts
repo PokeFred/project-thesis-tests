@@ -23,7 +23,7 @@ const stations: Station[] = [
         tag: "Station 01",
         stitle: "Alter Markt",
         title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-        score: 1,
+        score: 21,
         chapters: [
                 // {
                 //     title: "",

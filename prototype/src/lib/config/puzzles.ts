@@ -59,7 +59,7 @@ const puzzles: Puzzle[] = [
         type: "multiple-choice-puzzle",
         title: "Rätsel 1",
         requirements: [10],
-        score: 2,
+        score: 8,
         data: {
             introduction: {
                 text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
@@ -84,7 +84,7 @@ const puzzles: Puzzle[] = [
         type: "matching-game-puzzle",
         title: "Rätsel 2",
         requirements: [10],
-        score: 2,
+        score: 7,
         data: {
             introduction: {
                 text: ["Ordne den Zünften das richtige Handwerk zu."]
@@ -116,7 +116,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 3",
         requirements: [10],
-        score: 2,
+        score: 5,
         data: {
             introduction: {
                 title: "Der heilige Reinholds ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
