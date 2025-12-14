@@ -52,7 +52,7 @@
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
-                {#if isRunning()}
+                <!-- {#if isRunning()}
                     <div class="w-auto h-auto flex justify-center items-center">
                         <span class="text-xl font-bold">{getScore()}</span>
                         <div class="ml-2 w-auto h-auto border-2 border-secondary rounded-lg  p-1">
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                {/if}
+                {/if} -->
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                     <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                 </button>
