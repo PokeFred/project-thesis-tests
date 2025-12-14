@@ -23,7 +23,7 @@ const stations: Station[] = [
         tag: "Station 01",
         stitle: "Alter Markt",
         title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-        score: 1,
+        score: 21,
         chapters: [
                 // {
                 //     title: "",
@@ -96,7 +96,7 @@ const stations: Station[] = [
                     ]
                 }
             ],
-        puzzles: [10, 11, 12, 13] // 18, 19
+        puzzles: [10, 11, 12, 13]
     },
     {
         id: 2,
@@ -133,7 +133,7 @@ const stations: Station[] = [
                     ]
                 }
             ],
-        puzzles: [20]
+        puzzles: [20, 28, 29]
     }
 ]
 

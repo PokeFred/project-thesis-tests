@@ -4,12 +4,15 @@
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import type { AfterNavigate } from "@sveltejs/kit"
-    import { getScore, isRunning, stopGame } from "$stores"
+    import { getScore, isRunning, restartGame, stopGame } from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
     import { faStar } from "@fortawesome/free-solid-svg-icons/faStar"
+    import { page } from "$app/state"
+  import RestartModal from "./RestartModal.svelte";
+  import StopModal from "./StopModal.svelte";
 
     let { children }: LayoutProps = $props()
 
@@ -22,23 +25,34 @@
         open = false
     })
 
+    let restartModal: RestartModal
+    let stopModal: StopModal
+
     function restart(): void {
-        restart()
-        goto("/")
+        restartGame()
+        window.location.href = "/s"
     }
 
     function stop(): void {
         stopGame()
-        goto("/")
+        window.location.href = "/"
     }
 </script>
+
+<RestartModal bind:this={restartModal} onConfirm={restart}>
+    <div>Wenn du das Spiel erneut starten willst, verlierst du deinen Punktestand und alle deine Erfolge werden gelöscht.</div>
+</RestartModal>
+
+<StopModal bind:this={stopModal} onConfirm={stop}>
+    <div>Wenn du das Spiel beendest, verlierst du deinen Punktestand und alle deine Erfolge werden gelöscht.</div>
+</StopModal>
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
-                {#if isRunning()}
+                <!-- {#if isRunning()}
                     <div class="w-auto h-auto flex justify-center items-center">
                         <span class="text-xl font-bold">{getScore()}</span>
                         <div class="ml-2 w-auto h-auto border-2 border-secondary rounded-lg  p-1">
@@ -49,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                {/if}
+                {/if} -->
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                     <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                 </button>
@@ -57,7 +71,7 @@
             <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
                     {#if isRunning()}
-                        <button onclick={(): Promise<void> => goto("/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">STATIONEN</button>
+                        <button onclick={(): Promise<void> => goto("/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
                         <hr class="border-1">
                         <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">"Rätsel"</button>
                         <hr class="border-1">
@@ -67,9 +81,9 @@
                     <button onclick={(): Promise<void> => goto("/infos")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
                     <hr class="border-1">
                     {#if isRunning()}
-                        <button onclick={restart} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL ERNEUT STARTEN</button>
+                        <button onclick={(): void => restartModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL ERNEUT STARTEN</button>
                         <hr class="border-1">
-                        <button onclick={stop} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL BEENDEN</button>
+                        <button onclick={(): void => stopModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
                         <hr class="border-1">
                     {/if}
                     <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
@@ -80,7 +94,7 @@
         </div>
         <PageTransition>
             <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
-                <div class="w-full h-full text-secondary bg-primary p-4 {open ? "hidden" : ""}">
+                <div class="w-full h-full {(new RegExp("\/(s|p)+\/[0-9]+[0-9]*\/")).test(page.url.pathname) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
                     {@render children()}
                 </div>
                 <div class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">

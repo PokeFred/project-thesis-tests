@@ -59,7 +59,7 @@ const puzzles: Puzzle[] = [
         type: "multiple-choice-puzzle",
         title: "Rätsel 1",
         requirements: [10],
-        score: 2,
+        score: 8,
         data: {
             introduction: {
                 text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
@@ -84,7 +84,7 @@ const puzzles: Puzzle[] = [
         type: "matching-game-puzzle",
         title: "Rätsel 2",
         requirements: [10],
-        score: 2,
+        score: 7,
         data: {
             introduction: {
                 text: ["Ordne den Zünften das richtige Handwerk zu."]
@@ -116,7 +116,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 3",
         requirements: [10],
-        score: 2,
+        score: 5,
         data: {
             introduction: {
                 title: "Der heilige Reinholds ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
@@ -125,37 +125,6 @@ const puzzles: Puzzle[] = [
             game: {
                 path: "/station_01/raetsel_02/game"
             },
-            result: {}
-        }
-    },
-    {
-        id: 18,
-        type: "drag-drop-puzzle",
-        title: "Rätsel 8",
-        requirements: [10],
-        score: 2,
-        data: {
-            introduction: {
-                title: "",
-                description: []
-            },
-            game: {
-                path: "/station_04/raetsel_00/game"
-            },
-            result: {}
-        }
-    },
-    {
-        id: 19,
-        type: "text-select-puzzle",
-        title: "Rätsel 9",
-        requirements: [10],
-        score: 2,
-        data: {
-            introduction: {
-                text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
-            },
-            game: {},
             result: {}
         }
     },
@@ -187,6 +156,37 @@ const puzzles: Puzzle[] = [
             result: {
                 text: "Neue Message ?"
             }
+        }
+    },
+    {
+        id: 28,
+        type: "drag-drop-puzzle",
+        title: "Rätsel 8",
+        requirements: [20],
+        score: 2,
+        data: {
+            introduction: {
+                title: "",
+                description: []
+            },
+            game: {
+                path: "/station_04/raetsel_00/game"
+            },
+            result: {}
+        }
+    },
+    {
+        id: 29,
+        type: "text-select-puzzle",
+        title: "Rätsel 9",
+        requirements: [20],
+        score: 2,
+        data: {
+            introduction: {
+                text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+            },
+            game: {},
+            result: {}
         }
     }
 ]
