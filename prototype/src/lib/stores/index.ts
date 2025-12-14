@@ -8,9 +8,8 @@ type GameState = {
 }
 
 type PuzzleState = {
-    identifier: string,
+    id: number,
     score: number,
-    state: string,
     data: any
 }
 
@@ -76,7 +75,12 @@ export function startGame(): void {
     localStorage.setItem("game", JSON.stringify(newState))
 }
 
-export function resetGame(): void {
+export function restartGame(): void {
+    stopGame()
+    startGame()
+}
+
+export function stopGame(): void {
     newState = { isRunning: false, score: 0, puzzles: [] }
     localStorage.setItem("game", JSON.stringify(newState))
 }

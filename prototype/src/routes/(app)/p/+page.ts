@@ -27,12 +27,24 @@ function getPuzzles(station: Station): _Puzzle[] {
         .map((element: Puzzle): _Puzzle => {
             // TODO fetch current score (puzzle)
             const current: number = 0
+            const isLocked: boolean = element.requirements.length > 0
+
+            console.log(
+                element.requirements
+                    .map((element: number): number => {
+                        const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
+                        console.log(element)
+                        console.log(puzzle)
+
+                        return element
+                    })
+            )
 
             return {
                 id: element.id,
                 title: element.title,
                 score: toScore(current, element.score),
-                locked: false
+                locked: isLocked
             }
         })
 }
