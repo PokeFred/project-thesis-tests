@@ -55,3 +55,6 @@ export const load: PageLoad = async ({ params }): Promise<{ station: _Station, p
         game: puzzle.data.game
     }
 }
+
+export const prerender: "auto" | boolean = false
+export const ssr: boolean = false

@@ -20,9 +20,13 @@
 
     let { data }: PageProps = $props()
 
+    // svelte-ignore non_reactive_update
     let gps: GpsGame
+    // svelte-ignore non_reactive_update
     let textSelect: TextSelectGame
+    // svelte-ignore non_reactive_update
     let matchingGame: MatchingGame
+    // svelte-ignore non_reactive_update
     let multipleChoice: MultipleChoiceGame
 
     let submitable: boolean = $state<boolean>(false)
