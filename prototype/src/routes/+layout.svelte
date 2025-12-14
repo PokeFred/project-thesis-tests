@@ -4,7 +4,7 @@
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import type { AfterNavigate } from "@sveltejs/kit"
-    import { getScore, isRunning, resetGame } from "$stores"
+    import { getScore, isRunning, stopGame } from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
@@ -22,8 +22,13 @@
         open = false
     })
 
-    function leave(): void {
-        resetGame()
+    function restart(): void {
+        restart()
+        goto("/")
+    }
+
+    function stop(): void {
+        stopGame()
         goto("/")
     }
 </script>
@@ -51,18 +56,22 @@
             </div>
             <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
-                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">STATIONEN</button>
-                    <hr class="border-1">
-                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">"Rätsel"</button>
-                    <hr class="border-1">
+                    {#if isRunning()}
+                        <button onclick={(): Promise<void> => goto("/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">STATIONEN</button>
+                        <hr class="border-1">
+                        <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">"Rätsel"</button>
+                        <hr class="border-1">
+                    {/if}
                     <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
                     <hr class="border-1">
                     <button onclick={(): Promise<void> => goto("/infos")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
                     <hr class="border-1">
-                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL ERNEUT STARTEN</button>
-                    <hr class="border-1">
-                    <button onclick={(): Promise<void> => goto("/")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL BEENDEN</button>
-                    <hr class="border-1">
+                    {#if isRunning()}
+                        <button onclick={restart} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL ERNEUT STARTEN</button>
+                        <hr class="border-1">
+                        <button onclick={stop} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">SPIEL BEENDEN</button>
+                        <hr class="border-1">
+                    {/if}
                     <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
                     <hr class="border-1">
                     <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
@@ -71,13 +80,13 @@
         </div>
         <PageTransition>
             <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
-                <div class="w-full h-full text-primary bg-secondary p-4 {open ? "hidden" : ""}">
+                <div class="w-full h-full text-secondary bg-primary p-4 {open ? "hidden" : ""}">
                     {@render children()}
                 </div>
-                <div class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-4">
+                <div class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">
                     <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
-                        <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-base font-semibold text-left cursor-pointer px-2 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
-                        <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-base font-semibold text-right cursor-pointer px-2 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
+                        <button onclick={(): Promise<void> => goto("/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
+                        <button onclick={(): Promise<void> => goto("/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
                     </div>
                     <!--
                     <hr />

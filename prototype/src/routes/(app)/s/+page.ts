@@ -2,6 +2,7 @@ import type { PageLoad } from "./$types"
 import Stations from "$config/stations"
 import type { Station } from "$config/stations"
 import type { Station as _Station } from "."
+import { getGame, getPuzzleScore } from "$stores"
 
 type Score = {
     current: number,
@@ -20,8 +21,9 @@ function toScore(current: number, max: number): Score {
 }
 
 function getGameScore(): Score {
-    // TODO fetch current score (game)
-    const current: number = 0
+    const current: number = getGame().puzzles
+        .map((e: any): number => e.score)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
     const max: number = Stations
         .map((element: Station): number => element.score)
         .reduce((pre: number, cur: number): number => pre += cur, 0)
@@ -31,8 +33,9 @@ function getGameScore(): Score {
 
 function getStations(): _Station[] {
     return Stations.map((element: Station): _Station => {
-        // TODO fetch current score (station)
-        const score: number = 0
+        const score: number = element.puzzles
+            .map((e: number): number => getPuzzleScore(e))
+            .reduce((pre: number, cur: number): number => pre += cur, 0)
 
         return {
             id: element.id,

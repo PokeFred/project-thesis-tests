@@ -3,14 +3,13 @@
     import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
     import type { GameInput } from ".";
 
-    const { gameInput, setSubmitable = $bindable() }: { gameInput: GameInput, setSubmitable: () => void } = $props();   
+    const { gameInput }: { gameInput: GameInput } = $props();   
 
     const path: string = gameInput.path;
     
     let container: HTMLDivElement;
     let puzzleController: PuzzleController;
-    onMount(async ()=>{       
-        setSubmitable(); 
+    onMount(async ()=>{
 
         const puzzleData: PuzzleData = await (await fetch(`${path}/cutouts.json`)).json();
         const background: HTMLImageElement = await loadImage(path + "/Background.png");

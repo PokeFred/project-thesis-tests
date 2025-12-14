@@ -1,8 +1,9 @@
 <script lang="ts">
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
-    import type { Result } from "./"
+    import type { Result } from "."
 
     let { data }: { data: Result } = $props()
+    console.log(data)
 </script>
 
 

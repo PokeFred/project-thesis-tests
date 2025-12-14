@@ -21,7 +21,7 @@
     });
 
     const cloze: Cloze = new Cloze(options);
-    let selectElementCounter: number = 0;
+    let selectElementCounter: number = $state(0);
 
     onMount((): void => {
         setSubmitable();

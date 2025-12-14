@@ -5,8 +5,8 @@
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsResult from "$components/puzzle/gps/result.svelte"
-    import DoubleSelectIntroduction from "$components/puzzle/doubleSelect/introduction.svelte"
-    import DoubleSelectResult from "$components/puzzle/doubleSelect/result.svelte"
+    import DoubleSelectIntroduction from "$components/puzzle/matchingGame/introduction.svelte"
+    import DoubleSelectResult from "$components/puzzle/matchingGame/result.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
     
