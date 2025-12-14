@@ -3,7 +3,10 @@ export type Introduction = {
 }
 
 export type GameInput = {
-    informations: string[],
+    header: {
+        left: string,
+        right: string
+    },
     data: {
         left: string[],
         right: string[],
@@ -14,3 +17,5 @@ export type GameInput = {
 export type GameOutput = {}
 
 export type Result = {}
+
+export type Saving = {}

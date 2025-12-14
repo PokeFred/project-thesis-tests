@@ -93,6 +93,12 @@ export function getScore(): number {
     return newState.score
 }
 
+export function getPuzzle(id: number): PuzzleState {
+    return newState.puzzles
+        .filter((element: PuzzleState): boolean => element.id === id)
+        [0]
+}
+
 export function getPuzzleScore(id: number): number {
     const arr: PuzzleState[] = newState.puzzles
         .filter((element: PuzzleState): boolean => element.id === id)

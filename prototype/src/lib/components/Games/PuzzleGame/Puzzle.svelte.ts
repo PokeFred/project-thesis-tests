@@ -71,8 +71,12 @@ export default class Puzzle implements Quiz {
     }
 
     public complete(): GameOutput {
-        return { placed: this.slots.map((slot: Slot) => {
+        const placed: any[] = this.slots.map((slot: Slot) => {
             return slot.Selected
-        })} satisfies GameOutput;
+        })
+
+        return {
+            placed: placed.map((e: any): any => JSON.stringify(e))
+        }
     }
 }

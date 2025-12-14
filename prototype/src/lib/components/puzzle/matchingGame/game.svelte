@@ -5,22 +5,22 @@
 
     let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
 
-    let output: GameOutput = {}
+    let matching: MatchingGameComponent
+
     export function getSubmitData(): GameOutput {
-        return output
+        return matching.getSubmitData()
     }
 
     export function getSubmitScore(): number {
-        return 0
+        return matching.getSubmitScore()
     }
 
     onMount((): void => {
         setSubmitable()
-
-        output = {}
     })
 
     import type { GameInput as _GameInput } from "$components/Games/Cloze";
+  import MatchingGameComponent from "$components/Games/MatchingGame/MatchingGameComponent.svelte";
     const gameInputCloze: _GameInput = {
         content: [
             {
@@ -214,6 +214,4 @@
     }
 </script>
 
-<div>{JSON.stringify(data)}</div>
-
-<MatchingGame bind:this={matchingGame} gameInput={{ leftHeader: data.Headers.left, rightHeader: data.Headers.right, pairs: data.data.pairs }} {setSubmitable}/>
+<MatchingGameComponent bind:this={matching} gameInput={{ leftHeader: data.header.left, rightHeader: data.header.right, pairs: data.data.pairs }} />

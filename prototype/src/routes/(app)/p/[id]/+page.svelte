@@ -42,8 +42,8 @@
             rdata = textSelect.getSubmitData()
         }
         if (data.puzzle.type === "matching-game-puzzle") {
-            // rScore = matchingGame.getSubmitScore()
-            // rdata = matchingGame.getSubmitData()
+            rScore = matchingGame.getSubmitScore()
+            rdata = matchingGame.getSubmitData()
         }
         if (data.puzzle.type === "multiple-choice-puzzle") {
             rScore = multipleChoice.getSubmitScore()
@@ -80,7 +80,7 @@
     {/if}
     {#if data.puzzle.type === "matching-game-puzzle"}
         <MatchingGameIntroduction data={data.introduction} />
-        <!-- <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} /> -->
+        <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />

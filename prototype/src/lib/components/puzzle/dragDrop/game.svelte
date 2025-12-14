@@ -8,7 +8,6 @@
 
     let puzzle: PuzzleGame
 
-    const output: GameOutput = {}
     export function getSubmitData(): GameOutput {
         return puzzle.getSubmitData()
     }

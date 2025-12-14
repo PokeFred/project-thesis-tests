@@ -1,17 +1,12 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import type { GameInput } from ".";
     import MatchingGame, { type Pair } from "./MatchingGame.svelte";
     import Select from "$components/Select.svelte";
 
-    const { gameInput, setSubmitable = $bindable() }: { gameInput: GameInput, setSubmitable: () => void } = $props();
+    const { gameInput }: { gameInput: GameInput } = $props();
 
     const matchingGame: MatchingGame = new MatchingGame(gameInput.pairs);
     const options: string[] = matchingGame.Pairs.map((pair: Pair) => pair.right);
-
-    onMount((): void => {
-        setSubmitable();
-    })    
 
     export const getSubmitData = matchingGame.complete.bind(matchingGame);
     export const getSubmitScore = matchingGame.score.bind(matchingGame);

@@ -6,6 +6,10 @@
     import GpsResult from "$components/puzzle/gps/result.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
     import MultipleChoiceResult from "$components/puzzle/multipleChoice/result.svelte"
+    import MatchingGameIntroduction from "$components/puzzle/matchingGame/introduction.svelte"
+    import MatchingGameResult from "$components/puzzle/matchingGame/result.svelte"
+    import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
+    import DragDropResult from "$components/puzzle/dragDrop/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -23,9 +27,17 @@
         <GpsIntroduction data={data.introduction} />
         <GpsResult data={data.result} />
     {/if}
+    {#if data.puzzle.type === "matching-game-puzzle"}
+        <MatchingGameIntroduction data={data.introduction} />
+        <MatchingGameResult data={data.result} />
+    {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
         <MultipleChoiceResult data={data.result} />
+    {/if}
+    {#if data.puzzle.type === "drag-drop-puzzle"}
+        <DragDropIntroduction data={data.introduction} />
+        <DragDropResult result={data.result} saving={data.saving} />
     {/if}
     <ScrollButton />
 </div>

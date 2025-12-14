@@ -3,6 +3,7 @@ import Stations from "$config/stations"
 import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
+import { getPuzzle } from "$stores"
 
 type _Station = {
     id: number,
@@ -32,13 +33,12 @@ function toScore(current: number, max: number): Score {
     }
 }
 
-export const load: PageLoad = async ({ params }): Promise<{ station: _Station, puzzle: _Puzzle, introduction: any, result: any }> => {
+export const load: PageLoad = async ({ params }): Promise<{ station: _Station, puzzle: _Puzzle, introduction: any, result: any, saving: any }> => {
     const station: Station = Stations
         .filter((element): boolean => element.puzzles.includes(Number(params.id)))[0]
     const puzzle: Puzzle = Puzzles
         .filter((element): boolean => element.id === Number(params.id))[0]
-
-    console.log({ station, puzzle, params })
+    const store: any = getPuzzle(Number(params.id))
 
     return {
         station: {
@@ -52,6 +52,7 @@ export const load: PageLoad = async ({ params }): Promise<{ station: _Station, p
             score: toScore(0, 0)
         },
         introduction: puzzle.data.introduction,
-        result: puzzle.data.result
+        result: puzzle.data.result,
+        saving: store.data
     }
 }
