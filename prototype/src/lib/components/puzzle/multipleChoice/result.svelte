@@ -1,14 +1,11 @@
 <script lang="ts">
-    import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
-    import type { Result } from "."
+    import type { Result, Saving } from "."
 
-    let { data }: { data: Result } = $props()
-    console.log(data)
+    let { result, saving }: { result: Result, saving: Saving } = $props()
 </script>
 
-
 <div class="flex flex-col divide-y-2 divide-secondary border-y-2 border-secondary">
-    {#each data.answers as element, i}
+    {#each saving.answers as element}
         <div>
             <div class="flex w-full mt-[25px] mb-[10px]">
                 <div class="grow-0 shrink-0 w-[32px] h-[32px] ml-[9px] mr-[19px] rounded-full border-2 border-secondary {element.isCorrect ? "bg-secondary" : "bg-inherit"}"></div>

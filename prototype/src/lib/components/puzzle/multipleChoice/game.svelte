@@ -9,7 +9,7 @@
 
     export function getSubmitScore(): number {
         return output.answers
-            .map((e, i): number => (e.isCorrect === data.answers[i].isCorrect) ? 3 : 0)
+            .map((e, i): number => (e.isCorrect === data.answers[i].isCorrect) ? 1 : 0)
             .reduce((pre: number, cur: number): number => pre += cur)
     }
 

@@ -38,8 +38,6 @@ export const load: PageLoad = async ({ params }): Promise<{ station: _Station, p
     const puzzle: Puzzle = Puzzles
         .filter((element): boolean => element.id === Number(params.id))[0]
 
-    console.log({ station, puzzle })
-
     return {
         station: {
             id: station.id,

@@ -63,6 +63,8 @@
         add({ id: data.puzzle.id, score: rScore, data: rdata })
         goto(`/p/${data.puzzle.id}/result`)
     }
+
+    console.log(data)
 </script>
 
 <Modal bind:this={modal} onConfirm={submit} />
@@ -90,7 +92,7 @@
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
-        <MultipleChoiceGame bind:this={multipleChoice} gameInput={data.game} setSubmitable={setSubmitable} />
+        <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "drag-drop-puzzle"}
         <DragDropIntroduction data={data.introduction} />

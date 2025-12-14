@@ -33,7 +33,7 @@
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
-        <MultipleChoiceResult data={data.result} />
+        <MultipleChoiceResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "drag-drop-puzzle"}
         <DragDropIntroduction data={data.introduction} />
