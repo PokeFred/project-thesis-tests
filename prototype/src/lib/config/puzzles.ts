@@ -95,15 +95,15 @@ const puzzles: Puzzle[] = [
                     right: "Zünfte"
                 },
                 data: {
-                    left: ["Metallverarbeitung", "Getreideverarbeitung", "Fleischverarbeitung", "Lederverarbeitung", "Feinlederverarbeitung", "Gemischtwarenhandel", "Handel mit Butter, Öl, Speck etc."],
+                    left: ["Metall-verarbeitung", "Getreide-verarbeitung", "Fleisch-verarbeitung", "Leder-verarbeitung", "Feinleder-verarbeitung", "Gemischt-warenhandel", "Handel mit Butter, Öl, Speck etc."],
                     right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
                     pairs: [
-                        { left: "Metallverarbeitung", right: "Schmied" },
-                        { left: "Getreideverarbeitung", right: "Bäcker" },
-                        { left: "Fleischverarbeitung", right: "Fleischer" },
-                        { left: "Lederverarbeitung", right: "Gerber" },
-                        { left: "Feinlederverarbeitung", right: "Schuhmacher" },
-                        { left: "Gemischtwarenhandel", right: "Krämer" },
+                        { left: "Metall-verarbeitung", right: "Schmied" },
+                        { left: "Getreide-verarbeitung", right: "Bäcker" },
+                        { left: "Fleisch-verarbeitung", right: "Fleischer" },
+                        { left: "Leder-verarbeitung", right: "Gerber" },
+                        { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+                        { left: "Gemischt-warenhandel", right: "Krämer" },
                         { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
                     ]
                 }

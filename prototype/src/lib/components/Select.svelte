@@ -33,7 +33,7 @@
 </script>
 
 <div class="relative inline-block w-full h-full">
-    <button bind:this={selectedButton} onclick={showMenu} class="SelectComponent flex justify-between items-center w-full h-full pl-3 pr-5 cursor-pointer"><span class="{selectedIndex !== undefined ? "" :"text-secondary/50"}">{placeholder}</span><Icon data={angleDown} scale={2}/></button>
+    <button bind:this={selectedButton} onclick={showMenu} class="SelectComponent flex justify-between items-center w-full h-full pl-3 pr-5 cursor-pointer"><span class="text-left {selectedIndex !== undefined ? "" :"text-secondary/50"}">{placeholder}</span><Icon data={angleDown} scale={2}/></button>
     <div bind:this={optionMenu} class="absolute block w-full {show ? "visible" : "invisible"} bg-secondary z-10" >
         {#each options as option, i }
             <button onclick={()=>selectOptionOnclick(option, i)} class="block w-full cursor-pointer text-primary font-medium" ><div class="mx-4 py-2.5 pl-1 text-left border-t-primary {i > 0 ? "border-t-2" : ""}">{option}</div></button>
