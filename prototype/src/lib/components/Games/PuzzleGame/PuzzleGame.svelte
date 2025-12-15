@@ -2,6 +2,8 @@
     import { onMount } from "svelte";
     import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
     import type { GameInput } from ".";
+    import { Icon } from "svelte-awesome";
+    import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
     const { gameInput }: { gameInput: GameInput } = $props();   
 
@@ -46,4 +48,9 @@
 <!-- <div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div> -->
 <div class="-m-4">
     <div bind:this={container} class="w-full h-[80vh]"></div>
+</div>
+
+<div class="flex justify-between py-20 border-b-2">
+    <button><Icon data={faAngleLeft} scale={2}/></button>
+    <button><Icon data={faAngleRight} scale={2}/></button>
 </div>
