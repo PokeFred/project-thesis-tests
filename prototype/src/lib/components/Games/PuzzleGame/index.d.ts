@@ -1,4 +1,5 @@
 import type { Background, CutoutData, PuzzleData, SlotGroup } from "./PuzzleController.svelte"
+import type { Piece } from "./Puzzle.svelte"
 
 export type Introduction = {
     text: string[]

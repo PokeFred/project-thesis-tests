@@ -5,7 +5,7 @@
     import type { Piece } from "./Puzzle.svelte";
 
     const { result }: { result: Result } = $props();
-    const correctPieces: number = result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0));
+    const correctPieces: number = result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0), 0);
     const totalPieces: number = result.placed.length;
     const points: number = correctPieces * POINTS.ANSWER_CORRECT;
     const totalPoints: number = totalPieces * POINTS.ANSWER_CORRECT;
