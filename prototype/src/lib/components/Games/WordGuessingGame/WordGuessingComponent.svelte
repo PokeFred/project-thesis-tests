@@ -3,34 +3,55 @@
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
 
-    // const { gameInput, setSubmitable = $bindable() }: { gameInput: GameInput, setSubmitable: () => void } = $props();
+    const { gameInput }: { gameInput: GameInput } = $props();
 
-    const gameInput: GameInput = {
-        questions: [
-            {
-                solution: "Dille & Kamille",
-                left: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                    hints: {
-                        normal: "P=D",
-                        crossed: "n"
-                    }
-                } satisfies Hint,
-                operator: "&",
-                right: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                } satisfies Hint
-            }
-        ]
-    }
+    // const gameInput: GameInput = {
+    //     questions: [
+    //         {
+    //             solution: "Dille & Kamille",
+    //             left: {
+    //                 src: "https://placehold.co/600x400",
+    //                 alt: "https://placehold.co/600x400",
+    //                 caption: "Abbildung",
+    //                 hints: {
+    //                     normal: "P=D",
+    //                     crossed: "n"
+    //                 }
+    //             } satisfies Hint,
+    //             operator: "&",
+    //             right: {
+    //                 src: "https://placehold.co/600x400",
+    //                 alt: "https://placehold.co/600x400",
+    //                 caption: "Abbildung",
+    //             } satisfies Hint
+    //         },
+    //         {
+    //             solution: "Dille & Kamille",
+    //             left: {
+    //                 src: "https://placehold.co/600x400",
+    //                 alt: "https://placehold.co/600x400",
+    //                 caption: "Abbildung",
+    //                 hints: {
+    //                     normal: "P=D",
+    //                     crossed: "n"
+    //                 }
+    //             } satisfies Hint,
+    //             operator: "&",
+    //             right: {
+    //                 src: "https://placehold.co/600x400",
+    //                 alt: "https://placehold.co/600x400",
+    //                 caption: "Abbildung",
+    //             } satisfies Hint
+    //         }
+    //     ]
+    // }
 
     const solutions: string[] = gameInput.questions.map((question: Question) => question.solution);
 
     const wordGuessingGame: WordGuessing = new WordGuessing(solutions);
+
+    export const getSubmitData = wordGuessingGame.complete.bind(wordGuessingGame);
+    export const getSubmitScore = wordGuessingGame.score.bind(wordGuessingGame);
 </script>
 
 <div class="flex flex-col">
