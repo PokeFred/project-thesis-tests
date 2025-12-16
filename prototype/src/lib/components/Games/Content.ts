@@ -10,7 +10,10 @@ export type Content =  {
     readonly tag: "img",
     readonly src: string,
     readonly alt: string,
-    readonly caption?: string
+    readonly caption?: {
+        readonly caption: string,
+        readonly src?: string
+    }
 }
 
 export type Inline = {

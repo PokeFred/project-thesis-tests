@@ -4,8 +4,8 @@
     let { data }: { data: Introduction } = $props()
 </script>
 
-<div class="w-full h-auto grid grid-cols-1 gap-4 px-2 py-4">
+<div class="w-full h-auto px-2 mb-10">
     {#each data.text as element}
-        <div class="mx-2 my-4 font-bold">{element}</div>
+        <p class="mb-5 font-bold text-[20px] leading-6">{element}</p>
     {/each}
 </div>

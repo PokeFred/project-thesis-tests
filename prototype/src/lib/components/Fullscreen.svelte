@@ -46,14 +46,15 @@
 
 <div bind:this={fullscreenDiv} class="fullscreenDiv {fullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-primary z-10000"></div>
 
-<div bind:this={normalDiv}>
-    <button bind:this={childrenButton} onclick={toggleFullscreen} class="w-full h-full object-contain">
+<div bind:this={normalDiv} class="w-fit h-fit">
+    <button bind:this={childrenButton} onclick={toggleFullscreen} class="block w-full h-full object-contain">
         {@render children()}
     </button>
 </div>
 
 <style>
     .fullscreenDiv :global(img)  {
+        display: block;
         object-fit: contain;
         width: 100%;
         height: 100%;

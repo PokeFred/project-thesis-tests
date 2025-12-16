@@ -63,20 +63,20 @@
         add({ id: data.puzzle.id, score: rScore, data: rdata })
         goto(`/p/${data.puzzle.id}/result`)
     }
-
+    
     console.log(data)
 </script>
 
 <Modal bind:this={modal} onConfirm={submit} />
 
 <div class="w-full h-auto text-secondary">
-    <div class="w-full h-auto flex justify-between items-center px-6">
-        <span class="text-lg font-semibold">{data.station.title}</span>
+    <div class="w-full h-auto flex justify-between items-center my-1 px-6">
+        <span class="text-lg font-medium text-[16px] uppercase">{data.station.title}</span>
         <BackButton url={`/s/${data.station.id}`} />
     </div>
-    <div class="mt-7 mb-10 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_52px] gap-4 px-6 py-2">
-        <span class="text-lg font-bold text-left">{data.puzzle.title}</span>
-        <span class="text-lg font-bold text-right"><span>{data.puzzle.score.current}/{data.puzzle.score.max}</span></span>
+    <div class="mt-7.5 mb-15 w-full h-auto text-primary bg-secondary rounded-full grid grid-cols-[auto_52px] items-center gap-4 px-6 py-2">
+        <span class="text-lg font-medium text-[20px] text-left">{data.puzzle.title}</span>
+        <span class="text-lg font-medium text-[16px] text-right"><span>{data.puzzle.score.current}/{data.puzzle.score.max}</span></span>
     </div>
     {#if data.puzzle.type === "gps-puzzle"}
         <GpsIntroduction data={data.introduction} />
