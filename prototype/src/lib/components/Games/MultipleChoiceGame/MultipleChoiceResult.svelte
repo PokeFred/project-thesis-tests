@@ -8,13 +8,12 @@
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
 
-    let { result }: { result: Result } = $props();
-    console.log(result)
+    let { result, saving  }: { result: any, saving: Result } = $props();
 
+    // TODO was macht das ?
+    const toggles: (()=>void)[] = new Array(saving.answers.length);
 
-    const toggles: (()=>void)[] = new Array(result.answers.length);
-
-    const multipleChoiceResult = result.answers.map((obj, i: number) => {
+    const multipleChoiceResult = saving.answers.map((obj, i: number) => {
         return {
             answer: obj.answer.answer,
             correct: obj.answer.correct,
