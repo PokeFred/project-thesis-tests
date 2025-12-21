@@ -6,7 +6,7 @@
     import Select from "$components/Select.svelte";
     import type { Content, Inline } from "../Content";
 
-    const { gameInput, setSubmitable = $bindable() }: { gameInput: GameInput, setSubmitable: () => void } = $props();
+    const { gameInput }: { gameInput: GameInput } = $props();
 
     const options: Answer[][] = new Array<Answer[]>();
 
@@ -21,11 +21,7 @@
     });
 
     const cloze: Cloze = new Cloze(options);
-    let selectElementCounter: number = 0;
-
-    onMount((): void => {
-        setSubmitable();
-    })    
+    let selectElementCounter: number = 0; 
 
     export const getSubmitData = cloze.complete.bind(cloze);
     export const getSubmitScore = cloze.score.bind(cloze);
