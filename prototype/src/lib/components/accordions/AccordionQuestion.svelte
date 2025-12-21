@@ -9,9 +9,9 @@
 </script>
 
 <details bind:open={open}>
-    <summary class="w-full h-20 flex justify-between items-center cursor-pointer px-2">
+    <summary class="w-full h-20 flex  justify-between items-center cursor-pointer px-2">
         <span class="font-bold text-[18px] leading-6">{question.question}</span>
-        <Icon data={open ? faMinus : faPlus} scale={2} />
+        <Icon data={open ? faMinus : faPlus} scale={2} class="shrink-0"/>
     </summary>
     {#each question.answer as element}
         <div class="mb-7.5 px-2 text-[18px] leading-6">
