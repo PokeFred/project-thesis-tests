@@ -11,7 +11,7 @@
 </script>
 
 <div>
-    <button {onclick} class="w-full text-left {shown ? "mb-8" : "mb-4"} cursor-pointer touch-manipulation">{shown ? "FÜR WENIGER INFOS HIER TIPPEN" : "FÜR MEHR INFOS HIER TIPPEN"}</button>
+    <button {onclick} class="w-full text-left {shown ? "mb-8" : ""} cursor-pointer touch-manipulation">{shown ? "FÜR WENIGER INFOS HIER TIPPEN" : "FÜR MEHR INFOS HIER TIPPEN"}</button>
     {#if shown}
         {@render children?.()}
     {/if}
