@@ -214,4 +214,4 @@
     }
 </script>
 
-<MatchingGameComponent bind:this={matching} gameInput={{ leftHeader: data.header.left, rightHeader: data.header.right, pairs: data.data.pairs }} />
+<MatchingGameComponent bind:this={matching} gameInput={{ options: data.data.right, leftHeader: data.header.left, rightHeader: data.header.right, pairs: data.data.pairs }} />
