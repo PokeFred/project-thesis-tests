@@ -20,6 +20,6 @@
         { left: "Gemischt-warenhandel", right: "Krämer" },
         { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
     ],
-    answers: []
+    answers: ["Schmied"]
 }} 
 />

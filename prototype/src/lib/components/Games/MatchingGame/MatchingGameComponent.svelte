@@ -14,8 +14,8 @@
 <table class="w-full table-fixed border-collapse border-secondary text-left">
     <thead class="text-[18px] font-bold leading-6 tracking-[1.08px] uppercase">
         <tr>
-            <th class="border-r pl-3 py-2.5">{gameInput.leftHeader}</th>
-            <th class="border-l pl-3 py-2.5">{gameInput.rightHeader}</th>
+            <th class="border-r pl-3 pt-2.5 pb-4">{gameInput.leftHeader}</th>
+            <th class="border-l pl-3 pt-2.5 pb-4">{gameInput.rightHeader}</th>
         </tr>
     </thead>
     <tbody class="text-[18px] font-medium leading-6">
