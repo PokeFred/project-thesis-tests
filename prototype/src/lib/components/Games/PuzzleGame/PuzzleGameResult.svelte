@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 bg-secondary text-primary font-bold">
-    <span>Du hast {correctPieces} von {totalPieces} Teilen richtig</span>
-    <span>{points}/{totalPoints}</span>
+<p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 bg-secondary text-primary text-[16px]">
+    <span class="font-bold">Du hast {correctPieces} von {totalPieces} Teilen richtig</span>
+    <span class="font-medium">{points}/{totalPoints}</span>
 </p>

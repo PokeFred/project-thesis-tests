@@ -4,9 +4,9 @@
     let { data }: { data: Introduction } = $props()
 </script>
 
-<div class="w-full h-auto grid grid-cols-1 gap-2 mx-1 my-8">
-    <div class="font-bold">{data.title}</div>
+<div class="w-full h-auto px-2 pb-10 leading-6">
+    <div class="mb-7 font-bold text-[20px]">{data.title}</div>
     {#each data.description as element}
-        <div class="my-4">{element}</div>
+        <div class="mb-7 font-medium text-[18px]">{element}</div>
     {/each}
 </div>
