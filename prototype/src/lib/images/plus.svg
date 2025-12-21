@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <path
+    d="M45 10 H55 V45 H90 V55 H55 V90 H45 V55 H10 V45 H45 Z"
+    fill="black"
+  />
+</svg>

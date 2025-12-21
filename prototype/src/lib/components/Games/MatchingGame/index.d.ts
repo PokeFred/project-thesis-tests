@@ -5,6 +5,7 @@ export type Introduction = {
 export type GameInput = {
     leftHeader: string,
     rightHeader: string,
+    options: string[],
     pairs: Pair[]
 }
 

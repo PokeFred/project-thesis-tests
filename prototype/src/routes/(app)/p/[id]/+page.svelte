@@ -70,7 +70,7 @@
 <Modal bind:this={modal} onConfirm={submit} />
 
 <div class="w-full h-auto text-secondary">
-    <div class="w-full h-auto flex justify-between items-center my-1 px-6">
+    <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="font-medium text-[16px] uppercase tracking-[1.28px]">{data.station.title}</span>
         <BackButton url={`/s/${data.station.id}`} />
     </div>

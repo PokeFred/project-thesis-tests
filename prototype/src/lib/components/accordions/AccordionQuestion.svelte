@@ -9,22 +9,22 @@
 </script>
 
 <details bind:open={open}>
-    <summary class="w-full h-auto flex justify-between items-center cursor-pointer px-3">
-        <span class="font-bold">{question.question}</span>
-        <Icon data={open ? faMinus : faPlus} />
+    <summary class="w-full h-20 flex  justify-between items-center cursor-pointer px-2">
+        <span class="font-bold text-[18px] leading-6">{question.question}</span>
+        <Icon data={open ? faMinus : faPlus} scale={2} class="shrink-0"/>
     </summary>
-    <div class="px-2 pt-1">
-        {#each question.answer as element}
+    {#each question.answer as element}
+        <div class="mb-7.5 px-2 text-[18px] leading-6">
             {#if element.type === "subtitle"}
-                <div class="font-semibold">{element.content}</div>
+                <div class="font-medium">{element.content}</div>
             {:else if element.type === "paragraph"}
-                <div class="p-1">{element.content}</div>
+                <div class="font-medium">{element.content}</div>
             {:else}
-                <figure class="p-1">
+                <figure>
                     <img src={element.src} alt={element.alt} class="rounded-lg" />
                     <figcaption>{element.caption}</figcaption>
                 </figure>
             {/if}
-        {/each}
-    </div>
+        </div>
+    {/each}
 </details>

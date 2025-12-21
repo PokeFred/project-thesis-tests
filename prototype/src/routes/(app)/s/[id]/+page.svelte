@@ -10,7 +10,7 @@
 </script>
 
 <div class="w-full h-auto text-secondary">
-    <div class="w-full h-auto flex justify-between items-center px-6">
+    <div class="w-full h-auto flex justify-between items-center pl-6 pr-4">
         <span class="text-lg font-semibold">{data.stitle}</span>
         <BackButton url={"/s"} />
     </div>
