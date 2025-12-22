@@ -3,6 +3,8 @@ import Stations from "$config/stations"
 import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
+import { toScore } from "$utils/score"
+import type { Score } from "$utils/score"
 
 type _Station = {
     id: number,
@@ -14,22 +16,6 @@ type _Puzzle = {
     type: string,
     title: string,
     score: Score
-}
-
-type Score = {
-    current: number,
-    max: number,
-    completion: number
-}
-
-function toScore(current: number, max: number): Score {
-    const completion: number = Number((current * 100 / max).toFixed(1))
-
-    return {
-        current: current,
-        max: max,
-        completion: Number.isNaN(completion) ? 0 : completion
-    }
 }
 
 export const load: PageLoad = async ({ params }): Promise<{ station: _Station, puzzle: _Puzzle, introduction: any, game: any }> => {
