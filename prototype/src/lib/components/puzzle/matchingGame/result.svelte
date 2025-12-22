@@ -19,9 +19,8 @@
         answers: ["Schmied"]
     }
 
-    /**
-    */
+    // TODO temp
+    console.log({ result, saving })
 </script>
 
-<!-- TODO <ResultComponent result={result} saving={saving} /> -->
-<ResultComponent result={data} />
+<!-- <ResultComponent result={result} saving={saving} /> -->

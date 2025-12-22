@@ -30,15 +30,15 @@
     {/if}
     {#if data.puzzle.type === "matching-game-puzzle"}
         <MatchingGameIntroduction data={data.introduction} />
-        <MatchingGameResult data={data.result} />
+        <MatchingGameResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />
         <MultipleChoiceResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "drag-drop-puzzle"}
-        <DragDropIntroduction data={data.introduction} />
-        <DragDropResult result={data.result} saving={data.saving} />
+        <!-- <DragDropIntroduction data={data.introduction} /> -->
+        <!-- <DragDropResult result={data.result} saving={data.saving} /> -->
     {/if}
     <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full">Zurück zur Übersicht</button>
     <ScrollButton />

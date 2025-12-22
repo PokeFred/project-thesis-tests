@@ -63,8 +63,6 @@
         add({ id: data.puzzle.id, score: rScore, data: rdata })
         goto(`/p/${data.puzzle.id}/result`)
     }
-    
-    console.log(data)
 </script>
 
 <Modal bind:this={modal} onConfirm={submit} />
