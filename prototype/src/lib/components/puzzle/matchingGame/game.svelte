@@ -27,4 +27,4 @@
     console.log({ data, input })
 </script>
 
-<!-- <GameComponent bind:this={game} input={input} /> -->
+<GameComponent bind:this={game} input={input} />
