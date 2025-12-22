@@ -1,26 +1,21 @@
 <script lang="ts">
-  import MatchingGame from "$components/Games/MatchingGame/MatchingGame.svelte";
-    import type { GameInput, GameOutput } from "./index"
+    import type { GameData, SavingData } from "."
+    import GameComponent from "$components/Games/MatchingGame/MatchingGameComponent.svelte"
+    // TODO ?
+    import type { GameInput as _GameInput } from "$components/Games/Cloze"
     import { onMount } from "svelte"
 
-    let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
+    let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
 
-    let matching: MatchingGameComponent
-
-    export function getSubmitData(): GameOutput {
-        return matching.getSubmitData()
-    }
-
-    export function getSubmitScore(): number {
-        return matching.getSubmitScore()
-    }
+    let game: GameComponent
+    export function getSubmitData(): SavingData { return game.getSubmitData() }
+    export function getSubmitScore(): number { return game.getSubmitScore() }
 
     onMount((): void => {
         setSubmitable()
     })
 
-    import type { GameInput as _GameInput } from "$components/Games/Cloze";
-  import MatchingGameComponent from "$components/Games/MatchingGame/MatchingGameComponent.svelte";
+    // TODO ?
     const gameInputCloze: _GameInput = {
         content: [
             {
@@ -212,6 +207,13 @@
             }
         ],
     }
+
+    const input = {
+        options: data.data.right,
+        leftHeader: data.header.left,
+        rightHeader: data.header.right,
+        pairs: data.data.pairs
+    }
 </script>
 
-<MatchingGameComponent bind:this={matching} gameInput={{ options: data.data.right, leftHeader: data.header.left, rightHeader: data.header.right, pairs: data.data.pairs }} />
+<GameComponent bind:this={game} gameInput={input} />

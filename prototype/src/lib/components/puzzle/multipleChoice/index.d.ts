@@ -3,11 +3,14 @@ export type IntroductionData = {
 }
 
 export type GameData = {
-    answers: { text: string, isCorrect: boolean, description: {}[] }[]
+    answers: { id: number, text: string, isCorrect: boolean }[]
 }
 
-export type ResultData = {}
+export type ResultData = {
+    // answers: { id: number, text: string, isCorrect: boolean }[]
+}
 
 export type SavingData = {
+    // answers: { id: number, answer: Answer }[]
     answers: { selected: boolean, answer: Answer }[]
 }

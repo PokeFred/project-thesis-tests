@@ -103,7 +103,7 @@ const stations: Station[] = [
         tag: "Station 02",
         stitle: "Westen- und Ostenhellweg",
         title: "Der Westen- und Ostenhellweg",
-        score: 1,
+        score: 5,
         chapters: [
                 {
                     title: "Kapitel 1: Der Hellweg - vom Handelsweg zur Einkaufsmeile",

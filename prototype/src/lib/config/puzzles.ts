@@ -58,7 +58,7 @@ const puzzles: Puzzle[] = [
         id: 11,
         type: "multiple-choice-puzzle",
         title: "Rätsel 1",
-        requirements: [10],
+        requirements: [], // TODO [10],
         score: 8,
         data: {
             introduction: {
@@ -66,14 +66,14 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 answers: [
-                    { text: "Es gab einen Brunnen am Markt.", isCorrect: true },
-                    { text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
-                    { text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
-                    { text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
-                    { text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
-                    { text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
-                    { text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
-                    { text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", isCorrect: true },
+                    { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
+                    { id: 2, text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
+                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
+                    { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
+                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
+                    { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
+                    { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
                 ]
             },
             result: {}
@@ -83,7 +83,7 @@ const puzzles: Puzzle[] = [
         id: 12,
         type: "matching-game-puzzle",
         title: "Rätsel 2",
-        requirements: [10],
+        requirements: [], // TODO [10],
         score: 7,
         data: {
             introduction: {
@@ -115,7 +115,7 @@ const puzzles: Puzzle[] = [
         id: 13,
         type: "drag-drop-puzzle",
         title: "Rätsel 3",
-        requirements: [10],
+        requirements: [], // TODO [10],
         score: 5,
         data: {
             introduction: {
@@ -162,7 +162,7 @@ const puzzles: Puzzle[] = [
         id: 28,
         type: "drag-drop-puzzle",
         title: "Rätsel 8",
-        requirements: [20],
+        requirements: [], // TODO [20],
         score: 2,
         data: {
             introduction: {
@@ -179,7 +179,7 @@ const puzzles: Puzzle[] = [
         id: 29,
         type: "text-select-puzzle",
         title: "Rätsel 9",
-        requirements: [20],
+        requirements: [], // TODO [20],
         score: 2,
         data: {
             introduction: {
