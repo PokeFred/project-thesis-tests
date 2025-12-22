@@ -1,17 +1,19 @@
 import type { Content } from "../Content";
+import type { Answer } from "./Cloze.svelte"
 
 export type Introduction = {
     text: string[]
 }
 
 export type GameInput = {
-    content: Content[];
+    content: Content[]
 }
 
 export type GameOutput = {
-    answers: Answer[]
+    selected: Answer[]
 }
 
 export type Result = {
-    answers: Answer[]
+    content: Content[],
+    selected: Answer[]
 }

@@ -26,7 +26,7 @@ export default class Cloze implements Quiz {
 
     public complete(): GameOutput {
         return {
-            answers: this.selected
+            selected: this.selected
         } satisfies GameOutput;
     }
 }
