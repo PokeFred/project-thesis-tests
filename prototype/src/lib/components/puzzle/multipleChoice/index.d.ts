@@ -7,10 +7,9 @@ export type GameData = {
 }
 
 export type ResultData = {
-    // answers: { id: number, text: string, isCorrect: boolean }[]
+    answers: { id: number, text: string, description: [], isCorrect: boolean }[]
 }
 
 export type SavingData = {
-    // answers: { id: number, answer: Answer }[]
-    answers: { selected: boolean, answer: Answer }[]
+    answers: { id: number, selected: boolean }[]
 }

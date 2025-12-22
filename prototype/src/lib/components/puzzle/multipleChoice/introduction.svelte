@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { IntroductionData } from "./index"
+    import type { IntroductionData } from "."
 
     let { data }: { data: IntroductionData } = $props()
 </script>
