@@ -6,7 +6,7 @@ export type Answer = {
     readonly correct: boolean;
 }
 
-export default class Cloze implements Quiz {
+export default class Cloze implements Quiz<GameOutput> {
     private readonly options: Answer[][];
     private selected: Answer[];
 

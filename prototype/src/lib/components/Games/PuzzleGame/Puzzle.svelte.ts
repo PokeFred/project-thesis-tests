@@ -1,4 +1,3 @@
-// import type { GameOutput } from "$components/puzzle/multipleChoice";
 import type { GameOutput } from ".";
 import { type Quiz, POINTS } from "../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
@@ -41,7 +40,7 @@ export class Piece {
     }
 }
 
-export default class Puzzle implements Quiz {
+export default class Puzzle implements Quiz<GameOutput> {
     private slots: Slot[];
     private pieces: Piece[];
 

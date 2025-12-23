@@ -7,7 +7,7 @@ export type Answer = {
 }
 
 // TODO: MatchingGame == Multiple Choice ??
-export default class MultipleChoice implements Quiz {
+export default class MultipleChoice implements Quiz<GameOutput> {
     private readonly options: Answer[];
     // private readonly descriptions: Description[][]; // von der config aus laden in page end
     private selected: boolean[];
