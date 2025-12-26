@@ -142,6 +142,7 @@ export default class Canvas {
             strokeEnabled: false,
             shadowBlur: 0,
             draggable: true,
+            
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
         piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));

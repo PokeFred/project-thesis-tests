@@ -207,7 +207,7 @@
 </script>
 
 <PuzzleGame gameInput={{
-    path: "/station_05/raetsel_02/game"
+    path: "/station_05/raetsel_01/game"
 }}/>
 
 <!-- <WordGuessingComponent gameInput={{questions:[]}} /> -->
