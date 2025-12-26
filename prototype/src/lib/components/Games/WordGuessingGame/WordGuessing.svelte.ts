@@ -1,7 +1,7 @@
 import type { GameOutput } from ".";
 import { type Quiz, POINTS } from "../Quiz";
 
-export default class WordGuessing implements Quiz {
+export default class WordGuessing implements Quiz<GameOutput> {
     private readonly solutions: string[];
     private inputs: string[];
 

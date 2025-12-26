@@ -29,7 +29,7 @@ export type Hint = {
 
 export type Question = {
     solution: string,
-    left: Hint,
-    right: Hint,
-    operator: string
+    left?: Hint,
+    right?: Hint,
+    operator?: string
 }

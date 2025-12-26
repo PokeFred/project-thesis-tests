@@ -162,7 +162,7 @@ const puzzles: Puzzle[] = [
                 description: []
             },
             game: {
-                path: "/station_04/raetsel_00/game"
+                path: "/station_04/raetsel_01/game"
             },
             result: {}
         }

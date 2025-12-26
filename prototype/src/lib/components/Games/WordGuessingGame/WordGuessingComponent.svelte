@@ -58,21 +58,27 @@
     {#each gameInput.questions as question, i }
         <div>
             <div class="flex">
-                <figure>
-                    <div class="h-lh">{question.left.hints?.normal} <span class="crossed">{question.left.hints?.crossed}</span></div>
-                    <Fullscreen>
-                        <img src={question.left.src} alt={question.left.alt}>
-                    </Fullscreen>
-                    <figcaption>{question.left.caption}</figcaption>
-                </figure>
-                <p class="self-center">{question.operator}</p>
-                <figure>
-                    <div class="h-lh">{question.right.hints?.normal} <span class="crossed">{question.right.hints?.crossed}</span></div>
-                    <Fullscreen>
-                        <img src={question.right.src} alt={question.right.alt}>
-                    </Fullscreen>
-                    <figcaption>{question.right.caption}</figcaption>
-                </figure>
+                {#if question.left}
+                    <figure>
+                        <div class="h-lh">{question.left.hints?.normal} <span class="crossed">{question.left.hints?.crossed}</span></div>
+                        <Fullscreen>
+                            <img src={question.left.src} alt={question.left.alt}>
+                        </Fullscreen>
+                        <figcaption>{question.left.caption}</figcaption>
+                    </figure>
+                {/if}
+                {#if question.operator}
+                    <p class="self-center">{question.operator}</p>
+                {/if}
+                {#if question.right}
+                    <figure>
+                        <div class="h-lh">{question.right.hints?.normal} <span class="crossed">{question.right.hints?.crossed}</span></div>
+                        <Fullscreen>
+                            <img src={question.right.src} alt={question.right.alt}>
+                        </Fullscreen>
+                        <figcaption>{question.right.caption}</figcaption>
+                    </figure>
+                {/if}
             </div>
             <label>Eingabe:<input type="text" bind:value={wordGuessingGame.Inputs[i]} class="border-2 border-secondary"></label>
         </div>

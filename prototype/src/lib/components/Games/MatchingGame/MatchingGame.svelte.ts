@@ -6,7 +6,7 @@ export type Pair = {
     right: string;
 }
 
-export default class MatchingGame implements Quiz {
+export default class MatchingGame implements Quiz<GameOutput> {
     private readonly pairs: Pair[];
     private selected: string[];
 
