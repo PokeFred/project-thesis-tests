@@ -4,11 +4,10 @@ import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
 
-// TODO: fix window resize / browser zoom
-// TODO: fix landscape / portrait swap
-// TODO: fix website scale. always 100% when playing.
 // TODO: scrollbar puzzle container
-// TODO: fullscreen
+// TODO: puzzle piece container seperat
+// TODO: bounds für bild machen, über dem puzzle piece container
+// TODO: pan and zoom an übergebene parameter bounds festmachen, nicht nur an stage
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
@@ -60,6 +59,7 @@ export default class Canvas {
     public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
     public get Scale() { return this.puzzle.Scale; }
     public get Slots() { return this.puzzle.Slots; }
+    public get Puzzle() { return this.puzzle; }
     public get Pieces() { return this.pieces; }
 
     private createBackground(): void {
@@ -133,6 +133,8 @@ class Puzzle {
         this.slots = slotGroups.map((slotGroup: SlotGroup) => this.createSlot(slotGroup.path));
     }
 
+
+    public get Field() { return this.field; }
     public get Scale() { return this.scale; }
     public get Slots() { return this.slots; }
 

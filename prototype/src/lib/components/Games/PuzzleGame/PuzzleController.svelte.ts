@@ -61,7 +61,7 @@ export default class PuzzleController {
 
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {
         const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);
-        this.switchContainer(KONVA_PIECE, this.canvas.GameLayer);
+        this.switchContainer(KONVA_PIECE, this.canvas.Puzzle.Field);
         this.pickupPiece(KONVA_PIECE);
     }
 
