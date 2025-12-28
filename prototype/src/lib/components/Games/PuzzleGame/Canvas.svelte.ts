@@ -12,30 +12,20 @@ import type PuzzleController from "./PuzzleController.svelte";
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
-    private background: HTMLImageElement;
     private stage: Konva.Stage;
 
     private backgroundLayer: Konva.Layer;
     private gameLayer: Konva.Layer;
     private hudLayer: Konva.Layer;
 
-    // private fullscreen: Fullscreen;
-    private panAndZoomGameLayer: PanAndZoom;
-
-    private scale: number;
-    private offsetX: number;
-    private offsetY: number;
-
-    private playfield!: Konva.Image;
-    private slots: Konva.Path[];
+    
     private pieces: Konva.Image[];
+    private puzzle: Puzzle;
     private puzzlePieceContainer: PuzzlePieceContainer;
-    // private exitButton: ExitButton;
     
     constructor(puzzleController: PuzzleController, container: HTMLDivElement, background: HTMLImageElement, slotGroups: SlotGroup[]) {
         this.puzzleController = puzzleController;
         this.container = container;
-        this.background = background;
         this.stage = new Konva.Stage({
             container: container,
             width: container.clientWidth,
@@ -49,80 +39,30 @@ export default class Canvas {
         this.stage.add(this.backgroundLayer);
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
-
-        // this.fullscreen = new Fullscreen(this);
-        // this.stage.on("pointerclick", this.fullscreen.enable.bind(this.fullscreen));
-        this.panAndZoomGameLayer = new PanAndZoom(this.gameLayer);
-        this.gameLayer.on("touchend", this.panAndZoomGameLayer.touchend.bind(this.panAndZoomGameLayer));
-        this.gameLayer.on("touchmove", this.panAndZoomGameLayer.touchmove.bind(this.panAndZoomGameLayer));
-
-        this.scale = 1;
-        this.offsetX = 0;
-        this.offsetY = 0;
-
-        this.slots = new Array<Konva.Path>();
+        
+        this.puzzle = new Puzzle(this, background, slotGroups);
         this.pieces = new Array<Konva.Image>();
-        this.puzzlePieceContainer = new PuzzlePieceContainer(this);
-        // this.exitButton = new ExitButton(this.HudLayer, this.puzzleController.exitFullscreen.bind(this.puzzleController));
-
-        this.fitStageIntoContainer();
-        this.init(background, slotGroups);        
-        this.drawAll();
-    }
-
-    public get Container() { return this.container; }
-    public get Stage() { return this.stage; }
-    // public get Fullscreen() { return this.fullscreen; }
-    public get GameLayer() { return this.gameLayer; }
-    public get HudLayer() { return this.hudLayer; }
-    public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
-    public get Scale() { return this.scale; }
-    public get Slots() { return this.slots; }
-    public get Pieces() { return this.pieces; }
-
-    private init(background: HTMLImageElement, slotGroups: SlotGroup[]): void {
-        this.playfield = this.createPlayfield(background);
         slotGroups.forEach((slotGroup: SlotGroup) => {
-            this.slots.push(this.createSlot(slotGroup.path));
             this.pieces.push(this.createPiece(slotGroup.piece));
             slotGroup.noise?.forEach((piece: HTMLImageElement) => {
                 this.pieces.push(this.createPiece(piece));
             });
         });
+        this.puzzlePieceContainer = new PuzzlePieceContainer(this);
+
+        this.createBackground();
     }
 
-    private createSlot(path: string): Konva.Path {
-        const COLOR = getComputedStyle(this.container).getPropertyValue("--color-primary").trim();
-        return new Konva.Path({
-            data: path,
-            fill: COLOR,
-            strokeEnabled: false,
-            hitStrokeWidth: 0,
-            scale: {x: this.scale, y: this.scale}
-        })
-    }
+    public get Container() { return this.container; }
+    public get Stage() { return this.stage; }
+    public get GameLayer() { return this.gameLayer; }
+    public get HudLayer() { return this.hudLayer; }
+    public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
+    public get Scale() { return this.puzzle.Scale; }
+    public get Slots() { return this.puzzle.Slots; }
+    public get Pieces() { return this.pieces; }
 
-    private drawSlots(): void {
-        this.slots.forEach((slot: Konva.Path) => this.gameLayer.add(slot));
-    }
-
-    private createPlayfield(background: HTMLImageElement): Konva.Image {
-        this.scale =  Math.min(this.stage.width() / background.naturalWidth, this.stage.height() / background.naturalHeight);
-        this.offsetX = (this.stage.width() - (background.naturalWidth * this.scale)) / 2;
-        this.offsetY = (this.stage.height() - (background.naturalHeight * this.scale)) / 2;
-
-        return new Konva.Image({
-            id: "playfield",
-            image: background,
-            scale: {x: this.scale, y: this.scale},
-        });
-    }
-
-    private drawPlayfield(): void {
-        this.gameLayer.add(this.playfield);
-    }
-
-    private createAndDrawBackground(): void {
+    private createBackground(): void {
         const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
         this.backgroundLayer.add(
             new Konva.Rect({
@@ -149,36 +89,77 @@ export default class Canvas {
         return piece;
     }
 
-    private drawGame(): void {
-        this.drawPlayfield();
-        this.drawSlots();
+    // public fitStageIntoContainer(): void {
+    //     const scale = Math.max(this.container.offsetWidth / this.stage.width(), this.container.offsetHeight / this.stage.height());
+    //     this.stage.width(this.stage.width() * scale);
+    //     this.stage.height(this.stage.height() * scale);
+    //     this.stage.scale({ x: scale, y: scale });
+    // }
+}
 
-        this.gameLayer.x(this.offsetX);
-        this.gameLayer.y(this.offsetY);
+class Puzzle {
+    private readonly canvas: Canvas;
+    private readonly stage: Konva.Stage;
+    private readonly layer: Konva.Layer;
+
+    private readonly boundary: Konva.Group;
+    private readonly field: Konva.Group;
+
+    private panAndZoom: PanAndZoom;
+
+    private scale!: number;
+
+    private slots: Konva.Path[];
+
+    constructor(canvas: Canvas, image: HTMLImageElement, slotGroups: SlotGroup[]) {
+        this.canvas = canvas;
+        this.stage = this.canvas.Stage;
+        this.layer = this.canvas.GameLayer;
+
+        this.boundary = new Konva.Group;
+        this.field = this.createField(image);
+
+        this.boundary.add(this.field);
+        this.layer.add(this.boundary);
+
+        const rec = new Konva.Rect({width: this.boundary.width() + 100, height: this.boundary.height() + 1000, stroke: "black"});
+        this.boundary.add(rec) ////////////////////////
+
+
+        this.panAndZoom = new PanAndZoom(this.field);
+        this.field.on("touchend", this.panAndZoom.touchend.bind(this.panAndZoom));
+        this.field.on("touchmove", this.panAndZoom.touchmove.bind(this.panAndZoom));
+
+        this.slots = slotGroups.map((slotGroup: SlotGroup) => this.createSlot(slotGroup.path));
     }
 
-    private drawHUD(): void {
-        this.puzzlePieceContainer.draw();
-        // this.exitButton.draw();
+    public get Scale() { return this.scale; }
+    public get Slots() { return this.slots; }
+
+    private createField(background: HTMLImageElement): Konva.Group {
+        this.scale =  Math.min(this.stage.width() / background.naturalWidth, this.stage.height() / background.naturalHeight);
+
+        console.log(this.scale)
+        const IMAGE: Konva.Image = new Konva.Image({
+            image: background,
+            scale: {x: this.scale, y: this.scale},
+        });
+        const GROUP: Konva.Group = new Konva.Group;
+        GROUP.add(IMAGE);
+        return GROUP;
     }
 
-    public drawAll(): void {
-        this.createAndDrawBackground();
-        this.drawGame();
-        this.drawHUD();
-    }
-
-    private calculatePlayfieldScale(): void {
-        this.scale =  Math.min(this.stage.width() / this.background.naturalWidth, this.stage.height() / this.background.naturalHeight);
-        this.offsetX = (this.stage.width() - (this.background.naturalWidth * this.scale)) / 2;
-        this.offsetY = (this.stage.height() - (this.background.naturalHeight * this.scale)) / 2;
-    }
-
-    public fitStageIntoContainer(): void {
-        const scale = Math.max(this.container.offsetWidth / this.stage.width(), this.container.offsetHeight / this.stage.height());
-        this.stage.width(this.stage.width() * scale);
-        this.stage.height(this.stage.height() * scale);
-        this.stage.scale({ x: scale, y: scale });
+    private createSlot(path: string): Konva.Path {
+        const COLOR = getComputedStyle(this.canvas.Container).getPropertyValue("--color-primary").trim();
+        const SLOT = new Konva.Path({
+            data: path,
+            fill: COLOR,
+            strokeEnabled: false,
+            hitStrokeWidth: 0,
+            scale: {x: this.scale, y: this.scale}
+        })
+        this.field.add(SLOT);
+        return SLOT;
     }
 }
 
@@ -222,6 +203,19 @@ class PuzzlePieceContainer {
         this.margin = 10;
 
         this.layer.add(this.container);
+        this.draw();
+    }
+
+    public placePieceIntoContainer(piece: Konva.Image): void {
+        const CONTAINER = this.slotMapping.get(piece)!;
+        
+        CONTAINER?.add(piece);
+
+        const PIECE_SCALE = Math.min(CONTAINER.width() / piece.width(), CONTAINER.height() / piece.height());
+        piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
+        const RECT_PIECE = piece.getClientRect();
+        piece.x((CONTAINER.width() - RECT_PIECE.width) / 2);
+        piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
     }
 
     private createPuzzlePieceContainerSlot(): Konva.Group {
@@ -275,116 +269,105 @@ class PuzzlePieceContainer {
         })
     }
 
-    public draw(): void {
+    private draw(): void {
         this.drawPuzzlePieceContainer();
         this.drawPieces();
     }
+}
 
-    public placePieceIntoContainer(piece: Konva.Image): void {
-        const CONTAINER = this.slotMapping.get(piece)!;
+// class ExitButton {
+//     private layer: Konva.Layer;
+//     private button: Konva.Group;
+
+//     private readonly width: number;
+//     private readonly height: number;
+//     private readonly margin: number;
+
+//     constructor(layer: Konva.Layer, pointerclick: () => void) {
+//         this.layer = layer;
+//         this.button = new Konva.Group();
+//         this.button.on("pointerclick", pointerclick);
+
+//         this.width = 40;
+//         this.height = 40;
+//         this.margin = 20;
+
+//         this.button.x(this.layer.getStage().width() - this.width / 2 - this.margin)
+//         this.button.y(this.height / 2 + this.margin)
+//         this.button.width(this.width);
+//         this.button.height(this.height);
         
-        CONTAINER?.add(piece);
+//         this.create();
+//     }
 
-        const PIECE_SCALE = Math.min(CONTAINER.width() / piece.width(), CONTAINER.height() / piece.height());
-        piece.scale({x: PIECE_SCALE, y: PIECE_SCALE});
-        const RECT_PIECE = piece.getClientRect();
-        piece.x((CONTAINER.width() - RECT_PIECE.width) / 2);
-        piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
-    }
-}
+//     private create(): void {
+//         const COLOR_PRIMARY = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
+//         const COLOR_SECONDARY = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+//         this.button.add(
+//             new Konva.Circle({
+//                 width: this.width,
+//                 height: this.height,
+//                 fill: COLOR_SECONDARY,
+//             })
+//         );
+//         this.button.add(
+//             new Konva.Line({
+//                 points: [-10,-10, 10,10],
+//                 stroke: COLOR_PRIMARY,
+//                 strokeWidth: 3,
+//             })
+//         );  
 
-class ExitButton {
-    private layer: Konva.Layer;
-    private button: Konva.Group;
+//         this.button.add(
+//             new Konva.Line({
+//                 points: [10,-10, -10,10],
+//                 stroke: COLOR_PRIMARY,
+//                 strokeWidth: 3,
+//             })
+//         );
+//     }
 
-    private readonly width: number;
-    private readonly height: number;
-    private readonly margin: number;
+//     public draw(): void {
+//         this.layer.add(this.button);
+//     }
+// }
 
-    constructor(layer: Konva.Layer, pointerclick: () => void) {
-        this.layer = layer;
-        this.button = new Konva.Group();
-        this.button.on("pointerclick", pointerclick);
+// class Fullscreen {
+//     private readonly canvas;
 
-        this.width = 40;
-        this.height = 40;
-        this.margin = 20;
+//     constructor(canvas: Canvas) {
+//         this.canvas = canvas;
+//         this.canvas.HudLayer.hide();
 
-        this.button.x(this.layer.getStage().width() - this.width / 2 - this.margin)
-        this.button.y(this.height / 2 + this.margin)
-        this.button.width(this.width);
-        this.button.height(this.height);
-        
-        this.create();
-    }
+//         this.canvas.Container.addEventListener("fullscreenchange", () => this.Enabled ?  undefined : this.canvas.HudLayer.hide());
+//     }
 
-    private create(): void {
-        const COLOR_PRIMARY = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
-        const COLOR_SECONDARY = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
-        this.button.add(
-            new Konva.Circle({
-                width: this.width,
-                height: this.height,
-                fill: COLOR_SECONDARY,
-            })
-        );
-        this.button.add(
-            new Konva.Line({
-                points: [-10,-10, 10,10],
-                stroke: COLOR_PRIMARY,
-                strokeWidth: 3,
-            })
-        );  
+//     public get Enabled() { return document.fullscreenElement ? true : false; }
 
-        this.button.add(
-            new Konva.Line({
-                points: [10,-10, -10,10],
-                stroke: COLOR_PRIMARY,
-                strokeWidth: 3,
-            })
-        );
-    }
+//     public async enable(): Promise<void> {
+//         if(!this.Enabled) {
+//             await this.canvas.Container.requestFullscreen({navigationUI: "hide"})
+//             if(this.Enabled) {
+//                 this.canvas.HudLayer.show();
+//                 this.canvas.fitStageIntoContainer();
+//             }
+//         }
+//     }
 
-    public draw(): void {
-        this.layer.add(this.button);
-    }
-}
-
-class Fullscreen {
-    private readonly canvas;
-
-    constructor(canvas: Canvas) {
-        this.canvas = canvas;
-        this.canvas.HudLayer.hide();
-
-        this.canvas.Container.addEventListener("fullscreenchange", () => this.Enabled ?  undefined : this.canvas.HudLayer.hide());
-    }
-
-    public get Enabled() { return document.fullscreenElement ? true : false; }
-
-    public async enable(): Promise<void> {
-        if(!this.Enabled) {
-            await this.canvas.Container.requestFullscreen({navigationUI: "hide"})
-            if(this.Enabled) {
-                this.canvas.HudLayer.show();
-                this.canvas.fitStageIntoContainer();
-            }
-        }
-    }
-
-    public async disable(): Promise<void> {
-        if(this.Enabled) {
-            await document.exitFullscreen();
-            this.canvas.fitStageIntoContainer();
-            this.canvas.HudLayer.hide();
-        }
-    }
-}
+//     public async disable(): Promise<void> {
+//         if(this.Enabled) {
+//             await document.exitFullscreen();
+//             this.canvas.fitStageIntoContainer();
+//             this.canvas.HudLayer.hide();
+//         }
+//     }
+// }
 
 // https://konvajs.org/docs/sandbox/Multi-touch_Scale_Stage.html
 class PanAndZoom {
-    private layer: Konva.Layer;
     private stage: Konva.Stage;
+    private container: Konva.Container;
+    
     private lastCenter: Vector2d | null;
     private lastDist;
     private dragStopped;
@@ -392,9 +375,9 @@ class PanAndZoom {
     private readonly MAX_ZOOM = 5;
     private readonly MIN_ZOOM = 1;
 
-    constructor(layer: Konva.Layer) {
-        this.layer = layer;
-        this.stage = layer.getStage();
+    constructor(container: Konva.Container) {
+        this.stage = container.getStage()!;
+        this.container = container;
         this.lastCenter = null;
         this.lastDist = 0;
         this.dragStopped = false;
@@ -422,8 +405,8 @@ class PanAndZoom {
         const touch2 = e.evt.touches[1];
 
         // we need to restore dragging, if it was cancelled by multi-touch
-        if (touch1 && !touch2 && !this.layer.isDragging() && this.dragStopped) {
-            this.layer.startDrag();
+        if (touch1 && !touch2 && !this.container.isDragging() && this.dragStopped) {
+            this.container.startDrag();
             this.dragStopped = false;
         }
 
@@ -439,7 +422,7 @@ class PanAndZoom {
                     const dy = p1.y - this.lastCenter.y;
 
                     // Bounds berechnen
-                    const rect = this.layer.findOne("#playfield")!.getClientRect();
+                    const rect = this.container.getClientRect();
                     const left = rect.x;
                     const top = rect.y;
                     const right = left + rect.width;
@@ -453,26 +436,26 @@ class PanAndZoom {
                     // bildbreite < viewportBreite
                     if(rect.width < this.stage.width()) {
                         if(!(dx < 0 && left < leftBound) && !(dx > 1 && right > rightBound)) {
-                            this.layer.x(left + dx);
+                            this.container.x(left + dx);
                         }
                     }
                     // bildbreite > viewportBreite
                     else {
                         if(!(dx < 0 && right < rightBound) && !(dx > 0 && left > leftBound)) {
-                            this.layer.x(left + dx);
+                            this.container.x(left + dx);
                         }
                     }
 
                     // bildhöhe < viewporthöhe
                     if(rect.height < this.stage.height()) {
                         if(!(dy < 0 && top < topBound) && !(dy > 0 && bottom > bottomBound)) {
-                            this.layer.y(top + dy);
+                            this.container.y(top + dy);
                         }
                     }
                     // bild > viewport
                     else {
                         if(!(dy < 0 && bottom < bottomBound) && !(dy > 0 && top > topBound)) {
-                            this.layer.y(top + dy);
+                            this.container.y(top + dy);
                         }
                     }
                 }
@@ -482,9 +465,9 @@ class PanAndZoom {
         else if (touch1 && touch2) {
             // if the stage was under Konva's drag&drop
             // we need to stop it, and implement our own pan logic with two pointers
-            if (this.layer.isDragging()) {
+            if (this.container.isDragging()) {
                 this.dragStopped = true;
-                this.layer.stopDrag();
+                this.container.stopDrag();
             }
 
             const rect = this.stage.container().getBoundingClientRect();
@@ -513,18 +496,18 @@ class PanAndZoom {
 
             // local coordinates of center point
             const pointTo = {
-                x: (newCenter.x - this.layer.x()) / this.layer.scaleX(),
-                y: (newCenter.y - this.layer.y()) / this.layer.scaleX(),
+                x: (newCenter.x - this.container.x()) / this.container.scaleX(),
+                y: (newCenter.y - this.container.y()) / this.container.scaleX(),
             };
 
-            const scale = this.layer.scaleX() * (dist / this.lastDist);
+            const scale = this.container.scaleX() * (dist / this.lastDist);
 
             if(scale > this.MAX_ZOOM || scale < this.MIN_ZOOM) {
                 return;
             }
 
-            this.layer.scaleY(scale);
-            this.layer.scaleX(scale);
+            this.container.scaleY(scale);
+            this.container.scaleX(scale);
 
             // calculate new position of the stage
             const dx = newCenter.x - this.lastCenter.x;
@@ -536,7 +519,7 @@ class PanAndZoom {
             };
 
             // Bounds berechnen
-            const rectPlayfield = this.layer.findOne("#playfield")!.getClientRect();
+            const rectPlayfield = this.container.getClientRect();
             const leftBound = 0;
             const rightBound = this.stage.width();
             const topBound = 0;
@@ -545,50 +528,50 @@ class PanAndZoom {
             // bildbreite < viewportBreite
             if(rectPlayfield.width < this.stage.width()) {
                 if(newPos.x < leftBound) {
-                    this.layer.x(leftBound);
+                    this.container.x(leftBound);
                 }
                 else if(newPos.x + rectPlayfield.width > rightBound) {
-                    this.layer.x(rightBound - rectPlayfield.width);
+                    this.container.x(rightBound - rectPlayfield.width);
                 }
                 else {
-                    this.layer.x(newPos.x);
+                    this.container.x(newPos.x);
                 }
             }
             // bildbreite > viewportBreite
             else {
                 if(newPos.x > leftBound) {
-                    this.layer.x(leftBound);
+                    this.container.x(leftBound);
                 }
                 else if(newPos.x + rectPlayfield.width < rightBound) {
-                    this.layer.x(rightBound - rectPlayfield.width);
+                    this.container.x(rightBound - rectPlayfield.width);
                 }
                 else {
-                    this.layer.x(newPos.x);
+                    this.container.x(newPos.x);
                 }
             }
 
             // bildhöhe < viewporthöhe
             if(rectPlayfield.height < this.stage.height()) {
                 if(newPos.y < topBound) {
-                    this.layer.y(topBound);
+                    this.container.y(topBound);
                 }
                 else if(newPos.y + rectPlayfield.height > bottomBound) {
-                    this.layer.y(bottomBound - rectPlayfield.height);
+                    this.container.y(bottomBound - rectPlayfield.height);
                 }
                 else {
-                    this.layer.y(newPos.y);
+                    this.container.y(newPos.y);
                 }
             }
             // bild > viewport
             else {
                 if(newPos.y > topBound) {
-                    this.layer.y(topBound);
+                    this.container.y(topBound);
                 }
                 else if(newPos.y + rectPlayfield.height < bottomBound) {
-                    this.layer.y(bottomBound - rectPlayfield.height);
+                    this.container.y(bottomBound - rectPlayfield.height);
                 }
                 else {
-                    this.layer.y(newPos.y);
+                    this.container.y(newPos.y);
                 }
             }
 
