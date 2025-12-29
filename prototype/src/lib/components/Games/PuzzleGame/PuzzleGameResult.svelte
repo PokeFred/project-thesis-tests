@@ -2,16 +2,17 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { Result } from ".";
     import { POINTS } from "../Quiz";
-    import type { Piece } from "./Puzzle.svelte";
+    import { Piece } from "./Puzzle.svelte";
 
     const { result, saving }: { result: { path: string, alt: string }, saving: { placed: any[] } } = $props()
 
-    // TODO ?
+    // TODO SIMON: fix das
     const _result: Result = {
         path: result.path,
         alt: result.alt,
         placed: [] // saving.placed
     }
+    console.log({ result, saving })
 
     const correctPieces: number = _result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0), 0);
     const totalPieces: number = _result.placed.length;
