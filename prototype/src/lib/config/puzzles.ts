@@ -119,7 +119,7 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 path: "/station_01/raetsel_02/game",
-                alt: "asdasd"
+                alt: ""
             }
         }
     },
@@ -153,12 +153,43 @@ const puzzles: Puzzle[] = [
     //         }
     //     }
     // },
+    // {
+    //     id: 28,
+    //     type: "drag-drop-puzzle",
+    //     title: "Rätsel 8",
+    //     requirements: [], // TODO [20],
+    //     score: 2,
+    //     data: {
+    //         introduction: {
+    //             title: "",
+    //             description: []
+    //         },
+    //         game: {
+    //             path: "/station_04/raetsel_01/game"
+    //         },
+    //         result: {}
+    //     }
+    // },
+    // {
+    //     id: 29,
+    //     type: "text-select-puzzle",
+    //     title: "Rätsel 9",
+    //     requirements: [], // TODO [20],
+    //     score: 2,
+    //     data: {
+    //         introduction: {
+    //             text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+    //         },
+    //         game: {},
+    //         result: {}
+    //     }
+    // }
     {
-        id: 28,
+        id: 27,
         type: "drag-drop-puzzle",
-        title: "Rätsel 8",
-        requirements: [], // TODO [20],
-        score: 2,
+        title: "Station 04 Rätsel 01",
+        requirements: [],
+        score: 1,
         data: {
             introduction: {
                 title: "",
@@ -167,21 +198,50 @@ const puzzles: Puzzle[] = [
             game: {
                 path: "/station_04/raetsel_01/game"
             },
-            result: {}
+            result: {
+                path: "/station_04/raetsel_01/game",
+                alt: ""
+            }
+        }
+    },
+    {
+        id: 28,
+        type: "drag-drop-puzzle",
+        title: "Station 05 Rätsel 01",
+        requirements: [],
+        score: 1,
+        data: {
+            introduction: {
+                title: "",
+                description: []
+            },
+            game: {
+                path: "/station_05/raetsel_01/game"
+            },
+            result: {
+                path: "/station_05/raetsel_01/game",
+                alt: ""
+            }
         }
     },
     {
         id: 29,
-        type: "text-select-puzzle",
-        title: "Rätsel 9",
-        requirements: [], // TODO [20],
-        score: 2,
+        type: "drag-drop-puzzle",
+        title: "Station 05 Rätsel 02",
+        requirements: [],
+        score: 1,
         data: {
             introduction: {
-                text: ["Das Warenhaus Althoff war mit seinen 5000 m² Verkaufsfläche und etwa 500 Mitarbeitenden das größte Warenhaus außerhalb Berlins.", "Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+                title: "",
+                description: []
             },
-            game: {},
-            result: {}
+            game: {
+                path: "/station_05/raetsel_02/game"
+            },
+            result: {
+                path: "/station_05/raetsel_02/game",
+                alt: ""
+            }
         }
     }
 ]

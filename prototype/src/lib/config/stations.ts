@@ -133,7 +133,7 @@ const stations: Station[] = [
                     ]
                 }
             ],
-        puzzles: [28, 29]
+        puzzles: [27, 28, 29]
     }
 ]
 
