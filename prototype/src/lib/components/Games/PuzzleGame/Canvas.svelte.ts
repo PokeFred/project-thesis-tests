@@ -3,6 +3,7 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
+import { width } from "@fortawesome/free-solid-svg-icons/faMinus";
 
 // TODO: scrollbar puzzle container
 // TODO: draggen des puzzles ist nicht smooth
@@ -87,9 +88,6 @@ export default class Canvas {
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
         piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));
-        console.log(piece.scale())
-        console.log(piece.getSelfRect())
-        console.log(piece.getClientRect())
         return piece;
     }
 
@@ -394,7 +392,7 @@ class PanAndZoom {
     private dragStopped;
 
     private readonly MAX_ZOOM = 5;
-    private readonly MIN_ZOOM = 1;
+    private readonly MIN_ZOOM;
 
     constructor(container: Konva.Container, boundary: Konva.Container) {
         this.container = container;
@@ -402,6 +400,7 @@ class PanAndZoom {
         this.lastCenter = null;
         this.lastDist = 0;
         this.dragStopped = false;
+        this.MIN_ZOOM = container.scaleX();
     }
 
     private getDistance(p1: Vector2d, p2: Vector2d) {
@@ -432,10 +431,10 @@ class PanAndZoom {
         }
 
         if(touch1 && !touch2) {
-            const rect = this.boundary.getClientRect();
+            const rect = this.container.getClientRect();
             const p1 = {
-                x: touch1.clientX - rect.x,
-                y: touch1.clientY - rect.y,
+                x: touch1.clientX,
+                y: touch1.clientY,
             };
 
                 if(this.lastCenter) {
@@ -456,28 +455,20 @@ class PanAndZoom {
 
                     // bildbreite < viewportBreite
                     if(rect.width < this.boundary.width()) {
-                        if(!(dx < 0 && left < leftBound) && !(dx > 1 && right > rightBound)) {
-                            this.container.x(left + dx);
-                        }
+                        this.container.x(Math.min(Math.max(leftBound, left + dx) + rect.width, rightBound) - rect.width);
                     }
                     // bildbreite > viewportBreite
                     else {
-                        if(!(dx < 0 && right < rightBound) && !(dx > 0 && left > leftBound)) {
-                            this.container.x(left + dx);
-                        }
+                        this.container.x(Math.max(Math.min(leftBound, left + dx) + rect.width, rightBound) - rect.width);
                     }
 
                     // bildhöhe < viewporthöhe
                     if(rect.height < this.boundary.height()) {
-                        if(!(dy < 0 && top < topBound) && !(dy > 0 && bottom > bottomBound)) {
-                            this.container.y(top + dy);
-                        }
+                        this.container.y(Math.min(Math.max(topBound, top + dy) + rect.height, bottomBound) - rect.height);
                     }
                     // bild > viewport
                     else {
-                        if(!(dy < 0 && bottom < bottomBound) && !(dy > 0 && top > topBound)) {
-                            this.container.y(top + dy);
-                        }
+                        this.container.y(Math.max(Math.min(topBound, top + dy) + rect.height, bottomBound) - rect.height);
                     }
                 }
             this.lastCenter = p1;
@@ -494,12 +485,12 @@ class PanAndZoom {
             const rect = this.boundary.getClientRect();
 
             const p1 = {
-                x: touch1.clientX - rect.x,
-                y: touch1.clientY - rect.y,
+                x: touch1.clientX,
+                y: touch1.clientY,
             };
             const p2 = {
-                x: touch2.clientX - rect.x,
-                y: touch2.clientY - rect.y,
+                x: touch2.clientX,
+                y: touch2.clientY,
             };
 
             if (!this.lastCenter) {
@@ -548,52 +539,20 @@ class PanAndZoom {
 
             // bildbreite < viewportBreite
             if(rectPlayfield.width < this.boundary.width()) {
-                if(newPos.x < leftBound) {
-                    this.container.x(leftBound);
-                }
-                else if(newPos.x + rectPlayfield.width > rightBound) {
-                    this.container.x(rightBound - rectPlayfield.width);
-                }
-                else {
-                    this.container.x(newPos.x);
-                }
+                this.container.x(Math.min(Math.max(leftBound, newPos.x) + rectPlayfield.width, rightBound) - rectPlayfield.width);
             }
             // bildbreite > viewportBreite
             else {
-                if(newPos.x > leftBound) {
-                    this.container.x(leftBound);
-                }
-                else if(newPos.x + rectPlayfield.width < rightBound) {
-                    this.container.x(rightBound - rectPlayfield.width);
-                }
-                else {
-                    this.container.x(newPos.x);
-                }
+                this.container.x(Math.max(Math.min(leftBound, newPos.x) + rectPlayfield.width, rightBound) - rectPlayfield.width);
             }
 
             // bildhöhe < viewporthöhe
             if(rectPlayfield.height < this.boundary.height()) {
-                if(newPos.y < topBound) {
-                    this.container.y(topBound);
-                }
-                else if(newPos.y + rectPlayfield.height > bottomBound) {
-                    this.container.y(bottomBound - rectPlayfield.height);
-                }
-                else {
-                    this.container.y(newPos.y);
-                }
+                this.container.y(Math.min(Math.max(topBound, newPos.y) + rectPlayfield.height, bottomBound) - rectPlayfield.height);
             }
             // bild > viewport
             else {
-                if(newPos.y > topBound) {
-                    this.container.y(topBound);
-                }
-                else if(newPos.y + rectPlayfield.height < bottomBound) {
-                    this.container.y(bottomBound - rectPlayfield.height);
-                }
-                else {
-                    this.container.y(newPos.y);
-                }
+                this.container.y(Math.max(Math.min(topBound, newPos.y) + rectPlayfield.height, bottomBound) - rectPlayfield.height);
             }
 
             this.lastDist = dist;
