@@ -1,18 +1,17 @@
-export type Introduction = {
+export type IntroductionData = {
     title: string,
     description: string[]
 }
 
-export type GameInput = {
+export type GameData = {
     path: string
 }
 
-export type GameOutput = {
-    placed: any[]
+export type ResultData = {
+    path: string,
+    alt: string
 }
 
-export type Result = {}
-
-export type Saving = {
+export type SavingData = {
     placed: any[]
 }

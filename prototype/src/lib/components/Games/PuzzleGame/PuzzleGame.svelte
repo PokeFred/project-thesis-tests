@@ -5,7 +5,8 @@
     import { Icon } from "svelte-awesome";
     import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-    const { gameInput }: { gameInput: GameInput } = $props();   
+    const { input }: { input: GameInput } = $props();
+    const gameInput: GameInput = input 
 
     const path: string = gameInput.path;
     

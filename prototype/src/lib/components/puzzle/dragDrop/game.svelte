@@ -1,24 +1,21 @@
 <script lang="ts">
-  import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
-    import type { GameInput, GameOutput } from "./index"
+    import type { GameData, SavingData } from "."
+    import GameComponent from "$components/Games/PuzzleGame/PuzzleGame.svelte"
+    import type { GameInput as Input } from "$components/Games/PuzzleGame"
     import { onMount } from "svelte"
-    import type { GameInput as _GameInput } from "$components/Games/PuzzleGame"
 
-    let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
+    let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
 
-    let puzzle: PuzzleGame
-
-    export function getSubmitData(): GameOutput {
-        return puzzle.getSubmitData()
-    }
-
-    export function getSubmitScore(): number {
-        return puzzle.getSubmitScore()
-    }
+    let game: GameComponent
+    export function getSubmitData(): SavingData { return game.getSubmitData() }
+    export function getSubmitScore(): number { return game.getSubmitScore() }
 
     onMount((): void => {
         setSubmitable()
     })
+
+    // svelte-ignore state_referenced_locally
+    const input: Input = data
 </script>
 
-<PuzzleGame bind:this={puzzle} gameInput={{ path: data.path } as _GameInput} />
+<GameComponent bind:this={game} input={input} />

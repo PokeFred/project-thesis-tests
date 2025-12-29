@@ -4,9 +4,17 @@
     import { POINTS } from "../Quiz";
     import type { Piece } from "./Puzzle.svelte";
 
-    const { result }: { result: Result } = $props();
-    const correctPieces: number = result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0), 0);
-    const totalPieces: number = result.placed.length;
+    const { result, saving }: { result: { path: string, alt: string }, saving: { placed: any[] } } = $props()
+
+    // TODO ?
+    const _result: Result = {
+        path: result.path,
+        alt: result.alt,
+        placed: [] // saving.placed
+    }
+
+    const correctPieces: number = _result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0), 0);
+    const totalPieces: number = _result.placed.length;
     const points: number = correctPieces * POINTS.ANSWER_CORRECT;
     const totalPoints: number = totalPieces * POINTS.ANSWER_CORRECT;
 </script>
@@ -15,7 +23,7 @@
     <div class="w-full h-auto">
         <figure>
             <Fullscreen>
-                <img src={`${result.path}/Background.png`} alt={result.alt} class="justify-self-center align-middle">
+                <img src={`${_result.path}/Background.png`} alt={_result.alt} class="justify-self-center align-middle">
             </Fullscreen>
             <figcaption></figcaption>
         </figure>

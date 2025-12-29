@@ -117,7 +117,10 @@ const puzzles: Puzzle[] = [
             game: {
                 path: "/station_01/raetsel_02/game"
             },
-            result: {}
+            result: {
+                path: "/station_01/raetsel_02/game",
+                alt: "asdasd"
+            }
         }
     },
     // {

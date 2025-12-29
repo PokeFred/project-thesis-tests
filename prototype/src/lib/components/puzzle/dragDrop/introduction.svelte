@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { Introduction } from "./index"
+    import type { IntroductionData } from "."
 
-    let { data }: { data: Introduction } = $props()
+    let { data }: { data: IntroductionData } = $props()
 </script>
 
 <div class="w-full h-auto px-2 pb-10 leading-6">
