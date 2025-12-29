@@ -3,11 +3,11 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
+import { height } from "@fortawesome/free-solid-svg-icons/faMinus";
 
 // TODO: scrollbar puzzle container
-// TODO: puzzle piece container seperat
-// TODO: bounds für bild machen, über dem puzzle piece container
-// TODO: pan and zoom an übergebene parameter bounds festmachen, nicht nur an stage
+// TODO: puzzle am anfang centeren.
+// TODO: draggen des puzzles ist nicht smooth
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
@@ -39,7 +39,7 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
         
-        this.puzzle = new Puzzle(this, background, slotGroups);
+
         this.pieces = new Array<Konva.Image>();
         slotGroups.forEach((slotGroup: SlotGroup) => {
             this.pieces.push(this.createPiece(slotGroup.piece));
@@ -48,6 +48,7 @@ export default class Canvas {
             });
         });
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
+        this.puzzle = new Puzzle(this, background, slotGroups);
 
         this.createBackground();
     }
@@ -116,17 +117,13 @@ class Puzzle {
         this.stage = this.canvas.Stage;
         this.layer = this.canvas.GameLayer;
 
-        this.boundary = new Konva.Group;
+        this.boundary = this.createBoundary();
         this.field = this.createField(image);
 
         this.boundary.add(this.field);
         this.layer.add(this.boundary);
 
-        const rec = new Konva.Rect({width: this.boundary.width() + 100, height: this.boundary.height() + 1000, stroke: "black"});
-        this.boundary.add(rec) ////////////////////////
-
-
-        this.panAndZoom = new PanAndZoom(this.field);
+        this.panAndZoom = new PanAndZoom(this.field, this.boundary);
         this.field.on("touchend", this.panAndZoom.touchend.bind(this.panAndZoom));
         this.field.on("touchmove", this.panAndZoom.touchmove.bind(this.panAndZoom));
 
@@ -138,8 +135,26 @@ class Puzzle {
     public get Scale() { return this.scale; }
     public get Slots() { return this.slots; }
 
+    private createBoundary(): Konva.Group {
+        const WIDTH: number = this.stage.width();
+        const HEIGHT: number = this.stage.height() - this.canvas.PuzzlePieceContainer.Height;
+        const BOUNDARY: Konva.Rect = new Konva.Rect({
+            width: WIDTH,
+            height: HEIGHT,
+            fill: "black"
+        });
+        
+        const GROUP: Konva.Group = new Konva.Group({
+            width: WIDTH,
+            height: HEIGHT
+        });
+        GROUP.add(BOUNDARY);
+        return GROUP;
+    }
+
     private createField(background: HTMLImageElement): Konva.Group {
-        this.scale =  Math.min(this.stage.width() / background.naturalWidth, this.stage.height() / background.naturalHeight);
+        const RECT = this.boundary.getClientRect();
+        this.scale =  Math.min(RECT.width / background.naturalWidth, RECT.height / background.naturalHeight);
 
         console.log(this.scale)
         const IMAGE: Konva.Image = new Konva.Image({
@@ -208,6 +223,9 @@ class PuzzlePieceContainer {
         this.draw();
     }
 
+    public get Container() { return this.container; }
+    public get Height() { return this.height; }
+
     public placePieceIntoContainer(piece: Konva.Image): void {
         const CONTAINER = this.slotMapping.get(piece)!;
         
@@ -246,7 +264,7 @@ class PuzzlePieceContainer {
                 y: 0,
                 width: this.container.width(),
                 height: this.container.height(),
-                stroke: COLOR,
+                fill: COLOR
             })
         );
     }
@@ -367,8 +385,8 @@ class PuzzlePieceContainer {
 
 // https://konvajs.org/docs/sandbox/Multi-touch_Scale_Stage.html
 class PanAndZoom {
-    private stage: Konva.Stage;
     private container: Konva.Container;
+    private boundary: Konva.Container;
     
     private lastCenter: Vector2d | null;
     private lastDist;
@@ -377,9 +395,9 @@ class PanAndZoom {
     private readonly MAX_ZOOM = 5;
     private readonly MIN_ZOOM = 1;
 
-    constructor(container: Konva.Container) {
-        this.stage = container.getStage()!;
+    constructor(container: Konva.Container, boundary: Konva.Container) {
         this.container = container;
+        this.boundary = boundary;
         this.lastCenter = null;
         this.lastDist = 0;
         this.dragStopped = false;
@@ -413,10 +431,10 @@ class PanAndZoom {
         }
 
         if(touch1 && !touch2) {
-            const rect = this.stage.container().getBoundingClientRect();
+            const rect = this.boundary.getClientRect();
             const p1 = {
-                x: touch1.clientX - rect.left,
-                y: touch1.clientY - rect.top,
+                x: touch1.clientX - rect.x,
+                y: touch1.clientY - rect.y,
             };
 
                 if(this.lastCenter) {
@@ -431,12 +449,12 @@ class PanAndZoom {
                     const bottom = top + rect.height;
 
                     const leftBound = 0;
-                    const rightBound = this.stage.width();
+                    const rightBound = this.boundary.width();
                     const topBound = 0;
-                    const bottomBound = this.stage.height();
+                    const bottomBound = this.boundary.height();
 
                     // bildbreite < viewportBreite
-                    if(rect.width < this.stage.width()) {
+                    if(rect.width < this.boundary.width()) {
                         if(!(dx < 0 && left < leftBound) && !(dx > 1 && right > rightBound)) {
                             this.container.x(left + dx);
                         }
@@ -449,7 +467,7 @@ class PanAndZoom {
                     }
 
                     // bildhöhe < viewporthöhe
-                    if(rect.height < this.stage.height()) {
+                    if(rect.height < this.boundary.height()) {
                         if(!(dy < 0 && top < topBound) && !(dy > 0 && bottom > bottomBound)) {
                             this.container.y(top + dy);
                         }
@@ -472,15 +490,15 @@ class PanAndZoom {
                 this.container.stopDrag();
             }
 
-            const rect = this.stage.container().getBoundingClientRect();
+            const rect = this.boundary.getClientRect();
 
             const p1 = {
-                x: touch1.clientX - rect.left,
-                y: touch1.clientY - rect.top,
+                x: touch1.clientX - rect.x,
+                y: touch1.clientY - rect.y,
             };
             const p2 = {
-                x: touch2.clientX - rect.left,
-                y: touch2.clientY - rect.top,
+                x: touch2.clientX - rect.x,
+                y: touch2.clientY - rect.y,
             };
 
             if (!this.lastCenter) {
@@ -523,12 +541,12 @@ class PanAndZoom {
             // Bounds berechnen
             const rectPlayfield = this.container.getClientRect();
             const leftBound = 0;
-            const rightBound = this.stage.width();
+            const rightBound = this.boundary.width();
             const topBound = 0;
-            const bottomBound = this.stage.height();
+            const bottomBound = this.boundary.height();
 
             // bildbreite < viewportBreite
-            if(rectPlayfield.width < this.stage.width()) {
+            if(rectPlayfield.width < this.boundary.width()) {
                 if(newPos.x < leftBound) {
                     this.container.x(leftBound);
                 }
@@ -553,7 +571,7 @@ class PanAndZoom {
             }
 
             // bildhöhe < viewporthöhe
-            if(rectPlayfield.height < this.stage.height()) {
+            if(rectPlayfield.height < this.boundary.height()) {
                 if(newPos.y < topBound) {
                     this.container.y(topBound);
                 }
