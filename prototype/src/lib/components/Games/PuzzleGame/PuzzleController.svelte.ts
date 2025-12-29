@@ -73,9 +73,13 @@ export default class PuzzleController {
 
         const KONVA_SLOT = this.slotMap.get(SLOT!)!;
 
-        PIECE?.removeFromSlot();
         this.switchContainer(piece, this.canvas.PuzzlePieceContainer.Container);
-        piece.scale({ x: this.canvas.Puzzle.Field.scaleX(), y: this.canvas.Puzzle.Field.scaleY()});
+        piece.scale({ x: this.canvas.Puzzle.Field.scaleX(), y: this.canvas.Puzzle.Field.scaleY()});  
+        if(!PIECE?.Placed) {
+            const RECT = piece.getSelfRect();
+            piece.offset({x: RECT.width / 2, y: RECT.height / 2});
+        }
+        PIECE?.removeFromSlot();
         
         KONVA_SLOT?.show();
     }
@@ -90,6 +94,7 @@ export default class PuzzleController {
         const PIECE: Piece | undefined = this.pieceMap.get(piece);
         const SLOT: Slot | undefined = PIECE?.Slot;
 
+        piece.offset({x: 0, y: 0});
         if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {            
             this.placePieceInSlot(piece);
             this.switchContainer(piece, this.canvas.Puzzle.Field);   

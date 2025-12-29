@@ -431,7 +431,6 @@ class PanAndZoom {
         }
 
         if(touch1 && !touch2) {
-            const rect = this.container.getClientRect();
             const p1 = {
                 x: touch1.clientX,
                 y: touch1.clientY,
