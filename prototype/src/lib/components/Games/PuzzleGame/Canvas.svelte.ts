@@ -3,10 +3,8 @@ import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
-import { height } from "@fortawesome/free-solid-svg-icons/faMinus";
 
 // TODO: scrollbar puzzle container
-// TODO: puzzle am anfang centeren.
 // TODO: draggen des puzzles ist nicht smooth
 export default class Canvas {
     private puzzleController: PuzzleController;
@@ -42,9 +40,11 @@ export default class Canvas {
 
         this.pieces = new Array<Konva.Image>();
         slotGroups.forEach((slotGroup: SlotGroup) => {
+            const PIECE: Konva.Image = this.createPiece(slotGroup.piece);
+            const RECT = PIECE.getClientRect();
             this.pieces.push(this.createPiece(slotGroup.piece));
             slotGroup.noise?.forEach((piece: HTMLImageElement) => {
-                this.pieces.push(this.createPiece(piece));
+                this.pieces.push(this.createPiece(piece, RECT));
             });
         });
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
@@ -58,7 +58,6 @@ export default class Canvas {
     public get GameLayer() { return this.gameLayer; }
     public get HudLayer() { return this.hudLayer; }
     public get PuzzlePieceContainer() { return this.puzzlePieceContainer; }
-    public get Scale() { return this.puzzle.Scale; }
     public get Slots() { return this.puzzle.Slots; }
     public get Puzzle() { return this.puzzle; }
     public get Pieces() { return this.pieces; }
@@ -76,17 +75,21 @@ export default class Canvas {
         );
     }
 
-    private createPiece(img: HTMLImageElement): Konva.Image {
+    private createPiece(img: HTMLImageElement, dim?: {width: number, height: number, x: number, y: number}): Konva.Image {
         const piece: Konva.Image = new Konva.Image({
             image: img,
+            width: dim?.width,
+            height: dim?.height,
             shadowEnabled: false,
             strokeEnabled: false,
             shadowBlur: 0,
             draggable: true,
-            
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
         piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));
+        console.log(piece.scale())
+        console.log(piece.getSelfRect())
+        console.log(piece.getClientRect())
         return piece;
     }
 
@@ -107,8 +110,6 @@ class Puzzle {
     private readonly field: Konva.Group;
 
     private panAndZoom: PanAndZoom;
-
-    private scale!: number;
 
     private slots: Konva.Path[];
 
@@ -132,7 +133,6 @@ class Puzzle {
 
 
     public get Field() { return this.field; }
-    public get Scale() { return this.scale; }
     public get Slots() { return this.slots; }
 
     private createBoundary(): Konva.Group {
@@ -140,8 +140,7 @@ class Puzzle {
         const HEIGHT: number = this.stage.height() - this.canvas.PuzzlePieceContainer.Height;
         const BOUNDARY: Konva.Rect = new Konva.Rect({
             width: WIDTH,
-            height: HEIGHT,
-            fill: "black"
+            height: HEIGHT
         });
         
         const GROUP: Konva.Group = new Konva.Group({
@@ -154,14 +153,17 @@ class Puzzle {
 
     private createField(background: HTMLImageElement): Konva.Group {
         const RECT = this.boundary.getClientRect();
-        this.scale =  Math.min(RECT.width / background.naturalWidth, RECT.height / background.naturalHeight);
 
-        console.log(this.scale)
-        const IMAGE: Konva.Image = new Konva.Image({
-            image: background,
-            scale: {x: this.scale, y: this.scale},
+        const SCALE =  Math.min(RECT.width / background.naturalWidth, RECT.height / background.naturalHeight);
+        const OFFSET_X = (this.boundary.width() - (background.naturalWidth * SCALE)) / 2;
+        const OFFSET_Y = (this.boundary.height() - (background.naturalHeight * SCALE)) / 2;
+
+        const IMAGE: Konva.Image = new Konva.Image({image: background});
+        const GROUP: Konva.Group = new Konva.Group({
+            x: OFFSET_X,
+            y: OFFSET_Y,
+            scale: {x: SCALE, y: SCALE}
         });
-        const GROUP: Konva.Group = new Konva.Group;
         GROUP.add(IMAGE);
         return GROUP;
     }
@@ -173,7 +175,6 @@ class Puzzle {
             fill: COLOR,
             strokeEnabled: false,
             hitStrokeWidth: 0,
-            scale: {x: this.scale, y: this.scale}
         })
         this.field.add(SLOT);
         return SLOT;

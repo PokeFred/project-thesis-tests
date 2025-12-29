@@ -2,10 +2,7 @@ import type Konva from "konva";
 import Canvas from "./Canvas.svelte";
 import Puzzle from "./Puzzle.svelte";
 import type { Piece, Slot } from "./Puzzle.svelte";
-import type { ImageConfig, KonvaEventObject } from "konva/lib/Node";
-import type { Shape } from "konva/lib/Shape";
-// TODO: cutout python script anpassen an neue json struktur
-// TODO: rätsel 00 anpassen
+import type { KonvaEventObject } from "konva/lib/Node";
 
 const SNAP_RANGE = 20;
 
@@ -76,16 +73,10 @@ export default class PuzzleController {
 
         const KONVA_SLOT = this.slotMap.get(SLOT!)!;
 
-        const RECT_PIECE = piece.getSelfRect();
-        const RECT_SLOT = KONVA_SLOT?.getSelfRect();
-
-        const SCALE_X_NORMALIZED: number = RECT_SLOT.width / RECT_PIECE.width;
-        const SCALE_Y_NORMALIZED: number = RECT_SLOT.height / RECT_PIECE.height;
-
         PIECE?.removeFromSlot();
         this.switchContainer(piece, this.canvas.PuzzlePieceContainer.Container);
-
-        piece.scale({ x: SCALE_X_NORMALIZED * KONVA_SLOT.scaleX(), y: SCALE_Y_NORMALIZED * KONVA_SLOT.scaleY() });
+        piece.scale({ x: this.canvas.Puzzle.Field.scaleX(), y: this.canvas.Puzzle.Field.scaleY()});
+        
         KONVA_SLOT?.show();
     }
 
@@ -99,9 +90,10 @@ export default class PuzzleController {
         const PIECE: Piece | undefined = this.pieceMap.get(piece);
         const SLOT: Slot | undefined = PIECE?.Slot;
 
-        if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {
+        if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {            
             this.placePieceInSlot(piece);
-            this.switchContainer(piece, this.canvas.Puzzle.Field);
+            this.switchContainer(piece, this.canvas.Puzzle.Field);   
+            piece.scale({ x: 1, y: 1});
         }
         else {
             this.canvas.PuzzlePieceContainer.placePieceIntoContainer(piece);
@@ -120,7 +112,7 @@ export default class PuzzleController {
         SLOT?.hide();
     }
 
-    private switchContainer(piece: Konva.Image, container: Konva.Layer | Konva.Group): void {
+    private switchContainer(piece: Konva.Image, container: Konva.Layer | Konva.Group): void {        
         const POS = piece.getAbsolutePosition(piece.getStage()!)
         piece.moveTo(container);
         piece.setAbsolutePosition(POS);
