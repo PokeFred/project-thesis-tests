@@ -73,11 +73,16 @@ export default class PuzzleController {
 
         const KONVA_SLOT = this.slotMap.get(SLOT!)!;
 
+        const RECT_PIECE = piece.getSelfRect();
+        const RECT_SLOT = KONVA_SLOT?.getSelfRect();
+
+        const SCALE_X_PIECE: number = RECT_SLOT.width / RECT_PIECE.width;
+        const SCALE_Y_PIECE: number = RECT_SLOT.height / RECT_PIECE.height;
+
         this.switchContainer(piece, this.canvas.PuzzlePieceContainer.Container);
-        piece.scale({ x: this.canvas.Puzzle.Field.scaleX(), y: this.canvas.Puzzle.Field.scaleY()});  
+        piece.scale({ x: SCALE_X_PIECE * this.canvas.Puzzle.Field.scaleX(), y: SCALE_Y_PIECE * this.canvas.Puzzle.Field.scaleY()});  
         if(!PIECE?.Placed) {
-            const RECT = piece.getSelfRect();
-            piece.offset({x: RECT.width / 2, y: RECT.height / 2});
+            piece.offset({x: RECT_PIECE.width / 2, y: RECT_PIECE.height / 2});
         }
         PIECE?.removeFromSlot();
         
@@ -86,10 +91,10 @@ export default class PuzzleController {
 
     private dropPiece(piece: Konva.Image): void {
         const KONVA_SLOT = this.getConvaSlot(piece)!;
-        const PIECE_BOX = piece.getClientRect()
-        const SLOT_BOX = KONVA_SLOT.getClientRect()
-        const PIECE_CENTER = {x: (PIECE_BOX.x + PIECE_BOX.width) / 2, y: (PIECE_BOX.y + PIECE_BOX.height) / 2}
-        const SLOT_CENTER = {x: (SLOT_BOX.x + SLOT_BOX.width) / 2, y: (SLOT_BOX.y + SLOT_BOX.height) / 2}
+        const PIECE_BOX_CLIENT = piece.getClientRect()
+        const SLOT_BOX_CLIENT = KONVA_SLOT.getClientRect()
+        const PIECE_CENTER = {x: (PIECE_BOX_CLIENT.x + PIECE_BOX_CLIENT.width) / 2, y: (PIECE_BOX_CLIENT.y + PIECE_BOX_CLIENT.height) / 2}
+        const SLOT_CENTER = {x: (SLOT_BOX_CLIENT.x + SLOT_BOX_CLIENT.width) / 2, y: (SLOT_BOX_CLIENT.y + SLOT_BOX_CLIENT.height) / 2}
 
         const PIECE: Piece | undefined = this.pieceMap.get(piece);
         const SLOT: Slot | undefined = PIECE?.Slot;
@@ -98,7 +103,13 @@ export default class PuzzleController {
         if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {            
             this.placePieceInSlot(piece);
             this.switchContainer(piece, this.canvas.Puzzle.Field);   
-            piece.scale({ x: 1, y: 1});
+
+            const RECT_PIECE_SELF = piece.getSelfRect();
+            const RECT_SLOT_SELF = KONVA_SLOT?.getSelfRect();
+
+            const SCALE_X_PIECE: number = RECT_SLOT_SELF.width / RECT_PIECE_SELF.width;
+            const SCALE_Y_PIECE: number = RECT_SLOT_SELF.height / RECT_PIECE_SELF.height;
+            piece.scale({ x: SCALE_X_PIECE, y: SCALE_Y_PIECE });  
         }
         else {
             this.canvas.PuzzlePieceContainer.placePieceIntoContainer(piece);

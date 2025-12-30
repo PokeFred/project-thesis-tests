@@ -6,7 +6,6 @@ import type PuzzleController from "./PuzzleController.svelte";
 import { width } from "@fortawesome/free-solid-svg-icons/faMinus";
 
 // TODO: scrollbar puzzle container
-// TODO: draggen des puzzles ist nicht smooth
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
