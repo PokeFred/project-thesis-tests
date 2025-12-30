@@ -10,7 +10,7 @@ export type GameInput = {
 }
 
 export type GameOutput = {
-    placed: Piece[]
+    placed: string
 }
 
 export type Result = {

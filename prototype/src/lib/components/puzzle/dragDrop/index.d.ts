@@ -13,5 +13,5 @@ export type ResultData = {
 }
 
 export type SavingData = {
-    placed: any[]
+    placed: string
 }

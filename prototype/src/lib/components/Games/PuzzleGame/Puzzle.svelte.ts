@@ -75,7 +75,7 @@ export default class Puzzle implements Quiz<GameOutput> {
         })
 
         return {
-            placed: placed.map((e: any): any => JSON.stringify(e))
+            placed: JSON.stringify(placed)
         }
     }
 }

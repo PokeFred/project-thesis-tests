@@ -4,7 +4,7 @@
     import { POINTS } from "../Quiz";
     import { Piece } from "./Puzzle.svelte";
 
-    const { result, saving }: { result: { path: string, alt: string }, saving: { placed: any[] } } = $props()
+    const { result, saving }: { result: { path: string, alt: string }, saving: { placed: string } } = $props()
 
     // TODO SIMON: fix das
     const _result: Result = {
