@@ -1,7 +1,7 @@
 import type { Content } from "../Content";
 import type { Answer } from "./Cloze.svelte"
 
-// TODO
+// TODO MERGE
 
 export type Introduction = {
     text: string[]

@@ -1,21 +1,23 @@
-    export type Introduction = {
-        text: string[]
-    }
+// TODO MERGE
 
-    export type GameInput = {
-        options: Answer[]
-    }
+export type Introduction = {
+    text: string[]
+}
 
-    export type GameOutput = {
-        answers: {
-                selected: boolean,
-                answer: Answer
-        }[]
-    }
+export type GameInput = {
+    options: Answer[]
+}
 
-    export type Result = {
-        answers: {
-                selected: boolean,
-                answer: Answer
-        }[]
-    }
+export type GameOutput = {
+    answers: {
+            selected: boolean,
+            answer: Answer
+    }[]
+}
+
+export type Result = {
+    answers: {
+            selected: boolean,
+            answer: Answer
+    }[]
+}
