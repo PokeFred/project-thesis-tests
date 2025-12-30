@@ -1,21 +1,19 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
-    import type { Result } from ".";
+    import type { ResultData, SavingData } from "$components/puzzle/dragDrop";
     import { POINTS } from "../Quiz";
-    import { Piece } from "./Puzzle.svelte";
 
-    const { result, saving }: { result: { path: string, alt: string }, saving: { placed: string } } = $props()
+    const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
-    // TODO SIMON: fix das
-    const _result: Result = {
-        path: result.path,
-        alt: result.alt,
-        placed: [] // saving.placed
+    type Piece = {
+        correct: boolean,
+        slot: Object
     }
-    console.log({ result, saving })
 
-    const correctPieces: number = _result.placed.reduce((sum: number, piece: Piece) => sum + (piece.Correct ? 1 : 0), 0);
-    const totalPieces: number = _result.placed.length;
+    const GAME_OUTPUT: Piece[] = JSON.parse(saving.placed) as Piece[];
+
+    const correctPieces: number = GAME_OUTPUT.reduce((sum: number, piece: Piece) => sum + (piece ? (piece.correct ? 1 : 0) : 0), 0);
+    const totalPieces: number = GAME_OUTPUT.length;
     const points: number = correctPieces * POINTS.ANSWER_CORRECT;
     const totalPoints: number = totalPieces * POINTS.ANSWER_CORRECT;
 </script>
@@ -24,7 +22,7 @@
     <div class="w-full h-auto">
         <figure>
             <Fullscreen>
-                <img src={`${_result.path}/Background.png`} alt={_result.alt} class="justify-self-center align-middle">
+                <img src={`${result.path}/Background.png`} alt={result.alt} class="justify-self-center align-middle">
             </Fullscreen>
             <figcaption></figcaption>
         </figure>

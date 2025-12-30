@@ -1,4 +1,4 @@
-import type { GameOutput } from ".";
+import type { SavingData } from "$components/puzzle/dragDrop";
 import { type Quiz, POINTS } from "../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
 
@@ -40,7 +40,7 @@ export class Piece {
     }
 }
 
-export default class Puzzle implements Quiz<GameOutput> {
+export default class Puzzle implements Quiz<SavingData> {
     private slots: Slot[];
     private pieces: Piece[];
 
@@ -69,7 +69,7 @@ export default class Puzzle implements Quiz<GameOutput> {
         }, 0);
     }
 
-    public complete(): GameOutput {
+    public complete(): SavingData {
         const placed: any[] = this.slots.map((slot: Slot) => {
             return slot.Selected
         })
