@@ -43,7 +43,7 @@ class GameField {
 
     private readonly panAndZoom: PanAndZoom;
 
-    // private readonly errors: Konva.???
+    // private readonly errorFields: Konva.???
 
     constructor(canvas: Canvas, image: HTMLImageElement) {
         this.canvas = canvas;
@@ -60,7 +60,7 @@ class GameField {
         this.field.on("touchend", this.panAndZoom.touchend.bind(this.panAndZoom));
         this.field.on("touchmove", this.panAndZoom.touchmove.bind(this.panAndZoom));
 
-        // this.errors = 
+        // this.errorFields = 
     }
 
     private createBoundary(): Konva.Group {
