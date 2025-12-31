@@ -8,10 +8,10 @@
 
     onMount(async ()=>{
         const path: string = "/station_03/raetsel_03/game"
-
         const image: HTMLImageElement = await loadImage(path + "/fehler.png");
+        const errorPaths: string[] = await (await fetch(`${path}/paths.json`)).json();
 
-        controller = new Controller(container, image);
+        controller = new Controller(container, image, errorPaths);
     });
 
     async function loadImage(src: string): Promise<HTMLImageElement> {

@@ -12,7 +12,7 @@ export default class Canvas {
 
     private gameField: GameField;
 
-    constructor(controller: Controller, container: HTMLDivElement, image: HTMLImageElement) {
+    constructor(controller: Controller, container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[]) {
         this.controller = controller;
         this.container = container;
         this.stage = new Konva.Stage({
@@ -25,9 +25,10 @@ export default class Canvas {
 
         this.stage.add(this.gameLayer);
 
-        this.gameField = new GameField(this, image);
+        this.gameField = new GameField(this, image, errorPaths);
     }
 
+    public get Container() { return this.container; }
     public get Stage() { return this.stage; }
     public get GameLayer() { return this.gameLayer; }
 }
@@ -43,9 +44,9 @@ class GameField {
 
     private readonly panAndZoom: PanAndZoom;
 
-    // private readonly errorFields: Konva.???
+    private readonly errorFields: Konva.Path[];
 
-    constructor(canvas: Canvas, image: HTMLImageElement) {
+    constructor(canvas: Canvas, image: HTMLImageElement, errorPaths: string[]) {
         this.canvas = canvas;
         this.stage = this.canvas.Stage;
         this.layer = this.canvas.GameLayer;
@@ -60,7 +61,7 @@ class GameField {
         this.field.on("touchend", this.panAndZoom.touchend.bind(this.panAndZoom));
         this.field.on("touchmove", this.panAndZoom.touchmove.bind(this.panAndZoom));
 
-        // this.errorFields = 
+        this.errorFields = errorPaths.map((path: string) => this.createErrorField(path));
     }
 
     private createBoundary(): Konva.Group {
@@ -94,6 +95,18 @@ class GameField {
         });
         GROUP.add(IMAGE);
         return GROUP;
+    }
+
+    private createErrorField(path: string): Konva.Path {
+        const COLOR = getComputedStyle(this.canvas.Container).getPropertyValue("--color-primary").trim();
+        const SLOT = new Konva.Path({
+            data: path,
+            fill: COLOR,
+            strokeEnabled: false,
+            hitStrokeWidth: 0,
+        })
+        this.field.add(SLOT);
+        return SLOT;
     }
 }
 
