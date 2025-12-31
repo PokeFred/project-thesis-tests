@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
-    import type { GameInput } from ".";
+    import type { GameData } from "$components/puzzle/dragDrop";
     import { Icon } from "svelte-awesome";
     import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-    const { input }: { input: GameInput } = $props();
-    const gameInput: GameInput = input 
+    const { input }: { input: GameData } = $props();
+    const gameInput: GameData = input 
 
     const path: string = gameInput.path;
     

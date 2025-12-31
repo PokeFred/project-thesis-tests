@@ -1,4 +1,5 @@
 <script>
+    import ErrorSpottingGame from "$components/Games/ErrorSpottingGame/ErrorSpottingGame.svelte";
     import MatchingGameComponent from "$components/Games/MatchingGame/MatchingGameComponent.svelte";
     import MatchingGameResult from "$components/Games/MatchingGame/MatchingGameResult.svelte";
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
@@ -206,9 +207,11 @@
 //     }
 </script>
 
-<PuzzleGame gameInput={{
+<ErrorSpottingGame />
+
+<!-- <PuzzleGame gameInput={{
     path: "/station_05/raetsel_01/game"
-}}/>
+}}/> -->
 
 <!-- <WordGuessingComponent gameInput={{questions:[]}} /> -->
 

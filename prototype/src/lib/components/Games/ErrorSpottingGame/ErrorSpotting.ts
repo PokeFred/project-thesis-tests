@@ -1,9 +1,17 @@
 import type { SavingData } from "$components/puzzle/errorSpotting";
 import type { Quiz } from "../Quiz";
 
+export class Field {
+    private selected: boolean
+
+    constructor() {
+
+    }
+}
+
 // TODO
 export default class ErrorSpotting implements Quiz<SavingData> {
-    private readonly selected: boolean;
+    private readonly errors: Field[];
 
     constructor() {
 
