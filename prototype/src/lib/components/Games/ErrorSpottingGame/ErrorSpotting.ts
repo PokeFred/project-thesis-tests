@@ -1,15 +1,15 @@
-import type { GameOutput } from ".";
+import type { SavingData } from "$components/puzzle/errorSpotting";
 import type { Quiz } from "../Quiz";
 
 // TODO
-export default class ErrorSpotting implements Quiz<GameOutput> {
+export default class ErrorSpotting implements Quiz<SavingData> {
     private readonly selected: boolean;
 
     constructor() {
 
     }
 
-    complete(): GameOutput {
+    complete(): SavingData {
         throw new Error("Method not implemented.");
     }
     score(): number {
