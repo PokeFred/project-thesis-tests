@@ -99,14 +99,32 @@ class GameField {
 
     private createErrorField(path: string): Konva.Path {
         const COLOR = getComputedStyle(this.canvas.Container).getPropertyValue("--color-primary").trim();
-        const SLOT = new Konva.Path({
+        const ERROR_FIELD = new Konva.Path({
             data: path,
             fill: COLOR,
             strokeEnabled: false,
             hitStrokeWidth: 0,
+            visible: false
         })
-        this.field.add(SLOT);
-        return SLOT;
+        this.field.add(ERROR_FIELD);
+        this.field.add(this.createMark(ERROR_FIELD));
+        return ERROR_FIELD;
+    }
+
+    private createMark(errorField: Konva.Path): Konva.Arc {
+        const THICKNESS: number = 5;
+        const COLOR = getComputedStyle(this.canvas.Container).getPropertyValue("--color-secondary").trim();
+        const RECT = errorField.getSelfRect();
+        const MARK: Konva.Arc = new Konva.Arc({
+            x: RECT.x + (RECT.width / 2),
+            y: RECT.y + (RECT.height / 2),
+            innerRadius: (Math.max(RECT.width, RECT.height) / 2) ,
+            outerRadius: Math.max(RECT.width, RECT.height) / 2 + THICKNESS,
+            angle: 360,
+            fill: COLOR,
+            visible: true
+        });
+        return MARK;
     }
 }
 
