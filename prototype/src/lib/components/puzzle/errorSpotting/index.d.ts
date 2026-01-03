@@ -4,4 +4,6 @@ export type GameData = {}
 
 export type ResultData = {}
 
-export type SavingData = {}
+export type SavingData = {
+    selected: string
+}
