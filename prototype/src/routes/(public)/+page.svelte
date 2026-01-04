@@ -11,7 +11,7 @@
 </script>
 
 <Modal bind:this={modal} onConfirm={confirmModal}>
-    <div>Damit dein Fortschritt gespeichert wird, kann die App deine Ergebnisse lokal auf deinem Gerät sichern. Ohne Speicherung kann die Punkteanzeige später verloren gehen.</div>
+    <div>Damit dein Fortschritt gespeichert wird, kann die App deine Ergebnisse lokal auf deinem Gerät sichern.</div>
     <div>Es werden keine Daten übertragen oder geteilt.</div>
 </Modal>
 

@@ -3,7 +3,8 @@
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
 
-    const { gameInput }: { gameInput: GameInput } = $props();
+    const { input }: { input: GameInput } = $props();
+    const gameInput: GameInput = input
 
     // const gameInput: GameInput = {
     //     questions: [
