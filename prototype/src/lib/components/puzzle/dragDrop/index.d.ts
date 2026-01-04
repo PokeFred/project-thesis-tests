@@ -4,12 +4,13 @@ export type IntroductionData = {
 }
 
 export type GameData = {
-    path: string
+    path: string,
+    caption: string
 }
 
 export type ResultData = {
-    path: string,
-    alt: string
+    img: string,
+    caption: string
 }
 
 export type SavingData = {

@@ -14,7 +14,8 @@
         setSubmitable()
     })
 
-    // svelte-ignore state_referenced_locally
+    // TODO (Simon)
+    // { path: string, caption: string }
     const input: Input = data
 </script>
 

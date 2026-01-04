@@ -22,7 +22,7 @@
     <div class="w-full h-auto">
         <figure>
             <Fullscreen>
-                <img src={`${result.path}/Background.png`} alt={result.alt} class="justify-self-center align-middle">
+                <img src={`${result.img}`} alt={result.caption} class="justify-self-center align-middle">
             </Fullscreen>
             <figcaption></figcaption>
         </figure>

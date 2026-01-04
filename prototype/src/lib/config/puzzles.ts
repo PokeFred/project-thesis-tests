@@ -49,7 +49,7 @@ const puzzles: Puzzle[] = [
     {
         id: 11,
         type: "multiple-choice-puzzle",
-        title: "Rätsel 1",
+        title: "Rätsel 1 (Multiple-Choice)",
         requirements: [], // TODO [10],
         score: 8,
         data: {
@@ -74,7 +74,7 @@ const puzzles: Puzzle[] = [
     {
         id: 12,
         type: "matching-game-puzzle",
-        title: "Rätsel 2",
+        title: "Rätsel 2 (Matching-Game)",
         requirements: [], // TODO [10],
         score: 7,
         data: {
@@ -106,7 +106,7 @@ const puzzles: Puzzle[] = [
     {
         id: 13,
         type: "drag-drop-puzzle",
-        title: "Rätsel 3",
+        title: "Rätsel 3 (Drag-Drop)",
         requirements: [], // TODO [10],
         score: 5,
         data: {
@@ -115,11 +115,12 @@ const puzzles: Puzzle[] = [
                 description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinholds entdecken kannst. Wichtig: Bitte mache ein Foto von Reiholds und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
             },
             game: {
-                path: "/station_01/raetsel_02/game"
+                path: "/station_01/raetsel_02/game",
+                caption: ""
             },
             result: {
-                path: "/station_01/raetsel_02/game",
-                alt: ""
+                img: "/station_01/raetsel_02/game/Background.png",
+                caption: ""
             }
         }
     },
@@ -185,9 +186,29 @@ const puzzles: Puzzle[] = [
     //     }
     // }
     {
+        id: 26,
+        type: "multiple-choice-puzzle",
+        title: "S03 R02 (Multiple-Choice)",
+        requirements: [],
+        score: 1,
+        data: {
+            introduction: {
+                text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "1952", isCorrect: true },
+                    { id: 1, text: "1932", isCorrect: false },
+                    { id: 2, text: "1972", isCorrect: false }
+                ]
+            },
+            result: {}
+        }
+    },
+    {
         id: 27,
         type: "drag-drop-puzzle",
-        title: "Station 04 Rätsel 01",
+        title: "S04 R01 (Drag-Drop)",
         requirements: [],
         score: 1,
         data: {
@@ -196,18 +217,19 @@ const puzzles: Puzzle[] = [
                 description: []
             },
             game: {
-                path: "/station_04/raetsel_01/game"
+                path: "/station_04/raetsel_01/game",
+                caption: ""
             },
             result: {
-                path: "/station_04/raetsel_01/game",
-                alt: ""
+                img: "/station_04/raetsel_01/game/Background.png",
+                caption: ""
             }
         }
     },
     {
         id: 28,
         type: "drag-drop-puzzle",
-        title: "Station 05 Rätsel 01",
+        title: "S05 R01 (Drag-Drop)",
         requirements: [],
         score: 1,
         data: {
@@ -216,18 +238,19 @@ const puzzles: Puzzle[] = [
                 description: []
             },
             game: {
-                path: "/station_05/raetsel_01/game"
+                path: "/station_05/raetsel_01/game",
+                caption: ""
             },
             result: {
-                path: "/station_05/raetsel_01/game",
-                alt: ""
+                img: "/station_05/raetsel_01/game/Background.png",
+                caption: ""
             }
         }
     },
     {
         id: 29,
         type: "drag-drop-puzzle",
-        title: "Station 05 Rätsel 02",
+        title: "S05 R02 (Drag-Drop)",
         requirements: [],
         score: 1,
         data: {
@@ -236,11 +259,12 @@ const puzzles: Puzzle[] = [
                 description: []
             },
             game: {
-                path: "/station_05/raetsel_02/game"
+                path: "/station_05/raetsel_02/game",
+                caption: ""
             },
             result: {
-                path: "/station_05/raetsel_02/game",
-                alt: ""
+                img: "/station_05/raetsel_02/game/Background.png",
+                caption: ""
             }
         }
     }
