@@ -1,19 +1,21 @@
 <script lang="ts">
-    import type { GameInput, GameOutput } from "./index"
+    import type { GameData, SavingData } from "."
+    import GameComponent from "$components/Games/Cloze/ClozeComponent.svelte"
+    import type { GameInput as Input } from "$components/Games/Cloze"
     import { onMount } from "svelte"
 
-    let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
+    let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
 
-    const output: GameOutput = {}
-    export function getSubmitData(): GameOutput {
-        return output
-    }
-
-    export function getSubmitScore(): number {
-        return 0
-    }
+    let game: GameComponent
+    export function getSubmitData(): SavingData { return game.getSubmitData() }
+    export function getSubmitScore(): number { return game.getSubmitScore() }
 
     onMount((): void => {
         setSubmitable()
     })
+
+    const input: Input = data
 </script>
+
+<!-- TODO (Simon) -->
+<!-- <GameComponent bind:this={game} input={input} /> -->

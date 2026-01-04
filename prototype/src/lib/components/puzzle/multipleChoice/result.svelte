@@ -9,25 +9,6 @@
 
     // Saving
     // { answers: { id: number, selected: boolean }[] }
-
-    // const data = {
-    //     answers: saving.answers.map((element) => {
-    //         return {
-    //             answer: element.answer.answer,
-    //             correct: element.answer.correct,
-    //             selected: element.selected,
-    //             description: [
-    //                 {
-    //                     tag: "p",
-    //                     children: [{tag: "text", text: "Aus config laden."}]
-    //                 }
-    //             ]
-    //         }
-    //     })
-    // }
-
-    // TODO temp
-    console.log({ result, saving })
 </script>
 
 <!-- <ResultComponent result={result} saving={saving} /> -->

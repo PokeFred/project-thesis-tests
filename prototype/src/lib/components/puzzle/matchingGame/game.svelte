@@ -22,9 +22,6 @@
         options: data.data.right,
         pairs: data.data.pairs
     }
-
-    // TODO temp
-    console.log({ data, input })
 </script>
 
 <GameComponent bind:this={game} input={input} />

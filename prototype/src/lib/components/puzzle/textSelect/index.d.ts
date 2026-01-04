@@ -1,9 +1,9 @@
-export type Introduction = {
+export type IntroductionData = {
     text: string[]
 }
 
-export type GameInput = {}
+export type GameData = {}
 
-export type GameOutput = {}
+export type ResultData = {}
 
-export type Result = {}
+export type SavingData = {}

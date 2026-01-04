@@ -18,12 +18,10 @@
 
     const input: Input = {
         options: data.answers.map((element) => {
+            // TODO { id: element.id, answer: element.text, correct: element.isCorrect }
             return { answer: element.text, correct: element.isCorrect }
         })
     }
-
-    // TODO temp
-    console.log({ data, input })
 </script>
 
-<!-- <GameComponent bind:this={game} input={input} /> -->
+<!-- TODO <GameComponent bind:this={game} input={input} /> -->

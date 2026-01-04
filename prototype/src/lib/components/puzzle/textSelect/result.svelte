@@ -1,7 +1,9 @@
 <script lang="ts">
-    import type { Result } from "./index"
+    import type { ResultData, SavingData } from "."
+    import ResultComponent from "$components/Games/Cloze/ClozeResult.svelte"
 
-    let { data }: { data: Result } = $props()
+    let { result, saving }: { result: ResultData, saving: SavingData } = $props()
 </script>
 
-<div>GESCHAFFT!!!</div>
+<!-- TODO (Simon) -->
+<!-- <ResultComponent result={result} saving={saving} /> -->
