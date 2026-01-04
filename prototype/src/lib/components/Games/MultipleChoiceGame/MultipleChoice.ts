@@ -5,8 +5,6 @@ export type Answer = {
     readonly answer: string;
     readonly correct: boolean;
 }
-
-// TODO: MatchingGame == Multiple Choice ??
 export default class MultipleChoice implements Quiz<GameOutput> {
     private readonly options: Answer[];
     // private readonly descriptions: Description[][]; // von der config aus laden in page end
@@ -30,6 +28,7 @@ export default class MultipleChoice implements Quiz<GameOutput> {
     }
 
     public complete(): GameOutput {
+        // TODO (Simon): answers: { id: number, selected: boolean }[]
         return {
             answers: this.options.map((answer: Answer, i: number) => {
                 return {

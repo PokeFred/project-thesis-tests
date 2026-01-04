@@ -24,4 +24,4 @@
     }
 </script>
 
-<!-- TODO <GameComponent bind:this={game} input={input} /> -->
+<GameComponent bind:this={game} input={input} />
