@@ -32,7 +32,7 @@
     </tbody>
 </table>
 
-<!-- TODO: REMOVE FROM HERE -->
+<!-- TODO: CEDRIC, REMOVE FROM HERE -->
 <div class="mt-15 font-medium">
     <Accordion title={"Willst du wissen, was diese Berufe gemacht haben?"} data={[
     {
