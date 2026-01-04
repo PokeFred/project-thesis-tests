@@ -1,15 +1,17 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Controller from "./Controller";
+    import type { GameData } from "$components/puzzle/errorSpotting";
+    import Fullscreen from "$components/Fullscreen.svelte";
+
+    const { input }: { input: GameData } = $props();
 
     let controller: Controller;
 
     let container: HTMLDivElement;
-
     onMount(async ()=>{
-        const path: string = "/station_03/raetsel_03/game"
-        const image: HTMLImageElement = await loadImage(path + "/fehler.png");
-        const errorPaths: string[] = await (await fetch(`${path}/paths.json`)).json();
+        const image: HTMLImageElement = await loadImage(input.path + "/fehler.png");
+        const errorPaths: string[] = await (await fetch(`${input.path}/paths.json`)).json();
 
         controller = new Controller(container, image, errorPaths);
     });
@@ -23,6 +25,13 @@
         });
     }
 </script>
+
+<figure class="mb-10">
+    <Fullscreen>
+        <img src={`${input.path}/original.png`} alt="Originalbild">
+    </Fullscreen>
+    <figcaption>Originalbild</figcaption>
+</figure>
 
 <div class="-m-4">
     <div bind:this={container} class="w-full h-[80vh]"></div>

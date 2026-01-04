@@ -8,7 +8,7 @@
 
 <figure>
     <Fullscreen>
-        <img src={""} alt={""}>
+        <img src={`${result.path}/original.png`} alt={"Originalbild"}>
     </Fullscreen>
-    <figcaption></figcaption>
+    <figcaption>Originalbild</figcaption>
 </figure>

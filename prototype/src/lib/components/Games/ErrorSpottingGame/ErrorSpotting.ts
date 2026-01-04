@@ -21,12 +21,13 @@ export default class ErrorSpotting implements Quiz<SavingData> {
 
     public get Errors() { return this.errors; }
 
-    complete(): SavingData {
+    public complete(): SavingData {
         return {
             selected: JSON.stringify(this.errors)
         } satisfies SavingData;
     }
-    score(): number {
+    
+    public score(): number {
         return this.errors.reduce((sum: number, error: Field) => {
             return sum + (error.Selected ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED)
         },0);
