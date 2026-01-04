@@ -1,26 +1,35 @@
 import type { SavingData } from "$components/puzzle/errorSpotting";
-import type { Quiz } from "../Quiz";
+import { POINTS, type Quiz } from "../Quiz";
 
 export class Field {
     private selected: boolean
 
     constructor() {
-
+        this.selected = false;
     }
+
+    public get Selected() { return this.selected; }
+    public set Selected(selected: boolean) { this.selected = selected; } 
 }
 
-// TODO
 export default class ErrorSpotting implements Quiz<SavingData> {
     private readonly errors: Field[];
 
-    constructor() {
-
+    constructor(errors: string[]) {
+        this.errors = errors.map(() => new Field());
     }
 
-    complete(): SavingData {
-        throw new Error("Method not implemented.");
+    public get Errors() { return this.errors; }
+
+    public complete(): SavingData {
+        return {
+            selected: JSON.stringify(this.errors)
+        } satisfies SavingData;
     }
-    score(): number {
-        throw new Error("Method not implemented.");
+    
+    public score(): number {
+        return this.errors.reduce((sum: number, error: Field) => {
+            return sum + (error.Selected ? POINTS.ANSWER_CORRECT : POINTS.NOT_ANSWERED)
+        },0);
     }
 }

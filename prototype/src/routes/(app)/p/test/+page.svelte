@@ -207,7 +207,7 @@
 //     }
 </script>
 
-<ErrorSpottingGame />
+<ErrorSpottingGame input={{path: "/station_03/raetsel_03/game"}}/>
 
 <!-- <PuzzleGame gameInput={{
     path: "/station_05/raetsel_01/game"

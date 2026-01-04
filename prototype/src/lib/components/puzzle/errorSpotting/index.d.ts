@@ -1,7 +1,13 @@
 export type IntroductionData = {}
 
-export type GameData = {}
+export type GameData = {
+    path: string
+}
 
-export type ResultData = {}
+export type ResultData = {
+    path: string
+}
 
-export type SavingData = {}
+export type SavingData = {
+    selected: string
+}
