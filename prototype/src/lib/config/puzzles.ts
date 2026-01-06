@@ -111,8 +111,8 @@ const puzzles: Puzzle[] = [
         score: 5,
         data: {
             introduction: {
-                title: "Der heilige Reinholds ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
-                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinholds entdecken kannst. Wichtig: Bitte mache ein Foto von Reiholds und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
+                title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
+                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
             },
             game: {
                 path: "/station_01/raetsel_02/game",
