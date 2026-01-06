@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { ResultData, SavingData } from "."
-    import ResultComponent from "$components/Games/PuzzleGame/PuzzleGameResult.svelte"
+    import ResultComponent from "$components/Games/Canvas/PuzzleGame/PuzzleGameResult.svelte"
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props()
 </script>

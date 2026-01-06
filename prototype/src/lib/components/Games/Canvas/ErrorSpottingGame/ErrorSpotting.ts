@@ -1,5 +1,5 @@
 import type { SavingData } from "$components/puzzle/errorSpotting";
-import { POINTS, type Quiz } from "../Quiz";
+import { POINTS, type Quiz } from "../../Quiz";
 
 export class Field {
     private selected: boolean

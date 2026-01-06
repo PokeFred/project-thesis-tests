@@ -1,5 +1,5 @@
 import type { SavingData } from "$components/puzzle/dragDrop";
-import { type Quiz, POINTS } from "../Quiz"
+import { type Quiz, POINTS } from "../../Quiz"
 import type { SlotGroup } from "./PuzzleController.svelte";
 
 export class Slot {

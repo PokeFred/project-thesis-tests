@@ -1,10 +1,10 @@
 <script>
-    import ErrorSpottingGame from "$components/Games/ErrorSpottingGame/ErrorSpottingGame.svelte";
+    import ErrorSpottingGame from "$components/Games/Canvas/ErrorSpottingGame/ErrorSpottingGame.svelte";
     import MatchingGameComponent from "$components/Games/MatchingGame/MatchingGameComponent.svelte";
     import MatchingGameResult from "$components/Games/MatchingGame/MatchingGameResult.svelte";
     import MultipleChoiceResult from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte";
-    import PuzzleGame from "$components/Games/PuzzleGame/PuzzleGame.svelte";
-    import PuzzleGameResult from "$components/Games/PuzzleGame/PuzzleGameResult.svelte";
+    import PuzzleGame from "$components/Games/Canvas/PuzzleGame/PuzzleGame.svelte";
+    import PuzzleGameResult from "$components/Games/Canvas/PuzzleGame/PuzzleGameResult.svelte";
     import WordGuessingComponent from "$components/Games/WordGuessingGame/WordGuessingComponent.svelte";
 
 // const gameInputCloze: GameInput = {

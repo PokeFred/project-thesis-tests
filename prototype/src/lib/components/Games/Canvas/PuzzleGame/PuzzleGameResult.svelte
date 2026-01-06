@@ -1,7 +1,7 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/dragDrop";
-    import { POINTS } from "../Quiz";
+    import { POINTS } from "../../Quiz";
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
