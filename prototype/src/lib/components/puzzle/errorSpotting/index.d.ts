@@ -1,11 +1,16 @@
-export type IntroductionData = {}
+export type IntroductionData = {
+    title: string,
+    description: string[]
+}
 
 export type GameData = {
-    path: string
+    path: string,
+    caption: string
 }
 
 export type ResultData = {
-    path: string
+    img: string,
+    caption: string
 }
 
 export type SavingData = {

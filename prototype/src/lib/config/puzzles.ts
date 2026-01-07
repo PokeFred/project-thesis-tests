@@ -205,27 +205,6 @@ const puzzles: Puzzle[] = [
     //         result: {}
     //     }
     // },
-    // {
-    //     id: 27,
-    //     type: "drag-drop-puzzle",
-    //     title: "S04 R01 (Drag-Drop)",
-    //     requirements: [],
-    //     score: 1,
-    //     data: {
-    //         introduction: {
-    //             title: "",
-    //             description: []
-    //         },
-    //         game: {
-    //             path: "/station_04/raetsel_01/game",
-    //             caption: ""
-    //         },
-    //         result: {
-    //             img: "/station_04/raetsel_01/game/Background.png",
-    //             caption: ""
-    //         }
-    //     }
-    // },
     {
         id: 10,
         type: "placeholder-puzzle",
@@ -345,14 +324,23 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 33,
-        type: "placeholder-puzzle",
+        type: "error-spotting-puzzle",
         title: "Rätsel 03 (error-spotting)",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                title: "",
+                description: []
+            },
+            game: {
+                path: "/station_03/raetsel_03/game",
+                caption: ""
+            },
+            result: {
+                img: "/station_03/raetsel_03/game/Background.png",
+                caption: ""
+            }
         }
     },
     {

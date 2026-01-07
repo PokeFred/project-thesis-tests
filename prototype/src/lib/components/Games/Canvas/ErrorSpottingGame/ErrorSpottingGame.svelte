@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Controller from "./Controller";
-    import type { GameData } from "$components/puzzle/errorSpotting";
+    import type { GameData, SavingData } from "$components/puzzle/errorSpotting";
     import Fullscreen from "$components/Fullscreen.svelte";
 
     const { input }: { input: GameData } = $props();
@@ -24,6 +24,10 @@
             img.onerror = reject;
         });
     }
+
+    // TODO Simon
+    export function getSubmitData(): SavingData { return { selected: "" } }
+    export function getSubmitScore(): number { return 0 }
 </script>
 
 <figure class="mb-10">
