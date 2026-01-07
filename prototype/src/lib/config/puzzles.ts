@@ -46,84 +46,84 @@ const puzzles: Puzzle[] = [
     //         }
     //     }
     // },
-    {
-        id: 11,
-        type: "multiple-choice-puzzle",
-        title: "Rätsel 1 (Multiple-Choice)",
-        requirements: [], // TODO [10],
-        score: 8,
-        data: {
-            introduction: {
-                text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
-            },
-            game: {
-                answers: [
-                    { id: 0, text: "Es gab einen Brunnen am Markt.", isCorrect: true },
-                    { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
-                    { id: 2, text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
-                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
-                    { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
-                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
-                    { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
-                    { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
-                ]
-            },
-            result: {}
-        }
-    },
-    {
-        id: 12,
-        type: "matching-game-puzzle",
-        title: "Rätsel 2 (Matching-Game)",
-        requirements: [], // TODO [10],
-        score: 7,
-        data: {
-            introduction: {
-                text: ["Ordne den Zünften das richtige Handwerk zu."]
-            },
-            game: {
-                header: {
-                    left: "Handwerk",
-                    right: "Zünfte"
-                },
-                data: {
-                    left: ["Metall-verarbeitung", "Getreide-verarbeitung", "Fleisch-verarbeitung", "Leder-verarbeitung", "Feinleder-verarbeitung", "Gemischt-warenhandel", "Handel mit Butter, Öl, Speck etc."],
-                    right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
-                    pairs: [
-                        { left: "Metall-verarbeitung", right: "Schmied" },
-                        { left: "Getreide-verarbeitung", right: "Bäcker" },
-                        { left: "Fleisch-verarbeitung", right: "Fleischer" },
-                        { left: "Leder-verarbeitung", right: "Gerber" },
-                        { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
-                        { left: "Gemischt-warenhandel", right: "Krämer" },
-                        { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
-                    ]
-                }
-            },
-            result: {}
-        }
-    },
-    {
-        id: 13,
-        type: "drag-drop-puzzle",
-        title: "Rätsel 3 (Drag-Drop)",
-        requirements: [], // TODO [10],
-        score: 5,
-        data: {
-            introduction: {
-                title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
-                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
-            },
-            game: {
-                path: "/station_01/raetsel_02/game",
-                caption: ""
-            },
-            result: {
-                img: "/station_01/raetsel_02/game/Background.png",
-                caption: ""
-            }
-        }
-    },
+    // {
+    //     id: 11,
+    //     type: "multiple-choice-puzzle",
+    //     title: "Rätsel 1 (Multiple-Choice)",
+    //     requirements: [], // TODO [10],
+    //     score: 8,
+    //     data: {
+    //         introduction: {
+    //             text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
+    //         },
+    //         game: {
+    //             answers: [
+    //                 { id: 0, text: "Es gab einen Brunnen am Markt.", isCorrect: true },
+    //                 { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
+    //                 { id: 2, text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
+    //                 { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
+    //                 { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
+    //                 { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
+    //                 { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
+    //                 { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
+    //             ]
+    //         },
+    //         result: {}
+    //     }
+    // },
+    // {
+    //     id: 12,
+    //     type: "matching-game-puzzle",
+    //     title: "Rätsel 2 (Matching-Game)",
+    //     requirements: [], // TODO [10],
+    //     score: 7,
+    //     data: {
+    //         introduction: {
+    //             text: ["Ordne den Zünften das richtige Handwerk zu."]
+    //         },
+    //         game: {
+    //             header: {
+    //                 left: "Handwerk",
+    //                 right: "Zünfte"
+    //             },
+    //             data: {
+    //                 left: ["Metall-verarbeitung", "Getreide-verarbeitung", "Fleisch-verarbeitung", "Leder-verarbeitung", "Feinleder-verarbeitung", "Gemischt-warenhandel", "Handel mit Butter, Öl, Speck etc."],
+    //                 right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
+    //                 pairs: [
+    //                     { left: "Metall-verarbeitung", right: "Schmied" },
+    //                     { left: "Getreide-verarbeitung", right: "Bäcker" },
+    //                     { left: "Fleisch-verarbeitung", right: "Fleischer" },
+    //                     { left: "Leder-verarbeitung", right: "Gerber" },
+    //                     { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+    //                     { left: "Gemischt-warenhandel", right: "Krämer" },
+    //                     { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+    //                 ]
+    //             }
+    //         },
+    //         result: {}
+    //     }
+    // },
+    // {
+    //     id: 13,
+    //     type: "drag-drop-puzzle",
+    //     title: "Rätsel 3 (Drag-Drop)",
+    //     requirements: [], // TODO [10],
+    //     score: 5,
+    //     data: {
+    //         introduction: {
+    //             title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
+    //             description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
+    //         },
+    //         game: {
+    //             path: "/station_01/raetsel_02/game",
+    //             caption: ""
+    //         },
+    //         result: {
+    //             img: "/station_01/raetsel_02/game/Background.png",
+    //             caption: ""
+    //         }
+    //     }
+    // },
     // {
     //     id: 20,
     //     type: "gps-puzzle",
@@ -185,32 +185,194 @@ const puzzles: Puzzle[] = [
     //         result: {}
     //     }
     // }
+    // {
+    //     id: 26,
+    //     type: "multiple-choice-puzzle",
+    //     title: "S03 R02 (Multiple-Choice)",
+    //     requirements: [],
+    //     score: 1,
+    //     data: {
+    //         introduction: {
+    //             text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?"]
+    //         },
+    //         game: {
+    //             answers: [
+    //                 { id: 0, text: "1952", isCorrect: true },
+    //                 { id: 1, text: "1932", isCorrect: false },
+    //                 { id: 2, text: "1972", isCorrect: false }
+    //             ]
+    //         },
+    //         result: {}
+    //     }
+    // },
+    // {
+    //     id: 27,
+    //     type: "drag-drop-puzzle",
+    //     title: "S04 R01 (Drag-Drop)",
+    //     requirements: [],
+    //     score: 1,
+    //     data: {
+    //         introduction: {
+    //             title: "",
+    //             description: []
+    //         },
+    //         game: {
+    //             path: "/station_04/raetsel_01/game",
+    //             caption: ""
+    //         },
+    //         result: {
+    //             img: "/station_04/raetsel_01/game/Background.png",
+    //             caption: ""
+    //         }
+    //     }
+    // },
     {
-        id: 26,
-        type: "multiple-choice-puzzle",
-        title: "S03 R02 (Multiple-Choice)",
+        id: 10,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
         requirements: [],
-        score: 1,
+        score: 0,
         data: {
-            introduction: {
-                text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?"]
-            },
-            game: {
-                answers: [
-                    { id: 0, text: "1952", isCorrect: true },
-                    { id: 1, text: "1932", isCorrect: false },
-                    { id: 2, text: "1972", isCorrect: false }
-                ]
-            },
+            introduction: {},
+            game: {},
             result: {}
         }
     },
     {
-        id: 27,
-        type: "drag-drop-puzzle",
-        title: "S04 R01 (Drag-Drop)",
+        id: 11,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (multiple-choice)",
         requirements: [],
-        score: 1,
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 12,
+        type: "placeholder-puzzle",
+        title: "Rätsel 02 (matching-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 13,
+        type: "drag-drop-puzzle",
+        title: "Rätsel 03 (drag-drop)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {
+                title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
+                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
+            },
+            game: {
+                path: "/station_01/raetsel_02/game",
+                caption: ""
+            },
+            result: {
+                img: "/station_01/raetsel_02/game/Background.png",
+                caption: ""
+            }
+        }
+    },
+    {
+        id: 20,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 21,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (word-guessing-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 30,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 31,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (text-select)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 32,
+        type: "placeholder-puzzle",
+        title: "Rätsel 02 (multiple-choice)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 33,
+        type: "placeholder-puzzle",
+        title: "Rätsel 03 (error-spotting)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 40,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 41,
+        type: "drag-drop-puzzle",
+        title: "Rätsel 01 (drag-drop)",
+        requirements: [],
+        score: 0,
         data: {
             introduction: {
                 title: "",
@@ -227,11 +389,35 @@ const puzzles: Puzzle[] = [
         }
     },
     {
-        id: 28,
-        type: "drag-drop-puzzle",
-        title: "S05 R01 (Drag-Drop)",
+        id: 42,
+        type: "placeholder-puzzle",
+        title: "Rätsel 02 (multiple-choice)",
         requirements: [],
-        score: 1,
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 50,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 51,
+        type: "drag-drop-puzzle",
+        title: "Rätsel 01 (drag-drop)",
+        requirements: [],
+        score: 0,
         data: {
             introduction: {
                 title: "",
@@ -248,11 +434,11 @@ const puzzles: Puzzle[] = [
         }
     },
     {
-        id: 29,
+        id: 52,
         type: "drag-drop-puzzle",
-        title: "S05 R02 (Drag-Drop)",
+        title: "Rätsel 02 (drag-drop)",
         requirements: [],
-        score: 1,
+        score: 0,
         data: {
             introduction: {
                 title: "",
@@ -266,6 +452,102 @@ const puzzles: Puzzle[] = [
                 img: "/station_05/raetsel_02/game/Background.png",
                 caption: ""
             }
+        }
+    },
+    {
+        id: 53,
+        type: "placeholder-puzzle",
+        title: "Rätsel 03 (word-guessing-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 60,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 61,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (word-guessing-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 80,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 81,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (multiple-choice)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 90,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 91,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (word-guessing-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 92,
+        type: "placeholder-puzzle",
+        title: "Rätsel 02 (word-guessing-game)",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
         }
     }
 ]

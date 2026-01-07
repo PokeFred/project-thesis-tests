@@ -42,6 +42,7 @@ function getPuzzles(station: Station): _Puzzle[] {
 
             return {
                 id: element.id,
+                type: element.type,
                 title: element.title,
                 score: toScore(current, element.score),
                 locked: isLocked
@@ -57,7 +58,7 @@ type _Station = {
 function getStations(): _Station[] {
     return Stations
         .map((element: Station): _Station => {
-            return { title: element.stitle, puzzles: getPuzzles(element) }
+            return { title: `${element.tag}: ${element.stitle}`, puzzles: getPuzzles(element) }
         })
 }
 

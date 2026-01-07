@@ -13,7 +13,15 @@
         {#each data.stations as station}
             <div class="underline px-4">{station.title}</div>
             {#each station.puzzles as puzzle}
-                <PuzzleButton puzzle={puzzle} />
+                <!-- TODO remove later -->
+                {#if puzzle.type !== "placeholder-puzzle"}
+                    <PuzzleButton puzzle={puzzle} />
+                {:else}
+                    <div class="w-full h-auto text-secondary bg-primary rounded-full grid grid-cols-[auto_60px] gap-4 px-6 py-2 opacity-50 cursor-default">
+                        <span class="text-lg font-bold text-left">{puzzle.title}</span>
+                        <span class="text-right">{puzzle.score.current}/{puzzle.score.max}</span>
+                    </div>
+                {/if}
             {/each}
         {/each}
     </div>
