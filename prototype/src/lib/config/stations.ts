@@ -1,3 +1,12 @@
+import Puzzles from "./puzzles"
+
+function calculateScore(...id: number[]): number {
+    return Puzzles
+        .filter((element: any): boolean => id.includes(element.id))
+        .map((element: any): number => element.score)
+        .reduce((pre: number, cur: number): number => pre += cur, 0)
+}
+
 type Station = {
     id: number,
     tag: string,
@@ -140,7 +149,7 @@ const stations: Station[] = [
         tag: "Station 01",
         stitle: "Alter Markt",
         title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
-        score: 0,
+        score: calculateScore(10, 11, 12, 13),
         chapters: [],
         puzzles: [10, 11, 12, 13]
     },
@@ -149,7 +158,7 @@ const stations: Station[] = [
         tag: "Station 02",
         stitle: "Westenhellweg",
         title: "",
-        score: 0,
+        score: calculateScore(20, 21),
         chapters: [],
         puzzles: [20, 21]
     },
@@ -158,7 +167,7 @@ const stations: Station[] = [
         tag: "Station 03",
         stitle: "Hansaplatz",
         title: "",
-        score: 0,
+        score: calculateScore(30, 31, 32, 33),
         chapters: [],
         puzzles: [30, 31, 32, 33]
     },

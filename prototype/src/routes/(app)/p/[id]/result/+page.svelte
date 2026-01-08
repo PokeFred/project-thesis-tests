@@ -11,6 +11,10 @@
     import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
     import DragDropResult from "$components/puzzle/dragDrop/result.svelte"
     import { goto } from "$app/navigation";
+    import ErrorSpottingIntroduction from "$components/puzzle/errorSpotting/introduction.svelte"
+    import ErrorSpottingResult from "$components/puzzle/errorSpotting/result.svelte"
+    import WordGuessingIntroduction from "$components/puzzle/wordGuessing/introduction.svelte"
+    import WordGuessingResult from "$components/puzzle/wordGuessing/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -39,6 +43,14 @@
     {#if data.puzzle.type === "drag-drop-puzzle"}
         <DragDropIntroduction data={data.introduction} />
         <DragDropResult result={data.result} saving={data.saving} />
+    {/if}
+    {#if data.puzzle.type === "error-spotting-puzzle"}
+        <ErrorSpottingIntroduction data={data.introduction} />
+        <ErrorSpottingResult result={data.result} saving={data.saving} />
+    {/if}
+    {#if data.puzzle.type === "word-guessing-puzzle"}
+        <WordGuessingIntroduction data={data.introduction} />
+        <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
     <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full">Zurück zur Übersicht</button>
     <ScrollButton />

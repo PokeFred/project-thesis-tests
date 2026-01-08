@@ -1,10 +1,15 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import Controller from "./Controller";
-    import type { GameData } from "$components/puzzle/errorSpotting";
+    import type { GameData, SavingData } from "$components/puzzle/errorSpotting";
     import Fullscreen from "$components/Fullscreen.svelte";
 
     const { input }: { input: GameData } = $props();
+
+    // Input Option:
+    // Aktuell: { path: string, caption: string }
+    // Option: { original: string, caption: string, mistakes: string, paths: string }
+    // was hälst du von der Idee ?
 
     let controller: Controller;
 
@@ -24,13 +29,17 @@
             img.onerror = reject;
         });
     }
+
+    // TODO Simon
+    export function getSubmitData(): SavingData { return { selected: "" } }
+    export function getSubmitScore(): number { return 0 }
 </script>
 
 <figure class="mb-10">
     <Fullscreen>
-        <img src={`${input.path}/original.png`} alt="Originalbild">
+        <img src={`${input.path}/original.png`} alt="Originalbild"> <!-- alt === result.caption ? -->
     </Fullscreen>
-    <figcaption>Originalbild</figcaption>
+    <figcaption>Originalbild</figcaption> <!-- figcaption === result.caption ? -->
 </figure>
 
 <div class="-m-4">

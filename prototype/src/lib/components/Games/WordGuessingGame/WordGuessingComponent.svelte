@@ -4,50 +4,8 @@
     import WordGuessing from "./WordGuessing.svelte";
 
     const { input }: { input: GameInput } = $props();
-    const gameInput: GameInput = input
 
-    // const gameInput: GameInput = {
-    //     questions: [
-    //         {
-    //             solution: "Dille & Kamille",
-    //             left: {
-    //                 src: "https://placehold.co/600x400",
-    //                 alt: "https://placehold.co/600x400",
-    //                 caption: "Abbildung",
-    //                 hints: {
-    //                     normal: "P=D",
-    //                     crossed: "n"
-    //                 }
-    //             } satisfies Hint,
-    //             operator: "&",
-    //             right: {
-    //                 src: "https://placehold.co/600x400",
-    //                 alt: "https://placehold.co/600x400",
-    //                 caption: "Abbildung",
-    //             } satisfies Hint
-    //         },
-    //         {
-    //             solution: "Dille & Kamille",
-    //             left: {
-    //                 src: "https://placehold.co/600x400",
-    //                 alt: "https://placehold.co/600x400",
-    //                 caption: "Abbildung",
-    //                 hints: {
-    //                     normal: "P=D",
-    //                     crossed: "n"
-    //                 }
-    //             } satisfies Hint,
-    //             operator: "&",
-    //             right: {
-    //                 src: "https://placehold.co/600x400",
-    //                 alt: "https://placehold.co/600x400",
-    //                 caption: "Abbildung",
-    //             } satisfies Hint
-    //         }
-    //     ]
-    // }
-
-    const solutions: string[] = gameInput.questions.map((question: Question) => question.solution);
+    const solutions: string[] = input.questions.map((question: Question) => question.solution);
 
     const wordGuessingGame: WordGuessing = new WordGuessing(solutions);
 
@@ -56,7 +14,7 @@
 </script>
 
 <div class="flex flex-col">
-    {#each gameInput.questions as question, i }
+    {#each input.questions as question, i }
         <div>
             <div class="flex">
                 {#if question.left}

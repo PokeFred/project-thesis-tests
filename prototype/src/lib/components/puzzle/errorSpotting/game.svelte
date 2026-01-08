@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { GameData, SavingData } from "."
-    import GameComponent from "$components/Games/Canvas/PuzzleGame/PuzzleGame.svelte"
+    import GameComponent from "$components/Games/Canvas/ErrorSpottingGame/ErrorSpottingGame.svelte"
     import { onMount } from "svelte"
 
     let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()

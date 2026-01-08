@@ -55,6 +55,7 @@ type _Puzzle = {
 function getStationPuzzles(station: Station): _Puzzle[] {
     return Puzzles
         .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
+        .filter((element: Puzzle): boolean => element.type !== "placeholder-puzzle")
         .map((element: Puzzle): _Puzzle => {
             const current: number = getPuzzleScore(element.id)
 

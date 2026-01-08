@@ -205,36 +205,36 @@ const puzzles: Puzzle[] = [
     //         result: {}
     //     }
     // },
-    // {
-    //     id: 27,
-    //     type: "drag-drop-puzzle",
-    //     title: "S04 R01 (Drag-Drop)",
-    //     requirements: [],
-    //     score: 1,
-    //     data: {
-    //         introduction: {
-    //             title: "",
-    //             description: []
-    //         },
-    //         game: {
-    //             path: "/station_04/raetsel_01/game",
-    //             caption: ""
-    //         },
-    //         result: {
-    //             img: "/station_04/raetsel_01/game/Background.png",
-    //             caption: ""
-    //         }
-    //     }
-    // },
     {
         id: 10,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Alten Markt, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Hansastraße 3, 44137 Dortmund",
+                    transit: {
+                        bus: {
+                            station: "Dortmund HBF",
+                            lines: ["400", "453", "460"]
+                        },
+                        subway: {
+                            station: "Kampstraße",
+                            lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
+                        }
+                    },
+                    coordinates: "N 51° 31.008' E 007° 27.774'"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.516807552719946,
+                    lon: 7.46296542458445
+                }
+            },
             result: {}
         }
     },
@@ -242,8 +242,8 @@ const puzzles: Puzzle[] = [
         id: 11,
         type: "placeholder-puzzle",
         title: "Rätsel 01 (multiple-choice)",
-        requirements: [],
-        score: 0,
+        requirements: [], // [10]
+        score: 8,
         data: {
             introduction: {},
             game: {},
@@ -254,8 +254,8 @@ const puzzles: Puzzle[] = [
         id: 12,
         type: "placeholder-puzzle",
         title: "Rätsel 02 (matching-game)",
-        requirements: [],
-        score: 0,
+        requirements: [], // [10]
+        score: 7,
         data: {
             introduction: {},
             game: {},
@@ -266,8 +266,8 @@ const puzzles: Puzzle[] = [
         id: 13,
         type: "drag-drop-puzzle",
         title: "Rätsel 03 (drag-drop)",
-        requirements: [],
-        score: 0,
+        requirements: [], // [10]
+        score: 5,
         data: {
             introduction: {
                 title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
@@ -285,21 +285,42 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 20,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "???",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: ""
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 0,
+                    lon: 0
+                }
+            },
             result: {}
         }
     },
     {
         id: 21,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Rätsel 01 (word-guessing-game)",
-        requirements: [],
+        requirements: [], // [20]
         score: 0,
         data: {
             introduction: {},
@@ -323,7 +344,7 @@ const puzzles: Puzzle[] = [
         id: 31,
         type: "placeholder-puzzle",
         title: "Rätsel 01 (text-select)",
-        requirements: [],
+        requirements: [], // [30]
         score: 0,
         data: {
             introduction: {},
@@ -335,7 +356,7 @@ const puzzles: Puzzle[] = [
         id: 32,
         type: "placeholder-puzzle",
         title: "Rätsel 02 (multiple-choice)",
-        requirements: [],
+        requirements: [], // [30]
         score: 0,
         data: {
             introduction: {},
@@ -345,14 +366,23 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 33,
-        type: "placeholder-puzzle",
+        type: "error-spotting-puzzle",
         title: "Rätsel 03 (error-spotting)",
-        requirements: [],
+        requirements: [], // [30]
         score: 0,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                title: "",
+                description: []
+            },
+            game: {
+                path: "/station_03/raetsel_03/game",
+                caption: ""
+            },
+            result: {
+                img: "/station_03/raetsel_03/game/original.png",
+                caption: ""
+            }
         }
     },
     {
@@ -371,7 +401,7 @@ const puzzles: Puzzle[] = [
         id: 41,
         type: "drag-drop-puzzle",
         title: "Rätsel 01 (drag-drop)",
-        requirements: [],
+        requirements: [], // [40]
         score: 0,
         data: {
             introduction: {
@@ -392,7 +422,7 @@ const puzzles: Puzzle[] = [
         id: 42,
         type: "placeholder-puzzle",
         title: "Rätsel 02 (multiple-choice)",
-        requirements: [],
+        requirements: [], // [40]
         score: 0,
         data: {
             introduction: {},
@@ -416,7 +446,7 @@ const puzzles: Puzzle[] = [
         id: 51,
         type: "drag-drop-puzzle",
         title: "Rätsel 01 (drag-drop)",
-        requirements: [],
+        requirements: [], // [50]
         score: 0,
         data: {
             introduction: {
@@ -437,7 +467,7 @@ const puzzles: Puzzle[] = [
         id: 52,
         type: "drag-drop-puzzle",
         title: "Rätsel 02 (drag-drop)",
-        requirements: [],
+        requirements: [], // [50]
         score: 0,
         data: {
             introduction: {
@@ -458,7 +488,7 @@ const puzzles: Puzzle[] = [
         id: 53,
         type: "placeholder-puzzle",
         title: "Rätsel 03 (word-guessing-game)",
-        requirements: [],
+        requirements: [], // [50]
         score: 0,
         data: {
             introduction: {},
@@ -482,7 +512,7 @@ const puzzles: Puzzle[] = [
         id: 61,
         type: "placeholder-puzzle",
         title: "Rätsel 01 (word-guessing-game)",
-        requirements: [],
+        requirements: [], // [60]
         score: 0,
         data: {
             introduction: {},
@@ -506,7 +536,7 @@ const puzzles: Puzzle[] = [
         id: 81,
         type: "placeholder-puzzle",
         title: "Rätsel 01 (multiple-choice)",
-        requirements: [],
+        requirements: [], // [80]
         score: 0,
         data: {
             introduction: {},
@@ -530,7 +560,7 @@ const puzzles: Puzzle[] = [
         id: 91,
         type: "placeholder-puzzle",
         title: "Rätsel 01 (word-guessing-game)",
-        requirements: [],
+        requirements: [], // [90]
         score: 0,
         data: {
             introduction: {},
@@ -542,7 +572,7 @@ const puzzles: Puzzle[] = [
         id: 92,
         type: "placeholder-puzzle",
         title: "Rätsel 02 (word-guessing-game)",
-        requirements: [],
+        requirements: [], // [90]
         score: 0,
         data: {
             introduction: {},

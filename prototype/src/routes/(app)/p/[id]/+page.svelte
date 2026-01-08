@@ -15,6 +15,10 @@
     import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
     import DragDropGame from "$components/puzzle/dragDrop/game.svelte"
     import ScrollButton from "../../s/ScrollButton.svelte";
+    import ErrorSpottingIntroduction from "$components/puzzle/errorSpotting/introduction.svelte"
+    import ErrorSpottingGame from "$components/puzzle/errorSpotting/game.svelte"
+    import WordGuessingIntroduction from "$components/puzzle/wordGuessing/introduction.svelte"
+    import WordGuessingGame from "$components/puzzle/wordGuessing/game.svelte"
 
     let { data }: PageProps = $props()
 
@@ -28,11 +32,17 @@
     let multipleChoice: MultipleChoiceGame
     // svelte-ignore non_reactive_update
     let dragDrop: DragDropGame
+    // svelte-ignore non_reactive_update
+    let errorSpotting: ErrorSpottingGame
+    // svelte-ignore non_reactive_update
+    let wordGuessing: WordGuessingGame
 
     let submitable: boolean = $state<boolean>(false)
     function setSubmitable(): void {
         submitable = true
     }
+
+
 
     let modal: Modal
     function submit(): void {
@@ -61,7 +71,11 @@
         }
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
-        goto(`/p/${data.puzzle.id}/result`)
+        if (data.puzzle.type !== "gps-puzzle") {
+            goto(`/p/${data.puzzle.id}/result`)
+        } else {
+            goto(`/s/${data.station.id}`)
+        }
     }
 </script>
 
@@ -96,8 +110,16 @@
         <DragDropIntroduction data={data.introduction} />
         <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
     {/if}
+    {#if data.puzzle.type === "error-spotting-puzzle"}
+        <ErrorSpottingIntroduction data={data.introduction} />
+        <ErrorSpottingGame bind:this={errorSpotting} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "word-guessing-puzzle"}
+        <WordGuessingIntroduction data={data.introduction} />
+        <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
     <div class="mt-7.5 mx-auto w-full h-auto">
-        <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnis anzeigen</button>
+        <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Station freischalten"}</button>
     </div>
     <ScrollButton />
 </div>
