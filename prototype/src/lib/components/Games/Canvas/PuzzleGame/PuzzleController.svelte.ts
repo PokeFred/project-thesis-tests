@@ -79,7 +79,7 @@ export default class PuzzleController {
         const SCALE_X_PIECE: number = RECT_SLOT.width / RECT_PIECE.width;
         const SCALE_Y_PIECE: number = RECT_SLOT.height / RECT_PIECE.height;
 
-        this.switchContainer(piece, this.canvas.PuzzlePieceContainer.Container);
+        this.switchContainer(piece, this.canvas.GameLayer);
         piece.scale({ x: SCALE_X_PIECE * this.canvas.Puzzle.Field.scaleX(), y: SCALE_Y_PIECE * this.canvas.Puzzle.Field.scaleY()});  
         if(!PIECE?.Placed) {
             piece.offset({x: RECT_PIECE.width / 2, y: RECT_PIECE.height / 2});

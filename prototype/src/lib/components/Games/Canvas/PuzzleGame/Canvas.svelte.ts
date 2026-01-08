@@ -6,15 +6,16 @@ import type PuzzleController from "./PuzzleController.svelte";
 import { width } from "@fortawesome/free-solid-svg-icons/faMinus";
 import PanAndZoom from "../PanAndZoom";
 
-// TODO: scrollbar puzzle container
+// TODO: arrows
+// TODO: mobile puzzle drag bugfix
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
     private stage: Konva.Stage;
 
     private backgroundLayer: Konva.Layer;
-    private gameLayer: Konva.Layer;
     private hudLayer: Konva.Layer;
+    private gameLayer: Konva.Layer;
 
     
     private pieces: Konva.Image[];
@@ -35,8 +36,8 @@ export default class Canvas {
         this.hudLayer = new Konva.Layer();
 
         this.stage.add(this.backgroundLayer);
-        this.stage.add(this.gameLayer);
         this.stage.add(this.hudLayer);
+        this.stage.add(this.gameLayer);
         
 
         this.pieces = new Array<Konva.Image>();
@@ -90,13 +91,6 @@ export default class Canvas {
         piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));
         return piece;
     }
-
-    // public fitStageIntoContainer(): void {
-    //     const scale = Math.max(this.container.offsetWidth / this.stage.width(), this.container.offsetHeight / this.stage.height());
-    //     this.stage.width(this.stage.width() * scale);
-    //     this.stage.height(this.stage.height() * scale);
-    //     this.stage.scale({ x: scale, y: scale });
-    // }
 }
 
 class Puzzle {
@@ -143,7 +137,13 @@ class Puzzle {
         
         const GROUP: Konva.Group = new Konva.Group({
             width: WIDTH,
-            height: HEIGHT
+            height: HEIGHT,
+            clip: {
+                x: 0,
+                y: 0,
+                width: WIDTH,
+                height: HEIGHT
+            }
         });
         GROUP.add(BOUNDARY);
         return GROUP;
@@ -183,47 +183,30 @@ class PuzzlePieceContainer {
     private readonly canvas: Canvas;
     private readonly stage: Konva.Stage;
     private readonly layer: Konva.Layer;
+    private readonly border: Konva.Group;
+    private readonly viewport: Konva.Group;
     private readonly container: Konva.Group;
+    
+
     private readonly slotMapping: Map<Konva.Image, Konva.Group>;
 
-    private width: number;
-    private readonly height: number;
-    private readonly gap: number;
-    private readonly margin: number;
+    private dragLastX: number = 0;
 
     constructor(canvas: Canvas) {
         this.canvas = canvas;
         this.stage = canvas.Stage,
         this.layer = canvas.HudLayer;
-        this.container = new Konva.Group({
-            draggable: true,
-            dragBoundFunc(pos: Vector2d) {
-                const LEFT_BOUND = 0
-                const RIGHT_BOUND = this.getStage()!.width();
-                if(pos.x > LEFT_BOUND) {
-                    return { x: LEFT_BOUND, y: this.y() }
-                }
-                else if(pos.x + this.width() < RIGHT_BOUND) {
-                    return { x: RIGHT_BOUND - this.width(), y: this.y() }
-                }
-                else {
-                    return { x: pos.x, y: this.y() }
-                }
-            },
-        });
+        this.border = this.createBorder();
+        this.viewport = this.createViewport();
+        this.container = this.createContainer();
+        this.container.moveToTop();
         this.slotMapping = new Map<Konva.Image, Konva.Group>();
 
-        this.width = 0;
-        this.height = 60;
-        this.gap = 40;
-        this.margin = 10;
-
-        this.layer.add(this.container);
-        this.draw();
+        this.createPieces();
     }
 
     public get Container() { return this.container; }
-    public get Height() { return this.height; }
+    public get Height() { return this.border.getClientRect().height }
 
     public placePieceIntoContainer(piece: Konva.Image): void {
         const CONTAINER = this.slotMapping.get(piece)!;
@@ -237,39 +220,90 @@ class PuzzlePieceContainer {
         piece.y((CONTAINER.height() - RECT_PIECE.height) / 2);
     }
 
-    private createPuzzlePieceContainerSlot(): Konva.Group {
-        const slot = new Konva.Group({
-            x: this.margin / 2,
-            y: this.margin / 2,
-            height: this.container.height() - this.margin,
-            width: this.container.height() - this.margin,
+    private createBorder(): Konva.Group {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+        const MARGIN = 40; 
+        const WIDTH = this.stage.width() - MARGIN * 2;
+        const HEIGHT = 60;
+
+        const BORDER = new Konva.Rect({
+            width: WIDTH,
+            height: HEIGHT,
+            stroke: COLOR,
         });
-        // slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
+        const BORDER_RECT = BORDER.getClientRect();
+
+        const GROUP: Konva.Group = new Konva.Group({
+            x: (this.stage.width() - BORDER_RECT.width) / 2,
+            y: (this.stage.height() - BORDER_RECT.height),
+            width: WIDTH,
+            height: HEIGHT
+        });
+        GROUP.add(BORDER);
+
+        this.layer.add(GROUP);
+        return GROUP;
+    }
+
+    private createViewport(): Konva.Group {
+        const BORDER = this.border;
+        const GROUP: Konva.Group = new Konva.Group({
+            clip: {
+                x: 0,
+                y: 0,
+                width: this.border.width(),
+                height: this.border.height(),
+            },
+        });
+
+        GROUP.add(new Konva.Rect({
+            width: this.border.width(),
+            height: this.border.height(),
+            draggable: true,
+            dragBoundFunc(pos: Vector2d) {
+                return { x: BORDER.x(), y: BORDER.y() }
+            },
+        }));
+        this.border.add(GROUP);
+
+        GROUP.on("dragstart", (e) => this.dragLastX = e.evt.screenX);
+        GROUP.on("dragmove", (e) => {
+            const CONTAINER_RECT = this.container.getClientRect();
+            const DX = e.evt.screenX - this.dragLastX;
+            const LEFT_BOUND = 0;
+            const RIGHT_BOUND = BORDER.width();
+
+            this.container.x(Math.max(Math.min(LEFT_BOUND, this.container.x() + DX) + CONTAINER_RECT.width, RIGHT_BOUND) - CONTAINER_RECT.width)
+            this.dragLastX = e.evt.screenX;
+        });
+        return GROUP;
+    }
+
+    private createContainer(): Konva.Group {
+        const BORDER_RECT = this.border.getClientRect();
+        const CONTAINER = new Konva.Group({
+            height: BORDER_RECT.height,
+        });
+        this.viewport.add(CONTAINER);
+        return CONTAINER;
+    }
+
+    private createPuzzlePieceContainerSlot(): Konva.Group {
+        const MARGIN: number = 10;
+        const slot = new Konva.Group({
+            x: MARGIN / 2,
+            y: MARGIN / 2,
+            height: this.container.height() - MARGIN,
+            width: this.container.height() - MARGIN,
+        });
+        slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
         return slot;
     }
 
-    private drawPuzzlePieceContainer(): void {
-        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
-        const w: number = this.canvas.Pieces.length * (this.height - this.margin + this.gap) + this.gap;
-        this.width = w < this.stage.width() ? this.stage.width() : w;
-
-        this.container.width(this.width);
-        this.container.height(this.height);
-        this.container.x(0);
-        this.container.y(this.stage.height() - this.container.height());
-        this.container.add(
-            new Konva.Rect({
-                x: 0,
-                y: 0,
-                width: this.container.width(),
-                height: this.container.height(),
-                fill: COLOR
-            })
-        );
-    }
-
-    private drawPieces(): void {
-        let currentX = this.gap;
+    private createPieces(): void {
+        const GAP: Konva.Rect = new Konva.Rect({width: 40, height: this.border.getClientRect().height, listening: false});
+        let currentX: number = 0;
+        let clone: Konva.Rect;
 
         const CONTAINERS: Konva.Group[] = new Array<Konva.Group>();
         this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
@@ -282,102 +316,17 @@ class PuzzlePieceContainer {
 
         const CONTAINERS_MIXED: Konva.Group[] = CONTAINERS.sort(() => Math.random() - 0.5);
         CONTAINERS_MIXED.forEach((container: Konva.Group) => {
+            clone = GAP.clone();
+            clone.x(currentX)
+            this.container.add(clone);
+            currentX += clone.width();
+
             this.container.add(container);
             container.x(currentX);
-            currentX += this.gap + container.width();
+            currentX += + container.width();
         })
-    }
-
-    private draw(): void {
-        this.drawPuzzlePieceContainer();
-        this.drawPieces();
+        clone = GAP.clone();
+        clone.x(currentX)
+        this.container.add(clone);
     }
 }
-
-// class ExitButton {
-//     private layer: Konva.Layer;
-//     private button: Konva.Group;
-
-//     private readonly width: number;
-//     private readonly height: number;
-//     private readonly margin: number;
-
-//     constructor(layer: Konva.Layer, pointerclick: () => void) {
-//         this.layer = layer;
-//         this.button = new Konva.Group();
-//         this.button.on("pointerclick", pointerclick);
-
-//         this.width = 40;
-//         this.height = 40;
-//         this.margin = 20;
-
-//         this.button.x(this.layer.getStage().width() - this.width / 2 - this.margin)
-//         this.button.y(this.height / 2 + this.margin)
-//         this.button.width(this.width);
-//         this.button.height(this.height);
-        
-//         this.create();
-//     }
-
-//     private create(): void {
-//         const COLOR_PRIMARY = getComputedStyle(document.documentElement).getPropertyValue("--color-primary").trim();
-//         const COLOR_SECONDARY = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
-//         this.button.add(
-//             new Konva.Circle({
-//                 width: this.width,
-//                 height: this.height,
-//                 fill: COLOR_SECONDARY,
-//             })
-//         );
-//         this.button.add(
-//             new Konva.Line({
-//                 points: [-10,-10, 10,10],
-//                 stroke: COLOR_PRIMARY,
-//                 strokeWidth: 3,
-//             })
-//         );  
-
-//         this.button.add(
-//             new Konva.Line({
-//                 points: [10,-10, -10,10],
-//                 stroke: COLOR_PRIMARY,
-//                 strokeWidth: 3,
-//             })
-//         );
-//     }
-
-//     public draw(): void {
-//         this.layer.add(this.button);
-//     }
-// }
-
-// class Fullscreen {
-//     private readonly canvas;
-
-//     constructor(canvas: Canvas) {
-//         this.canvas = canvas;
-//         this.canvas.HudLayer.hide();
-
-//         this.canvas.Container.addEventListener("fullscreenchange", () => this.Enabled ?  undefined : this.canvas.HudLayer.hide());
-//     }
-
-//     public get Enabled() { return document.fullscreenElement ? true : false; }
-
-//     public async enable(): Promise<void> {
-//         if(!this.Enabled) {
-//             await this.canvas.Container.requestFullscreen({navigationUI: "hide"})
-//             if(this.Enabled) {
-//                 this.canvas.HudLayer.show();
-//                 this.canvas.fitStageIntoContainer();
-//             }
-//         }
-//     }
-
-//     public async disable(): Promise<void> {
-//         if(this.Enabled) {
-//             await document.exitFullscreen();
-//             this.canvas.fitStageIntoContainer();
-//             this.canvas.HudLayer.hide();
-//         }
-//     }
-// }
