@@ -6,6 +6,11 @@
 
     const { input }: { input: GameData } = $props();
 
+    // Input Option:
+    // Aktuell: { path: string, caption: string }
+    // Option: { original: string, caption: string, mistakes: string, paths: string }
+    // was hälst du von der Idee ?
+
     let controller: Controller;
 
     let container: HTMLDivElement;
