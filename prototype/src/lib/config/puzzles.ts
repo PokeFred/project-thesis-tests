@@ -338,7 +338,7 @@ const puzzles: Puzzle[] = [
                 caption: ""
             },
             result: {
-                img: "/station_03/raetsel_03/game/Background.png",
+                img: "/station_03/raetsel_03/game/original.png",
                 caption: ""
             }
         }

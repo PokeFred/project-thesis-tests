@@ -17,4 +17,4 @@
     const input: Input = data
 </script>
 
-<GameComponent bind:this={game} input={input} />
+<!-- <GameComponent bind:this={game} input={input} /> -->
