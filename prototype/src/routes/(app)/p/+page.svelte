@@ -19,7 +19,7 @@
                 {:else}
                     <div class="w-full h-auto text-secondary bg-primary rounded-full grid grid-cols-[auto_60px] gap-4 px-6 py-2 opacity-50 cursor-default">
                         <span class="text-lg font-bold text-left">{puzzle.title}</span>
-                        <span class="text-right">{puzzle.score.current}/{puzzle.score.max}</span>
+                        <!-- <span class="text-right">{puzzle.score.current}/{puzzle.score.max}</span> -->
                     </div>
                 {/if}
             {/each}

@@ -42,6 +42,8 @@
         submitable = true
     }
 
+
+
     let modal: Modal
     function submit(): void {
         let rScore: number = 0
@@ -69,7 +71,11 @@
         }
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
-        goto(`/p/${data.puzzle.id}/result`)
+        if (data.puzzle.type !== "gps-puzzle") {
+            goto(`/p/${data.puzzle.id}/result`)
+        } else {
+            goto(`/s/${data.station.id}`)
+        }
     }
 </script>
 
@@ -113,7 +119,7 @@
         <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     <div class="mt-7.5 mx-auto w-full h-auto">
-        <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>Ergebnis anzeigen</button>
+        <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Station freischalten"}</button>
     </div>
     <ScrollButton />
 </div>

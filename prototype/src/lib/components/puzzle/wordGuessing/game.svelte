@@ -11,10 +11,49 @@
     export function getSubmitScore(): number { return game.getSubmitScore() }
 
 	onMount((): void => {
-        setSubmitable()
+        //setSubmitable()
     })
 
-    const input: Input = data
+    const input: Input =  {
+        questions: [
+            {
+                solution: "Dille & Kamille",
+                left: {
+                    src: "https://placehold.co/600x400",
+                    alt: "https://placehold.co/600x400",
+                    caption: "Abbildung",
+                    hints: {
+                        normal: "P=D",
+                        crossed: "n"
+                    }
+                },
+                operator: "&",
+                right: {
+                    src: "https://placehold.co/600x400",
+                    alt: "https://placehold.co/600x400",
+                    caption: "Abbildung",
+                }
+            },
+            {
+                solution: "Dille & Kamille",
+                left: {
+                    src: "https://placehold.co/600x400",
+                    alt: "https://placehold.co/600x400",
+                    caption: "Abbildung",
+                    hints: {
+                        normal: "P=D",
+                        crossed: "n"
+                    }
+                },
+                operator: "&",
+                right: {
+                    src: "https://placehold.co/600x400",
+                    alt: "https://placehold.co/600x400",
+                    caption: "Abbildung",
+                }
+            }
+        ]
+    }
 </script>
 
-<!-- <GameComponent bind:this={game} input={input} /> -->
+<GameComponent bind:this={game} input={input} />

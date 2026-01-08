@@ -2,12 +2,18 @@ export type Introduction = {
     text: string
     informations: {
         adress: string
-        transit: string[]
-        coordinates: {
-            lat: number,
-            lon: number,
-            text: string
-        }
+        //transit: string[]
+        transit: {
+            bus: {
+                station: string,
+                lines: string[]
+            },
+            subway: {
+                station: string,
+                lines: string[]
+            }
+        },
+        coordinates: string
     }
 }
 
