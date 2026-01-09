@@ -266,15 +266,16 @@ class PuzzlePieceContainer {
         }));
         this.border.add(GROUP);
 
-        GROUP.on("dragstart", (e) => this.dragLastX = e.evt.screenX);
+        GROUP.on("dragstart", (e) => this.dragLastX = this.stage.pointerPos ? this.stage.pointerPos.x : 0);
         GROUP.on("dragmove", (e) => {
             const CONTAINER_RECT = this.container.getClientRect();
-            const DX = e.evt.screenX - this.dragLastX;
+            const CLIENT_X =  this.stage.pointerPos ? this.stage.pointerPos.x : 0;
+            const DX = CLIENT_X - this.dragLastX;
             const LEFT_BOUND = 0;
             const RIGHT_BOUND = BORDER.width();
 
             this.container.x(Math.max(Math.min(LEFT_BOUND, this.container.x() + DX) + CONTAINER_RECT.width, RIGHT_BOUND) - CONTAINER_RECT.width)
-            this.dragLastX = e.evt.screenX;
+            this.dragLastX = CLIENT_X;
         });
         return GROUP;
     }
