@@ -48,7 +48,7 @@
 
 <!-- <div bind:this={container} class="fixed top-0 left-0 w-full h-full"></div> -->
 <div class="-m-4">
-    <div bind:this={container} class="w-full h-[80vh]"></div>
+    <div bind:this={container} class="w-full h-[85vh]"></div>
 </div>
 
 <div class="flex justify-between py-20 border-b-2">

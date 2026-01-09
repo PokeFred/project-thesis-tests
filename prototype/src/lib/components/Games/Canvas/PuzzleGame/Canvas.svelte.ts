@@ -223,15 +223,13 @@ class PuzzlePieceContainer {
     }
 
     private createBorder(): Konva.Group {
-        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
         const MARGIN = 40; 
         const WIDTH = this.stage.width() - MARGIN * 2;
-        const HEIGHT = 60;
+        const HEIGHT = 100;
 
         const BORDER = new Konva.Rect({
             width: WIDTH,
             height: HEIGHT,
-            stroke: COLOR,
         });
         const BORDER_RECT = BORDER.getClientRect();
 
@@ -301,7 +299,7 @@ class PuzzlePieceContainer {
     }
 
     private createPieces(): void {
-        const GAP: Konva.Rect = new Konva.Rect({width: 40, height: this.border.getClientRect().height, listening: false});
+        const GAP: Konva.Rect = new Konva.Rect({width: 10, height: this.border.getClientRect().height, listening: false});
         let currentX: number = 0;
         let clone: Konva.Rect;
 
