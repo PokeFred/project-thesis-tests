@@ -186,6 +186,7 @@ class PuzzlePieceContainer {
     private readonly border: Konva.Group;
     private readonly viewport: Konva.Group;
     private readonly container: Konva.Group;
+    private readonly arrows: Arrow[];
     
 
     private readonly slotMapping: Map<Konva.Image, Konva.Group>;
@@ -200,6 +201,7 @@ class PuzzlePieceContainer {
         this.viewport = this.createViewport();
         this.container = this.createContainer();
         this.container.moveToTop();
+        this.arrows = this.createArrows();
         this.slotMapping = new Map<Konva.Image, Konva.Group>();
 
         this.createPieces();
@@ -268,13 +270,10 @@ class PuzzlePieceContainer {
 
         GROUP.on("dragstart", (e) => this.dragLastX = this.stage.pointerPos ? this.stage.pointerPos.x : 0);
         GROUP.on("dragmove", (e) => {
-            const CONTAINER_RECT = this.container.getClientRect();
             const CLIENT_X =  this.stage.pointerPos ? this.stage.pointerPos.x : 0;
             const DX = CLIENT_X - this.dragLastX;
-            const LEFT_BOUND = 0;
-            const RIGHT_BOUND = BORDER.width();
 
-            this.container.x(Math.max(Math.min(LEFT_BOUND, this.container.x() + DX) + CONTAINER_RECT.width, RIGHT_BOUND) - CONTAINER_RECT.width)
+            this.scrollContainer(DX)
             this.dragLastX = CLIENT_X;
         });
         return GROUP;
@@ -297,7 +296,7 @@ class PuzzlePieceContainer {
             height: this.container.height() - MARGIN,
             width: this.container.height() - MARGIN,
         });
-        slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
+        // slot.add(new Konva.Rect({height: slot.height(), width: slot.width(), stroke: "green"}))
         return slot;
     }
 
@@ -329,5 +328,81 @@ class PuzzlePieceContainer {
         clone = GAP.clone();
         clone.x(currentX)
         this.container.add(clone);
+    }
+
+    private createArrows(): Arrow[] {
+        const DIMENSION: Vector2d = {x: 10, y: 20}; 
+        const POSITION_1: Vector2d = {x: this.border.x() - 20 - (DIMENSION.x / 2), y: this.border.y() + (this.border.height() / 2) - (DIMENSION.y / 2)};
+        const POSITION_2: Vector2d = {x: this.border.x() + this.border.width() + 20 - (DIMENSION.x / 2), y: this.border.y() + (this.border.height() / 2) - (DIMENSION.y / 2)};
+        const STEP: number = 100;
+        return [
+            new Arrow(this.canvas, POSITION_1, DIMENSION,"left", () => {
+                this.scrollContainer(STEP)
+            }),
+            new Arrow(this.canvas, POSITION_2, DIMENSION, "right", () => {
+                this.scrollContainer(-STEP);
+            })
+        ];
+    }
+
+    private scrollContainer(dx: number): void {
+        const CONTAINER_RECT = this.container.getClientRect();
+        const LEFT_BOUND = 0;
+        const RIGHT_BOUND = this.border.width();
+        this.container.x(Math.max(Math.min(LEFT_BOUND, this.container.x() + dx) + CONTAINER_RECT.width, RIGHT_BOUND) - CONTAINER_RECT.width)
+    }
+}
+
+class Arrow {
+    private readonly canvas: Canvas;
+    private readonly stage: Konva.Stage;
+    private readonly layer: Konva.Layer;
+    private readonly hitbox: Konva.Group;
+    private readonly arrow: Konva.Line;
+
+    constructor(canvas: Canvas, position: Vector2d, dimension: Vector2d, direction: string, onClick: () => void) {
+        this.canvas = canvas;
+        this.stage = canvas.Stage;
+        this.layer = canvas.HudLayer;
+        this.hitbox = this.createHitbox(position, dimension, onClick);
+        this.arrow = this.createArrow(direction);
+    }
+
+    private createHitbox(position: Vector2d, dimension: Vector2d, onClick: () => void): Konva.Group {
+        const GROUP: Konva.Group = new Konva.Group({
+            x: position.x,
+            y: position.y,
+            width: dimension.x,
+            height: dimension.y
+        });
+        const RECT: Konva.Rect = new Konva.Rect({
+            width: dimension.x,
+            height: dimension.y,
+        });
+        GROUP.add(RECT);
+        GROUP.on("pointerdown", onClick);
+        
+        this.layer.add(GROUP);
+        return GROUP;
+    }
+
+    private createArrow(direction: string): Konva.Line {
+        const COLOR = getComputedStyle(document.documentElement).getPropertyValue("--color-secondary").trim();
+        const ARROW: Konva.Line = new Konva.Line({
+            points: [0, 0, this.hitbox.width(), this.hitbox.height() / 2, 0, this.hitbox.height()],
+            stroke: COLOR,
+            strokeWidth: 3,
+            lineCap: 'round',
+            lineJoin: 'round',
+        });
+
+        if (direction === "left") {
+            ARROW.rotate(180)
+            ARROW.x(this.hitbox.width())
+            ARROW.y(this.hitbox.height())
+        }
+
+        this.hitbox.add(ARROW);
+        return ARROW;
     }
 }
