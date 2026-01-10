@@ -37,9 +37,9 @@
 
 <figure class="mb-10">
     <Fullscreen>
-        <img src={`${input.path}/original.png`} alt="Originalbild"> <!-- alt === result.caption ? -->
+        <img src={`${input.path}/original.png`} alt={input.caption} />
     </Fullscreen>
-    <figcaption>Originalbild</figcaption> <!-- figcaption === result.caption ? -->
+    <figcaption>{input.caption}</figcaption>
 </figure>
 
 <div class="-m-4">

@@ -9,29 +9,28 @@
     import type { Introduction } from "./index"
 
     let { data }: { data: Introduction } = $props()
-    let open: boolean = $state<boolean>(true)
+    let open: boolean = $state<boolean>(false)
 
     function openMaps(): void {
         //window.open(`geo:${data.informations.coordinates.lat},${data.informations.coordinates.lon}`, "_blank")
     }
 </script>
 
-<div class="mt-3 w-full h-auto text-lg font-bold text-left px-3">{data.text}</div>
-<div class="mt-3 w-full h-auto text-lg font-bold text-left px-3">Gehe zu:</div>
-<div class="mt-3 w-full h-auto text-lg font-bold text-left px-3">{data.informations.adress}</div>
+<div class="mt-3 w-full h-auto text-lg text-left px-3">{data.text}</div>
+<div class="mt-3 w-full h-auto text-lg text-left px-3">Gehe zu:</div>
+<div class="mt-3 w-full h-auto text-lg text-left px-3">{data.informations.adress}</div>
 <div class="my-3 w-full h-auto grid grid-cols-1 gap-3">
     <hr class="border-2">
     <details bind:open={open}>
         <summary class="w-full h-auto flex justify-between items-center cursor-pointer px-3">
-            <span class="font-bold">Öffentlicher Nahverkehr & Koordinaten</span>
+            <span class="font-bold">Öffentlicher Verkehr & Koordinaten</span>
             <Icon data={open ? faMinus : faPlus} />
         </summary>
         <div class="w-full h-auto grid grid-cols-1 gap-2 px-6 pt-3">
             <hr class="w-1/3 h-auto border-2">
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
-                    <Icon data={faBus} />
-                    <span class="ml-3 text-lg font-bold">Bus</span>
+                    <span class="text-lg font-bold">Bus</span>
                 </div>
                 <div>{data.informations.transit.bus.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.bus.station}</div>
@@ -39,8 +38,7 @@
             <hr class="w-1/3 h-auto border-2">
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
-                    <Icon data={faTrain} />
-                    <span class="ml-3 text-lg font-bold">U-Bahn</span>
+                    <span class="text-lg font-bold">U-Bahn</span>
                 </div>
                 <div>{data.informations.transit.subway.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.subway.station}</div>
@@ -48,8 +46,7 @@
             <hr class="w-1/3 h-auto border-2">
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
-                    <Icon data={faLocationDot} />
-                    <span class="ml-3">{data.informations.coordinates}</span>
+                    <span>{data.informations.coordinates}</span>
                 </div>
             </div>
         </div>

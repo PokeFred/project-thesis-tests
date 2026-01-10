@@ -213,7 +213,7 @@ const puzzles: Puzzle[] = [
         score: 1,
         data: {
             introduction: {
-                text: "Begebe dich zum Alten Markt, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                text: "Begebe dich zum alten Markt, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
                     adress: "Hansastraße 3, 44137 Dortmund",
                     transit: {
@@ -240,14 +240,38 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 11,
-        type: "placeholder-puzzle",
+        type: "multiple-choice-puzzle",
         title: "Rätsel 01 (multiple-choice)",
         requirements: [], // [10]
         score: 8,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", isCorrect: true },
+                    { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", isCorrect: true },
+                    { id: 2, text: "Der Markt war das Zentrum der Stadt.", isCorrect: true },
+                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", isCorrect: false },
+                    { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", isCorrect: true },
+                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", isCorrect: false },
+                    { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", isCorrect: true },
+                    { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", isCorrect: false }
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: true },
+                    { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: true },
+                    { id: 2, text: "Der Markt war das Zentrum der Stadt.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: true },
+                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: false },
+                    { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: true },
+                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: false },
+                    { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: true },
+                    { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." }] }], isCorrect: false }
+                ]
+            }
         }
     },
     {
@@ -377,11 +401,11 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 path: "/station_03/raetsel_03/game",
-                caption: ""
+                caption: "Originalbild"
             },
             result: {
                 img: "/station_03/raetsel_03/game/original.png",
-                caption: ""
+                caption: "Originalbild"
             }
         }
     },
@@ -513,6 +537,30 @@ const puzzles: Puzzle[] = [
         type: "placeholder-puzzle",
         title: "Rätsel 01 (word-guessing-game)",
         requirements: [], // [60]
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 70,
+        type: "placeholder-puzzle",
+        title: "Station freischalten",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 71,
+        type: "placeholder-puzzle",
+        title: "Rätsel 01 (???)",
+        requirements: [],
         score: 0,
         data: {
             introduction: {},

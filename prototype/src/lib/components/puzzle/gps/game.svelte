@@ -6,6 +6,7 @@
     import ErrorBanner from "./ErrorBanner.svelte"
     import SuccessBanner from "./SuccessBanner.svelte"
     import LoadingBanner from "./LoadingBanner.svelte"
+    import { onMount } from "svelte"
 
     let { data, setSubmitable }: { data: GameInput, setSubmitable: () => void } = $props()
 
@@ -19,12 +20,16 @@
             setSubmitable()
         }, 1000)
     }
+
+    onMount(() => {
+        setSubmitable()
+    })
 </script>
 
-<div class="mx-auto w-fit h-auto">
-    <button onclick={fetchLocation} class="w-full h-auto text-primary bg-secondary rounded-xl flex justify-center items-center px-8 {!a ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={a}><Icon data={faGlobe} /><span class="ml-2">Überprüfe Standort</span></button>
-</div>
+<button onclick={fetchLocation} class="w-full h-auto text-[20px] font-medium text-left text-primary bg-secondary rounded-full flex justify-center items-center px-8 {!a ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={a}>Überprüfe meinen Standort</button>
 <div class="mt-3 grid grid-cols gap-4">
+    <div class="w-full h-auto text-lg text-primary bg-secondary p-4">Achtung! Du bist vermutlich noch nicht am richtigen Standort. Gehe zu den Koordinaten und überprüfe deinen Standort erneut.</div>
+    <div class="w-full h-auto text-lg text-primary bg-secondary p-4">Standort korrekt</div>
     <!-- <SuccessBanner message="Standortzugriff verweigert." /> -->
     <!-- <LoadingBanner /> -->
     <!-- <ErrorBanner message="Standortzugriff verweigert." /> -->

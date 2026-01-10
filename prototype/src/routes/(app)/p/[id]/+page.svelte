@@ -118,8 +118,10 @@
         <WordGuessingIntroduction data={data.introduction} />
         <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
     {/if}
-    <div class="mt-7.5 mx-auto w-full h-auto">
-        <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 {submitable ? "cursor-pointer active:scale-95" : "opacity-50 cursor-default"}" disabled={!submitable}>{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Station freischalten"}</button>
-    </div>
+    {#if submitable}
+        <div class="mt-7.5 mx-auto w-full h-auto">
+            <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
+        </div>
+    {/if}
     <ScrollButton />
 </div>

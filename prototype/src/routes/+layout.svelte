@@ -72,22 +72,22 @@
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
                     {#if isRunning()}
                         <button onclick={(): Promise<void> => goto("/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
-                        <hr class="border-1">
-                        <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">"Rätsel"</button>
-                        <hr class="border-1">
+                        <hr class="border">
+                        <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
+                        <hr class="border">
                     {/if}
                     <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
-                    <hr class="border-1">
+                    <hr class="border">
                     <button onclick={(): Promise<void> => goto("/infos")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
-                    <hr class="border-1">
+                    <hr class="border">
                     {#if isRunning()}
                         <button onclick={(): void => restartModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL ERNEUT STARTEN</button>
-                        <hr class="border-1">
+                        <hr class="border">
                         <button onclick={(): void => stopModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
-                        <hr class="border-1">
+                        <hr class="border">
                     {/if}
                     <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
-                    <hr class="border-1">
+                    <hr class="border">
                     <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
                 </div>
             </div>

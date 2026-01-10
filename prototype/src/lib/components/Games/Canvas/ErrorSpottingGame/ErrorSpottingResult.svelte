@@ -13,7 +13,7 @@
 
 <figure>
     <Fullscreen>
-        <img src={result.img} alt={"Originalbild"}> <!-- alt === result.caption ? -->
+        <img src={result.img} alt={result.caption} />
     </Fullscreen>
-    <figcaption>Originalbild</figcaption>  <!-- alfigcaptiont === result.caption ? -->
+    <figcaption>{result.caption}</figcaption>
 </figure>

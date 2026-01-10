@@ -3,7 +3,7 @@ export type GameInput = {
 }
 
 export type GameOutput = {
-    answers: { selected: boolean, answer: Answer }[]
+    answers: { id: number, selected: boolean }[]
 }
 
 export type Result = {

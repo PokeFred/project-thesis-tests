@@ -9,7 +9,6 @@
     export const getSubmitScore = multipleChoice.score.bind(multipleChoice)
 </script>
 
-<!-- TODO warum schachteln in extra div ? -->
 <div>
     <div class="flex flex-col border-y-2 border-secondary divide-y-2 divide-secondary">
         {#each multipleChoice.Options as option, i }

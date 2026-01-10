@@ -2,12 +2,12 @@ import { type Quiz, POINTS } from "$components/Games/Quiz";
 import type { GameOutput } from "./";
 
 export type Answer = {
+    readonly id: number;
     readonly answer: string;
     readonly correct: boolean;
 }
 export default class MultipleChoice implements Quiz<GameOutput> {
     private readonly options: Answer[];
-    // private readonly descriptions: Description[][]; // von der config aus laden in page end
     private selected: boolean[];
 
     constructor(options: Answer[]) {
@@ -28,12 +28,12 @@ export default class MultipleChoice implements Quiz<GameOutput> {
     }
 
     public complete(): GameOutput {
-        // TODO (Simon): answers: { id: number, selected: boolean }[]
         return {
-            answers: this.options.map((answer: Answer, i: number) => {
+            answers: this.options.map((answer: Answer, i: number): { id: number, selected: boolean } => {
+                console.log()
                 return {
-                    selected: this.selected[i],
-                    answer: answer
+                    id: answer.id,
+                    selected: this.selected[i]
                 }
             })
         } satisfies GameOutput;

@@ -201,11 +201,11 @@ const stations: Station[] = [
     {
         id: 7,
         tag: "Station 07",
-        stitle: "??? (S07)",
+        stitle: "Kampstraße",
         title: "",
         score: 0,
         chapters: [],
-        puzzles: []
+        puzzles: [70, 71]
     },
     {
         id: 8,
@@ -225,15 +225,15 @@ const stations: Station[] = [
         chapters: [],
         puzzles: [90, 91, 92]
     },
-    {
-        id: 10,
-        tag: "Station 10",
-        stitle: "??? (S10)",
-        title: "",
-        score: 0,
-        chapters: [],
-        puzzles: []
-    }
+    // {
+    //     id: 10,
+    //     tag: "Station 10",
+    //     stitle: "??? (S10)",
+    //     title: "",
+    //     score: 0,
+    //     chapters: [],
+    //     puzzles: []
+    // }
 ]
 
 export default stations
