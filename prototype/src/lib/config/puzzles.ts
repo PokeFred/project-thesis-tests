@@ -309,37 +309,49 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 20,
-        type: "gps-puzzle",
+        type: "placeholder-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 1,
+        score: 0,
         data: {
-            introduction: {
-                text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
-                informations: {
-                    adress: "???",
-                    transit: {
-                        bus: {
-                            station: "",
-                            lines: []
-                        },
-                        subway: {
-                            station: "",
-                            lines: []
-                        }
-                    },
-                    coordinates: ""
-                }
-            },
-            game: {
-                coordinates: {
-                    lan: 0,
-                    lon: 0
-                }
-            },
+            introduction: {},
+            game: {},
             result: {}
         }
     },
+    // {
+    //     id: 20,
+    //     type: "gps-puzzle",
+    //     title: "Station freischalten",
+    //     requirements: [],
+    //     score: 1,
+    //     data: {
+    //         introduction: {
+    //             text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+    //             informations: {
+    //                 adress: "???",
+    //                 transit: {
+    //                     bus: {
+    //                         station: "",
+    //                         lines: []
+    //                     },
+    //                     subway: {
+    //                         station: "",
+    //                         lines: []
+    //                     }
+    //                 },
+    //                 coordinates: ""
+    //             }
+    //         },
+    //         game: {
+    //             coordinates: {
+    //                 lan: 0,
+    //                 lon: 0
+    //             }
+    //         },
+    //         result: {}
+    //     }
+    // },
     {
         id: 21,
         type: "word-guessing-puzzle",
