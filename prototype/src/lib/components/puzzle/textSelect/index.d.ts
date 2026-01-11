@@ -2,7 +2,9 @@ export type IntroductionData = {
     text: string[]
 }
 
-export type GameData = {}
+export type GameData = {
+    data: any[]
+}
 
 export type ResultData = {}
 

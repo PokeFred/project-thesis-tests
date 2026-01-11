@@ -241,7 +241,7 @@ const puzzles: Puzzle[] = [
     {
         id: 11,
         type: "multiple-choice-puzzle",
-        title: "Rätsel 01 (multiple-choice)",
+        title: "Rätsel 01",
         requirements: [], // [10]
         score: 8,
         data: {
@@ -277,7 +277,7 @@ const puzzles: Puzzle[] = [
     {
         id: 12,
         type: "matching-game-puzzle",
-        title: "Rätsel 02 (matching-game)",
+        title: "Rätsel 02",
         requirements: [], // [10]
         score: 7,
         data: {
@@ -335,7 +335,7 @@ const puzzles: Puzzle[] = [
     {
         id: 13,
         type: "drag-drop-puzzle",
-        title: "Rätsel 03 (drag-drop)",
+        title: "Rätsel 03",
         requirements: [], // [10]
         score: 15,
         data: {
@@ -401,7 +401,7 @@ const puzzles: Puzzle[] = [
     {
         id: 21,
         type: "word-guessing-puzzle",
-        title: "Rätsel 01 (word-guessing-game)",
+        title: "Rätsel 01",
         requirements: [], // [20]
         score: 0,
         data: {
@@ -424,20 +424,24 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 31,
-        type: "placeholder-puzzle",
-        title: "Rätsel 01 (text-select)",
+        type: "text-select-puzzle",
+        title: "Rätsel 01",
         requirements: [], // [30]
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: ["Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+            },
+            game: {
+                data: []
+            },
             result: {}
         }
     },
     {
         id: 32,
         type: "multiple-choice-puzzle",
-        title: "Rätsel 02 (multiple-choice)",
+        title: "Rätsel 02",
         requirements: [], // [30]
         score: 3,
         data: {
@@ -463,7 +467,7 @@ const puzzles: Puzzle[] = [
     {
         id: 33,
         type: "error-spotting-puzzle",
-        title: "Rätsel 03 (error-spotting)",
+        title: "Rätsel 03",
         requirements: [], // [30]
         score: 0,
         data: {
@@ -496,7 +500,7 @@ const puzzles: Puzzle[] = [
     {
         id: 41,
         type: "drag-drop-puzzle",
-        title: "Rätsel 01 (drag-drop)",
+        title: "Rätsel 01",
         requirements: [], // [40]
         score: 0,
         data: {
@@ -517,7 +521,7 @@ const puzzles: Puzzle[] = [
     {
         id: 42,
         type: "multiple-choice-puzzle",
-        title: "Rätsel 02 (multiple-choice)",
+        title: "Rätsel 02",
         requirements: [], // [40]
         score: 3,
         data: {
@@ -559,7 +563,7 @@ const puzzles: Puzzle[] = [
     {
         id: 51,
         type: "drag-drop-puzzle",
-        title: "Rätsel 01 (drag-drop)",
+        title: "Rätsel 01",
         requirements: [], // [50]
         score: 0,
         data: {
@@ -580,7 +584,7 @@ const puzzles: Puzzle[] = [
     {
         id: 52,
         type: "drag-drop-puzzle",
-        title: "Rätsel 02 (drag-drop)",
+        title: "Rätsel 02",
         requirements: [], // [50]
         score: 0,
         data: {
@@ -601,7 +605,7 @@ const puzzles: Puzzle[] = [
     {
         id: 53,
         type: "placeholder-puzzle",
-        title: "Rätsel 03 (word-guessing-game)",
+        title: "Rätsel 03",
         requirements: [], // [50]
         score: 0,
         data: {
@@ -625,7 +629,7 @@ const puzzles: Puzzle[] = [
     {
         id: 61,
         type: "placeholder-puzzle",
-        title: "Rätsel 01 (word-guessing-game)",
+        title: "Rätsel 01",
         requirements: [], // [60]
         score: 0,
         data: {
@@ -649,7 +653,7 @@ const puzzles: Puzzle[] = [
     {
         id: 71,
         type: "placeholder-puzzle",
-        title: "Rätsel 01 (???)",
+        title: "Rätsel 01",
         requirements: [],
         score: 0,
         data: {
@@ -673,7 +677,7 @@ const puzzles: Puzzle[] = [
     {
         id: 81,
         type: "placeholder-puzzle",
-        title: "Rätsel 01 (multiple-choice)",
+        title: "Rätsel 01",
         requirements: [], // [80]
         score: 0,
         data: {
@@ -697,7 +701,7 @@ const puzzles: Puzzle[] = [
     {
         id: 91,
         type: "placeholder-puzzle",
-        title: "Rätsel 01 (word-guessing-game)",
+        title: "Rätsel 01",
         requirements: [], // [90]
         score: 0,
         data: {
@@ -709,7 +713,7 @@ const puzzles: Puzzle[] = [
     {
         id: 92,
         type: "placeholder-puzzle",
-        title: "Rätsel 02 (word-guessing-game)",
+        title: "Rätsel 02",
         requirements: [], // [90]
         score: 0,
         data: {

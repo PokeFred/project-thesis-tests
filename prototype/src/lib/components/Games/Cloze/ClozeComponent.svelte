@@ -6,7 +6,8 @@
     import Select from "$components/Select.svelte";
     import type { Content, Inline } from "../Content";
 
-    const { gameInput }: { gameInput: GameInput } = $props();
+    const { input }: { input: GameInput } = $props();
+    const gameInput: GameInput = input
 
     const options: Answer[][] = new Array<Answer[]>();
 
