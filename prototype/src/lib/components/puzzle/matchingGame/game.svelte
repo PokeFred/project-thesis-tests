@@ -7,9 +7,7 @@
     let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
 
     let game: GameComponent
-    // @ts-ignore
     export function getSubmitData(): SavingData { return game.getSubmitData() }
-    // @ts-ignore
     export function getSubmitScore(): number { return game.getSubmitScore() }
 
     onMount((): void => {

@@ -276,14 +276,60 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 12,
-        type: "placeholder-puzzle",
+        type: "matching-game-puzzle",
         title: "Rätsel 02 (matching-game)",
         requirements: [], // [10]
         score: 7,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Ordne den Zünften das richtige Handwerk zu."]
+            },
+            game: {
+                header: {
+                    left: "Handwerk",
+                    right: "Zünfte"
+                },
+                data: {
+                    left: ["Metall-verarbeitung", "Getreide-verarbeitung", "Fleisch-verarbeitung", "Leder-verarbeitung", "Feinleder-verarbeitung", "Gemischt-warenhandel", "Handel mit Butter, Öl, Speck etc."],
+                    right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
+                    pairs: [
+                        { left: "Metall-verarbeitung", right: "Schmied" },
+                        { left: "Getreide-verarbeitung", right: "Bäcker" },
+                        { left: "Fleisch-verarbeitung", right: "Fleischer" },
+                        { left: "Leder-verarbeitung", right: "Gerber" },
+                        { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+                        { left: "Gemischt-warenhandel", right: "Krämer" },
+                        { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+                    ]
+                }
+            },
+            result: {
+                header: {
+                    left: "Handwerk",
+                    right: "Zünfte"
+                },
+                pairs: [
+                    { left: "Metall-verarbeitung", right: "Schmied" },
+                    { left: "Getreide-verarbeitung", right: "Bäcker" },
+                    { left: "Fleisch-verarbeitung", right: "Fleischer" },
+                    { left: "Leder-verarbeitung", right: "Gerber" },
+                    { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+                    { left: "Gemischt-warenhandel", right: "Krämer" },
+                    { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+                ],
+                informations: {
+                    title: "Willst du wissen, was diese Berufe gemacht haben ?",
+                    data: [
+                        { type:"seperator" },
+                        { type: "question", question: "Abdecker", answer: [{ type: "paragraph", content: "So wurden Personen genannt, die mit der Beseitigung und Verwertung (abdecken=abhäuten) von Tierkadavern beschäftigt waren. Einige Teile des Kadavers konnten verwertet werden. Daraus entstanden Produkte wie Fette, Leim, Knochenmehl, Seife, Salmiak, Bleichmittel und Viehfutter. Das Gewerbe galt lange Zeit als „unehrlich“. Das bedeutet, dass die Abdecker sozial ausgegrenzt wurden. Sie mussten außerhalb der Stadt wohnen." }] },
+                        { type:"seperator" },
+                        { type: "question", question: "Bader", answer: [{ type: "paragraph", content: "Bader waren - oft in Konkurrenz oder Zusammenarbeit mit den sogenannten Barbieren - bis ins 19. Jahrhundert für die Körperpflege der Bevölkerung zuständig. Sie betrieben Badestuben, die nicht nur Orte der Reinigung, sondern auch der Geselligkeit waren. Darüber hinaus behandelten Bader kleinere Wunden und alltägliche Beschwerden, zogen Zähne oder legten Schröpfköpfe an. Ihre Tätigkeit lag damit im Schnittfeld zwischen Handwerk, Medizin und öffentlicher Hygiene." }] },
+                        { type:"seperator" },
+                        { type: "question", question: "Gerber", answer: [{ type: "paragraph", content: "Gerber verarbeiteten rohe Tierhäute zu haltbarem Leder, das anschließend von Schuhmachern, Sattlern oder Täschnern weiterverarbeitet wurde. Das Handwerk war wegen der starken Gerüche und der Nutzung von Gerbflüssigkeiten wie Kalk, Urin oder Lohe (zerkleinerte Baumrinde) wenig angesehen. Gerbereien lagen deshalb oft am Stadtrand oder an Flussufern, wo es Wasser zum Spülen der Häute gab. In vielen Städten entstanden sogenannte Gerbergassen, in denen sich mehrere Werkstätten konzentrierten." }] },
+                        { type:"seperator" }
+                    ]
+                }
+            }
         }
     },
     {
@@ -291,7 +337,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 03 (drag-drop)",
         requirements: [], // [10]
-        score: 5,
+        score: 15,
         data: {
             introduction: {
                 title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
@@ -390,14 +436,28 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 32,
-        type: "placeholder-puzzle",
+        type: "multiple-choice-puzzle",
         title: "Rätsel 02 (multiple-choice)",
         requirements: [], // [30]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet? "]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "1952", isCorrect: true },
+                    { id: 1, text: "1932", isCorrect: false },
+                    { id: 2, text: "1972", isCorrect: false }
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "1952", description: [{ tag: "p", children: [{tag: "text", text: "Doch warum erst 1952? Nach dem Krieg fehlte es an Geld und Technik. Erst mit dem Wirtschaftsaufschwung ab den 1950 er Jahren konnte man sich modernen Komfort wie Rolltreppen leisten. Sie standen für Fortschritt und modernes Einkaufen." }] }], isCorrect: true },
+                    { id: 1, text: "1932", description: [], isCorrect: false },
+                    { id: 2, text: "1972", description: [], isCorrect: false }
+                ]
+            }
         }
     },
     {
@@ -456,14 +516,32 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 42,
-        type: "placeholder-puzzle",
+        type: "multiple-choice-puzzle",
         title: "Rätsel 02 (multiple-choice)",
         requirements: [], // [40]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Welche Lebensmittel gehörten zu den sogenannten Kolonialwaren? Finde das eine Produkt, was hier nicht stimmt!"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Tee", isCorrect: false },
+                    { id: 1, text: "Kaffee", isCorrect: false },
+                    { id: 2, text: "Tabak", isCorrect: false },
+                    { id: 2, text: "Kartoffeln", isCorrect: true },
+                    { id: 2, text: "Zucker", isCorrect: false }
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Tee", description: [], isCorrect: false },
+                    { id: 1, text: "Kaffee", description: [], isCorrect: false },
+                    { id: 2, text: "Tabak", description: [], isCorrect: false },
+                    { id: 2, text: "Kartoffeln", description: [], isCorrect: true },
+                    { id: 2, text: "Zucker", description: [], isCorrect: false }
+                ]
+            }
         }
     },
     {
