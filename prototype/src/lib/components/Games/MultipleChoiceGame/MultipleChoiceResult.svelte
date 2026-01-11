@@ -13,10 +13,9 @@
     const toggles: (()=>void)[] = new Array(saving.answers.length);
 
     let multipleChoiceResult = result.answers.map((obj: any, i: number) => {
-        console.log(saving.answers.filter((e: any): boolean => e.id === obj.id))
         return {
             answer: obj.text,
-            correct: obj.correct,
+            correct: obj.isCorrect,
             selected: saving.answers.filter((e: any): boolean => e.id === obj.id)[0].selected,
             description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." } as Inline] } as Content]
         }
