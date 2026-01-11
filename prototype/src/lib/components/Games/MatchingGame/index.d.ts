@@ -1,5 +1,3 @@
-// TODO MERGE
-
 export type Introduction = {
     text: string[]
 }
@@ -16,8 +14,11 @@ export type GameOutput = {
 }
 
 export type Result = {
-    //answers: string[],
     leftHeader: string,
     rightHeader: string,
-    pairs: Pair[]
+    pairs: Pair[],
+    informations: {
+        title: string,
+        data: any[]
+    }
 }

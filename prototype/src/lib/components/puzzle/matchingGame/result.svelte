@@ -8,7 +8,11 @@
     const _result: Result = {
         leftHeader: result.header.left,
         rightHeader: result.header.right,
-        pairs: result.pairs
+        pairs: result.pairs,
+        informations: {
+            title: result.informations.title,
+            data: result.informations.data
+        }
     }
 </script>
 

@@ -19,7 +19,11 @@ export type ResultData = {
         left: string,
         right: string
     },
-    pairs: { left: string, right: string }[]
+    pairs: { left: string, right: string }[],
+    informations: {
+        title: string,
+        data: any[]
+    }
 }
 
 export type SavingData = {
