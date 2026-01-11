@@ -6,11 +6,6 @@
 
     const { input }: { input: GameData } = $props();
 
-    // Input Option:
-    // Aktuell: { path: string, caption: string }
-    // Option: { original: string, caption: string, mistakes: string, paths: string }
-    // was hälst du von der Idee ?
-
     let controller: Controller;
 
     let container: HTMLDivElement;
@@ -30,9 +25,8 @@
         });
     }
 
-    // TODO Simon
-    export function getSubmitData(): SavingData { return { selected: "" } }
-    export function getSubmitScore(): number { return 0 }
+    export const getSubmitData = () => controller.ErrorSpotting.complete();
+    export const getSubmitScore = () => controller.ErrorSpotting.score();
 </script>
 
 <figure class="mb-10">

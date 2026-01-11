@@ -13,7 +13,6 @@
     const toggles: (()=>void)[] = new Array(saving.answers.length);
 
     let multipleChoiceResult = result.answers.map((obj: any, i: number) => {
-        console.log(obj)
         return {
             answer: obj.text,
             correct: obj.isCorrect,

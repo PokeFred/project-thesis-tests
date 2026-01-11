@@ -17,6 +17,8 @@ export default class ErrorSpottingController {
         });
     }
 
+    public get ErrorSpotting() { return this.errorSpotting; }
+
     public onClickErrorField(errorField: Konva.Path, mark: Konva.Arc): void {
         this.toggleMark(mark);
     }
