@@ -21,8 +21,6 @@
             description: obj.description
         }
     });
-
-    console.log(result, saving)
 </script>
 
 <div class="flex flex-col divide-y-2 divide-secondary border-y-2 border-secondary">
