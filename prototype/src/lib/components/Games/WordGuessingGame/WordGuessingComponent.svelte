@@ -3,7 +3,55 @@
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
 
-    const { input }: { input: GameInput } = $props();
+    // const { input }: { input: GameInput } = $props();
+
+    // TODO Cedric
+    const input: {questions: Question[]} = {
+        questions: [
+            {
+                hints: [
+                    {
+                        tag: "img",
+                        src: "https://placehold.co/600x400",
+                        alt: "test",
+                        caption: ""
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            crossed: "sel",
+                            normal: " + chen"
+                        }
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "+"
+                        }
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "&"
+                        }
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "+"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "https://placehold.co/600x400",
+                        alt: "test",
+                        caption: ""
+                    }
+                ],
+                solution: "Tewes"
+            }
+        ]
+    }
 
     const solutions: string[] = input.questions.map((question: Question) => question.solution);
 
@@ -13,33 +61,26 @@
     export const getSubmitScore = wordGuessingGame.score.bind(wordGuessingGame);
 </script>
 
-<div class="flex flex-col">
+<div class="flex flex-col border-y-2 py-20">
     {#each input.questions as question, i }
         <div>
-            <div class="flex">
-                {#if question.left}
-                    <figure>
-                        <div class="h-lh">{question.left.hints?.normal} <span class="crossed">{question.left.hints?.crossed}</span></div>
-                        <Fullscreen>
-                            <img src={question.left.src} alt={question.left.alt}>
-                        </Fullscreen>
-                        <figcaption>{question.left.caption}</figcaption>
-                    </figure>
-                {/if}
-                {#if question.operator}
-                    <p class="self-center">{question.operator}</p>
-                {/if}
-                {#if question.right}
-                    <figure>
-                        <div class="h-lh">{question.right.hints?.normal} <span class="crossed">{question.right.hints?.crossed}</span></div>
-                        <Fullscreen>
-                            <img src={question.right.src} alt={question.right.alt}>
-                        </Fullscreen>
-                        <figcaption>{question.right.caption}</figcaption>
-                    </figure>
-                {/if}
+            <div class="flex flex-col">
+                {#each question.hints as hint }
+                    <div class="mb-5 font-medium text-[40px] text-center leading-6">
+                        {#if hint.tag === "img"}
+                            <figure class="-mx-4">
+                                <Fullscreen>
+                                    <img src={hint.src} alt={hint.alt}>
+                                </Fullscreen>
+                                <figcaption>{hint.caption}</figcaption>
+                            </figure>
+                        {:else if hint.tag === "text"}
+                            <p class="self-center"><span class="crossed">{hint.text.crossed}</span>{hint.text.normal}</p>
+                        {/if}
+                    </div>
+                {/each}
             </div>
-            <label>Eingabe:<input type="text" bind:value={wordGuessingGame.Inputs[i]} class="border-2 border-secondary"></label>
+            <label class="block mt-10"><input type="text" placeholder="Tippe hier deine Lösung ein" bind:value={wordGuessingGame.Inputs[i]} class="inline-block w-full border-b-2 border-secondary"></label>
         </div>
     {/each}
 </div>
