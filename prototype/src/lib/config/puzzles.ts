@@ -58,7 +58,7 @@ const puzzles: Puzzle[] = [
         type: "multiple-choice-puzzle",
         title: "Rätsel 01",
         requirements: [], // [10]
-        score: 8,
+        score: 24,
         data: {
             introduction: {
                 text: ["Was kennzeichnete den Markt in Dortmund im Mittelalter? Nur fünf von acht Antwortmöglichkeiten sind richtig - überlege genau!"]
@@ -94,7 +94,7 @@ const puzzles: Puzzle[] = [
         type: "matching-game-puzzle",
         title: "Rätsel 02",
         requirements: [], // [10]
-        score: 7,
+        score: 21,
         data: {
             introduction: {
                 text: ["Ordne den Zünften das richtige Handwerk zu."]
@@ -218,7 +218,7 @@ const puzzles: Puzzle[] = [
         type: "word-guessing-puzzle",
         title: "Rätsel 01",
         requirements: [], // [20]
-        score: 0,
+        score: 3,
         data: {
             introduction: {},
             game: {},
@@ -242,7 +242,7 @@ const puzzles: Puzzle[] = [
         type: "text-select-puzzle",
         title: "Rätsel 01",
         requirements: [], // [30]
-        score: 0,
+        score: 21,
         data: {
             introduction: {
                 text: ["Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
@@ -284,7 +284,7 @@ const puzzles: Puzzle[] = [
         type: "error-spotting-puzzle",
         title: "Rätsel 03",
         requirements: [], // [30]
-        score: 0,
+        score: 15,
         data: {
             introduction: {
                 title: "",
@@ -317,7 +317,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 01",
         requirements: [], // [40]
-        score: 0,
+        score: 24,
         data: {
             introduction: {
                 title: "",
@@ -380,7 +380,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 01",
         requirements: [], // [50]
-        score: 0,
+        score: 15,
         data: {
             introduction: {
                 title: "",
@@ -401,7 +401,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 02",
         requirements: [], // [50]
-        score: 0,
+        score: 12,
         data: {
             introduction: {
                 title: "",

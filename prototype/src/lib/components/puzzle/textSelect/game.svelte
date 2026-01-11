@@ -80,12 +80,12 @@
             },
             {
                 tag: "img",
-                src: "/station_04/raetsel_01/game/Althoff_Teppichlager_01.jpg",
+                src: "/station_03/raetsel_01/image_00.jpg",
                 alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
             },
             {
                 tag: "img",
-                src: "/station_04/raetsel_01/game/Althoff_Teppichlager_02.jpg",
+                src: "/station_03/raetsel_01/image_01.jpg",
                 alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                 caption: {
                     caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
@@ -143,8 +143,8 @@
                     }
                 ]
             },
-            { tag: "img", src: "/station_04/raetsel_01/game/Althoff_Erfrischungsraum_01.jpg", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." },
-            { tag: "img", src: "/station_04/raetsel_01/game/Althoff_Erfrischungsraum_02.jpg", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff", src: "Stadtarchiv Dortmund" } },
+            { tag: "img", src: "/station_03/raetsel_01/image_07.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." },
+            { tag: "img", src: "/station_03/raetsel_01/image_08.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff", src: "Stadtarchiv Dortmund" } },
             {
                 tag: "p",
                 children: [
@@ -162,7 +162,7 @@
                     { tag: "text", text: "bekannt." }
                 ]
             },
-            { tag: "img", src: "/station_04/raetsel_01/game/Althoff.jpg", alt: "Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Gesamtansicht Warenhaus Althoff", src: "Stadtarchiv Dortmund" } }
+            { tag: "img", src: "/station_03/raetsel_01/image_09.jpg", alt: "Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Gesamtansicht Warenhaus Althoff", src: "Stadtarchiv Dortmund" } }
         ]
     }
 </script>
