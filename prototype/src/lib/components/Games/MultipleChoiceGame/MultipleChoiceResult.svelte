@@ -13,13 +13,16 @@
     const toggles: (()=>void)[] = new Array(saving.answers.length);
 
     let multipleChoiceResult = result.answers.map((obj: any, i: number) => {
+        console.log(obj)
         return {
             answer: obj.text,
             correct: obj.isCorrect,
             selected: saving.answers.filter((e: any): boolean => e.id === obj.id)[0].selected,
-            description: [{ tag: "p", children: [{tag: "text", text: "Aus config laden." } as Inline] } as Content]
+            description: obj.description
         }
     });
+
+    console.log(result, saving)
 </script>
 
 <div class="flex flex-col divide-y-2 divide-secondary border-y-2 border-secondary">
