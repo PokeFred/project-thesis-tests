@@ -274,18 +274,6 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    // {
-    //     id: 12,
-    //     type: "placeholder-puzzle",
-    //     title: "Rätsel 02 (matching-game)",
-    //     requirements: [], // [10]
-    //     score: 7,
-    //     data: {
-    //         introduction: {},
-    //         game: {},
-    //         result: {}
-    //     }
-    // },
     {
         id: 12,
         type: "matching-game-puzzle",
@@ -448,14 +436,28 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 32,
-        type: "placeholder-puzzle",
+        type: "multiple-choice-puzzle",
         title: "Rätsel 02 (multiple-choice)",
         requirements: [], // [30]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet? "]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "1952", isCorrect: true },
+                    { id: 1, text: "1932", isCorrect: false },
+                    { id: 2, text: "1972", isCorrect: false }
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "1952", description: [{ tag: "p", children: [{tag: "text", text: "Doch warum erst 1952? Nach dem Krieg fehlte es an Geld und Technik. Erst mit dem Wirtschaftsaufschwung ab den 1950 er Jahren konnte man sich modernen Komfort wie Rolltreppen leisten. Sie standen für Fortschritt und modernes Einkaufen." }] }], isCorrect: true },
+                    { id: 1, text: "1932", description: [], isCorrect: false },
+                    { id: 2, text: "1972", description: [], isCorrect: false }
+                ]
+            }
         }
     },
     {
@@ -514,14 +516,32 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 42,
-        type: "placeholder-puzzle",
+        type: "multiple-choice-puzzle",
         title: "Rätsel 02 (multiple-choice)",
         requirements: [], // [40]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Welche Lebensmittel gehörten zu den sogenannten Kolonialwaren? Finde das eine Produkt, was hier nicht stimmt!"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Tee", isCorrect: false },
+                    { id: 1, text: "Kaffee", isCorrect: false },
+                    { id: 2, text: "Tabak", isCorrect: false },
+                    { id: 2, text: "Kartoffeln", isCorrect: true },
+                    { id: 2, text: "Zucker", isCorrect: false }
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Tee", description: [], isCorrect: false },
+                    { id: 1, text: "Kaffee", description: [], isCorrect: false },
+                    { id: 2, text: "Tabak", description: [], isCorrect: false },
+                    { id: 2, text: "Kartoffeln", description: [], isCorrect: true },
+                    { id: 2, text: "Zucker", description: [], isCorrect: false }
+                ]
+            }
         }
     },
     {
