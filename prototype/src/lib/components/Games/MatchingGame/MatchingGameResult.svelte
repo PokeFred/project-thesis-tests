@@ -3,7 +3,11 @@
     import type { Result } from ".";
     import { POINTS } from "../Quiz";
 
-    const { result }: { result: Result } = $props();
+    /*
+    Result { leftHeader: string, rightHeader: string, pairs: { left: string, right: string }[] }
+    Saving { answers: string[] }
+    */
+    const { result, saving }: { result: any, saving: any } = $props();
 </script>
 
 <table class="w-full table-fixed border-collapse border-secondary text-left">
@@ -15,7 +19,7 @@
     </thead>
     <tbody class="font-medium text-[18px] leading-6">
         {#each result.pairs as pair, i}
-            {@const correct = pair.right === result.answers[i]}
+            {@const correct = pair.right === saving.answers[i]}
             <tr class="border-t-2 h-20">
                 <td class="border-r h-20 pl-3">{pair.left}</td>
                 <td class="border-l h-20 pl-3">{pair.right}</td>

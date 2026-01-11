@@ -274,16 +274,62 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // {
+    //     id: 12,
+    //     type: "placeholder-puzzle",
+    //     title: "Rätsel 02 (matching-game)",
+    //     requirements: [], // [10]
+    //     score: 7,
+    //     data: {
+    //         introduction: {},
+    //         game: {},
+    //         result: {}
+    //     }
+    // },
     {
         id: 12,
-        type: "placeholder-puzzle",
+        type: "matching-game-puzzle",
         title: "Rätsel 02 (matching-game)",
         requirements: [], // [10]
         score: 7,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Ordne den Zünften das richtige Handwerk zu."]
+            },
+            game: {
+                header: {
+                    left: "Handwerk",
+                    right: "Zünfte"
+                },
+                data: {
+                    left: ["Metall-verarbeitung", "Getreide-verarbeitung", "Fleisch-verarbeitung", "Leder-verarbeitung", "Feinleder-verarbeitung", "Gemischt-warenhandel", "Handel mit Butter, Öl, Speck etc."],
+                    right: ["Schmied", "Fleischer", "Bäcker", "Bader", "Tuchmacher", "Gerber", "Schuhmacher", "Krämer", "Fettkrämer", "Abdecker"],
+                    pairs: [
+                        { left: "Metall-verarbeitung", right: "Schmied" },
+                        { left: "Getreide-verarbeitung", right: "Bäcker" },
+                        { left: "Fleisch-verarbeitung", right: "Fleischer" },
+                        { left: "Leder-verarbeitung", right: "Gerber" },
+                        { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+                        { left: "Gemischt-warenhandel", right: "Krämer" },
+                        { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+                    ]
+                }
+            },
+            result: {
+                header: {
+                    left: "Handwerk",
+                    right: "Zünfte"
+                },
+                pairs: [
+                    { left: "Metall-verarbeitung", right: "Schmied" },
+                    { left: "Getreide-verarbeitung", right: "Bäcker" },
+                    { left: "Fleisch-verarbeitung", right: "Fleischer" },
+                    { left: "Leder-verarbeitung", right: "Gerber" },
+                    { left: "Feinleder-verarbeitung", right: "Schuhmacher" },
+                    { left: "Gemischt-warenhandel", right: "Krämer" },
+                    { left: "Handel mit Butter, Öl, Speck etc.", right: "Fettkrämer" }
+                ]
+            }
         }
     },
     {

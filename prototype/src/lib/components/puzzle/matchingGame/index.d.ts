@@ -14,6 +14,14 @@ export type GameData = {
     }
 }
 
-export type ResultData = {}
+export type ResultData = {
+    header: {
+        left: string,
+        right: string
+    },
+    pairs: { left: string, right: string }[]
+}
 
-export type SavingData = {}
+export type SavingData = {
+    answers: string[]
+}

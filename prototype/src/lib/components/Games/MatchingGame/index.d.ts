@@ -16,7 +16,7 @@ export type GameOutput = {
 }
 
 export type Result = {
-    answers: string[],
+    //answers: string[],
     leftHeader: string,
     rightHeader: string,
     pairs: Pair[]
