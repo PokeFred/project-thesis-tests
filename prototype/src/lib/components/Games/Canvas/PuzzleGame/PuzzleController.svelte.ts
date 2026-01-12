@@ -45,16 +45,12 @@ export default class PuzzleController {
             this.slotMap.set(slot, this.canvas.Slots[i]);
         });
 
-        this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
+        this.canvas.Pieces.flat().forEach((piece: Konva.Image, i: number) => {
             this.pieceMap.set(piece, this.puzzle.Pieces[i]);
         });
     }
 
     public get Puzzle() { return this.puzzle; }
-
-    // public exitFullscreen(): void {
-    //     this.canvas.Fullscreen.disable();
-    // }
 
     public dragStartPiece(event: KonvaEventObject<DragEvent>): void {
         const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);

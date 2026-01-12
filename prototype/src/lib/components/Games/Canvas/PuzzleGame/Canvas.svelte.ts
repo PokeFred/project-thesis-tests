@@ -6,8 +6,7 @@ import type PuzzleController from "./PuzzleController.svelte";
 import { width } from "@fortawesome/free-solid-svg-icons/faMinus";
 import PanAndZoom from "../PanAndZoom";
 
-// TODO: arrows
-// TODO: mobile puzzle drag bugfix
+
 export default class Canvas {
     private puzzleController: PuzzleController;
     private container: HTMLDivElement;
@@ -18,7 +17,7 @@ export default class Canvas {
     private gameLayer: Konva.Layer;
 
     
-    private pieces: Konva.Image[];
+    private pieces: Konva.Image[][];
     private puzzle: Puzzle;
     private puzzlePieceContainer: PuzzlePieceContainer;
     
@@ -40,14 +39,16 @@ export default class Canvas {
         this.stage.add(this.gameLayer);
         
 
-        this.pieces = new Array<Konva.Image>();
+        this.pieces = new Array<Konva.Image[]>();
         slotGroups.forEach((slotGroup: SlotGroup) => {
             const PIECE: Konva.Image = this.createPiece(slotGroup.piece);
             const RECT = PIECE.getClientRect();
-            this.pieces.push(this.createPiece(slotGroup.piece));
+            const GROUP: Konva.Image[] = [];
+            GROUP.push(this.createPiece(slotGroup.piece));
             slotGroup.noise?.forEach((piece: HTMLImageElement) => {
-                this.pieces.push(this.createPiece(piece, RECT));
+                GROUP.push(this.createPiece(piece, RECT));
             });
+            this.pieces.push(GROUP);
         });
         this.puzzlePieceContainer = new PuzzlePieceContainer(this);
         this.puzzle = new Puzzle(this, background, slotGroups);
@@ -303,26 +304,24 @@ class PuzzlePieceContainer {
         let currentX: number = 0;
         let clone: Konva.Rect;
 
-        const CONTAINERS: Konva.Group[] = new Array<Konva.Group>();
-        this.canvas.Pieces.forEach((piece: Konva.Image, i: number) => {
-            const CONTAINER = this.createPuzzlePieceContainerSlot();
-            CONTAINERS.push(CONTAINER);
-            this.slotMapping.set(piece, CONTAINER);
+        this.canvas.Pieces.forEach((group: Konva.Image[], i: number) => {
+            const GROUP_MIXED: Konva.Image[] = group.toSorted(() => Math.random() - 0.5);
+            GROUP_MIXED.forEach((piece: Konva.Image, i: number) => {
+                const PIECE_CONTAINER = this.createPuzzlePieceContainerSlot();
+                this.slotMapping.set(piece, PIECE_CONTAINER);
+                this.container.add(PIECE_CONTAINER);
 
-            this.placePieceIntoContainer(piece);
+                this.placePieceIntoContainer(piece);
+                
+                clone = GAP.clone();
+                clone.x(currentX)
+                this.container.add(clone);
+                currentX += clone.width();
+
+                PIECE_CONTAINER.x(currentX);
+                currentX += + PIECE_CONTAINER.width();
+            })
         });
-
-        const CONTAINERS_MIXED: Konva.Group[] = CONTAINERS.sort(() => Math.random() - 0.5);
-        CONTAINERS_MIXED.forEach((container: Konva.Group) => {
-            clone = GAP.clone();
-            clone.x(currentX)
-            this.container.add(clone);
-            currentX += clone.width();
-
-            this.container.add(container);
-            container.x(currentX);
-            currentX += + container.width();
-        })
         clone = GAP.clone();
         clone.x(currentX)
         this.container.add(clone);
