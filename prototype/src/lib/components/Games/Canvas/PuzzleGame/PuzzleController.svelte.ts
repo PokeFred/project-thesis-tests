@@ -3,6 +3,8 @@ import Canvas from "./Canvas.svelte";
 import Puzzle from "./Puzzle.svelte";
 import type { Piece, Slot } from "./Puzzle.svelte";
 import type { KonvaEventObject } from "konva/lib/Node";
+import type { Group } from "konva/lib/Group";
+import type { Shape, ShapeConfig } from "konva/lib/Shape";
 
 const SNAP_RANGE = 20;
 
@@ -128,6 +130,12 @@ export default class PuzzleController {
         const POS = piece.getAbsolutePosition(piece.getStage()!)
         piece.moveTo(container);
         piece.setAbsolutePosition(POS);
+
+        container.getChildren().sort((a: Group | Shape<ShapeConfig>, b: Group | Shape<ShapeConfig>) => {
+            const A = a.attrs["customZIndex"] || 0;
+            const B = b.attrs["customZIndex"] || 0;
+            return A - B;
+        }).forEach((c: Group | Shape<ShapeConfig>, i: number) => c.setZIndex(i));
     }
 
     private getConvaSlot(piece: Konva.Image): Konva.Path | undefined {

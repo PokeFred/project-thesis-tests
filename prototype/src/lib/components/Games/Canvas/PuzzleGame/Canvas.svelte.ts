@@ -1,9 +1,7 @@
 import Konva from "konva";
-import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 import type { SlotGroup } from "./PuzzleController.svelte";
 import type PuzzleController from "./PuzzleController.svelte";
-import { width } from "@fortawesome/free-solid-svg-icons/faMinus";
 import PanAndZoom from "../PanAndZoom";
 
 
@@ -87,6 +85,7 @@ export default class Canvas {
             strokeEnabled: false,
             shadowBlur: 0,
             draggable: true,
+            customZIndex: Number.MAX_SAFE_INTEGER - (dim ? (dim.width + dim.height) : (img.width + img.height))
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));
         piece.on("dragend", this.puzzleController.dragStopPiece.bind(this.puzzleController));
