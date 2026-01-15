@@ -129,10 +129,11 @@ class Puzzle {
 
     private createBoundary(): Konva.Group {
         const WIDTH: number = this.stage.width();
-        const HEIGHT: number = this.stage.height() - this.canvas.PuzzlePieceContainer.Height;
+        const MARGIN_BOTTOM: number = 20;
+        const HEIGHT: number = this.stage.height() - this.canvas.PuzzlePieceContainer.Height - MARGIN_BOTTOM;
         const BOUNDARY: Konva.Rect = new Konva.Rect({
             width: WIDTH,
-            height: HEIGHT
+            height: HEIGHT,
         });
         
         const GROUP: Konva.Group = new Konva.Group({
@@ -225,7 +226,7 @@ class PuzzlePieceContainer {
     private createBorder(): Konva.Group {
         const MARGIN = 40; 
         const WIDTH = this.stage.width() - MARGIN * 2;
-        const HEIGHT = 100;
+        const HEIGHT = 80;
 
         const BORDER = new Konva.Rect({
             width: WIDTH,
