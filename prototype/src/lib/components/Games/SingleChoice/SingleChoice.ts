@@ -19,7 +19,7 @@ export default class SingleChoice implements Quiz<SavingData> {
     public set Selected(selected: number | undefined) { this.selected = selected; }
 
     public score(): number {
-        return this.selected ? (this.options[this.selected].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE) : POINTS.NOT_ANSWERED;
+        return this.selected !== undefined ? (this.options[this.selected].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE) : POINTS.NOT_ANSWERED;
     }
 
     public complete(): SavingData {
