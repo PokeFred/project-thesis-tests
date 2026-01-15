@@ -16,4 +16,3 @@
         <div>{element}</div>
     {/each}
 </div>
-<div>Hey</div>
