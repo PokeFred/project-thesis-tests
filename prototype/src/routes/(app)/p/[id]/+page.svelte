@@ -65,6 +65,10 @@
             rScore = matchingGame.getSubmitScore()
             rdata = matchingGame.getSubmitData()
         }
+        if (data.puzzle.type === "single-choice-puzzle") {
+            rScore = singleChoice.getSubmitScore()
+            rdata = singleChoice.getSubmitData()
+        }
         if (data.puzzle.type === "multiple-choice-puzzle") {
             rScore = multipleChoice.getSubmitScore()
             rdata = multipleChoice.getSubmitData()
