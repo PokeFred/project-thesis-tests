@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { startGame } from "$stores"
+    import { startGame, isRunning } from "$stores"
     import Modal from "./ConfirmModal.svelte"
 
     let modal: Modal
 
     async function confirmModal(): Promise<void> {
-        startGame()
+        if (!isRunning()) startGame()
         window.location.href = "/s"
     }
 </script>

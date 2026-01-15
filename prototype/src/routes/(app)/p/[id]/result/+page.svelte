@@ -15,6 +15,8 @@
     import ErrorSpottingResult from "$components/puzzle/errorSpotting/result.svelte"
     import WordGuessingIntroduction from "$components/puzzle/wordGuessing/introduction.svelte"
     import WordGuessingResult from "$components/puzzle/wordGuessing/result.svelte"
+    import SingleChoiceIntroduction from "$components/puzzle/singleChoice/introduction.svelte"
+    import SingleChoiceResult from "$components/puzzle/singleChoice/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -35,6 +37,10 @@
     {#if data.puzzle.type === "matching-game-puzzle"}
         <MatchingGameIntroduction data={data.introduction} />
         <MatchingGameResult result={data.result} saving={data.saving} />
+    {/if}
+    {#if data.puzzle.type === "single-choice-puzzle"}
+        <SingleChoiceIntroduction data={data.introduction} />
+        <SingleChoiceResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />

@@ -255,7 +255,7 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 32,
-        type: "multiple-choice-puzzle",
+        type: "single-choice-puzzle",
         title: "Rätsel 02",
         requirements: [], // [30]
         score: 3,
@@ -272,10 +272,11 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 answers: [
-                    { id: 0, text: "1952", description: [{ tag: "p", children: [{tag: "text", text: "Doch warum erst 1952? Nach dem Krieg fehlte es an Geld und Technik. Erst mit dem Wirtschaftsaufschwung ab den 1950 er Jahren konnte man sich modernen Komfort wie Rolltreppen leisten. Sie standen für Fortschritt und modernes Einkaufen." }] }], isCorrect: true },
-                    { id: 1, text: "1932", description: [], isCorrect: false },
-                    { id: 2, text: "1972", description: [], isCorrect: false }
-                ]
+                    { id: 0, text: "1952", isCorrect: true },
+                    { id: 1, text: "1932", isCorrect: false },
+                    { id: 2, text: "1972", isCorrect: false }
+                ],
+                text: ["Doch warum erst 1952? Nach dem Krieg fehlte es an Geld und Technik. Erst mit dem Wirtschaftsaufschwung ab den 1950 er Jahren konnte man sich modernen Komfort wie Rolltreppen leisten. Sie standen für Fortschritt und modernes Einkaufen."]
             }
         }
     },

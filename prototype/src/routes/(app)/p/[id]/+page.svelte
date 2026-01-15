@@ -19,6 +19,8 @@
     import ErrorSpottingGame from "$components/puzzle/errorSpotting/game.svelte"
     import WordGuessingIntroduction from "$components/puzzle/wordGuessing/introduction.svelte"
     import WordGuessingGame from "$components/puzzle/wordGuessing/game.svelte"
+    import SingleChoiceIntroduction from "$components/puzzle/singleChoice/introduction.svelte"
+    import SingleChoiceGame from "$components/puzzle/singleChoice/game.svelte"
 
     let { data }: PageProps = $props()
 
@@ -28,6 +30,8 @@
     let textSelect: TextSelectGame
     // svelte-ignore non_reactive_update
     let matchingGame: MatchingGameGame
+    // svelte-ignore non_reactive_update
+    let singleChoice: SingleChoiceGame
     // svelte-ignore non_reactive_update
     let multipleChoice: MultipleChoiceGame
     // svelte-ignore non_reactive_update
@@ -101,6 +105,10 @@
     {#if data.puzzle.type === "matching-game-puzzle"}
         <MatchingGameIntroduction data={data.introduction} />
         <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "single-choice-puzzle"}
+        <SingleChoiceIntroduction data={data.introduction} />
+        <SingleChoiceGame bind:this={singleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
         <MultipleChoiceIntroduction data={data.introduction} />

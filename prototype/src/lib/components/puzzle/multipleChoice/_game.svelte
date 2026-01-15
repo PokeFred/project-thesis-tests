@@ -28,7 +28,7 @@
 
 <div class="w-full h-auto border-y-2 border-secondary divide-y-2 divide-secondary flex flex-col">
     {#each data.answers as element, i}
-        <label class="flex h-[80px] text-[18px] py-2 items-center font-medium">
+        <label class="flex h-20 text-[18px] py-2 items-center font-medium">
             <input onchange={(event: Event): void => select(event.currentTarget as HTMLInputElement, i)} type="checkbox" class="appearance-none touch-manipulation shrink-0 grow-0 w-[32px] h-[32px] ml-[9px] mr-[25px] border-2 border-secondary rounded-full" />
             <span>{element.text}</span>
         </label>
