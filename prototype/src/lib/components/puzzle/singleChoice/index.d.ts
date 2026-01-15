@@ -12,5 +12,5 @@ export type ResultData = {
 }
 
 export type SavingData = {
-    answers: { id: number, selected: boolean }[]
+    selected?: number
 }
