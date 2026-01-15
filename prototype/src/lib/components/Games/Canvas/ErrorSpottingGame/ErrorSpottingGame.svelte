@@ -36,6 +36,6 @@
     <figcaption>{input.caption}</figcaption>
 </figure>
 
-<div class="-m-4">
+<div class="border-x-2">
     <div bind:this={container} class="w-full h-[80vh]"></div>
 </div>
