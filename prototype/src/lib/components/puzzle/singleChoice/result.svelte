@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { ResultData, SavingData } from "."
-    // TODO (Simon) richtige Komponente einbinden
-    import ResultComponent from "$components/Games/MultipleChoiceGame/MultipleChoiceResult.svelte"
+    import ResultComponent from "$components/Games/SingleChoice/SingleChoiceResult.svelte"
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props()
 </script>
