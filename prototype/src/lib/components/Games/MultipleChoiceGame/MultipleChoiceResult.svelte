@@ -4,11 +4,11 @@
     import ShowMore from "$components/ShowMore.svelte";
     import MultipleChoice, { type Answer } from "./MultipleChoice";
     import Fullscreen from "$components/Fullscreen.svelte";
-    import type { GameOutput, Result } from ".";
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
+    import type { ResultData, SavingData } from "$components/puzzle/multipleChoice"
 
-    let { result, saving  }: { result: any, saving: any } = $props();
+    let { result, saving  }: { result: ResultData, saving: SavingData } = $props();
 
     const toggles: (()=>void)[] = new Array(saving.answers.length);
 

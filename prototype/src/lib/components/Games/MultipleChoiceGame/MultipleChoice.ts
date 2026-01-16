@@ -1,12 +1,8 @@
+import type { SavingData } from "$components/puzzle/multipleChoice"
 import { type Quiz, POINTS } from "$components/Games/Quiz";
-import type { GameOutput } from "./";
+import type { Answer } from "."
 
-export type Answer = {
-    readonly id: number;
-    readonly answer: string;
-    readonly correct: boolean;
-}
-export default class MultipleChoice implements Quiz<GameOutput> {
+export default class MultipleChoice implements Quiz<SavingData> {
     private readonly options: Answer[];
     private selected: boolean[];
 
@@ -27,15 +23,14 @@ export default class MultipleChoice implements Quiz<GameOutput> {
         }, 0)
     }
 
-    public complete(): GameOutput {
+    public complete(): SavingData {
         return {
             answers: this.options.map((answer: Answer, i: number): { id: number, selected: boolean } => {
-                console.log()
                 return {
                     id: answer.id,
                     selected: this.selected[i]
                 }
             })
-        } satisfies GameOutput;
+        } satisfies SavingData;
     }
 }

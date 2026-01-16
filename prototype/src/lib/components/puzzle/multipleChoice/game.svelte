@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { GameData, SavingData } from "."
     import GameComponent from "$components/Games/MultipleChoiceGame/MultipleChoice.svelte"
-    import type { GameInput as Input } from "$components/Games/MultipleChoiceGame"
+    import type { Input, Answer } from "$components/Games/MultipleChoiceGame"
     import { onMount } from "svelte"
 
     let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
@@ -15,7 +15,7 @@
     })
 
     const input: Input = {
-        options: data.answers.map((element) => {
+        options: data.answers.map((element: any): Answer => {
             return { id: element.id, answer: element.text, correct: element.isCorrect }
         })
     }

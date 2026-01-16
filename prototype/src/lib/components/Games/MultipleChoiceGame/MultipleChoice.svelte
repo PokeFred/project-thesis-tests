@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { GameInput } from "."
+    import type { Input } from "."
     import MultipleChoice from "./MultipleChoice"
 
-    let { input } : { input: GameInput } = $props()
+    let { input } : { input: Input } = $props()
     const multipleChoice: MultipleChoice = new MultipleChoice(input.options)
 
     export const getSubmitData = multipleChoice.complete.bind(multipleChoice)

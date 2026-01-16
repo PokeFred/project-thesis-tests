@@ -1,11 +1,9 @@
-export type GameInput = {
+export type Input = {
     options: Answer[]
 }
 
-export type GameOutput = {
-    answers: { id: number, selected: boolean }[]
-}
-
-export type Result = {
-    answers: { selected: boolean, answer: Answer }[]
+export type Answer = {
+    id: number,
+    answer: string,
+    correct: boolean
 }
