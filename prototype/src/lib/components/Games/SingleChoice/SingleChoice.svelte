@@ -1,17 +1,10 @@
 <script lang="ts">
-    import type { GameData } from "$components/puzzle/singleChoice"
-    import SingleChoice, { type Answer } from "./SingleChoice"
+    import type { Input, Answer } from "."
+    import SingleChoice from "./SingleChoice"
 
-    let { input } : { input: GameData } = $props()
-    const options: Answer[] = input.answers.map((element) => {
-        return { 
-            id: element.id, 
-            answer: element.text, 
-            correct: element.isCorrect 
-        } as Answer;
-    })
+    let { input } : { input: Input } = $props()
 
-    const singleChoice: SingleChoice = new SingleChoice(options);
+    const singleChoice: SingleChoice = new SingleChoice(input.options as Answer[]);
 
     export const getSubmitData = singleChoice.complete.bind(singleChoice);
     export const getSubmitScore = singleChoice.score.bind(singleChoice);

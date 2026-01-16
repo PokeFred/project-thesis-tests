@@ -1,11 +1,7 @@
 import { type Quiz, POINTS } from "$components/Games/Quiz";
 import type { SavingData } from "$components/puzzle/singleChoice";
+import type { Answer } from "."
 
-export type Answer = {
-    readonly id: number;
-    readonly answer: string;
-    readonly correct: boolean;
-}
 export default class SingleChoice implements Quiz<SavingData> {
     private readonly options: Answer[];
     private selected?: number;

@@ -1,7 +1,8 @@
 <script lang="ts">
     import { POINTS } from "../Quiz";
+    import type { ResultData, SavingData } from "$components/puzzle/singleChoice"
 
-    let { result, saving  }: { result: any, saving: any } = $props();
+    let { result, saving  }: { result: ResultData, saving: SavingData } = $props();
     const options = result.answers;
 </script>
 
