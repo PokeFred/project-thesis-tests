@@ -19,8 +19,9 @@
                     {
                         tag: "text",
                         text: {
-                            crossed: "sel",
-                            normal: " + chen"
+                            // crossed: "sel",
+                            crossed: "schaft",
+                            // normal: " + chen"
                         }
                     },
                     {
@@ -28,7 +29,7 @@
                         text: {
                             normal: "+"
                         }
-                    },
+                    },  
                     {
                         tag: "text",
                         text: {
@@ -64,9 +65,9 @@
 <div class="flex flex-col border-y-2 py-20">
     {#each input.questions as question, i }
         <div>
-            <div class="flex flex-col">
+            <div class="flex flex-col gap-9">
                 {#each question.hints as hint }
-                    <div class="mb-5 font-medium text-[40px] text-center leading-6">
+                    <div class="font-medium text-[40px] text-center leading-6">
                         {#if hint.tag === "img"}
                             <figure class="-mx-4">
                                 <Fullscreen>
@@ -75,12 +76,12 @@
                                 <figcaption>{hint.caption}</figcaption>
                             </figure>
                         {:else if hint.tag === "text"}
-                            <p class="self-center"><span class="crossed">{hint.text.crossed}</span>{hint.text.normal}</p>
+                            <p class="self-center">{#if hint.text.crossed}<span class="crossed">{hint.text.crossed}</span>{/if}{hint.text.normal}</p>
                         {/if}
                     </div>
                 {/each}
             </div>
-            <label class="block mt-10"><input type="text" placeholder="Tippe hier deine Lösung ein" bind:value={wordGuessingGame.Inputs[i]} class="inline-block w-full border-b-2 border-secondary"></label>
+            <label class="block h-12 mt-10"><input type="text" placeholder="Tippe hier deine Lösung ein" bind:value={wordGuessingGame.Inputs[i]} class="inline-block w-full h-full pl-1.5 border-b-2 font-medium border-secondary placeholder-secondary/50"></label>
         </div>
     {/each}
 </div>
@@ -93,10 +94,12 @@
 
     .crossed::after {
             content: "";
-            width: 100%;
+            left: 50%;
+            top: 50%;
+            width: 1.6em;
             height: 2px;
             background-color: var(--color-secondary);
-            transform: translateX(-100%) translateY(0.5lh) rotateZ(5deg);
+            transform: translateX(-50%) rotateZ(-45deg);
             position: absolute;
         }
 </style>
