@@ -76,8 +76,8 @@
                 {/each}
             </div>
             <label class="block h-12 mt-10 mb-6"><input type="text" disabled={true} value={question.solution} class="inline-block w-full h-full pl-1.5 border-b-2 font-medium border-secondary placeholder-secondary/50"></label>
-            <p class="flex justify-between items-center h-8 px-7 -mx-4 mt-7 bg-secondary text-primary text-[16px] font-medium">Du hast richtig gerätselt</p>
-            <p>{question.solutionText}</p>
+            <p class="flex justify-between items-center h-8 px-7 -mx-4 mt-7 mb-6 bg-secondary text-primary text-[16px] font-medium">Du hast richtig gerätselt</p>
+            <p class="pl-1.5 font-medium">{question.solutionText}</p>
         </div>
     {/each}
 </div>
