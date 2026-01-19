@@ -174,7 +174,7 @@ const stations: Station[] = [
     {
         id: 10,
         tag: "Station 10",
-        stitle: "??? (S10)",
+        stitle: "Heute: Dein Einkauf",
         title: "",
         score: 0,
         chapters: [],
