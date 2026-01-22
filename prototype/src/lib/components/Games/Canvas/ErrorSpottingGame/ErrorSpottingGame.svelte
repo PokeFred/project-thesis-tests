@@ -13,7 +13,7 @@
         const image: HTMLImageElement = await loadImage(input.path + "/fehler.png");
         const errorPaths: string[] = await (await fetch(`${input.path}/paths.json`)).json();
 
-        controller = new Controller(container, image, errorPaths);
+        controller = new Controller(container, image, errorPaths, false);
     });
 
     async function loadImage(src: string): Promise<HTMLImageElement> {
@@ -28,13 +28,6 @@
     export const getSubmitData = () => controller.ErrorSpotting.complete();
     export const getSubmitScore = () => controller.ErrorSpotting.score();
 </script>
-
-<figure class="mb-10">
-    <Fullscreen>
-        <img src={`${input.path}/original.png`} alt={input.caption} />
-    </Fullscreen>
-    <figcaption>{input.caption}</figcaption>
-</figure>
 
 <div class="border-x-2">
     <div bind:this={container} class="w-full h-[80vh]"></div>

@@ -292,12 +292,10 @@ const puzzles: Puzzle[] = [
                 description: []
             },
             game: {
-                path: "/station_03/raetsel_03/game",
-                caption: "Originalbild"
+                path: "/station_03/raetsel_03/game"
             },
             result: {
-                img: "/station_03/raetsel_03/game/original.png",
-                caption: "Originalbild"
+                path: "/station_03/raetsel_03/game"
             }
         }
     },

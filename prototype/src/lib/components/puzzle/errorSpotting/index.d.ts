@@ -5,14 +5,13 @@ export type IntroductionData = {
 
 export type GameData = {
     path: string,
-    caption: string
 }
 
 export type ResultData = {
-    img: string,
-    caption: string
+    path: string,
 }
 
 export type SavingData = {
-    selected: string
+    total: number,
+    correct: number
 }

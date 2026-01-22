@@ -6,14 +6,19 @@ export default class ErrorSpottingController {
     private readonly canvas: Canvas;
     private readonly errorSpotting: ErrorSpotting;
 
+    private readonly resultOnly: boolean;
     private readonly errorFieldMarkMap: Map<Konva.Arc, Field>;
 
-    constructor(container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[]) {
+    constructor(container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[], resultOnly: boolean) {
         this.canvas = new Canvas(this, container, image, errorPaths);
         this.errorSpotting = new ErrorSpotting(errorPaths);
+        this.resultOnly = resultOnly;
         this.errorFieldMarkMap = new Map<Konva.Arc, Field>();
         this.canvas.ErrorMarks.forEach((mark: Konva.Arc, i: number) => {
             this.errorFieldMarkMap.set(mark, this.errorSpotting.Errors[i]);
+            if (this.resultOnly) {
+                mark.visible(true);
+            }
         });
     }
 
@@ -24,8 +29,10 @@ export default class ErrorSpottingController {
     }
 
     private toggleMark(mark: Konva.Arc): void {
-        const ERROR_FIELD: Field = this.errorFieldMarkMap.get(mark)!;
-        mark.visible(!mark.visible());
-        ERROR_FIELD.Selected = !ERROR_FIELD.Selected;
+        if (!this.resultOnly) {
+            const ERROR_FIELD: Field = this.errorFieldMarkMap.get(mark)!;
+            mark.visible(!mark.visible());
+            ERROR_FIELD.Selected = !ERROR_FIELD.Selected;
+        }
     }
 }

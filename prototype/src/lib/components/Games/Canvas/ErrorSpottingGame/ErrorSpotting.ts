@@ -23,7 +23,10 @@ export default class ErrorSpotting implements Quiz<SavingData> {
 
     public complete(): SavingData {
         return {
-            selected: JSON.stringify(this.errors)
+            total: this.errors.length,
+            correct: this.errors.reduce((sum: number, error: Field) => {
+                return error.Selected ? ++sum : sum;
+            }, 0)
         } satisfies SavingData;
     }
     
