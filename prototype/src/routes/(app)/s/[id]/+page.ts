@@ -46,6 +46,7 @@ function getStationChapters(station: Station): _Chapters[] {
 }
 
 type _Puzzle = {
+    type: string,
     id: number,
     title: string,
     score: Score,
@@ -60,6 +61,7 @@ function getStationPuzzles(station: Station): _Puzzle[] {
             const current: number = getPuzzleScore(element.id)
 
             return {
+                type: element.type,
                 id: element.id,
                 title: element.title,
                 score: toScore(current, element.score),
