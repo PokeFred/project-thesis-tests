@@ -18,40 +18,47 @@
     const input: Input =  {
         questions: [
             {
-                solution: "Dille & Kamille",
-                left: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                    hints: {
-                        normal: "P=D",
-                        crossed: "n"
+                hints: [
+                    {
+                        tag: "img",
+                        src: "https://placehold.co/600x400",
+                        alt: "test",
+                        caption: ""
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            // crossed: "sel",
+                            crossed: "schaft",
+                            // normal: " + chen"
+                        }
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "+"
+                        }
+                    },  
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "&"
+                        }
+                    },
+                    {
+                        tag: "text",
+                        text: {
+                            normal: "+"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "https://placehold.co/600x400",
+                        alt: "test",
+                        caption: ""
                     }
-                },
-                operator: "&",
-                right: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                }
-            },
-            {
-                solution: "Dille & Kamille",
-                left: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                    hints: {
-                        normal: "P=D",
-                        crossed: "n"
-                    }
-                },
-                operator: "&",
-                right: {
-                    src: "https://placehold.co/600x400",
-                    alt: "https://placehold.co/600x400",
-                    caption: "Abbildung",
-                }
+                ],
+                solution: "Tewes"
             }
         ]
     }
