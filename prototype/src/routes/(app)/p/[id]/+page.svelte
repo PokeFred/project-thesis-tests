@@ -77,6 +77,14 @@
             rScore = dragDrop.getSubmitScore()
             rdata = dragDrop.getSubmitData()
         }
+        if (data.puzzle.type === "error-spotting-puzzle") {
+            rScore = errorSpotting.getSubmitScore()
+            rdata = errorSpotting.getSubmitData()
+        }
+        if (data.puzzle.type === "word-guessing-puzzle") {
+            rScore = wordGuessing.getSubmitScore()
+            rdata = wordGuessing.getSubmitData()
+        }
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
         if (data.puzzle.type !== "gps-puzzle") {
