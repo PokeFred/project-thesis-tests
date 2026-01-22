@@ -6,6 +6,7 @@
     import PuzzleGame from "$components/Games/Canvas/PuzzleGame/PuzzleGame.svelte";
     import PuzzleGameResult from "$components/Games/Canvas/PuzzleGame/PuzzleGameResult.svelte";
     import WordGuessingComponent from "$components/Games/WordGuessingGame/WordGuessingComponent.svelte";
+    import WordGuessingResult from "$components/Games/WordGuessingGame/WordGuessingResult.svelte";
 
 // const gameInputCloze: GameInput = {
 //         content: [
