@@ -3,56 +3,7 @@
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
 
-    // const { input }: { input: GameInput } = $props();
-
-    // TODO Cedric
-    const input: {questions: Question[]} = {
-        questions: [
-            {
-                hints: [
-                    {
-                        tag: "img",
-                        src: "https://placehold.co/600x400",
-                        alt: "test",
-                        caption: ""
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            // crossed: "sel",
-                            crossed: "schaft",
-                            // normal: " + chen"
-                        }
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "+"
-                        }
-                    },  
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "&"
-                        }
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "+"
-                        }
-                    },
-                    {
-                        tag: "img",
-                        src: "https://placehold.co/600x400",
-                        alt: "test",
-                        caption: ""
-                    }
-                ],
-                solution: "Tewes"
-            }
-        ]
-    }
+    const { input }: { input: GameInput } = $props();
 
     const solutions: string[] = input.questions.map((question: Question) => question.solution);
 
