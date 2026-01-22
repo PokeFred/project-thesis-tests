@@ -11,7 +11,6 @@
     export function getSubmitScore(): number { return game.getSubmitScore() }
 
 	onMount((): void => {
-        // TODO (Cedric) remove after meeting
         setSubmitable()
     })
 

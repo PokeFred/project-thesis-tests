@@ -1,7 +1,7 @@
-import type { GameOutput } from ".";
+import type { SavingData } from "$components/puzzle/wordGuessing";
 import { type Quiz, POINTS } from "../Quiz";
 
-export default class WordGuessing implements Quiz<GameOutput> {
+export default class WordGuessing implements Quiz<SavingData> {
     private readonly solutions: string[];
     private inputs: string[];
 
