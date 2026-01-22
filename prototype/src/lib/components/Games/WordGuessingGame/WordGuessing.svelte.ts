@@ -1,7 +1,7 @@
-import type { GameOutput } from ".";
+import type { SavingData } from "$components/puzzle/wordGuessing";
 import { type Quiz, POINTS } from "../Quiz";
 
-export default class WordGuessing implements Quiz<GameOutput> {
+export default class WordGuessing implements Quiz<SavingData> {
     private readonly solutions: string[];
     private inputs: string[];
 
@@ -13,8 +13,8 @@ export default class WordGuessing implements Quiz<GameOutput> {
     public get Solutions() { return this.solutions; }
     public get Inputs() { return this.inputs; }
 
-    public complete(): GameOutput {
-        return { match: this.inputs.map((input: string, i) => input == this.solutions[i]) } satisfies GameOutput;
+    public complete(): SavingData {
+        return { match: this.inputs.map((input: string, i) => input == this.solutions[i]) } satisfies SavingData;
     }
 
     public score(): number {
