@@ -10,7 +10,8 @@ export type GameData = {
 
 export type ResultData = {
     img: string,
-    caption: string
+    caption: string,
+    scoreDescription?: string
 }
 
 export type SavingData = {

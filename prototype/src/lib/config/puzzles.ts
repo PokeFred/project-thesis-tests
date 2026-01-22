@@ -330,7 +330,8 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 img: "/station_04/raetsel_01/game/Background.png",
-                caption: ""
+                caption: "",
+                scoreDescription: "Wörtern"
             }
         }
     },
