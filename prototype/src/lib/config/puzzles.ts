@@ -56,7 +56,7 @@ const puzzles: Puzzle[] = [
     {
         id: 11,
         type: "multiple-choice-puzzle",
-        title: "Rätsel 01",
+        title: "Multiple Choice",
         requirements: [], // [10]
         score: 24,
         data: {
@@ -92,7 +92,7 @@ const puzzles: Puzzle[] = [
     {
         id: 12,
         type: "matching-game-puzzle",
-        title: "Rätsel 02",
+        title: "Zuordnungsspiel",
         requirements: [], // [10]
         score: 21,
         data: {
@@ -150,7 +150,7 @@ const puzzles: Puzzle[] = [
     {
         id: 13,
         type: "drag-drop-puzzle",
-        title: "Rätsel 03",
+        title: "Puzzle",
         requirements: [], // [10]
         score: 15,
         data: {
