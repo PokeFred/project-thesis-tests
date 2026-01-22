@@ -20,7 +20,7 @@
                 hints: [
                     {
                         tag: "img",
-                        src: "https://placehold.co/600x400",
+                        src: "/station_02/raetsel_01/game/image_02.png",
                         alt: "test",
                         caption: ""
                     },
@@ -52,7 +52,7 @@
                     },
                     {
                         tag: "img",
-                        src: "https://placehold.co/600x400",
+                        src: "/station_02/raetsel_01/game/image_03.png",
                         alt: "test",
                         caption: ""
                     }
