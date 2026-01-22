@@ -3,11 +3,13 @@ export type IntroductionData = {
 }
 
 export type GameData = {
-    questions: { solution: string, left: any, operator: string, right: any }[]
+    questions: { solution: string, hints: any[] }[]
 }
 
-export type ResultData = {}
+export type ResultData = {
+    questions: { solution: string, hints: any[], solutionText: string }[]
+}
 
 export type SavingData = {
-    inputs: string[]
+    match: boolean
 }

@@ -10,7 +10,7 @@ export type GameInput = {
 }
 
 export type GameOutput = {
-    inputMatch: boolean[]
+    match: boolean[]
 }
 
 export type Result = {

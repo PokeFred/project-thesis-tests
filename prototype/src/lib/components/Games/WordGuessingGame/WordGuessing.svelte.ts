@@ -14,7 +14,7 @@ export default class WordGuessing implements Quiz<GameOutput> {
     public get Inputs() { return this.inputs; }
 
     public complete(): GameOutput {
-        return { inputMatch: this.inputs.map((input: string, i) => input == this.solutions[i]) } satisfies GameOutput;
+        return { match: this.inputs.map((input: string, i) => input == this.solutions[i]) } satisfies GameOutput;
     }
 
     public score(): number {

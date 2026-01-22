@@ -3,58 +3,11 @@
     import type { ResultData, SavingData } from "$components/puzzle/wordGuessing"
     import type { Question } from ".";
 
-    // let { result, saving }: { result: ResultData, saving: SavingData } = $props();
+    let { result, saving }: { result: ResultData, saving: SavingData } = $props();
 
-    // TODO: Cedric
-    const result: {questions: Question[]} = {
-        questions: [
-            {
-                hints: [
-                    {
-                        tag: "img",
-                        src: "https://placehold.co/600x400",
-                        alt: "test",
-                        caption: ""
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            crossed: "test",
-                            // normal: " + chen"
-                        }
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "+"
-                        }
-                    },  
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "&"
-                        }
-                    },
-                    {
-                        tag: "text",
-                        text: {
-                            normal: "+"
-                        }
-                    },
-                    {
-                        tag: "img",
-                        src: "https://placehold.co/600x400",
-                        alt: "test",
-                        caption: ""
-                    }
-                ],
-                solution: "Tewes",
-                solutionText: "Lösung: Freundschaft (-schaft) + & + Bauer = Freund & Bauer"
-            }
-        ]
-    }
+    // Result { questions: { solution: string, hints: any[], solutionText: string }[] }
+    // Saving { match: boolean }
 </script>
-
 
 <div class="flex flex-col border-t-2 pt-21">
     {#each result.questions as question, i }
