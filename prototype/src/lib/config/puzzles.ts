@@ -318,7 +318,7 @@ const puzzles: Puzzle[] = [
         type: "drag-drop-puzzle",
         title: "Rätsel 01",
         requirements: [], // [40]
-        score: 24,
+        score: 9,
         data: {
             introduction: {
                 title: "",

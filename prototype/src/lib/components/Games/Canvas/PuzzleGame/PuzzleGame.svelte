@@ -23,7 +23,8 @@
             return {
                 path: cutout.d,
                 piece: piece,
-                noise: noise
+                noise: noise,
+                group: cutout.group
             } satisfies SlotGroup;
         }));
 

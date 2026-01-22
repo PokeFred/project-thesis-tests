@@ -14,5 +14,6 @@ export type ResultData = {
 }
 
 export type SavingData = {
-    placed: string
+    total: number,
+    correct: number
 }

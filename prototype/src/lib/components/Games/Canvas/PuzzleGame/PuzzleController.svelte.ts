@@ -17,17 +17,19 @@ export type CutoutData = {
     readonly src: string;
     readonly d: string;
     readonly noise?: string[];
+    readonly group?: number;
 }
 
 export type Background = {
-    readonly src: string,
-    readonly viewbox: string
+    readonly src: string;
+    readonly viewbox: string;
 }
 
 export type SlotGroup = {
-    readonly path: string,
-    readonly piece: HTMLImageElement,
-    readonly noise?: HTMLImageElement[]
+    readonly path: string;
+    readonly piece: HTMLImageElement;
+    readonly noise?: HTMLImageElement[];
+    readonly group?: number;
 }   
 
 export default class PuzzleController {

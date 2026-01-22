@@ -40,13 +40,42 @@ export class Piece {
     }
 }
 
+class Group {
+    private pieces: Piece[];
+    
+    constructor() {
+        this.pieces = new Array<Piece>();
+    }
+
+    public get Length(): number { return this.pieces.length; }
+
+    public get Complete(): boolean { 
+        for (let piece of this.pieces) {
+            if (!piece.Placed) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public get NumberCorrect(): number {
+        return this.pieces.reduce((sum: number, piece: Piece) => sum + (piece.Placed ? 1 : 0), 0);
+    }
+
+    public addPiece(piece: Piece): void {
+        this.pieces.push(piece);
+    }
+}
+
 export default class Puzzle implements Quiz<SavingData> {
     private slots: Slot[];
     private pieces: Piece[];
+    private groups: Map<number | undefined, Group>;
 
     constructor(slotGroups: SlotGroup[]) {
         this.slots = new Array<Slot>();
         this.pieces = new Array<Piece>();
+        this.groups = new Map<number | undefined, Group>();
         slotGroups.forEach((slotGroup: SlotGroup) => {
             const slot: Slot = new Slot();
             const piece: Piece = new Piece(slot, true);
@@ -54,28 +83,51 @@ export default class Puzzle implements Quiz<SavingData> {
             
             this.slots.push(slot);
             this.pieces.push(piece);
-            if(noise) {
+            
+            if (noise) {
                 noise.forEach((piece: Piece) => this.pieces.push(piece));
             }
+
+            const GROUP: Group = this.groups.get(slotGroup.group) ?? this.groups.set(slotGroup.group, new Group()).get(slotGroup.group)!;
+            GROUP.addPiece(piece);
         });
+        this.groups.forEach((group, key) => console.log(key, group));
     }
 
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }
 
     public score(): number {
-        return this.slots.reduce((sum: number, slot: Slot) => {
-            return sum + (slot.Selected?.Correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
-        }, 0);
+        let score: number = 0;
+        this.groups.forEach((group: Group, key: number | undefined) => {
+            if (key) {
+                score += group.Complete ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE; 
+            }
+            else {
+                score += group.NumberCorrect * POINTS.ANSWER_CORRECT;
+            }
+        });
+        return score;
     }
 
     public complete(): SavingData {
-        const placed: any[] = this.slots.map((slot: Slot) => {
-            return slot.Selected
-        })
-
+        let total: number = 0;
+        let correct: number = 0;
+        this.groups.forEach((group: Group, key: number | undefined) => {
+            if (key) {
+                total++;
+                if (group.Complete) {
+                    correct++;
+                }
+            }
+            else {
+                correct += group.NumberCorrect;
+                total += group.Length;
+            }
+        });
         return {
-            placed: JSON.stringify(placed)
-        }
+            total: total,
+            correct: correct
+        };
     }
 }

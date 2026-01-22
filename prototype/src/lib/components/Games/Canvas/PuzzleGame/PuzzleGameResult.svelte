@@ -5,15 +5,8 @@
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
-    type Piece = {
-        correct: boolean,
-        slot: Object
-    }
-
-    const GAME_OUTPUT: Piece[] = JSON.parse(saving.placed) as Piece[];
-
-    const correctPieces: number = GAME_OUTPUT.reduce((sum: number, piece: Piece) => sum + (piece ? (piece.correct ? 1 : 0) : 0), 0);
-    const totalPieces: number = GAME_OUTPUT.length;
+    const correctPieces: number = saving.correct;
+    const totalPieces: number = saving.total;
     const points: number = correctPieces * POINTS.ANSWER_CORRECT;
     const totalPoints: number = totalPieces * POINTS.ANSWER_CORRECT;
 </script>
