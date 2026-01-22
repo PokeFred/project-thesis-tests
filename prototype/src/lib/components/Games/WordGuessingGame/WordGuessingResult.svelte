@@ -29,7 +29,7 @@
                 {/each}
             </div>
             <label class="block h-12 mt-10 mb-6"><input type="text" disabled={true} value={question.solution} class="inline-block w-full h-full pl-2 border-b-2 font-medium text-[18px] leading-6 border-secondary placeholder-secondary/60"></label>
-            <p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 mb-6 bg-secondary text-primary text-[16px] font-bold leading-6 tracking-[0.96px]">Du hast richtig gerätselt</p>
+            <p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 mb-6 bg-secondary text-primary text-[16px] font-bold leading-6 tracking-[0.96px]">Du hast {saving.match[i] ? "richtig" : "falsch"} gerätselt</p>
             <p class="pl-1.5 font-medium text-[18px] leading-6">{question.solutionText}</p>
         </div>
     {/each}
