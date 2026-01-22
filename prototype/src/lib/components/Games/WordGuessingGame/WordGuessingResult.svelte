@@ -1,14 +1,8 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/wordGuessing"
-    import type { Question } from ".";
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props();
-    console.log(result)
-    console.log(saving)
-
-    // Result { questions: { solution: string, hints: any[], solutionText: string }[] }
-    // Saving { match: boolean }
 </script>
 
 <div class="flex flex-col border-t-2 pt-21">
@@ -31,7 +25,7 @@
                 {/each}
             </div>
             <label class="block h-12 mt-10 mb-6"><input type="text" disabled={true} value={question.solution} class="inline-block w-full h-full pl-2 border-b-2 font-medium text-[18px] leading-6 border-secondary placeholder-secondary/60"></label>
-            <p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 mb-6 bg-secondary text-primary text-[16px] font-bold leading-6 tracking-[0.96px]">Du hast {saving.match ? (saving.match[i] ? "richtig" : "falsch") : "falsch"} gerätselt</p>
+            <p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 mb-6 bg-secondary text-primary text-[16px] font-bold leading-6 tracking-[0.96px]">Du hast {saving.match !== undefined ? (saving.match[i] ? "richtig" : "falsch") : "falsch"} gerätselt</p>
             <p class="pl-1.5 font-medium text-[18px] leading-6">{question.solutionText}</p>
         </div>
     {/each}

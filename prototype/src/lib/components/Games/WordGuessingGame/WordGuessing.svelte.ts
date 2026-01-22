@@ -13,8 +13,8 @@ export default class WordGuessing implements Quiz<SavingData> {
     public get Solutions() { return this.solutions; }
     public get Inputs() { return this.inputs; }
 
-    public complete(): GameOutput {
-        return { match: this.inputs.map((input: string, i) => input == this.solutions[i])[0] } satisfies GameOutput;
+    public complete(): SavingData {
+        return { match: this.inputs.map((input: string, i) => input == this.solutions[i]) } satisfies SavingData;
     }
 
     public score(): number {
