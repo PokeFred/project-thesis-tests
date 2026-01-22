@@ -11,5 +11,5 @@ export type ResultData = {
 }
 
 export type SavingData = {
-    match: boolean
+    match: boolean[]
 }
