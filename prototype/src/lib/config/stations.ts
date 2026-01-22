@@ -122,7 +122,7 @@ const stations: Station[] = [
         tag: "Station 04",
         stitle: "Reinoldistraße",
         title: "",
-        score: 0,
+        score: calculateScore(40, 41, 42),
         chapters: [],
         puzzles: [40, 41, 42]
     },
@@ -131,7 +131,7 @@ const stations: Station[] = [
         tag: "Station 05",
         stitle: "Hafen",
         title: "",
-        score: 0,
+        score: calculateScore(50, 51, 52, 53),
         chapters: [],
         puzzles: [50, 51, 52, 53]
     },

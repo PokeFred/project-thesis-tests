@@ -4,7 +4,7 @@
         <hr />
         <div>
             <div class="font-bold">1. Wer ist verantwortlich ?</div>
-            <div>Die App „Einkaufsspuren - Die Stadtrallye“ (AT) wird von dem Museum für Kunst und Kulturgeschichte Dortmund bereitgestellt.</div>
+            <div>Die App „Einkaufsspuren“ wird von dem Museum für Kunst und Kulturgeschichte Dortmund bereitgestellt.</div>
             <br />
             <div>Verantwortlich für den Datenschutz:</div>
             <div>Museum für Kunst und Kulturgeschichte Dortmund</div>
@@ -15,7 +15,6 @@
             <br />
             <div class="font-bold">Kontakt: Datenschutzbeauftragte*r </div>
             <div>datenschutz@stadtdo.de</div>
-            <div>Bei Fragen kannst du uns jederzeit schreiben.</div>
         </div>
         <hr />
         <div>
@@ -31,7 +30,7 @@
             <div>Die App speichert nur das, was du für die Rallye brauchst:</div>
             <ul class="list-disc pl-6">
                 <li>deinen Spielstand (z. B. gelöste Aufgaben, Punkte)</li>
-                <li>deine Einstellungen in der App (z. B. Sprache)</li>
+                <!-- <li>deine Einstellungen in der App (z. B. Sprache)</li> -->
             </ul>
             <div>Diese Daten werden nur auf deinem Gerät gespeichert.</div>
             <div>Sie werden nicht an uns übertragen.</div>
