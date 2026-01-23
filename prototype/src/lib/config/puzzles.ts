@@ -56,7 +56,7 @@ const puzzles: Puzzle[] = [
     {
         id: 11,
         type: "multiple-choice-puzzle",
-        title: "Multiple Choice",
+        title: "Quiz",
         requirements: [], // [10]
         score: 24,
         data: {
@@ -256,7 +256,7 @@ const puzzles: Puzzle[] = [
     {
         id: 32,
         type: "single-choice-puzzle",
-        title: "Multiple Choice",
+        title: "Quiz",
         requirements: [], // [30]
         score: 3,
         data: {
@@ -336,7 +336,7 @@ const puzzles: Puzzle[] = [
     {
         id: 42,
         type: "multiple-choice-puzzle",
-        title: "Multiple Choice",
+        title: "Quiz",
         requirements: [], // [40]
         score: 3,
         data: {
