@@ -4,7 +4,7 @@
 
     let { result, saving  }: { result: ResultData, saving: SavingData } = $props();
     const options = result.answers;
-    const correct: boolean = saving.selected ? options[saving.selected].isCorrect : false;
+    const correct: boolean = saving.selected !== undefined ? options[saving.selected].isCorrect : false;
 </script>
 
 <div class="flex flex-col divide-y-2 divide-secondary border-y-2 border-secondary">
