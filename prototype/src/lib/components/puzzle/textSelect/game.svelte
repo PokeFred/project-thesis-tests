@@ -82,6 +82,9 @@
                 tag: "img",
                 src: "/station_03/raetsel_01/image_00.jpg",
                 alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                caption: {
+                    src: "Stadtarchiv Dortmund"
+                }
             },
             {
                 tag: "img",
@@ -143,7 +146,7 @@
                     }
                 ]
             },
-            { tag: "img", src: "/station_03/raetsel_01/image_07.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund)." },
+            { tag: "img", src: "/station_03/raetsel_01/image_07.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { src: "Stadtarchiv Dortmund" } },
             { tag: "img", src: "/station_03/raetsel_01/image_08.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff", src: "Stadtarchiv Dortmund" } },
             {
                 tag: "p",
