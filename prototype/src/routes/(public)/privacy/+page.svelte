@@ -1,3 +1,4 @@
+<!-- TODO Cedric: docs.google.com/document/d/1gWSlDmO3C2A-1479ZEAt9HOZmEZPUEHp/edit?usp=drive_web&ouid=109349104683517399740&rtpof=true -->
 <div class="w-full h-auto text-primary">
     <div class="w-full h-auto text-xl font-bold text-start">Datenschutzerklärung</div>
     <div class="mt-4 w-full h-auto grid grid-cols-1 gap-4">
