@@ -335,7 +335,7 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 42,
-        type: "multiple-choice-puzzle",
+        type: "single-choice-puzzle",
         title: "Quiz",
         requirements: [], // [40]
         score: 3,
@@ -354,11 +354,11 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 answers: [
-                    { id: 0, text: "Tee", description: [], isCorrect: false },
-                    { id: 1, text: "Kaffee", description: [], isCorrect: false },
-                    { id: 2, text: "Tabak", description: [], isCorrect: false },
-                    { id: 2, text: "Kartoffeln", description: [], isCorrect: true },
-                    { id: 2, text: "Zucker", description: [], isCorrect: false }
+                    { id: 0, text: "Tee", isCorrect: false },
+                    { id: 1, text: "Kaffee", isCorrect: false },
+                    { id: 2, text: "Tabak", isCorrect: false },
+                    { id: 2, text: "Kartoffeln", isCorrect: true },
+                    { id: 2, text: "Zucker", isCorrect: false }
                 ]
             }
         }
