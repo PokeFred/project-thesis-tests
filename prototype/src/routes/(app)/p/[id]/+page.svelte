@@ -131,8 +131,10 @@
         <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "drag-drop-puzzle"}
-        <DragDropIntroduction data={data.introduction} />
-        <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
+        <div class="relative">
+            <DragDropIntroduction data={data.introduction} />
+            <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
+        </div>
     {/if}
     {#if data.puzzle.type === "error-spotting-puzzle"}
         <ErrorSpottingIntroduction data={data.introduction} />
