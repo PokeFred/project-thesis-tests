@@ -53,7 +53,7 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
-    {
+    {   // TODO Cedric: informationen aus config laden. in das result geben ("aus config laden" ersetzen). https://docs.google.com/document/d/1hpNdUs_GQeKfB921Zp8SeXpOydpU91xv/edit
         id: 11,
         type: "multiple-choice-puzzle",
         title: "Quiz",
