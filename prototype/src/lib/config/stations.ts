@@ -27,6 +27,7 @@ const stations: Station[] = [
     //     chapters: [],
     //     puzzles: []
     // },
+    // TODO Cedcic: Es fehlen noch die bilder
     {
         id: 1,
         tag: "Station 01",
