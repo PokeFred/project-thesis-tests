@@ -46,7 +46,7 @@
 </script>
 
 <div class="pb-10 border-b-2">
-    <div class="border-x-2">
+    <div class="mx-2 border-x-2">
         <div bind:this={container} class="w-full h-[85vh]"></div>
     </div>
 </div>

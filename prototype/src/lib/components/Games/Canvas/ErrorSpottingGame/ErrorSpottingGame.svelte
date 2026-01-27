@@ -29,6 +29,6 @@
     export const getSubmitScore = () => controller.ErrorSpotting.score();
 </script>
 
-<div class="border-x-2">
+<div class="mx-2 border-x-2">
     <div bind:this={container} class="w-full h-[80vh]"></div>
 </div>
