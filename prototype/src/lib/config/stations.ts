@@ -156,7 +156,7 @@ const stations: Station[] = [
     {
         id: 8,
         tag: "Station 08",
-        stitle: "Thalia",
+        stitle: "Westenhellweg",
         title: "",
         score: 0,
         chapters: [],
