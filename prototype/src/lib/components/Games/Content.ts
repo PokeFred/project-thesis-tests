@@ -11,7 +11,7 @@ export type Content =  {
     readonly src: string,
     readonly alt: string,
     readonly caption?: {
-        readonly caption: string,
+        readonly caption?: string,
         readonly src?: string
     }
 }

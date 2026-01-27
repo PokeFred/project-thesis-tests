@@ -15,6 +15,8 @@
         //setSubmitable()
     })
 
+    // TODO cedric. Man muss noch die texte und bilder austauschen. https://docs.google.com/document/d/1c_rQKCtUkT1j2W2m52xcmqJlRCshl4CV/edit
+    // Nicht vergessen: die bearbeiteten bilder von JAC nutzen. https://drive.google.com/drive/folders/1e1d68Av574EZh_kMNFdJFm4cPViLweMA
     const input: Input = {
         content: [
             { tag: "h2", children: [{ tag: "text", text: "Das Warenhaus Althoff - Ein Konsumtempel in Dortmund:"}] },
