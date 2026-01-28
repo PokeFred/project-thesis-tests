@@ -110,44 +110,42 @@
             </div>
         </div>
     </div>
-    <div class="relative">
-        {#if data.puzzle.type === "gps-puzzle"}
-            <GpsIntroduction data={data.introduction} />
-            <GpsGame bind:this={gps} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "text-select-puzzle"}
-            <TextSelectIntroduction data={data.introduction} />
-            <TextSelectGame bind:this={textSelect} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "matching-game-puzzle"}
-            <MatchingGameIntroduction data={data.introduction} />
-            <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "single-choice-puzzle"}
-            <SingleChoiceIntroduction data={data.introduction} />
-            <SingleChoiceGame bind:this={singleChoice} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "multiple-choice-puzzle"}
-            <MultipleChoiceIntroduction data={data.introduction} />
-            <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "drag-drop-puzzle"}
-                <DragDropIntroduction data={data.introduction} />
-                <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "error-spotting-puzzle"}
-            <ErrorSpottingIntroduction data={data.introduction} />
-            <ErrorSpottingGame bind:this={errorSpotting} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if data.puzzle.type === "word-guessing-puzzle"}
-            <WordGuessingIntroduction data={data.introduction} />
-            <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
-        {/if}
-        {#if submitable}
-            <div class="mt-7.5 mx-auto w-full h-auto">
-                <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
-            </div>
-        {/if}
-        <ScrollButton />
-    </div>
+    {#if data.puzzle.type === "gps-puzzle"}
+        <GpsIntroduction data={data.introduction} />
+        <GpsGame bind:this={gps} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "text-select-puzzle"}
+        <TextSelectIntroduction data={data.introduction} />
+        <TextSelectGame bind:this={textSelect} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "matching-game-puzzle"}
+        <MatchingGameIntroduction data={data.introduction} />
+        <MatchingGameGame bind:this={matchingGame} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "single-choice-puzzle"}
+        <SingleChoiceIntroduction data={data.introduction} />
+        <SingleChoiceGame bind:this={singleChoice} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "multiple-choice-puzzle"}
+        <MultipleChoiceIntroduction data={data.introduction} />
+        <MultipleChoiceGame bind:this={multipleChoice} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "drag-drop-puzzle"}
+            <DragDropIntroduction data={data.introduction} />
+            <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "error-spotting-puzzle"}
+        <ErrorSpottingIntroduction data={data.introduction} />
+        <ErrorSpottingGame bind:this={errorSpotting} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "word-guessing-puzzle"}
+        <WordGuessingIntroduction data={data.introduction} />
+        <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if submitable}
+        <div class="mt-7.5 mx-auto w-full h-auto">
+            <button onclick={(): void => modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
+        </div>
+    {/if}
+    <ScrollButton />
 </div>
