@@ -1,4 +1,4 @@
-import type Konva from "konva";
+import Konva from "konva";
 import type { KonvaEventObject } from "konva/lib/Node";
 import type { Vector2d } from "konva/lib/types";
 
@@ -20,6 +20,12 @@ export default class PanAndZoom {
         this.lastDist = 0;
         this.dragStopped = false;
         this.MIN_ZOOM = container.scaleX();
+        // stop konva drag
+        this.container.getStage()?.on("touchstart", (e) => {
+            if (e.evt.touches.length > 1) {
+                Konva.DD.node?.stopDrag();
+            } 
+        })
     }
 
     private getDistance(p1: Vector2d, p2: Vector2d) {

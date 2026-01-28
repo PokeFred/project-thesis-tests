@@ -64,7 +64,7 @@ export default class PuzzleController {
     public dragStopPiece(event: KonvaEventObject<DragEvent>): void {
         const KONVA_PIECE: Konva.Image | undefined = (event.target as Konva.Image);
         const PIECE: Piece = this.pieceMap.get(KONVA_PIECE)!; 
-        this.dropPiece(KONVA_PIECE);
+        this.dropPiece(KONVA_PIECE, event.evt === undefined ? true : false);
     }
 
     private pickupPiece(piece: Konva.Image): void {
@@ -89,7 +89,7 @@ export default class PuzzleController {
         KONVA_SLOT?.show();
     }
 
-    private dropPiece(piece: Konva.Image): void {
+    private dropPiece(piece: Konva.Image, dragCancelled: boolean): void {
         const KONVA_SLOT = this.getConvaSlot(piece)!;
         const PIECE_BOX_CLIENT = piece.getClientRect()
         const SLOT_BOX_CLIENT = KONVA_SLOT.getClientRect()
@@ -100,7 +100,7 @@ export default class PuzzleController {
         const SLOT: Slot | undefined = PIECE?.Slot;
 
         piece.offset({x: 0, y: 0});
-        if(!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) {            
+        if((!SLOT?.Selected && (Math.abs(PIECE_CENTER.x - SLOT_CENTER.x) < SNAP_RANGE &&  Math.abs(PIECE_CENTER.y - SLOT_CENTER.y) < SNAP_RANGE)) || dragCancelled) {            
             this.placePieceInSlot(piece);
             this.switchContainer(piece, this.canvas.Puzzle.Field);   
 
@@ -113,6 +113,7 @@ export default class PuzzleController {
         }
         else {
             this.canvas.PuzzlePieceContainer.placePieceIntoContainer(piece);
+            console.log(!SLOT?.Selected)
         }
     }
 
