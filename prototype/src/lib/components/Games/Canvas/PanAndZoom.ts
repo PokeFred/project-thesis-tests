@@ -8,7 +8,6 @@ export default class PanAndZoom {
     
     private lastCenter: Vector2d | null;
     private lastDist;
-    private dragStopped;
 
     private readonly MAX_ZOOM = 5;
     private readonly MIN_ZOOM;
@@ -18,7 +17,6 @@ export default class PanAndZoom {
         this.boundary = boundary;
         this.lastCenter = null;
         this.lastDist = 0;
-        this.dragStopped = false;
         this.MIN_ZOOM = container.scaleX();
         // stop konva drag
         this.container.getStage()?.on("touchstart", (e) => {
