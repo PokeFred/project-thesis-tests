@@ -5,7 +5,8 @@ export type IntroductionData = {
 
 export type GameData = {
     path: string,
-    caption: string
+    caption: string,
+    introduction?: boolean
 }
 
 export type ResultData = {

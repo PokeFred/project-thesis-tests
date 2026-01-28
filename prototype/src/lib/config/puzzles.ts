@@ -429,7 +429,8 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 path: "/station_05/raetsel_02/game",
-                caption: ""
+                caption: "",
+                introduction: true
             },
             result: {
                 img: "/station_05/raetsel_02/game/Background.png",
