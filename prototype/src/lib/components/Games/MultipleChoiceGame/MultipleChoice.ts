@@ -16,10 +16,10 @@ export default class MultipleChoice implements Quiz<SavingData> {
 
     public score(): number {
         return this.options.reduce((sum: number, answer: Answer, i: number) => {
-            if(!this.selected[i]) {
-                return sum + POINTS.NOT_ANSWERED;
+            if(this.selected[i]) {
+                return sum + (answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
             }
-            return sum + (answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
+            return sum + (!answer.correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE);
         }, 0)
     }
 
