@@ -49,12 +49,6 @@ export default class PanAndZoom {
         const touch1 = e.evt.touches[0];
         const touch2 = e.evt.touches[1];
 
-        // we need to restore dragging, if it was cancelled by multi-touch
-        if (touch1 && !touch2 && !this.container.isDragging() && this.dragStopped) {
-            this.container.startDrag();
-            this.dragStopped = false;
-        }
-
         if(touch1 && !touch2) {
             const p1 = {
                 x: touch1.clientX,
@@ -99,13 +93,6 @@ export default class PanAndZoom {
         }
 
         else if (touch1 && touch2) {
-            // if the stage was under Konva's drag&drop
-            // we need to stop it, and implement our own pan logic with two pointers
-            if (this.container.isDragging()) {
-                this.dragStopped = true;
-                this.container.stopDrag();
-            }
-
             const rect = this.boundary.getClientRect();
 
             const p1 = {
