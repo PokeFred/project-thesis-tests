@@ -373,8 +373,10 @@ class Arrow {
             height: dimension.y
         });
         const RECT: Konva.Rect = new Konva.Rect({
-            width: dimension.x,
-            height: dimension.y,
+            x: -dimension.x,
+            y: -dimension.y,
+            width: dimension.x * 3,
+            height: dimension.y * 3,
         });
         GROUP.add(RECT);
         GROUP.on("pointerdown", onClick);
