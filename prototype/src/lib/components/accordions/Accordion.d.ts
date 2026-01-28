@@ -12,12 +12,12 @@ export type AccordionQuestionAnswer = AccordionQuestionAnswerSubtitle | Accordio
 
 export type AccordionQuestionAnswerSubtitle = {
     type: "subtitle",
-    content: string
+    content: text
 }
 
 export type AccordionQuestionAnswerParagraph = {
     type: "paragraph",
-    content: string
+    content: text
 }
 
 export type AccordionQuestionAnswerImage = {

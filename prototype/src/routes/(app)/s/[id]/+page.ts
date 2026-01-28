@@ -37,7 +37,7 @@ type _Chapters = {}
 
 function getStationChapters(station: Station): _Chapters[] {
     const chapters = station.chapters
-        .map((element: any): AccordionQuestion => { return { type: "question", question: element.title, answer: element.content } })
+        .map((element: any): AccordionQuestion => { return { type: "question", question: element.title, answer: element.data } })
         .map((element: AccordionQuestion): AccordionData => [{ type: "seperator" }, element])
         .flat(1)
     chapters.push({ type: "seperator" })

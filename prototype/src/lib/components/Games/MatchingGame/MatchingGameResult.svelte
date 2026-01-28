@@ -8,6 +8,7 @@
     Saving { answers: string[] }
     */
     const { result, saving }: { result: any, saving: any } = $props();
+    console.log(result)
 </script>
 
 <table class="w-full table-fixed border-collapse border-secondary text-left">

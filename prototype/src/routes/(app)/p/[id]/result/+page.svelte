@@ -62,6 +62,6 @@
         <WordGuessingIntroduction data={data.introduction} />
         <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
-    <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full">Zurück zur Übersicht</button>
+    <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>
     <ScrollButton />
 </div>

@@ -25,9 +25,9 @@
     {#each question.answer as element}
         <div class="mb-7.5 px-2 text-[18px] leading-6">
             {#if element.type === "subtitle"}
-                <div class="font-medium">{element.content}</div>
+                <div class="font-medium">{element.text}</div>
             {:else if element.type === "paragraph"}
-                <div class="font-medium">{element.content}</div>
+                <div class="font-medium">{element.text}</div>
             {:else}
                 <figure>
                     <img src={element.src} alt={element.alt} class="rounded-lg" />
