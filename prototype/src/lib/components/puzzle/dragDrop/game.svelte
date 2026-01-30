@@ -8,7 +8,10 @@
 
     let introduction: boolean = $state(data.introduction ?? false);
     if (data.introduction) {
-        skipIntroduction = () => introduction = false;
+        skipIntroduction = () => { 
+            introduction = false;
+            window.scrollTo({ top: 0 });
+        }
     }
 
     let game: GameComponent
