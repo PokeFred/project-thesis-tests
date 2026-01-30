@@ -4,9 +4,13 @@
     import { onMount } from "svelte"
     import Fullscreen from "$components/Fullscreen.svelte";
 
-    let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
+    let { data, setSubmitable, skipIntroduction = $bindable() }: { data: GameData, setSubmitable: () => void, skipIntroduction?: () => void } = $props()
 
     let introduction: boolean = $state(data.introduction ?? false);
+    if (data.introduction) {
+        skipIntroduction = () => introduction = false;
+    }
+
     let game: GameComponent
     export function getSubmitData(): SavingData { return game.getSubmitData() }
     export function getSubmitScore(): number { return game.getSubmitScore() }
@@ -28,6 +32,3 @@
         <figcaption>{data.caption}</figcaption>
     </figure>
 {/if}
-
-<!-- TODO Cedric: "ergebnis anzeigen" button zum "Weiter" button machen -->
-<button onclick={() => introduction = false}>Weiter</button>
