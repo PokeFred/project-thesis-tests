@@ -183,6 +183,15 @@
     //         }
     //     ]
     // }
+
+    // TODO cedric: station 7 rätsel 2 game
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "10"
+    //         }
+    //     ]
+    // }
 </script>
 
 <GameComponent bind:this={game} input={input} />

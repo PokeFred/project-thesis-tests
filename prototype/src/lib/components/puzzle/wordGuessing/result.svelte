@@ -176,6 +176,16 @@
     //         }
     //     ]
     // }
+
+    // TODO cedric: station 7 rätsel 2 result
+    // result = {
+    //     questions: [
+    //         {
+    //             solution: "10"
+    //         }
+    //     ]
+    // }
+    
 </script>
 
 <ResultComponent result={result} saving={saving} />

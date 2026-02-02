@@ -489,10 +489,44 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 71,
-        type: "placeholder-puzzle",
-        title: "Rätsel 01",
+        type: "single-choice-puzzle",
+        title: "Quiz",
         requirements: [],
-        score: 0,
+        score: 3,
+        data: {
+            introduction: {
+                // introduction builder
+                // title: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt."
+                text: ["Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein? "]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Grün", isCorrect: false },
+                    { id: 1, text: "Weiß", isCorrect: false },
+                    { id: 2, text: "Gelb", isCorrect: false },
+                    { id: 3, text: "Dunkelblau", isCorrect: false },
+                    { id: 4, text: "Pink", isCorrect: true },
+                    { id: 5, text: "Hellblau", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Grün", isCorrect: false },
+                    { id: 1, text: "Weiß", isCorrect: false },
+                    { id: 2, text: "Gelb", isCorrect: false },
+                    { id: 3, text: "Dunkelblau", isCorrect: false },
+                    { id: 4, text: "Pink", isCorrect: true },
+                    { id: 5, text: "Hellblau", isCorrect: false },
+                ],
+            }
+        }
+    },
+    { // TODO cedric. inhalt ist in deiner wordguessing datei drin
+        id: 72,
+        type: "",
+        title: "Quiz",
+        requirements: [],
+        score: 3,
         data: {
             introduction: {},
             game: {},
