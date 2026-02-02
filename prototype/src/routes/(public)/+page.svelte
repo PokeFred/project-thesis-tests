@@ -4,7 +4,7 @@
 
     let modal: Modal
 
-    async function confirmModal(): Promise<void> {
+    function confirmModal(): void {
         if (!isRunning()) startGame()
         window.location.href = "/s"
     }
