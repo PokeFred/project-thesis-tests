@@ -98,13 +98,6 @@
                         <button onclick={(): Promise<void> => goto("/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
                         <button onclick={(): Promise<void> => goto("/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
                     </div>
-                    <!--
-                    <hr />
-                    <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
-                        <div class="w-full h-auto text-sm font-semibold text-left">Version: v0.0.1</div>
-                        <div class="w-full h-auto text-sm font-semibold text-right">Copyright &copy; 2025 <span class="text-green-500">???</span>. All rights reserved.</div>
-                    </div>
-                    -->
                 </div>
             </div>
         </PageTransition>
