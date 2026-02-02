@@ -571,7 +571,7 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {
+    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
         id: 82,
         type: "single-choice-puzzle",
         title: "Quizfragen",
@@ -597,7 +597,7 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {
+    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
         id: 83,
         type: "single-choice-puzzle",
         title: "Quizfragen",
