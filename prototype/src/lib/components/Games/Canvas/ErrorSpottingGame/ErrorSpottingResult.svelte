@@ -34,6 +34,6 @@
 </div>
 
 <p class="flex justify-between items-center h-8 px-8 -mx-4 mt-7 bg-secondary text-primary text-[16px]">
-    <span class="font-bold">Du hast {saving.correct} von {saving.total} Fehlern richtig</span>
+    <span class="font-bold">Du hast {saving.correct} von {saving.total} Unterschieden erkannt</span>
     <span class="font-medium">{ACHIEVED_POINTS}/{TOTAL_POINTS}</span>
 </p>
