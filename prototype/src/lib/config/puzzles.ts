@@ -547,14 +547,80 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 81,
-        type: "placeholder-puzzle",
+        type: "single-choice-puzzle",
         title: "Quizfragen",
         requirements: [], // [80]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Welches Kaufhaus gibt es am Westenhellweg noch heute?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 1, text: "Horten", isCorrect: false },
+                    { id: 2, text: "Neckermann", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 1, text: "Horten", isCorrect: false },
+                    { id: 2, text: "Neckermann", isCorrect: false },
+                ]
+            }
+        }
+    },
+    {
+        id: 82,
+        type: "single-choice-puzzle",
+        title: "Quizfragen",
+        requirements: [], // [80]
+        score: 3,
+        data: {
+            introduction: {
+                text: ["Wann eröffnete das Kaufhaus Hertie an der Brückstraße/Hansastraße?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "1945", isCorrect: false },
+                    { id: 1, text: "1955", isCorrect: true },
+                    { id: 2, text: "1975", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "1945", isCorrect: false },
+                    { id: 1, text: "1955", isCorrect: true },
+                    { id: 2, text: "1975", isCorrect: false },
+                ]
+            }
+        }
+    },
+    {
+        id: 83,
+        type: "single-choice-puzzle",
+        title: "Quizfragen",
+        requirements: [], // [80]
+        score: 3,
+        data: {
+            introduction: {
+                text: ["Welche Besonderheit machte Hertie besonders attraktiv?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Ein Café auf der Dachterrasse", isCorrect: true },
+                    { id: 1, text: "Ein eigenes Kino", isCorrect: false },
+                    { id: 2, text: "Ein Hallenbad", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Ein Café auf der Dachterrasse", isCorrect: true },
+                    { id: 1, text: "Ein eigenes Kino", isCorrect: false },
+                    { id: 2, text: "Ein Hallenbad", isCorrect: false },
+                ]
+            }
         }
     },
     {
