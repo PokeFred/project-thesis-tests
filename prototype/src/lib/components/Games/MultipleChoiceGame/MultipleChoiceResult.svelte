@@ -2,7 +2,6 @@
     import { Icon } from "svelte-awesome";
     import { faXmark } from "@fortawesome/free-solid-svg-icons";
     import ShowMore from "$components/ShowMore.svelte";
-    import MultipleChoice, { type Answer } from "./MultipleChoice";
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
@@ -44,11 +43,16 @@
                                         {/if}
                                     {/each}
                                 {:else if description.tag === "img"}
-                                    <figure>
+                                    <figure class="my-10">
                                         <Fullscreen>
                                             <img src={description.src} alt={description.alt}>
                                         </Fullscreen>
-                                        <figcaption>{description.caption}</figcaption>
+                                        {#if description.caption}
+                                            <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
+                                                <span class="mb-2 text-[16px] leading-4">{description.caption?.caption}</span>
+                                                <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{description.caption?.src}</span>
+                                            </figcaption>
+                                        {/if}
                                     </figure>
                                 {/if}
                             {/each}
