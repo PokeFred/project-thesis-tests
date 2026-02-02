@@ -192,6 +192,33 @@
     //         }
     //     ]
     // }
+
+    // TODO cedric: station 9 rätsel 1 game
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "14"
+    //         }
+    //     ]
+    // }
+
+    // TODO cedric: station 9 rätsel 2 game
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "6"
+    //         }
+    //     ]
+    // }
+
+    // TODO cedric: station 9 rätsel 3 game
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "2"
+    //         }
+    //     ]
+    // }
 </script>
 
 <GameComponent bind:this={game} input={input} />

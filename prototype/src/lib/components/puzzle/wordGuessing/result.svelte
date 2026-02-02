@@ -186,6 +186,32 @@
     //     ]
     // }
     
+    // TODO cedric: station 9 rätsel 1 result
+    // result = {
+    //     questions: [
+    //         {
+    //             solution: "14"
+    //         }
+    //     ]
+    // }
+
+    // TODO cedric: station 9 rätsel 2 result
+    // result = {
+    //     questions: [
+    //         {
+    //             solution: "6"
+    //         }
+    //     ]
+    // }
+
+    // TODO cedric: station 9 rätsel 3 result
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "2"
+    //         }
+    //     ]
+    // }
 </script>
 
 <ResultComponent result={result} saving={saving} />
