@@ -3,24 +3,10 @@ import Stations from "$config/stations"
 import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
+import { getPuzzleScore } from "$stores"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"
-import { getGame, getPuzzleScore } from "$stores"
-
-type Score = {
-    current: number,
-    max: number,
-    completion: number
-}
-
-function toScore(current: number, max: number): Score {
-    const completion: number = Number((current * 100 / max).toFixed(1))
-
-    return {
-        current: current,
-        max: max,
-        completion: Number.isNaN(completion) ? 0 : completion
-    }
-}
+import { toScore } from "$utils/score"
+import type { Score } from "$utils/score"
 
 function getStationScore(station: Station): Score {
     const current: number = station.puzzles
@@ -34,7 +20,7 @@ function getStationScore(station: Station): Score {
 }
 
 type _Chapters = {}
-
+// TODO (Cedric)
 function getStationChapters(station: Station): _Chapters[] {
     const chapters = station.chapters
         .map((element: any): AccordionQuestion => { return { type: "question", question: element.title, answer: element.data } })
@@ -50,8 +36,10 @@ type _Puzzle = {
     id: number,
     title: string,
     score: Score,
+    done: boolean,
     locked: boolean
 }
+
 
 function getStationPuzzles(station: Station): _Puzzle[] {
     return Puzzles
@@ -65,6 +53,7 @@ function getStationPuzzles(station: Station): _Puzzle[] {
                 id: element.id,
                 title: element.title,
                 score: toScore(current, element.score),
+                done: current !== 0,
                 locked: false
             }
         })
