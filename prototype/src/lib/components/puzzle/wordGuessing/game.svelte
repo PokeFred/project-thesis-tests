@@ -14,6 +14,8 @@
         setSubmitable()
     })
 
+    // TODO Cedric: introduction nicht vergessen
+
     // TODO Cedric: Station 1 Rätsel 1 Game
     const input: Input =  {
         questions: [
