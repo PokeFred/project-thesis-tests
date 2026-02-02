@@ -425,7 +425,7 @@ const puzzles: Puzzle[] = [
         score: 12,
         data: {
             introduction: {
-                title: "",
+                title: "Setze das Logo des „Schreer-Kaffees“ aus den Einzelteilen richtig zusammen. Achtung: Nach dem Start kannst du die Vorlage nicht mehr sehen.",
                 description: []
             },
             game: {
