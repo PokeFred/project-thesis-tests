@@ -7,7 +7,7 @@ export type GameData = {
 }
 
 export type ResultData = {
-    questions: { solution: string, hints: any[], solutionText: string }[]
+    questions: { solution: string, hints?: any[], solutionText?: string }[]
 }
 
 export type SavingData = {

@@ -339,7 +339,7 @@ const puzzles: Puzzle[] = [
         score: 9,
         data: {
             introduction: {
-                title: "",
+                title: "In den Schaufensterbeschriftungen des Kolonialwarenladens fehlen Buchstaben. Ziehe die Buchstaben an die richtige Stelle und bilde die drei richtigen Wörter. Für jedes richtige Wort bekommst du 3 Punkte.",
                 description: []
             },
             game: {
@@ -349,7 +349,7 @@ const puzzles: Puzzle[] = [
             result: {
                 img: "/station_04/raetsel_01/game/Background.png",
                 caption: "",
-                scoreDescription: "Wörtern"
+                scoreDescription: "Wörtern richtig"
             }
         }
     },
@@ -403,8 +403,8 @@ const puzzles: Puzzle[] = [
         score: 15,
         data: {
             introduction: {
-                title: "",
-                description: []
+                title: "Hier, wo heute der Heimathafen ist, befand sich Anfang des 20. Jahrhunderts das Lager des Kolonialwarengroßhändlers Heinrich Schreer.",
+                description: ["Du siehst einen Ausschnitt aus seiner Preisliste. Ziehe die Wörter an die richtige Stelle. "]
             },
             game: {
                 path: "/station_05/raetsel_01/game",
@@ -412,7 +412,8 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 img: "/station_05/raetsel_01/result/Result.png",
-                caption: ""
+                caption: "",
+                scoreDescription: "Begriffen richtig erraten"
             }
         }
     },
@@ -424,7 +425,7 @@ const puzzles: Puzzle[] = [
         score: 12,
         data: {
             introduction: {
-                title: "",
+                title: "Setze das Logo des „Schreer-Kaffees“ aus den Einzelteilen richtig zusammen. Achtung: Nach dem Start kannst du die Vorlage nicht mehr sehen.",
                 description: []
             },
             game: {
@@ -434,7 +435,7 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 img: "/station_05/raetsel_02/game/Background.png",
-                caption: ""
+                caption: "",
             }
         }
     },
@@ -488,10 +489,44 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 71,
-        type: "placeholder-puzzle",
-        title: "Rätsel 01",
+        type: "single-choice-puzzle",
+        title: "Quiz",
         requirements: [],
-        score: 0,
+        score: 3,
+        data: {
+            introduction: {
+                // introduction builder
+                // title: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt."
+                text: ["Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein? "]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Grün", isCorrect: false },
+                    { id: 1, text: "Weiß", isCorrect: false },
+                    { id: 2, text: "Gelb", isCorrect: false },
+                    { id: 3, text: "Dunkelblau", isCorrect: false },
+                    { id: 4, text: "Pink", isCorrect: true },
+                    { id: 5, text: "Hellblau", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Grün", isCorrect: false },
+                    { id: 1, text: "Weiß", isCorrect: false },
+                    { id: 2, text: "Gelb", isCorrect: false },
+                    { id: 3, text: "Dunkelblau", isCorrect: false },
+                    { id: 4, text: "Pink", isCorrect: true },
+                    { id: 5, text: "Hellblau", isCorrect: false },
+                ],
+            }
+        }
+    },
+    { // TODO cedric. inhalt ist in deiner wordguessing datei drin
+        id: 72,
+        type: "",
+        title: "Quiz",
+        requirements: [],
+        score: 3,
         data: {
             introduction: {},
             game: {},
@@ -512,14 +547,80 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 81,
-        type: "placeholder-puzzle",
+        type: "single-choice-puzzle",
         title: "Quizfragen",
         requirements: [], // [80]
-        score: 0,
+        score: 3,
         data: {
-            introduction: {},
-            game: {},
-            result: {}
+            introduction: {
+                text: ["Welches Kaufhaus gibt es am Westenhellweg noch heute?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 1, text: "Horten", isCorrect: false },
+                    { id: 2, text: "Neckermann", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 1, text: "Horten", isCorrect: false },
+                    { id: 2, text: "Neckermann", isCorrect: false },
+                ]
+            }
+        }
+    },
+    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
+        id: 82,
+        type: "single-choice-puzzle",
+        title: "Quizfragen",
+        requirements: [], // [80]
+        score: 3,
+        data: {
+            introduction: {
+                text: ["Wann eröffnete das Kaufhaus Hertie an der Brückstraße/Hansastraße?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "1945", isCorrect: false },
+                    { id: 1, text: "1955", isCorrect: true },
+                    { id: 2, text: "1975", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "1945", isCorrect: false },
+                    { id: 1, text: "1955", isCorrect: true },
+                    { id: 2, text: "1975", isCorrect: false },
+                ]
+            }
+        }
+    },
+    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
+        id: 83,
+        type: "single-choice-puzzle",
+        title: "Quizfragen",
+        requirements: [], // [80]
+        score: 3,
+        data: {
+            introduction: {
+                text: ["Welche Besonderheit machte Hertie besonders attraktiv?"]
+            },
+            game: {
+                answers: [
+                    { id: 0, text: "Ein Café auf der Dachterrasse", isCorrect: true },
+                    { id: 1, text: "Ein eigenes Kino", isCorrect: false },
+                    { id: 2, text: "Ein Hallenbad", isCorrect: false },
+                ]
+            },
+            result: {
+                answers: [
+                    { id: 0, text: "Ein Café auf der Dachterrasse", isCorrect: true },
+                    { id: 1, text: "Ein eigenes Kino", isCorrect: false },
+                    { id: 2, text: "Ein Hallenbad", isCorrect: false },
+                ]
+            }
         }
     },
     {
