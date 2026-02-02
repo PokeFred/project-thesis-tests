@@ -15,8 +15,7 @@
         //setSubmitable()
     })
 
-    // TODO cedric. Man muss noch die texte und bilder austauschen. https://docs.google.com/document/d/1c_rQKCtUkT1j2W2m52xcmqJlRCshl4CV/edit
-    // Nicht vergessen: die bearbeiteten bilder von JAC nutzen. https://drive.google.com/drive/folders/1e1d68Av574EZh_kMNFdJFm4cPViLweMA
+    // TODO cedric: in die config rein
     const input: Input = {
         content: [
             { tag: "h2", children: [{ tag: "text", text: "Das Warenhaus Althoff - Ein Konsumtempel in Dortmund:"}] },
@@ -25,9 +24,7 @@
                 children: [
                     {
                         tag: "text",
-                        text: `Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete
-                               Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus
-                               in `
+                        text: `Im Jahr 1904 eröffnete am Westenhellweg das von Theodor Althoff gegründete Warenhaus. Die Architektur war inspiriert vom berühmten Wertheim-Warenhaus in `
                     },
                     {
                         tag: "Select",
@@ -39,7 +36,7 @@
                     },
                     {
                         tag: "text",
-                        text: ` und wurde von Otto Engler entworfen. Fast `
+                        text: `und wurde von Otto Engler entworfen. Mit einer Verkaufsfläche von 5000 m² und etwa 500 Mitarbeitenden war es das damals größte deutsche Warenhaus außerhalb Berlins. Fast`
                     },
                     {
                         tag: "Select",
@@ -51,13 +48,20 @@
                     },
                     {
                         tag: "text",
-                        text: ` Menschen strömten
-                                am Eröffnungstag ins Warenhaus. Schon bald folgte ein Erweiterungsbau am
-                                Hansaplatz.`
+                        text: `Menschen strömten am Eröffnungstag in das Warenhaus. Schon bald folgte ein Erweiterungsbau am Hansaplatz.`
                     }
                 ]
             },
-                        {
+            {
+                tag: "img",
+                src: "/station_03/raetsel_01/image_00.jpg",
+                alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                caption: {
+                    caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
+                    src: "Stadtarchiv Dortmund"
+                }
+            },
+            {
                 tag: "p",
                 children: [
                     {
@@ -74,15 +78,13 @@
                     },
                     {
                         tag: "text",
-                        text: ` und einer großen Auswahl an Teppichen
-                                wurden auch Produkte des täglichen Bedarfs verkauft – sehr zum Ärger der
-                                Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.`
+                        text: `und einer großen Auswahl an Teppichen wurden auch Produkte des täglichen Bedarfs verkauft – sehr zum Ärger der Einzelhändler, die sich gegen die neuen Warenhäuser zusammenschlossen.`
                     }
                 ]
             },
             {
                 tag: "img",
-                src: "/station_03/raetsel_01/image_00.jpg",
+                src: "/station_03/raetsel_01/image_01.jpg",
                 alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                 caption: {
                     src: "Stadtarchiv Dortmund"
@@ -90,7 +92,7 @@
             },
             {
                 tag: "img",
-                src: "/station_03/raetsel_01/image_01.jpg",
+                src: "/station_03/raetsel_01/image_02.jpg",
                 alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                 caption: {
                     caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
@@ -102,10 +104,7 @@
                 children: [
                     {
                         tag: "text",
-                        text: `Eine Besonderheit war die Lebensmittelabteilung, die als erste ihrer Art in
-                               einem deutschen Warenhaus galt. Hier wurden neben Grundnahrungsmitteln,
-                               frischem Obst, teurem Champagner und Weinen, als Delikatesse geltende Hummer
-                               in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und `
+                        text: `Eine Besonderheit war die Lebensmittelabteilung, die als erste ihrer Art in einem deutschen Warenhaus galt. Hier wurden neben Grundnahrungsmitteln, frischem Obst, teurem Champagner und Weinen, als Delikatesse geltende Hummer in Dosen und sogar lebende Tiere wie junge Tauben, Gänse und`
                     },
                     {
                         tag: "Select",
@@ -117,17 +116,34 @@
                     },
                     {
                         tag: "text",
-                        text: ` verkauft.`
+                        text: `verkauft.`
                     }
                 ]
+            },
+            {
+                tag: "img",
+                src: "/station_03/raetsel_01/image_03.jpg",
+                alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
+                caption: {
+                    caption: "Lebensmittelabteilung im Warenhaus Althoff",
+                    src: "Sammlung Klaus Winter"
+                }
+            },
+            {
+                tag: "img",
+                src: "/station_03/raetsel_01/image_04.jpg",
+                alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
+                caption: {
+                    caption: "Wein und Likörabteilung Warenhaus Althoff",
+                    src: "Sammlung Klaus Winter"
+                }
             },
             {
                 tag: "p",
                 children: [
                     {
                         tag: "text",
-                        text: `Die Innenausstattung des Warenhauses war ebenso beeindruckend wie das
-                               Warenangebot: Wände aus `
+                        text: `Die Innenausstattung des Warenhauses war ebenso beeindruckend wie das Warenangebot: Wände aus`
                     },
                     {
                         tag: "Select",
@@ -139,17 +155,29 @@
                     },
                     {
                         tag: "text",
-                        text: `, kunstvolle Verglasungen und elegante Leuchter
-                               aus Bronze sorgten für eine luxuriöse Atmosphäre. Im Modell-Salon „für die
-                               Dame“ konnten die neuesten Modetrends bewundert werden, während der
-                               sogenannte Erfrischungsraum mit einem neun Meter langen Buffet, einem
-                               Brunnen und Tischen aus Marmor sowie Lederstühlen, die Gäste zum Verweilen
-                               einlud.`
+                        text: `, kunstvolle Verglasungen und elegante Leuchter aus Bronze sorgten für eine luxuriöse Atmosphäre. Im Modell-Salon „für die Dame“ konnten die neuesten Modetrends bewundert werden, während der sogenannte Erfrischungsraum mit einem neun Meter langen Buffet, einem Brunnen und Tischen aus Marmor sowie Lederstühlen, die Gäste zum Verweilen einlud.`
                     }
                 ]
             },
-            { tag: "img", src: "/station_03/raetsel_01/image_07.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { src: "Stadtarchiv Dortmund" } },
-            { tag: "img", src: "/station_03/raetsel_01/image_08.png", alt: "Erfrischungsraum im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff", src: "Stadtarchiv Dortmund" } },
+            {
+                tag: "img",
+                src: "/station_03/raetsel_01/image_05.jpg",
+                alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                caption: {
+                    src: "Stadtarchiv Dortmund"
+                }
+            },
+            {
+                tag: "img",
+                src: "/station_03/raetsel_01/image_06.jpg",
+                alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                caption: {
+                    caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
+                    src: "Stadtarchiv Dortmund"
+                }
+            },
+            { tag: "img", src: "/station_03/raetsel_01/image_07.png", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+            { tag: "img", src: "/station_03/raetsel_01/image_08.png", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
             {
                 tag: "p",
                 children: [
@@ -157,17 +185,13 @@
                     { tag: "Select", options: [{ answer: "Toiletten", correct: false }, { answer: "Fahrstühle", correct: true }, { answer: "Umkleiden", correct: false }] },
                     {
                         tag: "text",
-                        text: ` mit ihren Kabinen aus silbergrauem
-                                Ahorn. Das Treppenhaus hingegen war mit aufwendigen Glasmalereien verziert.
-                                Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder
-                                aufgebaut. Im Jahr 1920 schloss sich das Warenhaus Althoff mit einem
-                                bekannten Warenhausunternehmen zusammen – ab 1936 war es unter dem Namen `
+                        text: `mit ihren Kabinen aus silbergrauem Ahorn. Das Treppenhaus hingegen war mit aufwendigen Glasmalereien verziert. Im Jahr 1920 schloss sich das Warenhaus Althoff mit einem bekannten Warenhausunternehmen zusammen – ab 1936 war es unter dem Namen`
                     },
                     { tag: "Select", options: [{ answer: "Kardorf", correct: false }, { answer: "Karstadt", correct: true }, { answer: "Karwinkel", correct: false }] },
-                    { tag: "text", text: "bekannt." }
+                    { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                 ]
             },
-            { tag: "img", src: "/station_03/raetsel_01/image_09.jpg", alt: "Gesamtansicht Warenhaus Althoff (Foto: Stadtarchiv Dortmund).", caption: { caption: "Gesamtansicht Warenhaus Althoff", src: "Stadtarchiv Dortmund" } }
+            { tag: "img", src: "/station_03/raetsel_01/image_09.jpg", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
         ]
     }
 </script>
