@@ -166,6 +166,16 @@
     //         }
     //     ]
     // }
+
+    // TODO cedric: station 5 rätsel 3 result
+    // im introduction bild nicht vergessen
+    // result = {
+    //     questions: [
+    //         {
+    //             solution: "Rosendahl",
+    //         }
+    //     ]
+    // }
 </script>
 
 <ResultComponent result={result} saving={saving} />

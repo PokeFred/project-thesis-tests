@@ -174,6 +174,15 @@
     //         }
     //     ]
     //  }
+
+    // TODO cedric: Station 5 Rätsel 3 game
+    // const input: Input =  {
+    //     questions: [
+    //         {
+    //             solution: "Rosendahl"
+    //         }
+    //     ]
+    // }
 </script>
 
 <GameComponent bind:this={game} input={input} />
