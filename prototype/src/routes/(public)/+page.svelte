@@ -1,6 +1,6 @@
 <script lang="ts">
     import { startGame, isRunning } from "$stores"
-    import Modal from "./ConfirmModal.svelte"
+    import Modal from "$components/modals/StartModal.svelte"
 
     let modal: Modal
 
@@ -10,10 +10,7 @@
     }
 </script>
 
-<Modal bind:this={modal} onConfirm={confirmModal}>
-    <div>Damit dein Fortschritt gespeichert wird, kann die App deine Ergebnisse lokal auf deinem Gerät sichern.</div>
-    <div>Es werden keine Daten übertragen oder geteilt.</div>
-</Modal>
+<Modal bind:this={modal} onConfirm={confirmModal} />
 
 <div class="w-full h-auto text-lg font-bold text-primary grid grid-cols-1 gap-4">
     <div>Entdecke Dortmunds Einkaufsgeschichte!</div>

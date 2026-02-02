@@ -11,8 +11,9 @@
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
     import { faStar } from "@fortawesome/free-solid-svg-icons/faStar"
     import { page } from "$app/state"
-  import RestartModal from "./RestartModal.svelte";
-  import StopModal from "./StopModal.svelte";
+    import StopModal from "$components/modals/StopModal.svelte";
+    import IntroductionModal from "$components/modals/IntroductionModal.svelte"
+    import InformationsModal from "$components/modals/InformationsModal.svelte"
 
     let { children }: LayoutProps = $props()
 
@@ -25,7 +26,8 @@
         open = false
     })
 
-    let restartModal: RestartModal
+    let introductionModal: IntroductionModal
+    let informationsModal: InformationsModal
     let stopModal: StopModal
 
     function restart(): void {
@@ -39,13 +41,9 @@
     }
 </script>
 
-<RestartModal bind:this={restartModal} onConfirm={restart}>
-    <div>Wenn du das Spiel erneut starten willst, verlierst du deinen Punktestand und alle deine Erfolge werden gelöscht.</div>
-</RestartModal>
-
-<StopModal bind:this={stopModal} onConfirm={stop}>
-    <div>Wenn du das Spiel beendest, verlierst du deinen Punktestand und alle deine Erfolge werden gelöscht.</div>
-</StopModal>
+<IntroductionModal bind:this={introductionModal} />
+<InformationsModal bind:this={informationsModal} />
+<StopModal bind:this={stopModal} onConfirm={stop} />
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
@@ -76,13 +74,11 @@
                         <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
                         <hr class="border">
                     {/if}
-                    <button onclick={(): Promise<void> => goto("/introduction")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
+                    <button onclick={(): void => introductionModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
                     <hr class="border">
-                    <button onclick={(): Promise<void> => goto("/infos")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
+                    <button onclick={(): void => informationsModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
                     <hr class="border">
                     {#if isRunning()}
-                        <button onclick={(): void => restartModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL ERNEUT STARTEN</button>
-                        <hr class="border">
                         <button onclick={(): void => stopModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
                         <hr class="border">
                     {/if}
