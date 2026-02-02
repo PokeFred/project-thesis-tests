@@ -339,7 +339,7 @@ const puzzles: Puzzle[] = [
         score: 9,
         data: {
             introduction: {
-                title: "",
+                title: "In den Schaufensterbeschriftungen des Kolonialwarenladens fehlen Buchstaben. Ziehe die Buchstaben an die richtige Stelle und bilde die drei richtigen Wörter. Für jedes richtige Wort bekommst du 3 Punkte.",
                 description: []
             },
             game: {
@@ -349,7 +349,7 @@ const puzzles: Puzzle[] = [
             result: {
                 img: "/station_04/raetsel_01/game/Background.png",
                 caption: "",
-                scoreDescription: "Wörtern"
+                scoreDescription: "Wörtern richtig"
             }
         }
     },
@@ -403,8 +403,8 @@ const puzzles: Puzzle[] = [
         score: 15,
         data: {
             introduction: {
-                title: "",
-                description: []
+                title: "Hier, wo heute der Heimathafen ist, befand sich Anfang des 20. Jahrhunderts das Lager des Kolonialwarengroßhändlers Heinrich Schreer.",
+                description: ["Du siehst einen Ausschnitt aus seiner Preisliste. Ziehe die Wörter an die richtige Stelle. "]
             },
             game: {
                 path: "/station_05/raetsel_01/game",
@@ -412,7 +412,8 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 img: "/station_05/raetsel_01/result/Result.png",
-                caption: ""
+                caption: "",
+                scoreDescription: "Begriffen richtig erraten"
             }
         }
     },
@@ -434,7 +435,7 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 img: "/station_05/raetsel_02/game/Background.png",
-                caption: ""
+                caption: "",
             }
         }
     },
