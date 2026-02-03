@@ -3,7 +3,6 @@
     const totalPoints: number = points.length > 0 ? points.reduce((previous, current)=> previous + current) : 0;
 </script>
 
-<!-- TODO: div zu ul -->
 <section class="mb-5">
     <h4>Punkteübersicht:</h4>
     <div class="grid gap-1 grid-cols-[auto_auto]">

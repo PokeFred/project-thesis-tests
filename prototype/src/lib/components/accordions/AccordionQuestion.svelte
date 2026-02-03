@@ -26,28 +26,21 @@
     {#each question.answer as element}
         <div class="mb-7.5 px-2 text-[18px] leading-6">
             {#if element.type === "subtitle"}
-                <div class="font-medium">{element.text}</div>
+                <div class="font-medium">{element.content}</div>
             {:else if element.type === "paragraph"}
-                <div class="font-medium">{element.text}</div>
+                <div class="font-medium">{element.content}</div>
             {:else}
-                <figure>
+                <figure class="my-10 -mx-6">
                     <Fullscreen>
-                        <img src={element.src} alt={element.alt} class="rounded-lg" />
+                        <img src={element.src} alt={element.alt} />
                     </Fullscreen>
-                    <figcaption>{element.caption}</figcaption>
-                </figure>
-                <!-- TODO Cedric: das ist das richtige gestylte bild. caption und src von caption nutzen -->
-                <!-- <figure class="my-10 -mx-6">
-                    <Fullscreen>
-                        <img src={content.src} alt={content.alt} />
-                    </Fullscreen>
-                    {#if content.caption}
+                    {#if element.caption}
                         <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
-                            <span class="mb-2 text-[16px] leading-4">{content.caption?.caption}</span>
-                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{content.caption?.src}</span>
+                            <span class="mb-2 text-[16px] leading-4">{element.caption}</span>
+                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{element.caption}</span>
                         </figcaption>
                     {/if}
-                </figure> -->
+                </figure>
             {/if}
         </div>
     {/each}

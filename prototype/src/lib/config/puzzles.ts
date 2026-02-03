@@ -605,9 +605,9 @@ const puzzles: Puzzle[] = [
         score: 3,
         data: {
             introduction: {
-                // introduction builder
-                // title: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt."
-                text: ["Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein? "]
+                data: [
+                    { tag: "title", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" }
+                ]
             },
             game: {
                 answers: [
@@ -633,7 +633,7 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 72,
-        type: "word-guessing-puzzle",
+        type: "placeholder-puzzle",
         title: "Quiz",
         requirements: [], // TODO [70]
         score: 3,
@@ -805,7 +805,7 @@ const puzzles: Puzzle[] = [
         id: 91,
         type: "placeholder-puzzle",
         title: "Suchaufgabe",
-        requirements: [], // [90]
+        requirements: [], // TODO [90]
         score: 0,
         data: {
             introduction: {},
@@ -817,7 +817,7 @@ const puzzles: Puzzle[] = [
         id: 92,
         type: "placeholder-puzzle",
         title: "Suchaufgabe",
-        requirements: [], // [90]
+        requirements: [], // TODO [90]
         score: 0,
         data: {
             introduction: {},

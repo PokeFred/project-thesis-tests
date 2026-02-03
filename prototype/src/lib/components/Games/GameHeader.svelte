@@ -1,4 +1,3 @@
-<!-- TODO: header und footer tag? -->
 <script lang="ts">
     import { goto } from "$app/navigation";
     import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";

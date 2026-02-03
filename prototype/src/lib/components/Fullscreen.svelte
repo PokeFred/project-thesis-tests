@@ -1,5 +1,4 @@
 <!-- Fullscreen mithilfe der Fullscreen API mit pinch to zoom ist nicht gleichzeitig möglich. Dialog hat einen margin welches man nicht wegbekommt. Deswegen ein selbstgebautes Fullscreen mithilfe von div.  -->
-<!-- TODO: Mikroruckler beim reinzoomen im fullscreen beseitigen -->
 <script lang="ts">
     import { onDestroy, onMount, type Snippet } from "svelte";
     import { pushState, replaceState } from "$app/navigation";

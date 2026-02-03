@@ -6,7 +6,6 @@
     import GameFooter from "$components/Games/GameFooter.svelte";
     import GameHeader from "$components/Games/GameHeader.svelte";
 
-    // TODO: ladescreen, wenn nicht alle bilder geladen wurden
     let showModal: () => void = $state(()=>{});
 
     const data = {

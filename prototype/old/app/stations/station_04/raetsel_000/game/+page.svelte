@@ -4,7 +4,6 @@
     import GameHeader from "$components/Games/GameHeader.svelte";
     import GameFooter from "$components/Games/GameFooter.svelte";
 
-    // TODO: ladescreen, wenn nicht alle bilder geladen wurden
 
     const text: string[] = [
         `Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde.`,

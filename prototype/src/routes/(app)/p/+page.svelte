@@ -1,8 +1,13 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import PuzzleButton from "./PuzzleButton.svelte"
+    import { goto } from "$app/navigation"
 
     let { data }: PageProps = $props()
+
+    async function redirectToPuzzle(puzzle: any): Promise<void> {
+        if (!puzzle.done) return goto(`/p/${puzzle.id}`)
+        if (puzzle.type !== "gps-puzzle") return goto(`/p/${puzzle.id}/result`)
+    }
 </script>
 
 <div class="w-full h-auto text-primary">
@@ -13,13 +18,14 @@
         {#each data.stations as station}
             <div class="underline px-4">{station.title}</div>
             {#each station.puzzles as puzzle}
-                <!-- TODO remove later -->
                 {#if puzzle.type !== "placeholder-puzzle"}
-                    <PuzzleButton puzzle={puzzle} />
+                    <button onclick={(): Promise<void> => redirectToPuzzle(puzzle)} class="w-full h-auto text-secondary bg-primary rounded-full grid grid-cols-[auto_60px] gap-4 px-6 py-2 {puzzle.locked ? "opacity-50 cursor-default" : "cursor-pointer active:scale-95"}" disabled={puzzle.locked}>
+                        <span class="text-lg font-bold text-left">{puzzle.title} {`(${puzzle.type})`.replace("-puzzle", "")}</span>
+                        <span class="text-right">{puzzle.score.current}/{puzzle.score.max}</span>
+                    </button>
                 {:else}
                     <div class="w-full h-auto text-secondary bg-primary rounded-full grid grid-cols-[auto_60px] gap-4 px-6 py-2 opacity-50 cursor-default">
                         <span class="text-lg font-bold text-left">{puzzle.title}</span>
-                        <!-- <span class="text-right">{puzzle.score.current}/{puzzle.score.max}</span> -->
                     </div>
                 {/if}
             {/each}

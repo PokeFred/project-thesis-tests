@@ -1,4 +1,3 @@
-// TODO MERGE
 
 
 export type Introduction = {

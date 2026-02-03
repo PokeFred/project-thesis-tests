@@ -3,7 +3,6 @@ import Stations from "$config/stations"
 import type { Station } from "$config/stations"
 import Puzzles from "$config/puzzles"
 import type { Puzzle } from "$config/puzzles"
-import type { _Puzzle } from "."
 import { getPuzzleScore } from "$stores"
 
 type Score = {
@@ -20,6 +19,15 @@ function toScore(current: number, max: number): Score {
         max: max,
         completion: Number.isNaN(completion) ? 0 : completion
     }
+}
+
+type _Puzzle = {
+    id: number,
+    type: string,
+    title: string,
+    score: Score,
+    done: boolean,
+    locked: boolean
 }
 
 function getPuzzles(station: Station): _Puzzle[] {
@@ -45,6 +53,7 @@ function getPuzzles(station: Station): _Puzzle[] {
                 type: element.type,
                 title: element.title,
                 score: toScore(current, element.score),
+                done: current !== 0,
                 locked: isLocked
             }
         })

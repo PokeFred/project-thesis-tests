@@ -20,7 +20,7 @@ function getStationScore(station: Station): Score {
 }
 
 type _Chapters = {}
-// TODO (Cedric)
+
 function getStationChapters(station: Station): _Chapters[] {
     const chapters = station.chapters
         .map((element: any): AccordionQuestion => { return { type: "question", question: element.title, answer: element.data } })

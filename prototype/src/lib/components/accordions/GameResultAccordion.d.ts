@@ -9,7 +9,6 @@ export type GameResultAccordionQuestion = {
     answers: GameResultAccordionQuestionAnswer[]
 }
 
-// TODO better types ?
 export type GameResultAccordionQuestionAnswer = { type: "paragraph", content: string } | { type: "image", src: string, alt: string, caption: string } | { type: "spacing" }
 
 export type GameResultAccordionSeperator = {

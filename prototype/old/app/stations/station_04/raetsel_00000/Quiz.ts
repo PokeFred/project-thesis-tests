@@ -1,6 +1,5 @@
 import MultipleChoice, { type Description } from "$components/Games/MultipleChoiceGame/MultipleChoice";
 
-// TODO: die ganzen Quiz, Quizstate, Gamestate etc klassen refractoren
 const descriptions: Description[][] = [
     [
         {
