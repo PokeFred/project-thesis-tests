@@ -247,7 +247,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zum Hansaplatz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
@@ -344,7 +344,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zur Reinoldistraße, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
@@ -431,7 +431,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zum Hafen, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
@@ -522,7 +522,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zum Freiherr-vom-Stein-Platz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
@@ -563,17 +563,18 @@ const puzzles: Puzzle[] = [
         }
     },
     // 70: S07 E00
+    // TODO (Cedric) Ort ???
     {
         id: 70,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
-                text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                text: "Begebe dich zur Kampstraße, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "???",
+                    adress: "REWE Kampstraße",
                     transit: {
                         bus: {
                             station: "",
@@ -584,13 +585,13 @@ const puzzles: Puzzle[] = [
                             lines: []
                         }
                     },
-                    coordinates: ", "
+                    coordinates: "51.51540000001225, 7.466581904944825"
                 }
             },
             game: {
                 coordinates: {
-                    lan: 0,
-                    lon: 0
+                    lan: 51.51540000001225,
+                    lon: 7.466581904944825
                 }
             },
             result: {}
@@ -630,15 +631,19 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    { // TODO cedric. inhalt ist in deiner wordguessing datei drin
+    {
         id: 72,
-        type: "",
+        type: "word-guessing-puzzle",
         title: "Quiz",
-        requirements: [],
+        requirements: [], // TODO [70]
         score: 3,
         data: {
             introduction: {},
-            game: {},
+            game: {
+                questions: [
+                    { solution: "10" }
+                ]
+            },
             result: {}
         }
     },
@@ -649,7 +654,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zum Thalia, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
@@ -681,11 +686,13 @@ const puzzles: Puzzle[] = [
         id: 81,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // [80]
+        requirements: [], // TODO [80]
         score: 3,
         data: {
             introduction: {
-                text: ["Welches Kaufhaus gibt es am Westenhellweg noch heute?"]
+                data: [
+                    { tag: "title", text: "Welches Kaufhaus gibt es am Westenhellweg noch heute?" }
+                ]
             },
             game: {
                 answers: [
@@ -703,15 +710,17 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
+    {
         id: 82,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // [80]
+        requirements: [], // TODO [80]
         score: 3,
         data: {
             introduction: {
-                text: ["Wann eröffnete das Kaufhaus Hertie an der Brückstraße/Hansastraße?"]
+                data: [
+                    { tag: "title", text: "Wann eröffnete das Kaufhaus Hertie an der Brückstraße/Hansastraße?" }
+                ]
             },
             game: {
                 answers: [
@@ -729,15 +738,17 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {   // TODO Cedric: wird nicht angezeigt als rätsel in der station
+    {
         id: 83,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // [80]
+        requirements: [], // TODO [80]
         score: 3,
         data: {
             introduction: {
-                text: ["Welche Besonderheit machte Hertie besonders attraktiv?"]
+                data: [
+                    { tag: "title", text: "Welche Besonderheit machte Hertie besonders attraktiv?" }
+                ]
             },
             game: {
                 answers: [
@@ -762,7 +773,7 @@ const puzzles: Puzzle[] = [
         type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
             introduction: {
                 text: "Begebe dich zum Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",

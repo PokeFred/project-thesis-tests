@@ -117,7 +117,7 @@ const _stations: _Station[] = [
         stitle: "Kampstraße",
         title: "",
         chapters: "07",
-        puzzles: [70, 71]
+        puzzles: [70, 71, 72]
     },
     {
         id: 8,
@@ -125,7 +125,7 @@ const _stations: _Station[] = [
         stitle: "Westenhellweg",
         title: "",
         chapters: "08",
-        puzzles: [80, 81]
+        puzzles: [80, 81, 82, 83]
     },
     {
         id: 9,

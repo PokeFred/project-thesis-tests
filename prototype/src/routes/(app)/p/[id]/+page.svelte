@@ -127,24 +127,25 @@
     {#if data.puzzle.type === "single-choice-puzzle"}
         <!-- <SingleChoiceIntroduction data={data.introduction} /> -->
         <Introduction data={[
-            {
-                tag: "title",
-                text: `In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?`
-            },
-            {
-                tag: "img",
-                src: "/station_03/raetsel_02/image_00.jpg",
-                alt: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff (Stadtarchiv Dortmund).",
-                caption: {
-                    caption: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff",
-                    src: "Stadtarchiv Dortmund"
-                }
-            },
-            {
-                tag: "p",
-                text: "testetssetstsetstsetsetsetse asdflökj saslökdfj löaksdjf löaksdjf lökasjdf lökajsdflöask jdflökjasdlöfj "
-            }
+            // {
+            //     tag: "title",
+            //     text: `In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?`
+            // },
+            // {
+            //     tag: "img",
+            //     src: "/station_03/raetsel_02/image_00.jpg",
+            //     alt: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff (Stadtarchiv Dortmund).",
+            //     caption: {
+            //         caption: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff",
+            //         src: "Stadtarchiv Dortmund"
+            //     }
+            // },
+            // {
+            //     tag: "p",
+            //     text: "testetssetstsetstsetsetsetse asdflökj saslökdfj löaksdjf löaksdjf lökasjdf lökajsdflöask jdflökjasdlöfj "
+            // }
         ]}/>
+        <Introduction data={data.introduction.data} />
         <SingleChoiceGame bind:this={singleChoice} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
