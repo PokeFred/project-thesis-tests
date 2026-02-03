@@ -20,6 +20,8 @@ const puzzles: Puzzle[] = [
     //         result: {}
     //     }
     // },
+    // 10: S01 E00
+    // TODO (Cedric) Ort ???
     {
         id: 10,
         type: "gps-puzzle",
@@ -30,7 +32,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zum alten Markt, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Hansastraße 3, 44137 Dortmund",
+                    adress: "Am Trissel 18-20, 44137 Dortmund",
                     transit: {
                         bus: {
                             station: "Dortmund HBF",
@@ -41,18 +43,19 @@ const puzzles: Puzzle[] = [
                             lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "N 51° 31.008' E 007° 27.774'"
+                    coordinates: "51.51392304391651, 7.465440457499872"
                 }
             },
             game: {
                 coordinates: {
-                    lan: 51.516807552719946,
-                    lon: 7.46296542458445
+                    lan: 51.51392304391651,
+                    lon: 7.465440457499872
                 }
             },
             result: {}
         }
     },
+    // 11: S01 E01
     {
         id: 11,
         type: "multiple-choice-puzzle",
@@ -89,6 +92,7 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 12: S01 E02
     {
         id: 12,
         type: "matching-game-puzzle",
@@ -167,6 +171,7 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 13: S01 E03
     {
         id: 13,
         type: "drag-drop-puzzle",
@@ -188,51 +193,41 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 20: S02 E00
+    // TODO (Cedric) Ort ???
     {
         id: 20,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
-        score: 0,
+        score: 1,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Westenhellweg, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Ecke Brückstraße",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.51442205062871, 7.4665695269931405"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.51442205062871,
+                    lon: 7.4665695269931405
+                }
+            },
             result: {}
         }
     },
-    // {
-    //     id: 20,
-    //     type: "gps-puzzle",
-    //     title: "Station freischalten",
-    //     requirements: [],
-    //     score: 1,
-    //     data: {
-    //         introduction: {
-    //             text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
-    //             informations: {
-    //                 adress: "???",
-    //                 transit: {
-    //                     bus: {
-    //                         station: "",
-    //                         lines: []
-    //                     },
-    //                     subway: {
-    //                         station: "",
-    //                         lines: []
-    //                     }
-    //                 },
-    //                 coordinates: ""
-    //             }
-    //         },
-    //         game: {
-    //             coordinates: {
-    //                 lan: 0,
-    //                 lon: 0
-    //             }
-    //         },
-    //         result: {}
-    //     }
-    // },
     {
         id: 21,
         type: "word-guessing-puzzle",
@@ -245,15 +240,38 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
+    // 30: S03 E00
+    // TODO (Cedric) Ort ???
     {
         id: 30,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Hansaplatz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Hansaplatz",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.5134351005712, 7.464574873617459"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.5134351005712,
+                    lon: 7.464574873617459
+                }
+            },
             result: {}
         }
     },
@@ -319,15 +337,38 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 40: S04 E00
+    // TODO (Cedric) Ort ???
     {
         id: 40,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zur Reinoldistraße, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Reinoldistraße 6",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: " 51.51574134185536, 7.467070721060602"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan:  51.51574134185536,
+                    lon: 7.467070721060602
+                }
+            },
             result: {}
         }
     },
@@ -383,15 +424,38 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 50: S05 E00
+    // TODO (Cedric) Ort ???
     {
         id: 50,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Hafen, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Speicherstraße 15",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.52578069810683, 7.445809382385741"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.52578069810683,
+                    lon: 7.445809382385741
+                }
+            },
             result: {}
         }
     },
@@ -451,15 +515,38 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
+    // 60: S06 E00
+    // TODO (Cedric) Ort ???
     {
         id: 60,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Freiherr-vom-Stein-Platz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Steinstraße 6",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.520129044945186, 7.464537819122533"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.520129044945186,
+                    lon: 7.464537819122533
+                }
+            },
             result: {}
         }
     },
@@ -475,6 +562,7 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
+    // 70: S07 E00
     {
         id: 70,
         type: "placeholder-puzzle",
@@ -482,8 +570,29 @@ const puzzles: Puzzle[] = [
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum ???, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "???",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: ", "
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 0,
+                    lon: 0
+                }
+            },
             result: {}
         }
     },
@@ -533,15 +642,38 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
+    // 80: S08 E00
+    // TODO (Cedric) Ort ???
     {
         id: 80,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Thalia, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Westenhellweg 44",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.51420673594943, 7.4638271186997995"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.51420673594943,
+                    lon: 7.4638271186997995
+                }
+            },
             result: {}
         }
     },
@@ -623,15 +755,38 @@ const puzzles: Puzzle[] = [
             }
         }
     },
+    // 90: S09 E00
+    // TODO (Cedric) Ort ???
     {
         id: 90,
-        type: "placeholder-puzzle",
+        type: "gps-puzzle",
         title: "Station freischalten",
         requirements: [],
         score: 0,
         data: {
-            introduction: {},
-            game: {},
+            introduction: {
+                text: "Begebe dich zum Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                informations: {
+                    adress: "Thier-Galerie",
+                    transit: {
+                        bus: {
+                            station: "",
+                            lines: []
+                        },
+                        subway: {
+                            station: "",
+                            lines: []
+                        }
+                    },
+                    coordinates: "51.51340212520424, 7.459321539954258"
+                }
+            },
+            game: {
+                coordinates: {
+                    lan: 51.51340212520424,
+                    lon: 7.459321539954258
+                }
+            },
             result: {}
         }
     },

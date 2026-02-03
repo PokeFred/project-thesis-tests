@@ -27,7 +27,7 @@
             <Icon data={open ? faMinus : faPlus} />
         </summary>
         <div class="w-full h-auto grid grid-cols-1 gap-2 px-6 pt-3">
-            <hr class="w-1/3 h-auto border-2">
+            <hr class="w-1/3 h-auto border-2" />
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
                     <span class="text-lg font-bold">Bus</span>
@@ -35,7 +35,7 @@
                 <div>{data.informations.transit.bus.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.bus.station}</div>
             </div>
-            <hr class="w-1/3 h-auto border-2">
+            <hr class="w-1/3 h-auto border-2" />
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
                     <span class="text-lg font-bold">U-Bahn</span>
@@ -43,11 +43,12 @@
                 <div>{data.informations.transit.subway.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.subway.station}</div>
             </div>
-            <hr class="w-1/3 h-auto border-2">
+            <hr class="w-1/3 h-auto border-2" />
             <div class="w-full h-auto grid grid-cols-1 gap-0">
                 <div class="w-full h-auto flex justify-start items-center">
-                    <span>{data.informations.coordinates}</span>
+                    <span class="text-lg font-bold">Koordinaten</span>
                 </div>
+                <div>{data.informations.coordinates}</div>
             </div>
         </div>
     </details>

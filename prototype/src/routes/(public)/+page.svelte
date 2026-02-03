@@ -4,6 +4,14 @@
 
     let modal: Modal
 
+    function showModal(): void {
+        if (!isRunning) {
+            modal.openModal()
+        } else {
+            window.location.href = "/s"
+        }
+    }
+
     function confirmModal(): void {
         if (!isRunning()) startGame()
         window.location.href = "/s"
@@ -19,5 +27,5 @@
     <div>Komm mit: Vom Markt im Mittelalter über prunkvolle Warenhäuser bis zum Online-Shopping. Unterwegs findest du Orte in der Stadt, löst Rätsel und sammelst Punkte.</div>
     <hr />
     <div>Starte jetzt - und entdecke Dortmund auf eine neue Art!</div>
-    <button onclick={(): void => modal.openModal()} class="w-full h-auto text-lg text-left text-secondary bg-primary rounded-full cursor-pointer px-6 py-2 active:scale-95">Starten</button>
+    <button onclick={showModal} class="w-full h-auto text-lg text-left text-secondary bg-primary rounded-full cursor-pointer px-6 py-2 active:scale-95">Starten</button>
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import BackButton from "../../s/BackButton.svelte"
+    import BackButton from "$components/BackButton.svelte"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsGame from "$components/puzzle/gps/game.svelte"
     import TextSelectIntroduction from "$components/puzzle/textSelect/introduction.svelte"
@@ -14,7 +14,7 @@
     import { goto } from "$app/navigation"
     import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
     import DragDropGame from "$components/puzzle/dragDrop/game.svelte"
-    import ScrollButton from "../../s/ScrollButton.svelte";
+    import ScrollButton from "$components/ScrollButton.svelte";
     import ErrorSpottingIntroduction from "$components/puzzle/errorSpotting/introduction.svelte"
     import ErrorSpottingGame from "$components/puzzle/errorSpotting/game.svelte"
     import WordGuessingIntroduction from "$components/puzzle/wordGuessing/introduction.svelte"
@@ -102,7 +102,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="font-medium text-[16px] uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton url={`/s/${data.station.id}`} />
+        <BackButton path={`/s/${data.station.id}`} />
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
