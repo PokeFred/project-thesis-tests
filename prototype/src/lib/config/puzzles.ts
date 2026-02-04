@@ -765,11 +765,11 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {   // TODO Cedric: introduction builder nutzen
+    {
         id: 72,
         type: "word-guessing-puzzle",
         title: "Quiz",
-        requirements: [], // TODO [70]
+        requirements: [70],
         score: 3,
         data: {
             introduction: {
@@ -941,11 +941,11 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
-    {   // TODO cedric: introduction builder nehmen
+    {
         id: 91,
         type: "word-guessing-puzzle",
         title: "Suchaufgabe",
-        requirements: [], // TODO [90]
+        requirements: [90],
         score: 0,
         data: {
             introduction: {
@@ -963,7 +963,7 @@ const puzzles: Puzzle[] = [
         id: 92,
         type: "word-guessing-puzzle",
         title: "Suchaufgabe",
-        requirements: [], // TODO [90]
+        requirements: [90],
         score: 0,
         data: {
             introduction: {
