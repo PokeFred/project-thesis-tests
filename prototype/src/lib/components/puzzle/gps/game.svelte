@@ -15,15 +15,17 @@
     export function getSubmitData(): GameOutput { return {} }
     export function getSubmitScore(): number { return 1 }
 
-    function isRange(): boolean {
+    function isRange(current: UserLocationData, game: { lan: number, lon: number}): boolean {
+        console.log({ current, game })
         return false
     }
 
     let a: boolean = $state<boolean>(false)
     async function _fetchLocation(): Promise<void> {
         try {
-            const _data: UserLocationData = await fetchLocation()
-            console.log({ _data, data })
+            //const _data: UserLocationData = await fetchLocation()
+            // @ts-ignore
+            //isRange(_data, data.coordinates)
         } catch (error: unknown) {
             console.log(error)
         }
