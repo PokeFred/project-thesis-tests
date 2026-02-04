@@ -5,5 +5,4 @@
     let { result, saving }: { result: ResultData, saving: SavingData } = $props()
 </script>
 
-<!-- TODO (Cedric): result komponente wird nicht aufgerufen -->
 <ResultComponent result={result} saving={saving} />
