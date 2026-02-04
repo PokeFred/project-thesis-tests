@@ -85,7 +85,7 @@ export default class Canvas {
             strokeEnabled: false,
             shadowBlur: 0,
             draggable: true,
-            fill: "black",
+            // fill: "black",
             // hitFunc(con, shape) {
             //     const RECT = shape.getSelfRect()
             //     con.beginPath();
