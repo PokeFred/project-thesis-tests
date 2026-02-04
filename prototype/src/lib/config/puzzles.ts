@@ -234,7 +234,7 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.png", alt: "Tee", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.jpg", alt: "Tee", caption: "" },
                             {
                                 tag: "text",
                                 text: {
@@ -242,7 +242,7 @@ const puzzles: Puzzle[] = [
                                 }
                             },
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.png", alt: "Western", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.jpg", alt: "Western", caption: "" },
                             { tag: "text", text: { crossed: "tern" } },
                         ],
                         solution: "Tewes"
@@ -255,7 +255,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_01/game/image_00.png",
+                                src: "/station_02/raetsel_01/game/image_00.jpg",
                                 alt: "Tee",
                                 caption: ""
                             },
@@ -273,7 +273,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_01/game/image_01.png",
+                                src: "/station_02/raetsel_01/game/image_01.jpg",
                                 alt: "Western",
                                 caption: ""
                             },
@@ -308,12 +308,12 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.png", alt: "Freundschaft", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.jpg", alt: "Freundschaft", caption: "" },
                             { tag: "text", text: { crossed: "schaft" } },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "&" } },
                             { tag: "text", text: { normal: "+" } },
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.png", alt: "Bauer", caption: "" }
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer", caption: "" }
                         ],
                         solution: "Freund & Bauer"
                     }
@@ -325,7 +325,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_02/game/image_00.png",
+                                src: "/station_02/raetsel_02/game/image_00.jpg",
                                 alt: "Freundschaft",
                                 caption: ""
                             },
@@ -355,7 +355,7 @@ const puzzles: Puzzle[] = [
                             },
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_02/game/image_01.png",
+                                src: "/station_02/raetsel_02/game/image_01.jpg",
                                 alt: "Bauer",
                                 caption: ""
                             }
@@ -384,9 +384,10 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.png", alt: "Betten", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.jpg", alt: "Betten", caption: "" },
+                            { tag: "text", text: { normal: "en" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.png", alt: "Hut", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.jpg", alt: "Hut", caption: "" },
                             { tag: "text", text: { normal: "t" } },  
                         ],
                         solution: "Betten Hutt"
@@ -399,10 +400,16 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_03/game/image_00.png",
+                                src: "/station_02/raetsel_03/game/image_00.jpg",
                                 alt: "Betten",
                                 caption: ""
                             },
+                            { 
+                                tag: "text", 
+                                text: { 
+                                    normal: "en" 
+                                } 
+                            },  
                             {
                                 tag: "text",
                                 text: {
@@ -411,7 +418,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_03/game/image_01.png",
+                                src: "/station_02/raetsel_03/game/image_01.jpg",
                                 alt: "Hut",
                                 caption: ""
                             },
@@ -446,9 +453,10 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.png", alt: "Rüschen", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.jpg", alt: "Rüschen", caption: "" },
+                            { tag: "text", text: { crossed: "sel", normal: " + chen" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.png", alt: "Gebäck", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.jpg", alt: "Gebäck", caption: "" },
                             { tag: "text", text: { crossed: "Ge", normal: " + ä=e" } },  
                         ],
                         solution: "Rüschenbeck"
@@ -461,10 +469,17 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_04/game/image_00.png",
+                                src: "/station_02/raetsel_04/game/image_00.jpg",
                                 alt: "Rüschen",
                                 caption: ""
                             },
+                            { 
+                                tag: "text", 
+                                text: { 
+                                    crossed: "sel", 
+                                    normal: " + chen" 
+                                } 
+                            },  
                             {
                                 tag: "text",
                                 text: {
@@ -473,7 +488,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_04/game/image_01.png",
+                                src: "/station_02/raetsel_04/game/image_01.jpg",
                                 alt: "Gebäck",
                                 caption: ""
                             },
