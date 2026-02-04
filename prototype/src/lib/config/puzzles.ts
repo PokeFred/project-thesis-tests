@@ -508,7 +508,9 @@ const puzzles: Puzzle[] = [
         score: 3,
         data: {
             introduction: {
-                text: ["Welche Lebensmittel gehörten zu den sogenannten Kolonialwaren? Finde das eine Produkt, was hier nicht stimmt!"]
+                data: [
+                    { tag: "title", text: `Welche Lebensmittel gehörten zu den sogenannten Kolonialwaren? Finde das eine Produkt, was hier nicht stimmt!` },
+                ]
             },
             game: {
                 answers: [
