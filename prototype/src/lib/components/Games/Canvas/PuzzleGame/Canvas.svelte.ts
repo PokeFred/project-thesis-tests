@@ -85,6 +85,14 @@ export default class Canvas {
             strokeEnabled: false,
             shadowBlur: 0,
             draggable: true,
+            fill: "black",
+            // hitFunc(con, shape) {
+            //     const RECT = shape.getSelfRect()
+            //     con.beginPath();
+            //     con.rect(0, 0, RECT.width, RECT.height);
+            //     con.closePath();
+            //     con.fillStrokeShape(shape);
+            // },
             customZIndex: Number.MAX_SAFE_INTEGER - (dim ? (dim.width + dim.height) : (img.width + img.height))
         });
         piece.on("dragstart", this.puzzleController.dragStartPiece.bind(this.puzzleController));

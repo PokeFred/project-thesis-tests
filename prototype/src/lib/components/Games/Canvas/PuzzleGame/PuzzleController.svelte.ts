@@ -113,7 +113,6 @@ export default class PuzzleController {
         }
         else {
             this.canvas.PuzzlePieceContainer.placePieceIntoContainer(piece);
-            console.log(!SLOT?.Selected)
         }
     }
 
