@@ -8,4 +8,9 @@ export type GameData = {
 
 export type ResultData = {}
 
-export type SavingData = {}
+export type SavingData = {
+    selected: {
+        readonly answer: string;
+        readonly correct: boolean;
+    }[]   
+}

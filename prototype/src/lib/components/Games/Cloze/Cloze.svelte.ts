@@ -1,4 +1,5 @@
 import { type Quiz, POINTS } from "$components/Games/Quiz";
+import type { SavingData } from "$components/puzzle/textSelect";
 import type { GameOutput } from ".";
 
 export type Answer = {
@@ -6,7 +7,7 @@ export type Answer = {
     readonly correct: boolean;
 }
 
-export default class Cloze implements Quiz<GameOutput> {
+export default class Cloze implements Quiz<SavingData> {
     private readonly options: Answer[][];
     private selected: Answer[];
 
@@ -24,9 +25,9 @@ export default class Cloze implements Quiz<GameOutput> {
         }, 0);
     }
 
-    public complete(): GameOutput {
+    public complete(): SavingData {
         return {
             selected: this.selected
-        } satisfies GameOutput;
+        } satisfies SavingData;
     }
 }

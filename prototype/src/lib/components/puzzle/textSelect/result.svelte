@@ -3,7 +3,6 @@
     import ResultComponent from "$components/Games/Cloze/ClozeResult.svelte"
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props()
-    console.log(result)
 </script>
 
 <!-- TODO (Cedric): result komponente wird nicht aufgerufen -->
