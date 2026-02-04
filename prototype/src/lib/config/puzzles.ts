@@ -946,7 +946,7 @@ const puzzles: Puzzle[] = [
         type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [90],
-        score: 0,
+        score: 3,
         data: {
             introduction: {
                 data: [
@@ -968,7 +968,7 @@ const puzzles: Puzzle[] = [
         type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [90],
-        score: 0,
+        score: 3,
         data: {
             introduction: {
                 data: [
@@ -990,7 +990,7 @@ const puzzles: Puzzle[] = [
         type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [], // TODO [90]
-        score: 0,
+        score: 3,
         data: {
             introduction: {
                 data: [
