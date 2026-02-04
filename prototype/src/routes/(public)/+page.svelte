@@ -5,7 +5,7 @@
     let modal: Modal
 
     function showModal(): void {
-        if (!isRunning) {
+        if (!isRunning()) {
             modal.openModal()
         } else {
             window.location.href = "/s"

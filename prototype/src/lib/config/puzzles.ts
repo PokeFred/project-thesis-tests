@@ -8,18 +8,6 @@ type Puzzle = {
 }
 
 const puzzles: Puzzle[] = [
-    // {
-    //     id: 0,
-    //     type: "",
-    //     title: "",
-    //     requirements: [],
-    //     score: 0,
-    //     data: {
-    //         introduction: {},
-    //         game: {},
-    //         result: {}
-    //     }
-    // },
     // 10: S01 E00
     // TODO (Cedric) Ort ???
     {
@@ -60,7 +48,7 @@ const puzzles: Puzzle[] = [
         id: 11,
         type: "multiple-choice-puzzle",
         title: "Quiz",
-        requirements: [], // [10]
+        requirements: [10],
         score: 24,
         data: {
             introduction: {
@@ -93,11 +81,12 @@ const puzzles: Puzzle[] = [
         }
     },
     // 12: S01 E02
+    // TODO !!!
     {
         id: 12,
         type: "matching-game-puzzle",
         title: "Zuordnungsspiel",
-        requirements: [], // [10]
+        requirements: [10],
         score: 21,
         data: {
             introduction: {
@@ -176,7 +165,7 @@ const puzzles: Puzzle[] = [
         id: 13,
         type: "drag-drop-puzzle",
         title: "Puzzle",
-        requirements: [], // [10]
+        requirements: [10],
         score: 15,
         data: {
             introduction: {
@@ -228,15 +217,108 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
+    // 21: S02 E01
     {
         id: 21,
         type: "word-guessing-puzzle",
         title: "Bilderrätsel 1",
-        requirements: [], // [20]
+        requirements: [20],
         score: 3,
         data: {
             introduction: {},
-            game: {},
+            game: {
+                questions: [
+                    {
+                        hints: [
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.png", alt: "Tee", caption: "" },
+                            {
+                                tag: "text",
+                                text: {
+                                    crossed: "e",
+                                }
+                            },
+                            { tag: "text", text: { normal: "+" } },  
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.png", alt: "Western", caption: "" },
+                            { tag: "text", text: { crossed: "tern" } },
+                        ],
+                        solution: "Tewes"
+                    }
+                ]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 22,
+        type: "word-guessing-puzzle",
+        title: "Bilderrätsel 2",
+        requirements: [20],
+        score: 3,
+        data: {
+            introduction: {},
+            game: {
+                questions: [
+                    {
+                        hints: [
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.png", alt: "Freundschaft", caption: "" },
+                            { tag: "text", text: { crossed: "schaft" } },
+                            { tag: "text", text: { normal: "+" } },  
+                            { tag: "text", text: { normal: "&" } },
+                            { tag: "text", text: { normal: "+" } },
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.png", alt: "Bauer", caption: "" }
+                        ],
+                        solution: "Freund & Bauer"
+                    }
+                ]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 23,
+        type: "word-guessing-puzzle",
+        title: "Bilderrätsel 3",
+        requirements: [20],
+        score: 3,
+        data: {
+            introduction: {},
+            game: {
+                questions: [
+                    {
+                        hints: [
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.png", alt: "Betten", caption: "" },
+                            { tag: "text", text: { normal: "+" } },  
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.png", alt: "Hut", caption: "" },
+                            { tag: "text", text: { normal: "t" } },  
+                        ],
+                        solution: "Betten Hutt"
+                    }
+                ]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 24,
+        type: "word-guessing-puzzle",
+        title: "Bilderrätsel 4",
+        requirements: [20],
+        score: 3,
+        data: {
+            introduction: {},
+            game: {
+                questions: [
+                    {
+                        hints: [
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.png", alt: "Rüschen", caption: "" },
+                            { tag: "text", text: { normal: "+" } },  
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.png", alt: "Gebäck", caption: "" },
+                            { tag: "text", text: { crossed: "Ge", normal: " + ä=e" } },  
+                        ],
+                        solution: "Rüschenbeck"
+                    }
+                ]
+            },
             result: {}
         }
     },
@@ -279,7 +361,7 @@ const puzzles: Puzzle[] = [
         id: 31,
         type: "text-select-puzzle",
         title: "Lückentext",
-        requirements: [], // [30]
+        requirements: [30],
         score: 21,
         data: {
             introduction: {
@@ -295,7 +377,7 @@ const puzzles: Puzzle[] = [
         id: 32,
         type: "single-choice-puzzle",
         title: "Quiz",
-        requirements: [], // [30]
+        requirements: [30],
         score: 3,
         data: {
             introduction: {
@@ -322,7 +404,7 @@ const puzzles: Puzzle[] = [
         id: 33,
         type: "error-spotting-puzzle",
         title: "Suchbild",
-        requirements: [], // [30]
+        requirements: [30],
         score: 15,
         data: {
             introduction: {
@@ -376,7 +458,7 @@ const puzzles: Puzzle[] = [
         id: 41,
         type: "drag-drop-puzzle",
         title: "Wörter erraten",
-        requirements: [], // [40]
+        requirements: [40],
         score: 9,
         data: {
             introduction: {
@@ -398,7 +480,7 @@ const puzzles: Puzzle[] = [
         id: 42,
         type: "single-choice-puzzle",
         title: "Quiz",
-        requirements: [], // [40]
+        requirements: [40],
         score: 3,
         data: {
             introduction: {
@@ -463,7 +545,7 @@ const puzzles: Puzzle[] = [
         id: 51,
         type: "drag-drop-puzzle",
         title: "Zuordnungsspiel",
-        requirements: [], // [50]
+        requirements: [50],
         score: 15,
         data: {
             introduction: {
@@ -485,7 +567,7 @@ const puzzles: Puzzle[] = [
         id: 52,
         type: "drag-drop-puzzle",
         title: "Puzzle",
-        requirements: [], // [50]
+        requirements: [50],
         score: 12,
         data: {
             introduction: {
@@ -505,13 +587,17 @@ const puzzles: Puzzle[] = [
     },
     {
         id: 53,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Suchaufgabe",
-        requirements: [], // [50]
-        score: 0,
+        requirements: [50],
+        score: 3,
         data: {
             introduction: {},
-            game: {},
+            game: {
+                questions: [
+                    { solution: "Rosendahl" }
+                ]
+            },
             result: {}
         }
     },
@@ -601,7 +687,7 @@ const puzzles: Puzzle[] = [
         id: 71,
         type: "single-choice-puzzle",
         title: "Quiz",
-        requirements: [],
+        requirements: [70],
         score: 3,
         data: {
             introduction: {
@@ -686,7 +772,7 @@ const puzzles: Puzzle[] = [
         id: 81,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // TODO [80]
+        requirements: [80],
         score: 3,
         data: {
             introduction: {
@@ -714,7 +800,7 @@ const puzzles: Puzzle[] = [
         id: 82,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // TODO [80]
+        requirements: [80],
         score: 3,
         data: {
             introduction: {
@@ -742,7 +828,7 @@ const puzzles: Puzzle[] = [
         id: 83,
         type: "single-choice-puzzle",
         title: "Quizfragen",
-        requirements: [], // TODO [80]
+        requirements: [80],
         score: 3,
         data: {
             introduction: {

@@ -77,7 +77,7 @@ const _stations: _Station[] = [
         stitle: "Westenhellweg",
         title: "",
         chapters: "02",
-        puzzles: [20, 21]
+        puzzles: [20, 21, 22, 23, 24]
     },
     {
         id: 3,
