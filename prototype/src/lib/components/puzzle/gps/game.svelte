@@ -24,12 +24,10 @@
         //     console.log(error)
         // }
 
-        /*
         setTimeout((): void => {
             a = true
             setSubmitable()
         }, 1000)
-        */
     }
 
     onMount(() => {

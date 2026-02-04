@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import BackButton from "../../../s/BackButton.svelte"
-    import ScrollButton from "../../../s/ScrollButton.svelte"
+    import BackButton from "$components/BackButton.svelte"
+    import ScrollButton from "$components/ScrollButton.svelte"
     import GpsIntroduction from "$components/puzzle/gps/introduction.svelte"
     import GpsResult from "$components/puzzle/gps/result.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
@@ -24,7 +24,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="text-[16px] font-medium uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton url={`/s/${data.station.id}`} />
+        <BackButton path={`/s/${data.station.id}`} />
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
