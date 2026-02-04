@@ -14,7 +14,6 @@
         setSubmitable()
     })
 
-    // TODO Cedric: introduction nicht vergessen
     const input: Input =  data
 </script>
 
