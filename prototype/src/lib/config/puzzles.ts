@@ -953,7 +953,11 @@ const puzzles: Puzzle[] = [
                     { tag: "p", text: "Trage die Gesamtzahl ein." }
                 ]
             },
-            game: {},
+            game: {
+                questions: [
+                    { solution: "14" }
+                ]
+            },
             result: {}
         }
     },
@@ -971,7 +975,11 @@ const puzzles: Puzzle[] = [
                     { tag: "p", text: "Trage die Gesamtzahl ein." }
                 ]
             },
-            game: {},
+            game: {
+                questions: [
+                    { solution: "6" }
+                ]
+            },
             result: {}
         }
     },
@@ -989,7 +997,11 @@ const puzzles: Puzzle[] = [
                     { tag: "p", text: "Trage die Gesamtzahl ein." }
                 ]
             },
-            game: {},
+            game: {
+                questions: [
+                    { solution: "2" }
+                ]
+            },
             result: {}
         }
     }
