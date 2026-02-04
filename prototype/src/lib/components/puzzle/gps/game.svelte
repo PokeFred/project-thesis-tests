@@ -15,14 +15,18 @@
     export function getSubmitData(): GameOutput { return {} }
     export function getSubmitScore(): number { return 1 }
 
+    function isRange(): boolean {
+        return false
+    }
+
     let a: boolean = $state<boolean>(false)
     async function _fetchLocation(): Promise<void> {
-        // try {
-        //     const _data: UserLocationData = await fetchLocation()
-        //     console.log(_data)
-        // } catch (error: UserLocationError) {
-        //     console.log(error)
-        // }
+        try {
+            const _data: UserLocationData = await fetchLocation()
+            console.log({ _data, data })
+        } catch (error: unknown) {
+            console.log(error)
+        }
 
         setTimeout((): void => {
             a = true
