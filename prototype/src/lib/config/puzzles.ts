@@ -794,7 +794,13 @@ const puzzles: Puzzle[] = [
                     { solution: "Rosendahl" }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    {
+                        solution: "Rosendahl",
+                    }
+                ]
+            }
         }
     },
     // 60: S06 E00
@@ -934,7 +940,11 @@ const puzzles: Puzzle[] = [
                     { solution: "10" }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    { solution: "10" }
+                ]
+            }
         }
     },
     // 80: S08 E00
@@ -1110,7 +1120,11 @@ const puzzles: Puzzle[] = [
                     { solution: "14" }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    { solution: "14" }
+                ]
+            }
         }
     },
     {
@@ -1132,7 +1146,11 @@ const puzzles: Puzzle[] = [
                     { solution: "6" }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    { solution: "6" }
+                ]
+            }
         }
     },
     {
@@ -1154,7 +1172,11 @@ const puzzles: Puzzle[] = [
                     { solution: "2" }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    { solution: "2" }
+                ]
+            }
         }
     }
 ]
