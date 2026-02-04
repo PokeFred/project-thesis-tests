@@ -225,7 +225,12 @@ const puzzles: Puzzle[] = [
         requirements: [20],
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde vier alteingesessene Geschäfte auf dem Westenhellweg, die seit über 100 Jahren bestehen und in Familientradition geführt werden. Löse dafür das Bilderrätsel. " },
+                    { tag: "title", text: "Wenn du nicht weiterkommst, orientiere dich an den Geschäften auf der Straße." }
+                ]
+            },
             game: {
                 questions: [
                     {
@@ -255,7 +260,12 @@ const puzzles: Puzzle[] = [
         requirements: [20],
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde vier alteingesessene Geschäfte auf dem Westenhellweg, die seit über 100 Jahren bestehen und in Familientradition geführt werden. Löse dafür das Bilderrätsel. " },
+                    { tag: "title", text: "Wenn du nicht weiterkommst, orientiere dich an den Geschäften auf der Straße." }
+                ]
+            },
             game: {
                 questions: [
                     {
@@ -281,7 +291,12 @@ const puzzles: Puzzle[] = [
         requirements: [20],
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde vier alteingesessene Geschäfte auf dem Westenhellweg, die seit über 100 Jahren bestehen und in Familientradition geführt werden. Löse dafür das Bilderrätsel. " },
+                    { tag: "title", text: "Wenn du nicht weiterkommst, orientiere dich an den Geschäften auf der Straße." }
+                ]
+            },
             game: {
                 questions: [
                     {
@@ -305,7 +320,12 @@ const puzzles: Puzzle[] = [
         requirements: [20],
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde vier alteingesessene Geschäfte auf dem Westenhellweg, die seit über 100 Jahren bestehen und in Familientradition geführt werden. Löse dafür das Bilderrätsel. " },
+                    { tag: "title", text: "Wenn du nicht weiterkommst, orientiere dich an den Geschäften auf der Straße." }
+                ]
+            },
             game: {
                 questions: [
                     {
