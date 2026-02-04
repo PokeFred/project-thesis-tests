@@ -712,7 +712,9 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" }
+                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "p", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" },
                 ]
             },
             game: {
@@ -737,14 +739,20 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {
+    {   // TODO Cedric: introduction builder nutzen
         id: 72,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Quiz",
         requirements: [], // TODO [70]
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "p", text: "Wie viele Äpfel sind es? Trage die Lösung als Zahl ein." },
+                ]
+            },
             game: {
                 questions: [
                     { solution: "10" }
