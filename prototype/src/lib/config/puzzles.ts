@@ -915,26 +915,56 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
-    {
+    {   // TODO cedric: introduction builder nehmen
         id: 91,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [], // TODO [90]
         score: 0,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle alle Rolltreppen in der Thier-Galerie." },
+                    { tag: "p", text: "Eine Rolltreppe nach oben = 1, eine nach unten = 1." },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
             game: {},
             result: {}
         }
     },
     {
         id: 92,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [], // TODO [90]
         score: 0,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle die Säulen am Eingang Westenhellweg der Thier-Galerie." },
+                    { tag: "p", text: "Wie viele runde Säulen siehst du?" },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 93,
+        type: "word-guessing-puzzle",
+        title: "Suchaufgabe",
+        requirements: [], // TODO [90]
+        score: 0,
+        data: {
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle die Säulen am Eingang Westenhellweg der Thier-Galerie." },
+                    { tag: "p", text: "Wie viele eckige Säulen siehst du?" },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
             game: {},
             result: {}
         }
