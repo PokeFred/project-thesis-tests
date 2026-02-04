@@ -1212,7 +1212,9 @@ const puzzles: Puzzle[] = [
         requirements: [], // [60]
         score: 0,
         data: {
-            introduction: {},
+            introduction: {
+                text: ["Ordne die Farbkombinationen den richtigen Filialketten zu.", "Es sind die aktuellen Logo-Farben von DM, EDEKA, H&M, C&A und LIDL."]
+            },
             game: {
                 content: [
                     {
