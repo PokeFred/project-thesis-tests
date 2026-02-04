@@ -249,7 +249,46 @@ const puzzles: Puzzle[] = [
                     }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    {
+                        hints: [
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_01/game/image_00.png",
+                                alt: "Tee",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    crossed: "e",
+                                }
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },  
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_01/game/image_01.png",
+                                alt: "Western",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    crossed: "tern"
+                                }
+                            },  
+                        ],
+                        solution: "Tewes",
+                        solutionText: "Lösung: Tee (-e) + Western (-tern) = Tewes"
+                    }
+                ]
+            }
         }
     },
     {
@@ -280,7 +319,52 @@ const puzzles: Puzzle[] = [
                     }
                 ]
             },
-            result: {}
+            result: {
+                 questions: [
+                    {
+                        hints: [
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_02/game/image_00.png",
+                                alt: "Freundschaft",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    crossed: "schaft"
+                                }
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },  
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "&"
+                                }
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_02/game/image_01.png",
+                                alt: "Bauer",
+                                caption: ""
+                            }
+                        ],
+                        solution: "Freund & Bauer",
+                        solutionText: "Lösung: Freundschaft (-schaft) + & + Bauer = Freund & Bauer"
+                    }
+                ]
+            }
         }
     },
     {
@@ -309,7 +393,40 @@ const puzzles: Puzzle[] = [
                     }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    {
+                        hints: [
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_03/game/image_00.png",
+                                alt: "Betten",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },  
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_03/game/image_01.png",
+                                alt: "Hut",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "t"
+                                }
+                            },  
+                        ],
+                        solution: "Betten Hutt",
+                        solutionText: "Betten + Hut (t) = Betten Hutt"
+                    }
+                ]
+            }
         }
     },
     {
@@ -338,7 +455,41 @@ const puzzles: Puzzle[] = [
                     }
                 ]
             },
-            result: {}
+            result: {
+                questions: [
+                    {
+                        hints: [
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_04/game/image_00.png",
+                                alt: "Rüschen",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },  
+                            {
+                                tag: "img",
+                                src: "/station_02/raetsel_04/game/image_01.png",
+                                alt: "Gebäck",
+                                caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    crossed: "Ge",
+                                    normal: " + ä=e"
+                                }
+                            },  
+                        ],
+                        solution: "Rüschenbeck",
+                        solutionText: "Rüschen + (-Ge)b(ä=e)ck = Rüschenbeck"
+                    }
+                ]
+            }
         }
     },
     // 30: S03 E00
