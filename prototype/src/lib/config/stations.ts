@@ -133,7 +133,7 @@ const _stations: _Station[] = [
         stitle: "Thier-Galerie",
         title: "",
         chapters: "09",
-        puzzles: [90, 91, 92]
+        puzzles: [90, 91, 92, 93]
     },
     {
         id: 10,
