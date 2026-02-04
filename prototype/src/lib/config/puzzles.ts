@@ -1217,7 +1217,7 @@ const puzzles: Puzzle[] = [
                 content: [
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_00.svg",
                         alt: "Blau Rot Gelb",
                     },
                     {
@@ -1237,7 +1237,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_01.svg",
                         alt: "Weiß Rot",
                     },
                     {
@@ -1257,7 +1257,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_02.svg",
                         alt: "Weiß Blau Rot",
                     },
                     {
@@ -1277,7 +1277,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_03.svg",
                         alt: "Blau Gelb",
                     },
                     {
@@ -1297,7 +1297,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_04.svg",
                         alt: "Blau Gelb Rot Weiß",
                     },
                     {
@@ -1321,7 +1321,7 @@ const puzzles: Puzzle[] = [
                 content: [
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_00.svg",
                         alt: "Blau Rot Gelb",
                     },
                     {
@@ -1341,7 +1341,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_01.svg",
                         alt: "Weiß Rot",
                     },
                     {
@@ -1361,7 +1361,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_02.svg",
                         alt: "Weiß Blau Rot",
                     },
                     {
@@ -1381,7 +1381,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_03.svg",
                         alt: "Blau Gelb",
                     },
                     {
@@ -1401,7 +1401,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "",
+                        src: "/station_06/raetsel_01/image_04.svg",
                         alt: "Blau Gelb Rot Weiß",
                     },
                     {
