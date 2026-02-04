@@ -13,8 +13,8 @@
         "title": "Der Dortmunder Markt",
         "data": [
             { "type": "paragraph", "text": "Dortmund besitzt eines der ältesten Marktrechte Westfalens: Bereits 990 ist ein Wochenmarkt urkundlich belegt. Im Jahr 1232 verlieh König Heinrich VII. der Stadt Dortmund das Recht, einen zweiten jährlichen Markt abzuhalten. Hier verkauften Menschen aus Landwirtschaft, Handwerk und Handel Lebensmittel, Wolle, Lederwaren oder Tuch. Die Stadtbevölkerung konnte so ihre Versorgung sichern." },
-            { "type": "image", "src": "", "alt": "", "caption": "(Wochenmarkt um 1900, Ostseite, F 1994.402, MKK, Joana Maibach)." },
-            { "type": "image", "src": "", "alt": "", "caption": "(Wochenmarkt um 1900, Westseite, F 1994.403, MKK, Joana Maibach)." },
+            { "type": "image", "src": "", "alt": "", "caption": { "caption": "Wochenmarkt um 1900, Ostseite, F 1994.402, MKK", "src": "Joana Maibach" }},
+            { "type": "image", "src": "", "alt": "", "caption": { "caption": "Wochenmarkt um 1900, Ostseite, F 1994.402, MKK", "src": "Joana Maibach" }},
             { "type": "paragraph", "text": "Der erste Dortmunder Marktplatz lag vermutlich an der Reinoldikirche, nahe dem damals ersten gebauten Rathaus. Durch den großen Stadtbrand von 1232 wurden jedoch sowohl ein Vorgängerbau der Reinoldikirche als auch dieses erste Rathaus zerstört. Einige Jahrzehnte später entstand die heutige Reinoldikirche und der Markt erhielt einen neuen Standort. Dort entstand ein rechteckiger Platz von etwa 100 × 60 Metern, von dem wichtige Straßen in alle Teile der Stadt und in die umliegende Region führten. Mit dieser Neuordnung gewann Dortmund deutlich an Bedeutung als Handelsstadt. Immer mehr Kaufleute und eine wachsende Käuferschaft kamen in die Stadt." }
         ]
     }
