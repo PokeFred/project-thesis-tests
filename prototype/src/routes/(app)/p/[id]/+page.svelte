@@ -137,7 +137,7 @@
         <DragDropGame bind:this={dragDrop} data={data.game} setSubmitable={setSubmitable} bind:skipIntroduction={skipIntroduction} />
     {/if}
     {#if data.puzzle.type === "error-spotting-puzzle"}
-        <ErrorSpottingIntroduction data={data.introduction} />
+        <Introduction data={data.introduction.data} />
         <ErrorSpottingGame bind:this={errorSpotting} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if data.puzzle.type === "word-guessing-puzzle"}
