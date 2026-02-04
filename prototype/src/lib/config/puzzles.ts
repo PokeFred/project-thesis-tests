@@ -712,7 +712,9 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" }
+                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "p", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" },
                 ]
             },
             game: {
@@ -737,14 +739,20 @@ const puzzles: Puzzle[] = [
             }
         }
     },
-    {
+    {   // TODO Cedric: introduction builder nutzen
         id: 72,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Quiz",
         requirements: [], // TODO [70]
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "p", text: "Wie viele Äpfel sind es? Trage die Lösung als Zahl ein." },
+                ]
+            },
             game: {
                 questions: [
                     { solution: "10" }
@@ -907,26 +915,56 @@ const puzzles: Puzzle[] = [
             result: {}
         }
     },
-    {
+    {   // TODO cedric: introduction builder nehmen
         id: 91,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [], // TODO [90]
         score: 0,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle alle Rolltreppen in der Thier-Galerie." },
+                    { tag: "p", text: "Eine Rolltreppe nach oben = 1, eine nach unten = 1." },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
             game: {},
             result: {}
         }
     },
     {
         id: 92,
-        type: "placeholder-puzzle",
+        type: "word-guessing-puzzle",
         title: "Suchaufgabe",
         requirements: [], // TODO [90]
         score: 0,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle die Säulen am Eingang Westenhellweg der Thier-Galerie." },
+                    { tag: "p", text: "Wie viele runde Säulen siehst du?" },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
+            game: {},
+            result: {}
+        }
+    },
+    {
+        id: 93,
+        type: "word-guessing-puzzle",
+        title: "Suchaufgabe",
+        requirements: [], // TODO [90]
+        score: 0,
+        data: {
+            introduction: {
+                data: [
+                    { tag: "title", text: "Zähle die Säulen am Eingang Westenhellweg der Thier-Galerie." },
+                    { tag: "p", text: "Wie viele eckige Säulen siehst du?" },
+                    { tag: "p", text: "Trage die Gesamtzahl ein." }
+                ]
+            },
             game: {},
             result: {}
         }
