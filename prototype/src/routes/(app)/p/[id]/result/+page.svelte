@@ -17,6 +17,7 @@
     import WordGuessingResult from "$components/puzzle/wordGuessing/result.svelte"
     import SingleChoiceIntroduction from "$components/puzzle/singleChoice/introduction.svelte"
     import SingleChoiceResult from "$components/puzzle/singleChoice/result.svelte"
+    import Introduction from "$components/puzzle/introductionBuilder/introduction.svelte";
 
     let { data }: PageProps = $props()
 </script>
@@ -43,7 +44,7 @@
         <MatchingGameResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "single-choice-puzzle"}
-        <SingleChoiceIntroduction data={data.introduction} />
+        <Introduction data={data.introduction.data} />
         <SingleChoiceResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "multiple-choice-puzzle"}
@@ -55,11 +56,11 @@
         <DragDropResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "error-spotting-puzzle"}
-        <ErrorSpottingIntroduction data={data.introduction} />
+        <Introduction data={data.introduction.data} />
         <ErrorSpottingResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "word-guessing-puzzle"}
-        <WordGuessingIntroduction data={data.introduction} />
+        <Introduction data={data.introduction.data} />
         <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
     <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>

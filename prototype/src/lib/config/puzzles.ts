@@ -401,7 +401,10 @@ const puzzles: Puzzle[] = [
         score: 3,
         data: {
             introduction: {
-                text: ["In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet? "]
+                data: [
+                    { tag: "title", text: `In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?` },
+                    { tag: "img", src: "/station_03/raetsel_02/image_00.jpg", alt: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff (Stadtarchiv Dortmund).", caption: { caption: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff", src: "Stadtarchiv Dortmund" }},
+                ]
             },
             game: {
                 answers: [
@@ -428,8 +431,9 @@ const puzzles: Puzzle[] = [
         score: 15,
         data: {
             introduction: {
-                title: "",
-                description: []
+                data: [
+                    { tag: "title", text: `Du siehst ein Inserat von Meyer & Günther aus der Dortmunder Zeitung von 1929. Das rechte Bild ist das Original. Klicke im linken Bild auf die fünf Unterschiede. Zusammengehörige Details zählen jeweils als ein Unterschied.` },
+                ]
             },
             game: {
                 path: "/station_03/raetsel_03/game"
