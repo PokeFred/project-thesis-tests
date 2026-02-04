@@ -592,7 +592,27 @@ const puzzles: Puzzle[] = [
         requirements: [50],
         score: 3,
         data: {
-            introduction: {},
+            introduction: {
+                data: [
+                    {
+                        tag: "title",
+                        text: "Wie hießen die Inhaber der ehemaligen Kolonialwarenhandlung, die ihren Firmensitz hier am Hafen hatten? "
+                    },
+                    {
+                        tag: "p",
+                        text: "Suche in der Speicherstraße zwischen den Hausnummern 1 und 21 nach dem Namen und trage die Lösung in das Kästchen ein."
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_05/raetsel_03/image_00.jpg",
+                        alt: "Foto: Sophie Ullrich",
+                        caption: {
+                            caption: "",
+                            src: "Foto: Sophie Ullrich"
+                        }
+                    }
+                ]
+            },
             game: {
                 questions: [
                     { solution: "Rosendahl" }

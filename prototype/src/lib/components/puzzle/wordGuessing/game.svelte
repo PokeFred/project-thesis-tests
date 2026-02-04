@@ -17,15 +17,6 @@
     // TODO Cedric: introduction nicht vergessen
     const input: Input =  data
 
-    // TODO cedric: Station 5 Rätsel 3 game
-    // const input: Input =  {
-    //     questions: [
-    //         {
-    //             solution: "Rosendahl"
-    //         }
-    //     ]
-    // }
-
     // TODO cedric: station 7 rätsel 2 game
     // const input: Input =  {
     //     questions: [
