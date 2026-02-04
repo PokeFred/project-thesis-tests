@@ -9,7 +9,7 @@ export default class ErrorSpottingController {
     private readonly resultOnly: boolean;
     private readonly errorFieldMarkMap: Map<Konva.Arc, Field>;
 
-    constructor(container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[], resultOnly: boolean) {
+    constructor(container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[][], resultOnly: boolean) {
         this.canvas = new Canvas(this, container, image, errorPaths);
         this.errorSpotting = new ErrorSpotting(errorPaths);
         this.resultOnly = resultOnly;

@@ -11,7 +11,7 @@ export default class Canvas {
 
     private gameField: GameField;
 
-    constructor(controller: Controller, container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[]) {
+    constructor(controller: Controller, container: HTMLDivElement, image: HTMLImageElement, errorPaths: string[][]) {
         this.controller = controller;
         this.container = container;
         this.stage = new Konva.Stage({
@@ -47,7 +47,7 @@ class GameField {
 
     private readonly errorMarks: Konva.Arc[];
 
-    constructor(canvas: Canvas, image: HTMLImageElement, errorPaths: string[]) {
+    constructor(canvas: Canvas, image: HTMLImageElement, errorPaths: string[][]) {
         this.canvas = canvas;
         this.stage = this.canvas.Stage;
         this.layer = this.canvas.GameLayer;
@@ -62,7 +62,7 @@ class GameField {
         this.field.on("touchend", this.panAndZoom.touchend.bind(this.panAndZoom));
         this.field.on("touchmove", this.panAndZoom.touchmove.bind(this.panAndZoom));
 
-        this.errorMarks = errorPaths.map((path: string) => this.createMark(this.createErrorField(path)));
+        this.errorMarks = errorPaths.flat().map((path: string) => this.createMark(this.createErrorField(path)));
     }
 
     public get ErrorMarks() { return this.errorMarks; }
