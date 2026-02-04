@@ -12,19 +12,19 @@ export type AccordionQuestionAnswer = AccordionQuestionAnswerSubtitle | Accordio
 
 export type AccordionQuestionAnswerSubtitle = {
     type: "subtitle",
-    content: text
+    text: string
 }
 
 export type AccordionQuestionAnswerParagraph = {
     type: "paragraph",
-    content: text
+    text: string
 }
 
 export type AccordionQuestionAnswerImage = {
     type: "image",
     src: string,
     alt: string,
-    caption: string
+    caption: { caption: string, src: string }
 }
 
 export type AccordionSeperator = {

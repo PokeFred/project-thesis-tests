@@ -7,6 +7,7 @@
 
     let { question }: { question: AccordionQuestion } = $props()
     let open: boolean = $state<boolean>(false)
+    console.log(question)
 </script>
 
 <details bind:open={open}>
@@ -26,9 +27,9 @@
     {#each question.answer as element}
         <div class="mb-7.5 px-2 text-[18px] leading-6">
             {#if element.type === "subtitle"}
-                <div class="font-medium">{element.content}</div>
+                <div class="font-medium">{element.text}</div>
             {:else if element.type === "paragraph"}
-                <div class="font-medium">{element.content}</div>
+                <div class="font-medium">{element.text}</div>
             {:else}
                 <figure class="my-10 -mx-6">
                     <Fullscreen>
@@ -36,8 +37,8 @@
                     </Fullscreen>
                     {#if element.caption}
                         <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
-                            <span class="mb-2 text-[16px] leading-4">{element.caption}</span>
-                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{element.caption}</span>
+                            <span class="mb-2 text-[16px] leading-4">{element.caption?.caption}</span>
+                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{element.caption?.src}</span>
                         </figcaption>
                     {/if}
                 </figure>
