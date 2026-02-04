@@ -1210,7 +1210,7 @@ const puzzles: Puzzle[] = [
         type: "text-select-puzzle",
         title: "Zuordnungsspiel",
         requirements: [], // [60]
-        score: 0,
+        score: 15,
         data: {
             introduction: {
                 text: ["Ordne die Farbkombinationen den richtigen Filialketten zu.", "Es sind die aktuellen Logo-Farben von DM, EDEKA, H&M, C&A und LIDL."]
