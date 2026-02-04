@@ -6,8 +6,9 @@
     import type { Answer } from "./Cloze.svelte";
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
+    import type { SavingData } from "$components/puzzle/textSelect";
 
-    const { result }: { result: Result } = $props();
+    const { result, saving }: { result: Result; saving: SavingData } = $props();
 
     const correctAnswers: Answer[] = new Array<Answer>();
 
@@ -51,8 +52,8 @@
                         <span class="mr-5"><Icon data={angleDown} scale={2}/></span>
                     </span>
                     <span class="flex justify-between items-center h-8 mb-5 -mx-5.5 pl-8.5 pr-7.5 bg-secondary text-primary text-[16px] leading-6">
-                        <span class="font-bold  tracking-[0.96px]">Du hast {result.selected ? (result.selected[i] == correctAnswers[i] ? "RICHTIG" : "FALSCH") : "FALSCH"} getippt</span>
-                        <span class="font-medium">{result.selected ? (result.selected[i] == correctAnswers[i] ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE) : POINTS.NOT_ANSWERED}/{POINTS.ANSWER_CORRECT}</span>
+                        <span class="font-bold  tracking-[0.96px]">Du hast {saving.selected[i] ? (saving.selected[i].correct ? "RICHTIG" : "FALSCH") : "FALSCH"} getippt</span>
+                        <span class="font-medium">{saving.selected[i] ? (saving.selected[i].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE) : POINTS.NOT_ANSWERED}/{POINTS.ANSWER_CORRECT}</span>
                     </span>
                 {/if}
             {/each}

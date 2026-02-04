@@ -18,6 +18,8 @@
     import SingleChoiceIntroduction from "$components/puzzle/singleChoice/introduction.svelte"
     import SingleChoiceResult from "$components/puzzle/singleChoice/result.svelte"
     import Introduction from "$components/puzzle/introductionBuilder/introduction.svelte";
+    import TextSelectIntroduction from "$components/puzzle/textSelect/introduction.svelte"
+    import TextSelectResult from "$components/puzzle/textSelect/result.svelte"
 
     let { data }: PageProps = $props()
 </script>
@@ -38,6 +40,10 @@
     {#if data.puzzle.type === "gps-puzzle"}
         <GpsIntroduction data={data.introduction} />
         <GpsResult data={data.result} />
+    {/if}
+    {#if data.puzzle.type === "text-select-puzzle"}
+        <TextSelectIntroduction data={data.introduction} />
+        <TextSelectResult result={data.result} saving={data.saving} />
     {/if}
     {#if data.puzzle.type === "matching-game-puzzle"}
         <MatchingGameIntroduction data={data.introduction} />
