@@ -22,7 +22,10 @@ export type Hint = {
     tag: "img"
     src: string,
     alt: string,
-    caption: string,
+    caption?: {
+        caption?: string,
+        src?: string
+    }
 } | {
     tag: "text",
     text: {

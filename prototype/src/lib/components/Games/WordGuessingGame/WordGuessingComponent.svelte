@@ -24,7 +24,12 @@
                                 <Fullscreen>
                                     <img src={hint.src} alt={hint.alt}>
                                 </Fullscreen>
-                                <figcaption>{hint.caption}</figcaption>
+                                {#if hint.caption}
+                                    <figcaption class="flex flex-col mx-4.5 mt-3 font-medium text-left">
+                                        <span class="mb-2 text-[16px] leading-4">{hint.caption?.caption}</span>
+                                        <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{hint.caption?.src}</span>
+                                    </figcaption>
+                                {/if}
                             </figure>
                         {:else if hint.tag === "text"}
                             <p class="self-center">{#if hint.text.crossed}<span class="crossed">{hint.text.crossed}</span>{/if}{hint.text.normal}</p>

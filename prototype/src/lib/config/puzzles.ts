@@ -234,7 +234,7 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.jpg", alt: "Tee", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.jpg", alt: "Tee" },
                             {
                                 tag: "text",
                                 text: {
@@ -242,7 +242,7 @@ const puzzles: Puzzle[] = [
                                 }
                             },
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.jpg", alt: "Western", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.jpg", alt: "Western" },
                             { tag: "text", text: { crossed: "tern" } },
                         ],
                         solution: "Tewes"
@@ -257,7 +257,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_01/game/image_00.jpg",
                                 alt: "Tee",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -275,7 +274,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_01/game/image_01.jpg",
                                 alt: "Western",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -308,12 +306,12 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.jpg", alt: "Freundschaft", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.jpg", alt: "Freundschaft" },
                             { tag: "text", text: { crossed: "schaft" } },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "&" } },
                             { tag: "text", text: { normal: "+" } },
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer", caption: "" }
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer" }
                         ],
                         solution: "Freund & Bauer"
                     }
@@ -327,7 +325,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_02/game/image_00.jpg",
                                 alt: "Freundschaft",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -357,7 +354,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_02/game/image_01.jpg",
                                 alt: "Bauer",
-                                caption: ""
                             }
                         ],
                         solution: "Freund & Bauer",
@@ -384,11 +380,11 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.jpg", alt: "Betten", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.jpg", alt: "Betten" },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "en" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.jpg", alt: "Hut", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.jpg", alt: "Hut" },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "t" } },  
                         ],
@@ -404,7 +400,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_03/game/image_00.jpg",
                                 alt: "Betten",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -428,7 +423,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_03/game/image_01.jpg",
                                 alt: "Hut",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -467,10 +461,10 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.jpg", alt: "Rüschen", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.jpg", alt: "Rüschen" },
                             { tag: "text", text: { crossed: "sel", normal: " + chen" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.jpg", alt: "Gebäck", caption: "" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.jpg", alt: "Gebäck" },
                             { tag: "text", text: { crossed: "Ge", normal: " + ä=e" } },  
                         ],
                         solution: "Rüschenbeck"
@@ -485,7 +479,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_04/game/image_00.jpg",
                                 alt: "Rüschen",
-                                caption: ""
                             },
                             { 
                                 tag: "text", 
@@ -504,7 +497,6 @@ const puzzles: Puzzle[] = [
                                 tag: "img",
                                 src: "/station_02/raetsel_04/game/image_01.jpg",
                                 alt: "Gebäck",
-                                caption: ""
                             },
                             {
                                 tag: "text",
@@ -1040,7 +1032,7 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: `Welche Lebensmittel gehörten zu den sogenannten Kolonialwaren? Finde das eine Produkt, was hier nicht stimmt!` },
+                    { tag: "title", text: `Welches Produkt gehörte NICHT zu den sogenannten Kolonialwaren?` },
                 ]
             },
             game: {
@@ -1159,15 +1151,6 @@ const puzzles: Puzzle[] = [
                         tag: "p",
                         text: "Suche in der Speicherstraße zwischen den Hausnummern 1 und 21 nach dem Namen und trage die Lösung in das Kästchen ein."
                     },
-                    {
-                        tag: "img",
-                        src: "/station_05/raetsel_03/image_00.jpg",
-                        alt: "Foto: Sophie Ullrich",
-                        caption: {
-                            caption: "",
-                            src: "Foto: Sophie Ullrich"
-                        }
-                    }
                 ]
             },
             game: {
@@ -1177,8 +1160,19 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 questions: [
-                    {
-                        solution: "Rosendahl",
+                    { 
+                        hints: [
+                            {
+                                tag: "img",
+                                src: "/station_05/raetsel_03/image_00.jpg",
+                                alt: "Foto: Sophie Ullrich",
+                                caption: {
+                                    caption: "",
+                                    src: "Foto: Sophie Ullrich"
+                                }
+                            }
+                        ],
+                        solution: "Rosendahl" 
                     }
                 ]
             }
