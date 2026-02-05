@@ -1477,7 +1477,7 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
                     { tag: "img", src: "/station_07/image_00.png" },
                     { tag: "p", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" },
                 ]
@@ -1513,7 +1513,7 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, der ins Ziel führt und dabei am meisten Äpfel einsammelt." },
+                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
                     { tag: "img", src: "/station_07/image_00.png" },
                     { tag: "p", text: "Wie viele Äpfel sind es? Trage die Lösung als Zahl ein." },
                 ]
