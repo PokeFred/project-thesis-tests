@@ -15,7 +15,7 @@ export default class WordGuessing implements Quiz<SavingData> {
 
     public isComplete(): boolean {
         for (let i = 0; i < this.inputs.length; i++) {
-            if (this.inputs[i].length <= 0) {
+            if (this.inputs[i].trim().length <= 0) {
                 return false;
             }
         }            
