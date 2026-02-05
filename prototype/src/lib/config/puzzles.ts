@@ -1025,7 +1025,7 @@ const puzzles: Puzzle[] = [
                 caption: ""
             },
             result: {
-                img: "/station_04/raetsel_01/game/Background.png",
+                img: "/station_04/raetsel_01/result/Background.png",
                 caption: "",
                 scoreDescription: "Wörtern richtig"
             }
