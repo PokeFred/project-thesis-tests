@@ -385,9 +385,11 @@ const puzzles: Puzzle[] = [
                     {
                         hints: [
                             { tag: "img", src: "/station_02/raetsel_03/game/image_00.jpg", alt: "Betten", caption: "" },
+                            { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "en" } },  
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "img", src: "/station_02/raetsel_03/game/image_01.jpg", alt: "Hut", caption: "" },
+                            { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "t" } },  
                         ],
                         solution: "Betten Hutt"
@@ -404,6 +406,12 @@ const puzzles: Puzzle[] = [
                                 alt: "Betten",
                                 caption: ""
                             },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
+                            },  
                             { 
                                 tag: "text", 
                                 text: { 
@@ -421,6 +429,12 @@ const puzzles: Puzzle[] = [
                                 src: "/station_02/raetsel_03/game/image_01.jpg",
                                 alt: "Hut",
                                 caption: ""
+                            },
+                            {
+                                tag: "text",
+                                text: {
+                                    normal: "+"
+                                }
                             },
                             {
                                 tag: "text",
