@@ -245,7 +245,7 @@ const puzzles: Puzzle[] = [
                             { tag: "img", src: "/station_02/raetsel_01/game/image_01.jpg", alt: "Western" },
                             { tag: "text", text: { crossed: "tern" } },
                         ],
-                        solution: "Tewes"
+                        solutions: ["Tewes"]
                     }
                 ]
             },
@@ -313,7 +313,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: { normal: "+" } },
                             { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer" }
                         ],
-                        solution: "Freund & Bauer"
+                        solutions: ["Freund & Bauer"]
                     }
                 ]
             },
@@ -388,7 +388,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "t" } },  
                         ],
-                        solution: "Betten Hutt"
+                        solutions: ["Betten Hutt"]
                     }
                 ]
             },
@@ -467,7 +467,7 @@ const puzzles: Puzzle[] = [
                             { tag: "img", src: "/station_02/raetsel_04/game/image_01.jpg", alt: "Gebäck" },
                             { tag: "text", text: { crossed: "Ge", normal: " + ä=e" } },  
                         ],
-                        solution: "Rüschenbeck"
+                        solutions: ["Rüschenbeck"]
                     }
                 ]
             },
@@ -1155,7 +1155,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 questions: [
-                    { solution: "Rosendahl" }
+                    { solutions: ["Rosendahl", "Gebr. Rosendahl"] }
                 ]
             },
             result: {
@@ -1520,7 +1520,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 questions: [
-                    { solution: "10" }
+                    { solutions: ["10"] }
                 ]
             },
             result: {
@@ -1700,7 +1700,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 questions: [
-                    { solution: "14" }
+                    { solutions: ["14"] }
                 ]
             },
             result: {
@@ -1726,7 +1726,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 questions: [
-                    { solution: "6" }
+                    { solutions: ["6"] }
                 ]
             },
             result: {
@@ -1752,7 +1752,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 questions: [
-                    { solution: "2" }
+                    { solutions: ["2"] }
                 ]
             },
             result: {

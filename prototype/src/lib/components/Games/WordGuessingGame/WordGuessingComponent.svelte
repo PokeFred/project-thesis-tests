@@ -5,7 +5,7 @@
 
     const { input }: { input: GameInput } = $props();
 
-    const solutions: string[] = input.questions.map((question: Question) => question.solution);
+    const solutions: string[][] = input.questions.map((question: Question) => question.solutions);
 
     const wordGuessingGame: WordGuessing = new WordGuessing(solutions);
 

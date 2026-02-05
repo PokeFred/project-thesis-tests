@@ -3,7 +3,7 @@ export type IntroductionData = {
 }
 
 export type GameData = {
-    questions: { solution: string, hints: any[] }[]
+    questions: { solutions: string[], hints: any[] }[]
 }
 
 export type ResultData = {

@@ -35,6 +35,6 @@ export type Hint = {
 }
 
 export type Question = {
-    solution: string,
+    solutions: string[],
     hints?: Hint[]
 }
