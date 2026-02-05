@@ -24,6 +24,7 @@
     const cloze: Cloze = new Cloze(options);
     let selectElementCounter: number = 0; 
 
+    export const isComplete = cloze.isComplete.bind(cloze);
     export const getSubmitData = cloze.complete.bind(cloze);
     export const getSubmitScore = cloze.score.bind(cloze);
 </script>

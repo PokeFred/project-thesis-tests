@@ -1,3 +1,4 @@
+
 export const enum POINTS {
     ANSWER_CORRECT = 3,
     ANSWER_FALSE = 0,
@@ -5,6 +6,7 @@ export const enum POINTS {
 }
 
 export interface Quiz<GameOutput> {
+    isComplete(): boolean;
     complete(): GameOutput;
     score(): number;
 }

@@ -14,6 +14,15 @@ export default class MultipleChoice implements Quiz<SavingData> {
     public get Options() { return this.options; }
     public get Selected() { return this.selected; }
 
+    public isComplete(): boolean {
+        for (let i = 0; i < this.selected.length; i++) {
+            if (this.selected[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public score(): number {
         return this.options.reduce((sum: number, answer: Answer, i: number) => {
             if(this.selected[i]) {

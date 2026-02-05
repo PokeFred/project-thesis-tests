@@ -5,6 +5,7 @@
     let { input } : { input: Input } = $props()
     const multipleChoice: MultipleChoice = new MultipleChoice(input.options)
 
+    export const isComplete = multipleChoice.isComplete.bind(multipleChoice);
     export const getSubmitData = multipleChoice.complete.bind(multipleChoice)
     export const getSubmitScore = multipleChoice.score.bind(multipleChoice)
 </script>

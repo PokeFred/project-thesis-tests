@@ -13,6 +13,15 @@ export default class WordGuessing implements Quiz<SavingData> {
     public get Solutions() { return this.solutions; }
     public get Inputs() { return this.inputs; }
 
+    public isComplete(): boolean {
+        for (let i = 0; i < this.inputs.length; i++) {
+            if (this.inputs[i].length <= 0) {
+                return false;
+            }
+        }            
+        return true;
+    }
+
     public complete(): SavingData {
         return { match: this.inputs.map((input: string, i) => this.isCorrect(i)) } satisfies SavingData;
     }

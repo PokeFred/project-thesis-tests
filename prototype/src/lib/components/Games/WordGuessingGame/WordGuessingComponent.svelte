@@ -9,6 +9,7 @@
 
     const wordGuessingGame: WordGuessing = new WordGuessing(solutions);
 
+    export const isComplete = wordGuessingGame.isComplete.bind(wordGuessingGame);
     export const getSubmitData = wordGuessingGame.complete.bind(wordGuessingGame);
     export const getSubmitScore = wordGuessingGame.score.bind(wordGuessingGame);
 </script>

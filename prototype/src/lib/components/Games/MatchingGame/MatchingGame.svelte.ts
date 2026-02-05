@@ -18,6 +18,15 @@ export default class MatchingGame implements Quiz<GameOutput> {
     public get Pairs() { return this.pairs; }
     public get Selected() { return this.selected; }
 
+    public isComplete(): boolean {
+        for (let i = 0; i < this.selected.length; i++) {
+            if (!this.selected[i]) {
+                return false;
+            }            
+        }
+        return true;
+    }
+
     public score(): number {
         return this.selected.reduce((sum: number, sel: string, i: number) => {
             return sum + (sel === this.pairs[i].right ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE)

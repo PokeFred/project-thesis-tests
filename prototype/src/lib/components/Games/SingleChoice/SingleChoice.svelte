@@ -6,6 +6,7 @@
 
     const singleChoice: SingleChoice = new SingleChoice(input.options as Answer[]);
 
+    export const isComplete = singleChoice.isComplete.bind(singleChoice);
     export const getSubmitData = singleChoice.complete.bind(singleChoice);
     export const getSubmitScore = singleChoice.score.bind(singleChoice);
 </script>

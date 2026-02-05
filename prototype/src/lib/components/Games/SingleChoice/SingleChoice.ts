@@ -14,6 +14,13 @@ export default class SingleChoice implements Quiz<SavingData> {
     public get Selected() { return this.selected; }
     public set Selected(selected: number | undefined) { this.selected = selected; }
 
+    public isComplete(): boolean {
+        if (this.selected) {
+            return true;
+        }
+        return false;
+    }
+
     public score(): number {
         return this.selected !== undefined ? (this.options[this.selected].correct ? POINTS.ANSWER_CORRECT : POINTS.ANSWER_FALSE) : POINTS.NOT_ANSWERED;
     }

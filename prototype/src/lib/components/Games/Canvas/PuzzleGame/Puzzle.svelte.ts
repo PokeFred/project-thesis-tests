@@ -96,6 +96,15 @@ export default class Puzzle implements Quiz<SavingData> {
     public get Slots() { return this.slots; }
     public get Pieces() { return this.pieces; }
 
+    public isComplete(): boolean {
+        for (let i = 0; i < this.slots.length; i++) {
+            if (!this.slots[i].Selected) {
+                return false;
+            }            
+        }
+        return true;
+    }
+
     public score(): number {
         let score: number = 0;
         this.groups.forEach((group: Group, key: number | undefined) => {

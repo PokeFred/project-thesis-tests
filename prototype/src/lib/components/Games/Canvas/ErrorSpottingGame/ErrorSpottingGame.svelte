@@ -25,6 +25,7 @@
         });
     }
 
+    export const isComplete = () => controller.ErrorSpotting.isComplete();
     export const getSubmitData = () => controller.ErrorSpotting.complete();
     export const getSubmitScore = () => controller.ErrorSpotting.score();
 </script>

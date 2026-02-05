@@ -59,6 +59,15 @@ export default class ErrorSpotting implements Quiz<SavingData> {
 
     public get Errors() { return this.errors; }
 
+    public isComplete(): boolean {
+        for (let i = 0; i < this.errors.length; i++) {
+            if (!this.errors[i].Selected) {
+                return false;
+            }
+        } 
+        return true;
+    }
+
     public complete(): SavingData {
         return {
             total: this.groups.length,

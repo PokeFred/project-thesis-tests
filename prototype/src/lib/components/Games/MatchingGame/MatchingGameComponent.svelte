@@ -7,6 +7,8 @@
 
     const matchingGame: MatchingGame = new MatchingGame(input.pairs);
 
+
+    export const isComplete = matchingGame.isComplete.bind(matchingGame);
     export const getSubmitData = matchingGame.complete.bind(matchingGame);
     export const getSubmitScore = matchingGame.score.bind(matchingGame);
 </script>

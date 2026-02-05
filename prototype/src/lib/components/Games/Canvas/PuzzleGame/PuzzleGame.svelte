@@ -41,6 +41,7 @@
         });
     }
 
+    export const isComplete = () => puzzleController.Puzzle.isComplete();
     export const getSubmitData = () => puzzleController.Puzzle.complete();
     export const getSubmitScore = () => puzzleController.Puzzle.score();
 </script>
