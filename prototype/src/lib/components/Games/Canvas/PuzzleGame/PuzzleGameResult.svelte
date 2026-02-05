@@ -24,5 +24,5 @@
 
 <p class="flex justify-between items-center min-h-8 px-8 -mx-4 mt-7 bg-secondary text-primary text-[16px]">
     <span class="font-bold">Du hast {correctPieces} von {totalPieces} {result.scoreDescription !== undefined ? result.scoreDescription : "Teilen richtig"}</span>
-    <span class="font-medium">{points}/{totalPoints}</span>
+    <span class="font-medium pl-4">{points}/{totalPoints}</span>
 </p>
