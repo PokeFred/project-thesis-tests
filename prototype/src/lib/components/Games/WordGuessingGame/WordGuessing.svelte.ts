@@ -7,7 +7,7 @@ export default class WordGuessing implements Quiz<SavingData> {
 
     constructor(solutions: string[]) {
         this.solutions = solutions;
-        this.inputs = $state(new Array<string>(this.solutions.length));
+        this.inputs = $state(new Array<string>(this.solutions.length).fill(""));
     }
 
     public get Solutions() { return this.solutions; }
