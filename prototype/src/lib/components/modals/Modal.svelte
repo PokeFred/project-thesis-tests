@@ -29,7 +29,7 @@
             {@render children()}
         </div>
         <div class="w-full h-auto grid grid-cols-1 gap-4">
-            <button onclick={handleConfirm} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">{buttonText}</button>
+            <button onclick={handleConfirm} class="w-full h-auto text-[20px] font-medium text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">{buttonText}</button>
         </div>
     </div>
 </dialog>
