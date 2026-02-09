@@ -9,7 +9,7 @@
     import MatchingGameGame from "$components/puzzle/matchingGame/game.svelte"
     import MultipleChoiceIntroduction from "$components/puzzle/multipleChoice/introduction.svelte"
     import MultipleChoiceGame from "$components/puzzle/multipleChoice/game.svelte"
-    import Modal from "./ConfirmModal.svelte"
+    import Modal from "$components/modals/GameConfirmModal.svelte"
     import { add } from "$stores"
     import { goto } from "$app/navigation"
     import DragDropIntroduction from "$components/puzzle/dragDrop/introduction.svelte"
