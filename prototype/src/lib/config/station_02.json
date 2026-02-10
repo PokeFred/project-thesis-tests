@@ -1,6 +1,13 @@
 [
     {
-        "title": "Hey",
-        "data": []
+        "title": "Hier wurde schon immer eingekauft",
+        "data": [
+            { "type": "paragraph", "text": "Wie Du jetzt weißt, war der Hellweg schon im Mittelalter eine der wichtigsten Straßen für Dortmund. Ab dem späten 19. Jahrhundert wurde er Schritt für Schritt modernisiert." },
+            { "type": "paragraph", "text": "Viele Fachwerkhäuser dienten zunächst nur als Wohnraum; später entstanden in den unteren Etagen Ladenlokale mit Schaufenstern, während die oberen Etagen Wohnraum blieben. 1878 entstand der erste asphaltierte Bürgersteig Dortmunds. Immer mehr Fachgeschäfte und Warenhäuser siedelten sich an. Besonders im Westenhellweg entwickelte sich die Straße durch neue Passagen und Cafés zu einer modernen Geschäftsstraße mit lebendigem Flanierleben." },
+            { "type": "paragraph", "text": "Im 20. Jahrhundert wandelte sich der Hellweg endgültig zur Einkaufs- und Flanierstraße - nun als Westen- und Ostenhellweg bezeichnet. Der Einzelhandel wurde immer spezialisierter: Lebensmittel, Eisenwaren, Tabak, Lederwaren, Schmuck, Porzellan und vieles mehr erhielten eigene Häuser. Die Straße wurde zur beliebtesten Einkaufsmeile Dortmunds, blieb aber eng: Fußgänger*innen mussten sich den Weg mit Autos und der Straßenbahn teilen." },
+            { "type": "paragraph", "text": "Bereits um 1912 strömten an Sonntagen zehntausende Menschen auf den Westenhellweg. Sie schlenderten, schauten Schaufenster an, kauften ein und machten den Hellweg zu einer lebhaften Einkaufsstraße." },
+            { "type": "paragraph", "text": "Mit dem zunehmenden Verkehr, insbesondere durch die Straßenbahn, wurde die Situation für Fußgänger*innen am Hellweg zunehmend schwieriger. Erst mit der Umgestaltung zur Fußgängerzone in den 1970er-Jahren erhielt der Hellweg sein heutiges Gesicht. 1997 wurde die Pflasterung mit Natursteinen erneuert." },
+            { "type": "paragraph", "text": "Der Hellweg war stets ein Spiegel seiner Zeit. Während er sich im frühen 20. Jahrhundert durch eine Vielzahl inhabergeführter Fachgeschäfte auszeichnete, prägen heute vor allem Filialketten das Bild. Wer hier einkauft oder flaniert, bewegt sich durch verschiedene Phasen der Dortmunder Stadtgeschichte." }
+        ]
     }
 ]

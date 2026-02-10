@@ -1,6 +1,55 @@
 [
     {
-        "title": "Hey",
-        "data": []
+        "title": "Handel mit Kolonialwaren",
+        "data": [
+            { "type": "paragraph", "text": "Einkaufen begann in Dortmund oft nicht im Laden, sondern im Hafen. Seit 1899 brachte der Dortmund-Ems-Kanal Kolonialwaren und Rohstoffe in die Stadt, die von hier aus an Händler, Läden und Haushalte weitergingen. Das Interesse am Kolonialwarenhandel war ein entscheidender Motor für den Bau des Hafens, der bis heute der größte Kanalhafen Europas ist." },
+            { "type": "paragraph", "text": "Dortmund entwickelte sich zu einem wichtigen Umschlagplatz für Waren aus aller Welt. Über den Hafen gelangten Kolonialwaren wie Kaffee, Tee, Kakao, Gewürze oder Tabak ebenso in die Stadt wie Rohstoffe und Erze. Von hier aus wurden sie an Großhändler, kleine Läden und schließlich in die Haushalte der Region weiterverteilt. Der Hafen war damit die Schnittstelle zwischen globalem Handel und lokalem Einkauf." },
+            { "type": "paragraph", "text": "Schon vor der offiziellen Kolonialpolitik des Deutschen Kaiserreichs ab 1884 setzten sich Dortmunder Wirtschaftsführer für den Zugang zu Überseegebieten ein. Um 1905 war die Stadt global vernetzt; jährlich wurden über den Hafen mehr als 2,5 Millionen Tonnen Waren bewegt." },
+            { "type": "paragraph", "text": "Doch dieser wirtschaftliche Aufschwung hatte seine Schattenseiten. Viele dieser begehrten Waren entstanden in einem kolonialen Wirtschaftssystem, das auf Ausbeutung, Gewalt und strukturellem Zwang beruhte. In den Plantagen, Minen und Häfen der europäischen Kolonien arbeiteten Millionen Menschen unter unmenschlichen Bedingungen. Lange Arbeitszeiten, körperliche Gewalt, schlechte Ernährung, Krankheiten und fehlende Rechte prägten ihren Alltag. Auch Dortmund profitierte indirekt von diesem System: Die Waren, die hier gehandelt, gelagert und verkauft wurden, waren Teil globaler Handelsketten, die auf dem Leid und der Entrechtung anderer beruhten." }
+        ]
+    },
+    {
+        "title": "Ein prägendes Handelshaus am Hafen",
+        "data": [
+            { "type": "paragraph", "text": "Im späten 19. Jahrhundert begann die Erfolgsgeschichte eines der prägenden Handelsunternehmen am Dortmunder Hafen. 1882 gründeten Julius und Robert Wolff mit bescheidenen Mitteln eine Großhandlung für Kolonialwaren. Aus einem kleinen Büro und Lager am Schwanenwall entwickelte sich über die Jahre ein dynamischer Betrieb, der eng mit dem aufstrebenden Stadthafen verknüpft war." },
+            { "type": "paragraph", "text": "Die Brüder kauften 1904 ein großes Speichergebäude direkt am Hafen und richteten dort ihren Firmensitz ein. Mit eigener Verladeanlage für Schiffe wurde das Lager zum Zentrum ihres Handels. Waren konnten direkt vom Schiff ins Lager und weiter in die Stadt und die Region transportiert werden. Von dort aus gelangten sie zu Händler*innen, in die Läden und schließlich in die Haushalte der Verbraucher*innen. So bestimmte der Großhandel am Hafen, was in Dortmund gekauft werden konnte." },
+            { "type": "paragraph", "text": "Das Unternehmen wuchs stetig und setzte bewusst auf die Verbindung von Groß- und Einzelhandel. Neben dem Großhandel betrieben die Gebrüder Wolff eigene Einzelhandelsgeschäfte in Dortmund, unter anderem am Burgwall und an der Nordstraße, später auch an der Heroldstraße. Zum Firmenverbund gehörten außerdem eine angeschlossene Buchdruckerei sowie eine Papiergroßhandlung." },
+            { "type": "paragraph", "text": "Doch die wirtschaftlichen Krisen nach dem Ersten Weltkrieg und die Weltwirtschaftskrise ab 1929 setzten dem Unternehmen zu. 1933 musste die Familie ihre Lagerflächen mit Aufzug, Garagen, Tank und Hofraum an eine andere Firma vermieten." },
+            { "type": "paragraph", "text": "Wann die Firma endgültig zahlungsunfähig wurde, ist nicht überliefert. Doch in der Atmosphäre von Ausgrenzung, Entrechtung und Verfolgung jüdischer Familien im NS-Staat war eine Zukunft für das Unternehmen der jüdischen Familie Rosendahl kaum vorstellbar." }
+        ]
+    },
+    {
+        "title": "Eine Mehl- und Kolonialwarengroßhandlung",
+        "data": [
+            { "type": "paragraph", "text": "1904 gründeten Paul und Max Rosendahl eine Mehl- und Kolonialwarengroßhandlung in Dortmund, die sich schnell zu einem der führenden Unternehmen der Region entwickelte. Bereits 1913 verlegten sie ihren Firmensitz in ein großes Lagerhaus am Hafen. Von hier aus belieferten sie zahlreiche Läden in Dortmund und Umgebung." },
+            { "type": "paragraph", "text": "Zum 25-jährigen Bestehen 1929 beschäftigte die Firma 62 Mitarbeitende. Der Umsatz lag bereits 1927 bei 5,6 Millionen Reichsmark, umgerechnet etwa 25 bis 30 Millionen Euro. Ausgeliefert wurde zunächst mit Pferdekutschen, später ergänzten Lastwagen den Fuhrpark. Der Hafen verband den globalen Wareneingang mit dem alltäglichen Einkaufen in der Stadt." },
+            { "type": "paragraph", "text": "Selbst während der Weltwirtschaftskrise ab 1929 lieferte Rosendahl weiterhin Waren und übernahm Kundschaft von Konkurrenten. Doch die staatliche Kontrolle des Handels nahm zu, viele Produkte wurden knapp. Trotzdem eröffnete die Firma 1935 eine eigene Rösterei. Die Marke „Geros Kaffee“ wurde schnell zum Verkaufsschlager." },
+            { "type": "paragraph", "text": "Weil „Rosendahl“ als jüdischer Name galt, geriet das Unternehmen unter den Nationalsozialisten unter Druck. 1937 musste es offiziell nachweisen, „arischer“ Herkunft zu sein. Eine Folge der antisemitischen Politik, die jüdische Unternehmer systematisch ausgrenzte und verfolgte." },
+            { "type": "paragraph", "text": "1944 zerstörte ein Luftangriff das Lagerhaus vollständig. Nach dem Krieg gelang der Wiederaufbau. Ab 1946 führte Anna Rosendahl, die Witwe des Gründers, das Unternehmen weiter, bis es 1969 verkauft wurde. In ihrer Todesanzeige von 1959 wurde ihre maßgebende Arbeit am Auf- und Ausbau der Firma und ihre wichtige Position innerhalb des Geschäftes gewürdigt. Diese Ehrung war keine Selbstverständlichkeit für eine Frau in dieser Zeit." }
+        ]
+    },
+    {
+        "title": "Vom Kolonialwarenhandel zum Heimathafen",
+        "data": [
+            { "type": "paragraph", "text": "Hier, wo heute der Heimathafen steht, befand sich früher eine Kolonialwarengroßhandlung mit großem Lager, eigener Kaffeerösterei und Pferdestall. Inhaber war der Dortmunder Kaufmann Heinrich Schreer, der am 1. April 1903 einen langfristigen Mietvertrag mit der Hafenverwaltung Dortmund über ein Grundstück an der Speicherstraße abschloss. Zunächst baute er ein Lagerhaus für Kolonialwaren, zwei Jahre später folgte ein Anbau zur Lagerung von Petroleum sowie ein 105 Quadratmeter großer Pferdestall." },
+            { "type": "paragraph", "text": "Anfangs wurden die Bestellungen noch mit einfachen Handwagen ausgeliefert. Mit wachsendem Kundenkreis wurde der Fuhrpark rasch erweitert: Pferdegespanne mit Planwagen belieferten Lebensmittelhändler in Dortmund und der Region, teils bis weit ins Sauerland. Der Hafenstandort ermöglichte den direkten Umschlag großer Warenmengen. Kolonialwaren und Petroleum gelangten per Schiff oder Bahn ins Lager und wurden von dort aus weiterverteilt. Um 1906 umfasste der Fuhrpark bereits zwölf Pferde; spezielle Kesselwagen brachten das Petroleum, einen damals unverzichtbaren Haushaltsartikel, bis in die Läden und Haushalte der Stadt und des Umlands." },
+            { "type": "paragraph", "text": "Im ersten Weltkrieg wurde ein großer Teil der Belegschaft eingezogen, Pferdegespanne mussten an das Militär abgegeben werden. Gleichzeitig richteten Städte und Gemeinden eigene Lebensmittelverteilungsstellen ein, wodurch der private Großhandel teilweise verdrängt wurde. Infolge der Warenknappheit war das Lager am Hafen nicht mehr ausgelastet und wurde 1919 verkauft. Inflation, Arbeitslosigkeit und Wirtschaftskrisen der 1920er-Jahre erschwerten den Betrieb zusätzlich." },
+            { "type": "paragraph", "text": "In den 1930er-Jahren wurde der Fuhrpark motorisiert, erste Lastwagen ersetzten die Pferdegespanne. Abfüllanlagen ermöglichten eigene Kaffeepackungen für den beliebten Schreer-Kaffee. Im zweiten Weltkrieg wurden erneut Fahrzeuge und Mitarbeiter eingezogen. Bombenangriffe zerstörten Lager und Büros nahezu vollständig. Erst nach Kriegsende konnte der Betrieb in bescheidenem Umfang wieder aufgenommen werden. Nach der Währungsreform 1949 füllten sich die Lager erneut, Lastwagen übernahmen nun den Transport der Waren." },
+            { "type": "paragraph", "text": "Doch der Strukturwandel im Handel setzte dem Unternehmen langfristig zu. Einkaufsgenossenschaften, Abholgroßmärkte und schließlich Supermärkte veränderten die Wege der Waren grundlegend. Einzelhändler holten ihre Ware nun selbst ab, statt beliefert zu werden. Dieses neue System setzte viele traditionelle Großhändler unter Druck. Zahlreiche kleine Lebensmittelgeschäfte verschwanden und mit ihnen die Kundschaft des Großhandels. Damit veränderten sich nicht nur die Warenwege, sondern auch der Alltag des Einkaufens grundlegend. Nach fast 75 Jahren wurde die Firma Heinrich Schreer 1969 aus dem Handelsregister gelöscht." },
+            { "type": "paragraph", "text": "Nachdem das Lagerhaus aufwendig saniert wurde, ist daraus der Heimathafen Nordstadt geworden: ein integratives Bildungs- und Beratungshaus unter dem Dach der GrünBau gGmbH. Heute ist der Ort Anlaufstelle für Zugewanderte, Menschen mit Fluchterfahrung und Menschen aus dem Stadtteil. Der ehemalige Pferdestall dient als Veranstaltungsraum." },
+            { "type": "paragraph", "text": "Zugleich setzt sich der Heimathafen kritisch mit der kolonialen Vergangenheit des Ortes auseinander. Direkt vor dem Gebäude ist ein dekoloniales Denkmal geplant, das künftig an koloniale Warenströme, Ausbeutung und Widerstand erinnern und die Geschichte des Hafenstandorts sichtbar machen soll." },
+            { "type": "paragraph", "text": "" },
+            { "type": "paragraph", "text": "" }
+        ]
+    },
+    {
+        "title": "",
+        "data": [
+            { "type": "paragraph", "text": "" },
+            { "type": "paragraph", "text": "" },
+            { "type": "paragraph", "text": "" },
+            { "type": "paragraph", "text": "" },
+            { "type": "paragraph", "text": "" }
+        ]
     }
 ]

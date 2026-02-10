@@ -1,6 +1,31 @@
 [
     {
-        "title": "Hey",
-        "data": []
+        "title": "Die Welt der Warenhäuser",
+        "data": [
+            { "type": "paragraph", "text": "Stell dir vor, du spazierst im frühen 20. Jahrhundert durch eine belebte Einkaufsstraße: prächtig gestaltete Schaufenster ziehen den Blick auf sich, elektrische Beleuchtung hält zunehmend Einzug, Plakate und Litfaßsäulen werben für Neuheiten und Sonderangebote. Mit den großen Warenhäusern entstand ein völlig neues Einkaufserlebnis." },
+            { "type": "paragraph", "text": "Diese Häuser waren mehr als bloße Verkaufsorte. Ihre repräsentative Architektur, große Glasflächen, Lichthöfe und weitläufige Verkaufsräume machten das Einkaufen selbst zum Ereignis. Kundinnen und Kunden konnten das Geschäft frei betreten, durch die Abteilungen schlendern, Waren betrachten, vergleichen und sich informieren. Einkaufen wurde zum Bummeln, Staunen und Verweilen. Warenhäuser eröffneten damit neue öffentliche Räume, in denen unterschiedliche gesellschaftliche Gruppen zusammenkamen und insbesondere Frauen sich selbstständig im Stadtraum bewegen konnten." },
+            { "type": "paragraph", "text": "Revolutionär war auch das Verkaufssystem: Waren wurden erstmals zu festen, deutlich ausgezeichneten Preisen angeboten. Gehandelt wurde nicht mehr, bezahlt wurde bar. Hinzu kam ein großzügig gehandhabtes Umtauschrecht. Diese Neuerungen trugen dazu bei, in einer zunehmend anonymen Konsumwelt Vertrauen in Preise, Waren und Kaufprozesse zu schaffen. Der Alltag des Einkaufens veränderte sich grundlegend." },
+            { "type": "paragraph", "text": "Die Waren lagen zwar sichtbar aus, durften aber nicht selbst genommen werden. Kund*innen nannten dem Verkaufspersonal ihren Wunsch, die Ware wurde aus Vitrinen, Schubladen oder Regalen geholt, vorgeführt, verpackt und oft an einer zentralen Kasse bezahlt." },
+            { "type": "paragraph", "text": "Parallel dazu gewann Werbung enorm an Bedeutung. Hersteller und Kaufhäuser entwickelten Marken, Logos, Verpackungen und Slogans, die Orientierung geben und Vertrauen schaffen sollten. Werbung wurde zur wichtigsten Informationsquelle für Verbraucher*innen und verband Waren mit Versprechen von Qualität, Modernität und Lebensstil. Spätestens in den 1920er-Jahren sorgten beleuchtete Schaufenster und Fassaden dafür, dass Einkaufsstraßen auch abends belebt waren." },
+            { "type": "paragraph", "text": "Warenhäuser machten Einkaufen zu mehr als Versorgung. Einkaufen wurde zum Erlebnis und galt zunehmend als Freizeitbeschäftigung. Dieser Trend setzte sich ab der zweiten Hälfte des 20. Jahrhunderts nach amerikanischem Vorbild in Einkaufszentren und Shopping-Malls fort." }
+        ]
+    },
+    {
+        "title": "Warenhäuser in Dortmund",
+        "data": [
+            { "type": "paragraph", "text": "Auch in Dortmund entstand zu Beginn des 20. Jahrhunderts eine Vielzahl von Warenhäusern, die innerhalb kurzer Zeit am Westenhellweg ihre Türen öffneten. Dazu gehörten das 1905 gegründete Textilhaus Heerbeck, der vierstöckige Neubau des Porzellan- und Glaswaren-Kaufhauses Sternberg & Co., das Textilkaufhaus der Gebrüder Kaufmann, das Warenhaus Hettlage & Co. sowie das Textilkaufhaus Clemens. Am beeindruckendsten war jedoch das am 7. Dezember 1904 eingeweihte Warenhaus Althoff." },
+            { "type": "paragraph", "text": "Die Warenhäuser boten ein neues Einkaufserlebnis: eine beeindruckende Architektur mit großen Verkaufsflächen, feste Preise und eine breite Auswahl unter einem Dach. Sie machten den Westenhellweg zu einer zentralen Einkaufsstraße und zogen Kund*innen aus Dortmund und der gesamten Region an." },
+            { "type": "paragraph", "text": "Ihr vorläufiges Ende fanden viele Dortmunder Warenhäuser ab den 1930er-Jahren. Neben den Folgen der Weltwirtschaftskrise spielte die nationalsozialistische Verfolgung jüdischer Unternehmer eine zentrale Rolle. Zahlreiche Kaufhäuser wurden boykottiert, die Unternehmer wirtschaftlich ausgegrenzt und die Gebäude schließlich zwangsarisiert. Im Zweiten Weltkrieg wurde die Dortmunder Innenstadt zudem nahezu vollständig zerstört." },
+            { "type": "paragraph", "text": "Erst in der Nachkriegszeit und während des Wirtschaftswunders ab den 1950er-Jahren erlebte die Warenhausbranche neuen Aufschwung. Besonders Karstadt, 1936 aus dem Warenhaus Althoff hervorgegangen, war sehr erfolgreich. Daneben eröffneten weitere große Kaufhäuser: 1955 nahm Hertie an der Ecke Westenhellweg/Brückstraße den Betrieb auf und lockte mit einem Café auf der Dachterrasse. 1965 folgte Horten, 1967 Neckermann (später Karstadt-Einrichtungshaus). Heute erinnern vor allem Karstadt und Galeria Kaufhof an die Zeit, in der zahlreiche Warenhäuser das Bild der Dortmunder Innenstadt prägten." }
+        ]
+    },
+    {
+        "title": "Das Warenhaus Meyer und Günther am Steinplatz",
+        "data": [
+            { "type": "paragraph", "text": "Das Warenhaus Meyer & Günther prägte ab dem Ende des 19. Jahrhunderts maßgeblich den Steinplatz in Dortmund. 1898 von den jüdischen Kaufleuten Meyer und Günther gegründet, eröffnete das Unternehmen im November desselben Jahres sein erstes Geschäft am Steinplatz 1. Dank seines breiten Warenangebots und der zentralen Lage entwickelte es sich schnell zu einem beliebten Einkaufsziel." },
+            { "type": "paragraph", "text": "Das Warenhaus wuchs kontinuierlich: 1901 wurde die Schaufensterfront vergrößert, 1911 folgte der Ausbau zu einem modernen Warenhaus mit rund 7.000 m²Verkaufsfläche. Meyer & Günther zählte damit zu den größten Kaufhäusern der Stadt und stand in direkter Konkurrenz zu den Warenhäusern am Westen- und Ostenhellweg. Der Steinplatz wurde so zu einem wichtigen Ort des städtischen Einkaufens." },
+            { "type": "paragraph", "text": "Mit der Machtübernahme der Nationalsozialisten 1933 gerieten die jüdischen Inhaber massiv unter Druck. Boykotte, Diffamierungen und Verfolgung bestimmten den Alltag. Bereits 1933 wurde das Warenhaus unter politischem Zwang an Kurt Drahota verkauft. Bernhard Meyer nahm sich 1936 nach Haft durch die Gestapo das Leben." },
+            { "type": "paragraph", "text": "Im Zweiten Weltkrieg wurde das Gebäude zerstört und anschließend in vereinfachter Form wieder aufgebaut. Nach mehreren Besitzerwechseln und gescheiterten Neuanfängen - zuletzt als „Kaufhof Nord“ - wurde das Gebäude im Zuge der Stadtsanierung schließlich abgerissen." }
+        ]
     }
 ]
