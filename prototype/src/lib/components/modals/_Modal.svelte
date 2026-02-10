@@ -28,7 +28,7 @@
         <div class="mt-2 w-full h-auto text-lg text-left text-secondary grid grid-cols-1 gap-2 px-4">
             {@render children()}
         </div>
-        <div class="w-full h-auto grid grid-cols-1 gap-4">
+        <div class="w-full h-auto grid grid-cols-1 gap-4 py-4">
             <button onclick={handleConfirm} class="w-full h-auto text-lg font-semibold text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Ja</button>
             <button onclick={closeModal} class="w-full h-auto text-lg font-semibold text-left text-primary  bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">Nein</button>
         </div>
