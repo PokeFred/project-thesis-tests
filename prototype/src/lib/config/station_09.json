@@ -1,12 +1,22 @@
 [
     {
-        "title": "",
+        "title": "Einkaufszentren: neue Orte des Einkaufens",
         "data": [
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" }
+            { "type": "paragraph", "text": "Seit den 1970er-Jahren veränderte sich das Einkaufen erneut. Während der Westenhellweg zur Fußgängerzone wurde, verloren viele klassische Kauf- und Warenhäuser nach und nach ihre frühere Bedeutung." },
+            { "type": "paragraph", "text": "In den 2000er-Jahren geriet die Dortmunder Innenstadt weiter unter Druck. Filialketten prägten zunehmend das Stadtbild, große Kaufhäuser schlossen, kleinere Fachgeschäfte verschwanden. In Dortmund betraf dies unter anderem bekannte Häuser wie Hettlage, Hertie, Horten oder Neckermann, die über Jahrzehnte das Einkaufen in der Innenstadt geprägt hatten." },
+            { "type": "paragraph", "text": "Gleichzeitig entstand neue Konkurrenz außerhalb der Stadtzentren: 1964 eröffnete in Bochum der Ruhrpark, eines der ersten großen Einkaufszentren in Deutschland. Viele Dortmunder*innen fuhren nun gezielt dorthin zum Einkaufen. Gut erreichbar mit dem Auto und wetterunabhängig bot das Einkaufszentrum eine große Vielfalt an Angeboten - von Mode, Elektronik und Drogeriewaren bis hin zu Gastronomie und einem eigenen Kino. Einkaufen wurde hier zunehmend als Erlebnis inszeniert, das über das klassische Warenhaus hinausging." },
+            { "type": "paragraph", "text": "In Dortmund entstand 2011 die Thier-Galerie auf dem Gelände der ehemaligen Thier-Brauerei. Das Shopping-Center vereint heute über 160 Geschäfte sowie Cafés, Restaurants und Serviceangebote unter einem Dach. Als innerstädtisches Einkaufszentrum sollte es die Dortmunder Innenstadt als Einkaufsstandort stärken und an veränderte Konsumgewohnheiten anpassen." },
+            { "type": "paragraph", "text": "Einkaufszentren wie die Thier-Galerie gehen auf ein Format zurück, das ab den 1930er Jahren in den USA entwickelt wurde. Mit dem Southdale Center in Minnesota eröffnete 1956 das weltweit erste vollständig geschlossene, klimatisierte Einkaufszentrum." },
+            { "type": "paragraph", "text": "Heute stehen Einkaufszentren vor neuen Herausforderungen wie der Klimakrise. Die Betreibergesellschaft ECE Marketplaces verfolgt für die Thier-Galerie eine Nachhaltigkeitsstrategie: Bis 2030 sollen die CO₂-Emissionen des Centers um 40 Prozent gegenüber 2019 gesenkt werden, unter anderem durch energieeffizientere Technik und die Förderung nachhaltiger Mobilität." }
+        ]
+    },
+    {
+        "title": "Online-Einkauf: Konsum ohne Ort",
+        "data": [
+            { "type": "paragraph", "text": "Heute verändert sich das Einkaufen erneut. Der Onlinehandel macht den Einkauf unabhängig von Öffnungszeiten und festen Orten. Produkte können jederzeit verglichen, bestellt und direkt nach Hause geliefert werden. Wenige Klicks genügen." },
+            { "type": "paragraph", "text": "Diese Entwicklung knüpft an frühere Veränderungen an: Schon Einkaufszentren lösten den Einkauf von einzelnen Straßen oder Läden. Der Onlinehandel verlagert den Konsum nun zunehmend in den digitalen Raum. Der persönliche Kontakt, das körperliche Erleben eines Ortes und der gemeinsame Einkaufsbummel treten dabei in den Hintergrund." },
+            { "type": "paragraph", "text": "Für die Innenstädte hat dieser Wandel spürbare Folgen. Klassische Einkaufsfunktionen verlieren an Bedeutung, das Bild der Stadt verändert sich. Gleichzeitig rücken Fragen der Nachhaltigkeit stärker in den Fokus: Onlinehandel bedeutet zusätzlichen Lieferverkehr, Verpackungsmüll und hohe CO₂-Emissionen, etwa durch Retouren." },
+            { "type": "paragraph", "text": "Gleichzeitig entstehen neue Fragen: Welche Rolle haben Innenstädte in Zukunft? Werden sie vor allem Orte des Erlebens, der Begegnung und der Freizeit? Tritt das Einkaufen in der Stadt mehr und mehr in den Hintergrund? Die Geschichte des Einkaufens zeigt damit nicht nur die Entwicklung neuer Handelsformen, sondern auch den Wandel von Alltag, Freizeit und Gesellschaft." }
         ]
     }
 ]

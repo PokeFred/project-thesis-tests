@@ -1,12 +1,31 @@
 [
     {
-        "title": "",
+        "title": "Der Konsumverein für Dortmund und Umgebung",
         "data": [
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" }
+            { "type": "paragraph", "text": "1901 gründete die Arbeiterschaft aus Dortmund, darunter Metallarbeiter, Bergleute und Brauereibeschäftigte, den „Konsumverein für Dortmund und Umgebung“. Das Ziel war Lebensmittel und Alltagswaren günstig direkt vom Erzeuger an die Mitglieder zu bringen. Der erste Impuls kam von einem Arbeiter namens Schönfelder, der das Genossenschaftswesen aus Kiel kannte." },
+            { "type": "paragraph", "text": "Am 15. Mai 1902 öffnete die erste Verteilungsstelle in einem Hinterhaus an der Steinstraße 6, nahe dem Steinplatz. Das Kapital war klein - nur 2.200 Mark -, doch der Erfolg wuchs schnell. 1903 kam eine zweite Filiale in der Tiefe Straße hinzu, 1904 eine in Lünen-Süd." },
+            { "type": "paragraph", "text": "Bald fusionierte der Verein mit Konsumvereinen in umliegenden Orten wie Barop, Marten und Stockum. 1909 kaufte man ein Grundstück an der Bornstraße mit Eisenbahnanschluss, um eine moderne Betriebszentrale zu bauen." },
+            { "type": "paragraph", "text": "1911 öffnete der riesige Neubau: mit Lagerhallen, Brotfabrik, Kaffeerösterei, Schrotmühle, Limonadenproduktion und Platz für Pferdefuhrwerke und Lieferwagen. Rund 10.000 Mitglieder profitierten von günstigen Preisen, Jahresrückzahlungen, einer Mitgliederzeitung und einer Sterbekasse." },
+            { "type": "paragraph", "text": "Die Nationalsozialisten verboten 1941 die Konsumvereine, weil sie als unabhängige, genossenschaftlich organisierte Einrichtungen der Arbeiterbewegung galten und sich der politischen Kontrolle entzogen. Die Bornstraßen-Zentrale wurde im Krieg zerstört. 1946 gründeten die Mitglieder die Konsumgenossenschaft neu und bauten sie trotz vieler Kriegsschäden wieder auf." }
+        ]
+    },
+    {
+        "title": "Die Konsum-Läden in Dortmund",
+        "data": [
+            { "type": "paragraph", "text": "Die Konsumgenossenschaft war nicht nur eine große Organisation mit Zentrale, Bäckerei und Lagerhallen, sie war vor allem im Stadtbild präsent. In vielen Dortmunder Vierteln entstanden Konsum-Läden, die die Mitglieder direkt versorgten. Auch Nicht-Mitglieder konnten hier einkaufen, allerdings ohne die Vorteile der Genossenschaft. Die Läden trugen meist den schlichten Schriftzug „KONSUM“ über der Tür und waren als Teil der Genossenschaft sofort erkennbar." },
+            { "type": "paragraph", "text": "Diese Läden lagen häufig in Arbeiterwohngebieten, in der Nordstadt, im Unionviertel, rund um den Hafen und in innenstadtnahen Straßen wie der Steinstraße. Besonders in Stadtteilen wie Hörde, Huckarde oder Scharnhorst war die Konsumgenossenschaft präsent. Hier spielte die günstige und verlässliche Versorgung der Bevölkerung eine zentrale Rolle. In den Konsum-Läden kauften vor allem Bergleute und Industriearbeitende, aber auch Angestellte und ihre Familien, ihre täglichen Lebensmittel wie Brot, Wurst, Zucker, Kaffee, Konserven oder Waschmittel ein." },
+            { "type": "paragraph", "text": "Der Verkauf in den Konsum-Läden war klar organisiert und stark arbeitsteilig. Hinter den langen Theken standen überwiegend Frauen, die Waren abwogen, abfüllten, verpackten und die Kundschaft bedienten. Für viele Frauen war dies eine der wenigen Möglichkeiten, überhaupt einer bezahlten Arbeit nachzugehen. Die Tätigkeit galt als ordentlich und respektabel, war jedoch meist schlecht bezahlt. Die Leitungspositionen und die Geschäftsführung lagen in der Regel in männlicher Hand." },
+            { "type": "paragraph", "text": "Die Inneneinrichtung der Läden war sachlich und funktional, die Waren übersichtlich nach Warengruppen geordnet. Geflieste Wände, lange Theken, klare Beschriftungen und gut sichtbare Preise sollten Hygiene, Ordnung und Transparenz vermitteln. Es ging nicht um Luxus oder Inszenierung, sondern um verlässliche Versorgung." },
+            { "type": "paragraph", "text": "Ab den 1950er-Jahren begannen viele Konsum-Läden, auf Selbstbedienung umzustellen. Die Ware stand nun offen in Regalen. Kundinnen und Kunden griffen selbst zu, Körbe und später Einkaufswagen kamen auf. Damit wurden die Konsumgenossenschaften zu wichtigen Wegbereitern des modernen Supermarkts. Und das lange bevor große Handelsketten den Markt prägten." },
+            { "type": "paragraph", "text": "Aus den lokalen Konsumgenossenschaften entwickelte sich in den folgenden Jahrzehnten die Großgenossenschaft coop. Viele der früheren Konsum-Läden gingen in diesem Zusammenhang in coop-Filialen über. Heute existiert die coop in dieser Form in Dortmund nicht mehr." }
+        ]
+    },
+    {
+        "title": "Filialbetriebe - das Beispiel Kaiser's und Tengelmann",
+        "data": [
+            { "type": "paragraph", "text": "Ende des 19. Jahrhunderts entstanden in Deutschland die ersten Ladenketten. Das waren Unternehmen mit vielen kleinen Geschäften, die von einer Zentrale aus gesteuert wurden. Besonders erfolgreich waren Kaiser’s Kaffee-Geschäft und Tengelmann, die beide auf Kaffee, Tee und Kolonialwaren spezialisiert waren. Sie eröffneten Hunderte Filialen in ganz Deutschland - auch in Dortmund." },
+            { "type": "paragraph", "text": "Die Firmen blieben zunächst eigenständig, gehörten ab den 1970 er -Jahren aber zur gleichen Unternehmensgruppe. Sie wurden unter dem Namen Kaiser's Tengelmann bekannt. Diese Filialketten waren privatwirtschaftlich organisiert. Die Konsumvereine hingegen gehörten ihren Mitgliedern. Die Ketten konnten Waren durch zentralen Einkauf günstiger anbieten, dafür blieb der Gewinn bei den Eigentümern." },
+            { "type": "paragraph", "text": "In Dortmund gab es neben einer Filiale von Tengelmann am Freiherr-vom-Stein-Platz auch lokale Anbieter wie Buchthal & Co. an der Bornstraße und an anderen Standorten. Heute existiert die Marke Tengelmann als Supermarktkette nicht mehr: 2017 wurden die meisten Filialen an Edeka und Rewe verkauft." }
         ]
     }
 ]

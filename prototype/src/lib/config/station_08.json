@@ -1,12 +1,35 @@
 [
     {
-        "title": "",
+        "title": "Arisierung und Entrechtung",
         "data": [
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" }
+            { "type": "paragraph", "text": "Einkaufsstraßen und Kaufhäuser prägen bis heute das Bild der Dortmunder Innenstadt. Doch wer hier einkaufen durfte, wer verkaufen konnte und welche Läden sichtbar waren, war nie selbstverständlich. Die Geschichte des Einkaufens ist auch eine Geschichte von Macht, Ausgrenzung und tiefgreifendem Wandel." },
+            { "type": "paragraph", "text": "In der Zeit des Nationalsozialismus (1933-1945) wurden jüdische Kaufleute systematisch aus dem Wirtschaftsleben verdrängt. Dies begann 1933 mit dem Boykott jüdischer Geschäfte, begleitet von nationalsozialistischer Propaganda, die jüdische Unternehmen gezielt diffamierte. Auch jüdische Kaufhäuser, die das moderne Einkaufen in Dortmund entscheidend mitgeprägt hatten, wurden zwangsweise verkauft oder „arisiert“, also unter Zwang in nicht-jüdischen Besitz überführt. Den Besitzer*innen wurde ihr Eigentum genommen und damit ihre berufliche wie private Existenz zerstört. Jüdische Menschen waren Ausgrenzung, Verfolgung und lebensbedrohlicher Gewalt ausgesetzt. Viele sahen sich zur Emigration gezwungen und mussten ihre Heimat zurücklassen." }
+        ]
+    },
+    {
+        "title": "Das Beispiel der Gebrüder Kaufmann in Dortmund",
+        "data": [
+            { "type": "paragraph", "text": "Ein Beispiel ist das Kaufhaus Gebr. Kaufmann. Die Wurzeln des Unternehmens reichen bis ins Jahr 1825 zurück, als zwei Brüder Kaufmann in Langenberg eine Manufakturwarenhandlung gründeten, die sich in den folgenden Jahrzehnten stetig erweiterte. 1881 kauften Salomon und Hermann Kaufmann, Söhne des älteren Bruders des Gründerpaares, das Haus am Westenhellweg 46 und legten damit den Grundstein für das spätere Dortmunder Kaufhaus. Zum 1. Januar 1904 wurde das Unternehmen an Joseph Wertheim und Leopold Jonas verkauft, die neue Eigentümer wurden." },
+            { "type": "paragraph", "text": "Durch kontinuierliche Erweiterungen entwickelte sich das Haus zu einer der führenden Einkaufsadressen Dortmunds. Der Neubau von 1915 unterstrich den Anspruch, ein modernes Warenhaus zu sein: großzügige Verkaufsflächen, repräsentative Architektur und große Schaufenster machten das Einkaufen hier zu einem städtischen Erlebnis. Noch 1932 wurde das Kaufhaus durch einen weiteren Erweiterungsbau vergrößert und die Firma feierte ihr 50-jähriges Bestehen in Dortmund." },
+            { "type": "paragraph", "text": "Mit der Machtübernahme der Nationalsozialisten änderte sich dies grundlegend. 1936 wurde das Kaufhaus Gebr. Kaufmann zwangsweise übernommen. Leopold Jonas floh 1938 mit seiner Ehefrau in die USA. Nach dem Krieg kehrte er 1950 noch einmal nach Dortmund zurück, um im Rahmen der Wiedergutmachung Ansprüche geltend zu machen, doch das Kaufhaus war im Krieg zerstört worden. Er starb 1951 in New York." },
+            { "type": "paragraph", "text": "Auch Josephine Wertheim, die nach dem Tod ihres Mannes Miteigentümerin des Hauses war, blieb nicht verschont. Sie wurde deportiert und 1944 ermordet. Die Geschichte des Kaufhauses steht exemplarisch für viele jüdische Unternehmen in Dortmund, etwa Meyer & Günther oder Sternberg & Co., deren Spuren in der Stadt oft nur noch schwer zu erkennen sind." },
+            { "type": "paragraph", "text": "Die Arisierung jüdischer Geschäfte bedeutete nicht nur individuelles Leid. Sie veränderte dauerhaft das wirtschaftliche Gefüge der Stadt. Namen verschwanden, Besitzverhältnisse wechselten, vertraute Einkaufsorte verloren ihre Geschichte, während Gebäude und Fassaden häufig weiter genutzt wurden." }
+        ]
+    },
+    {
+        "title": "Neuer Wohlstand - die Einkaufsstadt der Nachkriegszeit",
+        "data": [
+            { "type": "paragraph", "text": "Nach dem Zweiten Weltkrieg gewann das Einkaufen eine neue Bedeutung. In den 1950er-Jahren erlebte die Bundesrepublik einen rasanten wirtschaftlichen Aufschwung. Einkommen und Lebensstandard stiegen, und mit ihnen die Möglichkeiten, zu konsumieren. Einkaufen, Bummeln und Reisen wurden für immer mehr Menschen erschwinglich. Auch Dortmund profitierte vom sogenannten Wirtschaftswunder." },
+            { "type": "paragraph", "text": "Die Innenstadt entwickelte sich erneut zum Zentrum des Einkaufens. An markanten Stellen entstanden neue Warenhäuser: 1955 eröffnete Hertie an der Ecke Westenhellweg/Hansastraße mit einem Café auf der Dachterrasse, 1965 folgte Horten an der Kampstraße, 1967 das Kaufhaus Neckermann, aus dem später das Karstadt-Einrichtungshaus hervorging. Auch Kaufhof und Sinn prägten mit moderner Architektur, großen Schaufenstern und Sonderaktionen das Bild der Einkaufsstadt." },
+            { "type": "paragraph", "text": "Das Einkaufen, das bereits im frühen 20. Jahrhundert in Kaufhäusern gezielt als Erlebnis inszeniert worden war, wurde nun für breite Bevölkerungsschichten Teil der Alltagsfreizeit. Bis Mitte der 1970er-Jahre galten Kauf- und Warenhäuser nach dem Motto „alles unter einem Dach“ als die Konsumtempel der Innenstädte." }
+        ]
+    },
+    {
+        "title": "Vom Einkaufsort zum urbanen Aufenthaltsraum",
+        "data": [
+            { "type": "paragraph", "text": "Seit den späten 1960er Jahren setzte jedoch ein erneuter Wandel ein. Mit dem Übergang zur Freizeitgesellschaft, der Individualisierung der Lebensstile und veränderten Rollenbildern – etwa durch die zunehmende Erwerbstätigkeit von Frauen - veränderten sich Alltag und Konsumgewohnheiten. Freizeitaktivitäten wie Gastronomie, Kultur und Ausgehen prägten nun maßgeblich das Bild der Innenstädte." },
+            { "type": "paragraph", "text": "Straßen wie der Westenhellweg blieben zentrale Einkaufsstraßen, während sich andere Bereiche neu ausrichteten. Die Brückstraße entwickelte sich in den 1960er- und 1970er-Jahren zu einer Vergnügungsmeile mit Kneipen, Bars und Treffpunkten für junge Menschen. Mit der Umgestaltung von Westen- und Ostenhellweg zur Fußgängerzone in den 1970er Jahren erhielt die Innenstadt zudem ein neues Gesicht." },
+            { "type": "paragraph", "text": "Sie entwickelte sich zunehmend zu einem Ort des Aufenthalts und der Begegnung für alle Bevölkerungsschichten. Die Innenstadt diente nun nicht mehr nur dem Einkaufen, sondern auch dem Verweilen, Treffen und Erleben. Gleichzeitig verloren viele alteingesessene, inhabergeführte Fachgeschäfte an Bedeutung, während Filialketten bei steigenden Mieten zunehmend das Bild der Stadt prägten." }
         ]
     }
 ]

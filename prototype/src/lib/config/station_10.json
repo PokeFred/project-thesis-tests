@@ -1,12 +1,11 @@
 [
     {
-        "title": "",
+        "title": "Einkaufen heute und morgen",
         "data": [
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" }
+            { "type": "paragraph", "text": "Du hast auf dieser Schnitzeljagd gesehen, wie sich das Einkaufen über Jahrhunderte verändert hat. Vom Markt über Kaufhäuser und Einkaufszentren bis hin zum Online-Shopping." },
+            { "type": "paragraph", "text": "Heute ist Einkaufen schnell, bequem und jederzeit möglich. Doch jede Kaufentscheidung hat Folgen für Innenstädte, für Umwelt und Klima und für unseren Alltag." },
+            { "type": "paragraph", "text": "Diese Station lädt dich ein, einen Moment innezuhalten und über dein eigenes Einkaufsverhalten nachzudenken. Es gibt keine richtigen oder falschen Antworten. Es geht nur um dich und deine Gedanken." },
+            { "type": "paragraph", "text": "Vielleicht gehst du nach dieser Schnitzeljagd mit einem anderen Blick durch die Stadt. Du siehst die Geschichte hinter kleinen Geschäften, großen Kaufhäusern oder Einkaufszentren. Vielleicht entdeckst du Spuren des Einkaufens, die dir zuvor verborgen geblieben sind. Spuren vergangener Zeiten, die auch unsere heutige Zukunft prägen." }
         ]
     }
 ]

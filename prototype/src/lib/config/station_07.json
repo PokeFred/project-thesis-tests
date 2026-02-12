@@ -1,12 +1,37 @@
 [
     {
-        "title": "",
+        "title": "Der kleine Laden an der Ecke",
         "data": [
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" },
-            { "type": "paragraph", "text": "" }
+            { "type": "paragraph", "text": "Bis in die 1960er Jahre prägten kleine Läden das Bild deutscher Städte und Dörfer. Hier kaufte man nicht anonym ein, sondern persönlich. Man ging in den Laden um die Ecke, wurde oft sogar mit Namen begrüßt und nannte den Verkäufer*innen, was man brauchte. Sie griffen in Schubladen, schöpften aus Fässern oder holten Waren von Regalbrettern hinter der Theke. Diese wogen sie ab, verpackten und reichten sie über den Tresen." },
+            { "type": "paragraph", "text": "Viele dieser Geschäfte hießen lange „Kolonialwarengeschäfte“, weil sie neben üblichen Haushaltswaren wie Mehl oder Seife auch Kaffee, Tee und Kakao aus Übersee führten. Nach dem Ende der deutschen Kolonialherrschaft (1919) setzte sich zunehmend die Bezeichnung „Gemischtwarenladen“ oder „Feinkostladen“ durch. Für besonders kleine, meist inhabergeführte Läden, wurde nach dem Zweiten Weltkrieg auch der Begriff „Tante-Emma-Laden“ gebräuchlich." },
+            { "type": "paragraph", "text": "Vor allem auf dem Land waren diese Läden mehr als Verkaufsräume. Sie waren Treffpunkt, Nachrichtenbörse und sozialer Knotenpunkt. Hier erfuhr man, was es Neues gab, traf Nachbar*innen und Bekannte, tauschte Klatsch und Alltägliches aus. Einkaufen bedeutete nicht nur Warenbeschaffung, sondern Teilhabe am lokalen Leben." }
+        ]
+    },
+    {
+        "title": "Wie Selbstbedienung den Alltag veränderte",
+        "data": [
+            { "type": "paragraph", "text": "Nach dem Zweiten Weltkrieg veränderte sich der Alltag vieler Menschen in Westdeutschland grundlegend. In den USA hatte sich bereits eine neue Form des Einkaufens etabliert: die Selbstbedienung. 1916 eröffnete Clarence Saunders in Memphis den ersten Piggly Wiggly-Store. Kund*innen konnten erstmals selbst durch die Regale gehen, Produkte auswählen und an einer zentralen Kasse bezahlen - ein völlig neues, zunächst ungewohntes Einkaufserlebnis." },
+            { "type": "paragraph", "text": "In Deutschland blieb dieses Prinzip lange eine Ausnahme. Erst in den späten 1950er-Jahren setzte sich die Selbstbedienung breiter durch. Ein wichtiger Impuls war die ANUGA 1957 in Köln, auf der der „moderne Laden“ vorgestellt wurde: ohne Theke, ohne Abwiegen, ohne persönliche Bedienung. Die Ware lag griffbereit in Regalen, sauber verpackt und übersichtlich geordnet." },
+            { "type": "paragraph", "text": "Der Einkauf wurde schneller und eigenverantwortlicher. Für die Händler*innen bedeutete das einen tiefgreifenden Wandel: Läden mussten neu organisiert, Arbeitsabläufe umgestellt werden. Gleichzeitig wuchs die Sorge vor Ladendiebstahl, da Kund*innen nun freien Zugriff auf die Waren hatten. Befürworter*innen der Selbstbedienung - darunter Hersteller sogenannter Aufrechnungskassen - argumentierten jedoch, dass offene Regale und bessere Übersicht sogar mehr Kontrolle ermöglichen könnten." },
+            { "type": "paragraph", "text": "Innerhalb weniger Jahre wurden tausende Geschäfte neu gegründet oder umgebaut. Mitte der 1960er-Jahre war bereits ein großer Teil des Lebensmittelhandels in der Bundesrepublik auf Selbstbedienung umgestellt. Dieser Strukturwandel veränderte das Einkaufen dauerhaft." },
+            { "type": "paragraph", "text": "Eine Weiterentwicklung dieses Prinzips ist der Supermarkt. Große Verkaufsflächen und ein breites Warenangebot sollten möglichst viel Auswahl bieten. Auch hier orientierte man sich an amerikanischen Vorbildern. 1962 eröffneten die ersten Aldi-Filialen in Westdeutschland und etablierten das neue Discounter-Prinzip. Diese neuen Märkte bevorzugten verkehrsgünstige Standorte, die gut mit dem Auto erreichbar waren. Der Lebensmittelhandel verlagerte sich zunehmend aus den Innenstädten an Hauptverkehrsstraßen und an den Stadtrand." }
+        ]
+    },
+    {
+        "title": "Selbstbedienung und neue Konsumformen in Dortmund",
+        "data": [
+            { "type": "paragraph", "text": "Auch in Dortmund wurde früh über neue Verkaufsformen nachgedacht. 1949 stellte der Kaufmann Herbert Eklöh bei der Industrie- und Handelskammer das Prinzip der Selbstbedienung vor. Bereits 1938 hatte er in Osnabrück das erste Geschäft dieser Art in Europa eröffnet. Nun warb er für Rationalisierung, zweckmäßige Verpackung und Entlastung des Personals. Der Einkauf sollte schneller, effizienter und moderner werden." },
+            { "type": "paragraph", "text": "Ein Jahr später eröffnete in der Feldstraße 25 der erste Selbstbedienungsladen der Stadt. Er wurde von Gustav Reuße nach amerikanischem Vorbild betrieben. Noch prägten kleine Läden das Stadtbild, doch der Wandel hatte begonnen. Immer mehr Geschäfte stellten um, neue Ketten entstanden, das Einkaufen wurde neu organisiert." },
+            { "type": "paragraph", "text": "Ende der 1960er- und Anfang der 1970er-Jahre entstanden großflächige Verbrauchermärkte und SB-Warenhäuser mit einem deutlich erweiterten Sortiment. In Dortmund eröffneten unter anderem der Plaza in Aplerbeck und der Wertkauf in Oespel. Die Verkaufsflächen wuchsen, das Warenangebot nahm zu, und das Einkaufen veränderte sich grundlegend: Statt häufiger kleiner Besorgungen wurden nun größere Einkäufe geplant, die auf Vorrat angelegt waren und meist mit dem Auto erledigt wurden. Diese Entwicklung veränderte den Lebensmitteleinzelhandel nachhaltig und prägt auch unser heutiges Einkaufsverhalten." }
+        ]
+    },
+    {
+        "title": "Einkauf von Lebensmitteln heute",
+        "data": [
+            { "type": "paragraph", "text": "Was mit Selbstbedienung und Supermarkt begann, setzt sich bis heute fort. Neue Systeme verändern erneut, wie Menschen einkaufen." },
+            { "type": "paragraph", "text": "Digitale Konzepte treiben diese Entwicklung weiter voran. Online-Supermärkte liefern Lebensmittel direkt bis vor die Haustür, der Einkauf findet zunehmend im digitalen Raum statt." },
+            { "type": "paragraph", "text": "Gleichzeitig erproben Supermärkte neue Formen des Einkaufens. Dazu gehören Selbstbedienungskassen oder Märkte ganz ohne Kasse, in denen Waren automatisch erfasst werden. Der persönliche Kontakt zwischen Kund*innen und Verkaufspersonal tritt dabei zunehmend in den Hintergrund." },
+            { "type": "paragraph", "text": "Zugleich wird deutlich, dass viele Menschen weiterhin Wert auf Begegnung, Beratung und Austausch legen. In den Niederlanden bieten sogenannte „Kletskassen“ bewusst Raum für ein Gespräch mit den Verkäufer*innen. Hier findet neben der Versorgung mit Lebensmitteln auch wieder soziale Begegnung statt." }
         ]
     }
 ]
