@@ -36,7 +36,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.51392304391651,
+                    lat: 51.51392304391651,
                     lon: 7.465440457499872
                 }
             },
@@ -209,7 +209,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.51442205062871,
+                    lat: 51.51442205062871,
                     lon: 7.4665695269931405
                 }
             },
@@ -541,7 +541,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.5134351005712,
+                    lat: 51.5134351005712,
                     lon: 7.464574873617459
                 }
             },
@@ -994,7 +994,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan:  51.51574134185536,
+                    lat:  51.51574134185536,
                     lon: 7.467070721060602
                 }
             },
@@ -1083,7 +1083,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.52578069810683,
+                    lat: 51.52578069810683,
                     lon: 7.445809382385741
                 }
             },
@@ -1206,7 +1206,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.520129044945186,
+                    lat: 51.520129044945186,
                     lon: 7.464537819122533
                 }
             },
@@ -1461,7 +1461,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.51540000001225,
+                    lat: 51.51540000001225,
                     lon: 7.466581904944825
                 }
             },
@@ -1558,7 +1558,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.51420673594943,
+                    lat: 51.51420673594943,
                     lon: 7.4638271186997995
                 }
             },
@@ -1677,7 +1677,7 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 coordinates: {
-                    lan: 51.51340212520424,
+                    lat: 51.51340212520424,
                     lon: 7.459321539954258
                 }
             },
