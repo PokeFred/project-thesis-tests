@@ -40,13 +40,24 @@ type _Puzzle = {
     locked: boolean
 }
 
-
 function getStationPuzzles(station: Station): _Puzzle[] {
     return Puzzles
         .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
         .filter((element: Puzzle): boolean => element.type !== "placeholder-puzzle")
         .map((element: Puzzle): _Puzzle => {
             const current: number = getPuzzleScore(element.id)
+            const isLocked: boolean = element.requirements
+                .map((element: number): number => {
+                    const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
+                    console.log(element)
+                    console.log(puzzle)
+
+                    return element
+                })
+                .map((element: number): number => getPuzzleScore(element))
+                .map((element: number): boolean => element > 0)
+                .filter((element: boolean): boolean => !element)
+                .length > 0
 
             return {
                 type: element.type,
@@ -54,7 +65,7 @@ function getStationPuzzles(station: Station): _Puzzle[] {
                 title: element.title,
                 score: toScore(current, element.score),
                 done: current !== 0,
-                locked: false
+                locked: isLocked
             }
         })
 }
