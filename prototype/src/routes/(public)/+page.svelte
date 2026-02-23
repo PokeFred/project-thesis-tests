@@ -8,13 +8,13 @@
         if (!isRunning()) {
             modal.openModal()
         } else {
-            window.location.href = "/s"
+            window.location.href = "/project-thesis-tests/s"
         }
     }
 
     function confirmModal(): void {
         if (!isRunning()) startGame()
-        window.location.href = "/s"
+        window.location.href = "/project-thesis-tests/s"
     }
 </script>
 

@@ -31,12 +31,12 @@
 
     function restart(): void {
         restartGame()
-        window.location.href = "/s"
+        window.location.href = "/project-thesis-tests/s"
     }
 
     function stop(): void {
         stopGame()
-        window.location.href = "/"
+        window.location.href = "/project-thesis-tests/"
     }
 </script>
 
