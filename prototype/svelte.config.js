@@ -16,6 +16,9 @@ const config = {
             publicPrefix: "PUBLIC_",
             privatePrefix: "PRIVATE_"
         },
+        path: {
+            base: process.argv.includes("dev") ? "" : process.env.BASE_PATH
+        },
         alias: {
             $config: "./src/lib/config",
             $components: "./src/lib/components",
