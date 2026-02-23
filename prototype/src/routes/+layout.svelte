@@ -1,3 +1,7 @@
+<svelte:head>
+  <base href="BASEURL">
+</svelte:head>
+
 <script lang="ts">
     import "../app.css"
     import "@fontsource-variable/space-grotesk"
