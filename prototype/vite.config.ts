@@ -11,7 +11,12 @@ const config: CommonServerOptions = {
 }
 
 export default defineConfig({
-    server: config,
+    server: {
+        host: "0.0.0.0",
+        port: 3000,
+        strictPort: true,
+        allowedHosts: ["cedric-paelmke.de"]
+    },
     preview: {
         host: "0.0.0.0",
         port: 3000,
