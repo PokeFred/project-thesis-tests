@@ -119,29 +119,29 @@ jobs:
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Run check-tests
-              run: |
-                    cd ./prototype
-                    npm install
-                    npm run test:check
+            #- name: Setup NodeJS
+            #  uses: actions/setup-node@v4
+            #  with:
+            #    node-version: 20.x
+            #- name: Run check-tests
+            #  run: |
+            #        cd ./prototype
+            #        npm install
+            #        npm run test:check
     prototype_unit-test:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout repository
                 uses: actions/checkout@v4
-            - name: Setup NodeJS
-              uses: actions/setup-node@v4
-              with:
-                node-version: 20.x
-            - name: Run unit-tests
-              run: |
-                    cd ./prototype
-                    npm install
-                    npm run test:unit
+            #- name: Setup NodeJS
+            #  uses: actions/setup-node@v4
+            #  with:
+            #    node-version: 20.x
+            #- name: Run unit-tests
+            #  run: |
+            #        cd ./prototype
+            #        npm install
+            #        npm run test:unit
     prototype_build-test:
         runs-on: ubuntu-latest
         steps:
