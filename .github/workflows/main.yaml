@@ -23,7 +23,7 @@ jobs:
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
-                    name: prototype_build
+                    name: proof_of_concept_one-build
                     path: ./proof-of-concept-one/build
     proof_of_concept_two-build:
         runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
-                    name: prototype_build
+                    name: proof_of_concept_two-build
                     path: ./proof-of-concept-two/build
     prototype-build:
         runs-on: ubuntu-latest
@@ -61,7 +61,7 @@ jobs:
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
-                    name: prototype_build
+                    name: prototype-build
                     path: ./prototype/build
     app-deployment:
         needs: [prototype-build]
@@ -82,7 +82,7 @@ jobs:
             -   name: Download build artifact
                 uses: actions/download-artifact@v4
                 with:
-                    name: prototype_build
+                    name: prototype-build
                     path: ./build
             -   name: Setup pages
                 uses: actions/configure-pages@v5
