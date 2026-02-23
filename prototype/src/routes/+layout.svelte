@@ -1,5 +1,5 @@
 <svelte:head>
-  <base href="BASEURL">
+  <base href="https://pokefred.github.io/project-thesis-tests/">
 </svelte:head>
 
 <script lang="ts">
