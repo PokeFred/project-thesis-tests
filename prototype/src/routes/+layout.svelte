@@ -13,6 +13,7 @@
     import Icon from "svelte-awesome"
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
+    import { dev } from "$app/environment"
 
     let { children }: LayoutProps = $props()
 
@@ -58,8 +59,10 @@
                     {#if isRunning()}
                         <button onclick={(): Promise<void> => goto("/project-thesis-tests/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
                         <hr class="border" />
-                        <button onclick={(): Promise<void> => goto("/project-thesis-tests/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
-                        <hr class="border" />
+                        {#if dev}
+                            <button onclick={(): Promise<void> => goto("/project-thesis-tests/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
+                            <hr class="border" />
+                        {/if}
                     {/if}
                     <button onclick={(): void => introductionModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">ANLEITUNG</button>
                     <hr class="border" />
