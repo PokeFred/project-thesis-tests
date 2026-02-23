@@ -174,7 +174,7 @@ jobs:
             -   name: Checkout the code
                 uses: actions/checkout@v5
             -   name: Create build folder
-                run: mkdir ./build && echo "Test" ./build/index.html
+                run: mkdir ./build && echo "Test" > ./build/index.html
             -   name: Upload build artifact
                 uses: actions/upload-artifact@v4
                 with:
@@ -199,7 +199,7 @@ jobs:
             -   name: Download build artifact
                 uses: actions/download-artifact@v4
                 with:
-                    name: app_build
+                    name: prototype_build
                     path: ./build
             -   name: Setup pages
                 uses: actions/configure-pages@v5
