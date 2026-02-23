@@ -54,6 +54,8 @@ jobs:
                 with:
                     node-version: 20.x
             -   name: Build the application
+                env:
+                    BASE_PATH: "/${{ github.event.repository.name }}"
                 run: |
                     cd ./prototype
                     npm install
