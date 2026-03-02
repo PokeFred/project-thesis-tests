@@ -27,7 +27,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="text-[16px] font-medium uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton path={`/project-thesis-tests/s/${data.station.id}`} />
+        <BackButton path={`/s/${data.station.id}`} />
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
@@ -69,6 +69,6 @@
         <Introduction data={data.introduction.data} />
         <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
-    <button onclick={()=>goto(`/project-thesis-tests/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>
+    <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>
     <ScrollButton />
 </div>

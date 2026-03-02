@@ -90,9 +90,9 @@
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
         if (data.puzzle.type !== "gps-puzzle") {
-            goto(`/project-thesis-tests/p/${data.puzzle.id}/result`)
+            goto(`/p/${data.puzzle.id}/result`)
         } else {
-            goto(`/project-thesis-tests/s/${data.station.id}`)
+            goto(`/s/${data.station.id}`)
         }
     }
 </script>
@@ -102,7 +102,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="font-medium text-[16px] uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton path={`/project-thesis-tests/s/${data.station.id}`} />
+        <BackButton path={`/s/${data.station.id}`} />
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
