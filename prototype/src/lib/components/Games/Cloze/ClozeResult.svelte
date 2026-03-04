@@ -27,7 +27,7 @@
         }
     });
 
-    let selectElementCounter: number = 0;
+    let selectElementCounter: number = $state(0);
 </script>
 
 
