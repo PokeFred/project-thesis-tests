@@ -951,11 +951,11 @@ const puzzles: Puzzle[] = [
         type: "error-spotting-puzzle",
         title: "Suchbild",
         requirements: [30],
-        score: 15,
+        score: 21,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: `Du siehst ein Inserat von Meyer & Günther aus der Dortmunder Zeitung von 1929. Das rechte Bild ist das Original. Klicke im linken Bild auf die fünf Unterschiede. Zusammengehörige Details zählen jeweils als ein Unterschied.` },
+                    { tag: "title", text: `Du siehst ein Inserat von Meyer & Günther aus der Dortmunder Zeitung von 1929. Das rechte Bild ist das Original. Klicke im linken Bild auf die sieben Unterschiede.` },
                 ]
             },
             game: {
