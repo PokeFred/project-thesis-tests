@@ -313,7 +313,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: { normal: "+" } },
                             { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer" }
                         ],
-                        solutions: ["Freund & Bauer"]
+                        solutions: ["Freund & Bauer", "Freund und Bauer"]
                     }
                 ]
             },
