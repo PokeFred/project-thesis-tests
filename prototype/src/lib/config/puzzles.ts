@@ -1661,7 +1661,7 @@ const puzzles: Puzzle[] = [
         score: 1,
         data: {
             introduction: {
-                text: "Begebe dich zum Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                text: "Begebe dich zur Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
                     adress: "Thier-Galerie",
                     transit: {
