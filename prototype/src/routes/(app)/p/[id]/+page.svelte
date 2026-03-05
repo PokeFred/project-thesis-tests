@@ -22,6 +22,7 @@
     import SingleChoiceIntroduction from "$components/puzzle/singleChoice/introduction.svelte"
     import SingleChoiceGame from "$components/puzzle/singleChoice/game.svelte"
     import Introduction from "$components/puzzle/introductionBuilder/introduction.svelte";
+    import ContentBuilder from "$components/Games/ContentBuilder/ContentBuilder.svelte";
 
     let { data }: PageProps = $props()
 
@@ -153,5 +154,9 @@
             {/if}
         </div>
     {/if}
+    <!-- TODO: Cedric -->
+    <!-- {#if data.content }
+        <ContentBuilder content={data.content} />
+    {/if} -->
     <ScrollButton />
 </div>
