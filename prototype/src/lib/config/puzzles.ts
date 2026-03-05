@@ -629,6 +629,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_01.jpg",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
+                            caption: "Teppichlager im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -637,7 +638,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_02.jpg",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
-                            caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
+                            caption: "Teppichlager im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -706,6 +707,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_05.jpg",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
+                            caption: "Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -714,7 +716,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_06.jpg",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
-                            caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
+                            caption: "Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
