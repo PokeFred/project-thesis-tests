@@ -1568,7 +1568,7 @@ const puzzles: Puzzle[] = [
     {
         id: 81,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 1",
         requirements: [80],
         score: 3,
         data: {
@@ -1579,14 +1579,14 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 answers: [
-                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 0, text: "Galeria", isCorrect: true },
                     { id: 1, text: "Horten", isCorrect: false },
                     { id: 2, text: "Neckermann", isCorrect: false },
                 ]
             },
             result: {
                 answers: [
-                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 0, text: "Galeria", isCorrect: true },
                     { id: 1, text: "Horten", isCorrect: false },
                     { id: 2, text: "Neckermann", isCorrect: false },
                 ]
@@ -1596,7 +1596,7 @@ const puzzles: Puzzle[] = [
     {
         id: 82,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 2",
         requirements: [80],
         score: 3,
         data: {
@@ -1624,7 +1624,7 @@ const puzzles: Puzzle[] = [
     {
         id: 83,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 3",
         requirements: [80],
         score: 3,
         data: {
@@ -1687,7 +1687,7 @@ const puzzles: Puzzle[] = [
     {
         id: 91,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 1",
         requirements: [90],
         score: 3,
         data: {
@@ -1713,7 +1713,7 @@ const puzzles: Puzzle[] = [
     {
         id: 92,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 2",
         requirements: [90],
         score: 3,
         data: {
@@ -1739,7 +1739,7 @@ const puzzles: Puzzle[] = [
     {
         id: 93,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 3",
         requirements: [], // TODO [90]
         score: 3,
         data: {
