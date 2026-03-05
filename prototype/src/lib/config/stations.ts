@@ -74,7 +74,7 @@ const _stations: _Station[] = [
     {
         id: 2,
         tag: "Station 02",
-        stitle: "Westenhellweg",
+        stitle: "Westenhellweg 1",
         title: "",
         chapters: "02",
         puzzles: [20, 21, 22, 23, 24]
@@ -122,7 +122,7 @@ const _stations: _Station[] = [
     {
         id: 8,
         tag: "Station 08",
-        stitle: "Westenhellweg",
+        stitle: "Westenhellweg 2",
         title: "",
         chapters: "08",
         puzzles: [80, 81, 82, 83]
