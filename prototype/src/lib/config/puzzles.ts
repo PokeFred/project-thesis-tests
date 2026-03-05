@@ -1473,15 +1473,14 @@ const puzzles: Puzzle[] = [
     {
         id: 71,
         type: "single-choice-puzzle",
-        title: "Quiz",
+        title: "Labyrinth",
         requirements: [70],
         score: 3,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
+                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel einsammelst." },
                     { tag: "img", src: "/station_07/image_00.png" },
-                    { tag: "p", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" },
                 ]
             },
             game: {
@@ -1509,20 +1508,19 @@ const puzzles: Puzzle[] = [
     {
         id: 72,
         type: "word-guessing-puzzle",
-        title: "Quiz",
+        title: "Quizfrage",
         requirements: [70],
         score: 3,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
+                    { tag: "title", text: "Wie viele Äpfel sind es?" },
                     { tag: "img", src: "/station_07/image_00.png" },
-                    { tag: "p", text: "Wie viele Äpfel sind es? Trage die Lösung als Zahl ein." },
                 ]
             },
             game: {
                 questions: [
-                    { solutions: ["10"] }
+                    { solutions: ["10", "Zehn"] }
                 ]
             },
             result: {
