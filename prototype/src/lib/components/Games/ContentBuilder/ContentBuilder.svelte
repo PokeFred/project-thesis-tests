@@ -8,7 +8,7 @@
 
 {#each content as element }
     {#if element.tag === "h2"}
-        <h2 class="mx-2 font-medium text-[18px] leading-6">
+        <h2 class="mx-2 mb-5 font-bold text-[20px] leading-6">
             {#each element.children as child}
                 {#if child.tag === "text"}
                     {child.text}

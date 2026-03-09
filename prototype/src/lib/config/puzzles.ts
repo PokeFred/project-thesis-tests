@@ -286,7 +286,70 @@ const puzzles: Puzzle[] = [
                         solutionText: "Lösung: Tee (-e) + Western (-tern) = Tewes"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Tewes: Tradition seit 1824"}]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Es war das Jahr 1824, als Goldschmied Carl Wilhelm Tewes in Dortmund sein Geschäft eröffnete. Laut Handelskammer ist es heute das älteste Familienunternehmen der Stadt. Damals lebte sogar noch Johann Wolfgang von Goethe. Wer weiß, vielleicht hätte er sich hier eine Taschenuhr ausgesucht."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Bei der Gründung von Tewes zählte Dortmund nur etwa 6.000 Einwohner*innen und war  damit ein überschaubares Städtchen. Mit der Industrialisierung und dem Aufschwung durch den Kohleabbau wuchs Dortmund rasch. Auch das Geschäft Tewes profitierte davon und entwickelte sich zu einer der ersten Adressen des Dortmunder Großbürgertums. Im Kaiserreich (1871–1918) war Tewes eines der vier größten Juweliergeschäfte Deutschlands."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und UrururEnkel des Gründers."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft zerstört. Der Wiederaufbau gelang am heutigen Standort Westenhellweg 6. Bis heute verbindet Tewes traditionelle Goldschmiedekunst mit zeitgemäßem Design und wird in sechster Generation, mittlerweile von Rudolf Tewes, geführt."},
+                    ]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_00.png",
+                    alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche (Stadtarchiv Dortmund)",
+                    caption: {
+                        caption: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_01.png",
+                    alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes. (Stadtarchiv Dortmund)",
+                    caption: {
+                        caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_02.png",
+                    alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
+                    caption: {
+                        caption: "Postkarte von ca. 1911: Links im Vordergrund das Gebäude des Juweliers Tewes am zweiten Standort, Ostenhellweg 16.",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: ""},
+                    ]
+                },
+            ]
         }
     },
     {
