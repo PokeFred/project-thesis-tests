@@ -328,10 +328,10 @@ const puzzles: Puzzle[] = [
                 {
                     tag: "img",
                     src: "/station_02/raetsel_01/content/image_01.jpg",
-                    alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes. (Stadtarchiv Dortmund)",
+                    alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
                     caption: {
                         caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
-                        src: "Stadtarchiv Dortmund"
+                        src: "Rudolf Tewes"
                     }
                 },
                 {
@@ -423,7 +423,119 @@ const puzzles: Puzzle[] = [
                         solutionText: "Lösung: Freundschaft (-schaft) + & + Bauer = Freund & Bauer"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Was 1904 als kleiner Blumenladen begann, entwickelte sich über vier Generationen hinweg zu einem Juweliergeschäft. Am Westenhellweg 8 eröffneten August Bauer und Hugo Freund das Geschäft. Nach vier Jahren trennten sich ihre Wege: Hugo Freund zog nach Mannheim, der Name jedoch blieb in Dortmund."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_00.jpg",
+                    alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
+                        src: "Freund & Bauer."
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_01.jpg",
+                    alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
+                        src: "Freund & Bauer."
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_02.jpg",
+                    alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_03.jpg",
+                    alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "1931 wurde das Geschäft abgerissen und nach einem Entwurf des Architekten Arthur Groos neu gebaut. Bauherr war August Bauer. 1943 musste das Geschäft kriegsbedingt schließen und an seiner Stelle eröffnete das Schuhhaus Sondermann. Nach dem Krieg baute Jula Bauer das Unternehmen wieder auf."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_04.jpg",
+                    alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_05.jpg",
+                    alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
+                    caption: {
+                        caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_06.jpg",
+                    alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_07.jpg",
+                    alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Mit der Umwandlung des Westenhellwegs in eine Fußgängerzone verloren die Blumen an Bedeutung und ab 1980 konzentrierte man sich auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Kirsten Mitsalis-Bauer, Tochter von Walter Bauer, leitet das Geschäft heute in vierter Generation und stand sogar einmal als Verlobungsring-Verkäuferin für einen Spielfilm vor der Kamera."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_08.jpg",
+                    alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_09.jpg",
+                    alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
+                    caption: {
+                        caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
+                        src: "Freund & Bauer"
+                    }
+                },
+            ]
         }
     },
     {
