@@ -616,7 +616,47 @@ const puzzles: Puzzle[] = [
                         solutionText: "Betten + Hut (t) = Betten Hutt"
                     }
                 ]
-            }
+            },
+            content: [
+                    {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Betten Hutt wurde 1869 vom jüdischen Kaufmann Jakob Baum gegründet und gehört zu den ältesten Geschäften am Hellweg. Zur Gründungszeit umfasste das Unternehmen eine Matratzenpolsterei und eine Bettfedernfabrik. Die Familie Baum lebte, wie damals üblich, über den Geschäftsräumen und prägte das Haus über mehrere Generationen."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im frühen 20. Jahrhundert übernahm Jakobs Sohn Louis Baum das Geschäft. Mit der Machtübernahme der Nationalsozialisten verschärfte sich die Situation für jüdische Unternehmer*innen dramatisch. 1934 entschloss sich die Familie Baum zur Flucht in die USA. In dieser Situation übernahm Waldemar Hutt, der die Familie persönlich kannte, das Geschäft einschließlich der Mitarbeitenden. Beide Familien vereinbarten, dass das Unternehmen im Sinne der Familie Baum weitergeführt werden sollte. Trotz der Emigration blieb der Kontakt bestehen, das Verhältnis war freundschaftlich."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Gebäude bei einem Bombenangriff im Mai 1943 vollständig zerstört. Ab 1948 begann Waldemar Hutt gemeinsam mit seinem Sohn Hans mit dem Wiederaufbau. Über mehr als ein Jahrzehnt entstand schrittweise das heutige Haus: 1961 schließlich mit fünf Etagen und der bis heute prägenden roten Leuchtreklame am Westenhellweg."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Nach dem Krieg wurde offiziell bestätigt, dass die Übergabe des Geschäfts ordnungsgemäß erfolgt war. Deshalb durfte das Unternehmen weiterhin das Gründungsjahr 1869 führen. Heute leitet Heiko Hutt, Enkel von Waldemar Hutt, das Geschäft am Westenhellweg 107 erfolgreich in dritter Generation."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_03/content/image_00.jpg",
+                    alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
+                    caption: {
+                        caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_03/content/image_01.png",
+                    alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
+                    caption: {
+                        caption: "Werbung für die Firma Betten Hutt.",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+            ] 
         }
     },
     {
