@@ -725,7 +725,70 @@ const puzzles: Puzzle[] = [
                         solutionText: "Rüschen + (-Ge)b(ä=e)ck = Rüschenbeck"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_00.png",
+                    alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
+                    caption: {
+                        caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_01.png",
+                    alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
+                    caption: {
+                        caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_02.png",
+                    alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_03.png",
+                    alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg 45 offiziell neu eröffnet werden. Es hatte ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute gehört Rüschenbeck zu den größten Juwelieren Europas, wurde mehrmals ausgezeichnet und eröffnete zahlreiche Filialen an mehreren Standorten."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_04.png",
+                    alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+            ]
         }
     },
     // 30: S03 E00
