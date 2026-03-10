@@ -307,7 +307,7 @@ const puzzles: Puzzle[] = [
                 {
                     tag: "p",
                     children: [
-                        {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und UrururEnkel des Gründers."},
+                        {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger*innen ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und UrururEnkel des Gründers."},
                     ]
                 },
                 {
@@ -327,7 +327,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_01/content/image_01.png",
+                    src: "/station_02/raetsel_01/content/image_01.jpg",
                     alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes. (Stadtarchiv Dortmund)",
                     caption: {
                         caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
