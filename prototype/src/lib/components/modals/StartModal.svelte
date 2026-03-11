@@ -7,7 +7,7 @@
     export function openModal(): void { modal.openModal() }
 </script>
 
-<Modal bind:this={modal} buttonText={"Spiel beenden"} onConfirm={onConfirm}>
+<Modal bind:this={modal} buttonText={"Spiel starten"} onConfirm={onConfirm}>
     <div class="text-[20px] leading-6">
         <div>Damit dein Fortschritt gespeichert wird, kann die App deine Ergebnisse lokal auf deinem Gerät sichern.</div>
         <div>Es werden keine Daten übertragen oder geteilt.</div>
