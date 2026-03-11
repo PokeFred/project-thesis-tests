@@ -65,7 +65,8 @@ export default class Puzzle {
         if (dev) return false
 
         return this.requirements
-            .map((element: number): number => this.getScore().current)
+            .map((element: number): Puzzle => Puzzle.get(element))
+            .map((element: Puzzle): number => element.getScore().current)
             .map((element: number): boolean => element > 0)
             .filter((element: boolean): boolean => !element)
             .length > 0

@@ -49,7 +49,7 @@ export const load: PageLoad = async ({ params }): Promise<{ station: _Station, p
         puzzle: {
             id: puzzle.id,
             type: puzzle.type,
-            title: puzzle.type,
+            title: puzzle.title,
             score: toScore(puzzle.score, puzzle.score)
         },
         introduction: puzzle.data.introduction,
