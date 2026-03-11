@@ -57,6 +57,11 @@ export default class Puzzle {
         return getPuzzleSaving(this.id)
     }
 
+    public getContent(): any {
+        // TODO
+        return {}
+    }
+
     public isDone(): boolean {
         return getPuzzleScore(this.id) > 0
     }
