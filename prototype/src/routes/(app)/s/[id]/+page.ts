@@ -28,7 +28,7 @@ type _Puzzle = {
 
 export const load: PageLoad = async ({ params }): Promise<{ stitle: string, title: string, score: Score, chapters: _Chapters[], puzzles:  _Puzzle[] }> => {
     const id: number = Number(params.id)
-    const station: Station_ = Station_.getStation(id)
+    const station: Station_ = Station_.get(id)
 
     return {
         stitle: station.getSTitle(),

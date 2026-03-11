@@ -14,7 +14,7 @@ export const load: PageLoad = async (): Promise<{ stations: _Station[] }> => {
             .map((element: Station): _Station => {
                 return {
                     id: element.getId(),
-                    title: element.getTitle(),
+                    title: element.getSTitle(),
                     score: element.getScore()
                 }
             })
