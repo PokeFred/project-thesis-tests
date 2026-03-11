@@ -24,8 +24,8 @@
 <div class="flex flex-col divide-y-2 divide-secondary border-y-2 border-secondary">
     {#each multipleChoiceResult as result, i}
         <div>
-            <div class="flex w-full h-8 mt-6 mb-[10px]">
-                <div class="grow-0 shrink-0 w-[32px] h-[32px] ml-[9px] mr-[19px] rounded-full border-2 border-secondary {result.selected ? "bg-secondary" : "bg-inherit"}"></div>
+            <div class="flex w-full h-8 mt-6 mb-2.5">
+                <div class="grow-0 shrink-0 w-8 h-8 ml-[9px] mr-[19px] rounded-full border-2 border-secondary {result.selected ? "bg-secondary" : "bg-inherit"}"></div>
                 <div class="flex items-center justify-between w-full -mr-4 pl-4 pr-8 text-[16px] text-primary bg-secondary rounded-l-full">
                     <span class="font-bold tracking-[0.96px]">Du hast {result.correct == result.selected ? "RICHTIG" : "FALSCH"} getippt</span>
                     <span class="font-medium">{result.selected == result.correct ? POINTS.ANSWER_CORRECT : 0}/{POINTS.ANSWER_CORRECT}</span>
@@ -56,7 +56,7 @@
                                     </figure>
                                 {/if}
                             {/each}
-                        <button class="block w-[32px] h-[32px] ml-auto mr-[9px] my-[35px] bg-secondary rounded-full cursor-pointer touch-manipulation" onclick={toggles[i]}><Icon data={faXmark} class="w-6/12 h-auto text-primary" /></button>
+                        <button class="block w-8 h-8 ml-auto mr-[9px] my-[35px] bg-secondary rounded-full cursor-pointer touch-manipulation" onclick={toggles[i]}><Icon data={faXmark} class="w-6/12 h-auto text-primary" /></button>
                     </ShowMore>
                 </div>
             </div>

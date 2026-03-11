@@ -286,7 +286,70 @@ const puzzles: Puzzle[] = [
                         solutionText: "Lösung: Tee (-e) + Western (-tern) = Tewes"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Tewes: Tradition seit 1824"}]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Es war das Jahr 1824, als Goldschmied Carl Wilhelm Tewes in Dortmund sein Geschäft eröffnete. Laut Handelskammer ist es heute das älteste Familienunternehmen der Stadt. Damals lebte sogar noch Johann Wolfgang von Goethe. Wer weiß, vielleicht hätte er sich hier eine Taschenuhr ausgesucht."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Bei der Gründung von Tewes zählte Dortmund nur etwa 6.000 Einwohner*innen und war  damit ein überschaubares Städtchen. Mit der Industrialisierung und dem Aufschwung durch den Kohleabbau wuchs Dortmund rasch. Auch das Geschäft Tewes profitierte davon und entwickelte sich zu einer der ersten Adressen des Dortmunder Großbürgertums. Im Kaiserreich (1871–1918) war Tewes eines der vier größten Juweliergeschäfte Deutschlands."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger*innen ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und UrururEnkel des Gründers."},
+                    ]
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft zerstört. Der Wiederaufbau gelang am heutigen Standort Westenhellweg 6. Bis heute verbindet Tewes traditionelle Goldschmiedekunst mit zeitgemäßem Design und wird in sechster Generation, mittlerweile von Rudolf Tewes, geführt."},
+                    ]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_00.png",
+                    alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche (Stadtarchiv Dortmund)",
+                    caption: {
+                        caption: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_01.jpg",
+                    alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
+                    caption: {
+                        caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
+                        src: "Rudolf Tewes"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_01/content/image_02.png",
+                    alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
+                    caption: {
+                        caption: "Postkarte von ca. 1911: Links im Vordergrund das Gebäude des Juweliers Tewes am zweiten Standort, Ostenhellweg 16.",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [
+                        {tag: "text", text: ""},
+                    ]
+                },
+            ]
         }
     },
     {
@@ -313,7 +376,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: { normal: "+" } },
                             { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer" }
                         ],
-                        solutions: ["Freund & Bauer"]
+                        solutions: ["Freund & Bauer", "Freund und Bauer"]
                     }
                 ]
             },
@@ -360,7 +423,119 @@ const puzzles: Puzzle[] = [
                         solutionText: "Lösung: Freundschaft (-schaft) + & + Bauer = Freund & Bauer"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Was 1904 als kleiner Blumenladen begann, entwickelte sich über vier Generationen hinweg zu einem Juweliergeschäft. Am Westenhellweg 8 eröffneten August Bauer und Hugo Freund das Geschäft. Nach vier Jahren trennten sich ihre Wege: Hugo Freund zog nach Mannheim, der Name jedoch blieb in Dortmund."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_00.jpg",
+                    alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
+                        src: "Freund & Bauer."
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_01.jpg",
+                    alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
+                        src: "Freund & Bauer."
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_02.jpg",
+                    alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_03.jpg",
+                    alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "1931 wurde das Geschäft abgerissen und nach einem Entwurf des Architekten Arthur Groos neu gebaut. Bauherr war August Bauer. 1943 musste das Geschäft kriegsbedingt schließen und an seiner Stelle eröffnete das Schuhhaus Sondermann. Nach dem Krieg baute Jula Bauer das Unternehmen wieder auf."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_04.jpg",
+                    alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_05.jpg",
+                    alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
+                    caption: {
+                        caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_06.jpg",
+                    alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_07.jpg",
+                    alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Mit der Umwandlung des Westenhellwegs in eine Fußgängerzone verloren die Blumen an Bedeutung und ab 1980 konzentrierte man sich auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Kirsten Mitsalis-Bauer, Tochter von Walter Bauer, leitet das Geschäft heute in vierter Generation und stand sogar einmal als Verlobungsring-Verkäuferin für einen Spielfilm vor der Kamera."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_08.jpg",
+                    alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
+                    caption: {
+                        caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
+                        src: "Freund & Bauer"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_02/content/image_09.jpg",
+                    alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
+                    caption: {
+                        caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
+                        src: "Freund & Bauer"
+                    }
+                },
+            ]
         }
     },
     {
@@ -441,7 +616,47 @@ const puzzles: Puzzle[] = [
                         solutionText: "Betten + Hut (t) = Betten Hutt"
                     }
                 ]
-            }
+            },
+            content: [
+                    {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Betten Hutt wurde 1869 vom jüdischen Kaufmann Jakob Baum gegründet und gehört zu den ältesten Geschäften am Hellweg. Zur Gründungszeit umfasste das Unternehmen eine Matratzenpolsterei und eine Bettfedernfabrik. Die Familie Baum lebte, wie damals üblich, über den Geschäftsräumen und prägte das Haus über mehrere Generationen."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im frühen 20. Jahrhundert übernahm Jakobs Sohn Louis Baum das Geschäft. Mit der Machtübernahme der Nationalsozialisten verschärfte sich die Situation für jüdische Unternehmer*innen dramatisch. 1934 entschloss sich die Familie Baum zur Flucht in die USA. In dieser Situation übernahm Waldemar Hutt, der die Familie persönlich kannte, das Geschäft einschließlich der Mitarbeitenden. Beide Familien vereinbarten, dass das Unternehmen im Sinne der Familie Baum weitergeführt werden sollte. Trotz der Emigration blieb der Kontakt bestehen, das Verhältnis war freundschaftlich."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Gebäude bei einem Bombenangriff im Mai 1943 vollständig zerstört. Ab 1948 begann Waldemar Hutt gemeinsam mit seinem Sohn Hans mit dem Wiederaufbau. Über mehr als ein Jahrzehnt entstand schrittweise das heutige Haus: 1961 schließlich mit fünf Etagen und der bis heute prägenden roten Leuchtreklame am Westenhellweg."}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Nach dem Krieg wurde offiziell bestätigt, dass die Übergabe des Geschäfts ordnungsgemäß erfolgt war. Deshalb durfte das Unternehmen weiterhin das Gründungsjahr 1869 führen. Heute leitet Heiko Hutt, Enkel von Waldemar Hutt, das Geschäft am Westenhellweg 107 erfolgreich in dritter Generation."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_03/content/image_00.jpg",
+                    alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
+                    caption: {
+                        caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_03/content/image_01.png",
+                    alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
+                    caption: {
+                        caption: "Werbung für die Firma Betten Hutt.",
+                        src: "Stadtarchiv Dortmund"
+                    }
+                },
+            ] 
         }
     },
     {
@@ -510,7 +725,70 @@ const puzzles: Puzzle[] = [
                         solutionText: "Rüschen + (-Ge)b(ä=e)ck = Rüschenbeck"
                     }
                 ]
-            }
+            },
+            content: [
+                {
+                    tag: "h2",
+                    children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_00.png",
+                    alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
+                    caption: {
+                        caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_01.png",
+                    alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
+                    caption: {
+                        caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_02.png",
+                    alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_03.png",
+                    alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+                {
+                    tag: "p",
+                    children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg 45 offiziell neu eröffnet werden. Es hatte ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute gehört Rüschenbeck zu den größten Juwelieren Europas, wurde mehrmals ausgezeichnet und eröffnete zahlreiche Filialen an mehreren Standorten."}]
+                },
+                {
+                    tag: "img",
+                    src: "/station_02/raetsel_04/content/image_04.png",
+                    alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
+                    caption: {
+                        caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
+                        src: "Sammlung Rüschenbeck"
+                    }
+                },
+            ]
         }
     },
     // 30: S03 E00
@@ -556,7 +834,7 @@ const puzzles: Puzzle[] = [
         score: 21,
         data: {
             introduction: {
-                text: ["Wenn Du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
+                text: ["Wenn du mehr über die Innenausstattung und die im Kaufhaus angebotenen Waren erfahren möchtest, löse den folgenden Lückentext. Jeweils ein Begriff ist der richtige und muss in die freie Lücke eingesetzt werden."]
             },
             game: {
                 content: [
@@ -629,6 +907,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_01.jpg",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
+                            caption: "Teppichlager im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -637,7 +916,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_02.jpg",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
-                            caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
+                            caption: "Teppichlager im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -706,6 +985,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_05.jpg",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
+                            caption: "Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -714,7 +994,7 @@ const puzzles: Puzzle[] = [
                         src: "/station_03/raetsel_01/image_06.jpg",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
-                            caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
+                            caption: "Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
@@ -951,11 +1231,11 @@ const puzzles: Puzzle[] = [
         type: "error-spotting-puzzle",
         title: "Suchbild",
         requirements: [30],
-        score: 15,
+        score: 21,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: `Du siehst ein Inserat von Meyer & Günther aus der Dortmunder Zeitung von 1929. Das rechte Bild ist das Original. Klicke im linken Bild auf die fünf Unterschiede. Zusammengehörige Details zählen jeweils als ein Unterschied.` },
+                    { tag: "title", text: `Du siehst ein Inserat von Meyer & Günther aus der Dortmunder Zeitung von 1929. Das rechte Bild ist das Original. Klicke im linken Bild auf die sieben Unterschiede.` },
                 ]
             },
             game: {
@@ -1471,15 +1751,14 @@ const puzzles: Puzzle[] = [
     {
         id: 71,
         type: "single-choice-puzzle",
-        title: "Quiz",
+        title: "Labyrinth",
         requirements: [70],
         score: 3,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
+                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel einsammelst." },
                     { tag: "img", src: "/station_07/image_00.png" },
-                    { tag: "p", text: "Welcher Weg kommt ins Ziel und sammelt dabei am meisten Äpfel ein?" },
                 ]
             },
             game: {
@@ -1507,20 +1786,19 @@ const puzzles: Puzzle[] = [
     {
         id: 72,
         type: "word-guessing-puzzle",
-        title: "Quiz",
+        title: "Quizfrage",
         requirements: [70],
         score: 3,
         data: {
             introduction: {
                 data: [
-                    { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel sammeln kannst. Wie viele Äpfel sind es?" },
+                    { tag: "title", text: "Wie viele Äpfel sind es?" },
                     { tag: "img", src: "/station_07/image_00.png" },
-                    { tag: "p", text: "Wie viele Äpfel sind es? Trage die Lösung als Zahl ein." },
                 ]
             },
             game: {
                 questions: [
-                    { solutions: ["10"] }
+                    { solutions: ["10", "Zehn"] }
                 ]
             },
             result: {
@@ -1568,7 +1846,7 @@ const puzzles: Puzzle[] = [
     {
         id: 81,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 1",
         requirements: [80],
         score: 3,
         data: {
@@ -1579,14 +1857,14 @@ const puzzles: Puzzle[] = [
             },
             game: {
                 answers: [
-                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 0, text: "Galeria", isCorrect: true },
                     { id: 1, text: "Horten", isCorrect: false },
                     { id: 2, text: "Neckermann", isCorrect: false },
                 ]
             },
             result: {
                 answers: [
-                    { id: 0, text: "Karstadt", isCorrect: true },
+                    { id: 0, text: "Galeria", isCorrect: true },
                     { id: 1, text: "Horten", isCorrect: false },
                     { id: 2, text: "Neckermann", isCorrect: false },
                 ]
@@ -1596,7 +1874,7 @@ const puzzles: Puzzle[] = [
     {
         id: 82,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 2",
         requirements: [80],
         score: 3,
         data: {
@@ -1624,7 +1902,7 @@ const puzzles: Puzzle[] = [
     {
         id: 83,
         type: "single-choice-puzzle",
-        title: "Quizfragen",
+        title: "Quizfrage 3",
         requirements: [80],
         score: 3,
         data: {
@@ -1659,7 +1937,7 @@ const puzzles: Puzzle[] = [
         score: 1,
         data: {
             introduction: {
-                text: "Begebe dich zum Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                text: "Begebe dich zur Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
                     adress: "Thier-Galerie",
                     transit: {
@@ -1687,7 +1965,7 @@ const puzzles: Puzzle[] = [
     {
         id: 91,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 1",
         requirements: [90],
         score: 3,
         data: {
@@ -1713,7 +1991,7 @@ const puzzles: Puzzle[] = [
     {
         id: 92,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 2",
         requirements: [90],
         score: 3,
         data: {
@@ -1739,7 +2017,7 @@ const puzzles: Puzzle[] = [
     {
         id: 93,
         type: "word-guessing-puzzle",
-        title: "Suchaufgabe",
+        title: "Suchaufgabe 3",
         requirements: [], // TODO [90]
         score: 3,
         data: {

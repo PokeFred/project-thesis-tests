@@ -4,10 +4,11 @@
     import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus"
     import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
     import Fullscreen from "$components/Fullscreen.svelte";
+    import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
 
     let { question }: { question: AccordionQuestion } = $props()
     let open: boolean = $state<boolean>(false)
-    console.log(question)
+    // console.log(question)
 </script>
 
 <details bind:open={open}>
@@ -45,4 +46,5 @@
             {/if}
         </div>
     {/each}
+    <button class="block w-8 h-8 ml-auto mr-[9px] my-[35px] bg-secondary rounded-full cursor-pointer touch-manipulation" onclick={() => open = false}><Icon data={faXmark} class="w-6/12 h-auto text-primary" /></button>
 </details>

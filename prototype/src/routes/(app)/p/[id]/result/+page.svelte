@@ -20,6 +20,7 @@
     import Introduction from "$components/puzzle/introductionBuilder/introduction.svelte";
     import TextSelectIntroduction from "$components/puzzle/textSelect/introduction.svelte"
     import TextSelectResult from "$components/puzzle/textSelect/result.svelte"
+    import ContentBuilder from "$components/Games/ContentBuilder/ContentBuilder.svelte";
 
     let { data }: PageProps = $props()
 </script>
@@ -70,5 +71,10 @@
         <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
     <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>
+    {#if data.content }
+        <div class="mt-8">
+            <ContentBuilder content={data.content} />
+        </div>
+    {/if}
     <ScrollButton />
 </div>
