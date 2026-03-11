@@ -1,9 +1,6 @@
 import type { PageLoad } from "./$types"
-import Stations from "$config/stations"
-import type { Station } from "$config/stations"
-import Puzzles from "$config/puzzles"
-import type { Puzzle } from "$config/puzzles"
-import { toScore } from "$utils/score"
+import Station from "$utils/station"
+import Puzzle from "$utils/puzzle"
 import type { Score } from "$utils/score"
 
 type _Station = {
@@ -19,24 +16,22 @@ type _Puzzle = {
 }
 
 export const load: PageLoad = async ({ params }): Promise<{ station: _Station, puzzle: _Puzzle, introduction: any, game: any }> => {
-    const station: Station = Stations
-        .filter((element): boolean => element.puzzles.includes(Number(params.id)))[0]
-    const puzzle: Puzzle = Puzzles
-        .filter((element): boolean => element.id === Number(params.id))[0]
+    const station: Station = Station.getByPuzzle(Number(params.id))
+    const puzzle: Puzzle = Puzzle.get(Number(params.id))
 
     return {
         station: {
-            id: station.id,
-            title: station.stitle
+            id: station.getId(),
+            title: station.getSTitle()
         },
         puzzle: {
-            id: puzzle.id,
-            type: puzzle.type,
-            title: puzzle.title,
-            score: toScore(0, puzzle.score)
+            id: puzzle.getId(),
+            type: puzzle.getType(),
+            title: puzzle.getTitle(),
+            score: puzzle.getScore()
         },
-        introduction: puzzle.data.introduction,
-        game: puzzle.data.game
+        introduction: puzzle.getIntroduction(),
+        game: puzzle.getGame()
     }
 }
 

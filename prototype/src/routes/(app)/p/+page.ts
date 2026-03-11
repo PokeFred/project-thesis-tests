@@ -1,24 +1,11 @@
 import type { PageLoad } from "./$types"
-import Stations from "$config/stations"
-import type { Station } from "$config/stations"
-import Puzzles from "$config/puzzles"
-import type { Puzzle } from "$config/puzzles"
-import { getPuzzleScore } from "$stores"
+import Station_ from "$utils/station"
+import Puzzle_ from "$utils/puzzle"
+import type { Score } from "$utils/score"
 
-type Score = {
-    current: number,
-    max: number,
-    completion: number
-}
-
-function toScore(current: number, max: number): Score {
-    const completion: number = Number((current * 100 / max).toFixed(1))
-
-    return {
-        current: current,
-        max: max,
-        completion: Number.isNaN(completion) ? 0 : completion
-    }
+type _Station = {
+    title: string,
+    puzzles: _Puzzle[]
 }
 
 type _Puzzle = {
@@ -30,49 +17,24 @@ type _Puzzle = {
     locked: boolean
 }
 
-function getPuzzles(station: Station): _Puzzle[] {
-    return Puzzles
-        .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
-        .map((element: Puzzle): _Puzzle => {
-            const current: number = getPuzzleScore(element.id)
-            const isLocked: boolean = element.requirements
-                .map((element: number): number => {
-                    const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
-                    console.log(element)
-                    console.log(puzzle)
-
-                    return element
-                })
-                .map((element: number): number => getPuzzleScore(element))
-                .map((element: number): boolean => element > 0)
-                .filter((element: boolean): boolean => !element)
-                .length > 0
-
-            return {
-                id: element.id,
-                type: element.type,
-                title: element.title,
-                score: toScore(current, element.score),
-                done: current !== 0,
-                locked: isLocked
-            }
-        })
-}
-
-type _Station = {
-    title: string,
-    puzzles: _Puzzle[]
-}
-
-function getStations(): _Station[] {
-    return Stations
-        .map((element: Station): _Station => {
-            return { title: `${element.tag}: ${element.stitle}`, puzzles: getPuzzles(element) }
-        })
-}
-
 export const load: PageLoad = async (): Promise<{ stations: _Station[] }> => {
     return {
-        stations: getStations()
+        stations: Station_.getAll()
+            .map((element: Station_): _Station => {
+                return {
+                    title: `${element.getTag()}: ${element.getSTitle()}`,
+                    puzzles: element.getPuzzles()
+                        .map((element: Puzzle_): _Puzzle => {
+                            return {
+                                id: element.getId(),
+                                type: element.getType(),
+                                title: element.getTitle(),
+                                score: element.getScore(),
+                                done: element.isDone(),
+                                locked: element.isLocked()
+                            }
+                        })
+                }
+            })
     }
 }

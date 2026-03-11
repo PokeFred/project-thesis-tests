@@ -1,28 +1,14 @@
 import type { PageLoad } from "./$types"
-import Stations from "$config/stations"
-import type { Station } from "$config/stations"
-import Puzzles from "$config/puzzles"
-import type { Puzzle } from "$config/puzzles"
-import { getPuzzleScore } from "$stores"
 import type { AccordionData, AccordionQuestion } from "$components/accordions/Accordion"
-import { toScore } from "$utils/score"
 import type { Score } from "$utils/score"
+import Station_ from "$utils/station"
+import Puzzle_ from "$utils/puzzle"
 
-function getStationScore(station: Station): Score {
-    const current: number = station.puzzles
-        .map((element: number): number => getPuzzleScore(element))
-        .reduce((pre: number, cur: number): number => pre += cur, 0)
-    const max: number = station.puzzles
-        .map((element: number): number => Puzzles.filter((e): boolean => e.id === element)[0].score)
-        .reduce((pre: number, cur: number): number => pre += cur, 0)
-
-    return toScore(current, max)
-}
-
+// TODO chapter typing ?
 type _Chapters = {}
 
-function getStationChapters(station: Station): _Chapters[] {
-    const chapters = station.chapters
+function getStationChapters(station: Station_): _Chapters[] {
+    const chapters = station.getChapters()
         .map((element: any): AccordionQuestion => { return { type: "question", question: element.title, answer: element.data } })
         .map((element: AccordionQuestion): AccordionData => [{ type: "seperator" }, element])
         .flat(1)
@@ -32,53 +18,34 @@ function getStationChapters(station: Station): _Chapters[] {
 }
 
 type _Puzzle = {
-    type: string,
     id: number,
+    type: string,
     title: string,
     score: Score,
     done: boolean,
     locked: boolean
 }
 
-function getStationPuzzles(station: Station): _Puzzle[] {
-    return Puzzles
-        .filter((element: Puzzle): boolean => station.puzzles.includes(element.id))
-        .filter((element: Puzzle): boolean => element.type !== "placeholder-puzzle")
-        .map((element: Puzzle): _Puzzle => {
-            const current: number = getPuzzleScore(element.id)
-            const isLocked: boolean = element.requirements
-                .map((element: number): number => {
-                    const puzzle: Puzzle = Puzzles.filter((e: Puzzle): boolean => e.id === element)[0]
-                    console.log(element)
-                    console.log(puzzle)
-
-                    return element
-                })
-                .map((element: number): number => getPuzzleScore(element))
-                .map((element: number): boolean => element > 0)
-                .filter((element: boolean): boolean => !element)
-                .length > 0
-
-            return {
-                type: element.type,
-                id: element.id,
-                title: element.title,
-                score: toScore(current, element.score),
-                done: current !== 0,
-                locked: isLocked
-            }
-        })
-}
-
 export const load: PageLoad = async ({ params }): Promise<{ stitle: string, title: string, score: Score, chapters: _Chapters[], puzzles:  _Puzzle[] }> => {
-    const station: Station = Stations.filter((element: Station): boolean => element.id === Number(params.id))[0]
+    const id: number = Number(params.id)
+    const station: Station_ = Station_.getStation(id)
 
     return {
-        stitle: station.stitle,
-        title: station.title,
-        score: getStationScore(station),
+        stitle: station.getSTitle(),
+        title: station.getTitle(),
+        score: station.getScore(),
         chapters: getStationChapters(station),
-        puzzles: getStationPuzzles(station)
+        puzzles: station.getPuzzles()
+            .map((element: Puzzle_): _Puzzle => {
+                return {
+                    id: element.getId(),
+                    type: element.getType(),
+                    title: element.getTitle(),
+                    score: element.getScore(),
+                    done: element.isDone(),
+                    locked: element.isLocked()
+                }
+            })
     }
 }
 
