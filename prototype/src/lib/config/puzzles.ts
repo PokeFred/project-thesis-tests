@@ -1497,7 +1497,7 @@ const puzzles: Puzzle[] = [
         id: 61,
         type: "text-select-puzzle",
         title: "Zuordnungsspiel",
-        requirements: [], // [60]
+        requirements: [60],
         score: 15,
         data: {
             introduction: {
