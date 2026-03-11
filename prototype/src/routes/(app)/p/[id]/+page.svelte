@@ -102,7 +102,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="font-medium text-[16px] uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton path={`/s/${data.station.id}`} />
+        <div class="grow-0 shrink-0"><BackButton path={`/s/${data.station.id}`} /></div>
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
@@ -149,7 +149,7 @@
             {#if skipIntroduction}
                 <button onclick={() => { skipIntroduction?.(); skipIntroduction = undefined }} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Weiter</button>
             {:else}
-                <button onclick={(): void => data.puzzle.type === "gps-puzzle" ? submit() : modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
+                <button onclick={(): void => data.puzzle.type === "gps-puzzle" || (textSelect?.isComplete() || matchingGame?.isComplete() || singleChoice?.isComplete() || multipleChoice?.isComplete() || dragDrop?.isComplete() || errorSpotting?.isComplete() || wordGuessing?.isComplete()) ? submit() : modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
             {/if}
         </div>
     {/if}

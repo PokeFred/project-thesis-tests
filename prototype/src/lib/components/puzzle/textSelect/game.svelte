@@ -9,6 +9,7 @@
     let game: GameComponent
     export function getSubmitData(): SavingData { return game.getSubmitData() }
     export function getSubmitScore(): number { return game.getSubmitScore() }
+    export function isComplete(): boolean { return game.isComplete() }
 
     onMount((): void => {
         setSubmitable()

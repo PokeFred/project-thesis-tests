@@ -28,7 +28,7 @@
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center my-1 pl-6 pr-4">
         <span class="text-[16px] font-medium uppercase tracking-[1.28px]">{data.station.title}</span>
-        <BackButton path={`/s/${data.station.id}`} />
+        <div class="grow-0 shrink-0"><BackButton path={`/s/${data.station.id}`} /></div>
     </div>
     <div class="-mx-4 bg-secondary">
         <div class="mx-4">
