@@ -54,7 +54,7 @@ export default class Puzzle {
     }
 
     public getSaving(): any {
-        return getPuzzleSaving(this.id)
+        return getPuzzleSaving(this.id).data
     }
 
     public getContent(): any {

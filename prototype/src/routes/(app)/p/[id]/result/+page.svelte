@@ -71,7 +71,7 @@
         <WordGuessingResult result={data.result} saving={data.saving} />
     {/if}
     <button onclick={()=>goto(`/s/${data.station.id}`)} class="w-full h-11.5 mt-7.5 pl-7 bg-secondary text-left text-[20px] font-medium text-primary rounded-full cursor-pointer">Zurück zur Übersicht</button>
-    {#if data.result.bottom.length > 0 }
+    {#if (data.result.bottom ?? []).length > 0 }
         <div class="mt-8">
             <ContentBuilder content={data.result.bottom} />
         </div>
