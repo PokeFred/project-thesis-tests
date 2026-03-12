@@ -48,7 +48,7 @@
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
-        <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
+        <header class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => isRunning() ? goto("/s") : goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if isRunning()}
@@ -61,7 +61,7 @@
                         </span>
                     </div>
                 {/if}
-                <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
+                <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center" aria-label="Auswahlmenü">
                     <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                 </button>
             </div>
@@ -88,18 +88,18 @@
                     {/if}
                 </div>
             </div>
-        </div>
+        </header>
         <PageTransition>
             <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
-                <div class="w-full h-full {(new RegExp("\/(s|p)+\/[0-9]+[0-9]*\/")).test(page.url.pathname) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
+                <main class="w-full h-full {(new RegExp("\/(s|p)+\/[0-9]+[0-9]*\/")).test(page.url.pathname) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
                     {@render children()}
-                </div>
-                <div class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">
+                </main>
+                <footer class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">
                     <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
                         <button onclick={(): Promise<void> => goto("/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
                         <button onclick={(): Promise<void> => goto("/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
                     </div>
-                </div>
+                </footer>
             </div>
         </PageTransition>
     </div>
