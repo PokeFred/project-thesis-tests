@@ -8,15 +8,15 @@
     let { data }: PageProps = $props()
 
     async function redirectToPuzzle(puzzle: any): Promise<void> {
-        if (!puzzle.done) return goto(`/p/${puzzle.id}`)
-        if (puzzle.type !== "gps-puzzle") return goto(`/p/${puzzle.id}/result`)
+        if (!puzzle.done) return goto(`/einkaufsspuren/p/${puzzle.id}`)
+        if (puzzle.type !== "gps-puzzle") return goto(`/einkaufsspuren/p/${puzzle.id}/result`)
     }
 </script>
 
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center pl-6 pr-4">
         <span class="text-lg font-semibold">{data.stitle}</span>
-        <BackButton path={"/s"} />
+        <BackButton path={"/einkaufsspuren/s"} />
     </div>
     <div class="mt-4 mb-8 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.puzzles as puzzle}

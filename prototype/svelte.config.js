@@ -17,7 +17,7 @@ const config = {
             privatePrefix: "PRIVATE_"
         },
         paths: {
-            //base: (process.env.NODE_ENV === "production") ? "/_dev/schnitzeljagd_build1" : ""
+            //base: (process.env.NODE_ENV === "production") ? "/einkaufsspuren" : ""
         },
         alias: {
             $config: "./src/lib/config",

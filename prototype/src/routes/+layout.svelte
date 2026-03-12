@@ -33,12 +33,12 @@
 
     function restart(): void {
         restartGame()
-        window.location.href = "/s"
+        window.location.href = "/einkaufsspuren/s"
     }
 
     function stop(): void {
         stopGame()
-        window.location.href = "/"
+        window.location.href = "/einkaufsspuren/"
     }
 </script>
 
@@ -50,7 +50,7 @@
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
         <header class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
-                <button onclick={(): Promise<void> => isRunning() ? goto("/s") : goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
+                <button onclick={(): Promise<void> => isRunning() ? goto("/einkaufsspuren/s") : goto("/einkaufsspuren/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if isRunning()}
                     <div class="flex flex-col text-[16px] font-medium leading-6">
                         <span>Punkte</span>
@@ -68,10 +68,10 @@
             <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
                 <div class="mx-auto w-full max-w-xl h-auto grid grid-cols-1 gap-4 p-4">
                     {#if isRunning()}
-                        <button onclick={(): Promise<void> => goto("/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
+                        <button onclick={(): Promise<void> => goto("/einkaufsspuren/s")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">STATIONEN</button>
                         <hr class="border" />
                         {#if dev}
-                            <button onclick={(): Promise<void> => goto("/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
+                            <button onclick={(): Promise<void> => goto("/einkaufsspuren/p")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95 text-green-500">RÄTSEL</button>
                             <hr class="border" />
                         {/if}
                     {/if}
@@ -79,9 +79,9 @@
                     <hr class="border" />
                     <button onclick={(): void => informationsModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
                     <hr class="border" />
-                    <button onclick={(): Promise<void> => goto("/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
+                    <button onclick={(): Promise<void> => goto("/einkaufsspuren/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
                     <hr class="border" />
-                    <button onclick={(): Promise<void> => goto("/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
+                    <button onclick={(): Promise<void> => goto("/einkaufsspuren/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
                     {#if isRunning()}
                         <hr class="border" />
                         <button onclick={(): void => stopModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
@@ -96,8 +96,8 @@
                 </main>
                 <footer class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">
                     <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
-                        <button onclick={(): Promise<void> => goto("/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
-                        <button onclick={(): Promise<void> => goto("/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
+                        <button onclick={(): Promise<void> => goto("/einkaufsspuren/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
+                        <button onclick={(): Promise<void> => goto("/einkaufsspuren/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>
                     </div>
                 </footer>
             </div>

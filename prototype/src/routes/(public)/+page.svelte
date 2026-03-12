@@ -8,13 +8,13 @@
         if (!isRunning()) {
             modal.openModal()
         } else {
-            window.location.href = "/s"
+            window.location.href = "/einkaufsspuren/s"
         }
     }
 
     function confirmModal(): void {
         if (!isRunning()) startGame()
-        window.location.href = "/s"
+        window.location.href = "/einkaufsspuren/s"
     }
 </script>
 
