@@ -423,120 +423,121 @@ const puzzles: Puzzle[] = [
                         solution: "Freund & Bauer",
                         solutionText: "Lösung: Freundschaft (-schaft) + & + Bauer = Freund & Bauer"
                     }
+                ],
+                top: [],
+                bottom: [
+                    {
+                        tag: "h2",
+                        children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Was 1904 als kleiner Blumenladen begann, entwickelte sich über vier Generationen hinweg zu einem Juweliergeschäft. Am Westenhellweg 8 eröffneten August Bauer und Hugo Freund das Geschäft. Nach vier Jahren trennten sich ihre Wege: Hugo Freund zog nach Mannheim, der Name jedoch blieb in Dortmund."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_00.webp",
+                        alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
+                            src: "Freund & Bauer."
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_01.webp",
+                        alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
+                            src: "Freund & Bauer."
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_02.webp",
+                        alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_03.webp",
+                        alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "1931 wurde das Geschäft abgerissen und nach einem Entwurf des Architekten Arthur Groos neu gebaut. Bauherr war August Bauer. 1943 musste das Geschäft kriegsbedingt schließen und an seiner Stelle eröffnete das Schuhhaus Sondermann. Nach dem Krieg baute Jula Bauer das Unternehmen wieder auf."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_04.webp",
+                        alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_05.webp",
+                        alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
+                        caption: {
+                            caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_06.webp",
+                        alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_07.webp",
+                        alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Mit der Umwandlung des Westenhellwegs in eine Fußgängerzone verloren die Blumen an Bedeutung und ab 1980 konzentrierte man sich auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Kirsten Mitsalis-Bauer, Tochter von Walter Bauer, leitet das Geschäft heute in vierter Generation und stand sogar einmal als Verlobungsring-Verkäuferin für einen Spielfilm vor der Kamera."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_08.webp",
+                        alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
+                        caption: {
+                            caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
+                            src: "Freund & Bauer"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_02/content/image_09.webp",
+                        alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
+                        caption: {
+                            caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
+                            src: "Freund & Bauer"
+                        }
+                    },
                 ]
             },
-            content: [
-                {
-                    tag: "h2",
-                    children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Was 1904 als kleiner Blumenladen begann, entwickelte sich über vier Generationen hinweg zu einem Juweliergeschäft. Am Westenhellweg 8 eröffneten August Bauer und Hugo Freund das Geschäft. Nach vier Jahren trennten sich ihre Wege: Hugo Freund zog nach Mannheim, der Name jedoch blieb in Dortmund."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_00.webp",
-                    alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
-                        src: "Freund & Bauer."
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_01.webp",
-                    alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
-                        src: "Freund & Bauer."
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_02.webp",
-                    alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_03.webp",
-                    alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "1931 wurde das Geschäft abgerissen und nach einem Entwurf des Architekten Arthur Groos neu gebaut. Bauherr war August Bauer. 1943 musste das Geschäft kriegsbedingt schließen und an seiner Stelle eröffnete das Schuhhaus Sondermann. Nach dem Krieg baute Jula Bauer das Unternehmen wieder auf."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_04.webp",
-                    alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_05.webp",
-                    alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
-                    caption: {
-                        caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_06.webp",
-                    alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_07.webp",
-                    alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Mit der Umwandlung des Westenhellwegs in eine Fußgängerzone verloren die Blumen an Bedeutung und ab 1980 konzentrierte man sich auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Kirsten Mitsalis-Bauer, Tochter von Walter Bauer, leitet das Geschäft heute in vierter Generation und stand sogar einmal als Verlobungsring-Verkäuferin für einen Spielfilm vor der Kamera."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_08.webp",
-                    alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
-                    caption: {
-                        caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
-                        src: "Freund & Bauer"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_02/content/image_09.webp",
-                    alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
-                    caption: {
-                        caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
-                        src: "Freund & Bauer"
-                    }
-                },
-            ]
         }
     },
     {
@@ -616,48 +617,49 @@ const puzzles: Puzzle[] = [
                         solution: "Betten Hutt",
                         solutionText: "Betten + Hut (t) = Betten Hutt"
                     }
-                ]
-            },
-            content: [
+                ],
+                top: [],
+                bottom: [
+                        {
+                        tag: "h2",
+                        children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
+                    },
                     {
-                    tag: "h2",
-                    children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Betten Hutt wurde 1869 vom jüdischen Kaufmann Jakob Baum gegründet und gehört zu den ältesten Geschäften am Hellweg. Zur Gründungszeit umfasste das Unternehmen eine Matratzenpolsterei und eine Bettfedernfabrik. Die Familie Baum lebte, wie damals üblich, über den Geschäftsräumen und prägte das Haus über mehrere Generationen."}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Im frühen 20. Jahrhundert übernahm Jakobs Sohn Louis Baum das Geschäft. Mit der Machtübernahme der Nationalsozialisten verschärfte sich die Situation für jüdische Unternehmer*innen dramatisch. 1934 entschloss sich die Familie Baum zur Flucht in die USA. In dieser Situation übernahm Waldemar Hutt, der die Familie persönlich kannte, das Geschäft einschließlich der Mitarbeitenden. Beide Familien vereinbarten, dass das Unternehmen im Sinne der Familie Baum weitergeführt werden sollte. Trotz der Emigration blieb der Kontakt bestehen, das Verhältnis war freundschaftlich."}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Gebäude bei einem Bombenangriff im Mai 1943 vollständig zerstört. Ab 1948 begann Waldemar Hutt gemeinsam mit seinem Sohn Hans mit dem Wiederaufbau. Über mehr als ein Jahrzehnt entstand schrittweise das heutige Haus: 1961 schließlich mit fünf Etagen und der bis heute prägenden roten Leuchtreklame am Westenhellweg."}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Nach dem Krieg wurde offiziell bestätigt, dass die Übergabe des Geschäfts ordnungsgemäß erfolgt war. Deshalb durfte das Unternehmen weiterhin das Gründungsjahr 1869 führen. Heute leitet Heiko Hutt, Enkel von Waldemar Hutt, das Geschäft am Westenhellweg 107 erfolgreich in dritter Generation."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_03/content/image_00.webp",
-                    alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
-                    caption: {
-                        caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
-                        src: "Stadtarchiv Dortmund"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_03/content/image_01.webp",
-                    alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
-                    caption: {
-                        caption: "Werbung für die Firma Betten Hutt.",
-                        src: "Stadtarchiv Dortmund"
-                    }
-                },
-            ] 
+                        tag: "p",
+                        children: [{tag: "text", text: "Betten Hutt wurde 1869 vom jüdischen Kaufmann Jakob Baum gegründet und gehört zu den ältesten Geschäften am Hellweg. Zur Gründungszeit umfasste das Unternehmen eine Matratzenpolsterei und eine Bettfedernfabrik. Die Familie Baum lebte, wie damals üblich, über den Geschäftsräumen und prägte das Haus über mehrere Generationen."}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Im frühen 20. Jahrhundert übernahm Jakobs Sohn Louis Baum das Geschäft. Mit der Machtübernahme der Nationalsozialisten verschärfte sich die Situation für jüdische Unternehmer*innen dramatisch. 1934 entschloss sich die Familie Baum zur Flucht in die USA. In dieser Situation übernahm Waldemar Hutt, der die Familie persönlich kannte, das Geschäft einschließlich der Mitarbeitenden. Beide Familien vereinbarten, dass das Unternehmen im Sinne der Familie Baum weitergeführt werden sollte. Trotz der Emigration blieb der Kontakt bestehen, das Verhältnis war freundschaftlich."}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Gebäude bei einem Bombenangriff im Mai 1943 vollständig zerstört. Ab 1948 begann Waldemar Hutt gemeinsam mit seinem Sohn Hans mit dem Wiederaufbau. Über mehr als ein Jahrzehnt entstand schrittweise das heutige Haus: 1961 schließlich mit fünf Etagen und der bis heute prägenden roten Leuchtreklame am Westenhellweg."}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Nach dem Krieg wurde offiziell bestätigt, dass die Übergabe des Geschäfts ordnungsgemäß erfolgt war. Deshalb durfte das Unternehmen weiterhin das Gründungsjahr 1869 führen. Heute leitet Heiko Hutt, Enkel von Waldemar Hutt, das Geschäft am Westenhellweg 107 erfolgreich in dritter Generation."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_03/content/image_00.webp",
+                        alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
+                        caption: {
+                            caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
+                            src: "Stadtarchiv Dortmund"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_03/content/image_01.webp",
+                        alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
+                        caption: {
+                            caption: "Werbung für die Firma Betten Hutt.",
+                            src: "Stadtarchiv Dortmund"
+                        }
+                    },
+                ]
+            }, 
         }
     },
     {
@@ -725,71 +727,72 @@ const puzzles: Puzzle[] = [
                         solution: "Rüschenbeck",
                         solutionText: "Rüschen + (-Ge)b(ä=e)ck = Rüschenbeck"
                     }
+                ],
+                top: [],
+                bottom: [
+                    {
+                        tag: "h2",
+                        children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_04/content/image_00.webp",
+                        alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
+                        caption: {
+                            caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
+                            src: "Sammlung Rüschenbeck"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_04/content/image_01.webp",
+                        alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
+                        caption: {
+                            caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
+                            src: "Sammlung Rüschenbeck"
+                        }
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_04/content/image_02.webp",
+                        alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
+                        caption: {
+                            caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
+                            src: "Sammlung Rüschenbeck"
+                        }
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_04/content/image_03.webp",
+                        alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
+                        caption: {
+                            caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
+                            src: "Sammlung Rüschenbeck"
+                        }
+                    },
+                    {
+                        tag: "p",
+                        children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg 45 offiziell neu eröffnet werden. Es hatte ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute gehört Rüschenbeck zu den größten Juwelieren Europas, wurde mehrmals ausgezeichnet und eröffnete zahlreiche Filialen an mehreren Standorten."}]
+                    },
+                    {
+                        tag: "img",
+                        src: "/station_02/raetsel_04/content/image_04.webp",
+                        alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
+                        caption: {
+                            caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
+                            src: "Sammlung Rüschenbeck"
+                        }
+                    },
                 ]
             },
-            content: [
-                {
-                    tag: "h2",
-                    children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_04/content/image_00.webp",
-                    alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
-                    caption: {
-                        caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
-                        src: "Sammlung Rüschenbeck"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_04/content/image_01.webp",
-                    alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
-                    caption: {
-                        caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
-                        src: "Sammlung Rüschenbeck"
-                    }
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_04/content/image_02.webp",
-                    alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
-                    caption: {
-                        caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
-                        src: "Sammlung Rüschenbeck"
-                    }
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_04/content/image_03.webp",
-                    alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
-                    caption: {
-                        caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
-                        src: "Sammlung Rüschenbeck"
-                    }
-                },
-                {
-                    tag: "p",
-                    children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg 45 offiziell neu eröffnet werden. Es hatte ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute gehört Rüschenbeck zu den größten Juwelieren Europas, wurde mehrmals ausgezeichnet und eröffnete zahlreiche Filialen an mehreren Standorten."}]
-                },
-                {
-                    tag: "img",
-                    src: "/station_02/raetsel_04/content/image_04.webp",
-                    alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
-                    caption: {
-                        caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
-                        src: "Sammlung Rüschenbeck"
-                    }
-                },
-            ]
         }
     },
     // 30: S03 E00
