@@ -40,5 +40,6 @@
             <div>E-Mail: info.mkk@stadtdo.de</div>
             <div>Website: Museum für Kunst und Kulturgeschichte | dortmund.de</div>
         </div>
+        <img src="/app_logos_colored.png" alt="" class="my-4 w-6/12" />
     </div>
 </div>
