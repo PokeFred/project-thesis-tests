@@ -7,9 +7,9 @@
     import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus"
     import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
     import type { Introduction } from "./index"
-    import Bus from "./Bus.png"
-    import Train from "./Train.png"
-    import Map from "./Map.png"
+    import Bus from "./Bus.webp"
+    import Train from "./Train.webp"
+    import Map from "./Map.webp"
 
     let { data }: { data: Introduction } = $props()
     let open: boolean = $state<boolean>(false)

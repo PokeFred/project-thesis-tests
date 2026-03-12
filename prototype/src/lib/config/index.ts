@@ -256,12 +256,12 @@ export default {
                         { type: "paragraph", content: "Durch den zunehmenden Verkehr, insbesondere durch die Straßenbahnen, wurde die Situation für Fußgänger:innen zunehmend schwieriger. Erst mit der Umgestaltung zur Fußgängerzone nach 1945 bekam der Hellweg sein heutiges Gesicht. Die Straße konnte so ihre Rolle als moderne Einkaufsmeile mit Wohlfühl-Atmosphäre festigen. Die allgemeinen" },
                         { type: "paragraph", content: "Entwicklungen des Einzelhandels führten im Laufe der letzten Jahrzehnte zu einer stärkeren Dominanz von Filialketten und Warenhauskonzernen, die dem Hellweg ein einheitlicheres Erscheinungsbild gaben." },
                         { type: "paragraph", content: "Der Hellweg hat sich im Laufe der Zeit vom mittelalterlichen Handelsweg über die turbulente Zeit des frühen 20. Jahrhunderts mit seinem regen Flair und vielfältigen Einzelhandel zu einer modernen Einkaufsstraße entwickelt, die auch heute noch ein beliebter Treffpunkt und das Herz Dortmunds ist." },
-                        { type: "image", src: "/t/S01C01P01.png", alt: "", caption: "Postkarte von 1905: Westenhellweg, Poststempel vom 19.03.1907 (Stadtarchiv Dortmund)." },
-                        { type: "image", src: "/t/S01C01P02.png", alt: "", caption: "Postkarte von 1907: Westenhellweg (Stadtarchiv Dortmund)." },
-                        { type: "image", src: "/t/S01C01P03.png", alt: "", caption: "Postkarte: Westenhellweg und Brückstraße (Sammlung Wolfang Kienast)." },
-                        { type: "image", src: "/t/S01C01P04.png", alt: "", caption: "Postkarte: Westen- und Ostenhellweg und Brückstraße (Stadtarchiv Dortmund)." },
-                        { type: "image", src: "/t/S01C01P05.png", alt: "", caption: "Fotografie, vermutlich um 1915: Westenhellweg (Stadtarchiv Dortmund)." },
-                        { type: "image", src: "/t/S01C01P06.png", alt: "", caption: "Postkarte, vermutlich 1903: Ostenhellweg, (Stadtarchiv Dortmund)." }
+                        { type: "image", src: "/t/S01C01P01.webp", alt: "", caption: "Postkarte von 1905: Westenhellweg, Poststempel vom 19.03.1907 (Stadtarchiv Dortmund)." },
+                        { type: "image", src: "/t/S01C01P02.webp", alt: "", caption: "Postkarte von 1907: Westenhellweg (Stadtarchiv Dortmund)." },
+                        { type: "image", src: "/t/S01C01P03.webp", alt: "", caption: "Postkarte: Westenhellweg und Brückstraße (Sammlung Wolfang Kienast)." },
+                        { type: "image", src: "/t/S01C01P04.webp", alt: "", caption: "Postkarte: Westen- und Ostenhellweg und Brückstraße (Stadtarchiv Dortmund)." },
+                        { type: "image", src: "/t/S01C01P05.webp", alt: "", caption: "Fotografie, vermutlich um 1915: Westenhellweg (Stadtarchiv Dortmund)." },
+                        { type: "image", src: "/t/S01C01P06.webp", alt: "", caption: "Postkarte, vermutlich 1903: Ostenhellweg, (Stadtarchiv Dortmund)." }
                     ]
                 },
                 {

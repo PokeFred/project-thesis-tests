@@ -68,7 +68,7 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 answers: [
-                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest Du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.jpg", alt: "Foto: Sophie Ullrich", caption: { src: "Sophie Ullrich"}}], isCorrect: true },
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest Du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.webp", alt: "Foto: Sophie Ullrich", caption: { src: "Sophie Ullrich"}}], isCorrect: true },
                     { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Der erste Dortmunder Marktplatz befand sich am Vorgängerbau der Reinoldikirche, nahe dem damaligen, ersten Rathaus. Das ist der heutige Platz von Leeds. Nach dem großen Stadtbrand von 1232 wurde der Markt an seinen heutigen Standort verlegt." }] }], isCorrect: true },
                     { id: 2, text: "Der Markt war das Zentrum der Stadt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Marktplatz war das Herz der Stadt: Hier wurde gehandelt, verhandelt und Recht gesprochen." }] }], isCorrect: true },
                     { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: " Der Richtplatz lag außerhalb der Stadt, östlich in Körne. Dort fanden die Hinrichtungen statt. Am Markt befand sich jedoch der „Trissel“, eine besondere Form des Prangers in Gestalt eines Korbes, in dem Verurteilte öffentlich zur Schau gestellt wurden. Im Trissel vollzog man soziale oder „entehrende“ Strafen." }] }], isCorrect: false },
@@ -150,7 +150,7 @@ const puzzles: Puzzle[] = [
                             question: "Gerber",
                             answer: [
                                 { type: "paragraph", text: "Gerber verarbeiteten Tierhäute zu Leder, das von anderen Handwerkern weiterverarbeitet wurde. Wegen der starken Gerüche und der benötigten Gerbmittel lagen Gerbereien meist am Stadtrand oder an Gewässern. Häufig entstanden sogenannte Gerbergassen, in denen sich mehrere Werkstätten konzentrierten." },
-                                { type: "image", src: "/station_01/raetsel_02/image_01.jpg", alt: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Foto: Sophie Ullrich“)", caption: { caption: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Foto: Sophie Ullrich" }}
+                                { type: "image", src: "/station_01/raetsel_02/image_01.webp", alt: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Foto: Sophie Ullrich“)", caption: { caption: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Foto: Sophie Ullrich" }}
                             ]
                         },
                         { type:"seperator" }
@@ -176,7 +176,7 @@ const puzzles: Puzzle[] = [
                 caption: ""
             },
             result: {
-                img: "/station_01/raetsel_02/game/Background.png",
+                img: "/station_01/raetsel_02/game/Background.webp",
                 caption: ""
             }
         }
@@ -234,7 +234,7 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.jpg", alt: "Tee" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_00.webp", alt: "Tee" },
                             {
                                 tag: "text",
                                 text: {
@@ -242,7 +242,7 @@ const puzzles: Puzzle[] = [
                                 }
                             },
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.jpg", alt: "Western" },
+                            { tag: "img", src: "/station_02/raetsel_01/game/image_01.webp", alt: "Western" },
                             { tag: "text", text: { crossed: "tern" } },
                         ],
                         solutions: ["Tewes"]
@@ -255,7 +255,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_01/game/image_00.jpg",
+                                src: "/station_02/raetsel_01/game/image_00.webp",
                                 alt: "Tee",
                             },
                             {
@@ -272,7 +272,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_01/game/image_01.jpg",
+                                src: "/station_02/raetsel_01/game/image_01.webp",
                                 alt: "Western",
                             },
                             {
@@ -318,7 +318,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_02/raetsel_01/content/image_00.png",
+                        src: "/station_02/raetsel_01/content/image_00.webp",
                         alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche (Stadtarchiv Dortmund)",
                         caption: {
                             caption: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
@@ -327,7 +327,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_02/raetsel_01/content/image_01.jpg",
+                        src: "/station_02/raetsel_01/content/image_01.webp",
                         alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
                         caption: {
                             caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
@@ -336,7 +336,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_02/raetsel_01/content/image_02.png",
+                        src: "/station_02/raetsel_01/content/image_02.webp",
                         alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
                         caption: {
                             caption: "Postkarte von ca. 1911: Links im Vordergrund das Gebäude des Juweliers Tewes am zweiten Standort, Ostenhellweg 16.",
@@ -370,12 +370,12 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.jpg", alt: "Freundschaft" },
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_00.webp", alt: "Freundschaft" },
                             { tag: "text", text: { crossed: "schaft" } },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "&" } },
                             { tag: "text", text: { normal: "+" } },
-                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.jpg", alt: "Bauer" }
+                            { tag: "img", src: "/station_02/raetsel_02/game/image_01.webp", alt: "Bauer" }
                         ],
                         solutions: ["Freund & Bauer", "Freund und Bauer"]
                     }
@@ -387,7 +387,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_02/game/image_00.jpg",
+                                src: "/station_02/raetsel_02/game/image_00.webp",
                                 alt: "Freundschaft",
                             },
                             {
@@ -416,7 +416,7 @@ const puzzles: Puzzle[] = [
                             },
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_02/game/image_01.jpg",
+                                src: "/station_02/raetsel_02/game/image_01.webp",
                                 alt: "Bauer",
                             }
                         ],
@@ -436,7 +436,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_00.jpg",
+                    src: "/station_02/raetsel_02/content/image_00.webp",
                     alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
@@ -445,7 +445,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_01.jpg",
+                    src: "/station_02/raetsel_02/content/image_01.webp",
                     alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
@@ -454,7 +454,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_02.jpg",
+                    src: "/station_02/raetsel_02/content/image_02.webp",
                     alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
@@ -463,7 +463,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_03.jpg",
+                    src: "/station_02/raetsel_02/content/image_03.webp",
                     alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
@@ -476,7 +476,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_04.jpg",
+                    src: "/station_02/raetsel_02/content/image_04.webp",
                     alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
@@ -485,7 +485,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_05.jpg",
+                    src: "/station_02/raetsel_02/content/image_05.webp",
                     alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
                     caption: {
                         caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
@@ -494,7 +494,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_06.jpg",
+                    src: "/station_02/raetsel_02/content/image_06.webp",
                     alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
@@ -503,7 +503,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_07.jpg",
+                    src: "/station_02/raetsel_02/content/image_07.webp",
                     alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
@@ -520,7 +520,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_08.jpg",
+                    src: "/station_02/raetsel_02/content/image_08.webp",
                     alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
                     caption: {
                         caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
@@ -529,7 +529,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_02/content/image_09.jpg",
+                    src: "/station_02/raetsel_02/content/image_09.webp",
                     alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
                     caption: {
                         caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
@@ -556,11 +556,11 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.jpg", alt: "Betten" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_00.webp", alt: "Betten" },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "en" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.jpg", alt: "Hut" },
+                            { tag: "img", src: "/station_02/raetsel_03/game/image_01.webp", alt: "Hut" },
                             { tag: "text", text: { normal: "+" } },  
                             { tag: "text", text: { normal: "t" } },  
                         ],
@@ -574,7 +574,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_03/game/image_00.jpg",
+                                src: "/station_02/raetsel_03/game/image_00.webp",
                                 alt: "Betten",
                             },
                             {
@@ -597,7 +597,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_03/game/image_01.jpg",
+                                src: "/station_02/raetsel_03/game/image_01.webp",
                                 alt: "Hut",
                             },
                             {
@@ -641,7 +641,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_03/content/image_00.jpg",
+                    src: "/station_02/raetsel_03/content/image_00.webp",
                     alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
                     caption: {
                         caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
@@ -650,7 +650,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_03/content/image_01.png",
+                    src: "/station_02/raetsel_03/content/image_01.webp",
                     alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
                     caption: {
                         caption: "Werbung für die Firma Betten Hutt.",
@@ -677,10 +677,10 @@ const puzzles: Puzzle[] = [
                 questions: [
                     {
                         hints: [
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.jpg", alt: "Rüschen" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_00.webp", alt: "Rüschen" },
                             { tag: "text", text: { crossed: "sel", normal: " + chen" } },  
                             { tag: "text", text: { normal: "+" } },  
-                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.jpg", alt: "Gebäck" },
+                            { tag: "img", src: "/station_02/raetsel_04/game/image_01.webp", alt: "Gebäck" },
                             { tag: "text", text: { crossed: "Ge", normal: " + ä=e" } },  
                         ],
                         solutions: ["Rüschenbeck"]
@@ -693,7 +693,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_04/game/image_00.jpg",
+                                src: "/station_02/raetsel_04/game/image_00.webp",
                                 alt: "Rüschen",
                             },
                             { 
@@ -711,7 +711,7 @@ const puzzles: Puzzle[] = [
                             },  
                             {
                                 tag: "img",
-                                src: "/station_02/raetsel_04/game/image_01.jpg",
+                                src: "/station_02/raetsel_04/game/image_01.webp",
                                 alt: "Gebäck",
                             },
                             {
@@ -738,7 +738,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_04/content/image_00.png",
+                    src: "/station_02/raetsel_04/content/image_00.webp",
                     alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
                     caption: {
                         caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
@@ -747,7 +747,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_04/content/image_01.png",
+                    src: "/station_02/raetsel_04/content/image_01.webp",
                     alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
                     caption: {
                         caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
@@ -760,7 +760,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_04/content/image_02.png",
+                    src: "/station_02/raetsel_04/content/image_02.webp",
                     alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
                     caption: {
                         caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
@@ -769,7 +769,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_04/content/image_03.png",
+                    src: "/station_02/raetsel_04/content/image_03.webp",
                     alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
                     caption: {
                         caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
@@ -782,7 +782,7 @@ const puzzles: Puzzle[] = [
                 },
                 {
                     tag: "img",
-                    src: "/station_02/raetsel_04/content/image_04.png",
+                    src: "/station_02/raetsel_04/content/image_04.webp",
                     alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
                     caption: {
                         caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
@@ -875,7 +875,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_00.jpg",
+                        src: "/station_03/raetsel_01/image_00.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
@@ -905,7 +905,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_01.jpg",
+                        src: "/station_03/raetsel_01/image_01.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
@@ -914,7 +914,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_02.jpg",
+                        src: "/station_03/raetsel_01/image_02.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
@@ -944,7 +944,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_03.jpg",
+                        src: "/station_03/raetsel_01/image_03.webp",
                         alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
@@ -953,7 +953,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_04.jpg",
+                        src: "/station_03/raetsel_01/image_04.webp",
                         alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
@@ -983,7 +983,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_05.jpg",
+                        src: "/station_03/raetsel_01/image_05.webp",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
@@ -992,15 +992,15 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_06.jpg",
+                        src: "/station_03/raetsel_01/image_06.webp",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.jpg", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.jpg", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1014,7 +1014,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.jpg", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
                 ]
             },
             result: {
@@ -1055,7 +1055,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_00.jpg",
+                        src: "/station_03/raetsel_01/image_00.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
@@ -1085,7 +1085,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_01.jpg",
+                        src: "/station_03/raetsel_01/image_01.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             src: "Stadtarchiv Dortmund"
@@ -1093,7 +1093,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_02.jpg",
+                        src: "/station_03/raetsel_01/image_02.webp",
                         alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
@@ -1123,7 +1123,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_03.jpg",
+                        src: "/station_03/raetsel_01/image_03.webp",
                         alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
@@ -1132,7 +1132,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_04.jpg",
+                        src: "/station_03/raetsel_01/image_04.webp",
                         alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
@@ -1162,7 +1162,7 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_05.jpg",
+                        src: "/station_03/raetsel_01/image_05.webp",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
                             src: "Stadtarchiv Dortmund"
@@ -1170,15 +1170,15 @@ const puzzles: Puzzle[] = [
                     },
                     {
                         tag: "img",
-                        src: "/station_03/raetsel_01/image_06.jpg",
+                        src: "/station_03/raetsel_01/image_06.webp",
                         alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
                             src: "Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.jpg", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.jpg", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1192,7 +1192,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.jpg", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
                 ]
             }
         }
@@ -1207,7 +1207,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 data: [
                     { tag: "title", text: `In welchem Jahr wurde die erste Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff, eröffnet?` },
-                    { tag: "img", src: "/station_03/raetsel_02/image_00.jpg", alt: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff (Stadtarchiv Dortmund).", caption: { caption: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff", src: "Stadtarchiv Dortmund" }},
+                    { tag: "img", src: "/station_03/raetsel_02/image_00.webp", alt: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff (Stadtarchiv Dortmund).", caption: { caption: "Eröffnung der ersten Rolltreppe im Kaufhaus Karstadt, ehemals Warenhaus Althoff", src: "Stadtarchiv Dortmund" }},
                 ]
             },
             game: {
@@ -1298,7 +1298,7 @@ const puzzles: Puzzle[] = [
                 caption: ""
             },
             result: {
-                img: "/station_04/raetsel_01/result/Background.png",
+                img: "/station_04/raetsel_01/result/Background.webp",
                 caption: "",
                 scoreDescription: "Wörtern richtig"
             }
@@ -1387,7 +1387,7 @@ const puzzles: Puzzle[] = [
                 caption: ""
             },
             result: {
-                img: "/station_05/raetsel_01/result/Result.png",
+                img: "/station_05/raetsel_01/result/Result.webp",
                 caption: "",
                 scoreDescription: "Begriffen richtig erraten"
             }
@@ -1410,7 +1410,7 @@ const puzzles: Puzzle[] = [
                 introduction: true
             },
             result: {
-                img: "/station_05/raetsel_02/game/Background.png",
+                img: "/station_05/raetsel_02/game/Background.webp",
                 caption: "",
             }
         }
@@ -1445,7 +1445,7 @@ const puzzles: Puzzle[] = [
                         hints: [
                             {
                                 tag: "img",
-                                src: "/station_05/raetsel_03/image_00.jpg",
+                                src: "/station_05/raetsel_03/image_00.webp",
                                 alt: "Foto: Sophie Ullrich",
                                 caption: {
                                     caption: "",
@@ -1759,7 +1759,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 data: [
                     { tag: "title", text: "Finde den Weg, auf dem du die meisten Äpfel einsammelst." },
-                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "img", src: "/station_07/image_00.webp" },
                 ]
             },
             game: {
@@ -1794,7 +1794,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 data: [
                     { tag: "title", text: "Wie viele Äpfel sind es?" },
-                    { tag: "img", src: "/station_07/image_00.png" },
+                    { tag: "img", src: "/station_07/image_00.webp" },
                 ]
             },
             game: {

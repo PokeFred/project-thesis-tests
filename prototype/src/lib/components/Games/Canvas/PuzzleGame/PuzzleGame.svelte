@@ -13,7 +13,7 @@
     onMount(async ()=>{
 
         const puzzleData: PuzzleData = await (await fetch(`${path}/cutouts.json`)).json();
-        const background: HTMLImageElement = await loadImage(path + "/Background.png");
+        const background: HTMLImageElement = await loadImage(path + "/Background.webp");
         const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
             const piece = await loadImage(path + "/" + cutout.src);
             const noise = cutout.noise ? await Promise.all( 

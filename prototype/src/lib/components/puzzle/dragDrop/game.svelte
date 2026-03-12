@@ -31,7 +31,7 @@
 {#if introduction}
     <figure>
         <Fullscreen>
-            <img src={`${data.path}/Background.png`} alt={data.caption}>
+            <img src={`${data.path}/Background.webp`} alt={data.caption}>
         </Fullscreen>
         <figcaption>{data.caption}</figcaption>
     </figure>
