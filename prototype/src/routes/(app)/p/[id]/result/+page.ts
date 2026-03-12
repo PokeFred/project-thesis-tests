@@ -19,7 +19,6 @@ export const load: PageLoad = async ({ params }): Promise<{ station: _Station, p
     const station: Station = Station.getByPuzzle(Number(params.id))
     const puzzle: Puzzle = Puzzle.get(Number(params.id))
 
-    console.log(puzzle.getSaving())
     return {
         station: {
             id: station.getId(),
