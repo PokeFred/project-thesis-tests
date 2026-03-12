@@ -12,9 +12,6 @@ const config = {
             precompress: true,
             strict: true
         }),
-        prerender: {
-            default: true
-        },
         env: {
             publicPrefix: "PUBLIC_",
             privatePrefix: "PRIVATE_"
