@@ -4,7 +4,7 @@
     import type { LayoutProps } from "./$types"
     import { goto, afterNavigate } from "$app/navigation"
     import { page } from "$app/state"
-    import { isRunning, restartGame, stopGame } from "$stores"
+    import { isRunning, restartGame, stopGame, getScore } from "$stores"
     import PageTransition from "$components/PageTransition.svelte"
     import IntroductionModal from "$components/modals/IntroductionModal.svelte"
     import InformationsModal from "$components/modals/InformationsModal.svelte"
@@ -14,6 +14,7 @@
     import { faBars } from "@fortawesome/free-solid-svg-icons/faBars"
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
     import { dev } from "$app/environment"
+    import stations from "$config/stations"
 
     let { children }: LayoutProps = $props()
 
@@ -50,6 +51,13 @@
         <div class="w-full h-auto text-secondary bg-primary border-b-2 border-secondary grid grid-cols-1 grid-rows-[auto_1fr]">
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => isRunning() ? goto("/s") : goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
+                {#if isRunning()}
+                    <div>
+                        <span>{#key page.url.pathname} {getScore()} {/key}</span>
+                        <span>/</span>
+                        <span>{stations.map((element): number => element.score).reduce((previos: number, current: number): number => previos += current, 0)}</span>
+                    </div>
+                {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
                     <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                 </button>

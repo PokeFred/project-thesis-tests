@@ -110,6 +110,7 @@ export function getPuzzleScore(id: number): number {
 
 export function add(puzzle: PuzzleState): void {
     newState.puzzles.push(puzzle)
+    newState.score += puzzle.score
     localStorage.setItem("game", JSON.stringify(newState))
 }
 
