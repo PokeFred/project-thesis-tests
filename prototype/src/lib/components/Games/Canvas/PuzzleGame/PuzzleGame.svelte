@@ -12,12 +12,12 @@
     let puzzleController: PuzzleController;
     onMount(async ()=>{
 
-        const puzzleData: PuzzleData = await (await fetch(`${path}/cutouts.json`)).json();
-        const background: HTMLImageElement = await loadImage(path + "/Background.webp");
+        const puzzleData: PuzzleData = await (await fetch(`/einkaufsspuren${path}/cutouts.json`)).json();
+        const background: HTMLImageElement = await loadImage("/einkaufsspuren" + path + "/Background.webp");
         const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
             const piece = await loadImage(path + "/" + cutout.src);
             const noise = cutout.noise ? await Promise.all( 
-                cutout.noise.map((src: string) => loadImage(path + "/" + src))
+                cutout.noise.map((src: string) => loadImage("/einkaufsspuren" + path + "/" + src))
             ) : undefined;
             
             return {

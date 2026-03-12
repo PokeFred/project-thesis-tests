@@ -29,10 +29,10 @@
         <div class="font-bold">Übersichtskarten:</div>
         <div>Auf den Karten siehst du, wo sich die Stationen der digitalen Stadtführung befinden und wie die Route durch die Stadt führt.</div>
         <Fullscreen>
-            <img src="/map_big.webp" alt="" class="w-full rounded-xl" />
+            <img src="/einkaufsspuren/map_big.webp" alt="" class="w-full rounded-xl" />
         </Fullscreen>
         <Fullscreen>
-            <img src="/map_small.webp" alt="" class="w-full rounded-xl" />
+            <img src="/einkaufsspuren/map_small.webp" alt="" class="w-full rounded-xl" />
         </Fullscreen>
         <hr />
         <div class="font-bold">Wenig Zeit? Kein Problem.</div>

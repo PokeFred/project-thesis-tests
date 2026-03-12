@@ -56,7 +56,7 @@
     {:else if content.tag === "img"}
         <figure class="my-10 -mx-4">
             <Fullscreen>
-                <img src={content.src} alt={content.alt}>
+                <img src="/einkaufsspuren{content.src}" alt={content.alt}>
             </Fullscreen>
             {#if content.caption}
                 <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">

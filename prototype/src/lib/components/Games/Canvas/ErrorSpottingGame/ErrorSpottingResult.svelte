@@ -13,8 +13,8 @@
 
     let container: HTMLDivElement;
     onMount(async ()=>{
-        const image: HTMLImageElement = await loadImage(result.path + "/fehler.webp");
-        const errorPaths: string[][] = await (await fetch(`${result.path}/paths.json`)).json();
+        const image: HTMLImageElement = await loadImage("/einkaufsspuren" + result.path + "/fehler.webp");
+        const errorPaths: string[][] = await (await fetch(`/einkaufsspuren${result.path}/paths.json`)).json();
 
         controller = new Controller(container, image, errorPaths, true);
     });

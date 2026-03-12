@@ -30,7 +30,7 @@
             <figure class="my-10 -mx-4">
                 <div class="-mx-2">
                     <Fullscreen>
-                        <img src={content.src} alt={content.alt}>
+                        <img src="/einkaufsspuren{content.src}" alt={content.alt}>
                     </Fullscreen>
                 </div>
                 {#if content.caption}

@@ -15,7 +15,7 @@
     <div class="w-full h-auto">
         <figure class="justify-self-center align-middle">
             <Fullscreen>
-                <img src={`${result.img}`} alt={result.caption} class="justify-self-center align-middle">
+                <img src={`/einkaufsspuren${result.img}`} alt={result.caption} class="justify-self-center align-middle">
             </Fullscreen>
             <figcaption></figcaption>
         </figure>

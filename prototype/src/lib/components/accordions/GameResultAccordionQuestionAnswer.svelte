@@ -10,7 +10,7 @@
             <div class="mb-4 w-full h-auto text-sm"><i>{answer.content}</i></div>
         {/if}
         {#if answer.type === "image"}
-            <img src={answer.src} alt={answer.alt} class="rounded-lg" />
+            <img src="/einkaufsspuren{answer.src}" alt={answer.alt} class="rounded-lg" />
             <div class="mb-4 w-full h-auto text-sm {color}">{answer.caption}</div>
         {/if}
         {#if answer.type === "spacing"}
