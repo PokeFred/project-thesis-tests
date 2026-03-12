@@ -52,10 +52,13 @@
             <div class="w-full h-14 flex justify-between items-center px-4">
                 <button onclick={(): Promise<void> => isRunning() ? goto("/s") : goto("/")} class="text-2xl font-bold text-left cursor-pointer">Einkaufsspuren</button>
                 {#if isRunning()}
-                    <div>
-                        <span>{#key page.url.pathname} {getScore()} {/key}</span>
-                        <span>/</span>
-                        <span>{stations.map((element): number => element.score).reduce((previos: number, current: number): number => previos += current, 0)}</span>
+                    <div class="flex flex-col text-[16px] font-medium leading-6">
+                        <span>Punkte</span>
+                        <span>
+                            <span>{#key page.url.pathname} {getScore()} {/key}</span>
+                            <span>/</span>
+                            <span>{stations.map((element): number => element.score).reduce((previos: number, current: number): number => previos += current, 0)}</span>
+                        </span>
                     </div>
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center">
