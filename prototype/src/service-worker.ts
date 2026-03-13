@@ -7,7 +7,11 @@ import { build, files, version } from "$service-worker"
 
 const self: ServiceWorkerGlobalScope = globalThis.self as unknown as ServiceWorkerGlobalScope
 const CACHE: string = `cache-${version}`
-const ASSETS: string[] = [...build, ...files]
+const ASSETS: string[] = [
+    ...build,
+    ...files
+        .filter((element: string): boolean => element !== ".htaccess")
+]
 
 async function addFilesToCache(): Promise<void> {
     const cache: Cache = await caches.open(CACHE)
@@ -20,8 +24,9 @@ async function deleteOldCaches(): Promise<void> {
     }
 }
 
+// @ts-ignore
 async function respond(event: ExtendableEvent): Promise<Response> {
-        // @ts-ignore
+    // @ts-ignore
     const url: URL = new URL(event.request.url)
     const cache: Cache = await caches.open(CACHE)
 

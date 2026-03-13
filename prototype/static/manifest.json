@@ -2,7 +2,7 @@
     "name": "Einkaufsspuren",
     "display": "standalone",
     "id": "forum-application",
-    "start_url": "/",
+    "start_url": "/einkaufsspuren",
     "icons": [
         {
             "src": "favicon.svg",
