@@ -864,10 +864,10 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_00.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -894,19 +894,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_01.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_02.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -933,19 +933,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_03.webp",
-                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_04.webp",
-                        alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Wein und Likörabteilung Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
@@ -972,23 +972,23 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_05.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_06.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1002,7 +1002,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Bild: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Bild: Sophie Ullrich" } }
                 ]
             },
             result: {
@@ -1044,10 +1044,10 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_00.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -1074,18 +1074,18 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_01.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_02.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -1112,19 +1112,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_03.webp",
-                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_04.webp",
-                        alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Wein und Likörabteilung Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
@@ -1151,22 +1151,22 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_05.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_06.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1180,7 +1180,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Bild: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Bild: Sophie Ullrich" } }
                 ]
             }
         }
