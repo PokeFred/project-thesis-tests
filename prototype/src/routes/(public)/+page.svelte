@@ -1,20 +1,24 @@
 <script lang="ts">
     import { startGame, isRunning } from "$stores"
     import Modal from "$components/modals/StartModal.svelte"
+    import { navigateTo } from "$utils/url"
 
     let modal: Modal
 
     function showModal(): void {
-        if (!isRunning()) {
-            modal.openModal()
-        } else {
-            window.location.href = "/einkaufsspuren/s"
+        if (isRunning()) {
+            return navigateTo("/s")
         }
+
+        modal.openModal()
     }
 
     function confirmModal(): void {
-        if (!isRunning()) startGame()
-        window.location.href = "/einkaufsspuren/s"
+        if (!isRunning()) {
+            startGame()
+        }
+
+        navigateTo("/s")
     }
 </script>
 

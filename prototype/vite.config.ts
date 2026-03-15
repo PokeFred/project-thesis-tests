@@ -5,23 +5,15 @@ import { enhancedImages } from "@sveltejs/enhanced-img"
 import tailwindcss from "@tailwindcss/vite"
 
 const config: CommonServerOptions = {
+    https: false,
     host: "0.0.0.0",
     port: 3000,
-    strictPort: true
+    strictPort: true,
+    //allowedHosts: ["cedric-paelmke.de"]
 }
 
 export default defineConfig({
-    server: {
-        host: "0.0.0.0",
-        port: 3000,
-        strictPort: true,
-        allowedHosts: ["cedric-paelmke.de"]
-    },
-    preview: {
-        host: "0.0.0.0",
-        port: 3000,
-        strictPort: true,
-        allowedHosts: ["cedric-paelmke.de"]
-    },
+    server: config,
+    preview: config,
     plugins: [tailwindcss(), sveltekit(), enhancedImages()]
 })

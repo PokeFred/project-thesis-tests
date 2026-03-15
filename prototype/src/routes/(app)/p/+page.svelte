@@ -1,12 +1,12 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import { goto } from "$app/navigation"
+    import { sendTo } from "$utils/url"
 
     let { data }: PageProps = $props()
 
     async function redirectToPuzzle(puzzle: any): Promise<void> {
-        if (!puzzle.done) return goto(`/einkaufsspuren/p/${puzzle.id}`)
-        if (puzzle.type !== "gps-puzzle") return goto(`/einkaufsspuren/p/${puzzle.id}/result`)
+        if (!puzzle.done) return sendTo(`/p/${puzzle.id}`)
+        if (puzzle.type !== "gps-puzzle") return sendTo(`/p/${puzzle.id}/result`)
     }
 </script>
 

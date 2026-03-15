@@ -3,6 +3,7 @@
     import Controller from "./Controller";
     import type { GameData, SavingData } from "$components/puzzle/errorSpotting";
     import Fullscreen from "$components/Fullscreen.svelte";
+    import { getBaseUrl } from "$utils/url"
 
     const { input }: { input: GameData } = $props();
 
@@ -10,8 +11,8 @@
 
     let container: HTMLDivElement;
     onMount(async ()=>{
-        const image: HTMLImageElement = await loadImage("/einkaufsspuren" + input.path + "/fehler.webp");
-        const errorPaths: string[][] = await (await fetch(`/einkaufsspuren${input.path}/paths.json`)).json();
+        const image: HTMLImageElement = await loadImage(getBaseUrl() + input.path + "/fehler.webp");
+        const errorPaths: string[][] = await (await fetch(`${getBaseUrl()}${input.path}/paths.json`)).json();
 
         controller = new Controller(container, image, errorPaths, false);
     });

@@ -1,0 +1,23 @@
+{
+    "folders": [
+        {
+            "name": "Prototype",
+            "path": "../prototype"
+        },
+        {
+            "name": "Proof of Concept 1 (GPS)",
+            "path": "../proof-of-concept-one"
+        },
+        {
+            "name": "Proof of Concept 2 (Drag & Drop)",
+            "path": "../proof-of-concept-two"
+        },
+        {
+            "name": "[Root]",
+            "path": "../"
+        }
+    ],
+    "settings": {
+        "editor.tabSize": 4
+    }
+}

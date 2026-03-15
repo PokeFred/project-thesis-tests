@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import PuzzleController, { type CutoutData, type PuzzleData, type SlotGroup } from "./PuzzleController.svelte";
     import type { GameData } from "$components/puzzle/dragDrop";
+    import { getBaseUrl } from "$utils/url"
 
     const { input }: { input: GameData } = $props();
     const gameInput: GameData = input 
@@ -12,12 +13,12 @@
     let puzzleController: PuzzleController;
     onMount(async ()=>{
 
-        const puzzleData: PuzzleData = await (await fetch(`/einkaufsspuren${path}/cutouts.json`)).json();
-        const background: HTMLImageElement = await loadImage("/einkaufsspuren" + path + "/Background.webp");
+        const puzzleData: PuzzleData = await (await fetch(`${getBaseUrl()}${path}/cutouts.json`)).json();
+        const background: HTMLImageElement = await loadImage(getBaseUrl() + path + "/Background.webp");
         const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
             const piece = await loadImage(path + "/" + cutout.src);
             const noise = cutout.noise ? await Promise.all( 
-                cutout.noise.map((src: string) => loadImage("/einkaufsspuren" + path + "/" + src))
+                cutout.noise.map((src: string) => loadImage(getBaseUrl() + path + "/" + src))
             ) : undefined;
             
             return {

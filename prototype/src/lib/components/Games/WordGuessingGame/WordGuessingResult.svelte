@@ -1,6 +1,7 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/wordGuessing"
+    import { getBaseUrl } from "$utils/url"
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props();
 </script>
@@ -14,7 +15,7 @@
                         {#if hint.tag === "img"}
                             <figure class="-mx-4">
                                 <Fullscreen>
-                                    <img src="/einkaufsspuren{hint.src}" alt={hint.alt}>
+                                    <img src="{getBaseUrl()}{hint.src}" alt={hint.alt}>
                                 </Fullscreen>
                                 {#if hint.caption}
                                     <figcaption class="flex flex-col mx-4.5 mt-3 font-medium text-left">
