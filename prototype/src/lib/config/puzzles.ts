@@ -68,12 +68,12 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 answers: [
-                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest Du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.webp", alt: "Foto: Sophie Ullrich", caption: { src: "Sophie Ullrich"}}], isCorrect: true },
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.webp", alt: "Foto: Sophie Ullrich", caption: { src: "Bild: Sophie Ullrich"}}], isCorrect: true },
                     { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Der erste Dortmunder Marktplatz befand sich am Vorgängerbau der Reinoldikirche, nahe dem damaligen, ersten Rathaus. Das ist der heutige Platz von Leeds. Nach dem großen Stadtbrand von 1232 wurde der Markt an seinen heutigen Standort verlegt." }] }], isCorrect: true },
                     { id: 2, text: "Der Markt war das Zentrum der Stadt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Marktplatz war das Herz der Stadt: Hier wurde gehandelt, verhandelt und Recht gesprochen." }] }], isCorrect: true },
-                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: " Der Richtplatz lag außerhalb der Stadt, östlich in Körne. Dort fanden die Hinrichtungen statt. Am Markt befand sich jedoch der „Trissel“, eine besondere Form des Prangers in Gestalt eines Korbes, in dem Verurteilte öffentlich zur Schau gestellt wurden. Im Trissel vollzog man soziale oder „entehrende“ Strafen." }] }], isCorrect: false },
+                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Richtplatz lag außerhalb der Stadt, östlich in Körne. Dort fanden die Hinrichtungen statt. Am Markt befand sich jedoch der „Trissel“, eine besondere Form des Prangers in Gestalt eines Korbes, in dem Verurteilte öffentlich zur Schau gestellt wurden. Im Trissel vollzog man soziale oder „entehrende“ Strafen." }] }], isCorrect: false },
                     { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", description: [{ tag: "p", children: [{tag: "text", text: "Dortmund lag am Hellweg, einer bedeutenden mittelalterlichen Fernstraße. Diese Lage machte die Stadt zu einem wichtigen Handels- und Hansestandort." }] }], isCorrect: true },
-                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", description: [{ tag: "p", children: [{tag: "text", text: "Der Markt stand allen Stadtbewohner:innen offen. Hier wurde die Versorgung mit Lebensmitteln gesichert. " }] }], isCorrect: false },
+                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", description: [{ tag: "p", children: [{tag: "text", text: "Der Markt stand allen Stadtbewohner*innen offen. Hier wurde die Versorgung mit Lebensmitteln gesichert." }] }], isCorrect: false },
                     { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Das Dortmunder Rathaus war eng mit dem Marktgeschehen verbunden und lag unmittelbar am Platz." }] }], isCorrect: true },
                     { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Es gab keine zweite Stadtmauer. Die Befestigung umschloss die gesamte Stadt. An den heutigen Wallanlagen lässt sich erkennen, welchen Umfang die Stadtmauer bereits um 1200 hatte." }] }], isCorrect: false }
                 ]
@@ -131,7 +131,7 @@ const puzzles: Puzzle[] = [
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Abdecker",
+                            question: "Abdecker:",
                             answer: [
                                 { type: "paragraph", text: "Abdecker waren für die Beseitigung und Verwertung (abdecken=abhäuten) von Tierkadavern zuständig. Aus den verwertbaren Teilen entstanden Produkte wie Fette, Leim oder Seife. Das Gewerbe galt als „unehrlich“. Abdecker waren sozial ausgegrenzt und mussten meist außerhalb der Stadt leben." }
                             ]
@@ -139,18 +139,18 @@ const puzzles: Puzzle[] = [
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Bader",
+                            question: "Bader:",
                             answer: [
-                                { type: "paragraph", text: "Bader waren - oft in Konkurrenz oder Zusammenarbeit mit den sogenannten Barbieren - bis ins 19. Jahrhundert für die Körperpflege der Bevölkerung zuständig. Sie betrieben Badestuben, die nicht nur Orte der Reinigung, sondern auch der Geselligkeit waren. Darüber hinaus behandelten Bader kleinere Wunden und alltägliche Beschwerden, zogen Zähne oder legten Schröpfköpfe an." }
+                                { type: "paragraph", text: "Bader waren – oft in Konkurrenz oder Zusammenarbeit mit den sogenannten Barbieren – bis ins 19. Jahrhundert für die Körperpflege der Bevölkerung zuständig. Sie betrieben Badestuben, die nicht nur Orte der Reinigung, sondern auch der Geselligkeit waren. Darüber hinaus behandelten Bader kleinere Wunden und alltägliche Beschwerden, zogen Zähne oder legten Schröpfköpfe an." }
                             ]
                         },
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Gerber",
+                            question: "Gerber:",
                             answer: [
                                 { type: "paragraph", text: "Gerber verarbeiteten Tierhäute zu Leder, das von anderen Handwerkern weiterverarbeitet wurde. Wegen der starken Gerüche und der benötigten Gerbmittel lagen Gerbereien meist am Stadtrand oder an Gewässern. Häufig entstanden sogenannte Gerbergassen, in denen sich mehrere Werkstätten konzentrierten." },
-                                { type: "image", src: "/station_01/raetsel_02/image_01.webp", alt: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Foto: Sophie Ullrich“)", caption: { caption: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Foto: Sophie Ullrich" }}
+                                { type: "image", src: "/station_01/raetsel_02/image_01.webp", alt: "Bei Ausgrabungen 2005 sind zwei Gerbergruben und zwei Brunnen entdeckt worden, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Bild: Sophie Ullrich", caption: { caption: "Bei Ausgrabungen 2005 sind zwei Gerbergruben und zwei Brunnen entdeckt worden, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Bild: Sophie Ullrich" }}
                             ]
                         },
                         { type:"seperator" }
