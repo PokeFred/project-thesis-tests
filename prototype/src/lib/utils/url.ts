@@ -20,5 +20,5 @@ export async function sendTo(path: string): Promise<void> {
  * @param path 
  */
 export function navigateTo(path: string): void {
-    window.location.href = `${BASE_URL}${path}`
+    window.location.href = `http://localhost:3000${path}` // TODO (cedric): URL
 }
