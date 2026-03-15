@@ -7,7 +7,7 @@
 
 <div class="w-full h-auto text-primary">
     <div class="w-full h-auto flex justify-between items-center px-6">
-        <span class="font-medium text-[16px] leading-6 tracking-[1.28px]">STATIONEN</span>
+        <span class="font-medium text-[16px] leading-6 tracking-[1.28px] uppercase">STATIONEN</span>
     </div>
     <div class="mt-2 w-full h-auto grid grid-cols-1 gap-2">
         {#each data.stations as station}

@@ -15,7 +15,7 @@
 
 <div class="w-full h-auto text-secondary">
     <div class="w-full h-auto flex justify-between items-center pl-6 pr-4">
-        <span class="text-lg font-semibold">{data.stitle}</span>
+        <span class="text-lg font-semibold uppercase">{data.stitle}</span>
         <BackButton path={"/einkaufsspuren/s"} />
     </div>
     <div class="mt-4 mb-8 w-full h-auto grid grid-cols-1 gap-2">
