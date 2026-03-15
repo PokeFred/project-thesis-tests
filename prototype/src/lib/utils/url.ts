@@ -12,7 +12,7 @@ export function getBaseUrl(): string {
  * @param path 
  */
 export async function sendTo(path: string): Promise<void> {
-    await goto(`${BASE_URL}${path}`)
+    await goto(`http://localhost:3000${path}`) // TODO (cedric): URL
 }
 
 /**
