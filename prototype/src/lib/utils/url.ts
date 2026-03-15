@@ -7,8 +7,8 @@ export function getBaseUrl(): string {
     return ""
 }
 
-export function getAssetPath(): string {
-    return ""
+export function asset(path: string): string {
+    return `/data/${path}`
 }
 
 export async function sendTo(path: string): Promise<void> {

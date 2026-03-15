@@ -8,7 +8,8 @@ import { build, files, version } from "$service-worker"
 const self: ServiceWorkerGlobalScope = globalThis.self as unknown as ServiceWorkerGlobalScope
 const CACHE: string = `cache-${version}`
 const ASSETS: string[] = [
-    ...build,
+    ...build
+        .filter((element: string): boolean => element !== ".htaccess"),
     ...files
         .filter((element: string): boolean => element !== ".htaccess")
 ]
