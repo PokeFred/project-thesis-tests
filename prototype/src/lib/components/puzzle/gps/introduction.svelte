@@ -23,7 +23,16 @@
     <details bind:open={open}>
         <summary class="w-full h-auto flex justify-between items-center cursor-pointer px-3">
             <span class="text-lg font-bold">Öffentlicher Verkehr & Koordinaten</span>
-            <Icon data={open ? faMinus : faPlus} />
+            {#if open}
+                <svg class="object-contain w-8 h-fit shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <rect x="0" y="47" width="100" height="6" class="fill-secondary"/>
+                </svg>
+            {:else}
+                <svg class="object-contain w-8 h-fit shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <rect x="0" y="47" width="100" height="6" class="fill-secondary"/>
+                    <rect x="47" y="0" width="6" height="100" class="fill-secondary"/>
+                </svg>
+            {/if}
         </summary>
         <div class="w-full h-auto grid grid-cols-1 gap-4 px-6 pt-3">
             <hr class="w-1/3 border" />
