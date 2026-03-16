@@ -193,7 +193,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zum Westenhellweg, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Ecke Brückstraße",
+                    adress: "Ostenhellweg 1-3, 44135 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -204,13 +204,13 @@ const puzzles: Puzzle[] = [
                             lines: []
                         }
                     },
-                    coordinates: "51.51442205062871, 7.4665695269931405"
+                    coordinates: "51.51432394717017, 7.466714730787752"
                 }
             },
             game: {
                 coordinates: {
-                    lat: 51.51442205062871,
-                    lon: 7.4665695269931405
+                    lat: 51.51432394717017,
+                    lon: 7.466714730787752
                 }
             },
             result: {}
@@ -792,7 +792,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zum Hansaplatz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Hansaplatz",
+                    adress: "Hansaplatz 7-61, 44137 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1247,7 +1247,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zur Reinoldistraße, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Reinoldistraße 6",
+                    adress: "Reinoldistraße 6, 44135 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1336,7 +1336,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zum Hafen, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Speicherstraße 15",
+                    adress: "Speicherstraße 15, 44147 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1459,7 +1459,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zum Freiherr-vom-Stein-Platz, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Steinstraße 6",
+                    adress: "Steinstraße 6, 44145 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1714,7 +1714,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zur Kampstraße, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "REWE Kampstraße",
+                    adress: "Kampstraße 1, 44137 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1725,13 +1725,13 @@ const puzzles: Puzzle[] = [
                             lines: []
                         }
                     },
-                    coordinates: "51.51540000001225, 7.466581904944825"
+                    coordinates: "51.51507652709233, 7.46653831923155"
                 }
             },
             game: {
                 coordinates: {
-                    lat: 51.51540000001225,
-                    lon: 7.466581904944825
+                    lat: 51.51507652709233,
+                    lon: 7.46653831923155
                 }
             },
             result: {}
@@ -1807,9 +1807,9 @@ const puzzles: Puzzle[] = [
         score: 1,
         data: {
             introduction: {
-                text: "Begebe dich zum Thalia, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
+                text: "Begebe dich zum Westenhellweg, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Westenhellweg 44",
+                    adress: "Westenhellweg 44, 44137 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -1928,7 +1928,7 @@ const puzzles: Puzzle[] = [
             introduction: {
                 text: "Begebe dich zur Thier-Galerie, erst wenn deine Position korrekt ist, werden die Rätsel freigeschaltet.",
                 informations: {
-                    adress: "Thier-Galerie",
+                    adress: "Westenhellweg 100, 44137 Dortmund",
                     transit: {
                         bus: {
                             station: "",
@@ -2007,7 +2007,7 @@ const puzzles: Puzzle[] = [
         id: 93,
         type: "word-guessing-puzzle",
         title: "Suchaufgabe 3",
-        requirements: [], // TODO [90]
+        requirements: [90],
         score: 3,
         data: {
             introduction: {

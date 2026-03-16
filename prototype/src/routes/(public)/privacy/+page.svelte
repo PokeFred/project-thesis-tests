@@ -73,7 +73,7 @@
         </div>
         <hr />
         <div>
-            <div class="font-bold">8. Serverdaten</div>
+            <div class="font-bold">8. Wie lange werden Daten gespeichert ?</div>
             <div> Daten in der App bleiben auf deinem Gerät, bis du sie löschst.</div>
             <div>Du kannst das z. B. tun, indem du den Browser-Cache oder App-Daten löschst</div>
         </div>
