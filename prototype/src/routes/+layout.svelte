@@ -80,6 +80,8 @@
                     <hr class="border" />
                     <button onclick={(): void => informationsModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">INFOS ZUR NUTZUNG</button>
                     <hr class="border" />
+                    <button onclick={(): Promise<void> => sendTo("/thanks")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DANKSAGUNG</button>
+                    <hr class="border" />
                     <button onclick={(): Promise<void> => sendTo("/imprint")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">IMPRESSUM</button>
                     <hr class="border" />
                     <button onclick={(): Promise<void> => sendTo("/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
