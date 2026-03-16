@@ -3,6 +3,7 @@ import type { AccordionData, AccordionQuestion } from "$components/accordions/Ac
 import type { Score } from "$utils/score"
 import Station_ from "$utils/station"
 import Puzzle_ from "$utils/puzzle"
+import type { Chapter } from "./ChapterAccordion"
 
 // TODO chapter typing ?
 type _Chapters = {}
@@ -26,7 +27,7 @@ type _Puzzle = {
     locked: boolean
 }
 
-export const load: PageLoad = async ({ params }): Promise<{ stitle: string, title: string, score: Score, chapters: _Chapters[], puzzles:  _Puzzle[] }> => {
+export const load: PageLoad = async ({ params }): Promise<{ stitle: string, title: string, score: Score, chapters: Chapters[], puzzles:  _Puzzle[] }> => {
     const id: number = Number(params.id)
     const station: Station_ = Station_.get(id)
 
@@ -34,7 +35,8 @@ export const load: PageLoad = async ({ params }): Promise<{ stitle: string, titl
         stitle: station.getSTitle(),
         title: station.getTitle(),
         score: station.getScore(),
-        chapters: getStationChapters(station),
+        chapters: station.getChapters()
+        .map((element: any): Chapter => { return { title: element.title, data: element.data, audio: element.audio } }),
         puzzles: station.getPuzzles()
             .map((element: Puzzle_): _Puzzle => {
                 return {

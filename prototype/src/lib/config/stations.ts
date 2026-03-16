@@ -29,7 +29,13 @@ type StationChapterContent = any
 [
     {
         "title": "",
-        "data": []
+        "data": [],
+        "audio": null
+    },
+    {
+        "title": "",
+        "data": [],
+        "audio": null
     }
 ]
 
@@ -67,7 +73,7 @@ const _stations: _Station[] = [
         id: 1,
         tag: "Station 01",
         stitle: "Alter Markt",
-        title: "Der mittelalterliche Markt, Handel und Handwerk in Dortmund",
+        title: "Der mittelalterliche Markt, der Handel und das Handwerk in Dortmund",
         chapters: "01",
         puzzles: [10, 11, 12, 13]
     },
@@ -159,13 +165,13 @@ const stations: Station[] = _stations.map((element: _Station): Station => {
     // https://placehold.co/600x400
     const chapters: StationChapter[] = getChapters(element.chapters)
     chapters.map((element: StationChapter): StationChapter => {
-        element.data.map((element: StationChapterContent): StationChapterContent => {
-            if (element.type === "image") {
-                element.src = (element.src.length > 0) ? element.src : "https://placehold.co/600x400"
-            }
+        // element.data.map((element: StationChapterContent): StationChapterContent => {
+        //     if (element.type === "image") {
+        //         element.src = (element.src.length > 0) ? element.src : "https://placehold.co/600x400"
+        //     }
 
-            return element
-        })
+        //     return element
+        // })
 
         return element
     })

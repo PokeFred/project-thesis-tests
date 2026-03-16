@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
-    import Accordion from "$components/accordions/Accordion.svelte"
-    import type { AccordionData } from "$components/accordions/Accordion"
+    import Accordion from "./ChapterAccordion.svelte"
+    import type { Chapter } from "./ChapterAccordion"
     import BackButton from "$components/BackButton.svelte"
     import { sendTo } from "$utils/url"
 
@@ -26,5 +26,5 @@
             </button>
         {/each}
     </div>
-    <Accordion title={data.title} data={data.chapters as AccordionData} />
+    <Accordion title={data.title} chapters={data.chapters} />
 </div>

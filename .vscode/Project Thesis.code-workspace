@@ -1,6 +1,14 @@
 {
     "folders": [
         {
+            "name": "> Config",
+            "path": "../prototype/src/lib/config"
+        },
+        {
+            "name": "> Data",
+            "path": "../prototype/static/data"
+        },
+        {
             "name": "Prototype",
             "path": "../prototype"
         },
