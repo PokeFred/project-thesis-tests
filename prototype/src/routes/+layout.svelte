@@ -97,7 +97,7 @@
                 <main class="w-full h-full {(new RegExp("\/(s|p)+\/[0-9]+[0-9]*\/")).test(page.url.pathname) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
                     {@render children()}
                 </main>
-                <footer class="w-full h-auto text-secondary bg-primary grid grid-cols-1 gap-2 px-2">
+                <footer class="w-full h-auto py-1 text-secondary bg-primary grid grid-cols-1 gap-2 px-2 border-t-2">
                     <div class="w-full h-auto grid grid-cols-2 gap-4 px-2">
                         <button onclick={(): Promise<void> => sendTo("/imprint")} class="mr-auto w-fit h-auto text-base font-semibold text-left cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Impressum</button>
                         <button onclick={(): Promise<void> => sendTo("/privacy")} class="ml-auto w-fit h-auto text-base font-semibold text-right cursor-pointer px-4 py-2 hover:underline hover:opacity-75 active:scale-95">Datenschutz</button>

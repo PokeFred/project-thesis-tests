@@ -68,12 +68,12 @@ const puzzles: Puzzle[] = [
             },
             result: {
                 answers: [
-                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest Du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.webp", alt: "Foto: Sophie Ullrich", caption: { src: "Sophie Ullrich"}}], isCorrect: true },
+                    { id: 0, text: "Es gab einen Brunnen am Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Brunnen war zentral für die Wasserversorgung – und ein beliebter Treffpunkt zum Austausch aller Art. Eine Tafel erinnert heute an den früheren Brunnen. Findest du sie?" }]}, { tag: "img", src: "/station_01/raetsel_01/image_01.webp", alt: "Foto: Sophie Ullrich", caption: { src: "Bild: Sophie Ullrich"}}], isCorrect: true },
                     { id: 1, text: "Die Hauptpfarrkirche lag am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Der erste Dortmunder Marktplatz befand sich am Vorgängerbau der Reinoldikirche, nahe dem damaligen, ersten Rathaus. Das ist der heutige Platz von Leeds. Nach dem großen Stadtbrand von 1232 wurde der Markt an seinen heutigen Standort verlegt." }] }], isCorrect: true },
                     { id: 2, text: "Der Markt war das Zentrum der Stadt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Marktplatz war das Herz der Stadt: Hier wurde gehandelt, verhandelt und Recht gesprochen." }] }], isCorrect: true },
-                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: " Der Richtplatz lag außerhalb der Stadt, östlich in Körne. Dort fanden die Hinrichtungen statt. Am Markt befand sich jedoch der „Trissel“, eine besondere Form des Prangers in Gestalt eines Korbes, in dem Verurteilte öffentlich zur Schau gestellt wurden. Im Trissel vollzog man soziale oder „entehrende“ Strafen." }] }], isCorrect: false },
+                    { id: 3, text: "Hinrichtungen von Verurteilten fanden auf dem Markt statt.", description: [{ tag: "p", children: [{tag: "text", text: "Der Richtplatz lag außerhalb der Stadt, östlich in Körne. Dort fanden die Hinrichtungen statt. Am Markt befand sich jedoch der „Trissel“, eine besondere Form des Prangers in Gestalt eines Korbes, in dem Verurteilte öffentlich zur Schau gestellt wurden. Im Trissel vollzog man soziale oder „entehrende“ Strafen." }] }], isCorrect: false },
                     { id: 4, text: "Der Markt lag an einem wichtigen Handelsweg.", description: [{ tag: "p", children: [{tag: "text", text: "Dortmund lag am Hellweg, einer bedeutenden mittelalterlichen Fernstraße. Diese Lage machte die Stadt zu einem wichtigen Handels- und Hansestandort." }] }], isCorrect: true },
-                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", description: [{ tag: "p", children: [{tag: "text", text: "Der Markt stand allen Stadtbewohner:innen offen. Hier wurde die Versorgung mit Lebensmitteln gesichert. " }] }], isCorrect: false },
+                    { id: 5, text: "Zutritt hatten nur Angehörige des Adels.", description: [{ tag: "p", children: [{tag: "text", text: "Der Markt stand allen Stadtbewohner*innen offen. Hier wurde die Versorgung mit Lebensmitteln gesichert." }] }], isCorrect: false },
                     { id: 6, text: "Das Rathaus lag direkt am Marktplatz.", description: [{ tag: "p", children: [{tag: "text", text: "Das Dortmunder Rathaus war eng mit dem Marktgeschehen verbunden und lag unmittelbar am Platz." }] }], isCorrect: true },
                     { id: 7, text: "Eine zweite Stadtmauer umgab den Markt.", description: [{ tag: "p", children: [{tag: "text", text: "Es gab keine zweite Stadtmauer. Die Befestigung umschloss die gesamte Stadt. An den heutigen Wallanlagen lässt sich erkennen, welchen Umfang die Stadtmauer bereits um 1200 hatte." }] }], isCorrect: false }
                 ]
@@ -131,7 +131,7 @@ const puzzles: Puzzle[] = [
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Abdecker",
+                            question: "Abdecker:",
                             answer: [
                                 { type: "paragraph", text: "Abdecker waren für die Beseitigung und Verwertung (abdecken=abhäuten) von Tierkadavern zuständig. Aus den verwertbaren Teilen entstanden Produkte wie Fette, Leim oder Seife. Das Gewerbe galt als „unehrlich“. Abdecker waren sozial ausgegrenzt und mussten meist außerhalb der Stadt leben." }
                             ]
@@ -139,18 +139,18 @@ const puzzles: Puzzle[] = [
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Bader",
+                            question: "Bader:",
                             answer: [
-                                { type: "paragraph", text: "Bader waren - oft in Konkurrenz oder Zusammenarbeit mit den sogenannten Barbieren - bis ins 19. Jahrhundert für die Körperpflege der Bevölkerung zuständig. Sie betrieben Badestuben, die nicht nur Orte der Reinigung, sondern auch der Geselligkeit waren. Darüber hinaus behandelten Bader kleinere Wunden und alltägliche Beschwerden, zogen Zähne oder legten Schröpfköpfe an." }
+                                { type: "paragraph", text: "Bader waren – oft in Konkurrenz oder Zusammenarbeit mit den sogenannten Barbieren – bis ins 19. Jahrhundert für die Körperpflege der Bevölkerung zuständig. Sie betrieben Badestuben, die nicht nur Orte der Reinigung, sondern auch der Geselligkeit waren. Darüber hinaus behandelten Bader kleinere Wunden und alltägliche Beschwerden, zogen Zähne oder legten Schröpfköpfe an." }
                             ]
                         },
                         { type:"seperator" },
                         {
                             type: "question",
-                            question: "Gerber",
+                            question: "Gerber:",
                             answer: [
                                 { type: "paragraph", text: "Gerber verarbeiteten Tierhäute zu Leder, das von anderen Handwerkern weiterverarbeitet wurde. Wegen der starken Gerüche und der benötigten Gerbmittel lagen Gerbereien meist am Stadtrand oder an Gewässern. Häufig entstanden sogenannte Gerbergassen, in denen sich mehrere Werkstätten konzentrierten." },
-                                { type: "image", src: "/station_01/raetsel_02/image_01.webp", alt: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Foto: Sophie Ullrich“)", caption: { caption: "Bei Ausgrabungen 2005 wurden zwei Gerbergruben und zwei Brunnen entdeckt, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Foto: Sophie Ullrich" }}
+                                { type: "image", src: "/station_01/raetsel_02/image_01.webp", alt: "Bei Ausgrabungen 2005 sind zwei Gerbergruben und zwei Brunnen entdeckt worden, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall). Bild: Sophie Ullrich", caption: { caption: "Bei Ausgrabungen 2005 sind zwei Gerbergruben und zwei Brunnen entdeckt worden, in denen Tierhäute gereinigt wurden. Die Gerbergasse lag außerhalb der Stadtmauer (heute Wall).", src: "Bild: Sophie Ullrich" }}
                             ]
                         },
                         { type:"seperator" }
@@ -301,54 +301,48 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "p",
                         children: [
-                            {tag: "text", text: "Bei der Gründung von Tewes zählte Dortmund nur etwa 6.000 Einwohner*innen und war  damit ein überschaubares Städtchen. Mit der Industrialisierung und dem Aufschwung durch den Kohleabbau wuchs Dortmund rasch. Auch das Geschäft Tewes profitierte davon und entwickelte sich zu einer der ersten Adressen des Dortmunder Großbürgertums. Im Kaiserreich (1871–1918) war Tewes eines der vier größten Juweliergeschäfte Deutschlands."},
+                            {tag: "text", text: "Bei der Gründung von Tewes zählte Dortmund nur etwa 6.000 Einwohner*innen und war damit ein überschaubares Städtchen. Mit der Industrialisierung und dem Aufschwung durch den Kohleabbau wuchs Dortmund rasch. Auch das Geschäft Tewes profitierte davon und entwickelte sich zu einer der ersten Adressen des Dortmunder Großbürgertums. Im Kaiserreich (1871–1918) war Tewes eines der vier größten Juweliergeschäfte Deutschlands."},
                         ]
                     },
                     {
                         tag: "p",
                         children: [
-                            {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger*innen ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte. Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und UrururEnkel des Gründers."},
+                            {tag: "text", text: "1899 besuchte Kaiser Wilhelm II. die Stadt. Zu diesem Anlass stifteten Dortmunder Bürger ein neues Ratssilber – darunter auch die Familie Tewes, die zwei kunstvoll gearbeitete Silberpokale beisteuerte."},
                         ]
                     },
                     {
                         tag: "p",
                         children: [
-                            {tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft zerstört. Der Wiederaufbau gelang am heutigen Standort Westenhellweg 6. Bis heute verbindet Tewes traditionelle Goldschmiedekunst mit zeitgemäßem Design und wird in sechster Generation, mittlerweile von Rudolf Tewes, geführt."},
+                            {tag: "text", text: "Auch zum 150., zum 175. und 200. Stadtjubiläum stiftete die Familie für die Stadt, zuletzt einen Silberleuchter durch Rudolf Tewes, Goldschmied, Gemmologe und Ururur-Enkel des Gründers. Im Zweiten Weltkrieg wurde das Geschäft zerstört. Der Wiederaufbau gelang am heutigen Standort Westenhellweg 6. Bis heute verbindet Tewes traditionelle Goldschmiedekunst mit zeitgemäßem Design und wird in sechster Generation, mittlerweile von Rudolf Tewes, geführt."},
                         ]
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_01/content/image_00.webp",
-                        alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche (Stadtarchiv Dortmund)",
+                        alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche Bild: Stadtarchiv Dortmund",
                         caption: {
                             caption: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_01/content/image_01.webp",
-                        alt: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
+                        alt: "Zweiter Standort von Juwelier Tewes am Ostenhellweg 16 Bild: Juwelier Tewes",
                         caption: {
-                            caption: "Postkarte: Zweiter Standort des Juweliers Tewes am Ostenhellweg 16, Provenienz: Rudolf Tewes.",
-                            src: "Rudolf Tewes"
+                            caption: "Zweiter Standort von Juwelier Tewes am Ostenhellweg 16",
+                            src: "Bild: Juwelier Tewes"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_01/content/image_02.webp",
-                        alt: "Der erste Standort des Juweliers Tewes lag am Westenhellweg 12, zwischen Reinoldikirche und dem damaligen Gasthaus „Zum alten Ritter“, im Gebäude mit dem Türmchen rechts neben der Kirche",
+                        alt: "Links im Vordergrund das Gebäude von Juwelier Tewes am zweiten Standort, Ostenhellweg 16, um 1911 Bild: Stadtarchiv Dortmund",
                         caption: {
-                            caption: "Postkarte von ca. 1911: Links im Vordergrund das Gebäude des Juweliers Tewes am zweiten Standort, Ostenhellweg 16.",
-                            src: "Stadtarchiv Dortmund"
+                            caption: "Links im Vordergrund das Gebäude von Juwelier Tewes am zweiten Standort, Ostenhellweg 16, um 1911",
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
-                    },
-                    {
-                        tag: "p",
-                        children: [
-                            {tag: "text", text: ""},
-                        ]
-                    },
+                    }
                 ]
             }
         }
@@ -437,37 +431,37 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_00.webp",
-                        alt: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer, Provenienz: Freund & Bauer.",
+                        alt: "Ausgeschnittene Anzeige aus der Zeitung, Geschäftseröffnung von Freund & Bauer Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Anzeige in der Zeitung, Geschäftseröffnung von Freund & Bauer",
-                            src: "Freund & Bauer."
+                            caption: "Ausgeschnittene Anzeige aus der Zeitung, Geschäftseröffnung von Freund & Bauer",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_01.webp",
-                        alt: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909, Provenienz: Freund & Bauer.",
+                        alt: "Westenhellweg mit dem Blumengeschäft Freund & Bauer, 1909 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Der Westenhellweg mit dem Blumengeschäft Freund & Bauer, Aufnahme von 1909.",
-                            src: "Freund & Bauer."
+                            caption: "Westenhellweg mit dem Blumengeschäft Freund & Bauer, 1909",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_02.webp",
-                        alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908, Provenienz: Freund & Bauer.",
+                        alt: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, vermutlich 1908 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, Postkarte vermutlich von 1908.",
-                            src: "Freund & Bauer"
+                            caption: "Zur Eröffnung des Geschäfts im Westenhellweg 8 wurden duftende Postkarten versandt, vermutlich 1908",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_03.webp",
-                        alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926, Provenienz: Freund & Bauer.",
+                        alt: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926.",
-                            src: "Freund & Bauer"
+                            caption: "Werbebüchlein für die Kundschaft von Freund & Bauer, 1926",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
@@ -477,42 +471,42 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_04.webp",
-                        alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931, Provenienz: Freund & Bauer.",
+                        alt: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931.",
-                            src: "Freund & Bauer"
+                            caption: "Neubau des Geschäfts auf dem Westenhellweg 8, 1931",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_05.webp",
-                        alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer, Provenienz: Freund & Bauer",
+                        alt: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer.",
-                            src: "Freund & Bauer"
+                            caption: "Aus der Erinnerung gezeichnete Ladeneinrichtung des Geschäfts von 1931, gezeichnet von Jula Bauer",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_06.webp",
-                        alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer, Provenienz: Freund & Bauer.",
+                        alt: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer.",
-                            src: "Freund & Bauer"
+                            caption: "Packecke des Geschäfts, aus der Erinnerung gezeichnet von Jula Bauer",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_07.webp",
-                        alt: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, Provenienz: Freund & Bauer.",
+                        alt: "Aufnahme vom Reinoldikirchturm: das neue Haus Falcke, Tewes, Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, 1952 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Aufnahme aus dem Jahr 1952: Vom Reinoldikirchturm aufgenommen: das neue Haus Falcke, dann Tewes und der Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt.",
-                            src: "Freund & Bauer"
+                            caption: "Aufnahme vom Reinoldikirchturm: das neue Haus Falcke, Tewes, Anbau Freund & Bauer, die Kriegsschäden sind noch nicht alle beseitigt, 1952",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "p",
-                        children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Mit der Umwandlung des Westenhellwegs in eine Fußgängerzone verloren die Blumen an Bedeutung und ab 1980 konzentrierte man sich auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
+                        children: [{tag: "text", text: "Zwischen 1950 und 1980 wuchs das Geschäft Schritt für Schritt: Die Verkaufsfläche wurde vergrößert und Walter Bauer stieg in die Firma ein. Das Sortiment erweiterte sich um Töpfe, Vasen, Schalen und Kunstgewerbe und ab 1966 sogar um eine eigene Brautetage mit Brautmode. Ab den 1980er Jahren konzentrierte sich die Geschäftsführung auf Kunstgewerbe und Schmuck. Seit 1988 ist Freund & Bauer ausschließlich Juwelier."}]
                     },
                     {
                         tag: "p",
@@ -521,19 +515,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_08.webp",
-                        alt: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966, Provenienz: Freund & Bauer.",
+                        alt: "Freund & Bauer mit der Braut Etage ab 1966 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Geschäftsansicht von Freund & Bauer mit der Braut Etage ab 1966.",
-                            src: "Freund & Bauer"
+                            caption: "Freund & Bauer mit der Braut Etage ab 1966",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_02/content/image_09.webp",
-                        alt: "Präsentation von Brautmode bei Freund & Bauer, 1997, Provenienz: Freund & Bauer",
+                        alt: "Präsentation von Brautmode bei Freund & Bauer, 1997 Bild: Juwelier Freund & Bauer",
                         caption: {
-                            caption: "Präsentation von Brautmode bei Freund & Bauer, 1997.",
-                            src: "Freund & Bauer"
+                            caption: "Präsentation von Brautmode bei Freund & Bauer, 1997",
+                            src: "Bild: Juwelier Freund & Bauer"
                         }
                     },
                 ]
@@ -643,19 +637,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_03/content/image_00.webp",
-                        alt: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952 (Stadtarchiv Dortmund).",
+                        alt: "Betten Hutt auf dem Westenhellweg, vermutlich nach 1952 Bild: Stadtarchiv Dortmund",
                         caption: {
-                            caption: "Betten Hutt auf dem Westenhellweg, Aufnahme des Bildes vermutlich nach 1952",
-                            src: "Stadtarchiv Dortmund"
+                            caption: "Betten Hutt auf dem Westenhellweg, vermutlich nach 1952",
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_03/content/image_01.webp",
-                        alt: "Werbung für die Firma Betten Hutt, Stadtarchiv Dortmund.",
+                        alt: "Werbung für Betten Hutt Bild: Stadtarchiv Dortmund",
                         caption: {
-                            caption: "Werbung für die Firma Betten Hutt.",
-                            src: "Stadtarchiv Dortmund"
+                            caption: "Werbung für Betten Hutt",
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                 ]
@@ -741,19 +735,10 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_04/content/image_00.webp",
-                        alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904 (Sammlung Rüschenbeck)",
+                        alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904, Provenienz: Rüschenbeck",
                         caption: {
                             caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
-                            src: "Sammlung Rüschenbeck"
-                        }
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_01.webp",
-                        alt: "Lebhaftes Treiben auf dem Westenhellweg, 1924 (Sammlung Rüschenbeck)",
-                        caption: {
-                            caption: "Lebhaftes Treiben auf dem Westenhellweg, 1924",
-                            src: "Sammlung Rüschenbeck"
+                            src: "Provenienz: Rüschenbeck"
                         }
                     },
                     {
@@ -763,32 +748,32 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_02/raetsel_04/content/image_02.webp",
-                        alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 (Sammlung Rüschenbeck).",
+                        alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 Provenienz: Rüschenbeck.",
                         caption: {
                             caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
-                            src: "Sammlung Rüschenbeck"
+                            src: "Provenienz: Rüschenbeck"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_04/content/image_03.webp",
-                        alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943 (Sammlung Rüschenbeck).",
+                        alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943, Provenienz: Rüschenbeck",
                         caption: {
                             caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
-                            src: "Sammlung Rüschenbeck"
+                            src: "Provenienz: Rüschenbeck"
                         }
                     },
                     {
                         tag: "p",
-                        children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg 45 offiziell neu eröffnet werden. Es hatte ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute gehört Rüschenbeck zu den größten Juwelieren Europas, wurde mehrmals ausgezeichnet und eröffnete zahlreiche Filialen an mehreren Standorten."}]
+                        children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg neu eröffnet werden. Es verfügte über ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute ist Rüschenbeck ein europaweit tätiges Juwelierunternehmen mit Filialen an vielen Standorten."}]
                     },
                     {
                         tag: "img",
                         src: "/station_02/raetsel_04/content/image_04.webp",
-                        alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45 (Sammlung Rüschenbeck).",
+                        alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45, Provenienz: Rüschenbeck",
                         caption: {
                             caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
-                            src: "Sammlung Rüschenbeck"
+                            src: "Provenienz: Rüschenbeck"
                         }
                     },
                 ]
@@ -879,10 +864,10 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_00.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -909,19 +894,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_01.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_02.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -948,19 +933,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_03.webp",
-                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_04.webp",
-                        alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Wein und Likörabteilung Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
@@ -987,23 +972,23 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_05.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_06.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1017,7 +1002,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Bild: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Bild: Sophie Ullrich" } }
                 ]
             },
             result: {
@@ -1059,10 +1044,10 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_00.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Warenhaus Althoff an der Hansastraße, Ecke Westenhellweg",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -1089,18 +1074,18 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_01.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_02.webp",
-                        alt: "Teppichlager im Warenhaus Althoff (Foto: Stadtarchiv Dortmund).",
+                        alt: "Teppichlager im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Teppichlager im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
@@ -1127,19 +1112,19 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_03.webp",
-                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Lebensmittelabteilung im Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Lebensmittelabteilung im Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_04.webp",
-                        alt: "Wein und Likörabteilung Warenhaus Althoff (Sammlung Klaus Winter).",
+                        alt: "Wein und Likörabteilung Warenhaus Althoff (Bild: Sammlung Klaus Winter).",
                         caption: {
                             caption: "Wein und Likörabteilung Warenhaus Althoff",
-                            src: "Sammlung Klaus Winter"
+                            src: "Bild: Sammlung Klaus Winter"
                         }
                     },
                     {
@@ -1166,22 +1151,22 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_05.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
                     {
                         tag: "img",
                         src: "/station_03/raetsel_01/image_06.webp",
-                        alt: "Erfrischungsraum im Warenhaus Althoff (Stadtarchiv Dortmund).",
+                        alt: "Erfrischungsraum im Warenhaus Althoff (Bild: Stadtarchiv Dortmund).",
                         caption: {
                             caption: "Beide Bilder: Erfrischungsraum im Warenhaus Althoff",
-                            src: "Stadtarchiv Dortmund"
+                            src: "Bild: Stadtarchiv Dortmund"
                         }
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
-                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_07.webp", alt: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Außergewöhnliche Innenarchitektur: Der Lichthof im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
+                    { tag: "img", src: "/station_03/raetsel_01/image_08.webp", alt: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff (Bild: Sammlung Klaus Winter).", caption: { caption: "Kurzwaren Abteilung mit verschiedenem textilem Zubehör im Warenhaus Althoff", src: "Bild: Sammlung Klaus Winter" } },
                     {
                         tag: "p",
                         children: [
@@ -1195,7 +1180,7 @@ const puzzles: Puzzle[] = [
                             { tag: "text", text: "bekannt. Im Zweiten Weltkrieg wurde das Gebäude stark beschädigt, aber später wieder aufgebaut. Heute gehört das ehemalige Warenhaus Althoff zur Warenhauskette GALERIA. Diese entstand 2020 aus dem Zusammenschluss von Karstadt und Kaufhof." }
                         ]
                     },
-                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Foto: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Sophie Ullrich" } }
+                    { tag: "img", src: "/station_03/raetsel_01/image_09.webp", alt: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch (Bild: Sophie Ullrich).", caption: { caption: "Der Erweiterungsbau des ehemaligen Warenhauses Althoff steht auch heute noch", src: "Bild: Sophie Ullrich" } }
                 ]
             }
         }
