@@ -81,7 +81,7 @@ const _stations: _Station[] = [
         id: 2,
         tag: "Station 02",
         stitle: "Westenhellweg 1",
-        title: "Vom Handelsweg zur Einkaufsstraße - der Hellweg und seine Geschäfte",
+        title: "Vom Handelsweg zur Einkaufsstraße – der Hellweg und seine Geschäfte",
         chapters: "02",
         puzzles: [20, 21, 22, 23, 24]
     },
