@@ -2,7 +2,7 @@ import { goto } from "$app/navigation"
 import { resolve } from "$app/paths"
 
 const BASE_URL: string = resolve("/")
-const PREFIX: string = "/einkaufsspuren"
+const PREFIX: string = "/einkaufsspuren/#"
 
 export function getBasePath(): string {
     return `${PREFIX}`
@@ -17,5 +17,5 @@ export async function sendTo(path: string): Promise<void> {
 }
 
 export function navigateTo(path: string): void {
-    window.location.href = `${window.location.origin}${PREFIX}${path}`
+    window.location.href = `https://konsum-mkk.de${PREFIX}${path}`
 }

@@ -1,3 +1,4 @@
+import { browser } from "$app/environment"
 import { writable } from "svelte/store"
 import type { Writable } from "svelte/store"
 
@@ -58,10 +59,10 @@ const DEFAULT: GameState = {
 }
 
 function load(): GameState {
-    const a = localStorage.getItem("game")
+    if (!browser) return DEFAULT
 
-    if (a === null) return DEFAULT
-    return JSON.parse(a) as GameState
+    const item: string | null = localStorage.getItem("game")
+    return (item !== null) ? JSON.parse(item) as GameState : DEFAULT
 }
 
 let newState: GameState = load()

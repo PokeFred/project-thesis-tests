@@ -12,13 +12,17 @@ const config = {
             precompress: true,
             strict: true
         }),
+        router: {
+            type: "hash"
+        },
+        paths: {
+            //base: ""
+            base: "/einkaufsspuren",
+            relative: true
+        },
         env: {
             publicPrefix: "PUBLIC_",
             privatePrefix: "PRIVATE_"
-        },
-        paths: {
-            base: ""
-            //base: "/einkaufsspuren"
         },
         alias: {
             $config: "./src/lib/config",
