@@ -50,6 +50,3 @@ export const load: PageLoad = async ({ params }): Promise<{ stitle: string, titl
             })
     }
 }
-
-//export const prerender: "auto" | boolean = "auto"
-//export const ssr: boolean = false
