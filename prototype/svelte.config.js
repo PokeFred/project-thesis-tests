@@ -17,8 +17,8 @@ const config = {
             privatePrefix: "PRIVATE_"
         },
         paths: {
-            //base: ""
-            base: "/einkaufsspuren"
+            base: ""
+            //base: "/einkaufsspuren"
         },
         alias: {
             $config: "./src/lib/config",

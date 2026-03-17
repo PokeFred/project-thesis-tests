@@ -3,7 +3,7 @@
     import AudioPlayer from "./AudioPlayer.svelte"
     import { Icon } from "svelte-awesome"
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
-  import { asset } from "$utils/url";
+    import { asset } from "$utils/url"
 
     let { question, answers, audio }: { question: string, answers: any[], audio: string | null } = $props()
     let open: boolean = $state<boolean>(false)

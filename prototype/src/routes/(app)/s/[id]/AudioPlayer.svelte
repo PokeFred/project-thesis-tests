@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { asset } from "$utils/url";
+    import { asset } from "$utils/url"
 
     let { path }: { path: string } = $props()
 
