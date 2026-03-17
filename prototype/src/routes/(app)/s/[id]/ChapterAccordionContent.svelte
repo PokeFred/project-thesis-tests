@@ -41,14 +41,14 @@
             {:else if element.type === "paragraph"}
                 <div class="font-medium">{element.text}</div>
             {:else}
-                <figure class="my-10 mx-auto">
+                <figure class="my-10 -mx-6">
                     <Fullscreen>
                         <img src={asset(element.src)} alt={element.alt} />
                     </Fullscreen>
                     {#if element.caption}
-                        <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
-                            <span class="mb-2 text-[16px] leading-4">{@html element?.caption}</span>
-                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{asset(element.src)}</span>
+                        <figcaption class="flex flex-col mx-6.5 mt-3 font-medium">
+                            <span class="mb-2 text-[16px] leading-4">{@html element?.caption.caption}</span>
+                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{element.caption.src}</span>
                         </figcaption>
                     {/if}
                 </figure>
