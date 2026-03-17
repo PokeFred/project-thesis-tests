@@ -6,6 +6,7 @@
     import { faBus } from "@fortawesome/free-solid-svg-icons/faBus"
     import { faMinus } from "@fortawesome/free-solid-svg-icons/faMinus"
     import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
+    import { faMap } from "@fortawesome/free-solid-svg-icons/faMap"
     import type { Introduction } from "./index"
     import Bus from "./Bus.webp"
     import Train from "./Train.webp"
@@ -13,6 +14,14 @@
 
     let { data }: { data: Introduction } = $props()
     let open: boolean = $state<boolean>(false)
+
+    function openGeoCard(): void {
+        const lat: number = data.informations.coordinates.lat
+        const lon: number = data.informations.coordinates.lon
+
+        const geoUrl = `geo:${lat},${lon}?q=${lat},${lon}`
+        window.location.href = geoUrl
+    }
 </script>
 
 <div class="mt-3 w-full h-auto text-lg text-left px-3">{data.text}</div>
@@ -41,8 +50,8 @@
                     <img src={Bus} alt="" class="mr-3 w-6 h-6" />
                     <span class="text-lg font-bold">Bus</span>
                 </div>
-                <div>{data.informations.transit.bus.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.bus.station}</div>
+                <div>Linien: {data.informations.transit.bus.lines.join("/")}</div>
             </div>
             <hr class="w-1/3 border" />
             <div class="w-full h-auto grid grid-cols-1 gap-0">
@@ -50,8 +59,8 @@
                     <img src={Train} alt="" class="mr-3 w-6 h-6" />
                     <span class="text-lg font-bold">U-Bahn</span>
                 </div>
-                <div>{data.informations.transit.subway.lines.join("/")}</div>
                 <div>Haltestelle: {data.informations.transit.subway.station}</div>
+                <div>Linien: {data.informations.transit.subway.lines.join("/")}</div>
             </div>
             <hr class="w-1/3 border" />
             <div class="w-full h-auto grid grid-cols-1 gap-0">
@@ -59,7 +68,11 @@
                     <img src={Map} alt="" class="mr-3 w-6 h-6" />
                     <span class="text-lg font-bold">Koordinaten</span>
                 </div>
-                <div>{data.informations.coordinates}</div>
+                <div>{data.informations.coordinates.text}</div>
+                <button onclick={openGeoCard} class="mt-2 w-fit h-auto text-primary bg-secondary rounded-full flex justify-start items-center px-6 py-1">
+                    <Icon data={faMap} />
+                    <span class="ml-3">Karte öffnen</span>
+                </button>
             </div>
         </div>
     </details>

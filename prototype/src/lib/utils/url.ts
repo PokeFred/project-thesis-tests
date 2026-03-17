@@ -16,5 +16,5 @@ export async function sendTo(path: string): Promise<void> {
 }
 
 export function navigateTo(path: string): void {
-    window.location.href = `http://localhost:3000${path}`
+    window.location.href = `${window.location.origin}${path}`
 }

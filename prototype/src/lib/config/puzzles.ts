@@ -31,7 +31,11 @@ const puzzles: Puzzle[] = [
                             lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "51.51392304391651, 7.465440457499872"
+                    coordinates: {
+                        text: "51.51392304391651, 7.465440457499872",
+                        lat: 51.51392304391651,
+                        lon: 7.465440457499872
+                    }
                 }
             },
             game: {
@@ -196,15 +200,19 @@ const puzzles: Puzzle[] = [
                     adress: "Ostenhellweg 1-3, 44135 Dortmund",
                     transit: {
                         bus: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche U",
+                            lines: ["460"]
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche",
+                            lines: ["U42", "U43", "U44", "U46"]
                         }
                     },
-                    coordinates: "51.51432394717017, 7.466714730787752"
+                    coordinates: {
+                        text: "51.51432394717017, 7.466714730787752",
+                        lat: 51.51432394717017,
+                        lon: 7.466714730787752
+                    }
                 }
             },
             game: {
@@ -799,11 +807,15 @@ const puzzles: Puzzle[] = [
                             lines: []
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Kampstraße",
+                            lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "51.5134351005712, 7.464574873617459"
+                    coordinates: {
+                        text: "51.5134351005712, 7.464574873617459",
+                        lat: 51.5134351005712,
+                        lon: 7.464574873617459
+                    }
                 }
             },
             game: {
@@ -1250,15 +1262,19 @@ const puzzles: Puzzle[] = [
                     adress: "Reinoldistraße 6, 44135 Dortmund",
                     transit: {
                         bus: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche/Burgwall",
+                            lines: ["453"]
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche",
+                            lines: ["U42", "U43", "U44", "U46"]
                         }
                     },
-                    coordinates: " 51.51574134185536, 7.467070721060602"
+                    coordinates: {
+                        text: "51.51574134185536, 7.467070721060602",
+                        lat:  51.51574134185536,
+                        lon: 7.467070721060602
+                    }
                 }
             },
             game: {
@@ -1339,15 +1355,19 @@ const puzzles: Puzzle[] = [
                     adress: "Speicherstraße 15, 44147 Dortmund",
                     transit: {
                         bus: {
-                            station: "",
-                            lines: []
+                            station: "Hafen U",
+                            lines: ["460", "475"]
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Hafen",
+                            lines: ["U41", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "51.52578069810683, 7.445809382385741"
+                    coordinates: {
+                        text: "51.52578069810683, 7.445809382385741",
+                        lat: 51.52578069810683,
+                        lon: 7.445809382385741
+                    }
                 }
             },
             game: {
@@ -1462,15 +1482,19 @@ const puzzles: Puzzle[] = [
                     adress: "Steinstraße 6, 44145 Dortmund",
                     transit: {
                         bus: {
-                            station: "",
-                            lines: []
+                            station: "Burgtor",
+                            lines: ["400"]
                         },
                         subway: {
                             station: "",
                             lines: []
                         }
                     },
-                    coordinates: "51.520129044945186, 7.464537819122533"
+                    coordinates: {
+                        text: "51.520129044945186, 7.464537819122533",
+                        lat: 51.520129044945186,
+                        lon: 7.464537819122533
+                    }
                 }
             },
             game: {
@@ -1717,15 +1741,19 @@ const puzzles: Puzzle[] = [
                     adress: "Kampstraße 1, 44137 Dortmund",
                     transit: {
                         bus: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche U",
+                            lines: ["460"]
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Reinoldikirche",
+                            lines: ["U42", "U43", "U44", "U46"]
                         }
                     },
-                    coordinates: "51.51507652709233, 7.46653831923155"
+                    coordinates: {
+                        text: "51.51507652709233, 7.46653831923155",
+                        lat: 51.51507652709233,
+                        lon: 7.46653831923155
+                    }
                 }
             },
             game: {
@@ -1816,11 +1844,15 @@ const puzzles: Puzzle[] = [
                             lines: []
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Kampstraße",
+                            lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "51.51420673594943, 7.4638271186997995"
+                    coordinates: {
+                        text: "51.51420673594943, 7.4638271186997995",
+                        lat: 51.51420673594943,
+                        lon: 7.4638271186997995
+                    }
                 }
             },
             game: {
@@ -1935,11 +1967,15 @@ const puzzles: Puzzle[] = [
                             lines: []
                         },
                         subway: {
-                            station: "",
-                            lines: []
+                            station: "Kampstraße",
+                            lines: ["U41", "U43", "U44", "U45", "U47", "U49"]
                         }
                     },
-                    coordinates: "51.51340212520424, 7.459321539954258"
+                    coordinates: {
+                        text: "51.51340212520424, 7.459321539954258",
+                        lat: 51.51340212520424,
+                        lon: 7.459321539954258
+                    }
                 }
             },
             game: {

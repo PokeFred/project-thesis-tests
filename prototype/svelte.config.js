@@ -17,6 +17,7 @@ const config = {
             privatePrefix: "PRIVATE_"
         },
         paths: {
+            base: "/"
             //base: "/einkaufsspuren"
         },
         alias: {

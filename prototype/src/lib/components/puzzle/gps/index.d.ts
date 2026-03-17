@@ -13,7 +13,11 @@ export type Introduction = {
                 lines: string[]
             }
         },
-        coordinates: string
+        coordinates: {
+            text: string,
+            lat: number,
+            lon: number
+        }
     }
 }
 
