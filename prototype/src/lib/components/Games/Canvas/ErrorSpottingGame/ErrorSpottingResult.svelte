@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import Controller from "./Controller";
     import { POINTS } from "$components/Games/Quiz";
-    import { getBaseUrl } from "$utils/url"
+    import { getBasePath } from "$utils/url"
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
@@ -14,8 +14,8 @@
 
     let container: HTMLDivElement;
     onMount(async ()=>{
-        const image: HTMLImageElement = await loadImage(getBaseUrl() + result.path + "/fehler.webp");
-        const errorPaths: string[][] = await (await fetch(`${getBaseUrl()}${result.path}/paths.json`)).json();
+        const image: HTMLImageElement = await loadImage(getBasePath() + result.path + "/fehler.webp");
+        const errorPaths: string[][] = await (await fetch(`${getBasePath()}${result.path}/paths.json`)).json();
 
         controller = new Controller(container, image, errorPaths, true);
     });

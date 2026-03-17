@@ -2,7 +2,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/dragDrop";
     import { POINTS } from "../../Quiz";
-    import { getBaseUrl } from "$utils/url"
+    import { getBasePath } from "$utils/url"
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
@@ -16,7 +16,7 @@
     <div class="w-full h-auto">
         <figure class="justify-self-center align-middle">
             <Fullscreen>
-                <img src={`${getBaseUrl()}${result.img}`} alt={result.caption} class="justify-self-center align-middle">
+                <img src={`${getBasePath()}${result.img}`} alt={result.caption} class="justify-self-center align-middle">
             </Fullscreen>
             <figcaption></figcaption>
         </figure>

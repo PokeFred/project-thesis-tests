@@ -1,7 +1,7 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { Inline, Content } from "./Types";
-    import { getBaseUrl } from "$utils/url"
+    import { getBasePath } from "$utils/url"
 
     let { content }: { content: Content[] } = $props();
 </script>
@@ -34,7 +34,7 @@
     {:else if element.tag === "img"}
         <figure class="my-10 -mx-4">
             <Fullscreen>
-                <img src="{getBaseUrl()}{element.src}" alt={element.alt}>
+                <img src="{getBasePath()}{element.src}" alt={element.alt}>
             </Fullscreen>
             {#if element.caption}
                 <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">

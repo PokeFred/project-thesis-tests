@@ -2,7 +2,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
-    import { getBaseUrl } from "$utils/url"
+    import { getBasePath } from "$utils/url"
 
     const { input }: { input: GameInput } = $props();
 
@@ -24,7 +24,7 @@
                         {#if hint.tag === "img"}
                             <figure class="-mx-4">
                                 <Fullscreen>
-                                    <img src="{getBaseUrl()}{hint.src}" alt={hint.alt}>
+                                    <img src="{getBasePath()}{hint.src}" alt={hint.alt}>
                                 </Fullscreen>
                                 {#if hint.caption}
                                     <figcaption class="flex flex-col mx-4.5 mt-3 font-medium text-left">

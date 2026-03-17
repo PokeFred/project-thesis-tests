@@ -7,7 +7,7 @@
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
     import type { SavingData } from "$components/puzzle/textSelect";
-    import { getBaseUrl } from "$utils/url"
+    import { getBasePath } from "$utils/url"
 
     const { result, saving }: { result: Result; saving: SavingData } = $props();
 
@@ -62,7 +62,7 @@
     {:else if content.tag === "img"}
         <figure class="my-10 -mx-4">
             <Fullscreen>
-                <img src="{getBaseUrl()}{content.src}" alt={content.alt}>
+                <img src="{getBasePath()}{content.src}" alt={content.alt}>
             </Fullscreen>
             {#if content.caption}
                 <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
