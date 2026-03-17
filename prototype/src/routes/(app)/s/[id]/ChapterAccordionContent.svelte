@@ -48,7 +48,7 @@
                     {#if element.caption}
                         <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
                             <span class="mb-2 text-[16px] leading-4">{@html element?.caption}</span>
-                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{element?.src}</span>
+                            <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">{asset(element.src)}</span>
                         </figcaption>
                     {/if}
                 </figure>
