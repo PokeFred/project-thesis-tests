@@ -1,8 +1,9 @@
+import { dev } from "$app/environment"
 import { goto } from "$app/navigation"
 
-const ORIGIN: string = "http://localhost:3000" // https://konsum-mkk.de
-const PREFIX: string = "/#" // /einkaufsspuren/#
-const ASSET_PREFIX: string = "" // /einkaufsspuren
+const ORIGIN: string = dev ? "http://localhost:3000" : "https://konsum-mkk.de"
+const PREFIX: string = dev ? "/#" : "/einkaufsspuren/#"
+const ASSET_PREFIX: string = dev ? "" : "/einkaufsspuren"
 
 export function getBasePath(): string {
     return `${PREFIX}`
