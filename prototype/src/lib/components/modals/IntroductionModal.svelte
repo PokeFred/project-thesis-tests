@@ -11,7 +11,7 @@
     <div class="w-full h-auto text-xl font-bold text-start">Anleitung</div>
     <div class="mt-4 w-full h-auto grid grid-cols-1 gap-4">
         <hr />
-        <div class="font-bold">Willkommen zur digitalen Schnitzeljagd rund ums Einkaufen!</div>
+        <div class="font-bold">Willkommen zur digitalen Stadtrundgang rund ums Einkaufen!</div>
         <div>Wo und wie wurde früher eingekauft? Wie hat sich das Einkaufen - und damit der Alltag der Menschen - über die Jahrhunderte in Dortmund verändert?</div>
         <div>Diese App nimmt dich mit auf eine Reise durch die Dortmunder Einkaufsgeschichte: vom Markt über Warenhäuser und Einkaufsstraßen bis hin zur modernen Shopping-Mall.</div>
         <hr />
