@@ -4,7 +4,8 @@
         "data": [
             { "type": "paragraph", "text": "Einkaufsstraßen und Kaufhäuser prägen bis heute das Bild der Dortmunder Innenstadt. Doch wer hier einkaufen durfte, wer verkaufen konnte und welche Läden sichtbar waren, war nie selbstverständlich. Die Geschichte des Einkaufens ist auch eine Geschichte von Macht, Ausgrenzung und tiefgreifendem Wandel." },
             { "type": "paragraph", "text": "In der Zeit des Nationalsozialismus (1933–1945) wurden jüdische Kaufleute systematisch aus dem Wirtschaftsleben verdrängt. Dies begann 1933 mit dem Boykott jüdischer Geschäfte, begleitet von nationalsozialistischer Propaganda, die jüdische Unternehmen gezielt diffamierte. Auch jüdische Kaufhäuser, die das moderne Einkaufen in Dortmund entscheidend mitgeprägt hatten, wurden zwangsweise verkauft oder „arisiert“, also unter Zwang in nicht-jüdischen Besitz überführt. Den Besitzer*innen wurde ihr Eigentum genommen und damit ihre berufliche wie private Existenz zerstört. Jüdische Menschen waren Ausgrenzung, Verfolgung und lebensbedrohlicher Gewalt ausgesetzt. Viele sahen sich zur Emigration gezwungen und mussten ihre Heimat zurücklassen." }
-        ]
+        ],
+        "audio": "/stations/station_08/audio_00.mp3"
     },
     {
         "title": "Die Gebrüder Kaufmann in Dortmund",
@@ -19,7 +20,8 @@
             { "type": "paragraph", "text": "Die Zwangsverkäufe und Enteignungen jüdischer Geschäfte bedeutete nicht nur individuelles Leid. Sie veränderten dauerhaft das wirtschaftliche Gefüge der Stadt. Namen verschwanden, Besitzverhältnisse wechselten, vertraute Einkaufsorte verloren ihre Geschichte, während Gebäude und Fassaden häufig weiter genutzt wurden." },
             { "type": "paragraph", "text": "Der wirtschaftliche Neubeginn nach 1945 baute vielerorts auf diesen gewaltsam veränderten Strukturen auf. Umso notwendiger ist es, die Geschichten der enteigneten jüdischen Unternehmer*innen sichtbar zu machen." },
             { "type": "image", "src": "/stations/station_08/image_03.webp", "alt": "Ein Teil der Fassade des ehemaligen Kaufhauses Gebr. Kaufmann ist bis heute erhalten, in dem Gebäude befindet sich heute eine Filiale von Thalia Bild: Sophie Ullrich", "caption": { "caption": "Ein Teil der Fassade des ehemaligen Kaufhauses Gebr. Kaufmann ist bis heute erhalten, in dem Gebäude befindet sich heute eine Filiale von Thalia", "src": "Bild: Sophie Ullrich"} }
-        ]
+        ],
+        "audio": "/stations/station_08/audio_01.mp3"
     },
     {
         "title": "Neuer Wohlstand – die Einkaufsstadt der Nachkriegszeit",
@@ -28,7 +30,8 @@
             { "type": "paragraph", "text": "Die Innenstadt entwickelte sich erneut zum Zentrum des Einkaufens. An markanten Stellen entstanden neue Warenhäuser: 1955 eröffnete Hertie an der Ecke Westenhellweg/Hansastraße mit einem Café auf der Dachterrasse, 1965 folgte Horten an der Kampstraße, 1967 das Kaufhaus Neckermann, aus dem später das Karstadt-Einrichtungshaus hervorging. Auch Kaufhof und Sinn prägten mit moderner Architektur, großen Schaufenstern und Sonderaktionen das Bild der Einkaufsstadt." },
             { "type": "image", "src": "/stations/station_08/image_04.webp", "alt": "Westenhellweg in Dortmund, 1950er-Jahre Bild: MKK Dortmund", "caption": { "caption": "Westenhellweg in Dortmund, 1950er-Jahre", "src": "Bild: MKK Dortmund"} },
             { "type": "paragraph", "text": "Das Einkaufen, das bereits im frühen 20. Jahrhundert in Kaufhäusern gezielt als Erlebnis inszeniert worden war, wurde nun für breite Bevölkerungsschichten Teil der Alltagsfreizeit. Bis Mitte der 1970er-Jahre galten Kauf- und Warenhäuser nach dem Motto „alles unter einem Dach“ als die Konsumtempel der Innenstädte." }
-        ]
+        ],
+        "audio": "/stations/station_08/audio_02.mp3"
     },
     {
         "title": "Vom Einkaufsort zum urbanen Aufenthaltsraum",
@@ -36,6 +39,7 @@
             { "type": "paragraph", "text": "Seit den späten 1960er-Jahren setzte ein erneuter Wandel ein. Mit dem Übergang zur Freizeitgesellschaft, zu mehr Individualisierung der Lebensstile und zu veränderten Rollenbildern – etwa durch die zunehmende Erwerbstätigkeit von Frauen – veränderten sich Alltag und Konsumgewohnheiten. Freizeitaktivitäten wie Gastronomie und Kultur prägten nun maßgeblich das Bild der Innenstädte." },
             { "type": "paragraph", "text": "Straßen wie der Westenhellweg blieben zentrale Einkaufsstraßen, während sich andere Bereiche neu ausrichteten. Die Brückstraße entwickelte sich in den 1960er- und 1970er-Jahren zu einer Vergnügungsmeile mit Kneipen, Bars und Treffpunkten für junge Menschen. Mit der Umgestaltung von Westen- und Ostenhellweg zur Fußgängerzone in den 1970-er Jahren erhielt die Innenstadt zudem ein neues Gesicht." },
             { "type": "paragraph", "text": "Sie entwickelte sich zunehmend zu einem Ort des Aufenthalts und der Begegnung für alle Bevölkerungsschichten. Die Innenstadt diente nun nicht mehr nur dem Einkaufen, sondern auch dem Verweilen, Treffen und Erleben. Gleichzeitig verloren viele alteingesessene, Inhaber*innengeführte Fachgeschäfte an Bedeutung, während Filialketten bei steigenden Mieten zunehmend das Bild der Stadt prägen. Diese Entwicklungen markierten den Beginn eines grundlegenden Strukturwandels im innerstädtischen Einzelhandel." }
-        ]
+        ],
+        "audio": "/stations/station_08/audio_03.mp3"
     }
 ]

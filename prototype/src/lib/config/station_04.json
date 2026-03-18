@@ -7,7 +7,8 @@
             { "type": "paragraph", "text": "Der Anbau und die Gewinnung dieser Waren beruhten häufig auf Zwangsarbeit, extrem niedrigen Löhnen, Landenteignungen und gewaltsamer Kontrolle der lokalen Bevölkerung. In vielen Regionen wurden sie – insbesondere in der frühen Phase des Kolonialhandels – von versklavten Menschen auf Plantagen angebaut und verarbeitet. In Europa sorgten diese Waren für wirtschaftlichen Aufschwung, der jedoch untrennbar mit kolonialer Gewalt und globaler Ungleichheit verbunden war." },
             { "type": "paragraph", "text": "Gleichzeitig nahm ihre Verfügbarkeit in Europa stetig zu. Was zuvor als Luxus gegolten hatte, wurde im 19. Jahrhundert zunehmend erschwinglich und alltäglich. Kolonialwaren fanden ihren Weg in viele Haushalte und veränderten Essgewohnheiten, Rituale und Vorstellungen von Genuss." },
             { "type": "paragraph", "text": "Der Begriff Kolonialwarenhandlung war dabei auch eine Art Werbeversprechen. Er verwies auf Waren aus Übersee, selbst dann, wenn der Großteil des Sortiments aus regionalen oder europäischen Produkten bestand. Viele dieser Geschäfte waren in Wirklichkeit Gemischtwarenläden, die alles für den täglichen Bedarf führten." }
-        ]
+        ],
+        "audio": "/stations/station_04/audio_00.mp3"
     },
     {
         "title": "Kolonialwarenhandlungen in Dortmund",
@@ -23,7 +24,8 @@
             { "type": "image", "src": "/stations/station_04/image_05.webp", "alt": "Kolonialwarenhandlung P.M. Rosenberg, Inhaber: Albert Rosenberg, Williburgstraße 5 Mengede, 1920 Bild: Sammlung Klaus Winter", "caption": { "caption": "Kolonialwarenhandlung P.M. Rosenberg, Inhaber: Albert Rosenberg, Williburgstraße 5 Mengede, 1920", "src": "Bild: Sammlung Klaus Winter"} },
             { "type": "paragraph", "text": "Mit der wachsenden Konkurrenz und steigenden Warenmengen veränderte sich der Handel. Viele Händler schlossen sich zu Einkaufsgenossenschaften zusammen, um Waren günstiger beziehen zu können. Solche Zusammenschlüsse wurden später Teil größerer Verbünde wie der EDEKA-Organisation (Einkaufsgenossenschaft der Kolonialwarenhändler). In Dortmund gründeten Lebensmittelhändler 1913 außerdem die Einkaufsgenossenschaft „Krone“, die später in die REWE-Organisation einging und als Vorläufer der heutigen REWE Dortmund gilt. Diese Entwicklung markiert einen wichtigen Schritt hin zu neuen Formen des Einkaufens und leitete den Übergang vom lokalen Kolonialwarenladen zum organisierten Lebensmittelhandel des 20. Jahrhunderts ein." },
             { "type": "image", "src": "/stations/station_04/image_06.webp", "alt": "EDEKA-Lagerhaus am Dortmunder Hafen, Standort von 1912 bis zum 2. Weltkrieg, 1930 Bild: Sammlung Peter Kocbeck", "caption": { "caption": "EDEKA-Lagerhaus am Dortmunder Hafen, Standort von 1912 bis zum 2. Weltkrieg, 1930", "src": "Bild: Sammlung Peter Kocbeck"} }
-        ]
+        ],
+        "audio": "/stations/station_04/audio_01.mp3"
     },
     {
         "title": "Was gab es in einem Kolonialwarenladen zu kaufen?",
@@ -35,6 +37,7 @@
             { "type": "image", "src": "/stations/station_04/image_09.webp", "alt": "Sitz der Firma von 1876-1894, Westenhellweg 72 in Dortmund Bild: Köster & Bömcke", "caption": { "caption": "Sitz der Firma von 1876-1894, Westenhellweg 72 in Dortmund", "src": "Bild: Köster & Bömcke"} },
             { "type": "image", "src": "/stations/station_04/image_10.webp", "alt": "Firmensitz in einem Neubau an der Karlstrasse 3 in Dortmund, heute Kolpingstraße Bild: Köster & Bömcke", "caption": { "caption": "Firmensitz in einem Neubau an der Karlstrasse 3 in Dortmund, heute Kolpingstraße", "src": "Bild: Köster & Bömcke"} },
             { "type": "paragraph", "text": "Diese Vielfalt erklärt, warum Kolonialwarenläden für viele Haushalte unverzichtbar waren: Sie bündelten unterschiedliche Bedürfnisse des täglichen Lebens in einem einzigen Geschäft. Im Laufe des 20. Jahrhunderts spezialisierten sich einige dieser Betriebe zunehmend. Aus ehemaligen Kolonialwarenhandlungen entstanden eigenständige Drogerien, Feinkostgeschäfte oder – wie im Fall von Köster & Bömcke – Chemikalienhändler." }
-        ]
+        ],
+        "audio": "/stations/station_04/audio_02.mp3"
     }
 ]
