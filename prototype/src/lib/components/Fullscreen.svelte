@@ -45,10 +45,12 @@
 
 <div bind:this={fullscreenDiv} class="fullscreenDiv {fullscreen ? "fixed" : "hidden"} w-screen h-screen top-0 left-0 bg-primary z-10000"></div>
 
-<div bind:this={normalDiv} class="w-fit h-fit place-self-center">
-    <button bind:this={childrenButton} onclick={toggleFullscreen} class="block w-full h-full object-contain">
-        {@render children()}
-    </button>
+<div class="flex justify-center items-center align-middle">
+    <div bind:this={normalDiv} class="w-fit h-fit place-self-center justify-center items-center">
+        <button bind:this={childrenButton} onclick={toggleFullscreen} class="block w-full h-full object-contain">
+            {@render children()}
+        </button>
+    </div>
 </div>
 
 <style>
