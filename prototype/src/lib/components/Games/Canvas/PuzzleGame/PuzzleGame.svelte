@@ -15,7 +15,7 @@
         const puzzleData: PuzzleData = await (await fetch(`${getBasePath()}${path}/cutouts.json`)).json();
         const background: HTMLImageElement = await loadImage(getBasePath() + path + "/Background.webp");
         const slotGroups: SlotGroup[] = await Promise.all(puzzleData.cutouts.map(async (cutout: CutoutData) => {
-            const piece = await loadImage(path + "/" + cutout.src);
+            const piece = await loadImage(getBasePath() + path + "/" + cutout.src);
             const noise = cutout.noise ? await Promise.all( 
                 cutout.noise.map((src: string) => loadImage(getBasePath() + path + "/" + src))
             ) : undefined;
