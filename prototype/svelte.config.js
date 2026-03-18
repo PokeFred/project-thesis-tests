@@ -17,8 +17,8 @@ const config = {
         },
         paths: {
             base: ""
-            //base: "/einkaufsspuren",
-            //relative: true
+            // base: "/einkaufsspuren",
+            // relative: true
         },
         env: {
             publicPrefix: "PUBLIC_",
