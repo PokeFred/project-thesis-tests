@@ -3,7 +3,7 @@
     import Controller from "./Controller";
     import type { GameData, SavingData } from "$components/puzzle/errorSpotting";
     import Fullscreen from "$components/Fullscreen.svelte";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { input }: { input: GameData } = $props();
 

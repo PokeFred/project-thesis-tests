@@ -8,6 +8,9 @@ const ASSET_PREFIX: string = dev ? "" : "/einkaufsspuren"
 export function getBasePath(): string {
     return `${PREFIX}`
 }
+export function _getBasePath(): string {
+    return `${ASSET_PREFIX}`
+}
 
 export function asset(path: string): string {
     return `${ORIGIN}${ASSET_PREFIX}/data${path}`

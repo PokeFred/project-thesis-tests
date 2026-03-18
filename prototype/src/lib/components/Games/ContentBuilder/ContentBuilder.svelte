@@ -1,7 +1,7 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { Inline, Content } from "./Types";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     let { content }: { content: Content[] } = $props();
 </script>

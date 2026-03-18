@@ -5,7 +5,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import Select from "$components/Select.svelte";
     import type { Content, Inline } from "../Content";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { input }: { input: GameInput } = $props();
     const gameInput: GameInput = input

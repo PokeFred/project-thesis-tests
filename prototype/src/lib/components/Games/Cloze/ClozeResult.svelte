@@ -7,7 +7,7 @@
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
     import type { SavingData } from "$components/puzzle/textSelect";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { result, saving }: { result: Result; saving: SavingData } = $props();
 

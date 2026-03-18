@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import Controller from "./Controller";
     import { POINTS } from "$components/Games/Quiz";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 

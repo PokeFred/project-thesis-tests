@@ -2,7 +2,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { GameInput, Hint, Question } from ".";
     import WordGuessing from "./WordGuessing.svelte";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { input }: { input: GameInput } = $props();
 

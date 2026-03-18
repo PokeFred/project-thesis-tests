@@ -1,7 +1,7 @@
 <script lang="ts">
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/wordGuessing"
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     let { result, saving }: { result: ResultData, saving: SavingData } = $props();
 </script>

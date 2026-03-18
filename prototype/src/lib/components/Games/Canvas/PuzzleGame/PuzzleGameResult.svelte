@@ -2,7 +2,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { ResultData, SavingData } from "$components/puzzle/dragDrop";
     import { POINTS } from "../../Quiz";
-    import { getBasePath } from "$utils/url"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     const { result, saving }: { result: ResultData, saving: SavingData } = $props()
 
