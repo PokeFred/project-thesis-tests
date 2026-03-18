@@ -7,7 +7,8 @@
             { "type": "paragraph", "text": "Viele dieser Geschäfte hießen lange „Kolonialwarengeschäfte“, weil sie neben üblichen Haushaltswaren wie Mehl oder Seife auch Kaffee, Tee und Kakao aus Übersee führten. Nach dem Ende der deutschen Kolonialherrschaft (1919) setzte sich zunehmend die Bezeichnung „Gemischtwarenladen“ oder „Feinkostladen“ durch. Für besonders kleine, meist inhaber*innengeführte Läden, wurde nach dem Zweiten Weltkrieg auch der Begriff „Tante-Emma-Laden“ gebräuchlich." },
             { "type": "image", "src": "/stations/station_07/image_01.webp", "alt": "Beispiel eines Feinkostladens in der Hansastraße in Dortmund, 1949 Bild: Stadtarchiv Dortmund", "caption": { "caption": "Beispiel eines Feinkostladens in der Hansastraße in Dortmund, 1949", "src": "Bild: Stadtarchiv Dortmund"} },
             { "type": "paragraph", "text": "Vor allem auf dem Land waren diese Läden mehr als Verkaufsräume. Sie waren Treffpunkt, Nachrichtenbörse und sozialer Knotenpunkt. Hier erfuhr man, was es Neues gab, traf Nachbar*innen und Bekannte, tauschte Klatsch und Alltägliches aus. Einkaufen bedeutete nicht nur Warenbeschaffung, sondern Teilhabe am lokalen Leben." }
-        ]
+        ],
+        "audio": "/stations/station_07/audio_00.mp3"
     },
     {
         "title": "Wie Selbstbedienung den Alltag veränderte",
@@ -21,7 +22,8 @@
             { "type": "image", "src": "/stations/station_07/image_03.webp", "alt": "Innenansichten eines Publix-Supermarktes (USA) mit Selbstbedienungstheken für Fleisch, Fisch und Obst, 1954 Bild: Westfälisches Wirtschaftsarchiv Dortmund", "caption": { "caption": "Innenansichten eines Publix-Supermarktes (USA) mit Selbstbedienungstheken für Fleisch, Fisch und Obst, 1954", "src": "Bild: Westfälisches Wirtschaftsarchiv Dortmund"} },
             { "type": "paragraph", "text": "1962 eröffneten die ersten Aldi-Filialen in Westdeutschland und etablierten das neue Discounter-Prinzip. Discounter setzten von Anfang an auf ein gezielt reduziertes Sortiment, eine einfache Präsentation der Ware sowie niedrige Betriebs- und Werbekosten, um besonders günstige Preise anbieten zu können. Damit unterschieden sie sich deutlich von klassischen Supermärkten mit großer Auswahl an Markenprodukten, Serviceangeboten und teilweise eigenen Abteilungen, etwa für Haushaltswaren." },
             { "type": "paragraph", "text": "Diese neuen Marktformen entstanden häufig an verkehrsgünstigen Standorten, die gut mit dem Auto erreichbar waren. Gleichzeitig blieben Supermärkte und kleinere Läden auch in den Innenstädten präsent." }
-        ]
+        ],
+        "audio": "/stations/station_07/audio_01.mp3"
     },
     {
         "title": "Selbstbedienung und neue Konsumformen in Dortmund",
@@ -31,7 +33,8 @@
             { "type": "image", "src": "/stations/station_07/image_04.webp", "alt": "Eröffnung Selbstbedienungsgeschäft Rempe in der Münsterstraße 107 in Dortmund, 1956 Bild: Stadtarchiv Dortmund", "caption": { "caption": "Eröffnung Selbstbedienungsgeschäft Rempe in der Münsterstraße 107 in Dortmund, 1956", "src": "Bild: Stadtarchiv Dortmund"} },
             { "type": "image", "src": "/stations/station_07/image_05.webp", "alt": "Zwei elektrische Gemüseschneidemaschinen und ein elektrische Hack- und Mischschneider werden im neu eröffneten Selbstbedienungsgeschäft Rempe präsentiert, 1956 Bild: Stadtarchiv Dortmund", "caption": { "caption": "Zwei elektrische Gemüseschneidemaschinen und ein elektrische Hack- und Mischschneider werden im neu eröffneten Selbstbedienungsgeschäft Rempe präsentiert, 1956", "src": "Bild: Stadtarchiv Dortmund"} },
             { "type": "paragraph", "text": "Ende der 1960er- und Anfang der 1970er-Jahre entstanden großflächige Verbrauchermärkte und SB-Warenhäuser mit einem deutlich erweiterten Sortiment. In Dortmund eröffneten unter anderem der Plaza in Aplerbeck und der Wertkauf in Oespel. Die Verkaufsflächen wuchsen, das Warenangebot nahm zu, und das Einkaufen veränderte sich grundlegend: Statt häufiger kleiner Besorgungen wurden nun größere Einkäufe geplant, die auf Vorrat angelegt waren und meist mit dem Auto erledigt wurden. Diese Entwicklung veränderte den Lebensmitteleinzelhandel nachhaltig und prägt auch unser heutiges Einkaufsverhalten." }
-        ]
+        ],
+        "audio": "/stations/station_07/audio_02.mp3"
     },
     {
         "title": "Einkauf von Lebensmitteln heute",
@@ -40,6 +43,7 @@
             { "type": "paragraph", "text": "Digitale Konzepte treiben diese Entwicklung weiter voran. Online-Supermärkte liefern Lebensmittel direkt bis vor die Haustür, der Einkauf findet zunehmend im digitalen Raum statt." },
             { "type": "paragraph", "text": "Gleichzeitig erproben Supermärkte neue Formen des Einkaufens. Dazu gehören Selbstbedienungskassen oder Märkte ganz ohne Kasse, in denen Waren automatisch erfasst werden. Der persönliche Kontakt zwischen Kund*innen und Verkaufspersonal tritt dabei zunehmend in den Hintergrund." },
             { "type": "paragraph", "text": "Zugleich wird deutlich, dass viele Menschen weiterhin Wert auf Begegnung, Beratung und Austausch legen. In den Niederlanden bieten sogenannte „Kletskassen“ bewusst Raum für ein Gespräch mit den Verkäufer*innen. Hier findet neben der Versorgung mit Lebensmitteln auch weiter soziale Begegnung statt." }
-        ]
+        ],
+        "audio": "/stations/station_07/audio_03.mp3"
     }
 ]

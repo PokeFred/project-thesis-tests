@@ -7,6 +7,7 @@
             { "type": "paragraph", "text": "Diese Station lädt dich ein, einen Moment innezuhalten und über dein eigenes Einkaufsverhalten nachzudenken. Es gibt keine richtigen oder falschen Antworten. Es geht nur um dich und deine Gedanken." },
             { "type": "paragraph", "text": "Vielleicht gehst du jetzt mit einem anderen Blick durch die Stadt. Du siehst die Geschichte hinter kleinen Geschäften, großen Kaufhäusern oder Einkaufszentren. Vielleicht entdeckst du Spuren des Einkaufens, die dir zuvor verborgen geblieben sind. Spuren vergangener Zeiten, die auch unsere heutige Zukunft prägen." },
             { "type": "image", "src": "/stations/station_10/A.png", "alt": "Frage an Chat GPT: Wie sieht das Einkaufen der Zukunft aus? Bild mit KI erstellt.", "caption": "Frage an Chat GPT: Wie sieht das Einkaufen der Zukunft aus? Bild mit KI erstellt.<br /> Bild: ChatGPT" }
-        ]
+        ],
+        "audio": "/stations/station_10/audio_00.mp3"
     }
 ]

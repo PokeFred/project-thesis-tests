@@ -10,13 +10,14 @@
             { "type": "image", "src": "/stations/station_09/image_01.webp", "alt": "Screenshot Centerplan Thier-Galerie Bild: Website Thier Galerie", "caption": { "caption": "Screenshot Centerplan Thier-Galerie", "src": "Bild: Website Thier Galerie"} },
             { "type": "paragraph", "text": "Einkaufszentren wie die Thier-Galerie gehen auf ein Format zurück, das ab den 1930er-Jahren in den USA entwickelt wurde und den Einkauf bewusst vom Stadtraum löste. Mit dem Southdale Center in Minnesota eröffnete 1956 das weltweit erste vollständig geschlossene, klimatisierte Einkaufszentrum." },
             { "type": "paragraph", "text": "Heute stehen Einkaufszentren vor neuen Herausforderungen, etwa durch Klimakrise, Energieverbrauch und verändertes Konsumverhalten. Die Betreibergesellschaft ECE Marketplaces verfolgt für die Thier-Galerie eine Nachhaltigkeitsstrategie: Bis 2030 sollen die CO₂-Emissionen des Centers gegenüber 2019 um 40 Prozent gesenkt werden, unter anderem durch energieeffizientere Technik und die Förderung nachhaltiger Mobilität." }
-]
-
+        ],
+        "audio": "/stations/station_09/audio_00.mp3"
     },
     {
         "title": "Online-Einkauf: Konsum ohne Ort",
         "data": [
             { "type": "paragraph", "text": "Heute verändert sich das Einkaufen erneut. Der Onlinehandel macht den Einkauf unabhängig von Öffnungszeiten und festen Orten möglich. Produkte können jederzeit verglichen, bestellt und direkt nach Hause geliefert werden. Oft genügen wenige Klicks. Diese Entwicklung knüpft an frühere Veränderungen an: Schon Einkaufszentren lösten den Einkauf von einzelnen Straßen oder Läden. Der Onlinehandel verlagert den Konsum nun zunehmend in den digitalen Raum. Der persönliche Kontakt, das körperliche Erleben eines Ortes und der gemeinsame Einkaufsbummel treten dabei in den Hintergrund. Für die Innenstädte hat dieser Wandel spürbare Folgen. Klassische Einkaufsfunktionen verlieren an Bedeutung, Leerstände nehmen zu, das Bild der Stadt verändert sich. Gleichzeitig rücken Fragen der Nachhaltigkeit stärker in den Fokus: Onlinehandel bedeutet zusätzlichen Lieferverkehr, Verpackungsmüll und hohe CO₂-Emissionen, etwa durch Retouren. Damit stellen sich neue Fragen: Welche Rolle haben Innenstädte in Zukunft? Werden sie vor allem Orte des Erlebens, der Begegnung und der Freizeit? Die Geschichte des Einkaufens zeigt, dass neue Handelsformen stets auch den Alltag, die Nutzung von Stadträumen und gesellschaftliche Gewohnheiten verändern." }
-        ]
+        ],
+        "audio": "/stations/station_09/audio_01.mp3"
     }
 ]

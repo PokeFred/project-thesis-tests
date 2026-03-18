@@ -7,7 +7,8 @@
             { "type": "paragraph", "text": "Doch dieser wirtschaftliche Aufschwung hatte seine Schattenseiten. Viele dieser begehrten Waren entstanden in einem kolonialen Wirtschaftssystem, das auf Ausbeutung, Gewalt und strukturellem Zwang beruhte. In den Plantagen, Minen und Häfen der europäischen Kolonien arbeiteten Millionen Menschen unter unmenschlichen Bedingungen. Lange Arbeitszeiten, körperliche Gewalt, schlechte Ernährung, Krankheiten und fehlende Rechte prägten ihren Alltag. Auch Dortmund profitierte indirekt von diesem System: Die Waren, die hier gehandelt, gelagert und verkauft wurden, waren Teil globaler Handelsketten, die auf dem Leid und der Entrechtung anderer beruhten." },
             { "type": "image", "src": "/stations/station_05/image_00.webp", "alt": "Turmsicht über den Hafen mit Lagerhaus der Firma Wolff und städtischem Lagerhaus, 1910 Bild: Sammlung Peter Kocbeck", "caption": { "caption": "Turmsicht über den Hafen mit Lagerhaus der Firma Wolff und städtischem Lagerhaus, 1910", "src": "Bild: Sammlung Peter Kocbeck"} },
             { "type": "image", "src": "/stations/station_05/image_01.webp", "alt": "Sicht über die elektrische Drehbrücke zum Lagerhaus von EDEKA, 1930 Bild: Sammlung Peter Kocbeck", "caption": { "caption": "Sicht über die elektrische Drehbrücke zum Lagerhaus von EDEKA, 1930 über den Hafen mit Lagerhaus der Firma Wolff und städtischem Lagerhaus, 1910", "src": "Bild: Sammlung Peter Kocbeck"} }
-        ]
+        ],
+        "audio": "/stations/station_05/audio_00.mp3"
     },
     {
         "title": "Ein prägendes Handelshaus am Hafen",
@@ -20,7 +21,8 @@
             { "type": "image", "src": "/stations/station_05/image_04.webp", "alt": "Zweigstelle der Firma Gebrüder Wolff in Dortmund, vermutlich 1905-1915 Bild: Sammlung Klaus Winter", "caption": { "caption": "Zweigstelle der Firma Gebrüder Wolff in Dortmund, vermutlich 1905-1915", "src": "Bild: Sammlung Klaus Winter"} },
             { "type": "paragraph", "text": "Doch die wirtschaftlichen Krisen nach dem Ersten Weltkrieg und die Weltwirtschaftskrise ab 1929 setzten dem Unternehmen zu. 1933 musste die Familie ihre Lagerflächen mit Aufzug, Garagen, Tank und Hofraum an eine andere Firma vermieten. Unternehmen wuchs stetig und setzte bewusst auf die Verbindung von Groß- und Einzelhandel. Neben dem Großhandel betrieben die Gebrüder Wolff eigene Einzelhandelsgeschäfte in Dortmund, unter anderem am Burgwall und an der Nordstraße, später auch an der Heroldstraße. Zum Firmenverbund gehörten außerdem eine angeschlossene Buchdruckerei sowie eine Papiergroßhandlung." },
             { "type": "paragraph", "text": "Wann die Firma endgültig zahlungsunfähig wurde, ist nicht überliefert. Doch in der Atmosphäre von Ausgrenzung, Entrechtung und Verfolgung jüdischer Familien im NS-Staat war eine Zukunft für das Unternehmen der jüdischen Familie Wolff kaum vorstellbar." }
-        ]
+        ],
+        "audio": "/stations/station_05/audio_01.mp3"
     },
     {
         "title": "Eine Mehl- und Kolonialwarengroßhandlung",
@@ -33,7 +35,8 @@
             { "type": "image", "src": "/stations/station_05/image_07.webp", "alt": "Das Gebäude der Firma Rosendahl in den 1930er-Jahren Bild: Sammlung Peter Kocbeck", "caption": { "caption": "Das Gebäude der Firma Rosendahl in den 1930er-Jahren", "src": "Bild: Sammlung Peter Kocbeck"} },
             { "type": "paragraph", "text": "Weil „Rosendahl“ als jüdischer Name galt, geriet das Unternehmen unter den Nationalsozialisten unter Druck. 1937 musste es offiziell nachweisen, „arischer“ Herkunft zu sein. Eine Folge der antisemitischen Politik, die jüdische Unternehmer*innen systematisch ausgrenzte und verfolgte." },
             { "type": "paragraph", "text": "1944 zerstörte ein Luftangriff das Lagerhaus vollständig. Nach dem Krieg gelang der Wiederaufbau. Ab 1946 führte Anna Rosendahl, die Witwe des Gründers, das Unternehmen weiter, bis es 1969 verkauft wurde. In ihrer Todesanzeige von 1959 wurde ihre maßgebende Arbeit am Auf- und Ausbau der Firma und ihre wichtige Position innerhalb des Geschäftes gewürdigt. Diese Ehrung war keine Selbstverständlichkeit für eine Frau in dieser Zeit." }
-        ]
+        ],
+        "audio": "/stations/station_05/audio_02.mp3"
     },
     {
         "title": "Vom Kolonialwarenhandel zum Heimathafen",
@@ -50,6 +53,7 @@
             { "type": "paragraph", "text": "Damit veränderten sich nicht nur die Warenwege, sondern auch der Alltag des Einkaufens grundlegend. Nach fast 75 Jahren wurde die Firma Heinrich Schreer 1969 aus dem Handelsregister gelöscht. Nachdem das Lagerhaus aufwendig saniert worden war, ist daraus der Heimathafen Nordstadt geworden: ein integratives Bildungs- und Beratungshaus unter dem Dach der GrünBau gGmbH. Heute ist der Ort Anlaufstelle für Zugewanderte, Menschen mit Fluchterfahrung und Menschen aus dem Stadtteil. Der ehemalige Pferdestall dient als Veranstaltungsraum." },
             { "type": "paragraph", "text": "Zugleich setzt sich der Heimathafen kritisch mit der kolonialen Vergangenheit des Ortes auseinander. Direkt vor dem Gebäude ist ein dekoloniales Denkmal geplant, das künftig an koloniale Warenströme, Ausbeutung und Widerstand erinnern und die Geschichte des Hafenstandorts sichtbar machen soll." },
             { "type": "image", "src": "/stations/station_05/image_12.webp", "alt": "Das Nansen ist als Restaurant und Lerngastronomie Teil der GrünBau gGmbH Bild: Sophie Ullrich", "caption": { "caption": "Das Nansen ist als Restaurant und Lerngastronomie Teil der GrünBau gGmbH", "src": "Bild: Sophie Ullrich"} }
-        ]
+        ],
+        "audio": "/stations/station_05/audio_03.mp3"
     }
 ]

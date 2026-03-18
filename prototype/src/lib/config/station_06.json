@@ -11,7 +11,8 @@
             { "type": "image", "src": "/stations/station_06/image_02.webp", "alt": "Betriebszentrale an der Bornstraße in Dortmund mit Bäckerei und Fuhrpark samt Kraftwagen, 1935 Bild: Sammlung Klaus Winter", "caption": { "caption": "Betriebszentrale an der Bornstraße in Dortmund mit Bäckerei und Fuhrpark samt Kraftwagen, 1935", "src": "Bild: Sammlung Klaus Winter"} },
             { "type": "image", "src": "/stations/station_06/image_03.webp", "alt": "Betriebszentrale des Konsumvereins an der Bornstraße in Dortmund, 1935 Bild: Sammlung Klaus Winter", "caption": { "caption": "Betriebszentrale des Konsumvereins an der Bornstraße in Dortmund, 1935", "src": "Bild: Sammlung Klaus Winter"} },
             { "type": "paragraph", "text": "Die Nationalsozialisten verboten 1941 die Konsumvereine, weil sie als unabhängige, genossenschaftlich organisierte Einrichtungen der Arbeiterbewegung galten und sich ihrer politischen Kontrolle entzogen. Die Bornstraßen-Zentrale wurde im Krieg zerstört. 1946 gründeten die Mitglieder die Konsumgenossenschaft neu und bauten sie trotz vieler Kriegsschäden wieder auf." }
-        ]
+        ],
+        "audio": "/stations/station_06/audio_00.mp3"
     },
     {
         "title": "Die Konsum-Läden in Dortmund",
@@ -37,7 +38,8 @@
             { "type": "image", "src": "/stations/station_06/image_17.webp", "alt": "Bild: Westfälisches Wirtschaftsarchiv", "caption": { "src": "Bild: Westfälisches Wirtschaftsarchiv"} },
             { "type": "paragraph", "text": "Aus den lokalen Konsumgenossenschaften entwickelte sich in den folgenden Jahrzehnten die Großgenossenschaft coop. Viele der früheren Konsum-Läden gingen in diesem Zusammenhang in coop-Filialen über. Heute existiert die coop in dieser Form in Dortmund nicht mehr." },
             { "type": "image", "src": "/stations/station_06/image_18.webp", "alt": "Bild: Westfälisches Wirtschaftsarchiv", "caption": { "src": "Bild: Westfälisches Wirtschaftsarchiv"} }
-        ]
+        ],
+        "audio": "/stations/station_06/audio_01.mp3"
     },
     {
         "title": "Filialbetriebe – das Beispiel Kaiser’s und Tengelmann",
@@ -48,6 +50,7 @@
             { "type": "paragraph", "text": "Die Firmen blieben zunächst eigenständig, gehörten ab den 1970er-Jahren aber zur gleichen Unternehmensgruppe. Sie wurden unter dem Namen Kaiser’s Tengelmann bekannt. Diese Filialketten waren privatwirtschaftlich organisiert. Die Konsumvereine hingegen gehörten ihren Mitgliedern. Die Ketten konnten Waren durch zentralen Einkauf günstiger anbieten, dafür blieb der Gewinn bei den Eigentümern." },
             { "type": "paragraph", "text": "In Dortmund gab es neben einer Filiale von Tengelmann am Steinplatz, heute Freiherr-vom-Stein-Platz auch lokale Anbieter wie Buchthal & Co. an der Bornstraße und an anderen Standorten. Heute existiert die Marke Tengelmann als Supermarktkette nicht mehr: 2017 wurden die meisten Filialen an Edeka und Rewe verkauft." },
             { "type": "image", "src": "/stations/station_06/image_21.webp", "alt": "Geschäftslokal von Buchthals Kaffee Magazin Bild: Sammlung Klaus Winter", "caption": { "caption": "Geschäftslokal von Buchthals Kaffee Magazin", "src": "Bild: Sammlung Klaus Winter"} }
-        ]
+        ],
+        "audio": "/stations/station_06/audio_02.mp3"
     }
 ]

@@ -12,7 +12,8 @@
             { "type": "image", "src": "/stations/station_03/image_00.webp", "alt": "Westenhellweg in Dortmund bei Nacht, vermutlich Ende der 1920er Jahre Bild: Sammlung Klaus Winter", "caption": { "caption": "Westenhellweg in Dortmund bei Nacht, vermutlich Ende der 1920er Jahre", "src": "Bild: Sammlung Klaus Winter"} },
             { "type": "paragraph", "text": "Warenhäuser machten Einkaufen zu mehr als Versorgung. Einkaufen galt zunehmend als Freizeitbeschäftigung. Dieser Trend setzte sich ab der zweiten Hälfte des 20. Jahrhunderts nach amerikanischem Vorbild in Einkaufszentren und Shopping-Malls fort." },
             { "type": "paragraph", "text": "Mit dem wachsenden Warenangebot stiegen auch die Erwartungen der Konsument*innen, teilweise über das hinaus, was sie sich leisten konnten. Kreditkäufe und wachsende Verschuldung machten problematische Seiten des modernen Konsumalltags sichtbar." }
-        ]
+        ],
+        "audio": "/stations/station_03/audio_00.mp3"
     },
     {
         "title": "Warenhäuser in Dortmund",
@@ -26,7 +27,8 @@
             { "type": "paragraph", "text": "Die Warenhäuser boten eine beeindruckende Architektur mit großen Verkaufsflächen, festen Preisen und einer breiten Auswahl unter einem Dach. Sie machten den Westenhellweg zu einer zentralen Einkaufsstraße und zogen Kund*innen aus Dortmund und der gesamten Region an." },
             { "type": "paragraph", "text": "Ihr vorläufiges Ende fanden viele Dortmunder Warenhäuser ab den 1930er-Jahren. Neben den Folgen der Weltwirtschaftskrise spielte die nationalsozialistische Verfolgung jüdischer Unternehmer eine zentrale Rolle. Zahlreiche Kaufhäuser wurden boykottiert, die Unternehmer wirtschaftlich ausgegrenzt und die Gebäude schließlich im Zuge der sogenannten „Arisierung“ zwangsweise übernommen. Im Zweiten Weltkrieg wurde die Dortmunder Innenstadt zudem nahezu vollständig zerstört." },
             { "type": "paragraph", "text": "Erst in der Nachkriegszeit und während des Wirtschaftswunders ab den 1950er-Jahren erlebte die Warenhausbranche neuen Aufschwung. Besonders Karstadt, 1936 aus dem Warenhaus Althoff hervorgegangen, war sehr erfolgreich. Daneben eröffneten weitere große Kaufhäuser: 1955 nahm Hertie an der Ecke Westenhellweg/Brückstraße den Betrieb auf und lockte mit einem Café auf der Dachterrasse. 1965 folgte Horten, 1967 Neckermann (später Karstadt-Einrichtungshaus). Heute erinnert vor allem Galeria Kaufhof (Karstadt ist ja zusammen mit Galeria) an die Zeit, in der zahlreiche Warenhäuser das Bild der Dortmunder Innenstadt prägten." }
-        ]
+        ],
+        "audio": "/stations/station_03/audio_01.mp3"
     },
     {
         "title": "Das Warenhaus Meyer und Günther am Steinplatz",
@@ -38,6 +40,7 @@
             { "type": "paragraph", "text": "Mit der Machtübernahme der Nationalsozialisten 1933 gerieten die jüdischen Inhaber massiv unter Druck. Boykotte, Diffamierungen und Verfolgung bestimmten den Alltag. Bereits 1933 wurde das Warenhaus unter politischem Zwang an Kurt Drahota verkauft. Bernhard Meyer nahm sich 1936 nach Haft durch die Gestapo das Leben." },
             { "type": "image", "src": "/stations/station_03/image_06.webp", "alt": "Tuchhandlung im Textilkaufhaus Drahota, 1948 Bild: Stadtarchiv Dortmund", "caption": { "caption": "Tuchhandlung im Textilkaufhaus Drahota, 1948", "src": "Bild: Stadtarchiv Dortmund"} },
             { "type": "paragraph", "text": "Im Zweiten Weltkrieg wurde das Gebäude zerstört und anschließend in vereinfachter Form wieder aufgebaut. Nach mehreren Besitzerwechseln und gescheiterten Neuanfängen – zuletzt als „Kaufhof Nord“ – wurde das Gebäude im Zuge der Stadtsanierung schließlich abgerissen." }
-        ]
+        ],
+        "audio": "/stations/station_03/audio_02.mp3"
     }
 ]
