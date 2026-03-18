@@ -10,11 +10,11 @@
 <Modal bind:this={modal} buttonText={"Schließen"} onConfirm={(): void => {}}>
     <div class="w-full h-auto text-xl font-bold text-start">Anleitung</div>
     <div class="mt-4 w-full h-auto grid grid-cols-1 gap-4">
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Willkommen zur digitalen Stadtrundgang rund ums Einkaufen!</div>
         <div>Wo und wie wurde früher eingekauft? Wie hat sich das Einkaufen - und damit der Alltag der Menschen - über die Jahrhunderte in Dortmund verändert?</div>
         <div>Diese App nimmt dich mit auf eine Reise durch die Dortmunder Einkaufsgeschichte: vom Markt über Warenhäuser und Einkaufsstraßen bis hin zur modernen Shopping-Mall.</div>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Kurz erklärt:</div>
         <ul class="list-disc pl-6">
             <li>Geh zu einer Station in der Innenstadt.</li>
@@ -23,10 +23,10 @@
             <li>Lies Hintergrundtexte oder höre dir die Audios an, wenn du mehr erfahren möchtest.</li>
             <li>Du kannst die Route frei wählen und jederzeit pausieren.</li>
         </ul>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Route und Dauer:</div>
         <div>Die Route umfasst 8 Stationen in der Innenstadt sowie eine Station am Hafen. Für die Innenstadt-Route solltest du etwa 1,5 Stunden einplanen. Mit der Hafenstation dauert die Route insgesamt ca. 2-2,5 Stunden.</div>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Übersichtskarten:</div>
         <div>Auf den Karten siehst du, wo sich die Stationen der digitalen Stadtführung befinden und wie die Route durch die Stadt führt.</div>
         <Fullscreen>
@@ -35,10 +35,10 @@
         <Fullscreen>
             <img src={asset("/map_small.webp")} alt="" class="w-full rounded-xl" />
         </Fullscreen>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Wenig Zeit? Kein Problem.</div>
         <div>Du kannst die digitale Stadtführung auch in Teilen durchführen oder dir nur einzelne Stationen aussuchen. In der Übersicht siehst du, welche Station wie viele Punkte bringt. So kannst du dir deine eigene Route zusammenstellen.</div>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Punkteübersicht:</div>
         <table class="w-fit">
             <thead>
@@ -117,7 +117,7 @@
                 </tr>
             </tfoot>
         </table>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Rätsel, Texte und Reihenfolge:</div>
         <div>An jeder Station erwarten dich Rätsel, Aufgaben oder Quizfragen. Die Rätsel werden erst freigeschaltet, wenn du am richtigen Ort angekommen bist. Wenn ein Rätsel nicht freigeschaltet wird, überprüfe bitte, ob die Standortfunktion (GPS) aktiviert ist.</div>
         <div>Außerdem kannst du mehr über die Geschichte des Einkaufens erfahren, mit besonderem Blick auf Dortmund.</div>
@@ -129,14 +129,14 @@
         </ul>
         <div>Manchmal geben dir die Texte Hinweise zu einzelnen Aufgaben. Das kann helfen, ist aber kein Muss. Alle Rätsel sind auch ohne das Lesen der Texte lösbar.</div>
         <div>Die Stationen in der App sind chronologisch angeordnet (Alter Markt = Station 1, Thier-Galerie= Station 9). Die Texte folgen einer Erzählung vom Mittelalter bis heute. Auch die Route ergibt - mit Ausnahme der Hafenstation - einen gut begehbaren Rundgang. Du kannst die Reihenfolge aber auch selbst bestimmen.</div>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Punkte & Spielweise:</div>
         <div>Für jede richtige Antwort erhältst du 3 Punkte. Falsche Antworten ergeben 0 Punkte. Je nach Rätseltyp gibt es mehrere richtige Antworten.</div>
         <div>Für das Freischalten der Rätsel erhältst du zusätzlich 1 Punkt. </div>
         <div>Insgesamt kannst du bis zu 207 Punkte erreichen. Die Punkte aller Stationen werden zusammengerechnet. Du kannst jederzeit sehen, wie viele Punkte du erreicht hast.</div>
         <div>Es gibt kein Zeitlimit.</div>
         <div>Am Ende erwartet dich eine freiwillige Reflexionsstation, die dazu einlädt, über das eigene Einkaufsverhalten nachzudenken.</div>
-        <hr />
+        <hr class="border"/>
         <div class="font-bold">Gut zu wissen:</div>
         <ul class="list-disc pl-6">
             <li>Die App ist kostenlos</li>
@@ -144,6 +144,6 @@
             <li>Es ist keine Anmeldung nötig</li>
             <li>Du kannst jederzeit starten, pausieren oder das Spiel erneut starten (Hinweis: Beim erneuten starten geht der Punktestand verloren und Stationen müssen nochmal gespielt werden.)</li>
         </ul>
-        <hr />
+        <hr class="border"/>
     </div>
 </Modal>

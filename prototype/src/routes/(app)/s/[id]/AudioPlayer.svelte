@@ -45,12 +45,12 @@
 <button onclick={toggle} class="w-full h-auto text-primary bg-secondary rounded-full flex justify-start items-center cursor-pointer p-2 active:scale-95">
     <div class="w-8 h-8 text-secondary bg-primary rounded-full flex justify-center items-center">
         {#if isPlaying}
-            <svg viewBox="297 388 16 16" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-secondary">
+            <svg viewBox="297 388 16 16" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-secondary">
                 <polygon points="307 388 307 404 313 404 313 388"/>
                 <polygon points="297 388 297 404 303 404 303 388"/>
             </svg>
         {:else}
-            <svg viewBox="297 388 16 16" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 fill-secondary">
+            <svg viewBox="297 388 20 16" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-secondary">
                 <polygon points="299.19 385.63 299.19 406.32 317.11 395.97"/>
             </svg>
         {/if}
