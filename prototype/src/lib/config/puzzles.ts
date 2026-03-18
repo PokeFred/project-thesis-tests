@@ -2064,6 +2064,66 @@ const puzzles: Puzzle[] = [
                 ]
             }
         }
+    },
+    {
+        id: 101,
+        type: "reflection-question-puzzle",
+        title: "Reflexionsfrage 1",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {
+                title: "Dein Alltag",
+                points: ["Wo kaufst du lieber ein: online oder vor Ort ? Warum ?", "Was hast du dir zuletzt spontan gekauft ? Was hat dich dazu gebracht ?", "Gibt es etwas, das du oft kaufst, obwohl du es eigentlich nicht brauchst ?"]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 102,
+        type: "reflection-question-puzzle",
+        title: "Reflexionsfrage 2",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {
+                title: "Gewohnheiten & Bequemlichkeit",
+                points: ["Welche Vorteile hat Online-Shopping für dich persönlich ?", "Welche Nachteile nimmst du dabei in Kauf ?", "Achtest du beim Einkaufen auf Nachhaltigkeit, Herkunft oder Produktionsbedingungen ? Wann und wann eher nicht ?"]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 103,
+        type: "reflection-question-puzzle",
+        title: "Reflexionsfrage 3",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {
+                title: "Werte & Widersprüche",
+                points: ["Gibt es einen Unterschied zwischen dem, was dir wichtig ist, und dem, was du tatsächlich kaufst ?", "Wo fällt es dir leicht, bewusst einzukaufen, und wo schwer ?", "Denkst du beim Einkaufen manchmal darüber nach, welche Folgen deine Entscheidungen für Umwelt oder Klima haben ?", "Was würdest du an deinem Einkaufsverhalten gerne ändern, wenn es einfacher wäre ?"]
+            },
+            result: {}
+        }
+    },
+    {
+        id: 104,
+        type: "reflection-question-puzzle",
+        title: "Reflexionsfrage 4",
+        requirements: [],
+        score: 0,
+        data: {
+            introduction: {},
+            game: {
+                title: "Blick nach vorn",
+                points: ["Glaubst du, die Innenstädte der Zukunft sehen ganz anders aus als heute ? Wie ?", "Kannst du dir vorstellen, dass Einkaufen sich künftig vollständig in den digitalen Raum verlagert - auch bei Lebensmitteln, Kleidung oder Alltagsdingen ?", "Glaubst du, dass bestimmte Aspekte des Einkaufens wieder wichtiger werden könnten, etwa persönlicher Kontakt, Beratung oder Begegnung ?"]
+            },
+            result: {}
+        }
     }
 ]
 

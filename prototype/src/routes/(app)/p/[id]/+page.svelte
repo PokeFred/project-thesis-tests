@@ -22,6 +22,7 @@
     import SingleChoiceGame from "$components/puzzle/singleChoice/game.svelte"
     import Introduction from "$components/puzzle/introductionBuilder/introduction.svelte"
     import { sendTo } from "$utils/url"
+    import ReflectionQuestionGame from "$components/puzzle/reflectionQuestion/game.svelte"
 
     let { data }: PageProps = $props()
 
@@ -41,6 +42,8 @@
     let errorSpotting: ErrorSpottingGame
     // svelte-ignore non_reactive_update
     let wordGuessing: WordGuessingGame
+    // svelte-ignore non_reactive_update
+    let reflectionQuestion: ReflectionQuestionGame
 
     let skipIntroduction: (() => void) | undefined = $state(undefined);
     let submitable: boolean = $state<boolean>(false)
@@ -143,6 +146,9 @@
     {#if data.puzzle.type === "word-guessing-puzzle"}
         <Introduction data={data.introduction.data} />
         <WordGuessingGame bind:this={wordGuessing} data={data.game} setSubmitable={setSubmitable} />
+    {/if}
+    {#if data.puzzle.type === "reflection-question-puzzle"}
+        <ReflectionQuestionGame bind:this={reflectionQuestion} data={data.game} setSubmitable={setSubmitable} />
     {/if}
     {#if submitable}
         <div class="mt-7.5 mx-auto w-full h-auto">

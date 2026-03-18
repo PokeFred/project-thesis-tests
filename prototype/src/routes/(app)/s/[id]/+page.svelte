@@ -26,39 +26,5 @@
             </button>
         {/each}
     </div>
-    {#if data.stitle === "Heute: Dein Einkauf"}
-        <div class="w-full h-auto text-lg font-bold text-[20px] text-left leading-6 px-2 mb-5">Reflexionsfragen</div>
-        <div class="px-2">
-            <div class="font-bold">1. Dein Alltag</div>
-            <ul class="list-disc pl-6">
-                <li>Wo kaufst du lieber ein: online oder vor Ort ? Warum ?</li>
-                <li>Was hast du dir zuletzt spontan gekauft ? Was hat dich dazu gebracht ?</li>
-                <li>Gibt es etwas, das du oft kaufst, obwohl du es eigentlich nicht brauchst ?</li>
-            </ul>
-            <br />
-            <div class="font-bold">2. Gewohnheiten & Bequemlichkeit</div>
-            <ul class="list-disc pl-6">
-                <li>Welche Vorteile hat Online-Shopping für dich persönlich ?</li>
-                <li>Welche Nachteile nimmst du dabei in Kauf ?</li>
-                <li>Achtest du beim Einkaufen auf Nachhaltigkeit, Herkunft oder Produktionsbedingungen ? Wann und wann eher nicht ?</li>
-            </ul>
-            <br />
-            <div class="font-bold">3. Werte & Widersprüche</div>
-            <ul class="list-disc pl-6">
-                <li>Gibt es einen Unterschied zwischen dem, was dir wichtig ist, und dem, was du tatsächlich kaufst ?</li>
-                <li>Wo fällt es dir leicht, bewusst einzukaufen, und wo schwer ?</li>
-                <li>Denkst du beim Einkaufen manchmal darüber nach, welche Folgen deine Entscheidungen für Umwelt oder Klima haben ?</li>
-                <li>Was würdest du an deinem Einkaufsverhalten gerne ändern, wenn es einfacher wäre ?</li>
-            </ul>
-            <br />
-            <div class="font-bold">4. Blick nach vorn</div>
-            <ul class="list-disc pl-6">
-                <li>Glaubst du, die Innenstädte der Zukunft sehen ganz anders aus als heute ? Wie ?</li>
-                <li>Kannst du dir vorstellen, dass Einkaufen sich künftig vollständig in den digitalen Raum verlagert - auch bei Lebensmitteln, Kleidung oder Alltagsdingen ?</li>
-                <li>Glaubst du, dass bestimmte Aspekte des Einkaufens wieder wichtiger werden könnten, etwa persönlicher Kontakt, Beratung oder Begegnung ?</li>
-            </ul>
-        </div>
-        <div class="mb-8"></div>
-    {/if}
     <Accordion title={data.title} chapters={data.chapters} />
 </div>

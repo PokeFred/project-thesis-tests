@@ -147,7 +147,7 @@ const _stations: _Station[] = [
         stitle: "Heute: Dein Einkauf",
         title: "Nachdenken über den eigenen Einkauf",
         chapters: "10",
-        puzzles: []
+        puzzles: [101, 102, 103, 104]
     }
 ]
 
