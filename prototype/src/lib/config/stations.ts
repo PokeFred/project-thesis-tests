@@ -137,7 +137,7 @@ const _stations: _Station[] = [
         id: 9,
         tag: "Station 09",
         stitle: "Thier-Galerie",
-        title: "Von Einkaufszentren bis zum Online-Shopping - modernes Einkaufen im Wandel",
+        title: "Von Einkaufszentren bis zum Online-Shopping – modernes Einkaufen im Wandel",
         chapters: "09",
         puzzles: [90, 91, 92, 93]
     },
