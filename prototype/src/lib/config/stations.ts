@@ -121,7 +121,7 @@ const _stations: _Station[] = [
         id: 7,
         tag: "Station 07",
         stitle: "Kampstraße",
-        title: "Selbstbedienung und Supermärkte - eine neue Form des Einkaufens",
+        title: "Selbstbedienung und Supermärkte – eine neue Form des Einkaufens",
         chapters: "07",
         puzzles: [70, 71, 72]
     },
