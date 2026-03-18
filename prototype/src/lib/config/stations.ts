@@ -129,7 +129,7 @@ const _stations: _Station[] = [
         id: 8,
         tag: "Station 08",
         stitle: "Westenhellweg 2",
-        title: "Zwischen Ausschluss und Wandel - Einkaufen in Dortmund im 20. Jahrhundert",
+        title: "Zwischen Ausschluss und Wandel – Einkaufen in Dortmund im 20. Jahrhundert",
         chapters: "08",
         puzzles: [80, 81, 82, 83]
     },
