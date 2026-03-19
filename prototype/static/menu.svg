@@ -4,7 +4,8 @@
   <defs>
     <style>
       .st0 {
-        stroke: #000000;
+        fill: none;
+        stroke: #431a5f;
         stroke-linecap: round;
         stroke-width: 2px;
       }
