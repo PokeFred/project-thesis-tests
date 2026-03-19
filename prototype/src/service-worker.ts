@@ -5,11 +5,14 @@
 
 import { build, files, version } from "$service-worker"
 
+function isExcluded(file: string): boolean {
+    return file.endsWith(".mp3") || file.endsWith(".htaccess")
+}
+
 const self: ServiceWorkerGlobalScope = globalThis.self as unknown as ServiceWorkerGlobalScope
 const CACHE: string = `cache-${version}`
 const ASSETS: string[] = [...build, ...files]
-    .filter((file): boolean => !file.endsWith(".htaccess"))
-    .filter((file): boolean => !file.endsWith(".mp3"))
+    .filter((element: string): boolean => !isExcluded(element))
 
 async function addFilesToCache(): Promise<void> {
     const cache: Cache = await caches.open(CACHE)
@@ -45,9 +48,7 @@ async function respond(event: ExtendableEvent): Promise<Response> {
             throw new Error("Error: invalid response from fetch.")
         }
 
-        const isExcluded = url.pathname.endsWith(".mp3") || url.pathname.endsWith(".htaccess")
-
-        if ((response.status === 200) && !isExcluded) {
+        if ((response.status === 200) && !isExcluded(url.pathname)) {
             // @ts-ignore
             cache.put(event.request, response.clone())
         } else {
