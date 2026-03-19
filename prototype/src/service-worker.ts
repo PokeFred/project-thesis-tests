@@ -7,12 +7,9 @@ import { build, files, version } from "$service-worker"
 
 const self: ServiceWorkerGlobalScope = globalThis.self as unknown as ServiceWorkerGlobalScope
 const CACHE: string = `cache-${version}`
-const ASSETS: string[] = [
-    ...build
-        .filter((element: string): boolean => element !== ".htaccess"),
-    ...files
-        .filter((element: string): boolean => element !== ".htaccess")
-]
+const ASSETS: string[] = [...build, ...files]
+    .filter((file): boolean => !file.endsWith(".htaccess"))
+    .filter((file): boolean => !file.endsWith(".mp3"))
 
 async function addFilesToCache(): Promise<void> {
     const cache: Cache = await caches.open(CACHE)
@@ -48,7 +45,9 @@ async function respond(event: ExtendableEvent): Promise<Response> {
             throw new Error("Error: invalid response from fetch.")
         }
 
-        if (response.status === 200) {
+        const isExcluded = url.pathname.endsWith(".mp3") || url.pathname.endsWith(".htaccess")
+
+        if ((response.status === 200) && !isExcluded) {
             // @ts-ignore
             cache.put(event.request, response.clone())
         } else {
