@@ -16,7 +16,7 @@
     import { dev } from "$app/environment"
     import stations from "$config/stations"
     import { sendTo, navigateTo } from "$utils/url"
-    import { asset } from "$utils/url"
+    import { _getBasePath } from "$utils/url"
 
     let { children }: LayoutProps = $props()
 
@@ -65,9 +65,14 @@
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center" aria-label="Auswahlmenü">
                     {#if open}
-                        <img src={asset("/menu_close.svg")} alt="" class="w-8 h-8" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="285 375 40 45" class="w-8 h-8 stroke-secondary">
+                            <line x1="291.35" y1="411.34" x2="320.34" y2="382.35" />
+                            <line x1="291" y1="382" x2="320.69" y2="411.69" />
+                        </svg>
                     {:else}
-                        <img src={asset("/menu_open.svg")} alt="" class="w-8 h-8" />
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="275 380 60 35" class="w-8 h-8 stroke-secondary">
+                            <path d="M281,387h48M281,396h48M281,405h48"  />
+                        </svg>
                     {/if}
                 </button>
             </div>

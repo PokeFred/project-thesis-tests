@@ -16,9 +16,9 @@ const config = {
             type: "hash"
         },
         paths: {
-            // base: ""
-            base: "/einkaufsspuren",
-            relative: true
+            base: ""
+            // base: "/einkaufsspuren",
+            // relative: true
         },
         env: {
             publicPrefix: "PUBLIC_",
