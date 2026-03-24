@@ -16,6 +16,7 @@
     import { dev } from "$app/environment"
     import stations from "$config/stations"
     import { sendTo, navigateTo } from "$utils/url"
+    import { asset } from "$utils/url"
 
     let { children }: LayoutProps = $props()
 
@@ -64,6 +65,11 @@
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center" aria-label="Auswahlmenü">
                     <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
+                    {#if open}
+                        <img src={asset("/menu_close.svg")} alt="" class="w-8 h-8" />
+                    {:else}
+                        <img src={asset("/menu_open.svg")} alt="" class="w-8 h-8" />
+                    {/if}
                 </button>
             </div>
             <div class="w-full {open ? "h-auto" : "h-0"} text-primary bg-secondary overflow-hidden">
