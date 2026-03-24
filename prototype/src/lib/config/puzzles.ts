@@ -173,7 +173,7 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
-                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
+                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig!", "Tipp: Schau doch mal in die Reinoldikirche ob du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
             },
             game: {
                 path: "/station_01/raetsel_02/game",
@@ -741,35 +741,8 @@ const puzzles: Puzzle[] = [
                         children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
                     },
                     {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_00.webp",
-                        alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
-                    {
                         tag: "p",
                         children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_02.webp",
-                        alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 Provenienz: Rüschenbeck.",
-                        caption: {
-                            caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_03.webp",
-                        alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
-                            src: "Provenienz: Rüschenbeck"
-                        }
                     },
                     {
                         tag: "p",
