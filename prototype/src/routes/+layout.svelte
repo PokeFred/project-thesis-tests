@@ -64,7 +64,6 @@
                     </div>
                 {/if}
                 <button onclick={toggle} class="w-14 h-14 cursor-pointer flex justify-center items-center" aria-label="Auswahlmenü">
-                    <Icon data={open ? faXmark : faBars} class="w-8 h-8" />
                     {#if open}
                         <img src={asset("/menu_close.svg")} alt="" class="w-8 h-8" />
                     {:else}
