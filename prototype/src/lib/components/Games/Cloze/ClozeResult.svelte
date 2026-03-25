@@ -49,7 +49,12 @@
                 {:else if child.tag === "Select"}
                     {@const i: number = selectElementCounter++}
                     <span class="flex justify-between items-center border-b-2 h-12 my-3 -mx-2">
-                        <span class="ml-3">{correctAnswers[i].answer}</span>
+                        <span class="ml-3">
+                            <span>{correctAnswers[i].answer}</span>
+                            {#if saving.selected[i] !== undefined && !saving.selected[i].correct}
+                                <span class="crossed ml-8">{saving.selected[i].answer}</span>
+                            {/if}
+                        </span>
                         <span class="mr-5"><Icon data={angleDown} scale={2}/></span>
                     </span>
                     <span class="flex justify-between items-center h-8 mb-5 -mx-5.5 pl-8.5 pr-7.5 bg-secondary text-primary text-[16px] leading-6">
@@ -73,3 +78,20 @@
         </figure>
     {/if}
 {/each}
+
+<style>
+    .crossed {
+        position: relative;
+    }
+
+    .crossed::after {
+        content: "";
+        left: 50%;
+        top: 50%;
+        width: 1.6em;
+        height: 2px;
+        background-color: var(--color-secondary);
+        transform: translateX(-50%) rotateZ(-45deg);
+        position: absolute;
+    }
+</style>
