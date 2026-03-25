@@ -747,16 +747,7 @@ const puzzles: Puzzle[] = [
                     {
                         tag: "p",
                         children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg neu eröffnet werden. Es verfügte über ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute ist Rüschenbeck ein europaweit tätiges Juwelierunternehmen mit Filialen an vielen Standorten."}]
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_04.webp",
-                        alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
+                    }
                 ]
             },
         }
