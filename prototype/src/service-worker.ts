@@ -26,13 +26,11 @@ async function deleteOldCaches(): Promise<void> {
 }
 
 // @ts-ignore
-async function respond(event: ExtendableEvent): Promise<Response> {
-    // @ts-ignore
+async function respond(event: FetchEvent): Promise<Response> {
     const url: URL = new URL(event.request.url)
     const cache: Cache = await caches.open(CACHE)
 
     if (ASSETS.includes(url.pathname)) {
-        // @ts-ignore
         const response: Response | undefined = await cache.match(event.request)
 
         if (response) {
@@ -41,7 +39,6 @@ async function respond(event: ExtendableEvent): Promise<Response> {
     }
 
     try {
-        // @ts-ignore
         const response: Response = await fetch(event.request)
 
         if (!(response instanceof Response)) {
@@ -49,13 +46,11 @@ async function respond(event: ExtendableEvent): Promise<Response> {
         }
 
         if ((response.status === 200) && !isExcluded(url.pathname)) {
-            // @ts-ignore
             cache.put(event.request, response.clone())
         } else {
             return response
         }
     } catch (error) {
-        // @ts-ignore
         const response: Response | undefined = await cache.match(event.request)
 
         if (response) return response
@@ -71,7 +66,8 @@ self.addEventListener("activate", (event: ExtendableEvent): void => {
     event.waitUntil(deleteOldCaches())
 })
 
-self.addEventListener("fetch", (event): void => {
+self.addEventListener("fetch", (event: FetchEvent): void => {
+    if (event.request.url.indexOf("http") === 0) return
     if (event.request.method !== "GET") return
 
     event.respondWith(respond(event))
