@@ -297,6 +297,10 @@ const puzzles: Puzzle[] = [
                 top: [],
                 bottom: [
                     {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_01/audio_00.mp3"
+                    },
+                    {
                         tag: "h2",
                         children: [{tag: "text", text: "Tewes: Tradition seit 1824"}]
                     },
@@ -428,6 +432,10 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_02/audio_00.mp3"
+                    },
                     {
                         tag: "h2",
                         children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
@@ -622,7 +630,11 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
-                        {
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_03/audio_00.mp3"
+                    },
+                    {
                         tag: "h2",
                         children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
                     },
@@ -732,6 +744,10 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_04/audio_00.mp3"
+                    },
                     {
                         tag: "h2",
                         children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]

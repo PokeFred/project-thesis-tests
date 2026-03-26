@@ -2,6 +2,7 @@
     import Fullscreen from "$components/Fullscreen.svelte";
     import type { Inline, Content } from "./Types";
     import { _getBasePath as getBasePath } from "$utils/url"
+    import AudioPlayer from "../../../../routes/(app)/s/[id]/AudioPlayer.svelte";
 
     let { content }: { content: Content[] } = $props();
 </script>
@@ -43,5 +44,9 @@
                 </figcaption>
             {/if}
         </figure>
+    {:else if element.tag === "audio"}
+        <div class="mb-6">
+            <AudioPlayer path={element.src}/>
+        </div>
     {/if}
 {/each}
