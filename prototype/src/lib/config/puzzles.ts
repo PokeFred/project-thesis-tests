@@ -173,7 +173,7 @@ const puzzles: Puzzle[] = [
         data: {
             introduction: {
                 title: "Der heilige Reinoldus ist Stadtpatron Dortmunds und Namensgeber der Reinoldigilde",
-                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig! Tipp: Schau doch mal in die Reinoldi Kirche ob Du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
+                description: ["Statte ihn mit den richtigen Gegenständen aus. Aber Achtung: Nur fünf Gegenstände sind richtig!", "Tipp: Schau doch mal in die Reinoldikirche ob du Reinoldus entdecken kannst. Bitte mache ein Foto von Reinoldus und löse das Rätsel außerhalb der Kirche, damit niemand gestört wird."]
             },
             game: {
                 path: "/station_01/raetsel_02/game",
@@ -296,6 +296,10 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_01/audio_00.mp3"
+                    },
                     {
                         tag: "h2",
                         children: [{tag: "text", text: "Tewes: Tradition seit 1824"}]
@@ -428,6 +432,10 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_02/audio_00.mp3"
+                    },
                     {
                         tag: "h2",
                         children: [{tag: "text", text: "Freund & Bauer – vom Blumenladen zum Juwelier:"}]
@@ -622,7 +630,11 @@ const puzzles: Puzzle[] = [
                 ],
                 top: [],
                 bottom: [
-                        {
+                    {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_03/audio_00.mp3"
+                    },
+                    {
                         tag: "h2",
                         children: [{tag: "text", text: "Betten Hutt – ein Geschäft mit einer bewegenden Geschichte"}]
                     },
@@ -733,6 +745,10 @@ const puzzles: Puzzle[] = [
                 top: [],
                 bottom: [
                     {
+                        tag: "audio",
+                        src: "/stations/station_02/raetsel_04/audio_00.mp3"
+                    },
+                    {
                         tag: "h2",
                         children: [{tag: "text", text: "Rüschenbeck: Goldschmiedekunst und Uhrmacherhandwerk vom Feinsten"}]
                     },
@@ -741,49 +757,13 @@ const puzzles: Puzzle[] = [
                         children: [{tag: "text", text: "Juwelier Rüschenbeck wurde 1904 von Friedrich Wilhelm Rüschenbeck unter dem Namen „Zur Goldecke“ gegründet. Doch die Ladenfläche von 24 qm reichte nicht aus für das große Warenangebot. An der Reinoldistraße fand sich schließlich ein Laden mit größerer Verkaufsfläche. Hier konnten auch eigene Werkstätten untergebracht werden. In dem Geschäft arbeiteten fünf Uhrmacher und drei Goldschmiede."}]
                     },
                     {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_00.webp",
-                        alt: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Eröffnung des Schmuckwarengeschäfts samt Uhrmacher- und Goldschmiedewerkstatt an der Reinoldistraße 1904",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
-                    {
                         tag: "p",
                         children: [{tag: "text", text: "Im Zweiten Weltkrieg wurde das Geschäft in der Reinoldistraße zerstört. Ebenso ein Haus am Westenhellweg 45. Dieses hatte der neue Geschäftsinhaber, der Sohn Wilhelm Joseph Theodor Rüschenbeck, gekauft, um dort das Stammhaus des Geschäfts einzurichten."}]
                     },
                     {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_02.webp",
-                        alt: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943 Provenienz: Rüschenbeck.",
-                        caption: {
-                            caption: "Das zerstörte Geschäft Rüschenbeck in der Reinoldistraße 1943",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_03.webp",
-                        alt: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Zerstörung des Westenhellwegs und des zukünftigen Stammhauses Westenhellweg Nr. 45 im Jahr 1943",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
-                    {
                         tag: "p",
                         children: [{tag: "text", text: "Doch erst 1949 konnte das Stammhaus am Westenhellweg neu eröffnet werden. Es verfügte über ein eigenes Schmuckatelier und die damals größte Uhrenwerkstatt Westfalens. Heute ist Rüschenbeck ein europaweit tätiges Juwelierunternehmen mit Filialen an vielen Standorten."}]
-                    },
-                    {
-                        tag: "img",
-                        src: "/station_02/raetsel_04/content/image_04.webp",
-                        alt: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45, Provenienz: Rüschenbeck",
-                        caption: {
-                            caption: "Offizielle Neueröffnung des Schmuckwarengeschäfts Rüschenbeck am Hellweg 45",
-                            src: "Provenienz: Rüschenbeck"
-                        }
-                    },
+                    }
                 ]
             },
         }
@@ -2068,7 +2048,7 @@ const puzzles: Puzzle[] = [
     {
         id: 101,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 1",
+        title: "Reflexionsfragen 1",
         requirements: [],
         score: 0,
         data: {
@@ -2083,7 +2063,7 @@ const puzzles: Puzzle[] = [
     {
         id: 102,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 2",
+        title: "Reflexionsfragen 2",
         requirements: [],
         score: 0,
         data: {
@@ -2098,7 +2078,7 @@ const puzzles: Puzzle[] = [
     {
         id: 103,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 3",
+        title: "Reflexionsfragen 3",
         requirements: [],
         score: 0,
         data: {
@@ -2113,7 +2093,7 @@ const puzzles: Puzzle[] = [
     {
         id: 104,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 4",
+        title: "Reflexionsfragen 4",
         requirements: [],
         score: 0,
         data: {

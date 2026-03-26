@@ -11,7 +11,7 @@
     <div class="w-full h-auto text-xl font-bold text-start">Anleitung</div>
     <div class="mt-4 w-full h-auto grid grid-cols-1 gap-4">
         <hr class="border"/>
-        <div class="font-bold">Willkommen zur digitalen Stadtrundgang rund ums Einkaufen!</div>
+        <div class="font-bold">Willkommen zur digitalen Stadtführung rund ums Einkaufen!</div>
         <div>Wo und wie wurde früher eingekauft? Wie hat sich das Einkaufen - und damit der Alltag der Menschen - über die Jahrhunderte in Dortmund verändert?</div>
         <div>Diese App nimmt dich mit auf eine Reise durch die Dortmunder Einkaufsgeschichte: vom Markt über Warenhäuser und Einkaufsstraßen bis hin zur modernen Shopping-Mall.</div>
         <hr class="border"/>
@@ -29,12 +29,24 @@
         <hr class="border"/>
         <div class="font-bold">Übersichtskarten:</div>
         <div>Auf den Karten siehst du, wo sich die Stationen der digitalen Stadtführung befinden und wie die Route durch die Stadt führt.</div>
-        <Fullscreen>
-            <img src={asset("/map_big.webp")} alt="" class="w-full rounded-xl" />
-        </Fullscreen>
-        <Fullscreen>
-            <img src={asset("/map_small.webp")} alt="" class="w-full rounded-xl" />
-        </Fullscreen>
+        <figure class="my-10 -mx-8">
+            <Fullscreen>
+                <img src={asset("/map_big.webp")} alt="OpenStreetMap, Bearbeitung: Sophie Ullrich">
+            </Fullscreen>
+            <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
+                <span class="mb-2 text-[16px] leading-4">OpenStreetMap</span>
+                <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">Bearbeitung: Sophie Ullrich</span>
+            </figcaption>
+        </figure>
+        <figure class="my-10 -mx-8">
+            <Fullscreen>
+                <img src={asset("/map_small.webp")} alt="OpenStreetMap, Bearbeitung: Sophie Ullrich">
+            </Fullscreen>
+            <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
+                <span class="mb-2 text-[16px] leading-4">OpenStreetMap</span>
+                <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">Bearbeitung: Sophie Ullrich</span>
+            </figcaption>
+        </figure>
         <hr class="border"/>
         <div class="font-bold">Wenig Zeit? Kein Problem.</div>
         <div>Du kannst die digitale Stadtführung auch in Teilen durchführen oder dir nur einzelne Stationen aussuchen. In der Übersicht siehst du, welche Station wie viele Punkte bringt. So kannst du dir deine eigene Route zusammenstellen.</div>

@@ -17,4 +17,4 @@
     {/each}
 </ul>
 
-<button onclick={(): void => window.history.back()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Gehe zu den Rätseln</button>
+<button onclick={(): void => window.history.back()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Gehe zu den Reflexionsfragen</button>

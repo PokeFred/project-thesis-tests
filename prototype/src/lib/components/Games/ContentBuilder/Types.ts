@@ -14,6 +14,9 @@ export type Content =  {
         readonly caption?: string,
         readonly src?: string
     }
+} | {
+    readonly tag: "audio",
+    readonly src: string
 }
 
 export type Inline = {

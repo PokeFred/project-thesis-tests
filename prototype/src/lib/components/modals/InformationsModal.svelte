@@ -12,14 +12,14 @@
     <div class="mt-4 w-full h-auto grid grid-cols-1 gap-4">
         <hr class="border"/>
         <div class="font-bold">Technische Voraussetzungen</div>
-        <div>Du brauchst ein Smartphone mit Internet. Die Schnitzeljagd läuft direkt im Browser deines Smartphones. Du musst nichts herunterladen und dich nicht anmelden.</div>
+        <div>Du brauchst ein internetfähiges Gerät (z. B. Smartphone oder Tablet), um die digitale Stadtführung zu starten. Sie läuft direkt im Browser – du musst nichts herunterladen und dich nicht anmelden. Nach dem Laden kannst du sie auch offline weiterspielen.</div>
         <hr class="border"/>
         <div class="font-bold">Standortfunktion</div>
         <div>Die Standortfunktion (GPS) deines Smartphones muss eingeschaltet sein. Nur so erkennt das Spiel, dass du an einer Station angekommen bist. Dann werden die Rätsel freigeschaltet.</div>
         <hr class="border"/>
         <div class="font-bold">Barrierefreiheit</div>
-        <div>Die Stationen der Schnitzeljagd sind auch mit dem Rollstuhl erreichbar. Manche Wege führen jedoch über Kopfsteinpflaster oder unebene Wege.</div>
-        <div>Du kannst auch die Wheelmap-Karte nutzen. Dort siehst du, welche Orte gut mit dem Rollstuhl zugänglich sind. Zum Beispiel sind die Reinoldikirche und die Thier-Galerie rollstuhlgerecht. Externer Link: Wheelmap - Finde rollstuhlgerechte Orte.</div>
+        <div>Die Stationen der Stadtführung sind auch mit dem Rollstuhl erreichbar. Manche Wege führen jedoch über Kopfsteinpflaster oder unebene Wege.</div>
+        <div>Du kannst auch die Wheelmap-Karte nutzen. Dort siehst du, welche Orte gut mit dem Rollstuhl zugänglich sind. Zum Beispiel sind die Reinoldikirche und die Thier-Galerie rollstuhlgerecht. Externer Link: https://wheelmap.org/?locale=de - Finde rollstuhlgerechte Orte.</div>
         <hr class="border"/>
         <div class="font-bold">Digitale Barrierefreiheit</div>
         <div>Wir bemühen uns, die App möglichst barrierearm zu gestalten.</div>
@@ -48,12 +48,24 @@
         <hr class="border"/>
         <div class="font-bold">Übersichtskarten:</div>
         <div>Auf den Karten siehst du, wo sich die Stationen der digitalen Stadtführung befinden und wie die Route durch die Stadt führt.</div>
-        <Fullscreen>
-            <img src={asset("/map_big.webp")} alt="" class="w-full rounded-xl" />
-        </Fullscreen>
-        <Fullscreen>
-            <img src={asset("/map_small.webp")} alt="" class="w-full rounded-xl" />
-        </Fullscreen>
+        <figure class="my-10 -mx-8">
+            <Fullscreen>
+                <img src={asset("/map_big.webp")} alt="OpenStreetMap, Bearbeitung: Sophie Ullrich">
+            </Fullscreen>
+            <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
+                <span class="mb-2 text-[16px] leading-4">OpenStreetMap</span>
+                <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">Bearbeitung: Sophie Ullrich</span>
+            </figcaption>
+        </figure>
+        <figure class="my-10 -mx-8">
+            <Fullscreen>
+                <img src={asset("/map_small.webp")} alt="OpenStreetMap, Bearbeitung: Sophie Ullrich">
+            </Fullscreen>
+            <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
+                <span class="mb-2 text-[16px] leading-4">OpenStreetMap</span>
+                <span class="uppercase text-[12px] leading-4.5 tracking-[0.72pt]">Bearbeitung: Sophie Ullrich</span>
+            </figcaption>
+        </figure>
         <hr class="border"/>
     </div>
 </Modal>
