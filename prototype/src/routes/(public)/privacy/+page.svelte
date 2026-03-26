@@ -25,7 +25,7 @@
         <hr class="border"/>
         <div>
             <div class="font-bold">3. Welche Daten speichern wir ?</div>
-            <div>Die App speichert nur das, was du für die digitale Schnitzeljagd brauchst:</div>
+            <div>Die App speichert nur das, was du für die digitale Stadtführung brauchst:</div>
             <ul class="list-disc pl-6">
                 <li>deinen Spielstand (z. B. gelöste Aufgaben, Punkte)</li>
             </ul>
@@ -42,7 +42,7 @@
         <div>
             <div class="font-bold">5. Nutzt die App deinen Standort ?</div>
             <div>Die App nutzt - sofern du zustimmst - den aktuellen Standort ausschließlich zur Freischaltung einzelner Stationen.</div>
-            <div>Es wird überprüft, ob du am richtigen Standort angekommen bist. Erst dann werden die Stationen frei geschaltet. Dann können die Spiele gespielt und die Inhalte angeschaut werden.</div>
+            <div>Es wird überprüft, ob du am richtigen Standort angekommen bist.</div>
             <div>Der Standort wird nur lokal im Browser verarbeitet.</div>
             <div>Er wird nicht an uns gesendet und nicht gespeichert.</div>
             <div>Es werden keine Zeitpunkte gespeichert und keine Standortverläufe oder Bewegungsprofile erstellt.</div>

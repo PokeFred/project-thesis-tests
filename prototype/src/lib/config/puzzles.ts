@@ -2048,7 +2048,7 @@ const puzzles: Puzzle[] = [
     {
         id: 101,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 1",
+        title: "Reflexionsfragen 1",
         requirements: [],
         score: 0,
         data: {
@@ -2063,7 +2063,7 @@ const puzzles: Puzzle[] = [
     {
         id: 102,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 2",
+        title: "Reflexionsfragen 2",
         requirements: [],
         score: 0,
         data: {
@@ -2078,7 +2078,7 @@ const puzzles: Puzzle[] = [
     {
         id: 103,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 3",
+        title: "Reflexionsfragen 3",
         requirements: [],
         score: 0,
         data: {
@@ -2093,7 +2093,7 @@ const puzzles: Puzzle[] = [
     {
         id: 104,
         type: "reflection-question-puzzle",
-        title: "Reflexionsfrage 4",
+        title: "Reflexionsfragen 4",
         requirements: [],
         score: 0,
         data: {
