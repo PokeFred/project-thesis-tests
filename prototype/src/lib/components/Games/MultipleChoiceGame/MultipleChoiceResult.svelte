@@ -6,6 +6,7 @@
     import type { Content, Inline } from "../Content";
     import { POINTS } from "../Quiz";
     import type { ResultData, SavingData } from "$components/puzzle/multipleChoice"
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     let { result, saving  }: { result: ResultData, saving: SavingData } = $props();
 
@@ -45,7 +46,7 @@
                                 {:else if description.tag === "img"}
                                     <figure class="my-10">
                                         <Fullscreen>
-                                            <img src="/einkaufsspuren{description.src}" alt={description.alt}>
+                                            <img src={`${getBasePath()}${description.src}`} alt={description.alt}>
                                         </Fullscreen>
                                         {#if description.caption}
                                             <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
