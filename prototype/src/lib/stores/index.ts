@@ -100,6 +100,13 @@ export function getPuzzle(id: number): PuzzleState {
         [0]
 }
 
+export function puzzleCheck(id: number): boolean {
+    const arr: PuzzleState[] = newState.puzzles
+        .filter((element: PuzzleState): boolean => element.id === id)
+
+    return arr.length > 0
+}
+
 export function getPuzzleScore(id: number): number {
     const arr: PuzzleState[] = newState.puzzles
         .filter((element: PuzzleState): boolean => element.id === id)

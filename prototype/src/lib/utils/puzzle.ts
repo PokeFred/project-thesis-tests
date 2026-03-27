@@ -1,6 +1,6 @@
 import { dev } from "$app/environment"
 import { getPuzzleScore } from "$stores"
-import { getPuzzle as getPuzzleSaving } from "$stores"
+import { getPuzzle as getPuzzleSaving, puzzleCheck } from "$stores"
 import { toScore } from "$utils/score"
 import type { Score } from "$utils/score"
 import Puzzles from "$config/puzzles"
@@ -63,7 +63,7 @@ export default class Puzzle {
     }
 
     public isDone(): boolean {
-        return getPuzzleScore(this.id) > 0
+        return puzzleCheck(this.id) // getPuzzleScore(this.id) > 0
     }
 
     public isLocked(): boolean {
