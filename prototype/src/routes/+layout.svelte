@@ -68,7 +68,7 @@
                     <div class="flex flex-col text-[16px] font-medium leading-6">
                         <span>Punkte</span>
                         <span>
-                            <span>{#key page.url.pathname} {getScore()} {/key}</span>
+                            <span>{#key page.url.pathname} {#key page.url.hash} {getScore()} {/key} {/key}</span>
                             <span>/</span>
                             <span>{stations.map((element): number => element.score).reduce((previos: number, current: number): number => previos += current, 0)}</span>
                         </span>
