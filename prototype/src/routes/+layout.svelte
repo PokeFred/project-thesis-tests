@@ -96,7 +96,7 @@
                     <hr class="border" />
                     <button onclick={(): Promise<void> => sendTo("/privacy")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">DATENSCHUTZ</button>
                     <hr class="border" />
-                    <button onclick={(): Promise<void> => sendTo("/sources")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">BILD UND QUELLENNACHWEISE</button>
+                    <button onclick={(): Promise<void> => sendTo("/sources")} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">BILD- UND QUELLENNACHWEISE</button>
                     {#if isRunning()}
                         <hr class="border" />
                         <button onclick={(): void => stopModal.openModal()} class="w-full h-auto text-xl font-semibold text-left cursor-pointer px-2 py-1 hover:underline hover:opacity-75 active:scale-95">SPIEL BEENDEN</button>
