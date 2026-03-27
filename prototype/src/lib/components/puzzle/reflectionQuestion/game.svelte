@@ -6,8 +6,15 @@
     let { data, setSubmitable }: { data: GameData, setSubmitable: () => void } = $props()
 
     onMount(() => {
-        //setSubmitable()
+        setSubmitable()
     })
+
+    export function getSubmitData(): any { return {} }
+    export function getSubmitScore(): number { return 0 }
+
+    function finish(): void {
+        window.history.back()
+    }
 </script>
 
 <div class="font-bold">{data.title}</div>
@@ -17,4 +24,4 @@
     {/each}
 </ul>
 
-<button onclick={(): void => window.history.back()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Gehe zu den Reflexionsfragen</button>
+<!-- <button onclick={(): void => window.history.back()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Gehe zu den Reflexionsfragen</button> -->

@@ -90,9 +90,13 @@
             rScore = wordGuessing.getSubmitScore()
             rdata = wordGuessing.getSubmitData()
         }
+        if (data.puzzle.type === "reflection-question-puzzle") {
+            rScore = reflectionQuestion.getSubmitScore()
+            rdata = reflectionQuestion.getSubmitData()
+        }
 
         add({ id: data.puzzle.id, score: rScore, data: rdata })
-        if (data.puzzle.type !== "gps-puzzle") {
+        if (data.puzzle.type !== "gps-puzzle" && data.puzzle.type !== "reflection-question-puzzle") {
             sendTo(`/p/${data.puzzle.id}/result`)
         } else {
             sendTo(`/s/${data.station.id}`)
@@ -155,7 +159,7 @@
             {#if skipIntroduction}
                 <button onclick={() => { skipIntroduction?.(); skipIntroduction = undefined }} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">Weiter</button>
             {:else}
-                <button onclick={(): void => data.puzzle.type === "gps-puzzle" || (textSelect?.isComplete() || matchingGame?.isComplete() || singleChoice?.isComplete() || multipleChoice?.isComplete() || dragDrop?.isComplete() || errorSpotting?.isComplete() || wordGuessing?.isComplete()) ? submit() : modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
+                <button onclick={(): void => data.puzzle.type === "gps-puzzle" || data.puzzle.type === "reflection-question-puzzle" || (textSelect?.isComplete() || matchingGame?.isComplete() || singleChoice?.isComplete() || multipleChoice?.isComplete() || dragDrop?.isComplete() || errorSpotting?.isComplete() || wordGuessing?.isComplete()) ? submit() : modal.openModal()} class="w-full h-auto pl-6 text-left text-[20px] font-medium text-primary bg-secondary rounded-full py-2 cursor-pointer active:scale-95">{(data.puzzle.type !== "gps-puzzle" && data.puzzle.type !== "reflection-question-puzzle") ? "Ergebnis anzeigen" : "Gehe zu den Rätseln"}</button>
             {/if}
         </div>
     {/if}
