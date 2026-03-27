@@ -32,16 +32,9 @@
         open = false
     })
 
-    onMount((): void => {
-        if (Game.isFinished()) {
-            endModal.openModal()
-        }
-    })
-
     let introductionModal: IntroductionModal
     let informationsModal: InformationsModal
     let stopModal: StopModal
-    let endModal: EndModal
 
     function restart(): void {
         restartGame()
@@ -57,7 +50,6 @@
 <IntroductionModal bind:this={introductionModal} />
 <InformationsModal bind:this={informationsModal} />
 <StopModal bind:this={stopModal} onConfirm={stop} />
-<EndModal bind:this={endModal} />
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">

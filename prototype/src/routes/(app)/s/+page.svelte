@@ -1,9 +1,23 @@
 <script lang="ts">
     import type { PageProps } from "./$types"
     import { sendTo } from "$utils/url"
+    import { onMount } from "svelte";
+    import Game from "$utils/game"
+    import EndModal from "$components/EndModal.svelte";
+
 
     let { data }: PageProps = $props()
+
+    let endModal: EndModal
+    
+    onMount((): void => {
+        if (Game.isFinished()) {
+            endModal.openModal()
+        }
+    })
 </script>
+
+<EndModal bind:this={endModal} />
 
 <div class="w-full h-auto text-primary">
     <div class="w-full h-auto flex justify-between items-center px-6">
