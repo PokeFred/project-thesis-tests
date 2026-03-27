@@ -17,7 +17,9 @@
     import stations from "$config/stations"
     import { sendTo, navigateTo } from "$utils/url"
     import { _getBasePath } from "$utils/url"
-    import EndModal from "$components/EndModal.svelte";
+    import EndModal from "$components/EndModal.svelte"
+    import Game from "$utils/game"
+    import { onMount } from "svelte"
 
     let { children }: LayoutProps = $props()
 
@@ -30,9 +32,16 @@
         open = false
     })
 
+    onMount((): void => {
+        if (Game.isFinished()) {
+            endModal.openModal()
+        }
+    })
+
     let introductionModal: IntroductionModal
     let informationsModal: InformationsModal
     let stopModal: StopModal
+    let endModal: EndModal
 
     function restart(): void {
         restartGame()
@@ -48,6 +57,7 @@
 <IntroductionModal bind:this={introductionModal} />
 <InformationsModal bind:this={informationsModal} />
 <StopModal bind:this={stopModal} onConfirm={stop} />
+<EndModal bind:this={endModal} />
 
 <div class="w-screen h-auto min-h-dvh bg-slate-950">
     <div class="mx-auto w-full max-w-lg h-auto min-h-dvh bg-primary grid grid-cols-1 {open ? "grid-rows-[1fr_auto]" : "grid-rows-[auto_1fr]"}">
@@ -108,7 +118,6 @@
         <PageTransition>
             <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
                 <main class="w-full h-full {(new RegExp("#\\/(s|p)+\\/[0-9]+[0-9]*")).test(page.url.hash) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
-                    <EndModal />
                     {@render children()}
                 </main>
                 <footer class="w-full h-auto py-1 text-secondary bg-primary grid grid-cols-1 gap-2 px-2 border-t-2">
