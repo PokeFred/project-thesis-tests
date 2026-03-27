@@ -14,13 +14,12 @@ export default class Game {
             puzzles.push(...station.getPuzzles())
         }
 
-        let finished: boolean = true
         for (const puzzle of puzzles) {
             if (!puzzle.isDone()) {
-                finished = false
+                return false
             }
         }
 
-        return finished
+        return true
     }
 }
