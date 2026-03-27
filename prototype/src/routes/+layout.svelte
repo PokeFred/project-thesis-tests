@@ -17,6 +17,7 @@
     import stations from "$config/stations"
     import { sendTo, navigateTo } from "$utils/url"
     import { _getBasePath } from "$utils/url"
+    import EndModal from "$components/EndModal.svelte";
 
     let { children }: LayoutProps = $props()
 
@@ -107,6 +108,7 @@
         <PageTransition>
             <div class="w-full h-full text-primary bg-secondary grid grid-cols-1 grid-rows-[1fr_auto]">
                 <main class="w-full h-full {(new RegExp("#\\/(s|p)+\\/[0-9]+[0-9]*")).test(page.url.hash) ? "text-secondary bg-primary" : "text-primary bg-secondary"} p-4 {open ? "hidden" : ""}">
+                    <EndModal />
                     {@render children()}
                 </main>
                 <footer class="w-full h-auto py-1 text-secondary bg-primary grid grid-cols-1 gap-2 px-2 border-t-2">

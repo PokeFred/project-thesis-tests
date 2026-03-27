@@ -3,7 +3,7 @@
     import Icon from "svelte-awesome"
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark"
 
-    let { children, buttonText, onConfirm }: { children: Snippet, buttonText: string, onConfirm: () => void } = $props()
+    let { children, buttonText, onConfirm }: { children: Snippet, buttonText?: string, onConfirm: () => void } = $props()
 
     let modal: HTMLDialogElement
     export function openModal(): void {
@@ -28,9 +28,11 @@
         <div class="mt-2 w-full h-auto text-left text-secondary grid grid-cols-1 gap-2 px-4">
             {@render children()}
         </div>
-        <div class="w-full h-auto grid grid-cols-1 gap-4">
-            <button onclick={handleConfirm} class="w-full h-auto text-[20px] font-medium text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">{buttonText}</button>
-        </div>
+        {#if buttonText }
+            <div class="w-full h-auto grid grid-cols-1 gap-4">
+                <button onclick={handleConfirm} class="w-full h-auto text-[20px] font-medium text-left text-primary bg-secondary rounded-full cursor-pointer px-6 py-1 active:scale-95">{buttonText}</button>
+            </div>
+        {/if}
     </div>
 </dialog>
 
