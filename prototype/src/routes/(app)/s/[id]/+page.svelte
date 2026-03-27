@@ -8,8 +8,19 @@
     let { data }: PageProps = $props()
 
     async function redirectToPuzzle(puzzle: any): Promise<void> {
-        if (!puzzle.done) return sendTo(`/p/${puzzle.id}`)
-        if (puzzle.type !== "gps-puzzle") return sendTo(`/p/${puzzle.id}/result`)
+        if (puzzle.type == "gps-puzzle") {
+            if (puzzle.done) {
+                return
+            } else {
+                return sendTo(`/p/${puzzle.id}`)
+            }
+        } else {
+            if (puzzle.done) {
+                return sendTo(`/p/${puzzle.id}/result`)
+            } else {
+                return sendTo(`/p/${puzzle.id}`)
+            }
+        }
     }
 </script>
 
