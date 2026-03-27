@@ -5,6 +5,7 @@
     import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus"
     import Fullscreen from "$components/Fullscreen.svelte";
     import { faXmark } from "@fortawesome/free-solid-svg-icons/faXmark";
+    import { _getBasePath as getBasePath } from "$utils/url"
 
     let { question }: { question: AccordionQuestion } = $props()
     let open: boolean = $state<boolean>(false)
@@ -36,7 +37,7 @@
             {:else}
                 <figure class="my-10 -mx-6">
                     <Fullscreen>
-                        <img src="/einkaufsspuren{element.src}" alt={element.alt} />
+                        <img src={`${getBasePath()}${element.src}`} alt={element.alt} />
                     </Fullscreen>
                     {#if element.caption}
                         <figcaption class="flex flex-col mx-4.5 mt-3 font-medium">
