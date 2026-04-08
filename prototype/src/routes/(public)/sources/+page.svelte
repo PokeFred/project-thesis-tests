@@ -209,14 +209,15 @@
         <div>Brum, Detlev: „Westfälische Palmen“ - der Wirtschaftsstandort Dortmund und die Kolonien, in: Sebastian Bischoff, Barbara Frey, Andreas Neuwöhner (Hg.), Koloniale Welten in Westfalen, Studien und Quellen zur Westfälischen Geschichte, Band 89, 2021, S. 15-29, hier S. 15-17.</div>
         <div>Carrasco, Inés: Was ist Konsum, in: Planet Wissen, letzte Aktualisierung 28.10.2024, URL: https://www.planet-wissen.de (Zugriff: 20.03.2026).</div>
         <div>Degner, Viktoria: Goethe hätte in diesem Dortmunder Geschäft shoppen können - Wie hat sich Tewes 200 Jahre gehalten?, in: Ruhr Nachrichten, 06.11.2024, URL: Dortmund: Tewes feiert Jubiläum - Rückblick auf 200 Jahre Geschichte (Zugriff: 01.08.2025).</div>
-        <div>Dortmund-App: Der Fakten Montag, URL: https://www.dortmund.de (Zugriff: 20.03.2026). Frank, Valentin / Volmerich, Oliver: Spaziergang durch das alte Dortmund, Kassel 2022.</div>
+        <div>Dortmund-App: Der Fakten Montag, URL: https://www.dortmund.de (Zugriff: 20.03.2026).</div>
+        <div>Frank, Valentin / Volmerich, Oliver: Spaziergang durch das alte Dortmund, Kassel 2022.</div>
         <div>Geschäftsbericht Gesellschaft für Westfälische Wirtschaftsgeschichte e.V.: Historische Dokumente aus dem Archiv, Dortmund 2018, S. 44-59, hier S. 45-48.</div>
         <div>Grünbau gGmbH: Ein dekoloniales Denkmal für Dortmund, 08.08.2025, URL: https://www.gruenbau-dortmund.de (Zugriff: 20.03.2026).</div>
         <div>Grunsky, Eberhard: Baukunst als betriebsnotwendiges Kapital. Einkaufspaläste und Citybildung im 19. und frühen 20. Jahrhundert, in: Denkmalpflege in Westfalen-Lippe. Einkaufszentren als denkmalpflegerisches Problem. Wirkungsanalyse - Geschichte - Beispiele, Band 2, Münster 2008, S. 14-22, hier S. 16.</div>
         <div>Historischer Verein Dortmund: 1300-1500: Aufstieg der Stadt im Spätmittelalter, URL: https://www.historischer-verein-dortmund.de (Zugriff: 20.03.2026).</div>
         <div>Jessen-Klingenberg, Manfred: „Tante-Emma-Läden“. Einrichtungen des Industriezeitalters, in: Demokratische Geschichte, Band 17, 2006, S. 115-134, hier S. 115. </div>
         <div>Kleinschmidt, Christian: Konsumgesellschaft, Göttingen 2008.</div>
-        <div>Kocbeck, Peter: Der Dortmunder Hafen. Eine Zeitreise in Bildern und Erzählungen, Dortmunder Hafen AG, Dortmund 2022</div>
+        <div>Kocbeck, Peter: Der Dortmunder Hafen. Eine Zeitreise in Bildern und Erzählungen, Dortmunder Hafen AG, Dortmund 2022.</div>
         <div>Köster & Bömcke Service GmbH: 150 Jahre Köster & Bömcke, URL: https://www.koester-boemcke.de (Zugriff: 20.03.2026).</div>
         <div>Klüh, Jana: Ein Bettengeschäft und ein Juwelier sind die ältesten Geschäfte am Westenhellweg, in: Ruhr Nachrichten, URL: Ein Bettengeschäft und ein Juwelier sind die ältesten Geschäfte am Westenhellweg (Zugriff: 01.08.2025).</div>
         <div>Lantowski, Gustav: Kleine Wirtschaftsgeschichte von Dortmund, Dortmund 1988.</div>
@@ -226,8 +227,10 @@
         <div>Ohm, Matthias: Rathäuser des deutschen Mittelalters, in: Thomas Schilp, Barbara Welzel (Hg.) Stadtführer Dortmund im Mittelalter, Bielefeld 2006.</div>
         <div>Pfister, Ulrich: Vom Kiepenkerl zum Karstadt: Einzelhandel und Warenkultur im 19. und frühen 20. Jahrhundert, in: VSWG: Vierteljahrschrift für Sozial- und Wirtschaftsgeschichte, Band 87, Heft 1, Stuttgart 2000.</div>
         <div>Schilp, Thomas / Zupancic, Andrea: Dortmund - so wie es war, Düsseldorf 2013.</div>
-        <div>Persönliche Aufzeichnungen über die Firmengeschichte von Heinr. Schreer. Colonialwaren und Landesprodukte en gros., zur Verfügung gestellt durch Dieter Schreer, Dortmund. Schilp, Thomas: Zeit-Räume. Aus der Geschichte einer Stadt. Ausstellung und Dokumentation des Stadtarchivs zur Geschichte der Stadt Dortmund im neuen Rathaus, Dortmund 1989.</div>
-        <div>Stadtarchiv Dortmund: Reichsstadt Dortmund, URL: https://www.dortmund.de (Zugriff: 12.09.2025). Stadt Planungsamt Dortmund/Stadt Dortmund (Hg.): Masterplan Einzelhandel Schlussbericht, Dortmund, S. 4-5.</div>
+        <div>Persönliche Aufzeichnungen über die Firmengeschichte von Heinr. Schreer. Colonialwaren und Landesprodukte en gros., zur Verfügung gestellt durch Dieter Schreer, Dortmund.</div>
+        <div>Schilp, Thomas: Zeit-Räume. Aus der Geschichte einer Stadt. Ausstellung und Dokumentation des Stadtarchivs zur Geschichte der Stadt Dortmund im neuen Rathaus, Dortmund 1989.</div>
+        <div>Stadtarchiv Dortmund: Reichsstadt Dortmund, URL: https://www.dortmund.de (Zugriff: 12.09.2025).</div>
+        <div>Stadt Planungsamt Dortmund/Stadt Dortmund (Hg.): Masterplan Einzelhandel Schlussbericht, Dortmund, S. 4-5.</div>
         <div>Tewes Juwelier: Tradition und Handwerk, URL: https://www.juwelier-tewes.de (Zugriff: 08.08.2025).</div>
         <div>Thier-Galerie Dortmund: Nachhaltigkeit, URL: https://www.thier-galerie.de (Zugriff: 20.03.2026).</div>
         <div>Volmerich, Oliver: Geheimnisse des Westenhellwegs: Wie der Westenhellweg zur Prachtmeile der Kaufhäuser wurde, 23.01.2019, URL: Wie der Westenhellweg zur Prachtmeile der Kaufhäuser wurde (Zugriff: 20.03.2026).</div>
@@ -237,7 +240,8 @@
         <div>Winter, Klaus: Kaufhaus Gebr. Kaufmann: Erinnerung an ein ehemaliges Highlight des Westenhellwegs, in: Nordstadtblogger, 22.01.2022, URL: Kaufhaus Gebr. Kaufmann: Erinnerung an ein ehemaliges Highlight des Westenhellwegs - Nordstadtblogger (Zugriff: 20.03.2026).</div>
         <div>Winter, Klaus: Gebr. Rosendahl hinterließen ihre Spuren an der Speicherstraße, in: Nordstadtblogger, 09.10.2021, URL: SERIE Nordstadt-Geschichte(n): Gebr. Rosendahl hinterließen ihre Spuren an der Speicherstraße - Nordstadtblogger (Zugriff: 20.03.2026).</div>
         <div>Winter, Klaus: Die Firma der Gebrüder Wolff war eine markante Adresse im Dortmunder Hafen, in: Nordstadtblogger, 02.09.2019, URL: SERIE Nordstadt-Geschichte(n): Die Firma der Gebrüder Wolff war eine markante Adresse im Dortmunder Hafen - Nordstadtblogger (Zugriff: 20.03.2026).</div>
-        <div>Winter, Klaus: Das Kaufhaus am Steinplatz - zwischen erfolgreicher Expansion und Judenverfolgung, in: Nordstadtblogger, 22.10.2017, URL: SERIE Nordstadt-Geschichte(n): Das Kaufhaus am Steinplatz - zwischen erfolgreicher Expansion und Judenverfolgung - Nordstadtblogger (Zugriff: 20.03.2026). Wie die Zeit vergeht mit Einkaufen, in: Der Spiegel Geschichte, 26.09.2007 (korrigiertes Datum), URL: https://www.spiegel.de (Zugriff: 20.03.2026).</div>
+        <div>Winter, Klaus: Das Kaufhaus am Steinplatz - zwischen erfolgreicher Expansion und Judenverfolgung, in: Nordstadtblogger, 22.10.2017, URL: SERIE Nordstadt-Geschichte(n): Das Kaufhaus am Steinplatz - zwischen erfolgreicher Expansion und Judenverfolgung - Nordstadtblogger (Zugriff: 20.03.2026).</div>
+        <div>Wie die Zeit vergeht mit Einkaufen, in: Der Spiegel Geschichte, 26.09.2007 (korrigiertes Datum), URL: https://www.spiegel.de (Zugriff: 20.03.2026).</div>
         <div>Wiederaufbau Dortmunder Firmen nach dem Zweiten Weltkrieg, URL: https://www.bunker-dortmund.de (Zugriff: 20.03.2026).</div>
         <hr class="border"/>
     </div>
