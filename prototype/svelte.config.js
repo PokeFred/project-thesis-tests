@@ -1,29 +1,14 @@
-import adapter from "@sveltejs/adapter-static"
-import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"
+import adapter from "@sveltejs/adapter-cloudflare";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
     preprocess: vitePreprocess(),
     kit: {
-        adapter: adapter({
-            fallback: "200.html",
-            pages: "./build",
-            assets: "./build",
-            precompress: true,
-            strict: true
-        }),
-        router: {
-            type: "hash"
-        },
-        paths: {
-            base: ""
-            // base: "/einkaufsspuren",
-            // relative: true
-        },
-        env: {
-            publicPrefix: "PUBLIC_",
-            privatePrefix: "PRIVATE_"
-        },
+        adapter: adapter(),
+        router: { type: "hash" },
+        paths: { base: "" },
+        env: { publicPrefix: "PUBLIC_", privatePrefix: "PRIVATE_" },
         alias: {
             $config: "./src/lib/config",
             $components: "./src/lib/components",
@@ -33,6 +18,6 @@ const config = {
             $types: "./src/lib/types"
         }
     }
-}
+};
 
-export default config
+export default config;
